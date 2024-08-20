@@ -26,7 +26,7 @@ function classNames(...classes: string[]) {
 const navigation = [
   { name: 'Heroes', href: '/heroes', current: false },
   { name: 'Titans', href: '/titans', current: false },
-  { name: 'Items', href: '/items', current: false },
+  { name: 'Equipment', href: '/equipment', current: false },
   { name: 'Campaign', href: '/campaign', current: false },
   { name: 'Merchant', href: '/merchant', current: false },
   { name: 'Hydras', href: '/hydras', current: false },
@@ -56,17 +56,17 @@ export default function App() {
                   </div>
                   <div className="hidden md:block">
                     <div className="ml-10 flex items-baseline space-x-4">
-                      {navigation.map((item) => (
+                      {navigation.map((equipment) => (
                         <Link
-                          key={item.name}
-                          to={item.href}
-                          aria-current={item.current ? 'page' : undefined}
+                          key={equipment.name}
+                          to={equipment.href}
+                          aria-current={equipment.current ? 'page' : undefined}
                           className={classNames(
-                            item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                            equipment.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                             'rounded-md px-3 py-2 text-sm font-medium',
                           )}
                         >
-                          {item.name}
+                          {equipment.name}
                         </Link>
                       ))}
                     </div>
@@ -86,18 +86,18 @@ export default function App() {
 
             <DisclosurePanel className="md:hidden">
               <div className="space-y-1 px-2 pb-3 pt-2 sm:px-3">
-                {navigation.map((item) => (
+                {navigation.map((equipment) => (
                   <DisclosureButton
-                    key={item.name}
+                    key={equipment.name}
                     as="a"
-                    href={item.href}
-                    aria-current={item.current ? 'page' : undefined}
+                    href={equipment.href}
+                    aria-current={equipment.current ? 'page' : undefined}
                     className={classNames(
-                      item.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
+                      equipment.current ? 'bg-gray-900 text-white' : 'text-gray-300 hover:bg-gray-700 hover:text-white',
                       'block rounded-md px-3 py-2 text-base font-medium',
                     )}
                   >
-                    {item.name}
+                    {equipment.name}
                   </DisclosureButton>
                 ))}
               </div>

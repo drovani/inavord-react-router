@@ -1,88 +1,94 @@
 import slugify from "slugify";
 import invariant from "tiny-invariant";
 
-const item_quality_order = ["gray", "green", "blue", "purple", "orange"]
+const equipment_quality_order = ["gray", "green", "blue", "purple", "orange"]
 
-type ItemMutation = {
+type EquipmentMutation = {
     id?: string;
     name: string;
     level_required?: number;
-    item_quality?: string;
+    equipment_quality?: string;
     stats?: { [key: string]: number | undefined };
     chapters?: string[];
     buy?: number;
     sell?: { gold?: number, guild_activity_points?: number, [key: string]: number | undefined };
-    required_items?: { name: string, quantity: number }[];
+    required_equipment?: { name: string, quantity: number }[];
     slug?: string;
 }
 
-export type ItemRecord = ItemMutation & {
+export type EquipmentRecord = EquipmentMutation & {
     id: string;
     slug: string;
     createdAt: string;
 }
 
 
-const mockItems = {
-    records: {} as Record<string, ItemRecord>,
-    async getAll(): Promise<ItemRecord[]> {
-        return Object.keys(mockItems.records)
-            .map((key) => mockItems.records[key])
+const mockEquipment = {
+    records: {} as Record<string, EquipmentRecord>,
+    async getAll(): Promise<EquipmentRecord[]> {
+        return Object.keys(mockEquipment.records)
+            .map((key) => mockEquipment.records[key])
             .sort((a, b) => (
-                item_quality_order.indexOf(a.item_quality || 'default') - item_quality_order.indexOf(b.item_quality || 'default')
+                equipment_quality_order.indexOf(a.equipment_quality || 'default') - equipment_quality_order.indexOf(b.equipment_quality || 'default')
                 || a.name.localeCompare(b.name)
             ))
     },
-    async get(id: string): Promise<ItemRecord | null> {
-        return mockItems.records[id] || null;
+    async get(id: string): Promise<EquipmentRecord | null> {
+        return mockEquipment.records[id] || null;
     },
-    async create(values: ItemMutation): Promise<ItemRecord> {
+    async create(values: EquipmentMutation): Promise<EquipmentRecord> {
         const slug = values.slug || slugify(values.name, { lower: true, strict: true });
         const id = values.id || slug;
         const createdAt = new Date().toUTCString();
-        const newItem = { id, slug, createdAt, ...values };
-        mockItems.records[id] = newItem;
-        return newItem;
+        const newEquipment = { id, slug, createdAt, ...values };
+        mockEquipment.records[id] = newEquipment;
+        return newEquipment;
     },
-    async set(id: string, values: ItemMutation): Promise<ItemRecord> {
-        const item = await mockItems.get(id);
-        invariant(item, `No item found for ${id}`);
-        const updatedItem = { ...item, ...values };
-        mockItems.records[id] = updatedItem;
-        return updatedItem
+    async set(id: string, values: EquipmentMutation): Promise<EquipmentRecord> {
+        const equipment = await mockEquipment.get(id);
+        invariant(equipment, `No equipment found for ${id}`);
+        const updatedEquipment = { ...equipment, ...values };
+        mockEquipment.records[id] = updatedEquipment;
+        return updatedEquipment
     },
     destroy(id: string): null {
-        delete mockItems.records[id];
+        delete mockEquipment.records[id];
         return null;
     }
 }
 
-export async function getItems() {
-    return mockItems.getAll();
+export async function getAllEquipment() {
+    return mockEquipment.getAll();
 }
-export async function getItem(id: string | undefined) {
+export async function getEquipment(id: string | undefined) {
     if (id)
-        return mockItems.get(id);
+        return mockEquipment.get(id);
     else return null;
 }
-export async function updateItem(id: string, updates: ItemMutation) {
-    const item = await mockItems.get(id);
-    if (!item) {
-        throw new Error(`No item found for ${id}`);
+export async function getEquipmentByName(name: string | undefined) {
+    if (name)
+        return (await mockEquipment.getAll()).find((equip) => equip.name === name);
+    else return null;
+}
+
+export async function updateEquipment(id: string, updates: EquipmentMutation) {
+    const equipment = await mockEquipment.get(id);
+    if (!equipment) {
+        throw new Error(`No equipment found for ${id}`);
     }
-    await mockItems.set(id, { ...item, ...updates });
-    return item;
+    await mockEquipment.set(id, { ...equipment, ...updates });
+    return equipment;
 }
-export async function deleteItem(id: string) {
-    mockItems.destroy(id);
+export async function deleteEquipment(id: string) {
+    mockEquipment.destroy(id);
 }
 
 
-const item_data = [
+const equipment_data = [
     {
         "name": "Wooden Shield",
         "level_required": 1,
-        "item_quality": "gray",
+        "equipment_quality": "gray",
         "stats": {
             "health": 200
         },
@@ -98,12 +104,12 @@ const item_data = [
             "gold": 200,
             "guild_activity_points": 2
         },
-        "required_items": []
+        "required_equipment": []
     },
     {
         "name": "Apprentice's Mantle",
         "level_required": 1,
-        "item_quality": "gray",
+        "equipment_quality": "gray",
         "stats": {
             "magic_attack": 25
         },
@@ -113,12 +119,12 @@ const item_data = [
             "gold": 200,
             "guild_activity_points": 2
         },
-        "required_items": []
+        "required_equipment": []
     },
     {
         "name": "Wizard's Staff",
         "level_required": 4,
-        "item_quality": "gray",
+        "equipment_quality": "gray",
         "stats": {
             "intelligence": 7,
             "magic_attack": 50
@@ -128,7 +134,7 @@ const item_data = [
             "gold": 680,
             "guild_activity_points": 6
         },
-        "required_items": [
+        "required_equipment": [
             {
                 "name": "Apprentice's Mantle",
                 "quantity": 2
@@ -140,6 +146,6 @@ const item_data = [
         ]
     }
 ];
-item_data.forEach((item: ItemMutation) => {
-    mockItems.create(item);
+equipment_data.forEach((equipment: EquipmentMutation) => {
+    mockEquipment.create(equipment);
 });
