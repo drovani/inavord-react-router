@@ -1,4 +1,5 @@
 import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import EquipmentImage from "~/components/EquipmentImage";
 import { getAllEquipment } from "../data";
 
 export const loader = async () => {
@@ -18,12 +19,7 @@ export default function Equipment() {
                         {equipments.map((equipment) => (
                             <li key={equipment.name} className="text-lg pl-6 -indent-6">
                                 <Link to={`/equipment/${equipment.slug}`}>
-                                    <img
-                                        alt={`${equipment.name} icon`}
-                                        key={equipment.slug}
-                                        src={`/images/equipment/${equipment.slug}.png`}
-                                        className="hidden md:inline h-5 w-5 mr-1 rounded-sm"
-                                    />
+                                    <EquipmentImage equipment={equipment} className="hidden md:inline h-5 w-5 mr-1" />
                                     {equipment.name}
                                 </Link>
                             </li>

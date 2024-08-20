@@ -2,7 +2,8 @@ import { json, LoaderFunctionArgs } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { useMemo } from "react";
 import invariant from "tiny-invariant";
-import { getEquipment, getEquipmentByName } from "~/data";
+import EquipmentImage from "~/components/EquipmentImage";
+import { EquipmentRecord, getEquipment, getEquipmentByName, getEquipmentThatRequires } from "~/data";
 
 const color_map: { [key: string]: { from: string, to: string } } = {
     gray: { from: 'gray-300', to: 'gray-900' },
@@ -24,14 +25,17 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         async (item) => {
             const foundItem = await getEquipmentByName(item.name);
 
-            return { id: foundItem?.id, ...item };
+            return { ...item, ...foundItem };
         }) || [];
-    return json({ equipment, required_equipment: await Promise.all(required_equipment) });
+
+    const required_for = await getEquipmentThatRequires(equipment.name) || [];
+
+    return json({ equipment, required_equipment: await Promise.all(required_equipment), required_for });
 }
 
 export default function Equipment() {
 
-    const { equipment, required_equipment } = useLoaderData<typeof loader>();
+    const { equipment, required_equipment, required_for } = useLoaderData<typeof loader>();
 
     const border_gradient = useMemo(() => {
         return color_map[equipment.equipment_quality || 'default']
@@ -44,11 +48,7 @@ export default function Equipment() {
             <div className="flex space-x-4">
                 <div className={`rounded-3xl w-24 h-24 p-1 bg-gradient-to-br from-${border_gradient.from} to-${border_gradient.to}`}>
                     <div className="overflow-hidden rounded-[calc(1.5rem-1px)] bg-white bg-clip-padding">
-                        <img
-                            alt={`${equipment.name} icon`}
-                            key={equipment.slug}
-                            src={`/images/equipment/${equipment.slug}.png`}
-                        />
+                        <EquipmentImage equipment={equipment} />
                     </div>
                 </div>
                 <div>
@@ -82,10 +82,12 @@ export default function Equipment() {
                     ? (
                         <>
                             {required_equipment.map((equip) => {
-                                if ("id" in equip) {
+                                if (equip.id) {
                                     return (<div key={equip.name}>
                                         <Link to={`/equipment/${equip.id}`}>
-                                            {equip.quantity}x {equip.name}
+                                            {equip.quantity}x
+                                            <EquipmentImage equipment={equip as EquipmentRecord} className="h-4 inline mx-1" />
+                                            {equip.name}
                                         </Link>
                                     </div>)
                                 } else {
@@ -100,6 +102,22 @@ export default function Equipment() {
                     ) : (
                         <div>No requirements</div>
                     )}
+            </div>
+            <div>
+                <h3 className="text-xl font-semibold">Required for</h3>
+                {required_for?.length ? (
+                    <>
+                        {required_for.map((equip) => {
+                            const qty_needed = equip.required_equipment?.find(re => re.name === equipment.name)?.quantity;
+                            return (<div key={equip.id}>
+                                <Link to={`/equipment/${equip.id}`}>
+                                    <EquipmentImage equipment={equip as EquipmentRecord} className="h-4 inline mx-1" />
+                                    {equip.name} (x{qty_needed})
+                                </Link>
+                            </div>)
+                        })}
+                    </>
+                ) : (<div>Not required for any other equipment</div>)}
             </div>
         </div>
     )

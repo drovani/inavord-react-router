@@ -71,6 +71,12 @@ export async function getEquipmentByName(name: string | undefined) {
     else return null;
 }
 
+export async function getEquipmentThatRequires(name: string | undefined){
+    if (name)
+        return (await mockEquipment.getAll()).filter((equip) => equip.required_equipment?.find(re => re.name === name));
+    else return null;
+}
+
 export async function updateEquipment(id: string, updates: EquipmentMutation) {
     const equipment = await mockEquipment.get(id);
     if (!equipment) {
