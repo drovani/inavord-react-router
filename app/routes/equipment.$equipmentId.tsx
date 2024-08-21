@@ -1,5 +1,6 @@
+import { Button } from "@headlessui/react";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 import { useMemo } from "react";
 import invariant from "tiny-invariant";
 import EquipmentImage from "~/components/EquipmentImage";
@@ -118,6 +119,21 @@ export default function Equipment() {
                         })}
                     </>
                 ) : (<div>Not required for any other equipment</div>)}
+            </div>
+            <div>
+                <Form action="edit">
+                    <Button type="submit">Edit</Button>
+                </Form>
+                <Form action="destroy"
+                    method="post"
+                    onSubmit={(event) => {
+                        const response = confirm(`Please confirm you want to delete ${equipment.name} record.`);
+                        if (!response) {
+                            event.preventDefault();
+                        }
+                    }}>
+                    <Button type="submit">Delete</Button>
+                </Form>
             </div>
         </div>
     )

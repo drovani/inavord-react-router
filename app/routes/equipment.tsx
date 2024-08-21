@@ -1,10 +1,16 @@
-import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Button } from "@headlessui/react";
+import { Form, Link, Outlet, redirect, useLoaderData } from "@remix-run/react";
 import EquipmentImage from "~/components/EquipmentImage";
-import { getAllEquipment } from "../data";
+import { createEquipment, getAllEquipment } from "../data";
 
 export const loader = async () => {
     const equipments = await getAllEquipment();
     return { equipments };
+}
+
+export const action = async () => {
+    const equipment = await createEquipment({ name: "New item" });
+    return redirect(`/equipment/${equipment.id}/edit`);
 }
 
 export default function Equipment() {
@@ -14,6 +20,21 @@ export default function Equipment() {
         <div className="flex flex-row">
             <div className="bg-gray-700 text-white px-1 basis-1/2 lg:basis-1/3 xl:basis-1/4 h-screen">
                 <h2 className="text-2xl font-bold border-b-white border-b-2">Equipment</h2>
+                <div className="flex p-2 gap-3">
+                    <Form id="search-form" role="search">
+                        <input
+                            id="q"
+                            aria-label="Search contacts"
+                            placeholder="Search"
+                            type="search"
+                            name="q"
+                        />
+                        <div id="search-spinner" aria-hidden hidden={true} />
+                    </Form>
+                    <Form id="new-equipment" method="post">
+                        <Button type="submit">New</Button>
+                    </Form>
+                </div>
                 {equipments.length ? (
                     <ul>
                         {equipments.map((equipment) => (

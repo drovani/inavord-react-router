@@ -5,7 +5,7 @@ const equipment_quality_order = ["gray", "green", "blue", "purple", "orange"]
 
 type EquipmentMutation = {
     id?: string;
-    name: string;
+    name?: string;
     level_required?: number;
     equipment_quality?: string;
     stats?: { [key: string]: number | undefined };
@@ -18,6 +18,7 @@ type EquipmentMutation = {
 
 export type EquipmentRecord = EquipmentMutation & {
     id: string;
+    name: string;
     slug: string;
     createdAt: string;
 }
@@ -37,10 +38,11 @@ const mockEquipment = {
         return mockEquipment.records[id] || null;
     },
     async create(values: EquipmentMutation): Promise<EquipmentRecord> {
-        const slug = values.slug || slugify(values.name, { lower: true, strict: true });
+        const name = values.name || "New item";
+        const slug = values.slug || slugify(name, { lower: true, strict: true });
         const id = values.id || slug;
         const createdAt = new Date().toUTCString();
-        const newEquipment = { id, slug, createdAt, ...values };
+        const newEquipment = { id, slug, createdAt, name, ...values };
         mockEquipment.records[id] = newEquipment;
         return newEquipment;
     },
@@ -71,10 +73,14 @@ export async function getEquipmentByName(name: string | undefined) {
     else return null;
 }
 
-export async function getEquipmentThatRequires(name: string | undefined){
+export async function getEquipmentThatRequires(name: string | undefined) {
     if (name)
         return (await mockEquipment.getAll()).filter((equip) => equip.required_equipment?.find(re => re.name === name));
     else return null;
+}
+
+export async function createEquipment(values: EquipmentMutation) {
+    return mockEquipment.create(values);
 }
 
 export async function updateEquipment(id: string, updates: EquipmentMutation) {
