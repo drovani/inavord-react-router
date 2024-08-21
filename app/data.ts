@@ -10,7 +10,7 @@ type EquipmentMutation = {
     equipment_quality?: string;
     stats?: { [key: string]: number | undefined };
     chapters?: string[];
-    buy?: number;
+    gold_value?: number;
     sell?: { gold?: number, guild_activity_points?: number, [key: string]: number | undefined };
     required_equipment?: { name: string, quantity: number }[];
     slug?: string;
@@ -111,7 +111,7 @@ const equipment_data = [
             "9-2",
             "10-10"
         ],
-        "buy": 1000,
+        "gold_value": 1000,
         "sell": {
             "gold": 200,
             "guild_activity_points": 2
@@ -126,7 +126,7 @@ const equipment_data = [
             "magic_attack": 25
         },
         "chapters": ["1-3", "2-4", "3-8", "4-11", "9-4", "9-12"],
-        "buy": 1000,
+        "gold_value": 1000,
         "sell": {
             "gold": 200,
             "guild_activity_points": 2
@@ -141,7 +141,7 @@ const equipment_data = [
             "intelligence": 7,
             "magic_attack": 50
         },
-        "buy": 3400,
+        "gold_value": 3400,
         "sell": {
             "gold": 680,
             "guild_activity_points": 6

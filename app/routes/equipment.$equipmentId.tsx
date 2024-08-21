@@ -55,7 +55,7 @@ export default function Equipment() {
                 <div>
                     <h2 className="text-2xl font-bold">{equipment.name}</h2>
                     <div>Required level: {equipment.level_required}</div>
-                    <div>Purchase: {equipment.buy} gold</div>
+                    <div>Value: {equipment.gold_value} gold</div>
                     <div>Sell:
                         <ul className="ml-8 -mt-6">
                             <li>{equipment.sell?.gold} gold</li>
