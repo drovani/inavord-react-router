@@ -1,8 +1,9 @@
-import { Button } from "@headlessui/react";
 import { json, LoaderFunctionArgs } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
 import { useMemo } from "react";
 import invariant from "tiny-invariant";
+import DeleteButton from "~/components/DeleteButton";
+import EditButton from "~/components/EditButton";
 import EquipmentImage from "~/components/EquipmentImage";
 import {
     EquipmentRecord,
@@ -150,9 +151,9 @@ export default function Equipment() {
                     <div>Not required for any other equipment</div>
                 )}
             </div>
-            <div>
+            <div className="flex flex-row space-x-2">
                 <Form action="edit">
-                    <Button type="submit">Edit</Button>
+                    <EditButton>Edit</EditButton>
                 </Form>
                 <Form
                     action="destroy"
@@ -166,7 +167,7 @@ export default function Equipment() {
                         }
                     }}
                 >
-                    <Button type="submit">Delete</Button>
+                    <DeleteButton>Delete</DeleteButton>
                 </Form>
             </div>
         </div>
