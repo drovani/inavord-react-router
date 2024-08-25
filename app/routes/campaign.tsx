@@ -5,8 +5,8 @@ import { CampaignChapters } from "~/constants";
 
 export const loader = async () => {
     const campaign = CampaignChapters;
-    return { campaign }
-}
+    return { campaign };
+};
 
 export default function Campaign() {
     const { campaign } = useLoaderData<typeof loader>();
@@ -14,7 +14,9 @@ export default function Campaign() {
     return (
         <div className="flex flex-row">
             <div className="bg-gray-700 text-white px-1 basis-1/2 lg:basis-1/3 xl:basis-1/4 h-screen">
-                <h2 className="text-2xl font-bold border-b-white border-b-2">Equipment</h2>
+                <h2 className="text-2xl font-bold border-b-white border-b-2">
+                    Equipment
+                </h2>
                 <div className="flex p-2 gap-3">
                     <Form id="search-form" role="search">
                         <input
@@ -33,9 +35,13 @@ export default function Campaign() {
                 {campaign.length ? (
                     <ul>
                         {campaign.map((chapter) => (
-                            <li key={chapter.name} className="text-lg pl-6 -indent-6">
+                            <li
+                                key={chapter.name}
+                                className="text-lg pl-6 -indent-6"
+                            >
                                 <Link to={`/campaign/${slugify(chapter.slug)}`}>
-                                    {chapter.chapter}-{chapter.level} {chapter.name}
+                                    {chapter.chapter}-{chapter.level}{" "}
+                                    {chapter.name}
                                 </Link>
                             </li>
                         ))}
@@ -48,5 +54,5 @@ export default function Campaign() {
                 <Outlet />
             </div>
         </div>
-    )
+    );
 }
