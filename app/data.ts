@@ -1,5 +1,6 @@
 import slugify from "slugify";
 import invariant from "tiny-invariant";
+import { equipment_data } from "./constants";
 
 const equipment_quality_order = ["gray", "green", "blue", "purple", "orange"]
 
@@ -95,69 +96,6 @@ export async function deleteEquipment(id: string) {
     mockEquipment.destroy(id);
 }
 
-
-const equipment_data = [
-    {
-        "name": "Wooden Shield",
-        "level_required": 1,
-        "equipment_quality": "gray",
-        "stats": {
-            "health": 200
-        },
-        "chapters": [
-            "1-3",
-            "2-3",
-            "2-6",
-            "9-2",
-            "10-10"
-        ],
-        "gold_value": 1000,
-        "sell": {
-            "gold": 200,
-            "guild_activity_points": 2
-        },
-        "required_equipment": []
-    },
-    {
-        "name": "Apprentice's Mantle",
-        "level_required": 1,
-        "equipment_quality": "gray",
-        "stats": {
-            "magic_attack": 25
-        },
-        "chapters": ["1-3", "2-4", "3-8", "4-11", "9-4", "9-12"],
-        "gold_value": 1000,
-        "sell": {
-            "gold": 200,
-            "guild_activity_points": 2
-        },
-        "required_equipment": []
-    },
-    {
-        "name": "Wizard's Staff",
-        "level_required": 4,
-        "equipment_quality": "gray",
-        "stats": {
-            "intelligence": 7,
-            "magic_attack": 50
-        },
-        "gold_value": 3400,
-        "sell": {
-            "gold": 680,
-            "guild_activity_points": 6
-        },
-        "required_equipment": [
-            {
-                "name": "Apprentice's Mantle",
-                "quantity": 2
-            },
-            {
-                "name": "Censer",
-                "quantity": 1
-            }
-        ]
-    }
-];
 equipment_data.forEach((equipment: EquipmentMutation) => {
     mockEquipment.create(equipment);
 });
