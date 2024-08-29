@@ -4,6 +4,7 @@ import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
 import EquipmentImage from "~/components/EquipmentImage";
+import { CampaignChapters } from "~/constants";
 
 import { getEquipment, updateEquipment } from "~/data";
 
@@ -16,8 +17,28 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
             statusText: `Equipment with id ${params.equipmentId} not found.`,
         });
     }
+    const chapters = CampaignChapters;
+    const chapters_full = [];
 
-    return json({ equipment });
+    for (let ch = 1; ch <= 13; ch++) {
+        const num_levels = ch === 1 ? 10 : 15;
+        for (let lvl = 1; lvl <= num_levels; lvl++) {
+            const chap = chapters.find(
+                (c) => c.chapter === ch && c.level === lvl
+            );
+            chapters_full.push(
+                chap || {
+                    chapter: ch,
+                    level: lvl,
+                    name: "",
+                    energy_cost: -1,
+                    slug: `${ch}-${lvl}`,
+                }
+            );
+        }
+    }
+
+    return json({ equipment, chapters: chapters_full });
 };
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -33,7 +54,7 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
 };
 
 export default function EditEquipment() {
-    const { equipment } = useLoaderData<typeof loader>();
+    const { equipment, chapters } = useLoaderData<typeof loader>();
 
     return (
         <Form
@@ -102,19 +123,19 @@ export default function EditEquipment() {
                     <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div className="sm:col-span-1">
                             <label
-                                htmlFor="sell_gold_value"
+                                htmlFor="sell_gold"
                                 className="block text-sm font-medium leading-6 text-gray-900"
                             >
                                 Gold
                             </label>
                             <div className="mt-2">
                                 <input
-                                    id="sell_gold_value"
-                                    name="sell.gold_value"
+                                    id="sell_gold"
+                                    name="sell.gold"
                                     type="number"
                                     min={0}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    defaultValue={equipment.sell?.gold_value}
+                                    defaultValue={equipment.sell?.gold}
                                 />
                             </div>
                         </div>
@@ -141,7 +162,7 @@ export default function EditEquipment() {
                         </div>
                     </div>
                     <h3 className="mt-5 text-base leading-10 text-gray-900">
-                        Base value
+                        Market value
                     </h3>
                     <div className="grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
                         <div className="sm:col-span-4">
@@ -162,6 +183,43 @@ export default function EditEquipment() {
                                 />
                             </div>
                         </div>
+                    </div>
+                    <h3 className="mt-5 text-base leading-10 text-gray-900">
+                        Found in
+                    </h3>
+                    <div className="grid grid-cols-2">
+                        {Array.from({ length: 13 }, (v, k) => ({
+                            name: `Chapter ${k + 1}`,
+                            chapter: k + 1,
+                        })).map((chapterHeader) => {
+                            const levels = chapters.filter(
+                                (c) => c.chapter === chapterHeader.chapter
+                            );
+                            return (
+                                <fieldset key={chapterHeader.chapter}>
+                                    <legend>{chapterHeader.name}</legend>
+                                    {levels.map((level) => (
+                                        <label
+                                            htmlFor={`chapter_${level.slug}`}
+                                            className="flex items-center space-x-2 cursor-pointer"
+                                            key={level.slug}
+                                        >
+                                            <input
+                                                id={`chapter_${level.slug}`}
+                                                name={`chapters[].${level.chapter}-${level.level}`}
+                                                type="checkbox"
+                                                className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                                checked={!!equipment.chapters?.find(c => c === `{${level.chapter}-${level.level}}`)}
+                                            />
+                                            <span className="inline-block">
+                                                {level.chapter}-{level.level}:{" "}
+                                                {level.name}
+                                            </span>
+                                        </label>
+                                    ))}
+                                </fieldset>
+                            );
+                        })}
                     </div>
                 </div>
 
