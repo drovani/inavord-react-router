@@ -1,6 +1,7 @@
 import { LoaderFunctionArgs, json } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { Form, useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
+import EditButton from "~/components/EditButton";
 import { CampaignChapters } from "~/constants";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -74,7 +75,7 @@ export default function Campaign() {
                         </li>
                     )}
                 </ul>
-            )}{" "}
+            )}
             {campaignChapter.hero_raid_exp && (
                 <ul>
                     <li>Hero Raid Exp: {campaignChapter.hero_raid_exp}</li>
@@ -89,7 +90,12 @@ export default function Campaign() {
                         </li>
                     )}
                 </ul>
-            )}{" "}
+            )}
+            <div className="flex flex-row space-x-2">
+                <Form action="edit">
+                    <EditButton>Edit</EditButton>
+                </Form>
+            </div>
         </div>
     );
 }
