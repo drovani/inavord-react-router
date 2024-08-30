@@ -1,5 +1,5 @@
 import { Button } from "@headlessui/react";
-import { Form, Link, Outlet, redirect, useLoaderData } from "@remix-run/react";
+import { Form, Link, MetaFunction, Outlet, redirect, useLoaderData } from "@remix-run/react";
 import EquipmentImage from "~/components/EquipmentImage";
 import { createEquipment, getAllEquipment } from "../data";
 
@@ -11,6 +11,10 @@ export const loader = async () => {
 export const action = async () => {
     const equipment = await createEquipment({ name: "New item" });
     return redirect(`/equipment/${equipment.id}/edit`);
+};
+
+export const meta: MetaFunction = () => {
+    return [{ title: "Hero Equipment" }];
 };
 
 export default function Equipment() {
