@@ -1,17 +1,17 @@
-import { LinksFunction } from "@remix-run/node";
+import { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
-  Link,
-  Links,
-  Meta,
-  Outlet,
-  Scripts,
-  ScrollRestoration,
+    Link,
+    Links,
+    Meta,
+    Outlet,
+    Scripts,
+    ScrollRestoration,
 } from "@remix-run/react";
 
 import {
-  Disclosure,
-  DisclosureButton,
-  DisclosurePanel,
+    Disclosure,
+    DisclosureButton,
+    DisclosurePanel,
 } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import logo_image from "./images/hero-wars-alliance-logo.webp";
@@ -23,13 +23,23 @@ function classNames(...classes: string[]) {
     return classes.filter(Boolean).join(" ");
 }
 
+export const meta: MetaFunction = () => {
+    return [
+        { title: "Hero Wars Helper: Heroes" },
+        {
+            name: "description",
+            content: "A helper app for Hero Wars: Alliance mobile game",
+        },
+    ];
+};
+
 const navigation = [
-    { name: "Heroes", href: "/heroes", current: false },
-    { name: "Titans", href: "/titans", current: false },
+    { name: "Heroes", current: false },
+    { name: "Titans", urrent: false },
     { name: "Equipment", href: "/equipment", current: false },
     { name: "Campaign", href: "/campaign", current: false },
-    { name: "Merchant", href: "/merchant", current: false },
-    { name: "Hydras", href: "/hydras", current: false },
+    { name: "Merchant", current: false },
+    { name: "Hydras", current: false },
 ];
 
 export default function App() {
@@ -51,33 +61,45 @@ export default function App() {
                             <div className="flex h-16 items-center justify-between">
                                 <div className="flex items-center">
                                     <div className="flex-shrink-0">
-                                        <img
-                                            alt="Hero Wars Helper"
-                                            src={logo_image}
-                                            className="h-16 w-16"
-                                        />
+                                        <Link to={"/"}>
+                                            <img
+                                                alt="Hero Wars Helper"
+                                                src={logo_image}
+                                                className="h-16 w-16"
+                                            />
+                                        </Link>
                                     </div>
                                     <div className="hidden md:block">
                                         <div className="ml-10 flex items-baseline space-x-4">
-                                            {navigation.map((equipment) => (
-                                                <Link
-                                                    key={equipment.name}
-                                                    to={equipment.href}
-                                                    aria-current={
-                                                        equipment.current
-                                                            ? "page"
-                                                            : undefined
-                                                    }
-                                                    className={classNames(
-                                                        equipment.current
-                                                            ? "bg-gray-900 text-white"
-                                                            : "text-gray-300 hover:bg-gray-700 hover:text-white",
-                                                        "rounded-md px-3 py-2 text-sm font-medium"
-                                                    )}
-                                                >
-                                                    {equipment.name}
-                                                </Link>
-                                            ))}
+                                            {navigation.map((nav) =>
+                                                nav.href ? (
+                                                    <Link
+                                                        key={nav.name}
+                                                        to={nav.href}
+                                                        aria-current={
+                                                            nav.current
+                                                                ? "page"
+                                                                : undefined
+                                                        }
+                                                        className={classNames(
+                                                            nav.current
+                                                                ? "bg-gray-900 text-white"
+                                                                : "text-gray-300 hover:bg-gray-700 hover:text-white",
+                                                            "rounded-md px-3 py-2 text-sm font-medium"
+                                                        )}
+                                                    >
+                                                        {nav.name}
+                                                    </Link>
+                                                ) : (
+                                                    <span
+                                                        key={nav.name}
+                                                        className="text-gray-300 rounded-md px-3 py-2 text-sm font-medium cursor-default"
+                                                        title={`${nav.name} not yet implemented.`}
+                                                    >
+                                                        {nav.name}
+                                                    </span>
+                                                )
+                                            )}
                                         </div>
                                     </div>
                                 </div>

@@ -1,5 +1,11 @@
 import { Button } from "@headlessui/react";
-import { Form, Link, MetaFunction, Outlet, redirect, useLoaderData } from "@remix-run/react";
+import {
+    Form,
+    Link,
+    Outlet,
+    redirect,
+    useLoaderData
+} from "@remix-run/react";
 import EquipmentImage from "~/components/EquipmentImage";
 import { createEquipment, getAllEquipment } from "../data";
 
@@ -13,10 +19,6 @@ export const action = async () => {
     return redirect(`/equipment/${equipment.id}/edit`);
 };
 
-export const meta: MetaFunction = () => {
-    return [{ title: "Hero Equipment" }];
-};
-
 export default function Equipment() {
     const { equipments } = useLoaderData<typeof loader>();
 
@@ -26,7 +28,7 @@ export default function Equipment() {
                 <h2 className="text-2xl font-bold border-b-white border-b-2">
                     Equipment
                 </h2>
-                <div className="flex p-2 gap-3">
+                <div className="flex p-2 gap-3 place-items-center">
                     <Form id="search-form" role="search">
                         <input
                             id="q"
@@ -34,11 +36,17 @@ export default function Equipment() {
                             placeholder="Search"
                             type="search"
                             name="q"
+                            className="text-gray-950"
                         />
                         <div id="search-spinner" aria-hidden hidden={true} />
                     </Form>
                     <Form id="new-equipment" method="post">
-                        <Button type="submit">New</Button>
+                        <Button
+                            className="border-blue-400 border-2 rounded-md px-2 shadow-sm bg-blue-100 text-blue-950"
+                            type="submit"
+                        >
+                            New
+                        </Button>
                     </Form>
                 </div>
                 {equipments.length ? (

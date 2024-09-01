@@ -1,6 +1,6 @@
-import { Button } from "@headlessui/react";
 import { Form, Link, Outlet, useLoaderData } from "@remix-run/react";
 import slugify from "slugify";
+import NewButton from "~/components/NewButton";
 import { CampaignChapters } from "~/constants";
 
 export const loader = async () => {
@@ -29,7 +29,7 @@ export default function Campaign() {
                         <div id="search-spinner" aria-hidden hidden={true} />
                     </Form>
                     <Form id="new-equipment" method="post">
-                        <Button type="submit">New</Button>
+                        <NewButton>New</NewButton>
                     </Form>
                 </div>
                 {campaign.length ? (
