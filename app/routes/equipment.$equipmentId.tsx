@@ -1,10 +1,11 @@
-import { json, LoaderFunctionArgs } from "@remix-run/node";
+import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
 import { useMemo } from "react";
 import invariant from "tiny-invariant";
 import DeleteButton from "~/components/DeleteButton";
 import EditButton from "~/components/EditButton";
 import EquipmentImage from "~/components/EquipmentImage";
+import { CampaignChapters } from "~/constants";
 import {
     EquipmentRecord,
     getEquipment,
@@ -14,9 +15,15 @@ import {
 
 const color_map: { [key: string]: { from: string; to: string } } = {
     gray: { from: "gray-300", to: "gray-900" },
+    green: { from: "green-300", to: "green-900" },
+    blue: { from: "blue-300", to: "blue-900" },
+    purple: { from: "purple-300", to: "purple-900" },
+    orange: { from: "orange-300", to: "orange-900" },
     default: { from: "white", to: "black" },
 };
-
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+    return [{ title: data?.equipment.name }];
+};
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.equipmentId, "Expected params.equipmentId");
     const equipment = await getEquipment(params.equipmentId);
@@ -36,16 +43,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         }) || [];
 
     const required_for = (await getEquipmentThatRequires(equipment.name)) || [];
+    const found_in_chapters = CampaignChapters.filter((cc) =>
+        equipment.chapters?.find((c) => c === `${cc.chapter}-${cc.level}`)
+    );
 
     return json({
         equipment,
         required_equipment: await Promise.all(required_equipment),
         required_for,
+        found_in_chapters,
     });
 };
 
 export default function Equipment() {
-    const { equipment, required_equipment, required_for } =
+    const { equipment, required_equipment, required_for, found_in_chapters } =
         useLoaderData<typeof loader>();
 
     const border_gradient = useMemo(() => {
@@ -59,9 +70,9 @@ export default function Equipment() {
         >
             <div className="flex space-x-4">
                 <div
-                    className={`rounded-3xl w-24 h-24 p-1 bg-gradient-to-br from-${border_gradient.from} to-${border_gradient.to}`}
+                    className={`w-24 h-24 p-1 rounded-3xl bg-gradient-to-br from-${border_gradient.from} to-${border_gradient.to}`}
                 >
-                    <div className="overflow-hidden rounded-[calc(1.5rem-1px)] bg-white bg-clip-padding">
+                    <div className="h-full w-full rounded-3xl">
                         <EquipmentImage equipment={equipment} />
                     </div>
                 </div>
@@ -86,7 +97,25 @@ export default function Equipment() {
                 {equipment.chapters?.length ? (
                     <>
                         {equipment.chapters?.map((chptr) => {
-                            return <div key={chptr}>{chptr}</div>;
+                            const chapterDetails = found_in_chapters.find(
+                                (f) => chptr === `${f.chapter}-${f.level}`
+                            );
+                            return (
+                                <div key={chptr}>
+                                    {chapterDetails ? (
+                                        <Link
+                                            to={`/campaign/${chapterDetails?.slug}`}
+                                        >
+                                            {`${chapterDetails?.chapter}-${chapterDetails?.level}: `}
+                                            <span className="underline underline-offset-2 decoration-solid decoration-slate-300 hover:decoration-slate-900">
+                                                {chapterDetails?.name}
+                                            </span>
+                                        </Link>
+                                    ) : (
+                                        chptr
+                                    )}
+                                </div>
+                            );
                         })}
                     </>
                 ) : (

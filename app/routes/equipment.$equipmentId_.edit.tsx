@@ -1,5 +1,9 @@
 import { Button } from "@headlessui/react";
-import type { ActionFunctionArgs, LoaderFunctionArgs } from "@remix-run/node";
+import type {
+    ActionFunctionArgs,
+    LoaderFunctionArgs,
+    MetaFunction,
+} from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
@@ -8,6 +12,9 @@ import { CampaignChapters } from "~/constants";
 
 import { EquipmentRecord, getEquipment, updateEquipment } from "~/data";
 
+export const meta: MetaFunction<typeof loader> = ({ data }) => {
+    return [{ title: data?.equipment.name }];
+};
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.equipmentId, "Missing equipmentId param.");
     const equipment = await getEquipment(params.equipmentId);
@@ -72,7 +79,7 @@ export default function EditEquipment() {
                         Equipment Editor
                     </h1>
                     <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6">
-                        <div className="sm:col-span-4">
+                        <div className="col-span-full">
                             <label
                                 htmlFor="name"
                                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -88,6 +95,70 @@ export default function EditEquipment() {
                                         placeholder="New Item"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                                         defaultValue={equipment.name}
+                                    />
+                                </div>
+                            </div>
+                        </div>{" "}
+                        <div className="sm:col-span-2">
+                            <label
+                                htmlFor="name"
+                                className="block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                Quality
+                            </label>
+                            <div className="mt-2">
+                                <div>
+                                    {[
+                                        "gray",
+                                        "green",
+                                        "blue",
+                                        "purple",
+                                        "orange",
+                                    ].map((quality) => (
+                                        <div
+                                            className="flex items-center gap-x-3"
+                                            key={quality}
+                                        >
+                                            <input
+                                                id={`equipment_quality_${quality}`}
+                                                name="equipment_quality"
+                                                type="radio"
+                                                value={quality}
+                                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
+                                                defaultChecked={
+                                                    equipment.equipment_quality ===
+                                                    quality
+                                                }
+                                            />
+                                            <label
+                                                key={quality}
+                                                htmlFor={`equipment_quality_${quality}`}
+                                                className="block text-sm font-medium leading-6 text-gray-900 capitalize"
+                                            >
+                                                {quality}
+                                            </label>
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="sm:col-span-2">
+                            <label
+                                htmlFor="name"
+                                className="block text-sm font-medium leading-6 text-gray-900"
+                            >
+                                Required level
+                            </label>
+                            <div className="mt-2">
+                                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                                    <input
+                                        id="level_required"
+                                        name="level_required"
+                                        type="number"
+                                        placeholder="1"
+                                        min={1}
+                                        className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                                        defaultValue={equipment.level_required}
                                     />
                                 </div>
                             </div>
