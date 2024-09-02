@@ -1,4 +1,4 @@
-import { Button } from "@headlessui/react";
+import { Button, Field, Label, Radio, RadioGroup } from "@headlessui/react";
 import type {
     ActionFunctionArgs,
     LoaderFunctionArgs,
@@ -98,7 +98,7 @@ export default function EditEquipment() {
                                     />
                                 </div>
                             </div>
-                        </div>{" "}
+                        </div>
                         <div className="sm:col-span-2">
                             <label
                                 htmlFor="name"
@@ -107,7 +107,11 @@ export default function EditEquipment() {
                                 Quality
                             </label>
                             <div className="mt-2">
-                                <div>
+                                <RadioGroup
+                                    name="equipment_quality"
+                                    defaultValue={equipment.equipment_quality}
+                                    aria-label="Equipment quality"
+                                >
                                     {[
                                         "gray",
                                         "green",
@@ -115,31 +119,20 @@ export default function EditEquipment() {
                                         "purple",
                                         "orange",
                                     ].map((quality) => (
-                                        <div
+                                        <Field
                                             className="flex items-center gap-x-3"
                                             key={quality}
                                         >
-                                            <input
-                                                id={`equipment_quality_${quality}`}
-                                                name="equipment_quality"
-                                                type="radio"
+                                            <Radio
                                                 value={quality}
-                                                className="h-4 w-4 border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                                defaultChecked={
-                                                    equipment.equipment_quality ===
-                                                    quality
-                                                }
-                                            />
-                                            <label
-                                                key={quality}
-                                                htmlFor={`equipment_quality_${quality}`}
-                                                className="block text-sm font-medium leading-6 text-gray-900 capitalize"
+                                                className="group flex size-5 items-center justify-center rounded-full border-2 data-[checked]:bg-indigo-600 bg-white"
                                             >
-                                                {quality}
-                                            </label>
-                                        </div>
+                                                <span className="invisible size-2 rounded-full bg-white group-data-[checked]:visible" />
+                                            </Radio>
+                                            <Label className="capitalize">{quality}</Label>
+                                        </Field>
                                     ))}
-                                </div>
+                                </RadioGroup>
                             </div>
                         </div>
                         <div className="sm:col-span-2">
