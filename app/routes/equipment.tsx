@@ -1,12 +1,19 @@
 import {
     Button,
+    CloseButton,
     Disclosure,
     DisclosureButton,
     DisclosurePanel,
 } from "@headlessui/react";
 import { ChevronDoubleRightIcon } from "@heroicons/react/24/outline";
-import { Form, Link, Outlet, redirect, useLoaderData } from "@remix-run/react";
-import EquipmentImage from "~/components/EquipmentImage";
+import {
+    Form,
+    Link,
+    Outlet,
+    redirect,
+    useLoaderData,
+    useLocation,
+} from "@remix-run/react";
 import { createEquipment, getAllEquipment } from "../data";
 
 export const loader = async () => {
@@ -21,21 +28,29 @@ export const action = async () => {
 
 export default function Equipment() {
     const { equipments } = useLoaderData<typeof loader>();
+    const isIndex = useLocation().pathname.endsWith("/equipment");
 
     return (
         <div className="flex flex-row">
-            <Disclosure defaultOpen={true}>
-                <DisclosureButton className="group flex flex-col items-start pt-3 bg-gray-700 text-white h-screen md:hidden">
+            <Disclosure defaultOpen={isIndex}>
+                <DisclosureButton className="group flex flex-col items-start pt-3 bg-gray-700 text-white h-screen">
                     <ChevronDoubleRightIcon className="w-8 group-data-[open]:rotate-180" />
                     <div className="rotate-90 w-8 pl-1 text-3xl font-bold">
                         Equipment
                     </div>
                 </DisclosureButton>
-                <DisclosurePanel className="bg-gray-700 text-white pr-1 basis-1/3 lg:basis-1/3 xl:basis-1/4 h-screen">
-                    <div className="border-0 md:border-b-2 border-b-white flex pt-1">
-                        <h2 className="text-2xl font-bold flex-auto hidden md:block">
-                            Equipment
-                        </h2>
+                <DisclosurePanel className="bg-gray-700 text-white pr-1 basis-3/4 lg:basis-1/3 xl:basis-1/4 h-screen">
+                    <div className="border-0 md:border-b-2 border-b-white flex py-1 space-x-3">
+                        <Form id="search-form" role="search">
+                            <input
+                                id="q"
+                                aria-label="Search contacts"
+                                placeholder="Search"
+                                type="search"
+                                name="q"
+                                className="text-gray-950 h-7 rounded-sm w-48"
+                            />
+                        </Form>
                         <Form id="new-equipment" method="post">
                             <Button
                                 className="border-blue-400 border-2 rounded-md px-2 shadow-sm bg-blue-100 text-blue-950"
@@ -45,40 +60,19 @@ export default function Equipment() {
                             </Button>
                         </Form>
                     </div>
-                    <div className="flex p-2 gap-3 place-items-center">
-                        <Form id="search-form" role="search">
-                            <input
-                                id="q"
-                                aria-label="Search contacts"
-                                placeholder="Search"
-                                type="search"
-                                name="q"
-                                className="text-gray-950 h-7 rounded-sm"
-                            />
-                            <div
-                                id="search-spinner"
-                                aria-hidden
-                                hidden={true}
-                            />
-                        </Form>
-                    </div>
                     {equipments.length ? (
-                        <ul>
+                        <div className="flex flex-col items-start">
                             {equipments.map((equipment) => (
-                                <li
-                                    key={equipment.name}
-                                    className="text-lg pl-6 -indent-6"
+                                <CloseButton
+                                    key={equipment.slug}
+                                    as={Link}
+                                    to={`/equipment/${equipment.slug}`}
+                                    preventScrollReset={false}
                                 >
-                                    <Link to={`/equipment/${equipment.slug}`}>
-                                        <EquipmentImage
-                                            equipment={equipment}
-                                            className="hidden md:inline h-5 w-5 mr-1"
-                                        />
-                                        {equipment.name}
-                                    </Link>
-                                </li>
+                                    {equipment.name}
+                                </CloseButton>
                             ))}
-                        </ul>
+                        </div>
                     ) : (
                         <p>No equipment found</p>
                     )}
