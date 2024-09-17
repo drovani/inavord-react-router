@@ -1,7 +1,9 @@
+import { PlusIcon } from "@heroicons/react/24/solid";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
-import { useMemo } from "react";
+import React from "react";
 import invariant from "tiny-invariant";
+import ButtonBar from "~/components/ButtonBar";
 import DeleteButton from "~/components/DeleteButton";
 import EditButton from "~/components/EditButton";
 import EquipmentImage from "~/components/EquipmentImage";
@@ -13,14 +15,6 @@ import {
     getEquipmentThatRequires,
 } from "~/data";
 
-const color_map: { [key: string]: { from: string; to: string } } = {
-    gray: { from: "gray-300", to: "gray-900" },
-    green: { from: "green-300", to: "green-900" },
-    blue: { from: "blue-300", to: "blue-900" },
-    purple: { from: "purple-300", to: "purple-900" },
-    orange: { from: "orange-300", to: "orange-900" },
-    default: { from: "white", to: "black" },
-};
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [{ title: data?.equipment.name }];
 };
@@ -59,23 +53,13 @@ export default function Equipment() {
     const { equipment, required_equipment, required_for, found_in_chapters } =
         useLoaderData<typeof loader>();
 
-    const border_gradient = useMemo(() => {
-        return color_map[equipment.equipment_quality || "default"];
-    }, [equipment.equipment_quality]);
-
     return (
         <div
             id={`equipment-${equipment.slug}`}
-            className="flex space-x-4 flex-col lg:flex-row"
+            className="flex space-x-4 flex-col"
         >
             <div className="flex space-x-4">
-                <div
-                    className={`w-24 h-24 p-1 rounded-3xl bg-gradient-to-br from-${border_gradient.from} to-${border_gradient.to}`}
-                >
-                    <div className="h-full w-full rounded-3xl">
-                        <EquipmentImage equipment={equipment} />
-                    </div>
-                </div>
+                <EquipmentImage equipment={equipment} />
                 <div>
                     <h2 className="text-2xl font-bold">{equipment.name}</h2>
                     <div>Required level: {equipment.level_required}</div>
@@ -123,34 +107,38 @@ export default function Equipment() {
                 )}
             </div>
             <div>
-                <h3 className="text-xl font-semibold">Required equipment</h3>
+                <h3 className="text-xl font-semibold">Required items:</h3>
                 {required_equipment?.length ? (
-                    <>
-                        {required_equipment.map((equip) => {
-                            if (equip.id) {
-                                return (
-                                    <div key={equip.name}>
-                                        <Link to={`/equipment/${equip.id}`}>
-                                            {equip.quantity}x
+                    <div className={`grid grid-cols-1 sm:grid-cols-5`}>
+                        {required_equipment.map((equip, index) => (
+                            <React.Fragment key={index}>
+                                {!!index && (
+                                    <PlusIcon
+                                        height={48}
+                                        className="mx-auto self-center"
+                                    />
+                                )}
+                                <div className="grid grid-cols-1">
+                                    {equip.id && (
+                                        <Link
+                                            to={`/equipment/${equip.id}`}
+                                            className="self-end mx-auto"
+                                        >
                                             <EquipmentImage
                                                 equipment={
                                                     equip as EquipmentRecord
                                                 }
-                                                className="h-4 inline mx-1"
+                                                size="md"
                                             />
-                                            {equip.name}
                                         </Link>
-                                    </div>
-                                );
-                            } else {
-                                return (
-                                    <div key={equip.name}>
+                                    )}
+                                    <span className="self-start mx-auto">
                                         {equip.quantity}x {equip.name}
-                                    </div>
-                                );
-                            }
-                        })}
-                    </>
+                                    </span>
+                                </div>
+                            </React.Fragment>
+                        ))}
+                    </div>
                 ) : (
                     <div>No requirements</div>
                 )}
@@ -158,29 +146,34 @@ export default function Equipment() {
             <div>
                 <h3 className="text-xl font-semibold">Required for</h3>
                 {required_for?.length ? (
-                    <>
+                    <div className="">
                         {required_for.map((equip) => {
                             const qty_needed = equip.required_equipment?.find(
                                 (re) => re.name === equipment.name
                             )?.quantity;
                             return (
                                 <div key={equip.id}>
-                                    <Link to={`/equipment/${equip.id}`}>
+                                    <Link
+                                        to={`/equipment/${equip.id}`}
+                                        className="flex flex-row items-center text-center space-x-1 space-y-1"
+                                    >
                                         <EquipmentImage
                                             equipment={equip as EquipmentRecord}
-                                            className="h-4 inline mx-1"
+                                            size="xs"
                                         />
-                                        {equip.name} (x{qty_needed})
+                                        <span>
+                                            {equip.name} (x{qty_needed})
+                                        </span>
                                     </Link>
                                 </div>
                             );
                         })}
-                    </>
+                    </div>
                 ) : (
                     <div>Not required for any other equipment</div>
                 )}
             </div>
-            <div className="flex flex-row space-x-2">
+            <ButtonBar>
                 <Form action="edit">
                     <EditButton>Edit</EditButton>
                 </Form>
@@ -198,7 +191,7 @@ export default function Equipment() {
                 >
                     <DeleteButton>Delete</DeleteButton>
                 </Form>
-            </div>
+            </ButtonBar>
         </div>
     );
 }

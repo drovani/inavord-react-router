@@ -1,15 +1,17 @@
 import { Button } from "@headlessui/react";
-import { PropsWithChildren } from "react";
+import { MouseEventHandler, PropsWithChildren } from "react";
 
 function NewButton({
     children,
     className,
+    onClick,
     type = "submit",
 }: PropsWithChildren<Props>) {
     return (
         <Button
             type={type}
-            className={`border-blue-400 border-2 rounded-md px-2 shadow-sm bg-blue-100 text-blue-950 ${className}`}
+            className={`rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 ${className}`}
+            onClick={onClick}
         >
             {children}
         </Button>
@@ -18,6 +20,7 @@ function NewButton({
 
 interface Props {
     className?: string;
+    onClick?: MouseEventHandler<HTMLButtonElement>;
     type?: "button" | "submit" | "reset";
 }
 

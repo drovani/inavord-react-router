@@ -1,7 +1,7 @@
 import { Button } from "@headlessui/react";
 import { PropsWithChildren } from "react";
 
-function EditButton({
+function SaveButton({
     children,
     className,
     type = "submit",
@@ -21,4 +21,4 @@ interface Props {
     type?: "button" | "submit" | "reset";
 }
 
-export default EditButton;
+export default SaveButton;

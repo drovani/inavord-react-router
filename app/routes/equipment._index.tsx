@@ -1,18 +1,10 @@
 import { Link, useLoaderData } from "@remix-run/react";
-import { type EquipmentRecord, getAllEquipment } from "../data";
-
-const color_map: { [key: string]: { from: string; to: string } } = {
-    gray: { from: "gray-300", to: "gray-900" },
-    default: { from: "white", to: "black" },
-};
+import EquipmentImage from "~/components/EquipmentImage";
+import { getAllEquipment } from "../data";
 
 export const loader = async () => {
     const equipments = await getAllEquipment();
     return { equipments };
-};
-
-const border_gradient = (equipment: EquipmentRecord) => {
-    return color_map[equipment.equipment_quality || "default"];
 };
 
 export default function EquipmentIndex() {
@@ -21,26 +13,14 @@ export default function EquipmentIndex() {
     return (
         <div>
             {equipments.length ? (
-                <div>
+                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
                     {equipments.map((equipment) => (
-                        <div key={equipment.id}>
+                        <div key={equipment.id} className="p-1">
                             <Link
                                 to={`/equipment/${equipment.slug}`}
-                                className="block"
+                                className="flex flex-col items-center text-center"
                             >
-                                <div
-                                    className={`rounded-3xl w-24 h-24 p-1 bg-gradient-to-br from-${
-                                        border_gradient(equipment).from
-                                    } to-${border_gradient(equipment).to}`}
-                                >
-                                    <div className="overflow-hidden rounded-[calc(1.5rem-1px)] bg-white bg-clip-padding">
-                                        <img
-                                            alt={`${equipment.name} icon`}
-                                            key={equipment.slug}
-                                            src={`/images/equipment/${equipment.slug}.png`}
-                                        />
-                                    </div>
-                                </div>
+                                <EquipmentImage equipment={equipment} />
                                 {equipment.name}
                             </Link>
                         </div>

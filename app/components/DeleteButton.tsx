@@ -5,18 +5,18 @@ function DeleteButton({
     children,
     className,
     type = "submit",
-}: PropsWithChildren<DeleteButtonProps>) {
+}: PropsWithChildren<Props>) {
     return (
         <Button
             type={type}
-            className={`border-red-400 border-2 rounded-md px-2 shadow-sm bg-red-100 text-red-950 ${className}`}
+            className={`rounded-md bg-rose-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-rose-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-rose-600 ${className}`}
         >
             {children}
         </Button>
     );
 }
 
-interface DeleteButtonProps {
+interface Props {
     className?: string;
     type?: "button" | "submit" | "reset";
 }

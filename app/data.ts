@@ -1,11 +1,22 @@
 import slugify from "slugify";
 import invariant from "tiny-invariant";
-import { equipment_data } from "./constants";
+import equipment_data from "../data/equipment.json";
 
 const equipment_quality_order = ["gray", "green", "blue", "purple", "orange"];
 
-type EquipmentMutation = {
-    id?: string;
+export type Errors<TMutation> = {
+    [key in keyof TMutation]: string | undefined;
+};
+export type MutationResult<TMutation, TRecord> =
+    | {
+          errors: Errors<TMutation>;
+          mutation: TMutation;
+      }
+    | {
+          record: TRecord;
+      };
+
+export type EquipmentMutation = {
     name?: string;
     level_required?: number;
     equipment_quality?: string;
@@ -50,10 +61,9 @@ const mockEquipment = {
         const name = values.name || "New item";
         const slug =
             values.slug || slugify(name, { lower: true, strict: true });
-        const id = values.id || slug;
         const createdAt = new Date().toUTCString();
-        const newEquipment = { id, slug, createdAt, name, ...values };
-        mockEquipment.records[id] = newEquipment;
+        const newEquipment = { id: slug, slug, createdAt, name, ...values };
+        mockEquipment.records[slug] = newEquipment;
         return newEquipment;
     },
     async set(id: string, values: EquipmentMutation): Promise<EquipmentRecord> {
@@ -95,12 +105,58 @@ export async function getEquipmentThatRequires(name: string | undefined) {
 export async function createEquipment(values: EquipmentMutation) {
     return mockEquipment.create(values);
 }
+export async function createEquipmentFromFormData(
+    formData: FormData
+): Promise<MutationResult<EquipmentMutation, EquipmentRecord>> {
+    let mutation: EquipmentMutation = {};
+    try {
+        mutation = {
+            chapters: formData.getAll("chapters").map((g) => g.toString()),
+            equipment_quality: formData.get("equipment_quality")?.toString(),
+            gold_value: Number.parseInt(
+                formData.get("gold_value")?.toString() || "0"
+            ),
+            level_required: Number.parseInt(
+                formData.get("level_required")?.toString() || "1"
+            ),
+            name: formData.get("name")?.toString(),
+            // required_equipment: formData
+            //     .getAll("required_equipment")
+            //     .map((g) => g.toString()),
+            sell: {
+                gold: Number.parseInt(
+                    formData.get("sell.gold")?.toString() || "0"
+                ),
+                guild_activity_points: Number.parseInt(
+                    formData.get("sell.guild_activity_points")?.toString() ||
+                        "0"
+                ),
+            },
+            // stats: formData.getAll("stats").map((g) => {
+            //     const [key, value] = g.toString().split(":", 2);
+            //     return { [key]: Number.parseInt(value) };
+            // }),
+        };
+        const record = await createEquipment(mutation);
+        return { record };
+    } catch (error) {
+        return {
+            errors: {
+                name: (error as Error).message,
+            },
+            mutation,
+        };
+    }
+}
 
 export async function updateEquipment(id: string, updates: EquipmentMutation) {
     const equipment = await mockEquipment.get(id);
     if (!equipment) {
         throw new Error(`No equipment found for ${id}`);
     }
+    updates.slug = updates.name
+        ? slugify(updates.name, { lower: true })
+        : equipment.slug;
     await mockEquipment.set(id, { ...equipment, ...updates });
     return equipment;
 }

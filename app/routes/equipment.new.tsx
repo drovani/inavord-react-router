@@ -1,33 +1,17 @@
 import { Field, Label, Radio, RadioGroup } from "@headlessui/react";
-import type {
-    ActionFunctionArgs,
-    LoaderFunctionArgs,
-    MetaFunction,
-} from "@remix-run/node";
+import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
-import { useState } from "react";
-import invariant from "tiny-invariant";
 import ButtonBar from "~/components/ButtonBar";
 import CancelButton from "~/components/CancelButton";
-import EquipmentImage from "~/components/EquipmentImage";
 import SaveButton from "~/components/SaveButton";
 import { CampaignChapters } from "~/constants";
+import { createEquipmentFromFormData, EquipmentMutation } from "~/data";
 
-import { EquipmentRecord, getEquipment, updateEquipment } from "~/data";
-
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
-    return [{ title: data?.equipment.name }];
+export const meta: MetaFunction<typeof loader> = () => {
+    return [{ title: "Create new equipment" }];
 };
-export const loader = async ({ params }: LoaderFunctionArgs) => {
-    invariant(params.equipmentId, "Missing equipmentId param.");
-    const equipment = await getEquipment(params.equipmentId);
-    if (!equipment) {
-        throw new Response(null, {
-            status: 404,
-            statusText: `Equipment with id ${params.equipmentId} not found.`,
-        });
-    }
+export const loader = async () => {
     const chapters = CampaignChapters;
     const chapters_full = [];
 
@@ -49,44 +33,34 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         }
     }
 
-    return json({ equipment, chapters: chapters_full });
+    return json({ chapters: chapters_full });
 };
 
-export const action = async ({ params, request }: ActionFunctionArgs) => {
-    invariant(params.equipmentId, "Missing equipmentId param.");
+export const action = async ({ request }: ActionFunctionArgs) => {
     const formData = await request.formData();
 
-    const updates = {
-        ...Object.fromEntries(formData),
-        chapters: formData.getAll("chapters"),
-    } as EquipmentRecord;
+    const results = await createEquipmentFromFormData(formData);
 
-    invariant(updates.name, "Missing required field 'name'.");
-
-    const record = await updateEquipment(params.equipmentId, updates);
-    return redirect(`/equipment/${record.slug}`);
+    if ("errors" in results) {
+        const values = Object.fromEntries(formData) as EquipmentMutation;
+        return json({ errors: results.errors, values });
+    } else {
+        return redirect(`/equipment/${results.record.slug}`);
+    }
 };
 
 export default function EditEquipment() {
-    const { equipment, chapters } = useLoaderData<typeof loader>();
-    const [forImageQuality, setForImageQuality] = useState(
-        equipment.equipment_quality
-    );
+    const { chapters } = useLoaderData<typeof loader>();
 
     return (
-        <Form
-            key={equipment.id}
-            id="equipment-form"
-            method="post"
-            autoComplete="off"
-        >
+        <Form id="equipment-form" method="post" autoComplete="off">
             <div className="space-y-12">
                 <section className="border-b border-gray-900/10 pb-12">
                     <h1 className="text-4xl font-semibold leading-7 text-gray-900">
-                        Equipment Editor
+                        Equipment Creator
                     </h1>
                     <div className="mt-5 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-2">
-                        <div className="col-span-full">
+                        <div>
                             <label
                                 htmlFor="name"
                                 className="block text-sm font-medium leading-6 text-gray-900"
@@ -98,17 +72,15 @@ export default function EditEquipment() {
                                     <input
                                         id="name"
                                         name="name"
-                                        type="text"
-                                        placeholder="New Item"
+                                        placeholder="New item"
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        defaultValue={equipment.name}
                                     />
                                 </div>
                             </div>
                         </div>
                         <div>
                             <label
-                                htmlFor="name"
+                                htmlFor="equipment_quality"
                                 className="block text-sm font-medium leading-6 text-gray-900"
                             >
                                 Quality
@@ -116,9 +88,7 @@ export default function EditEquipment() {
                             <div className="mt-2">
                                 <RadioGroup
                                     name="equipment_quality"
-                                    defaultValue={equipment.equipment_quality}
                                     aria-label="Equipment quality"
-                                    onChange={(val) => setForImageQuality(val)}
                                 >
                                     {[
                                         "gray",
@@ -146,19 +116,8 @@ export default function EditEquipment() {
                             </div>
                         </div>
                         <div>
-                            <div className="mt-2 flex items-center gap-x-3">
-                                <EquipmentImage
-                                    equipment={{
-                                        ...equipment,
-                                        equipment_quality: forImageQuality,
-                                    }}
-                                    aria-hidden="true"
-                                />
-                            </div>
-                        </div>
-                        <div>
                             <label
-                                htmlFor="name"
+                                htmlFor="level_required"
                                 className="block text-sm font-medium leading-6 text-gray-900"
                             >
                                 Required level
@@ -172,7 +131,6 @@ export default function EditEquipment() {
                                         placeholder="1"
                                         min={1}
                                         className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                        defaultValue={equipment.level_required}
                                     />
                                 </div>
                             </div>
@@ -202,7 +160,6 @@ export default function EditEquipment() {
                                     type="number"
                                     min={0}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    defaultValue={equipment.sell?.gold}
                                 />
                             </div>
                         </div>
@@ -221,9 +178,6 @@ export default function EditEquipment() {
                                     type="number"
                                     min={0}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    defaultValue={
-                                        equipment.sell?.guild_activity_points
-                                    }
                                 />
                             </div>
                         </div>
@@ -246,7 +200,6 @@ export default function EditEquipment() {
                                     type="number"
                                     min={0}
                                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
-                                    defaultValue={equipment.gold_value}
                                 />
                             </div>
                         </div>
@@ -278,13 +231,6 @@ export default function EditEquipment() {
                                                 value={`${level.chapter}-${level.level}`}
                                                 type="checkbox"
                                                 className="h-4 w-4 rounded border-gray-300 text-indigo-600 focus:ring-indigo-600"
-                                                defaultChecked={
-                                                    !!equipment.chapters?.find(
-                                                        (c) =>
-                                                            c ===
-                                                            `${level.chapter}-${level.level}`
-                                                    )
-                                                }
                                             />
                                             <span className="inline-block">
                                                 {level.chapter}-{level.level}:{" "}
@@ -299,9 +245,7 @@ export default function EditEquipment() {
                 </section>
             </div>
             <ButtonBar>
-                <CancelButton to={`/equipment/${equipment.slug}`}>
-                    Cancel
-                </CancelButton>
+                <CancelButton to={`/equipment`}>Cancel</CancelButton>
                 <SaveButton>Save</SaveButton>
             </ButtonBar>
         </Form>
