@@ -1,4 +1,5 @@
 import {
+    Input,
     Link,
     Navbar,
     NavbarBrand,
@@ -11,6 +12,7 @@ import {
 import { useLocation } from "@remix-run/react";
 import { useCallback, useState } from "react";
 import logo_image from "../images/hero-wars-alliance-logo.webp";
+import SearchIcon from "./SearchIcon";
 
 const navigation = [
     { name: "Heroes" },
@@ -32,7 +34,7 @@ function HeaderAndNavigation() {
     );
 
     return (
-        <header className="bg-white shadow">
+        <header className="bg-white shadow" role="banner">
             <Navbar
                 isBordered
                 onMenuOpenChange={setIsMenuOpen}
@@ -80,11 +82,28 @@ function HeaderAndNavigation() {
                                         : `${nav.name} not yet implemented.`
                                 }
                                 isDisabled={!nav.href}
+                                color="foreground"
                             >
                                 {nav.name}
                             </Link>
                         </NavbarItem>
                     ))}
+                </NavbarContent>
+                <NavbarContent className="hidden sm:flex" justify="end">
+                    <Input
+                        classNames={{
+                            base: "max-w-full sm:max-w-[10rem] h-10",
+                            mainWrapper: "h-full",
+                            input: "text-small border-none focus:border-none",
+                            inputWrapper:
+                                "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
+                        }}
+                        placeholder="Coming soon..."
+                        size="sm"
+                        startContent={<SearchIcon size={18} />}
+                        type="search"
+                        isDisabled
+                    />
                 </NavbarContent>
                 <NavbarMenu>
                     {navigation.map((nav, index) => (

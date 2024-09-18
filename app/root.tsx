@@ -39,12 +39,14 @@ export default function App() {
                 <Meta />
                 <Links />
             </head>
-            <body className="h-full">
+            <body>
                 <NextUIProvider navigate={navigate} useHref={useHref}>
-                    <HeaderAndNavigation />
-                    <main>
-                        <Outlet />
-                    </main>
+                    <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
+                        <HeaderAndNavigation />
+                        <div className="grow">
+                            <Outlet />
+                        </div>
+                    </div>
                     <ScrollRestoration />
                     <Scripts />
                 </NextUIProvider>
