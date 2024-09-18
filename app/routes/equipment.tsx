@@ -6,8 +6,8 @@ import {
     TransitionChild,
 } from "@headlessui/react";
 import { ChevronDoubleRightIcon, XMarkIcon } from "@heroicons/react/24/outline";
-import { Button } from "@nextui-org/react";
-import { Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Button, Link } from "@nextui-org/react";
+import { Outlet, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import ButtonBar from "~/components/ButtonBar";
 import { getAllEquipment } from "../data";
@@ -67,7 +67,7 @@ export default function Equipment() {
                                     <div className="px-4 sm:px-6">
                                         <DialogTitle
                                             as={Link}
-                                            to="/equipment/"
+                                            href="/equipment/"
                                             className="text-3xl font-bold leading-6"
                                             onClick={() => setOpen(false)}
                                         >
@@ -80,7 +80,7 @@ export default function Equipment() {
                                                 {equipments.map((equipment) => (
                                                     <Link
                                                         key={equipment.slug}
-                                                        to={`/equipment/${equipment.slug}`}
+                                                        href={`/equipment/${equipment.slug}`}
                                                         onClick={() =>
                                                             setOpen(false)
                                                         }
@@ -94,10 +94,10 @@ export default function Equipment() {
                                         )}
                                     </div>
                                 </div>
-                                <ButtonBar className="">
+                                <ButtonBar>
                                     <Button
                                         as={Link}
-                                        to="/equipment/new"
+                                        href="/equipment/new"
                                         color="primary"
                                         onPress={() => setOpen(false)}
                                     >
@@ -105,9 +105,8 @@ export default function Equipment() {
                                     </Button>
                                     <Button
                                         as={Link}
-                                        to="/equipment.json"
+                                        href="/equipment.json"
                                         download={true}
-                                        reloadDocument
                                         color="secondary"
                                     >
                                         Export

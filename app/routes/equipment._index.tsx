@@ -1,4 +1,5 @@
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link } from "@nextui-org/react";
+import { useLoaderData } from "@remix-run/react";
 import EquipmentImage from "~/components/EquipmentImage";
 import { getAllEquipment } from "../data";
 
@@ -17,7 +18,7 @@ export default function EquipmentIndex() {
                     {equipments.map((equipment) => (
                         <div key={equipment.id} className="p-1">
                             <Link
-                                to={`/equipment/${equipment.slug}`}
+                                href={`/equipment/${equipment.slug}`}
                                 className="flex flex-col items-center text-center"
                             >
                                 <EquipmentImage equipment={equipment} />

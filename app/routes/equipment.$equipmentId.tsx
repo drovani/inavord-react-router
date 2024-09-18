@@ -1,7 +1,7 @@
 import { PlusIcon } from "@heroicons/react/24/solid";
-import { Button } from "@nextui-org/react";
+import { Button, Link } from "@nextui-org/react";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, Link, useLoaderData } from "@remix-run/react";
+import { Form, useLoaderData } from "@remix-run/react";
 import React from "react";
 import invariant from "tiny-invariant";
 import ButtonBar from "~/components/ButtonBar";
@@ -87,7 +87,7 @@ export default function Equipment() {
                                 <div key={chptr}>
                                     {chapterDetails ? (
                                         <Link
-                                            to={`/campaign/${chapterDetails?.slug}`}
+                                            href={`/campaign/${chapterDetails?.slug}`}
                                         >
                                             {`${chapterDetails?.chapter}-${chapterDetails?.level}: `}
                                             <span className="underline underline-offset-2 decoration-solid decoration-slate-300 hover:decoration-slate-900">
@@ -120,7 +120,7 @@ export default function Equipment() {
                                 <div className="grid grid-cols-1">
                                     {equip.id && (
                                         <Link
-                                            to={`/equipment/${equip.id}`}
+                                            href={`/equipment/${equip.id}`}
                                             className="self-end mx-auto"
                                         >
                                             <EquipmentImage
@@ -153,7 +153,7 @@ export default function Equipment() {
                             return (
                                 <div key={equip.id}>
                                     <Link
-                                        to={`/equipment/${equip.id}`}
+                                        href={`/equipment/${equip.id}`}
                                         className="flex flex-row items-center text-center space-x-1 space-y-1"
                                     >
                                         <EquipmentImage
@@ -174,7 +174,9 @@ export default function Equipment() {
             </div>
             <ButtonBar>
                 <Form action="edit">
-                    <Button type="submit" color="primary">Edit</Button>
+                    <Button type="submit" color="primary">
+                        Edit
+                    </Button>
                 </Form>
                 <Form
                     action="destroy"
@@ -188,7 +190,9 @@ export default function Equipment() {
                         }
                     }}
                 >
-                    <Button type="submit" color="danger">Delete</Button>
+                    <Button type="submit" color="danger">
+                        Delete
+                    </Button>
                 </Form>
             </ButtonBar>
         </div>

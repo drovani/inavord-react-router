@@ -1,4 +1,4 @@
-import { Link } from "@remix-run/react";
+import { Link } from "@nextui-org/react";
 
 const navigation = [
     { name: "Heroes" },
@@ -12,38 +12,30 @@ const navigation = [
 export default function Index() {
     return (
         <section>
-            <h2>
+            <h2 className="text-large">
                 Welcome to another{" "}
-                <a
-                    href="https://rovani.net"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="underline decoration-dotted underline-offset-2"
-                >
+                <Link isExternal href="https://rovani.net" size="lg">
                     Rovani.net
-                </a>{" "}
+                </Link>{" "}
                 project
             </h2>
             <div className="ml-10 flex flex-col items-baseline space-x-4">
-                {navigation.map((nav) =>
-                    nav.href ? (
-                        <Link
-                            key={nav.name}
-                            to={nav.href}
-                            className="text-gray-950 hover:decoration-solid hover:decoration-2 underline decoration-dotted underline-offset-2 rounded-md px-3 py-2 text-sm font-medium"
-                        >
-                            {nav.name}
-                        </Link>
-                    ) : (
-                        <span
-                            key={nav.name}
-                            className="text-gray-950 rounded-md px-3 py-2 text-sm font-medium cursor-default"
-                            title={`${nav.name} not yet implemented.`}
-                        >
-                            {nav.name}
-                        </span>
-                    )
-                )}
+                {navigation.map((nav) => (
+                    <Link
+                        key={nav.name}
+                        href={nav.href}
+                        isDisabled={!nav.href}
+                        color="foreground"
+                        underline={nav.href ? "always" : "none"}
+                        title={
+                            nav.href
+                                ? undefined
+                                : `${nav.name} not yet implemented.`
+                        }
+                    >
+                        {nav.name}
+                    </Link>
+                ))}
             </div>
         </section>
     );

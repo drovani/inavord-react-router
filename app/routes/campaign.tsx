@@ -1,5 +1,5 @@
-import { Button } from "@nextui-org/react";
-import { Form, Link, Outlet, useLoaderData } from "@remix-run/react";
+import { Button, Link } from "@nextui-org/react";
+import { Form, Outlet, useLoaderData } from "@remix-run/react";
 import slugify from "slugify";
 import { CampaignChapters } from "~/constants";
 
@@ -39,7 +39,7 @@ export default function Campaign() {
                                 key={chapter.name}
                                 className="text-lg pl-6 -indent-6"
                             >
-                                <Link to={`/campaign/${slugify(chapter.slug)}`}>
+                                <Link href={`/campaign/${slugify(chapter.slug)}`}>
                                     {chapter.chapter}-{chapter.level}{" "}
                                     {chapter.name}
                                 </Link>
