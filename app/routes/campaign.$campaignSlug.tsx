@@ -1,7 +1,7 @@
+import { Button } from "@nextui-org/react";
 import { LoaderFunctionArgs, json } from "@remix-run/node";
 import { Form, useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
-import EditButton from "~/components/EditButton";
 import { CampaignChapters } from "~/constants";
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
@@ -93,7 +93,9 @@ export default function Campaign() {
             )}
             <div className="flex flex-row space-x-2">
                 <Form action="edit">
-                    <EditButton>Edit</EditButton>
+                    <Button type="submit" color="primary">
+                        Edit
+                    </Button>
                 </Form>
             </div>
         </div>

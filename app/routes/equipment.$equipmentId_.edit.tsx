@@ -1,17 +1,16 @@
 import { Field, Label, Radio, RadioGroup } from "@headlessui/react";
+import { Button } from "@nextui-org/react";
 import type {
     ActionFunctionArgs,
     LoaderFunctionArgs,
     MetaFunction,
 } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, Link, useLoaderData } from "@remix-run/react";
 import { useState } from "react";
 import invariant from "tiny-invariant";
 import ButtonBar from "~/components/ButtonBar";
-import CancelButton from "~/components/CancelButton";
 import EquipmentImage from "~/components/EquipmentImage";
-import SaveButton from "~/components/SaveButton";
 import { CampaignChapters } from "~/constants";
 
 import { EquipmentRecord, getEquipment, updateEquipment } from "~/data";
@@ -299,10 +298,10 @@ export default function EditEquipment() {
                 </section>
             </div>
             <ButtonBar>
-                <CancelButton to={`/equipment/${equipment.slug}`}>
+                <Button as={Link} to={`/equipment/${equipment.slug}`}>
                     Cancel
-                </CancelButton>
-                <SaveButton>Save</SaveButton>
+                </Button>
+                <Button color="success" type="submit">Save</Button>
             </ButtonBar>
         </Form>
     );

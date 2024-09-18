@@ -1,11 +1,10 @@
 import { PlusIcon } from "@heroicons/react/24/solid";
+import { Button } from "@nextui-org/react";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
 import React from "react";
 import invariant from "tiny-invariant";
 import ButtonBar from "~/components/ButtonBar";
-import DeleteButton from "~/components/DeleteButton";
-import EditButton from "~/components/EditButton";
 import EquipmentImage from "~/components/EquipmentImage";
 import { CampaignChapters } from "~/constants";
 import {
@@ -175,7 +174,7 @@ export default function Equipment() {
             </div>
             <ButtonBar>
                 <Form action="edit">
-                    <EditButton>Edit</EditButton>
+                    <Button type="submit" color="primary">Edit</Button>
                 </Form>
                 <Form
                     action="destroy"
@@ -189,7 +188,7 @@ export default function Equipment() {
                         }
                     }}
                 >
-                    <DeleteButton>Delete</DeleteButton>
+                    <Button type="submit" color="danger">Delete</Button>
                 </Form>
             </ButtonBar>
         </div>
