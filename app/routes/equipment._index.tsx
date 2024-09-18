@@ -1,6 +1,6 @@
-import { Link } from "@nextui-org/react";
+import { Card, CardFooter, Image, Link } from "@nextui-org/react";
 import { useLoaderData } from "@remix-run/react";
-import EquipmentImage from "~/components/EquipmentImage";
+import { useCallback } from "react";
 import { getAllEquipment } from "../data";
 
 export const loader = async () => {
@@ -10,21 +10,55 @@ export const loader = async () => {
 
 export default function EquipmentIndex() {
     const { equipments } = useLoaderData<typeof loader>();
+    const bgColor = useCallback((equipment_quality: string | undefined) => {
+        switch (equipment_quality) {
+            case "gray":
+                return "bg-gray-100/80";
+            case "green":
+                return "bg-green-300/80";
+            case "blue":
+                return "bg-blue-300/80";
+            case "purple":
+                return "bg-purple-300/80";
+            case "orange":
+                return "bg-orange-300/80";
+            default:
+                return "bg-white/80";
+        }
+    }, []);
 
     return (
         <div>
             {equipments.length ? (
-                <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6">
+                <div className="gap-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5">
                     {equipments.map((equipment) => (
-                        <div key={equipment.id} className="p-1">
-                            <Link
-                                href={`/equipment/${equipment.slug}`}
-                                className="flex flex-col items-center text-center"
+                        <Link
+                            href={`/equipment/${equipment.slug}`}
+                            key={equipment.slug}
+                        >
+                            <Card
+                                key={equipment.slug}
+                                shadow="sm"
+                                classNames={{
+                                    footer: `absolute ${bgColor(
+                                        equipment.equipment_quality
+                                    )} bottom-0 z-10`,
+                                }}
+                                isPressable
+                                isHoverable
                             >
-                                <EquipmentImage equipment={equipment} />
-                                {equipment.name}
-                            </Link>
-                        </div>
+                                <CardFooter>
+                                    <p className="text-black text-base font-semibold text-left">
+                                        {equipment.name}
+                                    </p>
+                                </CardFooter>
+                                <Image
+                                    removeWrapper
+                                    className="z-0 w-full h-full object-cover"
+                                    src={`/images/equipment/${equipment.slug}.png`}
+                                />
+                            </Card>
+                        </Link>
                     ))}
                 </div>
             ) : (
