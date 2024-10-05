@@ -1,5 +1,4 @@
 import { nextui } from "@nextui-org/react";
-import formsPlugin from "@tailwindcss/forms";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -12,5 +11,7 @@ export default {
         extend: {},
     },
     darkMode: "class",
-    plugins: [formsPlugin, nextui()],
+    plugins: [nextui()],
+    corePlugins: {
+    },
 } satisfies Config;

@@ -88,9 +88,10 @@ export default function Equipment() {
                                     {chapterDetails ? (
                                         <Link
                                             href={`/campaign/${chapterDetails?.slug}`}
+                                            className="text-foreground hover:decoration-solid hover:decoration-slate-900"
                                         >
                                             {`${chapterDetails?.chapter}-${chapterDetails?.level}: `}
-                                            <span className="underline underline-offset-2 decoration-solid decoration-slate-300 hover:decoration-slate-900">
+                                            <span className="ml-1 underline underline-offset-2 decoration-solid decoration-slate-300 hover:decoration-slate-900">
                                                 {chapterDetails?.name}
                                             </span>
                                         </Link>

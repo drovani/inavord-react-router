@@ -61,9 +61,9 @@ function HeaderAndNavigation() {
                                 className="h-16 w-16"
                                 title="Not affiliated with Nexters Global LTD"
                             />
-                            <h1 className="sm:hidden font-bold tracking-tight text-inherit">
+                            <p className="sm:hidden font-bold text-2xl tracking-tight text-inherit">
                                 Hero Wars Helper
-                            </h1>
+                            </p>
                         </Link>
                     </NavbarBrand>
                 </NavbarContent>
@@ -94,7 +94,7 @@ function HeaderAndNavigation() {
                         classNames={{
                             base: "max-w-full sm:max-w-[10rem] h-10",
                             mainWrapper: "h-full",
-                            input: "text-small border-none focus:border-none",
+                            input: "text-small",
                             inputWrapper:
                                 "h-full font-normal text-default-500 bg-default-400/20 dark:bg-default-500/20",
                         }}

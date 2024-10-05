@@ -20,7 +20,7 @@ export type EquipmentMutation = {
     name?: string;
     level_required?: number;
     equipment_quality?: string;
-    stats?: { [key: string]: number | undefined };
+    stats?: { [key: string]: number };
     chapters?: string[];
     gold_value?: number;
     sell?: {
@@ -108,7 +108,7 @@ export async function createEquipment(values: EquipmentMutation) {
 export async function createEquipmentFromFormData(
     formData: FormData
 ): Promise<MutationResult<EquipmentMutation, EquipmentRecord>> {
-    let mutation: EquipmentMutation = {};
+    let mutation: EquipmentMutation = { equipment_quality: "gray" };
     try {
         mutation = {
             chapters: formData.getAll("chapters").map((g) => g.toString()),
@@ -155,7 +155,7 @@ export async function updateEquipment(id: string, updates: EquipmentMutation) {
         throw new Error(`No equipment found for ${id}`);
     }
     updates.slug = updates.name
-        ? slugify(updates.name, { lower: true })
+        ? slugify(updates.name, { lower: true, strict: true })
         : equipment.slug;
     await mockEquipment.set(id, { ...equipment, ...updates });
     return equipment;

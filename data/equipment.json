@@ -7,7 +7,7 @@
         "level_required": 1,
         "equipment_quality": "gray",
         "stats": {
-            "magic_attack": 25
+            "magic attack": 25
         },
         "chapters": [
             "1-3",
@@ -50,7 +50,7 @@
         "equipment_quality": "gray",
         "stats": {
             "intelligence": 7,
-            "magic_attack": 50
+            "magic attack": 50
         },
         "gold_value": 3400,
         "sell": {

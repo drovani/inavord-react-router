@@ -1,14 +1,6 @@
-import { useMemo } from "react";
-import { EquipmentRecord } from "~/data";
+import { Image } from "@nextui-org/react";
+import { EquipmentMutation, EquipmentRecord } from "~/data";
 
-const color_map: { [key: string]: { from: string; to: string } } = {
-    gray: { from: "from-gray-200", to: "to-gray-600" },
-    green: { from: "from-green-200", to: "to-green-600" },
-    blue: { from: "from-blue-200", to: "to-blue-600" },
-    purple: { from: "from-purple-200", to: "to-purple-600" },
-    orange: { from: "from-orange-200", to: "to-orange-600" },
-    default: { from: "from-white", to: "to-black" },
-};
 const dimensions: { [key: string]: { width: string; height: string } } = {
     "x-small": { width: "w-6", height: "h-6" },
     xs: { width: "w-6", height: "h-6" },
@@ -19,36 +11,41 @@ const dimensions: { [key: string]: { width: string; height: string } } = {
     large: { width: "w-24", height: "h-24" },
     lg: { width: "w-24", height: "h-24" },
 };
-function EquipmentImage({ equipment, size = "large", className = "" }: Props) {
-    const border_gradient = useMemo(() => {
-        return color_map[equipment.equipment_quality || "default"];
-    }, [equipment.equipment_quality]);
-
-    if (!equipment) return <div></div>;
-
+function EquipmentImage({
+    equipment,
+    size = "large",
+    isFragment = false,
+}: Props) {
     return (
         <div
-            className={`${dimensions[size].width} ${dimensions[size].height} ${
-                size === "x-small" || size === "xs" ? "" : "p-1"
-            } rounded-sm bg-gradient-to-b ${border_gradient.from} ${
-                border_gradient.to
-            } ${className}`}
+            className={`relative ${dimensions[size].width} ${dimensions[size].height}`}
         >
-            <div className="h-full w-full rounded-sm">
-                <img
-                    alt={`${equipment.name} icon`}
-                    src={`/images/equipment/${equipment.slug}.png`}
-                    className={`rounded-sm`}
-                />
-            </div>
+            <Image
+                alt={`${equipment.name} icon`}
+                src={
+                    equipment.slug
+                        ? `/images/equipment/${equipment.slug}.png`
+                        : undefined
+                }
+                className="p-1"
+                removeWrapper
+            />
+            <Image
+                alt={`${equipment.name} icon`}
+                src={`/images/equipment/border-${
+                    equipment.equipment_quality || "gray"
+                }${isFragment ? "-fragment" : ""}.png`}
+                className="absolute top-0 left-0 h-full w-full"
+                removeWrapper
+            />
         </div>
     );
 }
 
 interface Props {
-    equipment: EquipmentRecord;
+    equipment: EquipmentRecord | EquipmentMutation;
     size?: "x-small" | "xs" | "small" | "sm" | "medium" | "md" | "large" | "lg";
-    className?: string;
+    isFragment?: boolean;
 }
 
 export default EquipmentImage;

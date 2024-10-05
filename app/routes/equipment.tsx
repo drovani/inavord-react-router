@@ -1,7 +1,4 @@
-import {
-    ArrowDownOnSquareIcon,
-    PlusIcon
-} from "@heroicons/react/24/outline";
+import { ArrowDownOnSquareIcon, PlusIcon } from "@heroicons/react/24/outline";
 import { Button, Link } from "@nextui-org/react";
 import { Outlet } from "@remix-run/react";
 import { getAllEquipment } from "../data";
@@ -13,9 +10,14 @@ export const loader = async () => {
 
 export default function Equipment() {
     return (
-        <div className="grid grid-cols-[max-content_1fr]">
+        <div className="grid grid-cols-[max-content_1fr] bg-white">
             <div className="flex flex-col space-y-3 text-3xl font-bold bg-foreground pt-4 pl-1 text-background items-start">
-                <p className="[writing-mode:vertical-lr] mb-10">Equipment</p>
+                <Link
+                    href="/equipment"
+                    className="[writing-mode:vertical-lr] mb-auto text-white text-3xl font-bold"
+                >
+                    Equipment
+                </Link>
                 <Button
                     as={Link}
                     color="primary"
@@ -23,7 +25,6 @@ export default function Equipment() {
                     isIconOnly
                     size="sm"
                     radius="full"
-                    variant="ghost"
                     title="Create new equipment"
                 >
                     <PlusIcon />
