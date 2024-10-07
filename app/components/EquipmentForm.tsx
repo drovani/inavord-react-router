@@ -54,7 +54,10 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                         label="Quality"
                         defaultValue={equipment.equipment_quality}
                         onChange={(event) =>
-                            setForImageQuality(event.target.value)
+                            setForImageQuality(
+                                event.target
+                                    .value as (EquipmentMutation["equipment_quality"])
+                            )
                         }
                         name="equipment_quality"
                     >

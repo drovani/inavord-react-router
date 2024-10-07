@@ -19,7 +19,7 @@ export type MutationResult<TMutation, TRecord> =
 export type EquipmentMutation = {
     name?: string;
     level_required?: number;
-    equipment_quality?: string;
+    equipment_quality?: "grey" | "green" | "blue" | "purple" | "orange";
     stats?: { [key: string]: number };
     chapters?: string[];
     gold_value?: number;

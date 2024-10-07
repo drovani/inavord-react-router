@@ -1,5 +1,5 @@
 import { Image } from "@nextui-org/react";
-import { EquipmentMutation, EquipmentRecord } from "~/data";
+import { EquipmentMutation } from "~/data";
 
 const dimensions: { [key: string]: { width: string; height: string } } = {
     "x-small": { width: "w-6", height: "h-6" },
@@ -43,7 +43,11 @@ function EquipmentImage({
 }
 
 interface Props {
-    equipment: EquipmentRecord | EquipmentMutation;
+    equipment: {
+        name: string;
+        slug?: string;
+        equipment_quality?: EquipmentMutation["equipment_quality"];
+    };
     size?: "x-small" | "xs" | "small" | "sm" | "medium" | "md" | "large" | "lg";
     isFragment?: boolean;
 }
