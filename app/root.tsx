@@ -5,12 +5,10 @@ import {
     Outlet,
     Scripts,
     ScrollRestoration,
-    useHref,
-    useNavigate,
 } from "@remix-run/react";
 
-import { NextUIProvider } from "@nextui-org/react";
-import HeaderAndNavigation from "./components/HeaderAndNavigation";
+import SiteHeader from "./components/SiteHeader";
+import SitePanel from "./components/SitePanel";
 import styles from "./tailwind.css?url";
 
 export const links: LinksFunction = () => [{ rel: "stylesheet", href: styles }];
@@ -24,10 +22,7 @@ export const meta: MetaFunction = () => {
         },
     ];
 };
-
 export default function App() {
-    const navigate = useNavigate();
-
     return (
         <html lang="en" className="h-full bg-gray-100">
             <head>
@@ -40,16 +35,17 @@ export default function App() {
                 <Links />
             </head>
             <body>
-                <NextUIProvider navigate={navigate} useHref={useHref}>
-                    <div className="flex flex-col min-h-screen max-w-4xl mx-auto">
-                        <HeaderAndNavigation />
-                        <div className="grow">
+                <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+                    <SitePanel />
+                    <div className="flex flex-col">
+                        <SiteHeader />
+                        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
                             <Outlet />
-                        </div>
+                        </main>
                     </div>
-                    <ScrollRestoration />
-                    <Scripts />
-                </NextUIProvider>
+                </div>
+                <ScrollRestoration />
+                <Scripts />
             </body>
         </html>
     );

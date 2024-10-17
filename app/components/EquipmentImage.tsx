@@ -1,54 +1,55 @@
-import { Image } from "@nextui-org/react";
+import { cva, type VariantProps } from "class-variance-authority";
 import { EquipmentMutation } from "~/data";
+import { cn } from "~/lib/utils";
 
-const dimensions: { [key: string]: { width: string; height: string } } = {
-    "x-small": { width: "w-6", height: "h-6" },
-    xs: { width: "w-6", height: "h-6" },
-    small: { width: "w-8", height: "h-8" },
-    sm: { width: "w-8", height: "h-8" },
-    medium: { width: "w-16", height: "h-16" },
-    md: { width: "w-16", height: "h-16" },
-    large: { width: "w-24", height: "h-24" },
-    lg: { width: "w-24", height: "h-24" },
-};
+const imageVariants = cva("relative", {
+    variants: {
+        size: {
+            default: "w-24 h-24",
+            xs: "w-6 h-6",
+            sm: "w-8 h-8",
+            md: "w-16 h-16",
+            lg: "w-24 h-24",
+        },
+    },
+    defaultVariants: {
+        size: "default",
+    },
+});
+
 function EquipmentImage({
     equipment,
-    size = "large",
+    size = "default",
     isFragment = false,
 }: Props) {
     return (
-        <div
-            className={`relative ${dimensions[size].width} ${dimensions[size].height}`}
-        >
-            <Image
+        <div className={cn(imageVariants({ size }))}>
+            <img
                 alt={`${equipment.name} icon`}
                 src={
                     equipment.slug
                         ? `/images/equipment/${equipment.slug}.png`
                         : undefined
                 }
-                className="p-1"
-                removeWrapper
+                className={cn(size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg")}
             />
-            <Image
+            <img
                 alt={`${equipment.name} icon`}
                 src={`/images/equipment/border-${
                     equipment.equipment_quality || "gray"
                 }${isFragment ? "-fragment" : ""}.png`}
                 className="absolute top-0 left-0 h-full w-full"
-                removeWrapper
             />
         </div>
     );
 }
 
-interface Props {
+interface Props extends VariantProps<typeof imageVariants> {
     equipment: {
         name: string;
         slug?: string;
         equipment_quality?: EquipmentMutation["equipment_quality"];
     };
-    size?: "x-small" | "xs" | "small" | "sm" | "medium" | "md" | "large" | "lg";
     isFragment?: boolean;
 }
 
