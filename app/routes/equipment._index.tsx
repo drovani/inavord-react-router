@@ -1,6 +1,7 @@
-import { Card, CardFooter, Image, Link } from "@nextui-org/react";
-import { useLoaderData } from "@remix-run/react";
-import { useCallback } from "react";
+import { Link, useLoaderData } from "@remix-run/react";
+import { cva } from "class-variance-authority";
+import { Card, CardHeader, CardTitle } from "~/components/ui/card";
+import { cn } from "~/lib/utils";
 import { getAllEquipment } from "../data";
 
 export const loader = async () => {
@@ -8,55 +9,52 @@ export const loader = async () => {
     return { equipments };
 };
 
+const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {
+    variants: {
+        quality: {
+            gray: "bg-gray-100/80",
+            green: "bg-green-300/80",
+            blue: "bg-blue-300/80",
+            purple: "bg-purple-300/80",
+            orange: "bg-orange-300/80",
+            default: "bg-white/80",
+        },
+    },
+    defaultVariants: {
+        quality: "default",
+    },
+});
+
 export default function EquipmentIndex() {
     const { equipments } = useLoaderData<typeof loader>();
-    const bgColor = useCallback((equipment_quality: string | undefined) => {
-        switch (equipment_quality) {
-            case "gray":
-                return "bg-gray-100/80";
-            case "green":
-                return "bg-green-300/80";
-            case "blue":
-                return "bg-blue-300/80";
-            case "purple":
-                return "bg-purple-300/80";
-            case "orange":
-                return "bg-orange-300/80";
-            default:
-                return "bg-white/80";
-        }
-    }, []);
 
     return (
         <div>
             {equipments.length ? (
-                <div className="gap-2 grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5">
+                <div className="gap-2 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                     {equipments.map((equipment) => (
                         <Link
-                            href={`/equipment/${equipment.slug}`}
+                            to={`/equipment/${equipment.slug}`}
                             key={equipment.slug}
                         >
                             <Card
-                                key={equipment.slug}
-                                shadow="sm"
-                                classNames={{
-                                    footer: `absolute ${bgColor(
-                                        equipment.equipment_quality
-                                    )} bottom-0 z-10`,
+                                className="bg-cover h-28 w-28 relative"
+                                style={{
+                                    backgroundImage: `url('/images/equipment/${equipment.slug}.png')`,
                                 }}
-                                isPressable
-                                isHoverable
                             >
-                                <CardFooter>
-                                    <p className="text-black text-base font-semibold text-left">
+                                <CardHeader
+                                    className={cn(
+                                        cardVariants({
+                                            quality:
+                                                equipment.equipment_quality,
+                                        })
+                                    )}
+                                >
+                                    <CardTitle className="text-medium">
                                         {equipment.name}
-                                    </p>
-                                </CardFooter>
-                                <Image
-                                    removeWrapper
-                                    className="z-0 w-full h-full object-cover"
-                                    src={`/images/equipment/${equipment.slug}.png`}
-                                />
+                                    </CardTitle>
+                                </CardHeader>
                             </Card>
                         </Link>
                     ))}

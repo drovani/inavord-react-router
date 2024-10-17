@@ -25,16 +25,18 @@ function EquipmentImage({
     return (
         <div className={cn(imageVariants({ size }))}>
             <img
-                alt={`${equipment.name} icon`}
+                alt={`${equipment.name || "unknown"} icon`}
                 src={
                     equipment.slug
                         ? `/images/equipment/${equipment.slug}.png`
                         : undefined
                 }
-                className={cn(size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg")}
+                className={cn(
+                    size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg"
+                )}
             />
             <img
-                alt={`${equipment.name} icon`}
+                alt={`${equipment.name || "unknown"} icon border`}
                 src={`/images/equipment/border-${
                     equipment.equipment_quality || "gray"
                 }${isFragment ? "-fragment" : ""}.png`}
@@ -46,7 +48,7 @@ function EquipmentImage({
 
 interface Props extends VariantProps<typeof imageVariants> {
     equipment: {
-        name: string;
+        name?: string;
         slug?: string;
         equipment_quality?: EquipmentMutation["equipment_quality"];
     };
