@@ -38,7 +38,7 @@ export default function EquipmentIndex() {
                             key={equipment.slug}
                         >
                             <Card
-                                className="bg-cover h-28 w-28 relative"
+                                className="bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500"
                                 style={{
                                     backgroundImage: `url('/images/equipment/${equipment.slug}.png')`,
                                 }}
@@ -51,7 +51,7 @@ export default function EquipmentIndex() {
                                         })
                                     )}
                                 >
-                                    <CardTitle className="text-medium">
+                                    <CardTitle className="text-base">
                                         {equipment.name}
                                     </CardTitle>
                                 </CardHeader>

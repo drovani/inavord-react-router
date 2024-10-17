@@ -1,11 +1,11 @@
-import { PlusIcon } from "@heroicons/react/24/solid";
-import { Button, Link } from "@nextui-org/react";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, useLoaderData } from "@remix-run/react";
+import { Form, Link, useLoaderData } from "@remix-run/react";
+import { PlusIcon } from "lucide-react";
 import React from "react";
 import invariant from "tiny-invariant";
 import ButtonBar from "~/components/ButtonBar";
 import EquipmentImage from "~/components/EquipmentImage";
+import { Button, buttonVariants } from "~/components/ui/button";
 import { CampaignChapters } from "~/constants";
 import {
     EquipmentRecord,
@@ -87,7 +87,7 @@ export default function Equipment() {
                                 <div key={chptr}>
                                     {chapterDetails ? (
                                         <Link
-                                            href={`/campaign/${chapterDetails?.slug}`}
+                                            to={`/campaign/${chapterDetails?.slug}`}
                                             className="text-foreground hover:decoration-solid hover:decoration-slate-900"
                                         >
                                             {`${chapterDetails?.chapter}-${chapterDetails?.level}: `}
@@ -109,19 +109,16 @@ export default function Equipment() {
             <div>
                 <h3 className="text-xl font-semibold">Required items:</h3>
                 {required_equipment?.length ? (
-                    <div className={`grid grid-cols-1 sm:grid-cols-5`}>
+                    <div className={`grid grid-cols-3 sm:grid-cols-5`}>
                         {required_equipment.map((equip, index) => (
                             <React.Fragment key={index}>
                                 {!!index && (
-                                    <PlusIcon
-                                        height={48}
-                                        className="mx-auto self-center"
-                                    />
+                                    <PlusIcon className="mx-auto self-center" />
                                 )}
                                 <div className="grid grid-cols-1">
                                     {equip.id && (
                                         <Link
-                                            href={`/equipment/${equip.id}`}
+                                            to={`/equipment/${equip.id}`}
                                             className="self-end mx-auto"
                                         >
                                             <EquipmentImage
@@ -154,7 +151,7 @@ export default function Equipment() {
                             return (
                                 <div key={equip.id}>
                                     <Link
-                                        href={`/equipment/${equip.id}`}
+                                        to={`/equipment/${equip.id}`}
                                         className="flex flex-row items-center text-center space-x-1 space-y-1"
                                     >
                                         <EquipmentImage
@@ -174,11 +171,12 @@ export default function Equipment() {
                 )}
             </div>
             <ButtonBar>
-                <Form action="edit">
-                    <Button type="submit" color="primary">
-                        Edit
-                    </Button>
-                </Form>
+                <Link
+                    to={`/equipment/${equipment.slug}/edit`}
+                    className={buttonVariants({ variant: "default" })}
+                >
+                    Edit
+                </Link>
                 <Form
                     action="destroy"
                     method="post"
@@ -191,7 +189,7 @@ export default function Equipment() {
                         }
                     }}
                 >
-                    <Button type="submit" color="danger">
+                    <Button type="submit" variant={"destructive"}>
                         Delete
                     </Button>
                 </Form>

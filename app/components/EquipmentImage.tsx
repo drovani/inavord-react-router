@@ -1,4 +1,5 @@
 import { cva, type VariantProps } from "class-variance-authority";
+import { useState } from "react";
 import { EquipmentMutation } from "~/data";
 import { cn } from "~/lib/utils";
 
@@ -22,18 +23,19 @@ function EquipmentImage({
     size = "default",
     isFragment = false,
 }: Props) {
+    const [status, setStatus] = useState(equipment.slug ? "loading" : "error");
+
     return (
         <div className={cn(imageVariants({ size }))}>
             <img
                 alt={`${equipment.name || "unknown"} icon`}
-                src={
-                    equipment.slug
-                        ? `/images/equipment/${equipment.slug}.png`
-                        : undefined
-                }
+                src={`/images/equipment/${equipment.slug}.png`}
                 className={cn(
+                    status === "loaded" || status === "loading" ? "" : "hidden",
                     size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg"
                 )}
+                onError={() => setStatus("error")}
+                onLoad={() => setStatus("loaded")}
             />
             <img
                 alt={`${equipment.name || "unknown"} icon border`}

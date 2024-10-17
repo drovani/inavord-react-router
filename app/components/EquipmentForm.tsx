@@ -1,14 +1,4 @@
-import {
-    Button,
-    Checkbox,
-    CheckboxGroup,
-    Divider,
-    Input,
-    Link,
-    Radio,
-    RadioGroup,
-} from "@nextui-org/react";
-import { Form } from "@remix-run/react";
+import { Form, Link } from "@remix-run/react";
 import { useState } from "react";
 import slugify from "slugify";
 import { CampaignChapter } from "~/constants";
@@ -16,6 +6,12 @@ import { EquipmentMutation, EquipmentRecord } from "~/data";
 import ButtonBar from "./ButtonBar";
 import EquipmentImage from "./EquipmentImage";
 import SelectKeyValues from "./SelectKeyValues";
+import { Button, buttonVariants } from "./ui/button";
+import { Checkbox } from "./ui/checkbox";
+import { Input } from "./ui/input";
+import { Label } from "./ui/label";
+import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
+import { Separator } from "./ui/separator";
 
 function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
     const [forImageQuality, setForImageQuality] = useState(
@@ -24,7 +20,9 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
     const [dynamicSlug, setDynamicSlug] = useState<string | undefined>(
         equipment.slug
     );
-    const [isFragment, setIsFragment] = useState<boolean>(false);
+    const [isFragment, setIsFragment] = useState<boolean | "indeterminate">(
+        false
+    );
 
     const onNameChange = (value: string) => {
         setDynamicSlug(slugify(value, { lower: true, strict: true }));
@@ -40,36 +38,35 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
             <div className="space-y-12">
                 <h1>Equipment Editor</h1>
                 <section className="grid grid-cols-2 gap-x-4 gap-y-8">
-                    <Input
-                        label="Name"
-                        isRequired
-                        labelPlacement="outside"
-                        defaultValue={equipment.name}
-                        name="name"
-                        size="lg"
-                        className="max-w-lg col-span-full"
-                        onValueChange={onNameChange}
-                    />
+                    <div className="grid w-full items-center gap-1.5">
+                        <Label htmlFor="name">Name</Label>
+                        <Input
+                            required
+                            defaultValue={equipment.name}
+                            id="name"
+                            className="max-w-lg col-span-full"
+                            onChange={(evnt) => onNameChange(evnt.target.value)}
+                            autoComplete="off"
+                        />
+                    </div>
+                    Quality
                     <RadioGroup
-                        label="Quality"
                         defaultValue={equipment.equipment_quality}
-                        onChange={(event) =>
+                        onValueChange={(value) =>
                             setForImageQuality(
-                                event.target
-                                    .value as (EquipmentMutation["equipment_quality"])
+                                value as EquipmentMutation["equipment_quality"]
                             )
                         }
                         name="equipment_quality"
                     >
                         {["gray", "green", "blue", "purple", "orange"].map(
                             (quality, index) => (
-                                <Radio
-                                    key={`${quality}-${index}`}
-                                    value={quality}
-                                    className="capitalize"
-                                >
-                                    {quality}
-                                </Radio>
+                                <Label key={`${quality}-${index}`}>
+                                    <RadioGroupItem value={quality} />
+                                    <span className="capitalize">
+                                        {quality}
+                                    </span>
+                                </Label>
                             )
                         )}
                     </RadioGroup>
@@ -79,27 +76,36 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                             slug: dynamicSlug,
                             equipment_quality: forImageQuality,
                         }}
-                        isFragment={forImageQuality !== "gray" && isFragment}
+                        isFragment={
+                            forImageQuality !== "gray" && isFragment === true
+                        }
                         aria-hidden="true"
                     />
-                    <Checkbox
-                        name="is_fragment"
-                        isSelected={isFragment}
-                        isIndeterminate={forImageQuality === "gray"}
-                        onValueChange={setIsFragment}
-                    >
-                        Is fragment?
-                    </Checkbox>
-                    <Input
-                        label="Required level"
-                        isRequired
-                        defaultValue={
-                            equipment.level_required?.toString() || "1"
+                    <Label
+                        className={
+                            forImageQuality === "gray"
+                                ? "text-muted-foreground"
+                                : ""
                         }
-                        type="number"
-                        name="level_required"
-                        min={1}
-                    />
+                    >
+                        <Checkbox
+                            name="is_fragment"
+                            checked={isFragment}
+                            disabled={forImageQuality === "gray"}
+                            onCheckedChange={(state) => setIsFragment(state)}
+                        />
+                        Is fragment?
+                    </Label>
+                    <div className="grid w-full items-center gap-1.5">
+                        <Label htmlFor="level_required">Required level</Label>
+                        <Input
+                            required
+                            defaultValue={equipment.level_required || 1}
+                            type="number"
+                            id="level_required"
+                            min={1}
+                        />
+                    </div>
                     <div className="col-span-2">
                         <h3>Bonus stats</h3>
                         <SelectKeyValues
@@ -109,34 +115,42 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                         ></SelectKeyValues>
                     </div>
                 </section>
-                <Divider />
+                <Separator />
                 <section className="grid grid-cols-2 gap-x-4 gap-y-2">
                     <h2 className="col-span-full">Buy, Sell, Gold, & Raid</h2>
                     <h3 className="col-span-full">Selling value</h3>
-                    <Input
-                        label="Gold"
-                        defaultValue={equipment.level_required?.toString()}
-                        name="sell.gold"
-                        type="number"
-                        min={0}
-                    />
-                    <Input
-                        label="Guild activity points"
-                        defaultValue={equipment.sell?.guild_activity_points?.toString()}
-                        name="sell.guild_activity_points"
-                        type="number"
-                        min={0}
-                    />
+                    <div className="grid w-full items-center gap-1.5">
+                        <Label htmlFor="sell.gold">Gold</Label>
+                        <Input
+                            defaultValue={equipment.sell?.gold}
+                            id="sell.gold"
+                            type="number"
+                            min={0}
+                        />
+                    </div>
+                    <div className="grid w-full items-center gap-1.5">
+                        <Label htmlFor="sell.guild_activity_points">
+                            Guild activity points
+                        </Label>
+                        <Input
+                            defaultValue={equipment.sell?.guild_activity_points}
+                            id="sell.guild_activity_points"
+                            type="number"
+                            min={0}
+                        />
+                    </div>
                     <h3 className="col-span-full">Market value</h3>
-                    <Input
-                        label="Gold"
-                        defaultValue={equipment.gold_value?.toString()}
-                        name="gold_value"
-                        type="number"
-                        min={0}
-                    />
+                    <div className="grid w-full items-center gap-1.5">
+                        <Label htmlFor="gold_value">Gold</Label>
+                        <Input
+                            defaultValue={equipment.gold_value}
+                            id="gold_value"
+                            type="number"
+                            min={0}
+                        />
+                    </div>
                 </section>
-                <Divider />
+                <Separator />
                 <section className="grid grid-cols-2 gap-x-4 gap-y-2">
                     <h2 className="col-span-full">Found in</h2>
                     {Array.from({ length: 13 }, (v, k) => ({
@@ -147,32 +161,43 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                             (c) => c.chapter === chapterHeader.chapter
                         );
                         return (
-                            <CheckboxGroup
+                            <div
                                 key={`${chapterHeader}-${index}`}
-                                label={chapterHeader.name}
                                 className="col-span-full sm:col-span-1"
                                 defaultValue={equipment.chapters}
                             >
+                                <h3>{chapterHeader.name}</h3>
                                 {levels.map((level, index) => (
-                                    <Checkbox
+                                    <div
+                                        className="flex w-full items-center gap-1.5"
                                         key={`${level}-${index}`}
-                                        value={`${level.chapter}-${level.level}`}
-                                        name="chapters"
                                     >
-                                        {level.chapter}-{level.level}:{" "}
-                                        {level.name}
-                                    </Checkbox>
+                                        <Label>
+                                            <Checkbox
+                                                value={`${level.chapter}-${level.level}`}
+                                                name="chapters"
+                                                checked={equipment.chapters?.includes(
+                                                    `${level.chapter}-${level.level}`
+                                                )}
+                                            />
+                                            {level.chapter}-{level.level}:{" "}
+                                            {level.name}
+                                        </Label>
+                                    </div>
                                 ))}
-                            </CheckboxGroup>
+                            </div>
                         );
                     })}
                 </section>
             </div>
             <ButtonBar>
-                <Button as={Link} href={cancelHref}>
+                <Link
+                    to={cancelHref}
+                    className={buttonVariants({ variant: "secondary" })}
+                >
                     Cancel
-                </Button>
-                <Button color="success" type="submit">
+                </Link>
+                <Button variant={"default"} type="submit">
                     Save
                 </Button>
             </ButtonBar>

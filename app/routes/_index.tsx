@@ -1,4 +1,3 @@
-import { Link } from "@nextui-org/react";
 import SiteNavigation from "~/components/SiteNavigation";
 
 export default function Index() {
@@ -6,9 +5,9 @@ export default function Index() {
         <section>
             <h2 className="text-large">
                 Welcome to another{" "}
-                <Link isExternal href="https://rovani.net" size="lg">
+                <a href="https://rovani.net" className="underline">
                     Rovani.net
-                </Link>{" "}
+                </a>{" "}
                 project
             </h2>
             <div className="ml-10 flex flex-col items-baseline space-x-4">

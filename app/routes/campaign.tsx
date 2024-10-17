@@ -1,6 +1,6 @@
-import { Button, Link } from "@nextui-org/react";
-import { Form, Outlet, useLoaderData } from "@remix-run/react";
+import { Form, Link, Outlet, useLoaderData } from "@remix-run/react";
 import slugify from "slugify";
+import { Button } from "~/components/ui/button";
 import { CampaignChapters } from "~/constants";
 
 export const loader = async () => {
@@ -39,7 +39,7 @@ export default function Campaign() {
                                 key={chapter.name}
                                 className="text-lg pl-6 -indent-6"
                             >
-                                <Link href={`/campaign/${slugify(chapter.slug)}`}>
+                                <Link to={`/campaign/${slugify(chapter.slug)}`}>
                                     {chapter.chapter}-{chapter.level}{" "}
                                     {chapter.name}
                                 </Link>
