@@ -1,68 +1,56 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import invariant from "tiny-invariant";
+import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
-import { CampaignChapters } from "~/constants";
-import { createEquipment, getAllEquipment } from "~/data";
-import { EquipmentMutation } from "~/data/equipment.zod";
+import { createEquipment } from "~/data";
+import {
+    EquipmentMutation,
+    EquipmentMutationSchema,
+} from "~/data/equipment.zod";
 
-export const meta: MetaFunction<typeof loader> = () => {
+export const meta: MetaFunction = () => {
     return [{ title: "Create new equipment" }];
 };
-export const loader = async () => {
-    const chapters = CampaignChapters;
-    const chapters_full = [];
 
-    for (let ch = 1; ch <= 13; ch++) {
-        const num_levels = ch === 1 ? 10 : 15;
-        for (let lvl = 1; lvl <= num_levels; lvl++) {
-            const chap = chapters.find(
-                (c) => c.chapter === ch && c.level === lvl
-            );
-            chapters_full.push(
-                chap || {
-                    chapter: ch,
-                    level: lvl,
-                    name: "",
-                    energy_cost: -1,
-                    slug: `${ch}-${lvl}`,
-                }
-            );
-        }
-    }
-
-    const allEquipment = await getAllEquipment();
-    const allStats = [
-        ...new Set(allEquipment.flatMap((ae) => Object.keys(ae.stats || {}))),
-    ];
-
-    return json({ chapters: chapters_full, allStats });
-};
-
-export const action = async ({ request }: ActionFunctionArgs) => {
+export async function action({ request }: ActionFunctionArgs) {
     const formData = await request.formData();
+    const data = Object.fromEntries(formData);
 
-    const updates = {
-        ...Object.fromEntries(formData),
-        campaign_sources: formData.getAll("campaign_sources"),
-    } as EquipmentMutation;
+    try {
+        const validated = EquipmentMutationSchema.parse({
+            ...data,
+            hero_level_required: Number(data.hero_level_required),
+            buy_value: Number(data.buy_value),
+            sell_value: Number(data.sell_value),
+            guild_activity_points: Number(data.guild_activity_points),
+        });
 
-    invariant(updates.name, "Missing required field 'name'.");
+        const newEquipment = await createEquipment(validated);
 
-    const record = await createEquipment(updates);
-    return redirect(`/equipment/${record.slug}`);
-};
+        return redirect(`/equipment/${newEquipment.slug}`);
+    } catch (error) {
+        if (error instanceof ZodError) {
+            return json({ errors: error.format() }, { status: 400 });
+        }
+        throw error;
+    }
+}
 
 export default function EditEquipment() {
-    const { chapters, allStats } = useLoaderData<typeof loader>();
-
     return (
-        <EquipmentForm
-            equipment={{} as EquipmentMutation}
-            chapters={chapters}
-            allStats={allStats}
-            cancelHref="/equipment"
-        />
+        <section className="space-y-4">
+            <h1>New Equipment</h1>
+            <EquipmentForm
+                initialData={
+                    {
+                        quality: "gray",
+                        hero_level_required: 1,
+                        buy_value: 0,
+                        sell_value: 0,
+                        guild_activity_points: 0,
+                    } as EquipmentMutation
+                }
+            />
+        </section>
     );
 }

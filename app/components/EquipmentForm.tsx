@@ -1,213 +1,243 @@
-import { Form, Link } from "@remix-run/react";
-import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate, useSubmit } from "@remix-run/react";
 import { useForm } from "react-hook-form";
-import slugify from "slugify";
-import { CampaignChapter } from "~/constants";
-import { EquipmentMutation, EquipmentRecord } from "~/data/equipment.zod";
-import ButtonBar from "./ButtonBar";
-import EquipmentImage from "./EquipmentImage";
-import SelectKeyValues from "./SelectKeyValues";
-import { Button, buttonVariants } from "./ui/button";
-import { Checkbox } from "./ui/checkbox";
-import { Input } from "./ui/input";
-import { Label } from "./ui/label";
-import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
-import { Separator } from "./ui/separator";
+import { Button } from "~/components/ui/button";
+import {
+    Form,
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import { Label } from "~/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import {
+    EQUIPMENT_QUALITIES,
+    EquipmentMutationSchema,
+    type EquipmentMutation,
+    type EquipmentRecord,
+} from "~/data/equipment.zod";
+import CampaignSourcesField from "./CampaignSourcesField";
+import StatsField from "./StatsField";
+import { Slider } from "./ui/slider";
 
-function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
-    const [forImageQuality, setForImageQuality] = useState(equipment.quality);
-    const [dynamicSlug, setDynamicSlug] = useState<string | undefined>(
-        "slug" in equipment ? equipment.slug : undefined
-    );
-    const [isFragment, setIsFragment] = useState<boolean | "indeterminate">(
-        false
-    );
+type Props = {
+    initialData?: EquipmentRecord | EquipmentMutation;
+    existingStats: string[];
+};
 
-    const onNameChange = (value: string) => {
-        setDynamicSlug(slugify(value, { lower: true, strict: true }));
+export default function EquipmentForm({ initialData, existingStats }: Props) {
+    const submit = useSubmit();
+    const navigate = useNavigate();
+    const form = useForm<EquipmentMutation>({
+        resolver: zodResolver(EquipmentMutationSchema),
+        defaultValues: initialData,
+    });
+
+    const onSubmit = (data: EquipmentMutation) => {
+        const formData = new FormData();
+        Object.entries(data).forEach(([key, value]) => {
+            formData.append(key, value.toString());
+        });
+
+        submit(formData, { method: "post" });
     };
 
-    const form = useForm<EquipmentMutation>();
-
     return (
-        <Form {...form} method="post" autoComplete="off">
-            <div className="space-y-12">
-                <h1>Equipment Editor</h1>
-                <section className="grid grid-cols-2 gap-x-4 gap-y-8">
-                    <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="name">Name</Label>
-                        <Input
-                            required
-                            defaultValue={equipment.name}
-                            id="name"
-                            className="max-w-lg col-span-full"
-                            onChange={(evnt) => onNameChange(evnt.target.value)}
-                            autoComplete="off"
-                        />
-                    </div>
-                    Quality
-                    <RadioGroup
-                        defaultValue={equipment.quality}
-                        onValueChange={(value) =>
-                            setForImageQuality(
-                                value as EquipmentMutation["quality"]
-                            )
-                        }
-                        name="quality"
-                    >
-                        {["gray", "green", "blue", "purple", "orange"].map(
-                            (quality, index) => (
-                                <Label key={`${quality}-${index}`}>
-                                    <RadioGroupItem value={quality} />
-                                    <span className="capitalize">
-                                        {quality}
-                                    </span>
-                                </Label>
-                            )
-                        )}
-                    </RadioGroup>
-                    <EquipmentImage
-                        equipment={{
-                            ...equipment,
-                            slug: dynamicSlug,
-                            equipment_quality: forImageQuality,
-                        }}
-                        isFragment={
-                            forImageQuality !== "gray" && isFragment === true
-                        }
-                        aria-hidden="true"
-                    />
-                    <Label
-                        className={
-                            forImageQuality === "gray"
-                                ? "text-muted-foreground"
-                                : ""
-                        }
-                    >
-                        <Checkbox
-                            name="is_fragment"
-                            checked={isFragment}
-                            disabled={forImageQuality === "gray"}
-                            onCheckedChange={(state) => setIsFragment(state)}
-                        />
-                        Is fragment?
-                    </Label>
-                    <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="hero_level_required">
-                            Required level
-                        </Label>
-                        <Input
-                            required
-                            defaultValue={equipment.hero_level_required || 1}
-                            type="number"
-                            id="hero_level_required"
-                            min={1}
-                        />
-                    </div>
-                    <div className="col-span-2">
-                        <h3>Bonus stats</h3>
-                        <SelectKeyValues
-                            entries={equipment.stats}
-                            allKeys={allStats.sort()}
-                            inputNamePrefix="stats"
-                        ></SelectKeyValues>
-                    </div>
-                </section>
-                <Separator />
-                <section className="grid grid-cols-2 gap-x-4 gap-y-2">
-                    <h2 className="col-span-full">Buy, Sell, Gold, & Raid</h2>
-                    <h3 className="col-span-full">Selling value</h3>
-                    <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="sell_value">Gold</Label>
-                        <Input
-                            defaultValue={equipment.sell_value}
-                            id="sell_value"
-                            type="number"
-                            min={0}
-                        />
-                    </div>
-                    <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="guild_activity_points">
-                            Guild activity points
-                        </Label>
-                        <Input
-                            defaultValue={equipment.guild_activity_points}
-                            id="guild_activity_points"
-                            type="number"
-                            min={0}
-                        />
-                    </div>
-                    <h3 className="col-span-full">Market value</h3>
-                    <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="buy_value">Gold</Label>
-                        <Input
-                            defaultValue={equipment.buy_value}
-                            id="buy_value"
-                            type="number"
-                            min={0}
-                        />
-                    </div>
-                </section>
-                <Separator />
-                <section className="grid grid-cols-2 gap-x-4 gap-y-2">
-                    <h2 className="col-span-full">Found in</h2>
-                    {Array.from({ length: 13 }, (v, k) => ({
-                        name: `Chapter ${k + 1}`,
-                        chapter: k + 1,
-                    })).map((chapterHeader, index) => {
-                        const levels = chapters.filter(
-                            (c) => c.chapter === chapterHeader.chapter
-                        );
-                        return (
-                            <div
-                                key={`${chapterHeader}-${index}`}
-                                className="col-span-full sm:col-span-1"
-                                defaultValue={equipment.campaign_sources}
-                            >
-                                <h3>{chapterHeader.name}</h3>
-                                {levels.map((level, index) => (
-                                    <div
-                                        className="flex w-full items-center gap-1.5"
-                                        key={`${level}-${index}`}
-                                    >
-                                        <Label>
-                                            <Checkbox
-                                                value={`${level.chapter}-${level.level}`}
-                                                name="campaign_sources"
-                                                checked={equipment.campaign_sources?.includes(
-                                                    `${level.chapter}-${level.level}`
-                                                )}
+        <Form {...form}>
+            <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                <FormField
+                    control={form.control}
+                    name="name"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Name</FormLabel>
+                            <FormControl>
+                                <Input {...field} />
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="quality"
+                    render={({ field }) => (
+                        <FormItem className="space-y-2">
+                            <FormLabel>Quality</FormLabel>
+                            <FormControl>
+                                <RadioGroup
+                                    onValueChange={field.onChange}
+                                    defaultValue={field.value}
+                                    className="flex gap-4"
+                                >
+                                    {EQUIPMENT_QUALITIES.map((quality) => (
+                                        <div
+                                            key={quality}
+                                            className="flex items-center space-x-2"
+                                        >
+                                            <RadioGroupItem
+                                                value={quality}
+                                                id={quality}
                                             />
-                                            {level.chapter}-{level.level}:{" "}
-                                            {level.name}
-                                        </Label>
-                                    </div>
-                                ))}
+                                            <Label
+                                                htmlFor={quality}
+                                                className="capitalize"
+                                            >
+                                                {quality}
+                                            </Label>
+                                        </div>
+                                    ))}
+                                </RadioGroup>
+                            </FormControl>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+
+                <FormField
+                    control={form.control}
+                    name="hero_level_required"
+                    render={({ field }) => (
+                        <FormItem>
+                            <FormLabel>Hero Level Required</FormLabel>
+                            <div className="flex gap-4 items-center">
+                                <FormControl className="flex-1">
+                                    <Slider
+                                        min={1}
+                                        max={120}
+                                        step={1}
+                                        value={[field.value || 1]}
+                                        onValueChange={([value]) =>
+                                            field.onChange(value)
+                                        }
+                                    />
+                                </FormControl>
+                                <FormControl className="w-20">
+                                    <Input
+                                        type="number"
+                                        min={1}
+                                        max={120}
+                                        {...field}
+                                        onChange={(e) =>
+                                            field.onChange(+e.target.value)
+                                        }
+                                    />
+                                </FormControl>
                             </div>
-                        );
-                    })}
-                </section>
-            </div>
-            <ButtonBar>
-                <Link
-                    to={cancelHref}
-                    className={buttonVariants({ variant: "secondary" })}
-                >
-                    Cancel
-                </Link>
-                <Button variant={"default"} type="submit">
-                    Save
-                </Button>
-            </ButtonBar>
+                            <FormMessage />
+                        </FormItem>
+                    )}
+                />
+                <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-4">
+                    <FormField
+                        control={form.control}
+                        name="buy_value"
+                        render={({ field }) => (
+                            <FormItem>
+                                <FormLabel>Buy Value</FormLabel>
+                                <FormControl>
+                                    <div className="relative">
+                                        <Input
+                                            type="number"
+                                            {...field}
+                                            onChange={(e) =>
+                                                field.onChange(+e.target.value)
+                                            }
+                                            className="pl-10"
+                                        />
+                                        <img
+                                            src="/images/gold.webp"
+                                            alt="Gold"
+                                            className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8"
+                                        />
+                                    </div>
+                                </FormControl>
+                                <FormMessage />
+                            </FormItem>
+                        )}
+                    />
+
+                    <div className="grid grid-cols-2 gap-4 md:col-span-2">
+                        <FormField
+                            control={form.control}
+                            name="sell_value"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Sell Value</FormLabel>
+                                    <FormControl>
+                                        <div className="relative">
+                                            <Input
+                                                type="number"
+                                                {...field}
+                                                onChange={(e) =>
+                                                    field.onChange(
+                                                        +e.target.value
+                                                    )
+                                                }
+                                                className="pl-10"
+                                            />
+                                            <img
+                                                src="/images/gold.webp"
+                                                alt="Gold"
+                                                className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8"
+                                            />
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+
+                        <FormField
+                            control={form.control}
+                            name="guild_activity_points"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Guild Activity Points</FormLabel>
+                                    <FormControl>
+                                        <div className="relative">
+                                            <Input
+                                                type="number"
+                                                {...field}
+                                                onChange={(e) =>
+                                                    field.onChange(
+                                                        +e.target.value
+                                                    )
+                                                }
+                                                className="pl-10"
+                                            />
+                                            <img
+                                                src="/images/guild_activity_points.webp"
+                                                alt="Guild Activity Points"
+                                                className="absolute left-1 top-1/2 -translate-y-1/2 w-7 h-7"
+                                            />
+                                        </div>
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                </div>
+                <StatsField form={form} existingStats={existingStats} />
+
+                <CampaignSourcesField form={form} />
+
+                <div className="flex gap-4">
+                    <Button type="submit">Save Equipment</Button>
+                    <Button
+                        type="button"
+                        variant="outline"
+                        onClick={() => navigate(-1)}
+                    >
+                        Cancel
+                    </Button>
+                </div>
+            </form>
         </Form>
     );
 }
-
-interface Props {
-    equipment: EquipmentRecord | EquipmentMutation;
-    chapters: CampaignChapter[];
-    allStats: string[];
-    cancelHref: string;
-}
-
-export default EquipmentForm;
