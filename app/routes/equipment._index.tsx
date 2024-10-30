@@ -47,7 +47,7 @@ export default function EquipmentIndex() {
                                     className={cn(
                                         cardVariants({
                                             quality:
-                                                equipment.equipment_quality,
+                                                equipment.quality,
                                         })
                                     )}
                                 >

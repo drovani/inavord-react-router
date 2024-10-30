@@ -9,12 +9,8 @@ import invariant from "tiny-invariant";
 import EquipmentForm from "~/components/EquipmentForm";
 import { CampaignChapters } from "~/constants";
 
-import {
-    EquipmentRecord,
-    getAllEquipment,
-    getEquipment,
-    updateEquipment,
-} from "~/data";
+import { getAllEquipment, getEquipment, updateEquipment } from "~/data";
+import { EquipmentRecord } from "~/data/equipment.zod";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [{ title: data?.equipment.name }];
@@ -63,7 +59,7 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
 
     const updates = {
         ...Object.fromEntries(formData),
-        chapters: formData.getAll("chapters"),
+        campaign_sources: formData.getAll("campaign_sources"),
     } as EquipmentRecord;
 
     invariant(updates.name, "Missing required field 'name'.");

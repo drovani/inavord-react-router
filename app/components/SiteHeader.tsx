@@ -1,11 +1,7 @@
 import { Form, Link } from "@remix-run/react";
-import {
-    CircleUser,
-    Home,
-    PanelBottomOpen,
-    Search
-} from "lucide-react";
+import { CircleUser, Home, PanelBottomOpen, Search } from "lucide-react";
 import { useState } from "react";
+import { ClientOnly } from "remix-utils/client-only";
 import logo_image from "../images/hero-wars-alliance-logo.webp";
 import SiteNavigation from "./SiteNavigation";
 import { Button } from "./ui/button";
@@ -34,58 +30,72 @@ function SiteHeader() {
             className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-16 lg:px-6"
             role="banner"
         >
-            <Drawer
-                open={isDrawerOpen}
-                onOpenChange={setIsDrawerOpen}
-            >
-                <DrawerTrigger asChild>
-                    <Button
-                        variant="outline"
-                        size="icon"
-                        className="shrink-0 md:hidden"
-                    >
-                        <PanelBottomOpen
-                            size={20}
-                            strokeWidth={1}
-                            className="h-5 w-5"
-                        />
-                        <span className="sr-only">Toggle navigation menu</span>
-                    </Button>
-                </DrawerTrigger>
-                <DrawerContent>
-                    <DrawerHeader>
-                        <DrawerTitle className="flex gap-2">
-                            <div className="flex gap-2">
-                                <Link
-                                    to={"/"}
-                                    className="flex items-center gap-2 text-lg font-semibold"
-                                    onClick={() => setIsDrawerOpen(false)}
-                                >
-                                    <Home size={24} className="h-6 w-6" />
-                                    <span className="sr-only">
-                                        Hero Wars Helper
-                                    </span>
-                                </Link>
-                                <Form>
-                                    <div className="relative">
-                                        <Search
-                                            size={16}
-                                            className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground"
-                                        />
-                                        <Input
-                                            className="w-full pl-8"
-                                            placeholder="Coming soon..."
-                                            type="search"
-                                            disabled
-                                        />
-                                    </div>
-                                </Form>
-                            </div>
-                        </DrawerTitle>
-                    </DrawerHeader>
+            <ClientOnly
+                fallback={
                     <SiteNavigation onNavClick={() => setIsDrawerOpen(false)} />
-                </DrawerContent>
-            </Drawer>
+                }
+            >
+                {() => (
+                    <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
+                        <DrawerTrigger asChild>
+                            <Button
+                                variant="outline"
+                                size="icon"
+                                className="shrink-0 md:hidden"
+                            >
+                                <PanelBottomOpen
+                                    size={20}
+                                    strokeWidth={1}
+                                    className="h-5 w-5"
+                                />
+                                <span className="sr-only">
+                                    Toggle navigation menu
+                                </span>
+                            </Button>
+                        </DrawerTrigger>
+                        <DrawerContent>
+                            <DrawerHeader>
+                                <DrawerTitle className="flex gap-2">
+                                    <div className="flex gap-2">
+                                        <Link
+                                            to={"/"}
+                                            className="flex items-center gap-2 text-lg font-semibold"
+                                            onClick={() =>
+                                                setIsDrawerOpen(false)
+                                            }
+                                        >
+                                            <Home
+                                                size={24}
+                                                className="h-6 w-6"
+                                            />
+                                            <span className="sr-only">
+                                                Hero Wars Helper
+                                            </span>
+                                        </Link>
+                                        <Form>
+                                            <div className="relative">
+                                                <Search
+                                                    size={16}
+                                                    className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground"
+                                                />
+                                                <Input
+                                                    className="w-full pl-8"
+                                                    placeholder="Coming soon..."
+                                                    type="search"
+                                                    disabled
+                                                />
+                                            </div>
+                                        </Form>
+                                    </div>
+                                </DrawerTitle>
+                            </DrawerHeader>
+                            <SiteNavigation
+                                onNavClick={() => setIsDrawerOpen(false)}
+                            />
+                        </DrawerContent>
+                    </Drawer>
+                )}
+            </ClientOnly>
             <Link
                 to={"/"}
                 className="flex items-center space-x-3 sm:hidden"

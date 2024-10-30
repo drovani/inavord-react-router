@@ -1,8 +1,9 @@
 import { Form, Link } from "@remix-run/react";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
 import slugify from "slugify";
 import { CampaignChapter } from "~/constants";
-import { EquipmentMutation, EquipmentRecord } from "~/data";
+import { EquipmentMutation, EquipmentRecord } from "~/data/equipment.zod";
 import ButtonBar from "./ButtonBar";
 import EquipmentImage from "./EquipmentImage";
 import SelectKeyValues from "./SelectKeyValues";
@@ -14,11 +15,9 @@ import { RadioGroup, RadioGroupItem } from "./ui/radio-group";
 import { Separator } from "./ui/separator";
 
 function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
-    const [forImageQuality, setForImageQuality] = useState(
-        equipment.equipment_quality
-    );
+    const [forImageQuality, setForImageQuality] = useState(equipment.quality);
     const [dynamicSlug, setDynamicSlug] = useState<string | undefined>(
-        equipment.slug
+        "slug" in equipment ? equipment.slug : undefined
     );
     const [isFragment, setIsFragment] = useState<boolean | "indeterminate">(
         false
@@ -28,13 +27,10 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
         setDynamicSlug(slugify(value, { lower: true, strict: true }));
     };
 
+    const form = useForm<EquipmentMutation>();
+
     return (
-        <Form
-            key={"id" in equipment ? equipment.id : "new"}
-            id="equipment-form"
-            method="post"
-            autoComplete="off"
-        >
+        <Form {...form} method="post" autoComplete="off">
             <div className="space-y-12">
                 <h1>Equipment Editor</h1>
                 <section className="grid grid-cols-2 gap-x-4 gap-y-8">
@@ -51,13 +47,13 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                     </div>
                     Quality
                     <RadioGroup
-                        defaultValue={equipment.equipment_quality}
+                        defaultValue={equipment.quality}
                         onValueChange={(value) =>
                             setForImageQuality(
-                                value as EquipmentMutation["equipment_quality"]
+                                value as EquipmentMutation["quality"]
                             )
                         }
-                        name="equipment_quality"
+                        name="quality"
                     >
                         {["gray", "green", "blue", "purple", "orange"].map(
                             (quality, index) => (
@@ -97,12 +93,14 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                         Is fragment?
                     </Label>
                     <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="level_required">Required level</Label>
+                        <Label htmlFor="hero_level_required">
+                            Required level
+                        </Label>
                         <Input
                             required
-                            defaultValue={equipment.level_required || 1}
+                            defaultValue={equipment.hero_level_required || 1}
                             type="number"
-                            id="level_required"
+                            id="hero_level_required"
                             min={1}
                         />
                     </div>
@@ -120,31 +118,31 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                     <h2 className="col-span-full">Buy, Sell, Gold, & Raid</h2>
                     <h3 className="col-span-full">Selling value</h3>
                     <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="sell.gold">Gold</Label>
+                        <Label htmlFor="sell_value">Gold</Label>
                         <Input
-                            defaultValue={equipment.sell?.gold}
-                            id="sell.gold"
+                            defaultValue={equipment.sell_value}
+                            id="sell_value"
                             type="number"
                             min={0}
                         />
                     </div>
                     <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="sell.guild_activity_points">
+                        <Label htmlFor="guild_activity_points">
                             Guild activity points
                         </Label>
                         <Input
-                            defaultValue={equipment.sell?.guild_activity_points}
-                            id="sell.guild_activity_points"
+                            defaultValue={equipment.guild_activity_points}
+                            id="guild_activity_points"
                             type="number"
                             min={0}
                         />
                     </div>
                     <h3 className="col-span-full">Market value</h3>
                     <div className="grid w-full items-center gap-1.5">
-                        <Label htmlFor="gold_value">Gold</Label>
+                        <Label htmlFor="buy_value">Gold</Label>
                         <Input
-                            defaultValue={equipment.gold_value}
-                            id="gold_value"
+                            defaultValue={equipment.buy_value}
+                            id="buy_value"
                             type="number"
                             min={0}
                         />
@@ -164,7 +162,7 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                             <div
                                 key={`${chapterHeader}-${index}`}
                                 className="col-span-full sm:col-span-1"
-                                defaultValue={equipment.chapters}
+                                defaultValue={equipment.campaign_sources}
                             >
                                 <h3>{chapterHeader.name}</h3>
                                 {levels.map((level, index) => (
@@ -175,8 +173,8 @@ function EquipmentForm({ equipment, chapters, allStats, cancelHref }: Props) {
                                         <Label>
                                             <Checkbox
                                                 value={`${level.chapter}-${level.level}`}
-                                                name="chapters"
-                                                checked={equipment.chapters?.includes(
+                                                name="campaign_sources"
+                                                checked={equipment.campaign_sources?.includes(
                                                     `${level.chapter}-${level.level}`
                                                 )}
                                             />

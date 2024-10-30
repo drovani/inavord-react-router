@@ -7,7 +7,7 @@ import {
     ShieldPlusIcon,
     ShoppingBagIcon,
     SwordIcon,
-    UsersIcon
+    UsersIcon,
 } from "lucide-react";
 import { MouseEventHandler, useCallback } from "react";
 import { cn } from "~/lib/utils";
@@ -32,7 +32,7 @@ const navigation = [
             },
         ],
     },
-    { name: "Campaign", icon: MapIcon, href: "/campaign" },
+    { name: "Campaign", icon: MapIcon },
     { name: "Merchant", icon: ShoppingBagIcon },
     { name: "Hydras", icon: DropletIcon },
 ];

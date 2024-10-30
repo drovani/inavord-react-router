@@ -1,6 +1,6 @@
 import { cva, type VariantProps } from "class-variance-authority";
 import { useState } from "react";
-import { EquipmentMutation } from "~/data";
+import { EquipmentMutation } from "~/data/equipment.zod";
 import { cn } from "~/lib/utils";
 
 const imageVariants = cva("relative", {
@@ -52,7 +52,7 @@ interface Props extends VariantProps<typeof imageVariants> {
     equipment: {
         name?: string;
         slug?: string;
-        equipment_quality?: EquipmentMutation["equipment_quality"];
+        equipment_quality?: EquipmentMutation["quality"];
     };
     isFragment?: boolean;
 }

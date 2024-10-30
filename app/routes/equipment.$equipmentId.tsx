@@ -8,11 +8,11 @@ import EquipmentImage from "~/components/EquipmentImage";
 import { Button, buttonVariants } from "~/components/ui/button";
 import { CampaignChapters } from "~/constants";
 import {
-    EquipmentRecord,
     getEquipment,
     getEquipmentByName,
     getEquipmentThatRequires,
 } from "~/data";
+import { EquipmentRecord } from "~/data/equipment.zod";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [{ title: data?.equipment.name }];
@@ -28,16 +28,20 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         });
     }
 
-    const required_equipment =
-        equipment.required_equipment?.map(async (item) => {
-            const foundItem = await getEquipmentByName(item.name);
-
-            return { ...item, ...foundItem };
-        }) || [];
+    const required_equipment = equipment.crafting
+        ? Object.entries(equipment.crafting?.required_items).map(
+              async (item) => {
+                  const foundItem = await getEquipmentByName(item[0]);
+                  return { ...foundItem };
+              }
+          )
+        : [];
 
     const required_for = (await getEquipmentThatRequires(equipment.name)) || [];
     const found_in_chapters = CampaignChapters.filter((cc) =>
-        equipment.chapters?.find((c) => c === `${cc.chapter}-${cc.level}`)
+        equipment.campaign_sources?.find(
+            (c) => c === `${cc.chapter}-${cc.level}`
+        )
     );
 
     return json({
@@ -61,15 +65,15 @@ export default function Equipment() {
                 <EquipmentImage equipment={equipment} />
                 <div>
                     <h2 className="text-2xl font-bold">{equipment.name}</h2>
-                    <div>Required level: {equipment.level_required}</div>
-                    <div>Value: {equipment.gold_value} gold</div>
+                    <div>Required level: {equipment.hero_level_required}</div>
+                    <div>Value: {equipment.buy_value} gold</div>
                     <div>
                         Sell:
                         <ul className="ml-8 -mt-6">
-                            <li>{equipment.sell?.gold} gold</li>
+                            <li>{equipment.sell_value} gold</li>
                             <li>
-                                {equipment.sell?.guild_activity_points} guild
-                                activity points
+                                {equipment.guild_activity_points} guild activity
+                                points
                             </li>
                         </ul>
                     </div>
@@ -77,9 +81,9 @@ export default function Equipment() {
             </div>
             <div>
                 <h3 className="text-xl font-semibold">Found in:</h3>
-                {equipment.chapters?.length ? (
+                {equipment.campaign_sources?.length ? (
                     <>
-                        {equipment.chapters?.map((chptr) => {
+                        {equipment.campaign_sources?.map((chptr) => {
                             const chapterDetails = found_in_chapters.find(
                                 (f) => chptr === `${f.chapter}-${f.level}`
                             );
@@ -130,7 +134,12 @@ export default function Equipment() {
                                         </Link>
                                     )}
                                     <span className="self-start mx-auto">
-                                        {equip.quantity}x {equip.name}
+                                        {
+                                            equipment.crafting?.required_items[
+                                                equip.id || "default"
+                                            ]
+                                        }
+                                        x {equip.name}
                                     </span>
                                 </div>
                             </React.Fragment>
@@ -145,9 +154,8 @@ export default function Equipment() {
                 {required_for?.length ? (
                     <div className="">
                         {required_for.map((equip) => {
-                            const qty_needed = equip.required_equipment?.find(
-                                (re) => re.name === equipment.name
-                            )?.quantity;
+                            const qty_needed =
+                                equip.crafting?.required_items[equipment.id];
                             return (
                                 <div key={equip.id}>
                                     <Link

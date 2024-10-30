@@ -1,0 +1,96 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Hero Wars Equipment Array Schema",
+  "description": "Schema for an array of Hero Wars Alliance equipment items",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "id": {
+        "type": "string",
+        "description": "Unique identifier for the equipment",
+        "readOnly": true
+      },
+      "slug": {
+        "type": "string",
+        "description": "URL-friendly identifier for the equipment",
+        "readOnly": true
+      },
+      "created_at": {
+        "type": "string",
+        "format": "date-time",
+        "description": "Timestamp when the equipment was created",
+        "readOnly": true
+      },
+      "name": {
+        "type": "string",
+        "description": "Name of the equipment item"
+      },
+      "quality": {
+        "type": "string",
+        "enum": ["gray", "green", "blue", "purple", "orange"],
+        "description": "Quality tier of the equipment"
+      },
+      "stats": {
+        "type": "object",
+        "description": "Statistical bonuses provided by the equipment",
+        "minProperties": 1,
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "hero_level_required": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 120,
+        "description": "Minimum hero level required to use this equipment"
+      },
+      "campaign_sources": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "description": "Reference ID to a campaign mission"
+        },
+        "description": "List of campaign mission IDs where this equipment can be found"
+      },
+      "buy_value": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Amount of gold required to purchase this item"
+      },
+      "sell_value": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Amount of gold earned when selling this item"
+      },
+      "guild_activity_points": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Amount of guild activity points earned when selling this item"
+      },
+      "crafting": {
+        "type": "object",
+        "properties": {
+          "gold_cost": {
+            "type": "integer",
+            "minimum": 0,
+            "description": "Amount of gold required for crafting"
+          },
+          "required_items": {
+            "type": "object",
+            "description": "Map of item IDs to their required quantities",
+            "minProperties": 1,
+            "additionalProperties": {
+              "type": "integer",
+              "minimum": 1
+            }
+          }
+        },
+        "required": ["gold_cost", "required_items"],
+        "description": "Crafting requirements for this item"
+      }
+    },
+    "required": ["id", "slug", "created_at", "name", "quality", "stats", "hero_level_required", "buy_value", "sell_value", "guild_activity_points"],
+    "additionalProperties": false
+  }
+}

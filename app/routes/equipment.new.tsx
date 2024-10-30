@@ -1,13 +1,11 @@
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import invariant from "tiny-invariant";
 import EquipmentForm from "~/components/EquipmentForm";
 import { CampaignChapters } from "~/constants";
-import {
-    createEquipmentFromFormData,
-    EquipmentMutation,
-    getAllEquipment,
-} from "~/data";
+import { createEquipment, getAllEquipment } from "~/data";
+import { EquipmentMutation } from "~/data/equipment.zod";
 
 export const meta: MetaFunction<typeof loader> = () => {
     return [{ title: "Create new equipment" }];
@@ -45,14 +43,15 @@ export const loader = async () => {
 export const action = async ({ request }: ActionFunctionArgs) => {
     const formData = await request.formData();
 
-    const results = await createEquipmentFromFormData(formData);
+    const updates = {
+        ...Object.fromEntries(formData),
+        campaign_sources: formData.getAll("campaign_sources"),
+    } as EquipmentMutation;
 
-    if ("errors" in results) {
-        const values = Object.fromEntries(formData) as EquipmentMutation;
-        return json({ errors: results.errors, values });
-    } else {
-        return redirect(`/equipment/${results.record.slug}`);
-    }
+    invariant(updates.name, "Missing required field 'name'.");
+
+    const record = await createEquipment(updates);
+    return redirect(`/equipment/${record.slug}`);
 };
 
 export default function EditEquipment() {
@@ -60,9 +59,7 @@ export default function EditEquipment() {
 
     return (
         <EquipmentForm
-            equipment={{
-                equipment_quality: "gray",
-            }}
+            equipment={{} as EquipmentMutation}
             chapters={chapters}
             allStats={allStats}
             cancelHref="/equipment"
