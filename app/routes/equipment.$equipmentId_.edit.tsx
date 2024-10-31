@@ -1,3 +1,4 @@
+import EquipmentForm from "@/components/EquipmentForm";
 import type {
     ActionFunctionArgs,
     LoaderFunctionArgs,
@@ -6,10 +7,9 @@ import type {
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import invariant from "tiny-invariant";
-import EquipmentForm from "~/components/EquipmentForm";
 
-import { getAllEquipment, getEquipment, updateEquipment } from "~/data";
-import { EquipmentRecord } from "~/data/equipment.zod";
+import { getAllEquipment, getEquipment, updateEquipment } from "@/data";
+import { EquipmentRecord } from "@/data/equipment.zod";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [{ title: data?.equipment.name }];
@@ -29,7 +29,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         ...new Set(allEquipment.flatMap((ae) => Object.keys(ae.stats || {}))),
     ];
 
-    return json({ equipment, allStats });
+    return json({ equipment, allEquipment, allStats });
 };
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -48,14 +48,14 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
 };
 
 export default function EditEquipment() {
-    const { equipment, chapters, allStats } = useLoaderData<typeof loader>();
+    const { equipment, allEquipment, allStats } =
+        useLoaderData<typeof loader>();
 
     return (
         <EquipmentForm
-            equipment={equipment}
-            chapters={chapters}
-            allStats={allStats}
-            cancelHref={`/equipment/${equipment.slug}`}
+            initialData={equipment}
+            existingStats={allStats}
+            existingItems={allEquipment}
         />
     );
 }

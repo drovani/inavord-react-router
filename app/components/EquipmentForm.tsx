@@ -1,7 +1,8 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import { useNavigate, useSubmit } from "@remix-run/react";
-import { useForm } from "react-hook-form";
-import { Button } from "~/components/ui/button";
+import CampaignSourcesField from "@/components/CampaignSourcesField";
+import CraftingField from "@/components/CraftingField";
+import EquipmentImage from "@/components/EquipmentImage";
+import StatsField from "@/components/StatsField";
+import { Button } from "@/components/ui/button";
 import {
     Form,
     FormControl,
@@ -9,32 +10,63 @@ import {
     FormItem,
     FormLabel,
     FormMessage,
-} from "~/components/ui/form";
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
+import { Slider } from "@/components/ui/slider";
 import {
     EQUIPMENT_QUALITIES,
     EquipmentMutationSchema,
     type EquipmentMutation,
     type EquipmentRecord,
-} from "~/data/equipment.zod";
-import CampaignSourcesField from "./CampaignSourcesField";
-import StatsField from "./StatsField";
-import { Slider } from "./ui/slider";
+} from "@/data/equipment.zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useNavigate, useSubmit } from "@remix-run/react";
+import { useEffect, useState } from "react";
+import { useForm } from "react-hook-form";
+import slugify from "slugify";
 
 type Props = {
     initialData?: EquipmentRecord | EquipmentMutation;
     existingStats: string[];
+    existingItems: EquipmentRecord[];
 };
 
-export default function EquipmentForm({ initialData, existingStats }: Props) {
+export default function EquipmentForm({
+    initialData,
+    existingStats,
+    existingItems,
+}: Props) {
     const submit = useSubmit();
     const navigate = useNavigate();
     const form = useForm<EquipmentMutation>({
         resolver: zodResolver(EquipmentMutationSchema),
         defaultValues: initialData,
     });
+
+    const [previewSlug, setPreviewSlug] = useState(
+        !initialData
+            ? ""
+            : "slug" in initialData
+            ? initialData.slug
+            : initialData.name
+            ? slugify(initialData.name, { lower: true, strict: true })
+            : ""
+    );
+
+    useEffect(() => {
+        const name = form.watch("name");
+        if (name) {
+            const slug = slugify(name, {
+                lower: true,
+                strict: true,
+            });
+            setPreviewSlug(slug);
+        } else {
+            setPreviewSlug("");
+        }
+    }, [form.watch("name")]);
 
     const onSubmit = (data: EquipmentMutation) => {
         const formData = new FormData();
@@ -48,19 +80,33 @@ export default function EquipmentForm({ initialData, existingStats }: Props) {
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <FormField
-                    control={form.control}
-                    name="name"
-                    render={({ field }) => (
-                        <FormItem>
-                            <FormLabel>Name</FormLabel>
-                            <FormControl>
-                                <Input {...field} />
-                            </FormControl>
-                            <FormMessage />
-                        </FormItem>
-                    )}
-                />
+                <div className="flex flex-col md:flex-row md:items-start gap-4">
+                    <div className="flex-1">
+                        <FormField
+                            control={form.control}
+                            name="name"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Name</FormLabel>
+                                    <FormControl>
+                                        <Input {...field} />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
+                    </div>
+                    <div className="md:pt-8">
+                        <EquipmentImage
+                            equipment={{
+                                name: form.watch("name"),
+                                slug: previewSlug,
+                                equipment_quality: form.watch("quality"),
+                            }}
+                            size="lg"
+                        />
+                    </div>
+                </div>
 
                 <FormField
                     control={form.control}
@@ -223,7 +269,10 @@ export default function EquipmentForm({ initialData, existingStats }: Props) {
                         />
                     </div>
                 </div>
+
                 <StatsField form={form} existingStats={existingStats} />
+
+                <CraftingField form={form} existingItems={existingItems} />
 
                 <CampaignSourcesField form={form} />
 

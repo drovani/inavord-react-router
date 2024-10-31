@@ -1,18 +1,18 @@
+import ButtonBar from "@/components/ButtonBar";
+import EquipmentImage from "@/components/EquipmentImage";
+import { Button, buttonVariants } from "@/components/ui/button";
+import { CampaignChapters } from "@/constants";
+import {
+    getEquipment,
+    getEquipmentByName,
+    getEquipmentThatRequires,
+} from "@/data";
+import { EquipmentRecord } from "@/data/equipment.zod";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
 import { Form, Link, useLoaderData } from "@remix-run/react";
 import { PlusIcon } from "lucide-react";
 import React from "react";
 import invariant from "tiny-invariant";
-import ButtonBar from "~/components/ButtonBar";
-import EquipmentImage from "~/components/EquipmentImage";
-import { Button, buttonVariants } from "~/components/ui/button";
-import { CampaignChapters } from "~/constants";
-import {
-    getEquipment,
-    getEquipmentByName,
-    getEquipmentThatRequires,
-} from "~/data";
-import { EquipmentRecord } from "~/data/equipment.zod";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     return [{ title: data?.equipment.name }];

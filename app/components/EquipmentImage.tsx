@@ -1,7 +1,7 @@
+import { EquipmentMutation } from "@/data/equipment.zod";
+import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useState } from "react";
-import { EquipmentMutation } from "~/data/equipment.zod";
-import { cn } from "~/lib/utils";
 
 const imageVariants = cva("relative", {
     variants: {

@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Link, useLocation } from "@remix-run/react";
 import {
     DropletIcon,
@@ -10,7 +11,6 @@ import {
     UsersIcon,
 } from "lucide-react";
 import { MouseEventHandler, useCallback } from "react";
-import { cn } from "~/lib/utils";
 
 const navigation = [
     { name: "Heroes", icon: UsersIcon },

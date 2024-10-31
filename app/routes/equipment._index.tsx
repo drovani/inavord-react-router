@@ -1,7 +1,7 @@
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { cn } from "@/lib/utils";
 import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
-import { Card, CardHeader, CardTitle } from "~/components/ui/card";
-import { cn } from "~/lib/utils";
 import { getAllEquipment } from "../data";
 
 export const loader = async () => {

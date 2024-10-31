@@ -1,18 +1,18 @@
-import { type UseFormReturn } from "react-hook-form";
-import { Checkbox } from "~/components/ui/checkbox";
+import { Checkbox } from "@/components/ui/checkbox";
 import {
     FormControl,
     FormField,
     FormItem,
     FormMessage,
-} from "~/components/ui/form";
+} from "@/components/ui/form";
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-} from "~/components/ui/hover-card";
-import { Label } from "~/components/ui/label";
-import type { EquipmentMutation } from "~/data/equipment.zod";
+} from "@/components/ui/hover-card";
+import { Label } from "@/components/ui/label";
+import type { EquipmentMutation } from "@/data/equipment.zod";
+import { type UseFormReturn } from "react-hook-form";
 import {
     Accordion,
     AccordionContent,
