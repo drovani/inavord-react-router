@@ -156,7 +156,7 @@ export default function MissionsIndex() {
                             <div className="gap-2 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                                 {missions.map((mission) => (
                                     <Link
-                                        to={`/campaign/${mission.id}`}
+                                        to={`/missions/${mission.id}`}
                                         key={mission.id}
                                     >
                                         <Card className="h-28 w-28 relative hover:scale-110 transition-all duration-500 overflow-hidden">

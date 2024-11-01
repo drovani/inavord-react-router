@@ -90,7 +90,7 @@ export default function Equipment() {
                                 <div key={chptr}>
                                     {chapterDetails ? (
                                         <Link
-                                            to={`/campaign/${chapterDetails?.slug}`}
+                                            to={`/missions/${chapterDetails?.slug}`}
                                             className="text-foreground hover:decoration-solid hover:decoration-slate-900"
                                         >
                                             {`${chapterDetails?.chapter}-${chapterDetails?.level}: `}
