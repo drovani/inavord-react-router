@@ -1,5 +1,5 @@
 import EquipmentForm from "@/components/EquipmentForm";
-import { createEquipment, getAllEquipment } from "@/data";
+import { createEquipment, getAllEquipment, getAllMissions } from "@/data";
 import {
     EquipmentMutation,
     EquipmentMutationSchema,
@@ -13,21 +13,30 @@ export const meta: MetaFunction = () => {
     return [{ title: "Create new equipment" }];
 };
 
-export const loader = async () => {
-    const allEquipment = await getAllEquipment();
-    const allStats = [
-        ...new Set(allEquipment.flatMap((ae) => Object.keys(ae.stats || {}))),
+export async function loader() {
+    const [allMissions, existingItems] = await Promise.all([
+        getAllMissions(),
+        getAllEquipment(),
+    ]);
+
+    const existingStats = [
+        ...new Set(existingItems.flatMap((ae) => Object.keys(ae.stats || {}))),
     ];
-    return json({ allEquipment, allStats });
-};
+
+    return json({ existingItems, existingStats, allMissions });
+}
 
 export async function action({ request }: ActionFunctionArgs) {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
 
+    // Handle campaign_sources array
+    const campaignSources = formData.getAll("campaign_sources[]");
+
     try {
         const validated = EquipmentMutationSchema.parse({
             ...data,
+            campaign_sources: campaignSources,
             hero_level_required: Number(data.hero_level_required),
             buy_value: Number(data.buy_value),
             sell_value: Number(data.sell_value),
@@ -45,8 +54,9 @@ export async function action({ request }: ActionFunctionArgs) {
     }
 }
 
-export default function EditEquipment() {
-    const { allEquipment, allStats } = useLoaderData<typeof loader>();
+export default function NewEquipment() {
+    const { allMissions, existingStats, existingItems } =
+        useLoaderData<typeof loader>();
 
     return (
         <section className="space-y-4">
@@ -61,8 +71,9 @@ export default function EditEquipment() {
                         guild_activity_points: 0,
                     } as EquipmentMutation
                 }
-                existingStats={allStats}
-                existingItems={allEquipment}
+                missions={allMissions}
+                existingStats={existingStats}
+                existingItems={existingItems}
             />
         </section>
     );

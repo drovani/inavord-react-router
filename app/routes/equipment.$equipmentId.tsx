@@ -1,4 +1,3 @@
-import ButtonBar from "@/components/ButtonBar";
 import EquipmentImage from "@/components/EquipmentImage";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { CampaignChapters } from "@/constants";
@@ -178,30 +177,28 @@ export default function Equipment() {
                     <div>Not required for any other equipment</div>
                 )}
             </div>
-            <ButtonBar>
-                <Link
-                    to={`/equipment/${equipment.slug}/edit`}
-                    className={buttonVariants({ variant: "default" })}
-                >
-                    Edit
-                </Link>
-                <Form
-                    action="destroy"
-                    method="post"
-                    onSubmit={(event) => {
-                        const response = confirm(
-                            `Please confirm you want to delete ${equipment.name} record.`
-                        );
-                        if (!response) {
-                            event.preventDefault();
-                        }
-                    }}
-                >
-                    <Button type="submit" variant={"destructive"}>
-                        Delete
-                    </Button>
-                </Form>
-            </ButtonBar>
+            <Link
+                to={`/equipment/${equipment.slug}/edit`}
+                className={buttonVariants({ variant: "default" })}
+            >
+                Edit
+            </Link>
+            <Form
+                action="destroy"
+                method="post"
+                onSubmit={(event) => {
+                    const response = confirm(
+                        `Please confirm you want to delete ${equipment.name} record.`
+                    );
+                    if (!response) {
+                        event.preventDefault();
+                    }
+                }}
+            >
+                <Button type="submit" variant={"destructive"}>
+                    Delete
+                </Button>
+            </Form>
         </div>
     );
 }

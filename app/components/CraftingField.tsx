@@ -24,10 +24,10 @@ import {
     PopoverContent,
     PopoverTrigger,
 } from "@/components/ui/popover";
+import type { EquipmentMutation, EquipmentRecord } from "@/data/equipment.zod";
 import { PlusCircleIcon, XIcon } from "lucide-react";
 import { useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
-import type { EquipmentMutation, EquipmentRecord } from "~/data/equipment.zod";
 
 interface CraftingFieldProps {
     form: UseFormReturn<EquipmentMutation>;

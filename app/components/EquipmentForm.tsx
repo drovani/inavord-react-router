@@ -17,11 +17,10 @@ import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group";
 import { Slider } from "@/components/ui/slider";
 import {
     EQUIPMENT_QUALITIES,
-    EquipmentMutationSchema,
     type EquipmentMutation,
     type EquipmentRecord,
 } from "@/data/equipment.zod";
-import { zodResolver } from "@hookform/resolvers/zod";
+import type { Mission } from "@/data/mission.zod";
 import { useNavigate, useSubmit } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
@@ -31,17 +30,18 @@ type Props = {
     initialData?: EquipmentRecord | EquipmentMutation;
     existingStats: string[];
     existingItems: EquipmentRecord[];
+    missions: Mission[];
 };
 
 export default function EquipmentForm({
     initialData,
     existingStats,
     existingItems,
+    missions,
 }: Props) {
     const submit = useSubmit();
     const navigate = useNavigate();
     const form = useForm<EquipmentMutation>({
-        resolver: zodResolver(EquipmentMutationSchema),
         defaultValues: initialData,
     });
 
@@ -69,10 +69,22 @@ export default function EquipmentForm({
     }, [form.watch("name")]);
 
     const onSubmit = (data: EquipmentMutation) => {
+        // Convert form data to FormData
         const formData = new FormData();
+
+        // Handle all fields except campaign_sources
         Object.entries(data).forEach(([key, value]) => {
-            formData.append(key, value.toString());
+            if (key !== "campaign_sources") {
+                formData.append(key, value.toString());
+            }
         });
+
+        // Handle campaign_sources array
+        if (data.campaign_sources) {
+            data.campaign_sources.forEach((source) => {
+                formData.append("campaign_sources[]", source);
+            });
+        }
 
         submit(formData, { method: "post" });
     };
@@ -274,7 +286,7 @@ export default function EquipmentForm({
 
                 <CraftingField form={form} existingItems={existingItems} />
 
-                <CampaignSourcesField form={form} />
+                <CampaignSourcesField form={form} missions={missions} />
 
                 <div className="flex gap-4">
                     <Button type="submit">Save Equipment</Button>

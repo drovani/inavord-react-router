@@ -32,7 +32,7 @@ const navigation = [
             },
         ],
     },
-    { name: "Campaign", icon: MapIcon },
+    { name: "Missions", icon: MapIcon, href: "/missions" },
     { name: "Merchant", icon: ShoppingBagIcon },
     { name: "Hydras", icon: DropletIcon },
 ];

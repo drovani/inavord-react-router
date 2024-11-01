@@ -1,11 +1,12 @@
 import slugify from "slugify";
 import invariant from "tiny-invariant";
-import rawEquipmentJson from "./data/equipment.json";
 import {
     EQUIPMENT_QUALITIES,
     type EquipmentMutation,
-    type EquipmentRecord
+    type EquipmentRecord,
 } from "./data/equipment.zod";
+import rawEquipmentJson from "./data/equipments.json";
+import { Mission } from "./data/mission.zod";
 
 const mockEquipment = {
     records: {} as Record<string, EquipmentRecord>,
@@ -87,3 +88,42 @@ const equipment_data = rawEquipmentJson as unknown as EquipmentRecord[];
 equipment_data.forEach((equipment: EquipmentRecord) => {
     mockEquipment.create(equipment);
 });
+
+import missionData from "@/data/missions.json";
+
+// Mission Data Access
+export async function getAllMissions(): Promise<Mission[]> {
+    return missionData;
+}
+
+export async function getMission(id: string): Promise<Mission | null> {
+    const mission = missionData.find((mission) => mission.id === id);
+    return mission || null;
+}
+
+export async function getMissionsByChapter(
+    chapter: number
+): Promise<Mission[]> {
+    return missionData.filter((mission) => mission.chapter === chapter);
+}
+
+export async function getMissionsByBoss(bossName: string): Promise<Mission[]> {
+    return missionData.filter((mission) => mission.boss === bossName);
+}
+
+export function groupMissionsByChapter(
+    missions: Mission[]
+): Record<number, Mission[]> {
+    return missions.reduce((acc, mission) => {
+        if (!acc[mission.chapter]) {
+            acc[mission.chapter] = [];
+        }
+        acc[mission.chapter].push(mission);
+        return acc;
+    }, {} as Record<number, Mission[]>);
+}
+
+export function getChapterFromMission(missionId: string): number {
+    const [chapter] = missionId.split("-").map(Number);
+    return chapter;
+}
