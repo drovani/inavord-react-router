@@ -50,10 +50,10 @@ export async function getEquipment(id: string | undefined) {
     if (id) return mockEquipment.get(id);
     else return null;
 }
-export async function getEquipmentByName(name: string | undefined) {
-    if (name)
+export async function getEquipmentBySlug(slug: string | undefined) {
+    if (slug)
         return (await mockEquipment.getAll()).find(
-            (equip) => equip.name === name
+            (equip) => equip.slug === slug
         );
     else return null;
 }
