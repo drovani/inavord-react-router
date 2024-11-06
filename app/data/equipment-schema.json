@@ -28,7 +28,13 @@
       },
       "quality": {
         "type": "string",
-        "enum": ["gray", "green", "blue", "purple", "orange"],
+        "enum": [
+          "gray",
+          "green",
+          "blue",
+          "purple",
+          "orange"
+        ],
         "description": "Quality tier of the equipment"
       },
       "stats": {
@@ -51,6 +57,7 @@
           "type": "string",
           "description": "Reference ID to a campaign mission"
         },
+        "minItems": 1,
         "description": "List of campaign mission IDs where this equipment can be found"
       },
       "buy_value": {
@@ -86,11 +93,25 @@
             }
           }
         },
-        "required": ["gold_cost", "required_items"],
+        "required": [
+          "gold_cost",
+          "required_items"
+        ],
         "description": "Crafting requirements for this item"
       }
     },
-    "required": ["id", "slug", "created_at", "name", "quality", "stats", "hero_level_required", "buy_value", "sell_value", "guild_activity_points"],
+    "required": [
+      "id",
+      "slug",
+      "created_at",
+      "name",
+      "quality",
+      "stats",
+      "hero_level_required",
+      "buy_value",
+      "sell_value",
+      "guild_activity_points"
+    ],
     "additionalProperties": false
   }
 }

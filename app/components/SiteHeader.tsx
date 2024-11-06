@@ -30,11 +30,7 @@ function SiteHeader() {
             className="flex h-14 items-center gap-4 border-b bg-muted/40 px-4 lg:h-16 lg:px-6"
             role="banner"
         >
-            <ClientOnly
-                fallback={
-                    <SiteNavigation onNavClick={() => setIsDrawerOpen(false)} />
-                }
-            >
+            <ClientOnly>
                 {() => (
                     <Drawer open={isDrawerOpen} onOpenChange={setIsDrawerOpen}>
                         <DrawerTrigger asChild>

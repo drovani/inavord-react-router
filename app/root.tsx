@@ -35,7 +35,7 @@ export default function App() {
                 <Links />
             </head>
             <body>
-                <div className="grid min-h-screen w-full md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+                <div className="grid min-h-screen max-w-screen-xl mx-auto md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
                     <SitePanel />
                     <div className="flex flex-col">
                         <SiteHeader />

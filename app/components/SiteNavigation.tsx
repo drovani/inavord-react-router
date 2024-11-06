@@ -1,3 +1,4 @@
+import { cn } from "@/lib/utils";
 import { Link, useLocation } from "@remix-run/react";
 import {
     DropletIcon,
@@ -10,7 +11,6 @@ import {
     UsersIcon,
 } from "lucide-react";
 import { MouseEventHandler, useCallback } from "react";
-import { cn } from "~/lib/utils";
 
 const navigation = [
     { name: "Heroes", icon: UsersIcon },
@@ -29,10 +29,23 @@ const navigation = [
                 name: "Export as JSON",
                 href: "/equipment.json",
                 icon: FileJson2Icon,
+                reloadDocument: true,
             },
         ],
     },
-    { name: "Campaign", icon: MapIcon },
+    {
+        name: "Missions",
+        icon: MapIcon,
+        href: "/missions",
+        children: [
+            {
+                name: "Export as JSON",
+                href: "/missions.json",
+                icon: FileJson2Icon,
+                reloadDocument: true,
+            },
+        ],
+    },
     { name: "Merchant", icon: ShoppingBagIcon },
     { name: "Hydras", icon: DropletIcon },
 ];
@@ -82,6 +95,7 @@ function SiteNavigation({ onNavClick, className }: Props) {
                                         key={subnav.name}
                                         title={subnav.name}
                                         className="flex-none hover:scale-125 transition-all duration-100 hover:text-success hover:font-semibold"
+                                        reloadDocument={subnav.reloadDocument}
                                     >
                                         <subnav.icon
                                             size={20}

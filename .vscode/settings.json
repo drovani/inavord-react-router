@@ -3,9 +3,15 @@
     "json.schemas": [
         {
             "fileMatch": [
-                "equipment.json",
+                "equipments.json",
             ],
             "url": "./app/data/equipment-schema.json"
+        },
+        {
+            "fileMatch": [
+                "missions.json"
+            ],
+            "url": "./app/data/mission-schema.json"
         }
     ]
 }

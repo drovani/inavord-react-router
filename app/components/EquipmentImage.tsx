@@ -1,7 +1,7 @@
+import { EquipmentMutation } from "@/data/equipment.zod";
+import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useState } from "react";
-import { EquipmentMutation } from "~/data/equipment.zod";
-import { cn } from "~/lib/utils";
 
 const imageVariants = cva("relative", {
     variants: {
@@ -40,7 +40,7 @@ function EquipmentImage({
             <img
                 alt={`${equipment.name || "unknown"} icon border`}
                 src={`/images/equipment/border-${
-                    equipment.equipment_quality || "gray"
+                    equipment.quality || "gray"
                 }${isFragment ? "-fragment" : ""}.png`}
                 className="absolute top-0 left-0 h-full w-full"
             />
@@ -52,7 +52,7 @@ interface Props extends VariantProps<typeof imageVariants> {
     equipment: {
         name?: string;
         slug?: string;
-        equipment_quality?: EquipmentMutation["quality"];
+        quality?: EquipmentMutation["quality"];
     };
     isFragment?: boolean;
 }

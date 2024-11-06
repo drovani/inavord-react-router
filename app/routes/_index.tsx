@@ -1,4 +1,4 @@
-import SiteNavigation from "~/components/SiteNavigation";
+import SiteNavigation from "@/components/SiteNavigation";
 
 export default function Index() {
     return (
