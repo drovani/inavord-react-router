@@ -40,7 +40,7 @@ function EquipmentImage({
             <img
                 alt={`${equipment.name || "unknown"} icon border`}
                 src={`/images/equipment/border-${
-                    equipment.equipment_quality || "gray"
+                    equipment.quality || "gray"
                 }${isFragment ? "-fragment" : ""}.png`}
                 className="absolute top-0 left-0 h-full w-full"
             />
@@ -52,7 +52,7 @@ interface Props extends VariantProps<typeof imageVariants> {
     equipment: {
         name?: string;
         slug?: string;
-        equipment_quality?: EquipmentMutation["quality"];
+        quality?: EquipmentMutation["quality"];
     };
     isFragment?: boolean;
 }

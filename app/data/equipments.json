@@ -79,7 +79,81 @@
         "hero_level_required": 4,
         "buy_value": 2650,
         "sell_value": 530,
-        "guild_activity_points": 4
+        "guild_activity_points": 4,
+        "crafting": {
+            "gold_cost": 2500,
+            "required_items": {
+                "orcish-yatagan": 1,
+                "lucky-arrow": 1
+            }
+        }
+    },
+    {
+        "id": "dagger",
+        "slug": "dagger",
+        "created_at": "2024-11-06T22:22:38.900Z",
+        "name": "Dagger",
+        "quality": "gray",
+        "stats": {
+            "strength": 7
+        },
+        "hero_level_required": 3,
+        "campaign_sources": [
+            "1-6",
+            "1-7",
+            "2-12",
+            "3-15",
+            "4-2",
+            "5-3"
+        ],
+        "buy_value": 1250,
+        "sell_value": 250,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "giants-belt",
+        "slug": "giants-belt",
+        "created_at": "2024-11-06T22:44:02.994Z",
+        "name": "Giant's Belt",
+        "quality": "gray",
+        "stats": {
+            "intelligence": 5,
+            "agility": 5,
+            "strength": 5
+        },
+        "hero_level_required": 3,
+        "buy_value": 3125,
+        "sell_value": 625,
+        "guild_activity_points": 6,
+        "crafting": {
+            "gold_cost": 3125,
+            "required_items": {
+                "quiver": 1,
+                "oil-lamp": 1,
+                "travellers-shoes": 1
+            }
+        }
+    },
+    {
+        "id": "imperial-shield",
+        "slug": "imperial-shield",
+        "created_at": "2024-11-06T22:21:01.966Z",
+        "name": "Imperial Shield",
+        "quality": "gray",
+        "stats": {
+            "health": 385
+        },
+        "hero_level_required": 3,
+        "campaign_sources": [
+            "1-5",
+            "1-8",
+            "3-2",
+            "3-12",
+            "4-14"
+        ],
+        "buy_value": 1250,
+        "sell_value": 250,
+        "guild_activity_points": 2
     },
     {
         "id": "lucky-arrow",
@@ -103,6 +177,92 @@
         "guild_activity_points": 2
     },
     {
+        "id": "lucky-dice",
+        "slug": "lucky-dice",
+        "created_at": "2024-11-06T22:45:41.691Z",
+        "name": "Lucky Dice",
+        "quality": "gray",
+        "stats": {
+            "magic defense": 25
+        },
+        "hero_level_required": 1,
+        "campaign_sources": [
+            "1-4",
+            "2-7",
+            "3-11",
+            "4-13",
+            "9-6",
+            "10-5"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "oil-lamp",
+        "slug": "oil-lamp",
+        "created_at": "2024-11-06T22:42:17.694Z",
+        "name": "Oil Lamp",
+        "quality": "gray",
+        "stats": {
+            "intelligence": 5
+        },
+        "hero_level_required": 2,
+        "campaign_sources": [
+            "1-1",
+            "1-6",
+            "2-9",
+            "3-10",
+            "4-7"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "orcish-hammer",
+        "slug": "orcish-hammer",
+        "created_at": "2024-11-06T22:28:28.465Z",
+        "name": "Orcish Hammer",
+        "quality": "gray",
+        "stats": {
+            "strength": 7,
+            "health": 385
+        },
+        "hero_level_required": 4,
+        "buy_value": 2650,
+        "sell_value": 530,
+        "guild_activity_points": 4,
+        "crafting": {
+            "gold_cost": 4500,
+            "required_items": {
+                "imperial-shield": 1,
+                "dagger": 1
+            }
+        }
+    },
+    {
+        "id": "orcish-knuckles",
+        "slug": "orcish-knuckles",
+        "created_at": "2024-11-06T22:23:45.010Z",
+        "name": "Orcish Knuckles",
+        "quality": "gray",
+        "stats": {
+            "physical attack": 12
+        },
+        "hero_level_required": 1,
+        "campaign_sources": [
+            "1-2",
+            "2-1",
+            "2-2",
+            "9-9",
+            "10-8"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
         "id": "orcish-yatagan",
         "slug": "orcish-yatagan",
         "created_at": "2024-11-06T21:07:03.702Z",
@@ -118,6 +278,118 @@
             "3-3",
             "3-13",
             "5-1"
+        ],
+        "buy_value": 1250,
+        "sell_value": 250,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "quiver",
+        "slug": "quiver",
+        "created_at": "2024-11-06T22:41:35.474Z",
+        "name": "Quiver",
+        "quality": "gray",
+        "stats": {
+            "agility": 5
+        },
+        "hero_level_required": 2,
+        "campaign_sources": [
+            "1-1",
+            "1-4",
+            "2-8",
+            "3-6",
+            "4-5"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "sledgehammer",
+        "slug": "sledgehammer",
+        "created_at": "2024-11-06T22:25:24.017Z",
+        "name": "Sledgehammer",
+        "quality": "gray",
+        "stats": {
+            "intelligence": 1,
+            "agility": 1,
+            "strength": 5
+        },
+        "hero_level_required": 5,
+        "campaign_sources": [
+            "1-9",
+            "2-10",
+            "3-4",
+            "5-7",
+            "9-7",
+            "10-9"
+        ],
+        "buy_value": 1250,
+        "sell_value": 250,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "steel-pauldron",
+        "slug": "steel-pauldron",
+        "created_at": "2024-11-06T22:26:20.983Z",
+        "name": "Steel Pauldron",
+        "quality": "gray",
+        "stats": {
+            "armor": 25
+        },
+        "hero_level_required": 1,
+        "campaign_sources": [
+            "1-3",
+            "2-5",
+            "3-9",
+            "4-12",
+            "9-5",
+            "9-14"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "travellers-shoes",
+        "slug": "travellers-shoes",
+        "created_at": "2024-11-06T22:43:15.321Z",
+        "name": "Traveller's Shoes",
+        "quality": "gray",
+        "stats": {
+            "strength": 5
+        },
+        "hero_level_required": 2,
+        "campaign_sources": [
+            "1-1",
+            "1-6",
+            "2-11",
+            "4-8",
+            "9-3",
+            "10-14"
+        ],
+        "buy_value": 1000,
+        "sell_value": 200,
+        "guild_activity_points": 2
+    },
+    {
+        "id": "travellers-staff",
+        "slug": "travellers-staff",
+        "created_at": "2024-11-06T22:27:34.661Z",
+        "name": "Traveller's Staff",
+        "quality": "gray",
+        "stats": {
+            "intelligence": 5,
+            "agility": 1,
+            "strength": 1
+        },
+        "hero_level_required": 5,
+        "campaign_sources": [
+            "1-10",
+            "2-15",
+            "3-5",
+            "4-9",
+            "5-9"
         ],
         "buy_value": 1250,
         "sell_value": 250,
@@ -165,5 +437,27 @@
         "buy_value": 1000,
         "sell_value": 200,
         "guild_activity_points": 2
+    },
+    {
+        "id": "band-of-enlightenment",
+        "slug": "band-of-enlightenment",
+        "created_at": "2024-11-06T22:47:14.202Z",
+        "name": "Band of Enlightenment",
+        "quality": "green",
+        "stats": {
+            "dodge": 15
+        },
+        "hero_level_required": 24,
+        "campaign_sources": [
+            "3-2",
+            "4-13",
+            "6-6",
+            "7-3",
+            "9-7",
+            "9-13"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3
     }
 ]

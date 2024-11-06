@@ -43,9 +43,16 @@ export async function action({ request }: ActionFunctionArgs) {
             ),
             stats: JSON.parse(formData.get("stats") as string),
             campaign_sources: formData.getAll("campaign_sources[]"),
-            crafting: formData.get("crafting")
-                ? JSON.parse(formData.get("crafting") as string)
-                : undefined,
+            crafting:
+                formData.has("crafting.gold_cost") &&
+                formData.has("crafting.required_items")
+                    ? {
+                          gold_cost: Number(formData.get("crafting.gold_cost")),
+                          required_items: JSON.parse(
+                              formData.get("crafting.required_items") as string
+                          ),
+                      }
+                    : undefined,
         });
 
         const newEquipment = await createEquipment(validated);

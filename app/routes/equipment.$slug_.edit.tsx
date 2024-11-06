@@ -1,14 +1,3 @@
-import { zodResolver } from "@hookform/resolvers/zod";
-import type {
-    ActionFunctionArgs,
-    LoaderFunctionArgs,
-    MetaFunction,
-} from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
-import { useForm } from "react-hook-form";
-import invariant from "tiny-invariant";
-
 import EquipmentForm from "@/components/EquipmentForm";
 import {
     getAllEquipment,
@@ -20,6 +9,16 @@ import {
     EquipmentMutationSchema,
     type EquipmentMutation,
 } from "@/data/equipment.zod";
+import { zodResolver } from "@hookform/resolvers/zod";
+import type {
+    ActionFunctionArgs,
+    LoaderFunctionArgs,
+    MetaFunction,
+} from "@remix-run/node";
+import { json, redirect } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
+import { useForm } from "react-hook-form";
+import invariant from "tiny-invariant";
 import { ZodError } from "zod";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -50,9 +49,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
     invariant(params.slug, "Missing equipment slug param");
+
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
-
     try {
         // Validate with Zod
         const validated = EquipmentMutationSchema.parse({
@@ -65,9 +64,16 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
             ),
             stats: JSON.parse(formData.get("stats") as string),
             campaign_sources: formData.getAll("campaign_sources[]"),
-            crafting: formData.get("crafting")
-                ? JSON.parse(formData.get("crafting") as string)
-                : undefined,
+            crafting:
+                formData.has("crafting.gold_cost") &&
+                formData.has("crafting.required_items")
+                    ? {
+                          gold_cost: Number(formData.get("crafting.gold_cost")),
+                          required_items: JSON.parse(
+                              formData.get("crafting.required_items") as string
+                          ),
+                      }
+                    : undefined,
         });
 
         const updatedEquipment = await updateEquipment(params.slug, validated);
