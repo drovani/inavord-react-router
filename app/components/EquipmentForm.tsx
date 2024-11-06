@@ -1,7 +1,3 @@
-import CampaignSourcesField from "@/components/CampaignSourcesField";
-import CraftingField from "@/components/CraftingField";
-import EquipmentImage from "@/components/EquipmentImage";
-import StatsField from "@/components/StatsField";
 import { Button } from "@/components/ui/button";
 import {
     Form,
@@ -18,74 +14,91 @@ import { Slider } from "@/components/ui/slider";
 import {
     EQUIPMENT_QUALITIES,
     type EquipmentMutation,
-    type EquipmentRecord,
+    EquipmentMutationSchema,
+    EquipmentRecord,
 } from "@/data/equipment.zod";
 import type { Mission } from "@/data/mission.zod";
 import { useNavigate, useSubmit } from "@remix-run/react";
 import { useEffect, useState } from "react";
-import { useForm } from "react-hook-form";
+import { type UseFormReturn } from "react-hook-form";
 import slugify from "slugify";
+import { z } from "zod";
+import CampaignSourcesField from "./CampaignSourcesField";
+import CraftingField from "./CraftingField";
+import EquipmentImage from "./EquipmentImage";
+import StatsField from "./StatsField";
 
-type Props = {
-    initialData?: EquipmentRecord | EquipmentMutation;
+type EquipmentFormProps = {
+    form: UseFormReturn<EquipmentMutation>;
     existingStats: string[];
     existingItems: EquipmentRecord[];
     missions: Mission[];
 };
 
+// Helper function to append data to FormData based on Zod schema
+function appendToFormData(
+    formData: FormData,
+    data: unknown,
+    schema: z.ZodSchema,
+    prefix: string = ""
+) {
+    if (schema instanceof z.ZodObject) {
+        const obj = data as Record<string, unknown>;
+        Object.entries(schema.shape).forEach(([key, value]) => {
+            const fullKey = prefix ? `${prefix}.${key}` : key;
+            appendToFormData(formData, obj[key], value as z.ZodSchema, fullKey);
+        });
+    } else if (schema instanceof z.ZodArray) {
+        const arr = data as unknown[];
+        arr?.forEach((item) => {
+            formData.append(`${prefix}[]`, item as string);
+        });
+    } else if (
+        schema instanceof z.ZodOptional ||
+        schema instanceof z.ZodNullable
+    ) {
+        if (data !== undefined && data !== null) {
+            appendToFormData(formData, data, schema.unwrap(), prefix);
+        }
+    } else if (data !== undefined && data !== null) {
+        // Handle primitive values
+        if (typeof data === "object") {
+            formData.append(prefix, JSON.stringify(data));
+        } else {
+            formData.append(prefix, String(data));
+        }
+    }
+}
+
 export default function EquipmentForm({
-    initialData,
+    form,
     existingStats,
     existingItems,
     missions,
-}: Props) {
-    const submit = useSubmit();
+}: EquipmentFormProps) {
     const navigate = useNavigate();
-    const form = useForm<EquipmentMutation>({
-        defaultValues: initialData,
-    });
+    const submit = useSubmit();
 
     const [previewSlug, setPreviewSlug] = useState(
-        !initialData
-            ? ""
-            : "slug" in initialData
-            ? initialData.slug
-            : initialData.name
-            ? slugify(initialData.name, { lower: true, strict: true })
+        form.getValues("name")
+            ? slugify(form.getValues("name"), { lower: true, strict: true })
             : ""
     );
 
     useEffect(() => {
-        const name = form.watch("name");
-        if (name) {
-            const slug = slugify(name, {
-                lower: true,
-                strict: true,
-            });
-            setPreviewSlug(slug);
-        } else {
-            setPreviewSlug("");
-        }
-    }, [form.watch("name")]);
-
-    const onSubmit = (data: EquipmentMutation) => {
-        // Convert form data to FormData
-        const formData = new FormData();
-
-        // Handle all fields except campaign_sources
-        Object.entries(data).forEach(([key, value]) => {
-            if (key !== "campaign_sources") {
-                formData.append(key, value.toString());
+        const subscription = form.watch((value, { name }) => {
+            if (name === "name" && value.name) {
+                setPreviewSlug(
+                    slugify(value.name, { lower: true, strict: true })
+                );
             }
         });
+        return () => subscription.unsubscribe();
+    }, [form]);
 
-        // Handle campaign_sources array
-        if (data.campaign_sources) {
-            data.campaign_sources.forEach((source) => {
-                formData.append("campaign_sources[]", source);
-            });
-        }
-
+    const onSubmit = (data: EquipmentMutation) => {
+        const formData = new FormData();
+        appendToFormData(formData, data, EquipmentMutationSchema);
         submit(formData, { method: "post" });
     };
 
@@ -129,7 +142,7 @@ export default function EquipmentForm({
                             <FormControl>
                                 <RadioGroup
                                     onValueChange={field.onChange}
-                                    defaultValue={field.value}
+                                    value={field.value}
                                     className="flex gap-4"
                                 >
                                     {EQUIPMENT_QUALITIES.map((quality) => (
@@ -168,7 +181,7 @@ export default function EquipmentForm({
                                         min={1}
                                         max={120}
                                         step={1}
-                                        value={[field.value || 1]}
+                                        value={[field.value]}
                                         onValueChange={([value]) =>
                                             field.onChange(value)
                                         }
@@ -190,6 +203,7 @@ export default function EquipmentForm({
                         </FormItem>
                     )}
                 />
+
                 <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-4">
                     <FormField
                         control={form.control}
@@ -283,9 +297,7 @@ export default function EquipmentForm({
                 </div>
 
                 <StatsField form={form} existingStats={existingStats} />
-
                 <CraftingField form={form} existingItems={existingItems} />
-
                 <CampaignSourcesField form={form} missions={missions} />
 
                 <div className="flex gap-4">

@@ -17,7 +17,7 @@ export const EquipmentMutationSchema = z.object({
             message: "At least one stat must be provided",
         }),
     hero_level_required: z.number().int().min(1).max(120),
-    campaign_sources: z.array(z.string()).nonempty().optional(),
+    campaign_sources: z.array(z.string()).optional(),
     buy_value: z.number().int().min(0),
     sell_value: z.number().int().min(0),
     guild_activity_points: z.number().int().min(0),

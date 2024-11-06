@@ -10,7 +10,6 @@ import {
 } from "@/components/ui/card";
 import {
     getAllMissions,
-    getEquipment,
     getEquipmentBySlug,
     getEquipmentThatRequires,
 } from "@/data";
@@ -33,10 +32,10 @@ interface LoaderData {
 }
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
-    invariant(params.equipmentId, "Expected params.equipmentId");
+    invariant(params.slug, "Missing equipment slug param");
 
     // Get main equipment details
-    const equipment = await getEquipment(params.equipmentId);
+    const equipment = await getEquipmentBySlug(params.slug);
     if (!equipment) {
         throw new Response(null, {
             status: 404,
@@ -84,11 +83,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 const EquipmentItem = ({
     item,
     quantity,
-    index,
 }: {
     item: EquipmentRecord | null;
     quantity: number;
-    index: number;
 }) => {
     if (!item) {
         return (
@@ -270,7 +267,6 @@ export default function Equipment() {
                                             item?.id || ""
                                         ] || 0
                                     }
-                                    index={index}
                                 />
                             ))}
                         </div>

@@ -52,8 +52,10 @@ export async function getEquipment(id: string | undefined) {
 }
 export async function getEquipmentBySlug(slug: string | undefined) {
     if (slug)
-        return (await mockEquipment.getAll()).find(
-            (equip) => equip.slug === slug
+        return (
+            (await mockEquipment.getAll()).find(
+                (equip) => equip.slug === slug
+            ) || null
         );
     else return null;
 }

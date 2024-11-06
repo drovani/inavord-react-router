@@ -4,9 +4,11 @@ import {
     EquipmentMutation,
     EquipmentMutationSchema,
 } from "@/data/equipment.zod";
+import { zodResolver } from "@hookform/resolvers/zod";
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
+import { useForm } from "react-hook-form";
 import { ZodError } from "zod";
 
 export const meta: MetaFunction = () => {
@@ -30,17 +32,20 @@ export async function action({ request }: ActionFunctionArgs) {
     const formData = await request.formData();
     const data = Object.fromEntries(formData);
 
-    // Handle campaign_sources array
-    const campaignSources = formData.getAll("campaign_sources[]");
-
     try {
         const validated = EquipmentMutationSchema.parse({
             ...data,
-            campaign_sources: campaignSources,
-            hero_level_required: Number(data.hero_level_required),
-            buy_value: Number(data.buy_value),
-            sell_value: Number(data.sell_value),
-            guild_activity_points: Number(data.guild_activity_points),
+            hero_level_required: Number(formData.get("hero_level_required")),
+            buy_value: Number(formData.get("buy_value")),
+            sell_value: Number(formData.get("sell_value")),
+            guild_activity_points: Number(
+                formData.get("guild_activity_points")
+            ),
+            stats: JSON.parse(formData.get("stats") as string),
+            campaign_sources: formData.getAll("campaign_sources[]"),
+            crafting: formData.get("crafting")
+                ? JSON.parse(formData.get("crafting") as string)
+                : undefined,
         });
 
         const newEquipment = await createEquipment(validated);
@@ -57,20 +62,21 @@ export async function action({ request }: ActionFunctionArgs) {
 export default function NewEquipment() {
     const { allMissions, existingStats, existingItems } =
         useLoaderData<typeof loader>();
-
+    const form = useForm<EquipmentMutation>({
+        resolver: zodResolver(EquipmentMutationSchema),
+        defaultValues: {
+            quality: "gray",
+            hero_level_required: 1,
+            buy_value: 0,
+            sell_value: 0,
+            guild_activity_points: 0,
+        },
+    });
     return (
         <section className="space-y-4">
             <h1>New Equipment</h1>
             <EquipmentForm
-                initialData={
-                    {
-                        quality: "gray",
-                        hero_level_required: 1,
-                        buy_value: 0,
-                        sell_value: 0,
-                        guild_activity_points: 0,
-                    } as EquipmentMutation
-                }
+                form={form}
                 missions={allMissions}
                 existingStats={existingStats}
                 existingItems={existingItems}

@@ -78,6 +78,7 @@ export default function MissionsIndex() {
 
         return Object.entries(missionsByChapter).reduce(
             (acc, [chapter, data]) => {
+                const chapterNum = Number(chapter);
                 const filteredMissions = data.missions.filter((mission) => {
                     const missionNumber = `${mission.chapter}-${mission.mission_number}`;
                     const matchesSearch =
@@ -91,7 +92,7 @@ export default function MissionsIndex() {
                 });
 
                 if (filteredMissions.length > 0) {
-                    acc[chapter] = {
+                    acc[chapterNum] = {
                         title: data.title,
                         missions: filteredMissions,
                     };
