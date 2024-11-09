@@ -18,10 +18,10 @@ import {
     EquipmentRecord,
 } from "@/data/equipment.zod";
 import type { Mission } from "@/data/mission.zod";
+import { generateSlug } from "@/lib/utils";
 import { useNavigate, useSubmit } from "@remix-run/react";
 import { useEffect, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
-import slugify from "slugify";
 import { z } from "zod";
 import CampaignSourcesField from "./CampaignSourcesField";
 import CraftingField from "./CraftingField";
@@ -80,17 +80,13 @@ export default function EquipmentForm({
     const submit = useSubmit();
 
     const [previewSlug, setPreviewSlug] = useState(
-        form.getValues("name")
-            ? slugify(form.getValues("name"), { lower: true, strict: true })
-            : ""
+        form.getValues("name") ? generateSlug(form.getValues("name")) : ""
     );
 
     useEffect(() => {
         const subscription = form.watch((value, { name }) => {
             if (name === "name" && value.name) {
-                setPreviewSlug(
-                    slugify(value.name, { lower: true, strict: true })
-                );
+                setPreviewSlug(generateSlug(value.name));
             }
         });
         return () => subscription.unsubscribe();
@@ -126,7 +122,7 @@ export default function EquipmentForm({
                             equipment={{
                                 name: form.watch("name"),
                                 slug: previewSlug,
-                                equipment_quality: form.watch("quality"),
+                                quality: form.watch("quality"),
                             }}
                             size="lg"
                         />

@@ -1,9 +1,10 @@
 import EquipmentForm from "@/components/EquipmentForm";
-import { createEquipment, getAllEquipment, getAllMissions } from "@/data";
 import {
     EquipmentMutation,
     EquipmentMutationSchema,
 } from "@/data/equipment.zod";
+import { equipmentDAL } from "@/lib/equipment-dal";
+import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
 import { json, redirect } from "@remix-run/node";
@@ -17,8 +18,8 @@ export const meta: MetaFunction = () => {
 
 export async function loader() {
     const [allMissions, existingItems] = await Promise.all([
-        getAllMissions(),
-        getAllEquipment(),
+        missionDAL.getAllMissions(),
+        equipmentDAL.getAllEquipment(),
     ]);
 
     const existingStats = [
@@ -55,7 +56,8 @@ export async function action({ request }: ActionFunctionArgs) {
                     : undefined,
         });
 
-        const newEquipment = await createEquipment(validated);
+        const newEquipment = await equipmentDAL.createEquipment(validated);
+        //const newEquipment = await createEquipment(validated);
 
         return redirect(`/equipment/${newEquipment.slug}`);
     } catch (error) {

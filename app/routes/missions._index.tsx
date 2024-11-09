@@ -8,18 +8,17 @@ import {
     SelectTrigger,
     SelectValue,
 } from "@/components/ui/select";
-import { getAllMissions } from "@/data";
 import type { Mission } from "@/data/mission.zod";
-import { cn } from "@/lib/utils";
+import { missionDAL } from "@/lib/mission-dal";
+import { cn, generateSlug } from "@/lib/utils";
 import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
 import { MapIcon, SearchIcon } from "lucide-react";
 import { useMemo, useState } from "react";
-import slugify from "slugify";
 
 export const loader = async () => {
-    const missions = await getAllMissions();
+    const missions = await missionDAL.getAllMissions();
 
     // Get unique boss names for the select dropdown
     const uniqueBosses = Array.from(
@@ -66,10 +65,7 @@ export default function MissionsIndex() {
     const [selectedBoss, setSelectedBoss] = useState<string | null>(null);
 
     const getBossImageUrl = (bossName: string) => {
-        return `/images/heroes/${slugify(bossName, {
-            lower: true,
-            strict: true,
-        })}.webp`;
+        return `/images/heroes/${generateSlug(bossName)}.webp`;
     };
 
     // Filter missions based on search criteria

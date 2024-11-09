@@ -1,11 +1,12 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import { equipmentDAL } from "@/lib/equipment-dal";
 import { cn } from "@/lib/utils";
 import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
-import { getAllEquipment } from "../data";
 
 export const loader = async () => {
-    const equipments = await getAllEquipment();
+    const equipments = await equipmentDAL.getAllEquipment();
+
     return { equipments };
 };
 
@@ -46,8 +47,7 @@ export default function EquipmentIndex() {
                                 <CardHeader
                                     className={cn(
                                         cardVariants({
-                                            quality:
-                                                equipment.quality,
+                                            quality: equipment.quality,
                                         })
                                     )}
                                 >

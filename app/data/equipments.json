@@ -439,6 +439,29 @@
         "guild_activity_points": 2
     },
     {
+        "name": "Ancient Amulet",
+        "quality": "green",
+        "stats": {
+            "intelligence": 10,
+            "strength": 10,
+            "agility": 10
+        },
+        "hero_level_required": 20,
+        "buy_value": 5400,
+        "sell_value": 1080,
+        "guild_activity_points": 9,
+        "crafting": {
+            "gold_cost": 27000,
+            "required_items": {
+                "branch-of-antiaris": 1,
+                "light-crystal": 1,
+                "trackers-boots": 1
+            }
+        },
+        "slug": "ancient-amulet",
+        "created_at": "2024-11-09T01:43:17.749Z"
+    },
+    {
         "id": "band-of-enlightenment",
         "slug": "band-of-enlightenment",
         "created_at": "2024-11-06T22:47:14.202Z",
@@ -459,5 +482,213 @@
         "buy_value": 1500,
         "sell_value": 300,
         "guild_activity_points": 3
+    },
+    {
+        "name": "Branch of Antiaris",
+        "quality": "green",
+        "stats": {
+            "strength": 10
+        },
+        "hero_level_required": 12,
+        "campaign_sources": [
+            "2-1",
+            "2-8",
+            "4-1",
+            "4-2",
+            "5-8",
+            "6-8"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "branch-of-antiaris",
+        "created_at": "2024-11-09T01:39:11.794Z"
+    },
+    {
+        "name": "Brothers",
+        "quality": "green",
+        "stats": {
+            "strength": 15,
+            "health": 420,
+            "physical attack": 28,
+            "armor": 42
+        },
+        "hero_level_required": 24,
+        "buy_value": 4500,
+        "sell_value": 900,
+        "guild_activity_points": 10,
+        "crafting": {
+            "gold_cost": 22500,
+            "required_items": {
+                "brothers-fragment": 5
+            }
+        },
+        "slug": "brothers",
+        "created_at": "2024-11-09T01:57:37.950Z"
+    },
+    {
+        "name": "Brothers (Fragment)",
+        "quality": "green",
+        "stats": {
+            "agility": 0
+        },
+        "hero_level_required": 1,
+        "campaign_sources": [
+            "3-9",
+            "5-3",
+            "7-6",
+            "7-13",
+            "10-3"
+        ],
+        "buy_value": 750,
+        "sell_value": 150,
+        "guild_activity_points": 2,
+        "slug": "brothers-fragment",
+        "created_at": "2024-11-09T01:47:39.508Z"
+    },
+    {
+        "name": "Cain's Seal",
+        "quality": "green",
+        "stats": {
+            "magic defense": 50
+        },
+        "hero_level_required": 10,
+        "campaign_sources": [
+            "2-7",
+            "4-11",
+            "5-15",
+            "6-3",
+            "7-2",
+            "9-2"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "cains-seal",
+        "created_at": "2024-11-09T01:59:31.614Z"
+    },
+    {
+        "name": "Cuirass",
+        "quality": "green",
+        "stats": {
+            "armor": 50
+        },
+        "hero_level_required": 10,
+        "campaign_sources": [
+            "2-5",
+            "3-10",
+            "4-9",
+            "5-10",
+            "6-1",
+            "6-15"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "cuirass",
+        "created_at": "2024-11-09T02:00:42.602Z"
+    },
+    {
+        "name": "Cursed Dagger",
+        "quality": "green",
+        "stats": {
+            "armor penetration": 50
+        },
+        "hero_level_required": 24,
+        "campaign_sources": [
+            "3-4",
+            "4-14",
+            "6-10",
+            "7-4",
+            "10-12"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "cursed-dagger",
+        "created_at": "2024-11-09T02:01:45.253Z"
+    },
+    {
+        "name": "Dawnguard",
+        "quality": "green",
+        "stats": {
+            "intelligence": 22,
+            "physical attack": 28,
+            "armor": 42
+        },
+        "hero_level_required": 24,
+        "buy_value": 4500,
+        "sell_value": 900,
+        "guild_activity_points": 10,
+        "crafting": {
+            "gold_cost": 22500,
+            "required_items": {
+                "dawnguard-fragment": 5
+            }
+        },
+        "slug": "dawnguard",
+        "created_at": "2024-11-09T02:02:59.409Z"
+    },
+    {
+        "name": "Dawnguard (Fragment)",
+        "quality": "green",
+        "stats": {
+            "agility": 0
+        },
+        "hero_level_required": 1,
+        "campaign_sources": [
+            "5-5",
+            "6-4",
+            "7-15",
+            "10-2",
+            "10-13"
+        ],
+        "buy_value": 750,
+        "sell_value": 150,
+        "guild_activity_points": 2,
+        "slug": "dawnguard-fragment",
+        "created_at": "2024-11-09T02:04:51.453Z"
+    },
+    {
+        "name": "Light Crystal",
+        "quality": "green",
+        "stats": {
+            "intelligence": 10
+        },
+        "hero_level_required": 12,
+        "campaign_sources": [
+            "2-6",
+            "2-9",
+            "4-3",
+            "4-6",
+            "5-9",
+            "6-9"
+        ],
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "light-crystal",
+        "created_at": "2024-11-09T01:40:30.135Z"
+    },
+    {
+        "name": "Tracker's Boots",
+        "quality": "green",
+        "stats": {
+            "agility": 10
+        },
+        "hero_level_required": 12,
+        "campaign_sources": [
+            "2-10",
+            "2-11",
+            "4-4",
+            "4-10",
+            "5-11",
+            "6-11"
+        ],
+        "buy_value": 1400,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "slug": "trackers-boots",
+        "created_at": "2024-11-09T01:41:30.658Z"
     }
 ]

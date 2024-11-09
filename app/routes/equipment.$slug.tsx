@@ -8,16 +8,14 @@ import {
     CardHeader,
     CardTitle,
 } from "@/components/ui/card";
-import {
-    getAllMissions,
-    getEquipmentBySlug,
-    getEquipmentThatRequires,
-} from "@/data";
 import type { EquipmentRecord } from "@/data/equipment.zod";
 import type { Mission } from "@/data/mission.zod";
+import { equipmentDAL } from "@/lib/equipment-dal";
+import { missionDAL } from "@/lib/mission-dal";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, Link, useLoaderData } from "@remix-run/react";
-import { AlertCircle } from "lucide-react";
+import { Form, Link, useLoaderData, useNavigate } from "@remix-run/react";
+import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { useEffect } from "react";
 import invariant from "tiny-invariant";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -29,13 +27,16 @@ interface LoaderData {
     requiredEquipment: (EquipmentRecord | null)[];
     requiredFor: EquipmentRecord[];
     missionSources: Mission[];
+    prevEquipment: EquipmentRecord | null;
+    nextEquipment: EquipmentRecord | null;
 }
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.slug, "Missing equipment slug param");
 
     // Get main equipment details
-    const equipment = await getEquipmentBySlug(params.slug);
+    const equipment = await equipmentDAL.getEquipmentBySlug(params.slug);
+
     if (!equipment) {
         throw new Response(null, {
             status: 404,
@@ -43,18 +44,29 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         });
     }
 
-    // Get required equipment details
-    const requiredEquipmentPromises = equipment.crafting
-        ? Object.keys(equipment.crafting.required_items).map(async (slug) => {
-              return await getEquipmentBySlug(slug);
-          })
-        : [];
+    const sortedEquipment = await equipmentDAL.getAllEquipment();
+    const currentIndex = sortedEquipment.findIndex(
+        (e) => e.slug === equipment.slug
+    );
+    const prevEquipment =
+        currentIndex > 0 ? sortedEquipment[currentIndex - 1] : null;
+    const nextEquipment =
+        currentIndex < sortedEquipment.length
+            ? sortedEquipment[currentIndex + 1]
+            : null;
 
     // Get equipment that requires this item
-    const requiredFor = (await getEquipmentThatRequires(equipment.name)) || [];
+    const requiredFor = await equipmentDAL.getEquipmentThatRequires(
+        equipment.slug
+    );
+    const requiredEquipment = equipment.crafting
+        ? await equipmentDAL.getAllEquipment(
+              Object.keys(equipment.crafting.required_items)
+          )
+        : [];
 
     // Get all missions and filter for sources
-    const allMissions = await getAllMissions();
+    const allMissions = await missionDAL.getAllMissions();
     const missionSources = equipment.campaign_sources
         ? equipment.campaign_sources
               .map((source) => allMissions.find((m) => m.id === source))
@@ -68,14 +80,13 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
               })
         : [];
 
-    // Wait for all required equipment details to be fetched
-    const requiredEquipment = await Promise.all(requiredEquipmentPromises);
-
     return json<LoaderData>({
         equipment,
         requiredEquipment,
         requiredFor,
         missionSources,
+        prevEquipment,
+        nextEquipment,
     });
 };
 
@@ -105,7 +116,7 @@ const EquipmentItem = ({
 
     return (
         <Link
-            to={`/equipment/${item.id}`}
+            to={`/equipment/${item.slug}`}
             className="flex flex-col items-center gap-2 group"
         >
             <EquipmentImage equipment={item} size="md" />
@@ -120,8 +131,44 @@ const EquipmentItem = ({
 };
 
 export default function Equipment() {
-    const { equipment, requiredEquipment, requiredFor, missionSources } =
-        useLoaderData<LoaderData>();
+    const {
+        equipment,
+        requiredEquipment,
+        requiredFor,
+        missionSources,
+        prevEquipment,
+        nextEquipment,
+    } = useLoaderData<LoaderData>();
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        function handleKeyDown(event: KeyboardEvent) {
+
+            // Skip if user is typing in an input or textarea
+            if (
+                event.target instanceof HTMLInputElement ||
+                event.target instanceof HTMLTextAreaElement
+            ) {
+                return;
+            }
+
+            switch (event.key) {
+                case "ArrowLeft":
+                    if (prevEquipment) {
+                        navigate(`/equipment/${prevEquipment.slug}`);
+                    }
+                    break;
+                case "ArrowRight":
+                    if (nextEquipment) {
+                        navigate(`/equipment/${nextEquipment.slug}`);
+                    }
+                    break;
+            }
+        }
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [navigate, prevEquipment, nextEquipment]);
 
     return (
         <div className="space-y-8">
@@ -245,7 +292,7 @@ export default function Equipment() {
                     <CardHeader>
                         <CardTitle>Crafting Requirements</CardTitle>
                         {equipment.crafting?.gold_cost && (
-                            <CardDescription className="flex items-center gap-2">
+                            <CardDescription className="flex items-center gap-1">
                                 <img
                                     src="/images/gold.webp"
                                     alt="Gold cost"
@@ -260,11 +307,11 @@ export default function Equipment() {
                         <div className="flex flex-wrap items-center gap-4">
                             {requiredEquipment.map((item, index) => (
                                 <EquipmentItem
-                                    key={item?.id || `missing-${index}`}
+                                    key={item?.slug || `missing-${index}`}
                                     item={item}
                                     quantity={
                                         equipment.crafting?.required_items[
-                                            item?.id || ""
+                                            item?.slug || ""
                                         ] || 0
                                     }
                                 />
@@ -284,8 +331,8 @@ export default function Equipment() {
                         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
                             {requiredFor.map((item) => (
                                 <Link
-                                    key={item.id}
-                                    to={`/equipment/${item.id}`}
+                                    key={item.slug}
+                                    to={`/equipment/${item.slug}`}
                                     className="flex items-center gap-2 group"
                                 >
                                     <EquipmentImage
@@ -300,7 +347,7 @@ export default function Equipment() {
                                             Requires{" "}
                                             {
                                                 item.crafting?.required_items[
-                                                    equipment.id
+                                                    equipment.slug
                                                 ]
                                             }
                                             x
@@ -316,7 +363,7 @@ export default function Equipment() {
             {/* Action Buttons */}
             <div className="flex gap-4">
                 <Link
-                    to={`/equipment/${equipment.id}/edit`}
+                    to={`/equipment/${equipment.slug}/edit`}
                     className={buttonVariants({ variant: "default" })}
                 >
                     Edit
@@ -337,6 +384,39 @@ export default function Equipment() {
                         Delete
                     </Button>
                 </Form>
+            </div>
+            {/* Navigation Buttons */}
+            <div className="flex justify-between items-center gap-4 flex-1 order-1 sm:order-2">
+                {prevEquipment ? (
+                    <Link
+                        to={`/equipment/${prevEquipment.slug}`}
+                        className={buttonVariants({ variant: "outline" })}
+                    >
+                        <ArrowLeftIcon className="mr-2 h-4 w-4" />
+                        {prevEquipment.name}
+                    </Link>
+                ) : (
+                    <div />
+                )}
+
+                <Link
+                    to="/equipment"
+                    className={buttonVariants({ variant: "secondary" })}
+                >
+                    All Equipment
+                </Link>
+
+                {nextEquipment ? (
+                    <Link
+                        to={`/equipment/${nextEquipment.slug}`}
+                        className={buttonVariants({ variant: "outline" })}
+                    >
+                        {nextEquipment.name}
+                        <ArrowRightIcon className="ml-2 h-4 w-4" />
+                    </Link>
+                ) : (
+                    <div />
+                )}
             </div>
         </div>
     );

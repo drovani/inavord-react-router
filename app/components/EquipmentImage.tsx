@@ -1,7 +1,7 @@
 import { EquipmentMutation } from "@/data/equipment.zod";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useState } from "react";
+import { useMemo, useState } from "react";
 
 const imageVariants = cva("relative", {
     variants: {
@@ -18,18 +18,29 @@ const imageVariants = cva("relative", {
     },
 });
 
-function EquipmentImage({
-    equipment,
-    size = "default",
-    isFragment = false,
-}: Props) {
+function EquipmentImage({ equipment, size = "default" }: Props) {
     const [status, setStatus] = useState(equipment.slug ? "loading" : "error");
+
+    const isFragment = useMemo(
+        () => equipment.slug && equipment.slug?.indexOf("-fragment") > 0,
+        [equipment.slug]
+    );
+    const imageFilename = useMemo(
+        () =>
+            isFragment
+                ? equipment.slug?.substring(
+                      0,
+                      equipment.slug.length - "-fragment".length
+                  )
+                : equipment.slug,
+        [isFragment, equipment.slug]
+    );
 
     return (
         <div className={cn(imageVariants({ size }))}>
             <img
                 alt={`${equipment.name || "unknown"} icon`}
-                src={`/images/equipment/${equipment.slug}.png`}
+                src={`/images/equipment/${imageFilename}.png`}
                 className={cn(
                     status === "loaded" || status === "loading" ? "" : "hidden",
                     size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg"
@@ -39,9 +50,9 @@ function EquipmentImage({
             />
             <img
                 alt={`${equipment.name || "unknown"} icon border`}
-                src={`/images/equipment/border-${
-                    equipment.quality || "gray"
-                }${isFragment ? "-fragment" : ""}.png`}
+                src={`/images/equipment/border-${equipment.quality || "gray"}${
+                    isFragment && equipment.quality !== "gray" ? "-fragment" : ""
+                }.png`}
                 className="absolute top-0 left-0 h-full w-full"
             />
         </div>
@@ -54,7 +65,6 @@ interface Props extends VariantProps<typeof imageVariants> {
         slug?: string;
         quality?: EquipmentMutation["quality"];
     };
-    isFragment?: boolean;
 }
 
 export default EquipmentImage;

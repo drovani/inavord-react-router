@@ -1,9 +1,9 @@
-import { getAllMissions } from "@/data";
+import { missionDAL } from "@/lib/mission-dal";
 import { createReadableStreamFromReadable } from "@remix-run/node";
 import { Readable } from "node:stream";
 
 export async function loader() {
-    const missions = await getAllMissions();
+    const missions = await missionDAL.getAllMissions();
     const file = createReadableStreamFromReadable(
         Readable.from(JSON.stringify(missions))
     );

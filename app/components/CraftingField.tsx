@@ -47,9 +47,9 @@ export default function CraftingField({
         craftingData &&
         (craftingData.gold_cost > 0 || Object.keys(requiredItems).length > 0);
 
-    // Helper function to find the item details by ID
-    const getItemById = (id: string) => {
-        return existingItems.find((item) => item.id === id);
+    // Helper function to find the item details by slug
+    const getItemBySlug = (slug: string) => {
+        return existingItems.find((item) => item.slug === slug);
     };
 
     // Filter items based on search input
@@ -57,7 +57,7 @@ export default function CraftingField({
         .filter(
             (item) =>
                 item.name.toLowerCase().includes(inputValue.toLowerCase()) &&
-                !requiredItems[item.id]
+                !requiredItems[item.slug]
         )
         .sort((a, b) => a.name.localeCompare(b.name));
 
@@ -66,7 +66,7 @@ export default function CraftingField({
             gold_cost: craftingData?.gold_cost || 0,
             required_items: {
                 ...requiredItems,
-                [item.id]: 1,
+                [item.slug]: 1,
             },
         };
         form.setValue("crafting", newCrafting);
@@ -74,9 +74,9 @@ export default function CraftingField({
         setInputValue("");
     };
 
-    const removeItem = (id: string) => {
+    const removeItem = (slug: string) => {
         const newRequiredItems = { ...requiredItems };
-        delete newRequiredItems[id];
+        delete newRequiredItems[slug];
         const newCrafting = {
             gold_cost: craftingData?.gold_cost || 0,
             required_items: newRequiredItems,
@@ -84,12 +84,12 @@ export default function CraftingField({
         form.setValue("crafting", newCrafting);
     };
 
-    const updateQuantity = (id: string, quantity: number) => {
+    const updateQuantity = (slug: string, quantity: number) => {
         const newCrafting = {
             gold_cost: craftingData?.gold_cost || 0,
             required_items: {
                 ...requiredItems,
-                [id]: quantity,
+                [slug]: quantity,
             },
         };
         form.setValue("crafting", newCrafting);
@@ -114,8 +114,8 @@ export default function CraftingField({
 
     // Get selected items details for hover card
     const selectedItemsDetails = Object.entries(requiredItems)
-        .map(([id, quantity]) => {
-            const item = getItemById(id);
+        .map(([slug, quantity]) => {
+            const item = getItemBySlug(slug);
             return item ? { ...item, quantity } : null;
         })
         .filter(
@@ -176,7 +176,7 @@ export default function CraftingField({
                                                                 (item) => (
                                                                     <div
                                                                         key={
-                                                                            item.id
+                                                                            item.slug
                                                                         }
                                                                         className="flex items-center gap-2 text-sm"
                                                                     >
@@ -262,14 +262,14 @@ export default function CraftingField({
                                         <div className="space-y-4 max-w-sm">
                                             {/* Existing items */}
                                             {Object.entries(requiredItems).map(
-                                                ([id, quantity]) => {
+                                                ([slug, quantity]) => {
                                                     const item =
-                                                        getItemById(id);
+                                                        getItemBySlug(slug);
                                                     if (!item) return null;
 
                                                     return (
                                                         <div
-                                                            key={id}
+                                                            key={slug}
                                                             className="flex items-center gap-2"
                                                         >
                                                             <Badge
@@ -290,7 +290,7 @@ export default function CraftingField({
                                                                         e
                                                                     ) =>
                                                                         updateQuantity(
-                                                                            id,
+                                                                            slug,
                                                                             Number(
                                                                                 e
                                                                                     .target
@@ -308,7 +308,7 @@ export default function CraftingField({
                                                                 size="icon"
                                                                 onClick={() =>
                                                                     removeItem(
-                                                                        id
+                                                                        slug
                                                                     )
                                                                 }
                                                             >
@@ -357,7 +357,7 @@ export default function CraftingField({
                                                                     (item) => (
                                                                         <Button
                                                                             key={
-                                                                                item.id
+                                                                                item.slug
                                                                             }
                                                                             variant="ghost"
                                                                             size="sm"

@@ -1,5 +1,7 @@
 import { initializeEquipmentBlobs } from "@/lib/initialize-equipment-blobs";
+import { initializeMissionBlobs } from "@/lib/initialize-mission-blobs";
 import { json, type LoaderFunctionArgs } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 export async function loader({ request }: LoaderFunctionArgs) {
     try {
@@ -13,12 +15,13 @@ export async function loader({ request }: LoaderFunctionArgs) {
             forceUpdate: mode === "force",
         };
 
-        const result = await initializeEquipmentBlobs(options);
+        const resultE = await initializeEquipmentBlobs(options);
+        const resultM = await initializeMissionBlobs(options);
 
         return json({
             message: "Equipment blob initialization complete",
             mode,
-            ...result,
+            results: { equipment: { ...resultE }, mission: { ...resultM } },
         });
     } catch (error) {
         const message =
@@ -27,7 +30,7 @@ export async function loader({ request }: LoaderFunctionArgs) {
 
         return json(
             {
-                message: "Equipment blob initialization failed",
+                message: "Blob initialization failed",
                 error: message,
             },
             {
@@ -39,4 +42,16 @@ export async function loader({ request }: LoaderFunctionArgs) {
             }
         );
     }
+}
+
+export default function AdminSetp() {
+    const results = useLoaderData<typeof loader>();
+
+    return (
+        <div>
+            <pre>
+                {JSON.stringify(results, null, '\t')}
+            </pre>
+        </div>
+    )
 }

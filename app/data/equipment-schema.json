@@ -6,14 +6,9 @@
   "items": {
     "type": "object",
     "properties": {
-      "id": {
-        "type": "string",
-        "description": "Unique identifier for the equipment",
-        "readOnly": true
-      },
       "slug": {
         "type": "string",
-        "description": "URL-friendly identifier for the equipment",
+        "description": "URL-friendly unique identifier for the equipment",
         "readOnly": true
       },
       "created_at": {
@@ -101,7 +96,6 @@
       }
     },
     "required": [
-      "id",
       "slug",
       "created_at",
       "name",

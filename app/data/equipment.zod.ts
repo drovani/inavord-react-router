@@ -34,7 +34,6 @@ export const EquipmentMutationSchema = z.object({
 });
 
 export const EquipmentRecordSchema = EquipmentMutationSchema.extend({
-    id: z.string().readonly(),
     slug: z.string().readonly(),
     created_at: z.string().datetime().readonly(),
 });

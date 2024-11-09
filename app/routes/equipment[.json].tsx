@@ -1,4 +1,4 @@
-import { getAllEquipment } from "@/data";
+import { equipmentDAL } from "@/lib/equipment-dal";
 import { createReadableStreamFromReadable } from "@remix-run/node";
 import { Readable } from "node:stream";
 
@@ -11,7 +11,7 @@ function removeEmptyArrays<T>(_: string, value: T): T | undefined {
 }
 
 export async function loader() {
-    const equipment = await getAllEquipment();
+    const equipment = await equipmentDAL.getAllEquipment();
     const file = createReadableStreamFromReadable(
         Readable.from(JSON.stringify(equipment, removeEmptyArrays))
     );

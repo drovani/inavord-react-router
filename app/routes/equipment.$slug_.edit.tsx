@@ -1,14 +1,10 @@
 import EquipmentForm from "@/components/EquipmentForm";
 import {
-    getAllEquipment,
-    getAllMissions,
-    getEquipmentBySlug,
-    updateEquipment,
-} from "@/data";
-import {
     EquipmentMutationSchema,
     type EquipmentMutation,
 } from "@/data/equipment.zod";
+import { equipmentDAL } from "@/lib/equipment-dal";
+import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type {
     ActionFunctionArgs,
@@ -27,7 +23,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export const loader = async ({ params }: LoaderFunctionArgs) => {
     invariant(params.slug, "Missing equipment slug param.");
-    const equipment = await getEquipmentBySlug(params.slug);
+    const equipment = await equipmentDAL.getEquipmentBySlug(params.slug);
     if (!equipment) {
         throw new Response(null, {
             status: 404,
@@ -36,8 +32,8 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     }
 
     const [allMissions, existingItems] = await Promise.all([
-        getAllMissions(),
-        getAllEquipment(),
+        missionDAL.getAllMissions(),
+        equipmentDAL.getAllEquipment(),
     ]);
 
     const existingStats = [
@@ -76,7 +72,12 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
                     : undefined,
         });
 
-        const updatedEquipment = await updateEquipment(params.slug, validated);
+        const updatedEquipment = await equipmentDAL.updateEquipment(
+            params.slug,
+            validated
+        );
+        //        const updatedEquipment = await updateEquipment(params.slug, validated);
+
         return redirect(`/equipment/${updatedEquipment.slug}`);
     } catch (error) {
         if (error instanceof ZodError) {

@@ -1,11 +1,13 @@
 import EquipmentImage from "@/components/EquipmentImage";
 import { buttonVariants } from "@/components/ui/button";
-import { getAllEquipment, getAllMissions, getMission } from "@/data";
 import { EquipmentRecord } from "@/data/equipment.zod";
+import { equipmentDAL } from "@/lib/equipment-dal";
+import { missionDAL } from "@/lib/mission-dal";
+import { generateSlug } from "@/lib/utils";
 import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
+import { Link, useLoaderData, useNavigate } from "@remix-run/react";
 import { MapIcon } from "lucide-react";
-import slugify from "slugify";
+import { useEffect } from "react";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     if (!data) {
@@ -23,8 +25,8 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
 
     // Find the mission
     const [missions, mission] = await Promise.all([
-        getAllMissions(),
-        getMission(missionId),
+        missionDAL.getAllMissions(),
+        missionDAL.getMission(missionId),
     ]);
 
     if (!mission) {
@@ -32,35 +34,59 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     }
 
     // Get equipment that can be found in this mission
-    const allEquipment = await getAllEquipment();
+    const allEquipment = await equipmentDAL.getAllEquipment();
     const equipmentInMission = allEquipment.filter((equipment) =>
         equipment.campaign_sources?.includes(missionId)
     );
 
     // Get previous and next missions for navigation
     const missionIndex = missions.findIndex((m) => m.id === missionId);
-    const previousMission =
-        missionIndex > 0 ? missions[missionIndex - 1] : null;
+    const prevMission = missionIndex > 0 ? missions[missionIndex - 1] : null;
     const nextMission =
         missionIndex < missions.length - 1 ? missions[missionIndex + 1] : null;
 
     return json({
         mission,
         equipmentInMission,
-        previousMission,
+        prevMission,
         nextMission,
     });
 };
 
 export default function MissionDetails() {
-    const { mission, equipmentInMission, previousMission, nextMission } =
+    const { mission, equipmentInMission, prevMission, nextMission } =
         useLoaderData<typeof loader>();
+    const navigate = useNavigate();
 
+    useEffect(() => {
+        function handleKeyDown(event: KeyboardEvent) {
+            // Skip if user is typing in an input or textarea
+            if (
+                event.target instanceof HTMLInputElement ||
+                event.target instanceof HTMLTextAreaElement
+            ) {
+                return;
+            }
+
+            switch (event.key) {
+                case "ArrowLeft":
+                    if (prevMission) {
+                        navigate(`/missions/${prevMission.id}`);
+                    }
+                    break;
+                case "ArrowRight":
+                    if (nextMission) {
+                        navigate(`/missions/${nextMission.id}`);
+                    }
+                    break;
+            }
+        }
+
+        window.addEventListener("keydown", handleKeyDown);
+        return () => window.removeEventListener("keydown", handleKeyDown);
+    }, [navigate, prevMission, nextMission]);
     const getBossImageUrl = (bossName: string) => {
-        return `/images/heroes/${slugify(bossName, {
-            lower: true,
-            strict: true,
-        })}.webp`;
+        return `/images/heroes/${generateSlug(bossName)}.webp`;
     };
 
     return (
@@ -106,7 +132,7 @@ export default function MissionDetails() {
                         {equipmentInMission.map(
                             (equipment: EquipmentRecord) => (
                                 <Link
-                                    key={equipment.id}
+                                    key={equipment.slug}
                                     to={`/equipment/${equipment.slug}`}
                                     className="flex flex-col items-center gap-2 p-2 rounded-lg hover:bg-accent transition-colors"
                                 >
@@ -130,13 +156,12 @@ export default function MissionDetails() {
 
             {/* Navigation */}
             <div className="flex justify-between items-center pt-4">
-                {previousMission ? (
+                {prevMission ? (
                     <Link
-                        to={`/missions/${previousMission.id}`}
+                        to={`/missions/${prevMission.id}`}
                         className={buttonVariants({ variant: "outline" })}
                     >
-                        ← {previousMission.chapter}-
-                        {previousMission.mission_number}
+                        ← {prevMission.chapter}-{prevMission.mission_number}
                     </Link>
                 ) : (
                     <div />
