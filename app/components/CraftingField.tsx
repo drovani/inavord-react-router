@@ -32,11 +32,13 @@ import { type UseFormReturn } from "react-hook-form";
 interface CraftingFieldProps {
     form: UseFormReturn<EquipmentMutation>;
     existingItems: EquipmentRecord[];
+    disabled?: boolean;
 }
 
 export default function CraftingField({
     form,
     existingItems,
+    disabled = false,
 }: CraftingFieldProps) {
     const [open, setOpen] = useState(false);
     const [inputValue, setInputValue] = useState("");
@@ -130,9 +132,14 @@ export default function CraftingField({
                     value="crafting"
                     className="border rounded-md px-4"
                 >
-                    <AccordionTrigger>
+                    <AccordionTrigger
+                        disabled={disabled}
+                        className="disabled:opacity-70"
+                    >
                         <div className="flex items-center gap-2 text-base">
-                            <span>Crafting Requirements</span>
+                            <span>
+                                Crafting Requirements
+                            </span>
                             <div className="flex items-center gap-2">
                                 {hasRequirements ? (
                                     <>

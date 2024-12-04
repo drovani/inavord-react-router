@@ -20,13 +20,14 @@ import {
 import type { Mission } from "@/data/mission.zod";
 import { generateSlug } from "@/lib/utils";
 import { useNavigate, useSubmit } from "@remix-run/react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
 import { z } from "zod";
 import CampaignSourcesField from "./CampaignSourcesField";
 import CraftingField from "./CraftingField";
 import EquipmentImage from "./EquipmentImage";
 import StatsField from "./StatsField";
+import { Switch } from "./ui/switch";
 
 type EquipmentFormProps = {
     form: UseFormReturn<EquipmentMutation>;
@@ -82,6 +83,27 @@ export default function EquipmentForm({
     const [previewSlug, setPreviewSlug] = useState(
         form.getValues("name") ? generateSlug(form.getValues("name")) : ""
     );
+    const itemType = form.watch("type");
+    const isFragment = useMemo(() => itemType === "fragment", [itemType]);
+
+    useEffect(() => {
+        const name = form.getValues("name");
+        if (!name) return;
+
+        if (isFragment && !name.endsWith(" (Fragment)")) {
+            form.setValue("name", `${name} (Fragment)`);
+        } else if (!isFragment && name.endsWith(" (Fragment)")) {
+            form.setValue("name", name.replace(" (Fragment)", ""));
+        }
+        setPreviewSlug(generateSlug(form.getValues("name")));
+    }, [isFragment, form]);
+
+    useEffect(() => {
+        const quality = form.getValues("quality");
+        if (isFragment && quality === "gray") {
+            form.setValue("quality", "green");
+        }
+    }, [isFragment, form]);
 
     useEffect(() => {
         const subscription = form.watch((value, { name }) => {
@@ -90,7 +112,7 @@ export default function EquipmentForm({
             }
         });
         return () => subscription.unsubscribe();
-    }, [form]);
+    }, [form, isFragment]);
 
     const onSubmit = (data: EquipmentMutation) => {
         const formData = new FormData();
@@ -101,7 +123,7 @@ export default function EquipmentForm({
     return (
         <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                <div className="flex flex-col md:flex-row md:items-start gap-4">
+                <div className="flex flex-col  gap-4">
                     <div className="flex-1">
                         <FormField
                             control={form.control}
@@ -117,12 +139,39 @@ export default function EquipmentForm({
                             )}
                         />
                     </div>
-                    <div className="md:pt-8">
+                    <div className="flex gap-4 items-center justify-around">
+                        <FormField
+                            control={form.control}
+                            name="type"
+                            render={({ field }) => (
+                                <FormItem>
+                                    <FormLabel>Fragment</FormLabel>
+                                    <FormControl>
+                                        <Switch
+                                            className="block"
+                                            checked={field.value === "fragment"}
+                                            disabled={
+                                                form.watch("quality") === "gray"
+                                            }
+                                            onCheckedChange={(checked) =>
+                                                field.onChange(
+                                                    checked
+                                                        ? "fragment"
+                                                        : "equipment"
+                                                )
+                                            }
+                                        />
+                                    </FormControl>
+                                    <FormMessage />
+                                </FormItem>
+                            )}
+                        />
                         <EquipmentImage
                             equipment={{
                                 name: form.watch("name"),
                                 slug: previewSlug,
                                 quality: form.watch("quality"),
+                                type: isFragment ? "fragment" : "equipment",
                             }}
                             size="lg"
                         />
@@ -181,6 +230,7 @@ export default function EquipmentForm({
                                         onValueChange={([value]) =>
                                             field.onChange(value)
                                         }
+                                        disabled={isFragment}
                                     />
                                 </FormControl>
                                 <FormControl className="w-20">
@@ -192,6 +242,7 @@ export default function EquipmentForm({
                                         onChange={(e) =>
                                             field.onChange(+e.target.value)
                                         }
+                                        disabled={isFragment}
                                     />
                                 </FormControl>
                             </div>
@@ -292,8 +343,16 @@ export default function EquipmentForm({
                     </div>
                 </div>
 
-                <StatsField form={form} existingStats={existingStats} />
-                <CraftingField form={form} existingItems={existingItems} />
+                <StatsField
+                    form={form}
+                    existingStats={existingStats}
+                    disabled={isFragment}
+                />
+                <CraftingField
+                    form={form}
+                    existingItems={existingItems}
+                    disabled={isFragment}
+                />
                 <CampaignSourcesField form={form} missions={missions} />
 
                 <div className="flex gap-4">

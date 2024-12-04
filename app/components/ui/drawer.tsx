@@ -8,7 +8,7 @@ const Drawer = ({
     shouldScaleBackground = true,
     ...props
 }: React.ComponentProps<typeof DrawerPrimitive.Root> & {
-    shouldScaleBackground: boolean;
+    shouldScaleBackground?: boolean;
 }) => (
     <DrawerPrimitive.Root
         shouldScaleBackground={shouldScaleBackground}
@@ -114,15 +114,15 @@ const DrawerDescription = React.forwardRef<
 DrawerDescription.displayName = DrawerPrimitive.Description.displayName;
 
 export {
-  Drawer,
-  DrawerClose,
-  DrawerContent,
-  DrawerDescription,
-  DrawerFooter,
-  DrawerHeader,
-  DrawerOverlay,
-  DrawerPortal,
-  DrawerTitle,
-  DrawerTrigger
+    Drawer,
+    DrawerClose,
+    DrawerContent,
+    DrawerDescription,
+    DrawerFooter,
+    DrawerHeader,
+    DrawerOverlay,
+    DrawerPortal,
+    DrawerTitle,
+    DrawerTrigger
 };
 
