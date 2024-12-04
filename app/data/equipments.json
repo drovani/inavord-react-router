@@ -1,8 +1,7 @@
 [
     {
-        "id": "apprentices-mantle",
         "slug": "apprentices-mantle",
-        "created_at": "2024-09-10T17:16:56-05:00",
+        "created_at": "2024-09-10T17:16:56.000Z",
         "name": "Apprentice's Mantle",
         "hero_level_required": 1,
         "quality": "gray",
@@ -22,9 +21,8 @@
         "guild_activity_points": 2
     },
     {
-        "id": "ashen-bow",
         "slug": "ashen-bow",
-        "created_at": "2024-09-10T17:16:56-05:00",
+        "created_at": "2024-09-10T17:16:56.000Z",
         "name": "Ashen Bow",
         "quality": "gray",
         "hero_level_required": 5,
@@ -46,9 +44,8 @@
         }
     },
     {
-        "id": "censer",
         "slug": "censer",
-        "created_at": "2024-09-10T17:16:56-05:00",
+        "created_at": "2024-09-10T17:16:56.000Z",
         "name": "Censer",
         "hero_level_required": 3,
         "quality": "gray",
@@ -67,7 +64,6 @@
         ]
     },
     {
-        "id": "crossbow",
         "slug": "crossbow",
         "created_at": "2024-11-06T21:09:00.096Z",
         "name": "Crossbow",
@@ -89,7 +85,6 @@
         }
     },
     {
-        "id": "dagger",
         "slug": "dagger",
         "created_at": "2024-11-06T22:22:38.900Z",
         "name": "Dagger",
@@ -111,7 +106,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "giants-belt",
         "slug": "giants-belt",
         "created_at": "2024-11-06T22:44:02.994Z",
         "name": "Giant's Belt",
@@ -135,7 +129,6 @@
         }
     },
     {
-        "id": "imperial-shield",
         "slug": "imperial-shield",
         "created_at": "2024-11-06T22:21:01.966Z",
         "name": "Imperial Shield",
@@ -156,7 +149,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "lucky-arrow",
         "slug": "lucky-arrow",
         "created_at": "2024-11-06T21:07:59.976Z",
         "name": "Lucky Arrow",
@@ -177,7 +169,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "lucky-dice",
         "slug": "lucky-dice",
         "created_at": "2024-11-06T22:45:41.691Z",
         "name": "Lucky Dice",
@@ -199,7 +190,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "oil-lamp",
         "slug": "oil-lamp",
         "created_at": "2024-11-06T22:42:17.694Z",
         "name": "Oil Lamp",
@@ -220,7 +210,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "orcish-hammer",
         "slug": "orcish-hammer",
         "created_at": "2024-11-06T22:28:28.465Z",
         "name": "Orcish Hammer",
@@ -242,7 +231,6 @@
         }
     },
     {
-        "id": "orcish-knuckles",
         "slug": "orcish-knuckles",
         "created_at": "2024-11-06T22:23:45.010Z",
         "name": "Orcish Knuckles",
@@ -263,7 +251,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "orcish-yatagan",
         "slug": "orcish-yatagan",
         "created_at": "2024-11-06T21:07:03.702Z",
         "name": "Orcish Yatagan",
@@ -284,7 +271,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "quiver",
         "slug": "quiver",
         "created_at": "2024-11-06T22:41:35.474Z",
         "name": "Quiver",
@@ -305,7 +291,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "sledgehammer",
         "slug": "sledgehammer",
         "created_at": "2024-11-06T22:25:24.017Z",
         "name": "Sledgehammer",
@@ -329,7 +314,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "steel-pauldron",
         "slug": "steel-pauldron",
         "created_at": "2024-11-06T22:26:20.983Z",
         "name": "Steel Pauldron",
@@ -351,7 +335,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "travellers-shoes",
         "slug": "travellers-shoes",
         "created_at": "2024-11-06T22:43:15.321Z",
         "name": "Traveller's Shoes",
@@ -373,7 +356,6 @@
         "guild_activity_points": 2
     },
     {
-        "id": "travellers-staff",
         "slug": "travellers-staff",
         "created_at": "2024-11-06T22:27:34.661Z",
         "name": "Traveller's Staff",
@@ -396,9 +378,8 @@
         "guild_activity_points": 2
     },
     {
-        "id": "wizards-staff",
         "slug": "wizards-staff",
-        "created_at": "2024-09-10T17:16:56-05:00",
+        "created_at": "2024-09-10T17:16:56.000Z",
         "name": "Wizard's Staff",
         "hero_level_required": 4,
         "quality": "gray",
@@ -418,9 +399,8 @@
         }
     },
     {
-        "id": "wooden-shield",
         "slug": "wooden-shield",
-        "created_at": "2024-09-10T17:16:56-05:00",
+        "created_at": "2024-09-10T17:16:56.000Z",
         "name": "Wooden Shield",
         "hero_level_required": 1,
         "quality": "gray",
@@ -462,7 +442,6 @@
         "created_at": "2024-11-09T01:43:17.749Z"
     },
     {
-        "id": "band-of-enlightenment",
         "slug": "band-of-enlightenment",
         "created_at": "2024-11-06T22:47:14.202Z",
         "name": "Band of Enlightenment",
@@ -529,10 +508,6 @@
     {
         "name": "Brothers (Fragment)",
         "quality": "green",
-        "stats": {
-            "agility": 0
-        },
-        "hero_level_required": 1,
         "campaign_sources": [
             "3-9",
             "5-3",
@@ -544,7 +519,8 @@
         "sell_value": 150,
         "guild_activity_points": 2,
         "slug": "brothers-fragment",
-        "created_at": "2024-11-09T01:47:39.508Z"
+        "created_at": "2024-11-09T01:47:39.508Z",
+        "type": "fragment"
     },
     {
         "name": "Cain's Seal",
@@ -632,10 +608,6 @@
     {
         "name": "Dawnguard (Fragment)",
         "quality": "green",
-        "stats": {
-            "agility": 0
-        },
-        "hero_level_required": 1,
         "campaign_sources": [
             "5-5",
             "6-4",
@@ -647,7 +619,8 @@
         "sell_value": 150,
         "guild_activity_points": 2,
         "slug": "dawnguard-fragment",
-        "created_at": "2024-11-09T02:04:51.453Z"
+        "created_at": "2024-11-09T02:04:51.453Z",
+        "type": "fragment"
     },
     {
         "name": "Light Crystal",

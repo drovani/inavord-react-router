@@ -5,7 +5,25 @@
   "type": "array",
   "items": {
     "type": "object",
+    "required": [
+      "slug",
+      "created_at",
+      "name",
+      "quality",
+      "buy_value",
+      "sell_value",
+      "guild_activity_points"
+    ],
     "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "equipment",
+          "fragment"
+        ],
+        "default": "equipment",
+        "description": "Discriminator field to distinguish between equipment and fragments"
+      },
       "slug": {
         "type": "string",
         "description": "URL-friendly unique identifier for the equipment",
@@ -32,29 +50,6 @@
         ],
         "description": "Quality tier of the equipment"
       },
-      "stats": {
-        "type": "object",
-        "description": "Statistical bonuses provided by the equipment",
-        "minProperties": 1,
-        "additionalProperties": {
-          "type": "number"
-        }
-      },
-      "hero_level_required": {
-        "type": "integer",
-        "minimum": 1,
-        "maximum": 120,
-        "description": "Minimum hero level required to use this equipment"
-      },
-      "campaign_sources": {
-        "type": "array",
-        "items": {
-          "type": "string",
-          "description": "Reference ID to a campaign mission"
-        },
-        "minItems": 1,
-        "description": "List of campaign mission IDs where this equipment can be found"
-      },
       "buy_value": {
         "type": "integer",
         "minimum": 0,
@@ -69,6 +64,28 @@
         "type": "integer",
         "minimum": 0,
         "description": "Amount of guild activity points earned when selling this item"
+      },
+      "campaign_sources": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "description": "Reference ID to a campaign mission"
+        },
+        "description": "List of campaign mission IDs where this equipment can be found"
+      },
+      "stats": {
+        "type": "object",
+        "description": "Statistical bonuses provided by the equipment (not present for fragments)",
+        "minProperties": 1,
+        "additionalProperties": {
+          "type": "number"
+        }
+      },
+      "hero_level_required": {
+        "type": "integer",
+        "minimum": 1,
+        "maximum": 120,
+        "description": "Minimum hero level required to use this equipment"
       },
       "crafting": {
         "type": "object",
@@ -95,16 +112,41 @@
         "description": "Crafting requirements for this item"
       }
     },
-    "required": [
-      "slug",
-      "created_at",
-      "name",
-      "quality",
-      "stats",
-      "hero_level_required",
-      "buy_value",
-      "sell_value",
-      "guild_activity_points"
+    "oneOf": [
+      {
+        "properties": {
+          "type": {
+            "const": "fragment"
+          },
+          "name": {
+            "pattern": ".* \\(Fragment\\)$"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "not": {
+          "required": [
+            "stats",
+            "hero_level_required",
+            "crafting"
+          ]
+        }
+      },
+      {
+        "properties": {
+          "type": {
+            "enum": [
+              "equipment",
+              null
+            ]
+          }
+        },
+        "required": [
+          "stats",
+          "hero_level_required"
+        ]
+      }
     ],
     "additionalProperties": false
   }

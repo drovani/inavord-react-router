@@ -8,19 +8,25 @@ export const EQUIPMENT_QUALITIES = [
     "orange",
 ] as const;
 
-export const EquipmentMutationSchema = z.object({
+// Base shared properties without readonly fields
+const BaseEquipmentPropertiesSchema = z.object({
     name: z.string(),
     quality: z.enum(EQUIPMENT_QUALITIES),
+    buy_value: z.number().int().min(0),
+    sell_value: z.number().int().min(0),
+    guild_activity_points: z.number().int().min(0),
+    campaign_sources: z.array(z.string()).optional(),
+});
+
+// Full equipment specific properties
+const FullEquipmentPropertiesSchema = BaseEquipmentPropertiesSchema.extend({
+    type: z.literal("equipment").optional().default("equipment"),
     stats: z
         .record(z.string(), z.number())
         .refine((stats) => Object.keys(stats).length > 0, {
             message: "At least one stat must be provided",
         }),
     hero_level_required: z.number().int().min(1).max(120),
-    campaign_sources: z.array(z.string()).optional(),
-    buy_value: z.number().int().min(0),
-    sell_value: z.number().int().min(0),
-    guild_activity_points: z.number().int().min(0),
     crafting: z
         .object({
             gold_cost: z.number().int().min(0),
@@ -33,11 +39,62 @@ export const EquipmentMutationSchema = z.object({
         .optional(),
 });
 
-export const EquipmentRecordSchema = EquipmentMutationSchema.extend({
-    slug: z.string().readonly(),
-    created_at: z.string().datetime().readonly(),
+// Fragment specific properties
+const FragmentPropertiesSchema = BaseEquipmentPropertiesSchema.extend({
+    type: z.literal("fragment"),
+    name: z.string().refine((name) => name.endsWith(" (Fragment)"), {
+        message: "Fragment names must end with ' (Fragment)'",
+    }),
+}).strip();
+
+// Schemas for stored records (including readonly fields)
+const StoredMetadataSchema = z.object({
+    slug: z.string(),
+    created_at: z.string().datetime(),
 });
 
+// Schemas for mutations (creating/updating)
+export const EquipmentMutationSchema = z
+    .discriminatedUnion("type", [
+        FullEquipmentPropertiesSchema,
+        FragmentPropertiesSchema,
+    ])
+    .transform((data) => ({
+        ...data,
+        type: data.type || "equipment",
+    }));
+
+export const EquipmentSchema = z
+    .discriminatedUnion("type", [
+        FullEquipmentPropertiesSchema.merge(StoredMetadataSchema),
+        FragmentPropertiesSchema.merge(StoredMetadataSchema),
+    ])
+    .transform((data) => ({
+        ...data,
+        type: data.type || "equipment",
+    }));
+
+// Type exports
 export type EquipmentQuality = (typeof EQUIPMENT_QUALITIES)[number];
 export type EquipmentMutation = z.infer<typeof EquipmentMutationSchema>;
-export type EquipmentRecord = z.infer<typeof EquipmentRecordSchema>;
+export type EquipmentRecord = z.infer<typeof EquipmentSchema>;
+export type BaseEquipmentProperties = z.infer<
+    typeof BaseEquipmentPropertiesSchema
+>;
+
+// Type guard functions
+export function isFragment(
+    equipment: EquipmentRecord
+): equipment is z.infer<
+    typeof FragmentPropertiesSchema & typeof StoredMetadataSchema
+> {
+    return equipment.type === "fragment";
+}
+
+export function isFullEquipment(
+    equipment: EquipmentRecord
+): equipment is z.infer<
+    typeof FullEquipmentPropertiesSchema & typeof StoredMetadataSchema
+> {
+    return !equipment.type || equipment.type === "equipment";
+}
