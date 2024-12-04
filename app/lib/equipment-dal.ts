@@ -319,10 +319,16 @@ export class EquipmentDAL {
             const allEquipment = await this.getAllEquipment();
 
             return allEquipment.filter((equipment) => {
-                if (!equipment.crafting) return false;
-                return Object.keys(equipment.crafting.required_items).some(
-                    (item_slug) => item_slug === slug
-                );
+                if (
+                    "crafting" in equipment &&
+                    equipment.crafting !== undefined
+                ) {
+                    return Object.keys(equipment.crafting.required_items).some(
+                        (item_slug) => item_slug === slug
+                    );
+                } else {
+                    return [];
+                }
             });
         } catch (error) {
             console.error(`Failed to get equipment requiring ${slug}:`, error);
