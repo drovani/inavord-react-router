@@ -6,7 +6,8 @@ import { useLoaderData } from "@remix-run/react";
 export async function loader({ request }: LoaderFunctionArgs) {
     try {
         const url = new URL(request.url);
-        const mode = url.searchParams.get("mode");
+        const mode = url.searchParams.get("mode") || "basic";
+        const data = url.searchParams.get("data");
 
         // Set initialization options based on mode
         const options = {
@@ -15,8 +16,14 @@ export async function loader({ request }: LoaderFunctionArgs) {
             forceUpdate: mode === "force",
         };
 
-        const resultE = await initializeEquipmentBlobs(options);
-        const resultM = await initializeMissionBlobs(options);
+        const resultE =
+            !data || data === "equipment"
+                ? await initializeEquipmentBlobs(options)
+                : { status: "not loaded" };
+        const resultM =
+            !data || data === "missions"
+                ? await initializeMissionBlobs(options)
+                : { status: "not loaded" };
 
         return json({
             message: "Equipment blob initialization complete",
@@ -49,9 +56,7 @@ export default function AdminSetp() {
 
     return (
         <div>
-            <pre>
-                {JSON.stringify(results, null, '\t')}
-            </pre>
+            <pre>{JSON.stringify(results, null, "\t")}</pre>
         </div>
-    )
+    );
 }

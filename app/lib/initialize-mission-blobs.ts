@@ -17,6 +17,7 @@ interface InitializationResult {
     errors: number;
     total: number;
     existingCount: number;
+    details: string[];
 }
 
 export async function initializeMissionBlobs(
@@ -27,9 +28,10 @@ export async function initializeMissionBlobs(
         failIfExists = false,
         forceUpdate = false,
     } = options;
+    const details: string[] = [];
 
     try {
-        console.log("Starting mission blob initialization...");
+        details.push("Starting mission blob initialization...");
 
         const store = getStore("missions");
 
@@ -38,7 +40,7 @@ export async function initializeMissionBlobs(
         const existingCount = existingKeys.blobs.length;
 
         if (existingCount > 0) {
-            console.log(`Found ${existingCount} existing mission items`);
+            details.push(`Found ${existingCount} existing mission items`);
 
             if (failIfExists) {
                 throw new Error(
@@ -59,7 +61,7 @@ export async function initializeMissionBlobs(
 
                 if (exists && !forceUpdate) {
                     if (skipExisting) {
-                        console.log(
+                        details.push(
                             `⤍ Skipping existing mission: ${mission.chapter}-${mission.mission_number} ${mission.name}`
                         );
                         skippedCount++;
@@ -75,8 +77,10 @@ export async function initializeMissionBlobs(
                 await store.set(mission.id, JSON.stringify(mission));
 
                 const action = exists ? "Updated" : "Stored";
-                console.log(
-                    `✓ Successfully ${action.toLowerCase()} ${mission.chapter}-${mission.mission_number} ${mission.name}`
+                details.push(
+                    `✓ Successfully ${action.toLowerCase()} ${
+                        mission.chapter
+                    }-${mission.mission_number} ${mission.name}`
                 );
                 successCount++;
             } catch (error) {
@@ -88,11 +92,11 @@ export async function initializeMissionBlobs(
             }
         }
 
-        console.log("\nInitialization complete:");
-        console.log(`✓ Successfully stored ${successCount} mission items`);
-        console.log(`⤍ Skipped ${skippedCount} existing items`);
+        details.push("Initialization complete:");
+        details.push(`✓ Successfully stored ${successCount} mission items`);
+        details.push(`⤍ Skipped ${skippedCount} existing items`);
         if (errorCount > 0) {
-            console.log(`✗ Failed to store ${errorCount} mission items`);
+            details.push(`✗ Failed to store ${errorCount} mission items`);
         }
 
         return {
@@ -101,6 +105,7 @@ export async function initializeMissionBlobs(
             errors: errorCount,
             total: missionData.length,
             existingCount,
+            details,
         };
     } catch (error) {
         console.error("Fatal error during initialization:", error);

@@ -17,6 +17,7 @@ interface InitializationResult {
     errors: number;
     total: number;
     existingCount: number;
+    details: string[];
 }
 
 export async function initializeEquipmentBlobs(
@@ -27,9 +28,10 @@ export async function initializeEquipmentBlobs(
         failIfExists = false,
         forceUpdate = false,
     } = options;
+    const details: string[] = [];
 
     try {
-        console.log("Starting equipment blob initialization...");
+        details.push("Starting equipment blob initialization...");
 
         const store = getStore("equipment");
 
@@ -38,7 +40,7 @@ export async function initializeEquipmentBlobs(
         const existingCount = existingKeys.blobs.length;
 
         if (existingCount > 0) {
-            console.log(`Found ${existingCount} existing equipment items`);
+            details.push(`Found ${existingCount} existing equipment items`);
 
             if (failIfExists) {
                 throw new Error(
@@ -59,7 +61,7 @@ export async function initializeEquipmentBlobs(
 
                 if (exists && !forceUpdate) {
                     if (skipExisting) {
-                        console.log(
+                        details.push(
                             `⤍ Skipping existing item: ${equipment.name} (${equipment.slug})`
                         );
                         skippedCount++;
@@ -75,7 +77,7 @@ export async function initializeEquipmentBlobs(
                 await store.set(equipment.slug, JSON.stringify(equipment));
 
                 const action = exists ? "Updated" : "Stored";
-                console.log(
+                details.push(
                     `✓ Successfully ${action.toLowerCase()} ${
                         equipment.name
                     } (${equipment.slug})`
@@ -87,11 +89,11 @@ export async function initializeEquipmentBlobs(
             }
         }
 
-        console.log("\nInitialization complete:");
-        console.log(`✓ Successfully stored ${successCount} equipment items`);
-        console.log(`⤍ Skipped ${skippedCount} existing items`);
+        details.push("\nInitialization complete:");
+        details.push(`✓ Successfully stored ${successCount} equipment items`);
+        details.push(`⤍ Skipped ${skippedCount} existing items`);
         if (errorCount > 0) {
-            console.log(`✗ Failed to store ${errorCount} equipment items`);
+            details.push(`✗ Failed to store ${errorCount} equipment items`);
         }
 
         return {
@@ -100,6 +102,7 @@ export async function initializeEquipmentBlobs(
             errors: errorCount,
             total: equipmentData.length,
             existingCount,
+            details
         };
     } catch (error) {
         console.error("Fatal error during initialization:", error);
