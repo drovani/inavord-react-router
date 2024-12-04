@@ -1,6 +1,6 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { equipmentDAL } from "@/lib/equipment-dal";
-import { cn } from "@/lib/utils";
+import { cn, parseSlugGetImageUrl } from "@/lib/utils";
 import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
 
@@ -41,7 +41,9 @@ export default function EquipmentIndex() {
                             <Card
                                 className="bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500"
                                 style={{
-                                    backgroundImage: `url('/images/equipment/${equipment.slug}.png')`,
+                                    backgroundImage: `url('${parseSlugGetImageUrl(
+                                        equipment.slug
+                                    )}')`,
                                 }}
                             >
                                 <CardHeader

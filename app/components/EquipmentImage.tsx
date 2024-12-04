@@ -1,7 +1,7 @@
 import { EquipmentRecord } from "@/data/equipment.zod";
-import { cn } from "@/lib/utils";
+import { cn, parseSlugGetImageUrl } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
-import { useMemo, useState } from "react";
+import { useState } from "react";
 
 const imageVariants = cva("relative", {
     variants: {
@@ -21,22 +21,11 @@ const imageVariants = cva("relative", {
 function EquipmentImage({ equipment, size = "default" }: Props) {
     const [status, setStatus] = useState(equipment.slug ? "loading" : "error");
 
-    const imageFilename = useMemo(
-        () =>
-            equipment.slug?.endsWith("-fragment")
-                ? equipment.slug?.substring(
-                      0,
-                      equipment.slug.length - "-fragment".length
-                  )
-                : equipment.slug,
-        [equipment.slug]
-    );
-
     return (
         <div className={cn(imageVariants({ size }))}>
             <img
                 alt={`${equipment.name || "unknown"} icon`}
-                src={`/images/equipment/${imageFilename}.png`}
+                src={parseSlugGetImageUrl(equipment.slug)}
                 className={cn(
                     status === "loaded" || status === "loading" ? "" : "hidden",
                     size == "xs" ? "p-0.5 rounded-sm" : "p-1 rounded-lg"

@@ -9,6 +9,13 @@ export function generateSlug(text: string): string {
         trim: true, // Trim leading/trailing spaces
     });
 }
+export function parseSlugGetImageUrl(slug: string): string {
+    return `/images/equipment/${
+        slug.indexOf("-fragment") < 0
+            ? slug
+            : slug.substring(0, slug.length - "-fragment".length)
+    }.png`;
+}
 export function cn(...inputs: ClassValue[]) {
     return twMerge(clsx(inputs));
 }
