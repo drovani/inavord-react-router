@@ -3,7 +3,10 @@ import { Link, useLocation } from "@remix-run/react";
 import {
     DropletIcon,
     FileJson2Icon,
+    FileWarningIcon,
     MapIcon,
+    PresentationIcon,
+    ShieldAlertIcon,
     ShieldIcon,
     ShieldPlusIcon,
     ShoppingBagIcon,
@@ -48,6 +51,24 @@ const navigation = [
     },
     { name: "Merchant", icon: ShoppingBagIcon },
     { name: "Hydras", icon: DropletIcon },
+    {
+        name: "Admin Setup",
+        icon: PresentationIcon,
+        href: "/admin/setup",
+        children: [
+            {
+                name: "Force overwrite equipment records",
+                href: "/admin/setup?mode=force&data=equipment",
+                icon: ShieldAlertIcon,
+                reloadDocument: true,
+            },
+            {
+                name: "Force update all records",
+                href: "/admin/setup?mode=force",
+                icon: FileWarningIcon,
+            },
+        ],
+    },
 ];
 
 function SiteNavigation({ onNavClick, className }: Props) {
