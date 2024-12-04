@@ -23,7 +23,11 @@ export async function loader() {
     ]);
 
     const existingStats = [
-        ...new Set(existingItems.flatMap((ae) => Object.keys(ae.stats || {}))),
+        ...new Set(
+            existingItems.flatMap((ae) =>
+                "stats" in ae ? Object.keys(ae.stats || {}) : []
+            )
+        ),
     ];
 
     return json({ existingItems, existingStats, allMissions });

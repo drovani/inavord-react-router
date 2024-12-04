@@ -59,11 +59,12 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     const requiredFor = await equipmentDAL.getEquipmentThatRequires(
         equipment.slug
     );
-    const requiredEquipment = equipment.crafting
-        ? await equipmentDAL.getAllEquipment(
-              Object.keys(equipment.crafting.required_items)
-          )
-        : [];
+    const requiredEquipment =
+        "crafting" in equipment && equipment.crafting
+            ? await equipmentDAL.getAllEquipment(
+                  Object.keys(equipment.crafting.required_items)
+              )
+            : [];
 
     // Get all missions and filter for sources
     const allMissions = await missionDAL.getAllMissions();
@@ -143,7 +144,6 @@ export default function Equipment() {
 
     useEffect(() => {
         function handleKeyDown(event: KeyboardEvent) {
-
             // Skip if user is typing in an input or textarea
             if (
                 event.target instanceof HTMLInputElement ||
@@ -180,9 +180,11 @@ export default function Equipment() {
                         <h1 className="text-3xl font-bold mb-2">
                             {equipment.name}
                         </h1>
-                        <p className="text-muted-foreground">
-                            Required Level: {equipment.hero_level_required}
-                        </p>
+                        {"hero_level_required" in equipment && (
+                            <p className="text-muted-foreground">
+                                Required Level: {equipment.hero_level_required}
+                            </p>
+                        )}
                     </div>
 
                     <div className="flex gap-4">
@@ -229,7 +231,7 @@ export default function Equipment() {
             </div>
 
             {/* Stats Section */}
-            {equipment.stats && Object.entries(equipment.stats).length > 0 && (
+            {"stats" in equipment && equipment.stats && Object.entries(equipment.stats).length > 0 && (
                 <Card>
                     <CardHeader>
                         <CardTitle>Stats</CardTitle>
@@ -291,17 +293,18 @@ export default function Equipment() {
                 <Card>
                     <CardHeader>
                         <CardTitle>Crafting Requirements</CardTitle>
-                        {equipment.crafting?.gold_cost && (
-                            <CardDescription className="flex items-center gap-1">
-                                <img
-                                    src="/images/gold.webp"
-                                    alt="Gold cost"
-                                    className="w-6 h-6"
-                                />
-                                {equipment.crafting.gold_cost.toLocaleString()}{" "}
-                                gold
-                            </CardDescription>
-                        )}
+                        {"crafting" in equipment &&
+                            equipment.crafting?.gold_cost && (
+                                <CardDescription className="flex items-center gap-1">
+                                    <img
+                                        src="/images/gold.webp"
+                                        alt="Gold cost"
+                                        className="w-6 h-6"
+                                    />
+                                    {equipment.crafting.gold_cost.toLocaleString()}{" "}
+                                    gold
+                                </CardDescription>
+                            )}
                     </CardHeader>
                     <CardContent>
                         <div className="flex flex-wrap items-center gap-4">
@@ -310,9 +313,12 @@ export default function Equipment() {
                                     key={item?.slug || `missing-${index}`}
                                     item={item}
                                     quantity={
-                                        equipment.crafting?.required_items[
-                                            item?.slug || ""
-                                        ] || 0
+                                        "crafting" in equipment
+                                            ? equipment.crafting
+                                                  ?.required_items[
+                                                  item?.slug || ""
+                                              ] || 0
+                                            : 0
                                     }
                                 />
                             ))}
@@ -345,11 +351,11 @@ export default function Equipment() {
                                         </div>
                                         <div className="text-sm text-muted-foreground">
                                             Requires{" "}
-                                            {
-                                                item.crafting?.required_items[
-                                                    equipment.slug
-                                                ]
-                                            }
+                                            {"crafting" in item
+                                                ? item.crafting?.required_items[
+                                                      equipment.slug
+                                                  ]
+                                                : 0}
                                             x
                                         </div>
                                     </div>
