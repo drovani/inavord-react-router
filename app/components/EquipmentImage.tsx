@@ -1,4 +1,4 @@
-import { EquipmentMutation } from "@/data/equipment.zod";
+import { EquipmentRecord } from "@/data/equipment.zod";
 import { cn } from "@/lib/utils";
 import { cva, type VariantProps } from "class-variance-authority";
 import { useMemo, useState } from "react";
@@ -21,19 +21,15 @@ const imageVariants = cva("relative", {
 function EquipmentImage({ equipment, size = "default" }: Props) {
     const [status, setStatus] = useState(equipment.slug ? "loading" : "error");
 
-    const isFragment = useMemo(
-        () => equipment.slug && equipment.slug?.indexOf("-fragment") > 0,
-        [equipment.slug]
-    );
     const imageFilename = useMemo(
         () =>
-            isFragment
+            equipment.slug?.endsWith("-fragment")
                 ? equipment.slug?.substring(
                       0,
                       equipment.slug.length - "-fragment".length
                   )
                 : equipment.slug,
-        [isFragment, equipment.slug]
+        [equipment.slug]
     );
 
     return (
@@ -51,7 +47,10 @@ function EquipmentImage({ equipment, size = "default" }: Props) {
             <img
                 alt={`${equipment.name || "unknown"} icon border`}
                 src={`/images/equipment/border-${equipment.quality || "gray"}${
-                    isFragment && equipment.quality !== "gray" ? "-fragment" : ""
+                    equipment.type === "fragment" &&
+                    equipment.quality !== "gray"
+                        ? "-fragment"
+                        : ""
                 }.png`}
                 className="absolute top-0 left-0 h-full w-full"
             />
@@ -60,11 +59,7 @@ function EquipmentImage({ equipment, size = "default" }: Props) {
 }
 
 interface Props extends VariantProps<typeof imageVariants> {
-    equipment: {
-        name?: string;
-        slug?: string;
-        quality?: EquipmentMutation["quality"];
-    };
+    equipment: Pick<EquipmentRecord, "name" | "quality" | "type" | "slug">;
 }
 
 export default EquipmentImage;
