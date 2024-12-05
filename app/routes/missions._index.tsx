@@ -11,7 +11,6 @@ import {
 import type { Mission } from "@/data/mission.zod";
 import { missionDAL } from "@/lib/mission-dal";
 import { cn, generateSlug } from "@/lib/utils";
-import { json } from "@remix-run/node";
 import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
 import { MapIcon, SearchIcon } from "lucide-react";
@@ -44,7 +43,7 @@ export const loader = async () => {
         return acc;
     }, {} as Record<number, { title: string; missions: Mission[] }>);
 
-    return json({ missionsByChapter, uniqueBosses });
+    return { missionsByChapter, uniqueBosses };
 };
 
 const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {

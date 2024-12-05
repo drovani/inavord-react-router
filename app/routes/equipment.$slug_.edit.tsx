@@ -11,7 +11,7 @@ import type {
     LoaderFunctionArgs,
     MetaFunction,
 } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useForm } from "react-hook-form";
 import invariant from "tiny-invariant";
@@ -44,7 +44,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
         ),
     ];
 
-    return json({ existingItems, existingStats, allMissions, equipment });
+    return { existingItems, existingStats, allMissions, equipment };
 };
 
 export const action = async ({ params, request }: ActionFunctionArgs) => {
@@ -64,7 +64,7 @@ export const action = async ({ params, request }: ActionFunctionArgs) => {
         return redirect(`/equipment/${updatedEquipment.slug}`);
     } catch (error) {
         if (error instanceof ZodError) {
-            return json({ errors: error.format() }, { status: 400 });
+            return data({ errors: error.format() }, { status: 400 });
         }
         throw error;
     }

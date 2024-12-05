@@ -1,6 +1,6 @@
 import { initializeEquipmentBlobs } from "@/lib/initialize-equipment-blobs";
 import { initializeMissionBlobs } from "@/lib/initialize-mission-blobs";
-import { json, type LoaderFunctionArgs } from "@remix-run/node";
+import { data, type LoaderFunctionArgs } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 
 export async function loader({ request }: LoaderFunctionArgs) {
@@ -25,17 +25,17 @@ export async function loader({ request }: LoaderFunctionArgs) {
                 ? await initializeMissionBlobs(options)
                 : { status: "not loaded" };
 
-        return json({
+        return {
             message: "Equipment blob initialization complete",
             mode,
             results: { equipment: { ...resultE }, mission: { ...resultM } },
-        });
+        };
     } catch (error) {
         const message =
             error instanceof Error ? error.message : "Unknown error";
         console.error("Setup failed:", message);
 
-        return json(
+        return data(
             {
                 message: "Blob initialization failed",
                 error: message,

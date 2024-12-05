@@ -7,7 +7,7 @@ import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { json, redirect } from "@remix-run/node";
+import { redirect } from "@remix-run/node";
 import { useLoaderData } from "@remix-run/react";
 import { useForm } from "react-hook-form";
 import { ZodError } from "zod";
@@ -30,7 +30,7 @@ export async function loader() {
         ),
     ];
 
-    return json({ existingItems, existingStats, allMissions });
+    return { existingItems, existingStats, allMissions };
 }
 
 export async function action({ request }: ActionFunctionArgs) {
@@ -47,7 +47,7 @@ export async function action({ request }: ActionFunctionArgs) {
         return redirect(`/equipment/${newEquipment.slug}`);
     } catch (error) {
         if (error instanceof ZodError) {
-            return json({ errors: error.format() }, { status: 400 });
+            return data({ errors: error.format() }, { status: 400 });
         }
         throw error;
     }
