@@ -52,7 +52,7 @@ function appendToFormData(
     } else if (schema instanceof z.ZodArray) {
         const arr = data as unknown[];
         arr?.forEach((item) => {
-            formData.append(`${prefix}[]`, item as string);
+            formData.append(prefix, item as string);
         });
     } else if (
         schema instanceof z.ZodOptional ||
@@ -62,12 +62,10 @@ function appendToFormData(
             appendToFormData(formData, data, schema.unwrap(), prefix);
         }
     } else if (data !== undefined && data !== null) {
-        // Handle primitive values
-        if (typeof data === "object") {
-            formData.append(prefix, JSON.stringify(data));
-        } else {
-            formData.append(prefix, String(data));
-        }
+        formData.append(
+            prefix,
+            typeof data === "object" ? JSON.stringify(data) : String(data)
+        );
     }
 }
 
@@ -116,7 +114,7 @@ export default function EquipmentForm({
 
     const onSubmit = (data: EquipmentMutation) => {
         const formData = new FormData();
-        appendToFormData(formData, data, EquipmentMutationSchema);
+        appendToFormData(formData, data, EquipmentMutationSchema, "equipment");
         submit(formData, { method: "post" });
     };
 

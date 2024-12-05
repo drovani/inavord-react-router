@@ -35,33 +35,14 @@ export async function loader() {
 
 export async function action({ request }: ActionFunctionArgs) {
     const formData = await request.formData();
-    const data = Object.fromEntries(formData);
+    const data = JSON.parse(formData.get("equipment") as string);
+
+    console.debug(data);
 
     try {
-        const validated = EquipmentMutationSchema.parse({
-            ...data,
-            hero_level_required: Number(formData.get("hero_level_required")),
-            buy_value: Number(formData.get("buy_value")),
-            sell_value: Number(formData.get("sell_value")),
-            guild_activity_points: Number(
-                formData.get("guild_activity_points")
-            ),
-            stats: JSON.parse(formData.get("stats") as string),
-            campaign_sources: formData.getAll("campaign_sources[]"),
-            crafting:
-                formData.has("crafting.gold_cost") &&
-                formData.has("crafting.required_items")
-                    ? {
-                          gold_cost: Number(formData.get("crafting.gold_cost")),
-                          required_items: JSON.parse(
-                              formData.get("crafting.required_items") as string
-                          ),
-                      }
-                    : undefined,
-        });
+        const validated = EquipmentMutationSchema.parse(data);
 
         const newEquipment = await equipmentDAL.createEquipment(validated);
-        //const newEquipment = await createEquipment(validated);
 
         return redirect(`/equipment/${newEquipment.slug}`);
     } catch (error) {
