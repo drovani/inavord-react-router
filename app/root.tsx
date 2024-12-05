@@ -1,11 +1,12 @@
-import { LinksFunction, MetaFunction } from "@remix-run/node";
 import {
     Links,
+    LinksFunction,
     Meta,
+    MetaFunction,
     Outlet,
     Scripts,
     ScrollRestoration,
-} from "@remix-run/react";
+} from "react-router";
 
 import SiteHeader from "./components/SiteHeader";
 import SitePanel from "./components/SitePanel";

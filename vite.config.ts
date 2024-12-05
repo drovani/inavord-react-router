@@ -1,9 +1,9 @@
 import { netlifyPlugin } from "@netlify/remix-edge-adapter/plugin";
-import { vitePlugin as remix } from "@remix-run/dev";
+import { vitePlugin as remix } from "react-router";
 import { defineConfig } from "vite";
 import tsconfigPaths from "vite-tsconfig-paths";
 
-declare module "@remix-run/node" {
+declare module "react-router" {
     interface Future {
         v3_singleFetch: true;
     }

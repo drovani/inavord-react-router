@@ -12,10 +12,16 @@ import type { EquipmentRecord } from "@/data/equipment.zod";
 import type { Mission } from "@/data/mission.zod";
 import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
-import { json, LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Form, Link, useLoaderData, useNavigate } from "@remix-run/react";
 import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useEffect } from "react";
+import {
+    Form,
+    Link,
+    LoaderFunctionArgs,
+    MetaFunction,
+    useLoaderData,
+    useNavigate,
+} from "react-router";
 import invariant from "tiny-invariant";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
@@ -81,14 +87,14 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
               })
         : [];
 
-    return json<LoaderData>({
+    return {
         equipment,
         requiredEquipment,
         requiredFor,
         missionSources,
         prevEquipment,
         nextEquipment,
-    });
+    };
 };
 
 // Component to render either a valid equipment item or a placeholder
@@ -231,28 +237,32 @@ export default function Equipment() {
             </div>
 
             {/* Stats Section */}
-            {"stats" in equipment && equipment.stats && Object.entries(equipment.stats).length > 0 && (
-                <Card>
-                    <CardHeader>
-                        <CardTitle>Stats</CardTitle>
-                    </CardHeader>
-                    <CardContent className="grid grid-cols-2 sm:grid-cols-3 gap-4">
-                        {Object.entries(equipment.stats).map(
-                            ([stat, value]) => (
-                                <div
-                                    key={stat}
-                                    className="flex items-center gap-2"
-                                >
-                                    <span className="capitalize">{stat}:</span>
-                                    <span className="font-semibold">
-                                        {value}
-                                    </span>
-                                </div>
-                            )
-                        )}
-                    </CardContent>
-                </Card>
-            )}
+            {"stats" in equipment &&
+                equipment.stats &&
+                Object.entries(equipment.stats).length > 0 && (
+                    <Card>
+                        <CardHeader>
+                            <CardTitle>Stats</CardTitle>
+                        </CardHeader>
+                        <CardContent className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+                            {Object.entries(equipment.stats).map(
+                                ([stat, value]) => (
+                                    <div
+                                        key={stat}
+                                        className="flex items-center gap-2"
+                                    >
+                                        <span className="capitalize">
+                                            {stat}:
+                                        </span>
+                                        <span className="font-semibold">
+                                            {value}
+                                        </span>
+                                    </div>
+                                )
+                            )}
+                        </CardContent>
+                    </Card>
+                )}
 
             {/* Campaign Sources Section */}
             {missionSources.length > 0 && (

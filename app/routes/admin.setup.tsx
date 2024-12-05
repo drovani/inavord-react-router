@@ -1,7 +1,6 @@
 import { initializeEquipmentBlobs } from "@/lib/initialize-equipment-blobs";
 import { initializeMissionBlobs } from "@/lib/initialize-mission-blobs";
-import { data, type LoaderFunctionArgs } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { data, useLoaderData, type LoaderFunctionArgs } from "react-router";
 
 export async function loader({ request }: LoaderFunctionArgs) {
     try {

@@ -1,8 +1,8 @@
 import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { equipmentDAL } from "@/lib/equipment-dal";
 import { cn, parseSlugGetImageUrl } from "@/lib/utils";
-import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
+import { Link, useLoaderData } from "react-router";
 
 export const loader = async () => {
     const equipments = await equipmentDAL.getAllEquipment();

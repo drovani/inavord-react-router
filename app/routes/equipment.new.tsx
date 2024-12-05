@@ -6,10 +6,9 @@ import {
 import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
-import type { ActionFunctionArgs, MetaFunction } from "@remix-run/node";
-import { redirect } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
 import { useForm } from "react-hook-form";
+import type { ActionFunctionArgs, MetaFunction } from "react-router";
+import { redirect, useLoaderData } from "react-router";
 import { ZodError } from "zod";
 
 export const meta: MetaFunction = () => {

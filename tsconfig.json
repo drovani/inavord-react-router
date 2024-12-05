@@ -18,7 +18,7 @@
     "moduleResolution": "Bundler",
     "resolveJsonModule": true,
     "types": [
-      "@remix-run/node",
+      "react-router",
       "vite/client"
     ],
     "target": "ES2022",

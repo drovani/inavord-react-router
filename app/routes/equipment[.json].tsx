@@ -1,6 +1,6 @@
 import { EquipmentRecord } from "@/data/equipment.zod";
 import { equipmentDAL } from "@/lib/equipment-dal";
-import { createReadableStreamFromReadable } from "@remix-run/node";
+import { createReadableStreamFromReadable } from "@react-router/node";
 import { Readable } from "node:stream";
 
 function removeEmptyArrays<T>(_: string, value: T): T | undefined {
@@ -12,7 +12,9 @@ function removeEmptyArrays<T>(_: string, value: T): T | undefined {
 }
 
 // Ensure dates are in ISO format when stringifying
-function formatEquipmentForExport(equipment: EquipmentRecord[]): EquipmentRecord[] {
+function formatEquipmentForExport(
+    equipment: EquipmentRecord[]
+): EquipmentRecord[] {
     return equipment.map((item) => ({
         ...item,
         created_at: new Date(item.created_at).toISOString(),

@@ -4,10 +4,15 @@ import { EquipmentRecord } from "@/data/equipment.zod";
 import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
 import { generateSlug } from "@/lib/utils";
-import { LoaderFunctionArgs, MetaFunction } from "@remix-run/node";
-import { Link, useLoaderData, useNavigate } from "@remix-run/react";
 import { MapIcon } from "lucide-react";
 import { useEffect } from "react";
+import {
+    Link,
+    LoaderFunctionArgs,
+    MetaFunction,
+    useLoaderData,
+    useNavigate,
+} from "react-router";
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {
     if (!data) {

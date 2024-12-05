@@ -11,10 +11,10 @@ import {
 import type { Mission } from "@/data/mission.zod";
 import { missionDAL } from "@/lib/mission-dal";
 import { cn, generateSlug } from "@/lib/utils";
-import { Link, useLoaderData } from "@remix-run/react";
 import { cva } from "class-variance-authority";
 import { MapIcon, SearchIcon } from "lucide-react";
 import { useMemo, useState } from "react";
+import { Link, useLoaderData } from "react-router";
 
 export const loader = async () => {
     const missions = await missionDAL.getAllMissions();
