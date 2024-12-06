@@ -2,6 +2,7 @@ import { EquipmentRecord } from "@/data/equipment.zod";
 import { equipmentDAL } from "@/lib/equipment-dal";
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { Readable } from "node:stream";
+import { Route } from "./+types/equipment[.json]";
 
 function removeEmptyArrays<T>(_: string, value: T): T | undefined {
     // Check if value is an array and it's empty
@@ -21,7 +22,7 @@ function formatEquipmentForExport(
     }));
 }
 
-export async function loader() {
+export async function loader(_: Route.LoaderArgs) {
     const equipment = await equipmentDAL.getAllEquipment();
     const formattedEquipment = formatEquipmentForExport(equipment);
 

@@ -1,3 +1,4 @@
+import { Route } from ".react-router/types/app/routes/+types/equipment.new";
 import EquipmentForm from "@/components/EquipmentForm";
 import {
     EquipmentMutation,
@@ -7,15 +8,14 @@ import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import type { ActionFunctionArgs, MetaFunction } from "react-router";
-import { redirect, useLoaderData } from "react-router";
+import { redirect } from "react-router";
 import { ZodError } from "zod";
 
-export const meta: MetaFunction = () => {
+export const meta = (_: Route.MetaArgs) => {
     return [{ title: "Create new equipment" }];
 };
 
-export async function loader() {
+export const loader = async (_: Route.LoaderArgs) => {
     const [allMissions, existingItems] = await Promise.all([
         missionDAL.getAllMissions(),
         equipmentDAL.getAllEquipment(),
@@ -30,9 +30,9 @@ export async function loader() {
     ];
 
     return { existingItems, existingStats, allMissions };
-}
+};
 
-export async function action({ request }: ActionFunctionArgs) {
+export const action = async ({ request }: Route.ActionArgs) => {
     const formData = await request.formData();
     const data = JSON.parse(formData.get("equipment") as string);
 
@@ -50,11 +50,10 @@ export async function action({ request }: ActionFunctionArgs) {
         }
         throw error;
     }
-}
+};
 
-export default function NewEquipment() {
-    const { allMissions, existingStats, existingItems } =
-        useLoaderData<typeof loader>();
+export default function NewEquipment({ loaderData }: Route.ComponentProps) {
+    const { allMissions, existingStats, existingItems } = loaderData;
     const form = useForm<EquipmentMutation>({
         resolver: zodResolver(EquipmentMutationSchema),
         defaultValues: {

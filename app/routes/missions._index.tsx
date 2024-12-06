@@ -14,7 +14,8 @@ import { cn, generateSlug } from "@/lib/utils";
 import { cva } from "class-variance-authority";
 import { MapIcon, SearchIcon } from "lucide-react";
 import { useMemo, useState } from "react";
-import { Link, useLoaderData } from "react-router";
+import { Link } from "react-router";
+import { Route } from "./+types/missions._index";
 
 export const loader = async () => {
     const missions = await missionDAL.getAllMissions();
@@ -58,8 +59,8 @@ const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {
     },
 });
 
-export default function MissionsIndex() {
-    const { missionsByChapter, uniqueBosses } = useLoaderData<typeof loader>();
+export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
+    const { missionsByChapter, uniqueBosses } = loaderData;
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedBoss, setSelectedBoss] = useState<string | null>(null);
 

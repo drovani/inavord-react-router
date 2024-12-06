@@ -1,3 +1,4 @@
+import { Route } from ".react-router/types/app/routes/+types/missions.$missionId";
 import EquipmentImage from "@/components/EquipmentImage";
 import { buttonVariants } from "@/components/ui/button";
 import { EquipmentRecord } from "@/data/equipment.zod";
@@ -6,22 +7,16 @@ import { missionDAL } from "@/lib/mission-dal";
 import { generateSlug } from "@/lib/utils";
 import { MapIcon } from "lucide-react";
 import { useEffect } from "react";
-import {
-    Link,
-    LoaderFunctionArgs,
-    MetaFunction,
-    useLoaderData,
-    useNavigate,
-} from "react-router";
+import { Link, useNavigate } from "react-router";
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+export const meta = ({ data }: Route.MetaArgs) => {
     if (!data) {
         return [{ title: "Mission not found" }];
     }
     return [{ title: `${data.mission.id}: ${data.mission.name}` }];
 };
 
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params }: Route.LoaderArgs) => {
     const missionId = params.missionId;
 
     if (!missionId) {
@@ -58,9 +53,9 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     };
 };
 
-export default function MissionDetails() {
+export default function MissionDetails({ loaderData }: Route.ComponentProps) {
     const { mission, equipmentInMission, prevMission, nextMission } =
-        useLoaderData<typeof loader>();
+        loaderData;
     const navigate = useNavigate();
 
     useEffect(() => {

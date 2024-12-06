@@ -1,3 +1,4 @@
+import { Route } from ".react-router/types/app/routes/+types/equipment.$slug";
 import EquipmentImage from "@/components/EquipmentImage";
 import { Badge } from "@/components/ui/badge";
 import { Button, buttonVariants } from "@/components/ui/button";
@@ -14,30 +15,14 @@ import { equipmentDAL } from "@/lib/equipment-dal";
 import { missionDAL } from "@/lib/mission-dal";
 import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useEffect } from "react";
-import {
-    Form,
-    Link,
-    LoaderFunctionArgs,
-    MetaFunction,
-    useLoaderData,
-    useNavigate,
-} from "react-router";
+import { Form, Link, useNavigate } from "react-router";
 import invariant from "tiny-invariant";
 
-export const meta: MetaFunction<typeof loader> = ({ data }) => {
+export const meta = ({ data }: Route.MetaArgs) => {
     return [{ title: data?.equipment.name }];
 };
 
-interface LoaderData {
-    equipment: EquipmentRecord;
-    requiredEquipment: (EquipmentRecord | null)[];
-    requiredFor: EquipmentRecord[];
-    missionSources: Mission[];
-    prevEquipment: EquipmentRecord | null;
-    nextEquipment: EquipmentRecord | null;
-}
-
-export const loader = async ({ params }: LoaderFunctionArgs) => {
+export const loader = async ({ params }: Route.LoaderArgs) => {
     invariant(params.slug, "Missing equipment slug param");
 
     // Get main equipment details
@@ -65,6 +50,7 @@ export const loader = async ({ params }: LoaderFunctionArgs) => {
     const requiredFor = await equipmentDAL.getEquipmentThatRequires(
         equipment.slug
     );
+
     const requiredEquipment =
         "crafting" in equipment && equipment.crafting
             ? await equipmentDAL.getAllEquipment(
@@ -137,7 +123,7 @@ const EquipmentItem = ({
     );
 };
 
-export default function Equipment() {
+export default function Equipment({ loaderData }: Route.ComponentProps) {
     const {
         equipment,
         requiredEquipment,
@@ -145,7 +131,7 @@ export default function Equipment() {
         missionSources,
         prevEquipment,
         nextEquipment,
-    } = useLoaderData<LoaderData>();
+    } = loaderData;
     const navigate = useNavigate();
 
     useEffect(() => {
