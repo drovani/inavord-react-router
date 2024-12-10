@@ -35,7 +35,7 @@ export default function EquipmentIndex({ loaderData }: Route.ComponentProps) {
       {equipments.length ? (
         <div className="gap-2 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
           {equipments.map((equipment) => (
-            <Link to={`/equipment/${equipment.slug}`} key={equipment.slug}>
+            <Link to={`/equipment/${equipment.slug}`} key={equipment.slug} viewTransition>
               <Card
                 className="bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500"
                 style={{
