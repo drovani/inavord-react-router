@@ -1,6 +1,6 @@
-import { Checkbox } from "@/components/ui/checkbox";
-import { Label } from "@/components/ui/label";
-import { type Mission } from "@/data/mission.zod";
+import { Checkbox } from "~/components/ui/checkbox";
+import { Label } from "~/components/ui/label";
+import { type Mission } from "~/data/mission.zod";
 
 interface ChapterMissionsProps {
     chapter: string;

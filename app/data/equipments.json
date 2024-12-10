@@ -623,6 +623,140 @@
         "type": "fragment"
     },
     {
+        "name": "Elven Armor",
+        "quality": "green",
+        "buy_value": 3450,
+        "sell_value": 690,
+        "guild_activity_points": 6,
+        "type": "equipment",
+        "stats": {
+            "strength": 10,
+            "armor": 50
+        },
+        "hero_level_required": 20,
+        "crafting": {
+            "gold_cost": 13500,
+            "required_items": {
+                "branch-of-antiaris": 1,
+                "cuirass": 1
+            }
+        },
+        "slug": "elven-armor",
+        "created_at": "2024-12-09T23:00:48.797Z"
+    },
+    {
+        "name": "Elven Bow",
+        "quality": "green",
+        "buy_value": 4825,
+        "sell_value": 965,
+        "guild_activity_points": 8,
+        "type": "equipment",
+        "stats": {
+            "intelligence": 5,
+            "agility": 12,
+            "strength": 5
+        },
+        "hero_level_required": 20,
+        "crafting": {
+            "gold_cost": 13500,
+            "required_items": {
+                "giants-belt": 1,
+                "lucky-arrow": 1
+            }
+        },
+        "slug": "elven-bow",
+        "created_at": "2024-12-09T23:01:55.574Z"
+    },
+    {
+        "name": "Elven Saber",
+        "quality": "green",
+        "buy_value": 3450,
+        "sell_value": 690,
+        "guild_activity_points": 6,
+        "type": "equipment",
+        "stats": {
+            "agility": 10,
+            "physical attack": 33
+        },
+        "hero_level_required": 20,
+        "crafting": {
+            "gold_cost": 13500,
+            "required_items": {
+                "trackers-boots": 1,
+                "fire-sword": 1
+            }
+        },
+        "slug": "elven-saber",
+        "created_at": "2024-12-09T23:06:31.789Z"
+    },
+    {
+        "name": "Enchanter's Staff",
+        "quality": "green",
+        "buy_value": 4825,
+        "sell_value": 965,
+        "guild_activity_points": 8,
+        "type": "equipment",
+        "stats": {
+            "intelligence": 12,
+            "agility": 5,
+            "strength": 5
+        },
+        "hero_level_required": 20,
+        "crafting": {
+            "gold_cost": 13500,
+            "required_items": {
+                "giants-belt": 1,
+                "censer": 1
+            }
+        },
+        "slug": "enchanters-staff",
+        "created_at": "2024-12-09T23:07:32.661Z"
+    },
+    {
+        "name": "Fire Sword",
+        "quality": "green",
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "campaign_sources": [
+            "2-3",
+            "3-1",
+            "4-7",
+            "5-2",
+            "5-13",
+            "6-13"
+        ],
+        "type": "equipment",
+        "stats": {
+            "physical attack": 33
+        },
+        "hero_level_required": 10,
+        "slug": "fire-sword",
+        "created_at": "2024-12-09T23:05:38.500Z"
+    },
+    {
+        "name": "Guardian's Shield",
+        "quality": "green",
+        "buy_value": 1500,
+        "sell_value": 300,
+        "guild_activity_points": 3,
+        "campaign_sources": [
+            "2-2",
+            "2-15",
+            "4-5",
+            "4-15",
+            "5-12",
+            "6-12"
+        ],
+        "type": "equipment",
+        "stats": {
+            "health": 500
+        },
+        "hero_level_required": 10,
+        "slug": "guardians-shield",
+        "created_at": "2024-12-10T02:00:57.762Z"
+    },
+    {
         "name": "Light Crystal",
         "quality": "green",
         "stats": {

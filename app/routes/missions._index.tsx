@@ -1,5 +1,9 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { cva } from "class-variance-authority";
+import { MapIcon, SearchIcon } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Link } from "react-router";
+import { Card, CardHeader, CardTitle } from "~/components/ui/card";
+import { Input } from "~/components/ui/input";
 import {
     Select,
     SelectContent,
@@ -7,15 +11,11 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
-import type { Mission } from "@/data/mission.zod";
-import { missionDAL } from "@/lib/mission-dal";
-import { cn, generateSlug } from "@/lib/utils";
-import { json } from "@remix-run/node";
-import { Link, useLoaderData } from "@remix-run/react";
-import { cva } from "class-variance-authority";
-import { MapIcon, SearchIcon } from "lucide-react";
-import { useMemo, useState } from "react";
+} from "~/components/ui/select";
+import type { Mission } from "~/data/mission.zod";
+import { missionDAL } from "~/lib/mission-dal";
+import { cn, generateSlug } from "~/lib/utils";
+import type { Route } from "./+types/missions._index";
 
 export const loader = async () => {
     const missions = await missionDAL.getAllMissions();
@@ -44,7 +44,7 @@ export const loader = async () => {
         return acc;
     }, {} as Record<number, { title: string; missions: Mission[] }>);
 
-    return json({ missionsByChapter, uniqueBosses });
+    return { missionsByChapter, uniqueBosses };
 };
 
 const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {
@@ -59,8 +59,8 @@ const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {
     },
 });
 
-export default function MissionsIndex() {
-    const { missionsByChapter, uniqueBosses } = useLoaderData<typeof loader>();
+export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
+    const { missionsByChapter, uniqueBosses } = loaderData;
     const [searchQuery, setSearchQuery] = useState("");
     const [selectedBoss, setSelectedBoss] = useState<string | null>(null);
 

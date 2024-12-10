@@ -1,17 +1,16 @@
-import { missionDAL } from "@/lib/mission-dal";
-import { createReadableStreamFromReadable } from "@remix-run/node";
+import { createReadableStreamFromReadable } from "@react-router/node";
 import { Readable } from "node:stream";
+import { missionDAL } from "~/lib/mission-dal";
+import type { Route } from "./+types/missions[.json]";
 
-export async function loader() {
-    const missions = await missionDAL.getAllMissions();
-    const file = createReadableStreamFromReadable(
-        Readable.from(JSON.stringify(missions))
-    );
+export async function loader(_: Route.LoaderArgs) {
+  const missions = await missionDAL.getAllMissions();
+  const file = createReadableStreamFromReadable(Readable.from(JSON.stringify(missions)));
 
-    return new Response(file, {
-        headers: {
-            "Content-Disposition": 'attachment; filename="missions.json"',
-            "Content-Type": "application/json",
-        },
-    });
+  return new Response(file, {
+    headers: {
+      "Content-Disposition": 'attachment; filename="missions.json"',
+      "Content-Type": "application/json",
+    },
+  });
 }
