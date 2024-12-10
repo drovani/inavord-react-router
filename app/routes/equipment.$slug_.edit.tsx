@@ -1,16 +1,16 @@
-import { Route } from ".react-router/types/app/routes/+types/equipment.$slug_.edit";
-import EquipmentForm from "@/components/EquipmentForm";
-import {
-    EquipmentMutationSchema,
-    type EquipmentMutation,
-} from "@/data/equipment.zod";
-import { equipmentDAL } from "@/lib/equipment-dal";
-import { missionDAL } from "@/lib/mission-dal";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { redirect } from "react-router";
 import invariant from "tiny-invariant";
 import { ZodError } from "zod";
+import EquipmentForm from "~/components/EquipmentForm";
+import {
+    EquipmentMutationSchema,
+    type EquipmentMutation,
+} from "~/data/equipment.zod";
+import { equipmentDAL } from "~/lib/equipment-dal";
+import { missionDAL } from "~/lib/mission-dal";
+import type { Route } from "./+types/equipment.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
     return [{ title: `Edit ${data?.equipment.name}` }];

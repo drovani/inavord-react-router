@@ -1,22 +1,22 @@
-import { Route } from ".react-router/types/app/routes/+types/equipment.$slug";
-import EquipmentImage from "@/components/EquipmentImage";
-import { Badge } from "@/components/ui/badge";
-import { Button, buttonVariants } from "@/components/ui/button";
+import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { useEffect } from "react";
+import { Form, Link, useNavigate } from "react-router";
+import invariant from "tiny-invariant";
+import EquipmentImage from "~/components/EquipmentImage";
+import { Badge } from "~/components/ui/badge";
+import { Button, buttonVariants } from "~/components/ui/button";
 import {
     Card,
     CardContent,
     CardDescription,
     CardHeader,
     CardTitle,
-} from "@/components/ui/card";
-import type { EquipmentRecord } from "@/data/equipment.zod";
-import type { Mission } from "@/data/mission.zod";
-import { equipmentDAL } from "@/lib/equipment-dal";
-import { missionDAL } from "@/lib/mission-dal";
-import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
-import { useEffect } from "react";
-import { Form, Link, useNavigate } from "react-router";
-import invariant from "tiny-invariant";
+} from "~/components/ui/card";
+import type { EquipmentRecord } from "~/data/equipment.zod";
+import type { Mission } from "~/data/mission.zod";
+import { equipmentDAL } from "~/lib/equipment-dal";
+import { missionDAL } from "~/lib/mission-dal";
+import type { Route } from "./+types/equipment.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
     return [{ title: data?.equipment.name }];

@@ -1,17 +1,17 @@
+import { type UseFormReturn } from "react-hook-form";
 import {
     FormControl,
     FormField,
     FormItem,
     FormMessage,
-} from "@/components/ui/form";
+} from "~/components/ui/form";
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import type { EquipmentMutation } from "@/data/equipment.zod";
-import { type Mission, groupMissionsByChapter } from "@/data/mission.zod";
-import { type UseFormReturn } from "react-hook-form";
+} from "~/components/ui/hover-card";
+import type { EquipmentMutation } from "~/data/equipment.zod";
+import { type Mission, groupMissionsByChapter } from "~/data/mission.zod";
 import ChapterMissions from "./ChapterMissions";
 import {
     Accordion,

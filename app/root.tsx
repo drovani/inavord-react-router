@@ -1,47 +1,71 @@
-import { Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
-import { Route } from "./+types/root";
-import SiteHeader from "./components/SiteHeader";
-import SitePanel from "./components/SitePanel";
+import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import SiteHeader from "~/components/SiteHeader";
+import SitePanel from "~/components/SitePanel";
+import type { Route } from "./+types/root";
 import styles from "./tailwind.css?url";
 
-export const links: Route.LinksFunction = () => [
-    { rel: "stylesheet", href: styles, as: "style" },
-];
+export const links: Route.LinksFunction = () => [{ rel: "stylesheet", href: styles, as: "style" }];
 
 export const meta = (_: Route.MetaArgs) => {
-    return [
-        { title: "Hero Wars Helper: Heroes" },
-        {
-            name: "description",
-            content: "A helper app for Hero Wars: Alliance mobile game",
-        },
-    ];
+  return [
+    { title: "Hero Wars Helper: Heroes" },
+    {
+      name: "description",
+      content: "A helper app for Hero Wars: Alliance mobile game",
+    },
+  ];
 };
-export default function App(_: Route.ComponentProps) {
-    return (
-        <html lang="en" className="h-full bg-gray-100">
-            <head>
-                <meta charSet="utf-8" />
-                <meta
-                    name="viewport"
-                    content="width=device-width, initial-scale=1"
-                />
-                <Meta />
-                <Links />
-            </head>
-            <body>
-                <div className="grid min-h-screen max-w-screen-xl mx-auto md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-                    <SitePanel />
-                    <div className="flex flex-col">
-                        <SiteHeader />
-                        <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">
-                            <Outlet />
-                        </main>
-                    </div>
-                </div>
-                <ScrollRestoration />
-                <Scripts />
-            </body>
-        </html>
-    );
+
+export function Layout({ children }: { children: React.ReactNode }) {
+  return (
+    <html lang="en" className="h-full bg-gray-100">
+      <head>
+        <meta charSet="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <div className="grid min-h-screen max-w-screen-xl mx-auto md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
+          <SitePanel />
+          <div className="flex flex-col">
+            <SiteHeader />
+            <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">{children}</main>
+          </div>
+        </div>
+        <ScrollRestoration />
+        <Scripts />
+      </body>
+    </html>
+  );
+}
+
+export default function App() {
+  return <Outlet />;
+}
+
+export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
+  let message = "Oops!";
+  let details = "An unexpected error occurred.";
+  let stack: string | undefined;
+
+  if (isRouteErrorResponse(error)) {
+    message = error.status === 404 ? "404" : "Error";
+    details = error.status === 404 ? "The requested page could not be found." : error.statusText || details;
+  } else if (import.meta.env.DEV && error && error instanceof Error) {
+    details = error.message;
+    stack = error.stack;
+  }
+
+  return (
+    <main className="pt-16 p-4 container mx-auto">
+      <h1>{message}</h1>
+      <p>{details}</p>
+      {stack && (
+        <pre className="w-full p-4 overflow-x-auto">
+          <code>{stack}</code>
+        </pre>
+      )}
+    </main>
+  );
 }

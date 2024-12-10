@@ -1,13 +1,13 @@
-import { Route } from ".react-router/types/app/routes/+types/missions.$missionId";
-import EquipmentImage from "@/components/EquipmentImage";
-import { buttonVariants } from "@/components/ui/button";
-import { EquipmentRecord } from "@/data/equipment.zod";
-import { equipmentDAL } from "@/lib/equipment-dal";
-import { missionDAL } from "@/lib/mission-dal";
-import { generateSlug } from "@/lib/utils";
+import type { Route } from ".react-router/types/app/routes/+types/missions.$missionId";
 import { MapIcon } from "lucide-react";
 import { useEffect } from "react";
 import { Link, useNavigate } from "react-router";
+import EquipmentImage from "~/components/EquipmentImage";
+import { buttonVariants } from "~/components/ui/button";
+import { type EquipmentRecord } from "~/data/equipment.zod";
+import { equipmentDAL } from "~/lib/equipment-dal";
+import { missionDAL } from "~/lib/mission-dal";
+import { generateSlug } from "~/lib/utils";
 
 export const meta = ({ data }: Route.MetaArgs) => {
     if (!data) {

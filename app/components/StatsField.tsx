@@ -1,21 +1,21 @@
-import { Button } from "@/components/ui/button";
-import {
-  FormControl,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
-} from "@/components/ui/form";
-import { Input } from "@/components/ui/input";
-import {
-  Popover,
-  PopoverContent,
-  PopoverTrigger,
-} from "@/components/ui/popover";
-import type { EquipmentMutation } from "@/data/equipment.zod";
 import { PlusCircleIcon, XIcon } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
+import { Button } from "~/components/ui/button";
+import {
+    FormControl,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage,
+} from "~/components/ui/form";
+import { Input } from "~/components/ui/input";
+import {
+    Popover,
+    PopoverContent,
+    PopoverTrigger,
+} from "~/components/ui/popover";
+import type { EquipmentMutation } from "~/data/equipment.zod";
 
 interface StatsFieldProps {
     form: UseFormReturn<EquipmentMutation>;

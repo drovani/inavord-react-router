@@ -1,33 +1,33 @@
+import { PlusCircleIcon, XIcon } from "lucide-react";
+import { useState } from "react";
+import { type UseFormReturn } from "react-hook-form";
 import {
     Accordion,
     AccordionContent,
     AccordionItem,
     AccordionTrigger,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
+} from "~/components/ui/accordion";
+import { Badge } from "~/components/ui/badge";
+import { Button } from "~/components/ui/button";
 import {
     FormControl,
     FormField,
     FormItem,
     FormLabel,
     FormMessage,
-} from "@/components/ui/form";
+} from "~/components/ui/form";
 import {
     HoverCard,
     HoverCardContent,
     HoverCardTrigger,
-} from "@/components/ui/hover-card";
-import { Input } from "@/components/ui/input";
+} from "~/components/ui/hover-card";
+import { Input } from "~/components/ui/input";
 import {
     Popover,
     PopoverContent,
     PopoverTrigger,
-} from "@/components/ui/popover";
-import type { EquipmentMutation, EquipmentRecord } from "@/data/equipment.zod";
-import { PlusCircleIcon, XIcon } from "lucide-react";
-import { useState } from "react";
-import { type UseFormReturn } from "react-hook-form";
+} from "~/components/ui/popover";
+import type { EquipmentMutation, EquipmentRecord } from "~/data/equipment.zod";
 
 interface CraftingFieldProps {
     form: UseFormReturn<EquipmentMutation>;

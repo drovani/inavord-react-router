@@ -1,6 +1,6 @@
-import type { Mission } from "@/data/mission.zod";
-import missionData from "@/data/missions.json";
 import { getStore } from "@netlify/blobs";
+import type { Mission } from "~/data/mission.zod";
+import missionData from "~/data/missions.json";
 
 interface InitializationOptions {
     /** If true, will skip items that already exist */

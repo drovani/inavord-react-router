@@ -1,5 +1,9 @@
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+import { cva } from "class-variance-authority";
+import { MapIcon, SearchIcon } from "lucide-react";
+import { useMemo, useState } from "react";
+import { Link } from "react-router";
+import { Card, CardHeader, CardTitle } from "~/components/ui/card";
+import { Input } from "~/components/ui/input";
 import {
     Select,
     SelectContent,
@@ -7,15 +11,11 @@ import {
     SelectItem,
     SelectTrigger,
     SelectValue,
-} from "@/components/ui/select";
-import type { Mission } from "@/data/mission.zod";
-import { missionDAL } from "@/lib/mission-dal";
-import { cn, generateSlug } from "@/lib/utils";
-import { cva } from "class-variance-authority";
-import { MapIcon, SearchIcon } from "lucide-react";
-import { useMemo, useState } from "react";
-import { Link } from "react-router";
-import { Route } from "./+types/missions._index";
+} from "~/components/ui/select";
+import type { Mission } from "~/data/mission.zod";
+import { missionDAL } from "~/lib/mission-dal";
+import { cn, generateSlug } from "~/lib/utils";
+import type { Route } from "./+types/missions._index";
 
 export const loader = async () => {
     const missions = await missionDAL.getAllMissions();

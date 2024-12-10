@@ -1,6 +1,6 @@
-import type { EquipmentRecord } from "@/data/equipment.zod";
-import equipmentData from "@/data/equipments.json";
 import { getStore } from "@netlify/blobs";
+import type { EquipmentRecord } from "~/data/equipment.zod";
+import equipmentData from "~/data/equipments.json";
 
 interface InitializationOptions {
     /** If true, will skip items that already exist */
