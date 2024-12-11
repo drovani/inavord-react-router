@@ -1,7 +1,8 @@
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
 import SiteHeader from "~/components/SiteHeader";
-import SitePanel from "~/components/SitePanel";
 import type { Route } from "./+types/root";
+import { SiteSidebar } from "./components/SiteSidebar";
+import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
 import styles from "./tailwind.css?url";
 
 export const links: Route.LinksFunction = () => [{ rel: "stylesheet", href: styles, as: "style" }];
@@ -26,22 +27,18 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <div className="grid min-h-screen max-w-screen-xl mx-auto md:grid-cols-[220px_1fr] lg:grid-cols-[280px_1fr]">
-          <SitePanel />
-          <div className="flex flex-col">
+        <SidebarProvider defaultOpen={true}>
+          <SiteSidebar />
+          <SidebarInset>
             <SiteHeader />
             <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">{children}</main>
-          </div>
-        </div>
+          </SidebarInset>
+        </SidebarProvider>
         <ScrollRestoration />
         <Scripts />
       </body>
     </html>
   );
-}
-
-export default function App() {
-  return <Outlet />;
 }
 
 export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
@@ -68,4 +65,8 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
       )}
     </main>
   );
+}
+
+export default function App() {
+  return <Outlet />;
 }

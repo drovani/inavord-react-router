@@ -1,4 +1,3 @@
-import SiteNavigation from "~/components/SiteNavigation";
 import type { Route } from "./+types/_index";
 
 export default function Index(_: Route.ComponentProps) {
@@ -11,9 +10,6 @@ export default function Index(_: Route.ComponentProps) {
         </a>{" "}
         project
       </h2>
-      <div className="ml-10 flex flex-col items-baseline space-x-4">
-        <SiteNavigation className="md:hidden" />
-      </div>
     </section>
   );
 }
