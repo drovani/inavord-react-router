@@ -8,4 +8,4 @@ node_modules
 
 .netlify
 .DS_Store
-Zone.Identifier
+*:Zone.Identifier
