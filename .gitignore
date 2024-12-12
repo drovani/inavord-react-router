@@ -6,6 +6,6 @@ node_modules
 .env
 .react-router/
 
-# Local Netlify folder
 .netlify
 .DS_Store
+*:Zone.Identifier

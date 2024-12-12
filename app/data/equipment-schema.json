@@ -19,10 +19,11 @@
         "type": "string",
         "enum": [
           "equipment",
-          "fragment"
+          "fragment",
+          "recipe"
         ],
         "default": "equipment",
-        "description": "Discriminator field to distinguish between equipment and fragments"
+        "description": "Discriminator field to distinguish among equipment, fragments, and recipes"
       },
       "slug": {
         "type": "string",
@@ -75,7 +76,7 @@
       },
       "stats": {
         "type": "object",
-        "description": "Statistical bonuses provided by the equipment (not present for fragments)",
+        "description": "Statistical bonuses provided by the equipment (not present for fragments or recipes)",
         "minProperties": 1,
         "additionalProperties": {
           "type": "number"
@@ -130,6 +131,25 @@
             "stats",
             "hero_level_required",
             "crafting"
+          ]
+        }
+      },
+      {
+        "properties": {
+          "type": {
+            "const": "recipe"
+          },
+          "name": {
+            "pattern": ".* - Recipe.*$"
+          }
+        },
+        "required": [
+          "type"
+        ],
+        "not": {
+          "required": [
+            "stats",
+            "hero_level_required"
           ]
         }
       },

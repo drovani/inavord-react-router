@@ -9,10 +9,10 @@ import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { Slider } from "~/components/ui/slider";
 import {
-    EQUIPMENT_QUALITIES,
-    type EquipmentMutation,
-    EquipmentMutationSchema,
-    type EquipmentRecord,
+  EQUIPMENT_QUALITIES,
+  type EquipmentMutation,
+  EquipmentMutationSchema,
+  type EquipmentRecord,
 } from "~/data/equipment.zod";
 import type { Mission } from "~/data/mission.zod";
 import { generateSlug } from "~/lib/utils";
@@ -20,7 +20,6 @@ import CampaignSourcesField from "./CampaignSourcesField";
 import CraftingField from "./CraftingField";
 import EquipmentImage from "./EquipmentImage";
 import StatsField from "./StatsField";
-import { Switch } from "./ui/switch";
 
 type EquipmentFormProps = {
   form: UseFormReturn<EquipmentMutation>;
@@ -58,6 +57,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
   const [previewSlug, setPreviewSlug] = useState(form.getValues("name") ? generateSlug(form.getValues("name")) : "");
   const itemType = form.watch("type");
   const isFragment = useMemo(() => itemType === "fragment", [itemType]);
+  const isRecipe = useMemo(() => itemType === "recipe", [itemType]);
 
   useEffect(() => {
     const name = form.getValues("name");
@@ -65,11 +65,9 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
 
     if (isFragment && !name.endsWith(" (Fragment)")) {
       form.setValue("name", `${name} (Fragment)`);
-    } else if (!isFragment && name.endsWith(" (Fragment)")) {
-      form.setValue("name", name.replace(" (Fragment)", ""));
     }
     setPreviewSlug(generateSlug(form.getValues("name")));
-  }, [isFragment, form]);
+  }, [isFragment, isRecipe, form]);
 
   useEffect(() => {
     const quality = form.getValues("quality");
@@ -85,7 +83,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
       }
     });
     return () => subscription.unsubscribe();
-  }, [form, isFragment]);
+  }, [form, isFragment, isRecipe]);
 
   const onSubmit = (data: EquipmentMutation) => {
     const formData = new FormData();
@@ -118,14 +116,32 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
               name="type"
               render={({ field }) => (
                 <FormItem>
-                  <FormLabel>Fragment</FormLabel>
+                  <FormLabel>Special Type</FormLabel>
                   <FormControl>
-                    <Switch
-                      className="block"
-                      checked={field.value === "fragment"}
-                      disabled={form.watch("quality") === "gray"}
-                      onCheckedChange={(checked) => field.onChange(checked ? "fragment" : "equipment")}
-                    />
+                    <RadioGroup
+                      onValueChange={field.onChange}
+                      defaultValue={field.value || "equipment"}
+                      className="flex flex-col gap-0"
+                    >
+                      <FormItem className="flex items-center gap-1">
+                        <FormControl>
+                          <RadioGroupItem value="equipment" />
+                        </FormControl>
+                        <FormLabel>Normal equipment</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center gap-1">
+                        <FormControl>
+                          <RadioGroupItem value="recipe" />
+                        </FormControl>
+                        <FormLabel>Recipe</FormLabel>
+                      </FormItem>
+                      <FormItem className="flex items-center gap-1">
+                        <FormControl>
+                          <RadioGroupItem value="fragment" />
+                        </FormControl>
+                        <FormLabel>Fragment</FormLabel>
+                      </FormItem>
+                    </RadioGroup>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
@@ -180,7 +196,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
                     step={1}
                     value={[field.value]}
                     onValueChange={([value]) => field.onChange(value)}
-                    disabled={isFragment}
+                    disabled={isFragment || isRecipe}
                   />
                 </FormControl>
                 <FormControl className="w-20">
@@ -190,7 +206,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
                     max={120}
                     {...field}
                     onChange={(e) => field.onChange(+e.target.value)}
-                    disabled={isFragment}
+                    disabled={isFragment || isRecipe}
                   />
                 </FormControl>
               </div>
@@ -281,7 +297,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
           </div>
         </div>
 
-        <StatsField form={form} existingStats={existingStats} disabled={isFragment} />
+        <StatsField form={form} existingStats={existingStats} disabled={isFragment || isRecipe} />
         <CraftingField form={form} existingItems={existingItems} disabled={isFragment} />
         <CampaignSourcesField form={form} missions={missions} />
 
