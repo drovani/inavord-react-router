@@ -1,18 +1,18 @@
 import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
 import {
-    DropletIcon,
-    FileJson2Icon,
-    FileWarningIcon,
-    LoaderCircle,
-    MapIcon,
-    MoreHorizontalIcon,
-    PresentationIcon,
-    ShieldAlertIcon,
-    ShieldIcon,
-    ShieldPlusIcon,
-    ShoppingBagIcon,
-    SwordIcon,
-    UsersIcon
+  DropletIcon,
+  FileJson2Icon,
+  FileWarningIcon,
+  LoaderCircle,
+  MapIcon,
+  MoreHorizontalIcon,
+  PresentationIcon,
+  ShieldAlertIcon,
+  ShieldIcon,
+  ShieldPlusIcon,
+  ShoppingBagIcon,
+  SwordIcon,
+  UsersIcon
 } from "lucide-react";
 import type React from "react";
 import { Link, NavLink } from "react-router";
@@ -21,18 +21,18 @@ import { SiteSwitcher } from "./SiteSwitcher";
 import { SiteUser } from "./SiteUser";
 import { DropdownMenuContent } from "./ui/dropdown-menu";
 import {
-    Sidebar,
-    SidebarContent,
-    SidebarFooter,
-    SidebarGroup,
-    SidebarGroupLabel,
-    SidebarHeader,
-    SidebarMenu,
-    SidebarMenuAction,
-    SidebarMenuButton,
-    SidebarMenuItem,
-    SidebarRail,
-    useSidebar,
+  Sidebar,
+  SidebarContent,
+  SidebarFooter,
+  SidebarGroup,
+  SidebarGroupLabel,
+  SidebarHeader,
+  SidebarMenu,
+  SidebarMenuAction,
+  SidebarMenuButton,
+  SidebarMenuItem,
+  SidebarRail,
+  useSidebar,
 } from "./ui/sidebar";
 const navigation = [
   { name: "Heroes", icon: UsersIcon },
@@ -134,7 +134,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                       align={isMobile ? "end" : "start"}
                     >
                       {item.children.map((subnav) => (
-                        <DropdownMenuItem key={subnav.name}>
+                        <DropdownMenuItem key={subnav.name} asChild>
                           <Link
                             to={subnav.href}
                             className="flex gap-2 items-center text-sm"

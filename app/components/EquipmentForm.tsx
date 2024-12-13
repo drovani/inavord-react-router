@@ -103,7 +103,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
                 <FormItem>
                   <FormLabel>Name</FormLabel>
                   <FormControl>
-                    <Input {...field} />
+                    <Input {...field} autoFocus />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

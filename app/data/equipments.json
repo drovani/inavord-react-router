@@ -1,1341 +1,2199 @@
 [
-    {
-      "slug": "apprentices-mantle",
-      "created_at": "2024-09-10T17:16:56.000Z",
-      "name": "Apprentice's Mantle",
-      "hero_level_required": 1,
-      "quality": "gray",
-      "stats": {
-        "magic attack": 25
-      },
-      "campaign_sources": [
-        "1-3",
-        "2-4",
-        "3-8",
-        "4-11",
-        "9-4",
-        "9-12"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
+  {
+    "slug": "apprentices-mantle",
+    "created_at": "2024-09-10T17:16:56.000Z",
+    "name": "Apprentice's Mantle",
+    "hero_level_required": 1,
+    "quality": "gray",
+    "stats": {
+      "magic attack": 25
     },
-    {
-      "slug": "ashen-bow",
-      "created_at": "2024-09-10T17:16:56.000Z",
-      "name": "Ashen Bow",
-      "quality": "gray",
-      "hero_level_required": 5,
-      "sell_value": 1,
-      "guild_activity_points": 2,
-      "buy_value": 3,
-      "campaign_sources": [
-        "1-10",
-        "3-1",
-        "3-7",
-        "5-8",
-        "9-8",
-        "10-11"
-      ],
-      "stats": {
-        "intelligence": 1,
-        "agility": 5,
-        "strength": 1
-      }
-    },
-    {
-      "slug": "censer",
-      "created_at": "2024-09-10T17:16:56.000Z",
-      "name": "Censer",
-      "hero_level_required": 3,
-      "quality": "gray",
-      "stats": {
-        "intelligence": 7
-      },
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "1-7",
-        "2-13",
-        "3-15",
-        "4-3",
-        "5-4"
-      ]
-    },
-    {
-      "slug": "crossbow",
-      "created_at": "2024-11-06T21:09:00.096Z",
-      "name": "Crossbow",
-      "quality": "gray",
-      "stats": {
-        "agility": 7,
-        "physical attack": 25
-      },
-      "hero_level_required": 4,
-      "buy_value": 2650,
-      "sell_value": 530,
-      "guild_activity_points": 4,
-      "crafting": {
-        "gold_cost": 2500,
-        "required_items": {
-          "orcish-yatagan": 1,
-          "lucky-arrow": 1
-        }
-      }
-    },
-    {
-      "slug": "dagger",
-      "created_at": "2024-11-06T22:22:38.900Z",
-      "name": "Dagger",
-      "quality": "gray",
-      "stats": {
-        "strength": 7
-      },
-      "hero_level_required": 3,
-      "campaign_sources": [
-        "1-6",
-        "1-7",
-        "2-12",
-        "3-15",
-        "4-2",
-        "5-3"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "giants-belt",
-      "created_at": "2024-11-06T22:44:02.994Z",
-      "name": "Giant's Belt",
-      "quality": "gray",
-      "stats": {
-        "intelligence": 5,
-        "agility": 5,
-        "strength": 5
-      },
-      "hero_level_required": 3,
-      "buy_value": 3125,
-      "sell_value": 625,
-      "guild_activity_points": 6,
-      "crafting": {
-        "gold_cost": 3125,
-        "required_items": {
-          "quiver": 1,
-          "oil-lamp": 1,
-          "travellers-shoes": 1
-        }
-      }
-    },
-    {
-      "slug": "imperial-shield",
-      "created_at": "2024-11-06T22:21:01.966Z",
-      "name": "Imperial Shield",
-      "quality": "gray",
-      "stats": {
-        "health": 385
-      },
-      "hero_level_required": 3,
-      "campaign_sources": [
-        "1-5",
-        "1-8",
-        "3-2",
-        "3-12",
-        "4-14"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "lucky-arrow",
-      "created_at": "2024-11-06T21:07:59.976Z",
-      "name": "Lucky Arrow",
-      "quality": "gray",
-      "stats": {
-        "agility": 7
-      },
-      "hero_level_required": 3,
-      "campaign_sources": [
-        "1-8",
-        "2-14",
-        "3-15",
-        "4-4",
-        "5-5"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "lucky-dice",
-      "created_at": "2024-11-06T22:45:41.691Z",
-      "name": "Lucky Dice",
-      "quality": "gray",
-      "stats": {
-        "magic defense": 25
-      },
-      "hero_level_required": 1,
-      "campaign_sources": [
-        "1-4",
-        "2-7",
-        "3-11",
-        "4-13",
-        "9-6",
-        "10-5"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "oil-lamp",
-      "created_at": "2024-11-06T22:42:17.694Z",
-      "name": "Oil Lamp",
-      "quality": "gray",
-      "stats": {
-        "intelligence": 5
-      },
-      "hero_level_required": 2,
-      "campaign_sources": [
-        "1-1",
-        "1-6",
-        "2-9",
-        "3-10",
-        "4-7"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "orcish-hammer",
-      "created_at": "2024-11-06T22:28:28.465Z",
-      "name": "Orcish Hammer",
-      "quality": "gray",
-      "stats": {
-        "strength": 7,
-        "health": 385
-      },
-      "hero_level_required": 4,
-      "buy_value": 2650,
-      "sell_value": 530,
-      "guild_activity_points": 4,
-      "crafting": {
-        "gold_cost": 4500,
-        "required_items": {
-          "imperial-shield": 1,
-          "dagger": 1
-        }
-      }
-    },
-    {
-      "slug": "orcish-knuckles",
-      "created_at": "2024-11-06T22:23:45.010Z",
-      "name": "Orcish Knuckles",
-      "quality": "gray",
-      "stats": {
-        "physical attack": 12
-      },
-      "hero_level_required": 1,
-      "campaign_sources": [
-        "1-2",
-        "2-1",
-        "2-2",
-        "9-9",
-        "10-8"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "orcish-yatagan",
-      "created_at": "2024-11-06T21:07:03.702Z",
-      "name": "Orcish Yatagan",
-      "quality": "gray",
-      "stats": {
-        "physical attack": 25
-      },
-      "hero_level_required": 3,
-      "campaign_sources": [
-        "1-5",
-        "1-9",
-        "3-3",
-        "3-13",
-        "5-1"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "quiver",
-      "created_at": "2024-11-06T22:41:35.474Z",
-      "name": "Quiver",
-      "quality": "gray",
-      "stats": {
-        "agility": 5
-      },
-      "hero_level_required": 2,
-      "campaign_sources": [
-        "1-1",
-        "1-4",
-        "2-8",
-        "3-6",
-        "4-5"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "sledgehammer",
-      "created_at": "2024-11-06T22:25:24.017Z",
-      "name": "Sledgehammer",
-      "quality": "gray",
-      "stats": {
-        "intelligence": 1,
-        "agility": 1,
-        "strength": 5
-      },
-      "hero_level_required": 5,
-      "campaign_sources": [
-        "1-9",
-        "2-10",
-        "3-4",
-        "5-7",
-        "9-7",
-        "10-9"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "steel-pauldron",
-      "created_at": "2024-11-06T22:26:20.983Z",
-      "name": "Steel Pauldron",
-      "quality": "gray",
-      "stats": {
-        "armor": 25
-      },
-      "hero_level_required": 1,
-      "campaign_sources": [
-        "1-3",
-        "2-5",
-        "3-9",
-        "4-12",
-        "9-5",
-        "9-14"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "travellers-shoes",
-      "created_at": "2024-11-06T22:43:15.321Z",
-      "name": "Traveller's Shoes",
-      "quality": "gray",
-      "stats": {
-        "strength": 5
-      },
-      "hero_level_required": 2,
-      "campaign_sources": [
-        "1-1",
-        "1-6",
-        "2-11",
-        "4-8",
-        "9-3",
-        "10-14"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "travellers-staff",
-      "created_at": "2024-11-06T22:27:34.661Z",
-      "name": "Traveller's Staff",
-      "quality": "gray",
-      "stats": {
-        "intelligence": 5,
-        "agility": 1,
-        "strength": 1
-      },
-      "hero_level_required": 5,
-      "campaign_sources": [
-        "1-10",
-        "2-15",
-        "3-5",
-        "4-9",
-        "5-9"
-      ],
-      "buy_value": 1250,
-      "sell_value": 250,
-      "guild_activity_points": 2
-    },
-    {
-      "slug": "wizards-staff",
-      "created_at": "2024-09-10T17:16:56.000Z",
-      "name": "Wizard's Staff",
-      "hero_level_required": 4,
-      "quality": "gray",
-      "stats": {
-        "intelligence": 7,
-        "magic attack": 50
-      },
-      "buy_value": 3400,
-      "sell_value": 680,
-      "guild_activity_points": 6,
-      "crafting": {
-        "gold_cost": 4500,
-        "required_items": {
-          "apprentices-mantle": 2,
-          "censer": 1
-        }
-      }
-    },
-    {
-      "slug": "wooden-shield",
-      "created_at": "2024-09-10T17:16:56.000Z",
-      "name": "Wooden Shield",
-      "hero_level_required": 1,
-      "quality": "gray",
-      "stats": {
-        "health": 200
-      },
-      "campaign_sources": [
-        "1-3",
-        "2-3",
-        "2-6",
-        "9-2",
-        "10-10"
-      ],
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2
-    },
-    {
-      "name": "Ancient Amulet",
-      "quality": "green",
-      "stats": {
-        "intelligence": 10,
-        "strength": 10,
-        "agility": 10
-      },
-      "hero_level_required": 20,
-      "buy_value": 5400,
-      "sell_value": 1080,
-      "guild_activity_points": 9,
-      "crafting": {
-        "gold_cost": 27000,
-        "required_items": {
-          "branch-of-antiaris": 1,
-          "light-crystal": 1,
-          "trackers-boots": 1
-        }
-      },
-      "slug": "ancient-amulet",
-      "created_at": "2024-11-09T01:43:17.749Z"
-    },
-    {
-      "slug": "band-of-enlightenment",
-      "created_at": "2024-11-06T22:47:14.202Z",
-      "name": "Band of Enlightenment",
-      "quality": "green",
-      "stats": {
-        "dodge": 15
-      },
-      "hero_level_required": 24,
-      "campaign_sources": [
-        "3-2",
-        "4-13",
-        "6-6",
-        "7-3",
-        "9-7",
-        "9-13"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3
-    },
-    {
-      "name": "Branch of Antiaris",
-      "quality": "green",
-      "stats": {
-        "strength": 10
-      },
-      "hero_level_required": 12,
-      "campaign_sources": [
-        "2-1",
-        "2-8",
-        "4-1",
-        "4-2",
-        "5-8",
-        "6-8"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "branch-of-antiaris",
-      "created_at": "2024-11-09T01:39:11.794Z"
-    },
-    {
-      "name": "Brothers",
-      "quality": "green",
-      "stats": {
-        "strength": 15,
-        "health": 420,
-        "physical attack": 28,
-        "armor": 42
-      },
-      "hero_level_required": 24,
-      "buy_value": 4500,
-      "sell_value": 900,
-      "guild_activity_points": 10,
-      "crafting": {
-        "gold_cost": 22500,
-        "required_items": {
-          "brothers-fragment": 5
-        }
-      },
-      "slug": "brothers",
-      "created_at": "2024-11-09T01:57:37.950Z"
-    },
-    {
-      "name": "Brothers (Fragment)",
-      "quality": "green",
-      "campaign_sources": [
-        "3-9",
-        "5-3",
-        "7-6",
-        "7-13",
-        "10-3"
-      ],
-      "buy_value": 750,
-      "sell_value": 150,
-      "guild_activity_points": 2,
-      "slug": "brothers-fragment",
-      "created_at": "2024-11-09T01:47:39.508Z",
-      "type": "fragment"
-    },
-    {
-      "name": "Cain's Seal",
-      "quality": "green",
-      "stats": {
-        "magic defense": 50
-      },
-      "hero_level_required": 10,
-      "campaign_sources": [
-        "2-7",
-        "4-11",
-        "5-15",
-        "6-3",
-        "7-2",
-        "9-2"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "cains-seal",
-      "created_at": "2024-11-09T01:59:31.614Z"
-    },
-    {
-      "name": "Cuirass",
-      "quality": "green",
-      "stats": {
-        "armor": 50
-      },
-      "hero_level_required": 10,
-      "campaign_sources": [
-        "2-5",
-        "3-10",
-        "4-9",
-        "5-10",
-        "6-1",
-        "6-15"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "cuirass",
-      "created_at": "2024-11-09T02:00:42.602Z"
-    },
-    {
-      "name": "Cursed Dagger",
-      "quality": "green",
-      "stats": {
-        "armor penetration": 50
-      },
-      "hero_level_required": 24,
-      "campaign_sources": [
-        "3-4",
-        "4-14",
-        "6-10",
-        "7-4",
-        "10-12"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "cursed-dagger",
-      "created_at": "2024-11-09T02:01:45.253Z"
-    },
-    {
-      "name": "Dawnguard",
-      "quality": "green",
-      "stats": {
-        "intelligence": 22,
-        "physical attack": 28,
-        "armor": 42
-      },
-      "hero_level_required": 24,
-      "buy_value": 4500,
-      "sell_value": 900,
-      "guild_activity_points": 10,
-      "crafting": {
-        "gold_cost": 22500,
-        "required_items": {
-          "dawnguard-fragment": 5
-        }
-      },
-      "slug": "dawnguard",
-      "created_at": "2024-11-09T02:02:59.409Z"
-    },
-    {
-      "name": "Dawnguard (Fragment)",
-      "quality": "green",
-      "campaign_sources": [
-        "5-5",
-        "6-4",
-        "7-15",
-        "10-2",
-        "10-13"
-      ],
-      "buy_value": 750,
-      "sell_value": 150,
-      "guild_activity_points": 2,
-      "slug": "dawnguard-fragment",
-      "created_at": "2024-11-09T02:04:51.453Z",
-      "type": "fragment"
-    },
-    {
-      "name": "Elven Armor",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "type": "equipment",
-      "stats": {
-        "strength": 10,
-        "armor": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "branch-of-antiaris": 1,
-          "cuirass": 1
-        }
-      },
-      "slug": "elven-armor",
-      "created_at": "2024-12-09T23:00:48.797Z"
-    },
-    {
-      "name": "Elven Bow",
-      "quality": "green",
-      "buy_value": 4825,
-      "sell_value": 965,
-      "guild_activity_points": 8,
-      "type": "equipment",
-      "stats": {
-        "intelligence": 5,
-        "agility": 12,
-        "strength": 5
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "giants-belt": 1,
-          "lucky-arrow": 1
-        }
-      },
-      "slug": "elven-bow",
-      "created_at": "2024-12-09T23:01:55.574Z"
-    },
-    {
-      "name": "Elven Saber",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "type": "equipment",
-      "stats": {
-        "agility": 10,
-        "physical attack": 33
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "trackers-boots": 1,
-          "fire-sword": 1
-        }
-      },
-      "slug": "elven-saber",
-      "created_at": "2024-12-09T23:06:31.789Z"
-    },
-    {
-      "name": "Enchanter's Staff",
-      "quality": "green",
-      "buy_value": 4825,
-      "sell_value": 965,
-      "guild_activity_points": 8,
-      "type": "equipment",
-      "stats": {
-        "intelligence": 12,
-        "agility": 5,
-        "strength": 5
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "giants-belt": 1,
-          "censer": 1
-        }
-      },
-      "slug": "enchanters-staff",
-      "created_at": "2024-12-09T23:07:32.661Z"
-    },
-    {
-      "name": "Fire Sword",
-      "quality": "green",
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "campaign_sources": [
-        "2-3",
-        "3-1",
-        "4-7",
-        "5-2",
-        "5-13",
-        "6-13"
-      ],
-      "type": "equipment",
-      "stats": {
-        "physical attack": 33
-      },
-      "hero_level_required": 10,
-      "slug": "fire-sword",
-      "created_at": "2024-12-09T23:05:38.500Z"
-    },
-    {
-      "name": "Guardian's Shield",
-      "quality": "green",
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "campaign_sources": [
-        "2-2",
-        "2-15",
-        "4-5",
-        "4-15",
-        "5-12",
-        "6-12"
-      ],
-      "type": "equipment",
-      "stats": {
-        "health": 500
-      },
-      "hero_level_required": 10,
-      "slug": "guardians-shield",
-      "created_at": "2024-12-10T02:00:57.762Z"
-    },
-    {
-      "name": "Infernal Messenger",
-      "quality": "green",
-      "buy_value": 3600,
-      "sell_value": 720,
-      "guild_activity_points": 6,
-      "stats": {
-        "physical attack": 33,
-        "critical hit chance": 15
-      },
-      "hero_level_required": 24,
-      "crafting": {
-        "gold_cost": 18000,
-        "required_items": {
-          "fire-sword": 1,
-          "reaper": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "infernal-messenger",
-      "created_at": "2024-12-12T03:27:18.836Z"
-    },
-    {
-      "name": "Light Crystal",
-      "quality": "green",
-      "stats": {
-        "intelligence": 10
-      },
-      "hero_level_required": 12,
-      "campaign_sources": [
-        "2-6",
-        "2-9",
-        "4-3",
-        "4-6",
-        "5-9",
-        "6-9"
-      ],
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "light-crystal",
-      "created_at": "2024-11-09T01:40:30.135Z"
-    },
-    {
-      "name": "Lost Ring",
-      "quality": "green",
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "stats": {
-        "magic attack": 50
-      },
-      "hero_level_required": 10,
-      "campaign_sources": [
-        "2-4",
-        "3-6",
-        "4-8",
-        "5-6",
-        "5-14",
-        "6-14"
-      ],
-      "type": "equipment",
-      "slug": "lost-ring",
-      "created_at": "2024-12-12T03:29:01.917Z"
-    },
-    {
-      "name": "Midnight Crystal",
-      "quality": "green",
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "stats": {
-        "magic penetration": 50
-      },
-      "hero_level_required": 24,
-      "campaign_sources": [
-        "3-7",
-        "5-1",
-        "6-5",
-        "7-1",
-        "7-5",
-        "9-4"
-      ],
-      "type": "equipment",
-      "slug": "midnight-crystal",
-      "created_at": "2024-12-12T03:30:29.786Z"
-    },
-    {
-      "name": "Poleaxe",
-      "quality": "green",
-      "buy_value": 4450,
-      "sell_value": 890,
-      "guild_activity_points": 8,
-      "stats": {
-        "physical attack": 33,
-        "armor": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "fire-sword": 1,
-          "cuirass": 1,
-          "poleaxe-recipe": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "poleaxe",
-      "created_at": "2024-12-12T03:34:06.979Z"
-    },
-    {
-      "name": "Poleaxe - Recipe",
-      "quality": "green",
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "2-14",
-        "5-11",
-        "7-8",
-        "9-8"
-      ],
-      "type": "recipe",
-      "slug": "poleaxe-recipe",
-      "created_at": "2024-12-12T03:32:27.352Z"
-    },
-    {
-      "name": "Portal Key",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "stats": {
-        "agility": 10,
-        "magic defense": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "trackers-boots": 1,
-          "cains-seal": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "portal-key",
-      "created_at": "2024-12-12T03:35:07.523Z"
-    },
-    {
-      "name": "Reaper",
-      "quality": "green",
-      "buy_value": 1500,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "stats": {
-        "critical hit chance": 15
-      },
-      "hero_level_required": 24,
-      "campaign_sources": [
-        "2-13",
-        "4-12",
-        "6-2",
-        "7-2",
-        "9-11",
-        "10-6"
-      ],
-      "type": "equipment",
-      "slug": "reaper",
-      "created_at": "2024-12-12T03:26:09.480Z"
-    },
-    {
-      "name": "Screaming Blade",
-      "quality": "green",
-      "buy_value": 4450,
-      "sell_value": 890,
-      "guild_activity_points": 8,
-      "stats": {
-        "health": 500,
-        "physical attack": 33
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "guardians-shield": 1,
-          "fire-sword": 1,
-          "screaming-blade-recipe": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "screaming-blade",
-      "created_at": "2024-12-12T03:37:01.982Z"
-    },
-    {
-      "name": "Screaming Blade - Recipe",
-      "quality": "green",
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "2-12",
-        "6-7",
-        "7-7",
-        "9-5"
-      ],
-      "type": "recipe",
-      "slug": "screaming-blade-recipe",
-      "created_at": "2024-12-12T03:35:52.728Z"
-    },
-    {
-      "name": "Shining Armor",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "stats": {
-        "strength": 10,
-        "health": 500
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "branch-of-antiaris": 1,
-          "guardians-shield": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "shining-armor",
-      "created_at": "2024-12-12T03:57:29.814Z"
-    },
-    {
-      "name": "Silent Guardian",
-      "quality": "green",
-      "buy_value": 3600,
-      "sell_value": 720,
-      "guild_activity_points": 6,
-      "stats": {
-        "intelligence": 10,
-        "magic penetration": 50
-      },
-      "hero_level_required": 24,
-      "crafting": {
-        "gold_cost": 18000,
-        "required_items": {
-          "light-crystal": 1,
-          "midnight-crystal": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "silent-guardian",
-      "created_at": "2024-12-12T03:59:41.681Z"
-    },
-    {
-      "name": "Skull Crusher",
-      "quality": "green",
-      "buy_value": 4500,
-      "sell_value": 900,
-      "guild_activity_points": 10,
-      "stats": {
-        "intelligence": 15,
-        "magic attack": 84,
-        "magic defense": 42
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 22500,
-        "required_items": {
-          "skull-crusher-fragment": 5
-        }
-      },
-      "type": "equipment",
-      "slug": "skull-crusher",
-      "created_at": "2024-12-12T04:03:29.094Z"
-    },
-    {
-      "name": "Skull Crusher (Fragment)",
-      "quality": "green",
-      "buy_value": 750,
-      "sell_value": 150,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "3-11",
-        "5-4",
-        "6-3",
-        "7-10",
-        "7-14",
-        "10-7"
-      ],
-      "type": "fragment",
-      "slug": "skull-crusher-fragment",
-      "created_at": "2024-12-12T04:02:18.143Z"
-    },
-    {
-      "name": "Soul Catcher",
-      "quality": "green",
-      "buy_value": 4450,
-      "sell_value": 890,
-      "guild_activity_points": 8,
-      "stats": {
-        "health": 500,
-        "magic attack": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "guardians-shield": 1,
-          "lost-ring": 1,
-          "soul-catcher-recipe": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "soul-catcher",
-      "created_at": "2024-12-12T04:06:58.083Z"
-    },
-    {
-      "name": "Soul Catcher - Recipe",
-      "quality": "green",
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "3-8",
-        "5-14",
-        "7-12",
-        "10-2"
-      ],
-      "type": "recipe",
-      "slug": "soul-catcher-recipe",
-      "created_at": "2024-12-12T04:05:40.413Z"
-    },
-    {
-      "name": "Spear of Thunder",
-      "quality": "green",
-      "buy_value": 3600,
-      "sell_value": 720,
-      "guild_activity_points": 6,
-      "stats": {
-        "physical attack": 33,
-        "armor penetration": 50
-      },
-      "hero_level_required": 24,
-      "crafting": {
-        "gold_cost": 18000,
-        "required_items": {
-          "fire-sword": 1,
-          "cursed-dagger": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "spear-of-thunder",
-      "created_at": "2024-12-12T04:12:45.981Z"
-    },
-    {
-      "name": "Sword of Storms",
-      "quality": "green",
-      "buy_value": 4500,
-      "sell_value": 900,
-      "guild_activity_points": 10,
-      "stats": {
-        "agility": 15,
-        "physical attack": 56,
-        "magic defense": 42
-      },
-      "hero_level_required": 24,
-      "crafting": {
-        "gold_cost": 22500,
-        "required_items": {
-          "sword-of-storms-fragment": 5
-        }
-      },
-      "type": "equipment",
-      "slug": "sword-of-storms",
-      "created_at": "2024-12-12T04:16:24.557Z"
-    },
-    {
-      "name": "Sword of Storms (Fragment)",
-      "quality": "green",
-      "buy_value": 750,
-      "sell_value": 150,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "3-13",
-        "5-7",
-        "6-5",
-        "8-1",
-        "9-9",
-        "10-4"
-      ],
-      "type": "fragment",
-      "slug": "sword-of-storms-fragment",
-      "created_at": "2024-12-12T04:14:55.873Z"
-    },
-    {
-      "name": "Tracker's Boots",
-      "quality": "green",
-      "stats": {
-        "agility": 10
-      },
-      "hero_level_required": 12,
-      "campaign_sources": [
-        "2-10",
-        "2-11",
-        "4-4",
-        "4-10",
-        "5-11",
-        "6-11"
-      ],
-      "buy_value": 1400,
-      "sell_value": 300,
-      "guild_activity_points": 3,
-      "slug": "trackers-boots",
-      "created_at": "2024-11-09T01:41:30.658Z"
-    },
-    {
-      "name": "Traitor's Shield",
-      "quality": "green",
-      "buy_value": 4450,
-      "sell_value": 890,
-      "guild_activity_points": 8,
-      "stats": {
-        "armor": 50,
-        "magic defense": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "cuirass": 1,
-          "cains-seal": 1,
-          "traitors-shield-recipe": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "traitors-shield",
-      "created_at": "2024-12-12T04:19:48.133Z"
-    },
-    {
-      "name": "Traitor's Shield - Recipe",
-      "quality": "green",
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "3-3",
-        "5-12",
-        "7-9",
-        "9-3"
-      ],
-      "type": "recipe",
-      "slug": "traitors-shield-recipe",
-      "created_at": "2024-12-12T04:18:39.987Z"
-    },
-    {
-      "name": "Veil of Fog",
-      "quality": "green",
-      "buy_value": 3600,
-      "sell_value": 720,
-      "guild_activity_points": 6,
-      "stats": {
-        "physical attack": 33,
-        "dodge": 15
-      },
-      "hero_level_required": 24,
-      "crafting": {
-        "gold_cost": 18000,
-        "required_items": {
-          "guardians-shield": 1,
-          "band-of-enlightenment": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "veil-of-fog",
-      "created_at": "2024-12-12T04:20:42.119Z"
-    },
-    {
-      "name": "Victor's Helmet",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "stats": {
-        "intelligence": 10,
-        "armor": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "light-crystal": 1,
-          "cuirass": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "victors-helmet",
-      "created_at": "2024-12-12T04:21:31.240Z"
-    },
-    {
-      "name": "Voodoo Doll",
-      "quality": "green",
-      "buy_value": 4450,
-      "sell_value": 890,
-      "guild_activity_points": 8,
-      "stats": {
-        "magic attack": 50,
-        "magic defense": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "lost-ring": 1,
-          "cains-seal": 1,
-          "voodoo-doll-recipe": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "voodoo-doll",
-      "created_at": "2024-12-12T04:23:29.630Z"
-    },
-    {
-      "name": "Voodoo Doll - Recipe",
-      "quality": "green",
-      "buy_value": 1000,
-      "sell_value": 200,
-      "guild_activity_points": 2,
-      "campaign_sources": [
-        "3-5",
-        "5-13",
-        "7-11",
-        "9-15"
-      ],
-      "type": "recipe",
-      "slug": "voodoo-doll-recipe",
-      "created_at": "2024-12-12T04:22:32.543Z"
-    },
-    {
-      "name": "Wall-Breaker",
-      "quality": "green",
-      "buy_value": 4825,
-      "sell_value": 965,
-      "guild_activity_points": 8,
-      "stats": {
-        "intelligence": 5,
-        "agility": 5,
-        "strength": 12
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "giants-belt": 1,
-          "dagger": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "wall-breaker",
-      "created_at": "2024-12-12T04:24:31.396Z"
-    },
-    {
-      "name": "Wizard's Tiara",
-      "quality": "green",
-      "buy_value": 3450,
-      "sell_value": 690,
-      "guild_activity_points": 6,
-      "stats": {
-        "intelligence": 10,
-        "magic attack": 50
-      },
-      "hero_level_required": 20,
-      "crafting": {
-        "gold_cost": 13500,
-        "required_items": {
-          "light-crystal": 1,
-          "lost-ring": 1
-        }
-      },
-      "type": "equipment",
-      "slug": "wizards-tiara",
-      "created_at": "2024-12-12T04:25:48.729Z"
+    "campaign_sources": [
+      "1-3",
+      "2-4",
+      "3-8",
+      "4-11",
+      "9-4",
+      "9-12"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "ashen-bow",
+    "created_at": "2024-09-10T17:16:56.000Z",
+    "name": "Ashen Bow",
+    "quality": "gray",
+    "hero_level_required": 5,
+    "sell_value": 1,
+    "guild_activity_points": 2,
+    "buy_value": 3,
+    "campaign_sources": [
+      "1-10",
+      "3-1",
+      "3-7",
+      "5-8",
+      "9-8",
+      "10-11"
+    ],
+    "stats": {
+      "intelligence": 1,
+      "agility": 5,
+      "strength": 1
     }
-  ]
+  },
+  {
+    "slug": "censer",
+    "created_at": "2024-09-10T17:16:56.000Z",
+    "name": "Censer",
+    "hero_level_required": 3,
+    "quality": "gray",
+    "stats": {
+      "intelligence": 7
+    },
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "1-7",
+      "2-13",
+      "3-15",
+      "4-3",
+      "5-4"
+    ]
+  },
+  {
+    "slug": "crossbow",
+    "created_at": "2024-11-06T21:09:00.096Z",
+    "name": "Crossbow",
+    "quality": "gray",
+    "stats": {
+      "agility": 7,
+      "physical attack": 25
+    },
+    "hero_level_required": 4,
+    "buy_value": 2650,
+    "sell_value": 530,
+    "guild_activity_points": 4,
+    "crafting": {
+      "gold_cost": 2500,
+      "required_items": {
+        "orcish-yatagan": 1,
+        "lucky-arrow": 1
+      }
+    }
+  },
+  {
+    "slug": "dagger",
+    "created_at": "2024-11-06T22:22:38.900Z",
+    "name": "Dagger",
+    "quality": "gray",
+    "stats": {
+      "strength": 7
+    },
+    "hero_level_required": 3,
+    "campaign_sources": [
+      "1-6",
+      "1-7",
+      "2-12",
+      "3-15",
+      "4-2",
+      "5-3"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "giants-belt",
+    "created_at": "2024-11-06T22:44:02.994Z",
+    "name": "Giant's Belt",
+    "quality": "gray",
+    "stats": {
+      "intelligence": 5,
+      "agility": 5,
+      "strength": 5
+    },
+    "hero_level_required": 3,
+    "buy_value": 3125,
+    "sell_value": 625,
+    "guild_activity_points": 6,
+    "crafting": {
+      "gold_cost": 3125,
+      "required_items": {
+        "quiver": 1,
+        "oil-lamp": 1,
+        "travellers-shoes": 1
+      }
+    }
+  },
+  {
+    "slug": "imperial-shield",
+    "created_at": "2024-11-06T22:21:01.966Z",
+    "name": "Imperial Shield",
+    "quality": "gray",
+    "stats": {
+      "health": 385
+    },
+    "hero_level_required": 3,
+    "campaign_sources": [
+      "1-5",
+      "1-8",
+      "3-2",
+      "3-12",
+      "4-14"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "lucky-arrow",
+    "created_at": "2024-11-06T21:07:59.976Z",
+    "name": "Lucky Arrow",
+    "quality": "gray",
+    "stats": {
+      "agility": 7
+    },
+    "hero_level_required": 3,
+    "campaign_sources": [
+      "1-8",
+      "2-14",
+      "3-15",
+      "4-4",
+      "5-5"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "lucky-dice",
+    "created_at": "2024-11-06T22:45:41.691Z",
+    "name": "Lucky Dice",
+    "quality": "gray",
+    "stats": {
+      "magic defense": 25
+    },
+    "hero_level_required": 1,
+    "campaign_sources": [
+      "1-4",
+      "2-7",
+      "3-11",
+      "4-13",
+      "9-6",
+      "10-5"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "oil-lamp",
+    "created_at": "2024-11-06T22:42:17.694Z",
+    "name": "Oil Lamp",
+    "quality": "gray",
+    "stats": {
+      "intelligence": 5
+    },
+    "hero_level_required": 2,
+    "campaign_sources": [
+      "1-1",
+      "1-6",
+      "2-9",
+      "3-10",
+      "4-7"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "orcish-hammer",
+    "created_at": "2024-11-06T22:28:28.465Z",
+    "name": "Orcish Hammer",
+    "quality": "gray",
+    "stats": {
+      "strength": 7,
+      "health": 385
+    },
+    "hero_level_required": 4,
+    "buy_value": 2650,
+    "sell_value": 530,
+    "guild_activity_points": 4,
+    "crafting": {
+      "gold_cost": 4500,
+      "required_items": {
+        "imperial-shield": 1,
+        "dagger": 1
+      }
+    }
+  },
+  {
+    "slug": "orcish-knuckles",
+    "created_at": "2024-11-06T22:23:45.010Z",
+    "name": "Orcish Knuckles",
+    "quality": "gray",
+    "stats": {
+      "physical attack": 12
+    },
+    "hero_level_required": 1,
+    "campaign_sources": [
+      "1-2",
+      "2-1",
+      "2-2",
+      "9-9",
+      "10-8"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "orcish-yatagan",
+    "created_at": "2024-11-06T21:07:03.702Z",
+    "name": "Orcish Yatagan",
+    "quality": "gray",
+    "stats": {
+      "physical attack": 25
+    },
+    "hero_level_required": 3,
+    "campaign_sources": [
+      "1-5",
+      "1-9",
+      "3-3",
+      "3-13",
+      "5-1"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "quiver",
+    "created_at": "2024-11-06T22:41:35.474Z",
+    "name": "Quiver",
+    "quality": "gray",
+    "stats": {
+      "agility": 5
+    },
+    "hero_level_required": 2,
+    "campaign_sources": [
+      "1-1",
+      "1-4",
+      "2-8",
+      "3-6",
+      "4-5"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "sledgehammer",
+    "created_at": "2024-11-06T22:25:24.017Z",
+    "name": "Sledgehammer",
+    "quality": "gray",
+    "stats": {
+      "intelligence": 1,
+      "agility": 1,
+      "strength": 5
+    },
+    "hero_level_required": 5,
+    "campaign_sources": [
+      "1-9",
+      "2-10",
+      "3-4",
+      "5-7",
+      "9-7",
+      "10-9"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "steel-pauldron",
+    "created_at": "2024-11-06T22:26:20.983Z",
+    "name": "Steel Pauldron",
+    "quality": "gray",
+    "stats": {
+      "armor": 25
+    },
+    "hero_level_required": 1,
+    "campaign_sources": [
+      "1-3",
+      "2-5",
+      "3-9",
+      "4-12",
+      "9-5",
+      "9-14"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "travellers-shoes",
+    "created_at": "2024-11-06T22:43:15.321Z",
+    "name": "Traveller's Shoes",
+    "quality": "gray",
+    "stats": {
+      "strength": 5
+    },
+    "hero_level_required": 2,
+    "campaign_sources": [
+      "1-1",
+      "1-6",
+      "2-11",
+      "4-8",
+      "9-3",
+      "10-14"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "travellers-staff",
+    "created_at": "2024-11-06T22:27:34.661Z",
+    "name": "Traveller's Staff",
+    "quality": "gray",
+    "stats": {
+      "intelligence": 5,
+      "agility": 1,
+      "strength": 1
+    },
+    "hero_level_required": 5,
+    "campaign_sources": [
+      "1-10",
+      "2-15",
+      "3-5",
+      "4-9",
+      "5-9"
+    ],
+    "buy_value": 1250,
+    "sell_value": 250,
+    "guild_activity_points": 2
+  },
+  {
+    "slug": "wizards-staff",
+    "created_at": "2024-09-10T17:16:56.000Z",
+    "name": "Wizard's Staff",
+    "hero_level_required": 4,
+    "quality": "gray",
+    "stats": {
+      "intelligence": 7,
+      "magic attack": 50
+    },
+    "buy_value": 3400,
+    "sell_value": 680,
+    "guild_activity_points": 6,
+    "crafting": {
+      "gold_cost": 4500,
+      "required_items": {
+        "apprentices-mantle": 2,
+        "censer": 1
+      }
+    }
+  },
+  {
+    "slug": "wooden-shield",
+    "created_at": "2024-09-10T17:16:56.000Z",
+    "name": "Wooden Shield",
+    "hero_level_required": 1,
+    "quality": "gray",
+    "stats": {
+      "health": 200
+    },
+    "campaign_sources": [
+      "1-3",
+      "2-3",
+      "2-6",
+      "9-2",
+      "10-10"
+    ],
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2
+  },
+  {
+    "name": "Ancient Amulet",
+    "quality": "green",
+    "stats": {
+      "intelligence": 10,
+      "strength": 10,
+      "agility": 10
+    },
+    "hero_level_required": 20,
+    "buy_value": 5400,
+    "sell_value": 1080,
+    "guild_activity_points": 9,
+    "crafting": {
+      "gold_cost": 27000,
+      "required_items": {
+        "branch-of-antiaris": 1,
+        "light-crystal": 1,
+        "trackers-boots": 1
+      }
+    },
+    "slug": "ancient-amulet",
+    "created_at": "2024-11-09T01:43:17.749Z"
+  },
+  {
+    "slug": "band-of-enlightenment",
+    "created_at": "2024-11-06T22:47:14.202Z",
+    "name": "Band of Enlightenment",
+    "quality": "green",
+    "stats": {
+      "dodge": 15
+    },
+    "hero_level_required": 24,
+    "campaign_sources": [
+      "3-2",
+      "4-13",
+      "6-6",
+      "7-3",
+      "9-7",
+      "9-13"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3
+  },
+  {
+    "name": "Branch of Antiaris",
+    "quality": "green",
+    "stats": {
+      "strength": 10
+    },
+    "hero_level_required": 12,
+    "campaign_sources": [
+      "2-1",
+      "2-8",
+      "4-1",
+      "4-2",
+      "5-8",
+      "6-8"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "branch-of-antiaris",
+    "created_at": "2024-11-09T01:39:11.794Z"
+  },
+  {
+    "name": "Brothers",
+    "quality": "green",
+    "stats": {
+      "strength": 15,
+      "health": 420,
+      "physical attack": 28,
+      "armor": 42
+    },
+    "hero_level_required": 24,
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 10,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "brothers-fragment": 5
+      }
+    },
+    "slug": "brothers",
+    "created_at": "2024-11-09T01:57:37.950Z"
+  },
+  {
+    "name": "Brothers (Fragment)",
+    "quality": "green",
+    "campaign_sources": [
+      "3-9",
+      "5-3",
+      "7-6",
+      "7-13",
+      "10-3"
+    ],
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 2,
+    "slug": "brothers-fragment",
+    "created_at": "2024-11-09T01:47:39.508Z",
+    "type": "fragment"
+  },
+  {
+    "name": "Cain's Seal",
+    "quality": "green",
+    "stats": {
+      "magic defense": 50
+    },
+    "hero_level_required": 10,
+    "campaign_sources": [
+      "2-7",
+      "4-11",
+      "5-15",
+      "6-3",
+      "7-2",
+      "9-2"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "cains-seal",
+    "created_at": "2024-11-09T01:59:31.614Z"
+  },
+  {
+    "name": "Cuirass",
+    "quality": "green",
+    "stats": {
+      "armor": 50
+    },
+    "hero_level_required": 10,
+    "campaign_sources": [
+      "2-5",
+      "3-10",
+      "4-9",
+      "5-10",
+      "6-1",
+      "6-15"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "cuirass",
+    "created_at": "2024-11-09T02:00:42.602Z"
+  },
+  {
+    "name": "Cursed Dagger",
+    "quality": "green",
+    "stats": {
+      "armor penetration": 50
+    },
+    "hero_level_required": 24,
+    "campaign_sources": [
+      "3-4",
+      "4-14",
+      "6-10",
+      "7-4",
+      "10-12"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "cursed-dagger",
+    "created_at": "2024-11-09T02:01:45.253Z"
+  },
+  {
+    "name": "Dawnguard",
+    "quality": "green",
+    "stats": {
+      "intelligence": 22,
+      "physical attack": 28,
+      "armor": 42
+    },
+    "hero_level_required": 24,
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 10,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "dawnguard-fragment": 5
+      }
+    },
+    "slug": "dawnguard",
+    "created_at": "2024-11-09T02:02:59.409Z"
+  },
+  {
+    "name": "Dawnguard (Fragment)",
+    "quality": "green",
+    "campaign_sources": [
+      "5-5",
+      "6-4",
+      "7-15",
+      "10-2",
+      "10-13"
+    ],
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 2,
+    "slug": "dawnguard-fragment",
+    "created_at": "2024-11-09T02:04:51.453Z",
+    "type": "fragment"
+  },
+  {
+    "name": "Elven Armor",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "type": "equipment",
+    "stats": {
+      "strength": 10,
+      "armor": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "branch-of-antiaris": 1,
+        "cuirass": 1
+      }
+    },
+    "slug": "elven-armor",
+    "created_at": "2024-12-09T23:00:48.797Z"
+  },
+  {
+    "name": "Elven Bow",
+    "quality": "green",
+    "buy_value": 4825,
+    "sell_value": 965,
+    "guild_activity_points": 8,
+    "type": "equipment",
+    "stats": {
+      "intelligence": 5,
+      "agility": 12,
+      "strength": 5
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "giants-belt": 1,
+        "lucky-arrow": 1
+      }
+    },
+    "slug": "elven-bow",
+    "created_at": "2024-12-09T23:01:55.574Z"
+  },
+  {
+    "name": "Elven Saber",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "type": "equipment",
+    "stats": {
+      "agility": 10,
+      "physical attack": 33
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "trackers-boots": 1,
+        "fire-sword": 1
+      }
+    },
+    "slug": "elven-saber",
+    "created_at": "2024-12-09T23:06:31.789Z"
+  },
+  {
+    "name": "Enchanter's Staff",
+    "quality": "green",
+    "buy_value": 4825,
+    "sell_value": 965,
+    "guild_activity_points": 8,
+    "type": "equipment",
+    "stats": {
+      "intelligence": 12,
+      "agility": 5,
+      "strength": 5
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "giants-belt": 1,
+        "censer": 1
+      }
+    },
+    "slug": "enchanters-staff",
+    "created_at": "2024-12-09T23:07:32.661Z"
+  },
+  {
+    "name": "Fire Sword",
+    "quality": "green",
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "2-3",
+      "3-1",
+      "4-7",
+      "5-2",
+      "5-13",
+      "6-13"
+    ],
+    "type": "equipment",
+    "stats": {
+      "physical attack": 33
+    },
+    "hero_level_required": 10,
+    "slug": "fire-sword",
+    "created_at": "2024-12-09T23:05:38.500Z"
+  },
+  {
+    "name": "Guardian's Shield",
+    "quality": "green",
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "2-2",
+      "2-15",
+      "4-5",
+      "4-15",
+      "5-12",
+      "6-12"
+    ],
+    "type": "equipment",
+    "stats": {
+      "health": 500
+    },
+    "hero_level_required": 10,
+    "slug": "guardians-shield",
+    "created_at": "2024-12-10T02:00:57.762Z"
+  },
+  {
+    "name": "Infernal Messenger",
+    "quality": "green",
+    "buy_value": 3600,
+    "sell_value": 720,
+    "guild_activity_points": 6,
+    "stats": {
+      "physical attack": 33,
+      "critical hit chance": 15
+    },
+    "hero_level_required": 24,
+    "crafting": {
+      "gold_cost": 18000,
+      "required_items": {
+        "fire-sword": 1,
+        "reaper": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "infernal-messenger",
+    "created_at": "2024-12-12T03:27:18.836Z"
+  },
+  {
+    "name": "Light Crystal",
+    "quality": "green",
+    "stats": {
+      "intelligence": 10
+    },
+    "hero_level_required": 12,
+    "campaign_sources": [
+      "2-6",
+      "2-9",
+      "4-3",
+      "4-6",
+      "5-9",
+      "6-9"
+    ],
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "light-crystal",
+    "created_at": "2024-11-09T01:40:30.135Z"
+  },
+  {
+    "name": "Lost Ring",
+    "quality": "green",
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "stats": {
+      "magic attack": 50
+    },
+    "hero_level_required": 10,
+    "campaign_sources": [
+      "2-4",
+      "3-6",
+      "4-8",
+      "5-6",
+      "5-14",
+      "6-14"
+    ],
+    "type": "equipment",
+    "slug": "lost-ring",
+    "created_at": "2024-12-12T03:29:01.917Z"
+  },
+  {
+    "name": "Midnight Crystal",
+    "quality": "green",
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "stats": {
+      "magic penetration": 50
+    },
+    "hero_level_required": 24,
+    "campaign_sources": [
+      "3-7",
+      "5-1",
+      "6-5",
+      "7-1",
+      "7-5",
+      "9-4"
+    ],
+    "type": "equipment",
+    "slug": "midnight-crystal",
+    "created_at": "2024-12-12T03:30:29.786Z"
+  },
+  {
+    "name": "Poleaxe",
+    "quality": "green",
+    "buy_value": 4450,
+    "sell_value": 890,
+    "guild_activity_points": 8,
+    "stats": {
+      "physical attack": 33,
+      "armor": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "fire-sword": 1,
+        "cuirass": 1,
+        "poleaxe-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "poleaxe",
+    "created_at": "2024-12-12T03:34:06.979Z"
+  },
+  {
+    "name": "Poleaxe - Recipe",
+    "quality": "green",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "2-14",
+      "5-11",
+      "7-8",
+      "9-8"
+    ],
+    "type": "recipe",
+    "slug": "poleaxe-recipe",
+    "created_at": "2024-12-12T03:32:27.352Z"
+  },
+  {
+    "name": "Portal Key",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "stats": {
+      "agility": 10,
+      "magic defense": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "trackers-boots": 1,
+        "cains-seal": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "portal-key",
+    "created_at": "2024-12-12T03:35:07.523Z"
+  },
+  {
+    "name": "Reaper",
+    "quality": "green",
+    "buy_value": 1500,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "stats": {
+      "critical hit chance": 15
+    },
+    "hero_level_required": 24,
+    "campaign_sources": [
+      "2-13",
+      "4-12",
+      "6-2",
+      "7-2",
+      "9-11",
+      "10-6"
+    ],
+    "type": "equipment",
+    "slug": "reaper",
+    "created_at": "2024-12-12T03:26:09.480Z"
+  },
+  {
+    "name": "Screaming Blade",
+    "quality": "green",
+    "buy_value": 4450,
+    "sell_value": 890,
+    "guild_activity_points": 8,
+    "stats": {
+      "health": 500,
+      "physical attack": 33
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "guardians-shield": 1,
+        "fire-sword": 1,
+        "screaming-blade-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "screaming-blade",
+    "created_at": "2024-12-12T03:37:01.982Z"
+  },
+  {
+    "name": "Screaming Blade - Recipe",
+    "quality": "green",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "2-12",
+      "6-7",
+      "7-7",
+      "9-5"
+    ],
+    "type": "recipe",
+    "slug": "screaming-blade-recipe",
+    "created_at": "2024-12-12T03:35:52.728Z"
+  },
+  {
+    "name": "Shining Armor",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "stats": {
+      "strength": 10,
+      "health": 500
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "branch-of-antiaris": 1,
+        "guardians-shield": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "shining-armor",
+    "created_at": "2024-12-12T03:57:29.814Z"
+  },
+  {
+    "name": "Silent Guardian",
+    "quality": "green",
+    "buy_value": 3600,
+    "sell_value": 720,
+    "guild_activity_points": 6,
+    "stats": {
+      "intelligence": 10,
+      "magic penetration": 50
+    },
+    "hero_level_required": 24,
+    "crafting": {
+      "gold_cost": 18000,
+      "required_items": {
+        "light-crystal": 1,
+        "midnight-crystal": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "silent-guardian",
+    "created_at": "2024-12-12T03:59:41.681Z"
+  },
+  {
+    "name": "Skull Crusher",
+    "quality": "green",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 10,
+    "stats": {
+      "intelligence": 15,
+      "magic attack": 84,
+      "magic defense": 42
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "skull-crusher-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "skull-crusher",
+    "created_at": "2024-12-12T04:03:29.094Z"
+  },
+  {
+    "name": "Skull Crusher (Fragment)",
+    "quality": "green",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "3-11",
+      "5-4",
+      "6-3",
+      "7-10",
+      "7-14",
+      "10-7"
+    ],
+    "type": "fragment",
+    "slug": "skull-crusher-fragment",
+    "created_at": "2024-12-12T04:02:18.143Z"
+  },
+  {
+    "name": "Soul Catcher",
+    "quality": "green",
+    "buy_value": 4450,
+    "sell_value": 890,
+    "guild_activity_points": 8,
+    "stats": {
+      "health": 500,
+      "magic attack": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "guardians-shield": 1,
+        "lost-ring": 1,
+        "soul-catcher-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "soul-catcher",
+    "created_at": "2024-12-12T04:06:58.083Z"
+  },
+  {
+    "name": "Soul Catcher - Recipe",
+    "quality": "green",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "3-8",
+      "5-14",
+      "7-12",
+      "10-2"
+    ],
+    "type": "recipe",
+    "slug": "soul-catcher-recipe",
+    "created_at": "2024-12-12T04:05:40.413Z"
+  },
+  {
+    "name": "Spear of Thunder",
+    "quality": "green",
+    "buy_value": 3600,
+    "sell_value": 720,
+    "guild_activity_points": 6,
+    "stats": {
+      "physical attack": 33,
+      "armor penetration": 50
+    },
+    "hero_level_required": 24,
+    "crafting": {
+      "gold_cost": 18000,
+      "required_items": {
+        "fire-sword": 1,
+        "cursed-dagger": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "spear-of-thunder",
+    "created_at": "2024-12-12T04:12:45.981Z"
+  },
+  {
+    "name": "Sword of Storms",
+    "quality": "green",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 10,
+    "stats": {
+      "agility": 15,
+      "physical attack": 56,
+      "magic defense": 42
+    },
+    "hero_level_required": 24,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "sword-of-storms-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "sword-of-storms",
+    "created_at": "2024-12-12T04:16:24.557Z"
+  },
+  {
+    "name": "Sword of Storms (Fragment)",
+    "quality": "green",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "3-13",
+      "5-7",
+      "6-5",
+      "8-1",
+      "9-9",
+      "10-4"
+    ],
+    "type": "fragment",
+    "slug": "sword-of-storms-fragment",
+    "created_at": "2024-12-12T04:14:55.873Z"
+  },
+  {
+    "name": "Tracker's Boots",
+    "quality": "green",
+    "stats": {
+      "agility": 10
+    },
+    "hero_level_required": 12,
+    "campaign_sources": [
+      "2-10",
+      "2-11",
+      "4-4",
+      "4-10",
+      "5-11",
+      "6-11"
+    ],
+    "buy_value": 1400,
+    "sell_value": 300,
+    "guild_activity_points": 3,
+    "slug": "trackers-boots",
+    "created_at": "2024-11-09T01:41:30.658Z"
+  },
+  {
+    "name": "Traitor's Shield",
+    "quality": "green",
+    "buy_value": 4450,
+    "sell_value": 890,
+    "guild_activity_points": 8,
+    "stats": {
+      "armor": 50,
+      "magic defense": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "cuirass": 1,
+        "cains-seal": 1,
+        "traitors-shield-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "traitors-shield",
+    "created_at": "2024-12-12T04:19:48.133Z"
+  },
+  {
+    "name": "Traitor's Shield - Recipe",
+    "quality": "green",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "3-3",
+      "5-12",
+      "7-9",
+      "9-3"
+    ],
+    "type": "recipe",
+    "slug": "traitors-shield-recipe",
+    "created_at": "2024-12-12T04:18:39.987Z"
+  },
+  {
+    "name": "Veil of Fog",
+    "quality": "green",
+    "buy_value": 3600,
+    "sell_value": 720,
+    "guild_activity_points": 6,
+    "stats": {
+      "physical attack": 33,
+      "dodge": 15
+    },
+    "hero_level_required": 24,
+    "crafting": {
+      "gold_cost": 18000,
+      "required_items": {
+        "guardians-shield": 1,
+        "band-of-enlightenment": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "veil-of-fog",
+    "created_at": "2024-12-12T04:20:42.119Z"
+  },
+  {
+    "name": "Victor's Helmet",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "stats": {
+      "intelligence": 10,
+      "armor": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "light-crystal": 1,
+        "cuirass": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "victors-helmet",
+    "created_at": "2024-12-12T04:21:31.240Z"
+  },
+  {
+    "name": "Voodoo Doll",
+    "quality": "green",
+    "buy_value": 4450,
+    "sell_value": 890,
+    "guild_activity_points": 8,
+    "stats": {
+      "magic attack": 50,
+      "magic defense": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "lost-ring": 1,
+        "cains-seal": 1,
+        "voodoo-doll-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "voodoo-doll",
+    "created_at": "2024-12-12T04:23:29.630Z"
+  },
+  {
+    "name": "Voodoo Doll - Recipe",
+    "quality": "green",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 2,
+    "campaign_sources": [
+      "3-5",
+      "5-13",
+      "7-11",
+      "9-15"
+    ],
+    "type": "recipe",
+    "slug": "voodoo-doll-recipe",
+    "created_at": "2024-12-12T04:22:32.543Z"
+  },
+  {
+    "name": "Wall-Breaker",
+    "quality": "green",
+    "buy_value": 4825,
+    "sell_value": 965,
+    "guild_activity_points": 8,
+    "stats": {
+      "intelligence": 5,
+      "agility": 5,
+      "strength": 12
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "giants-belt": 1,
+        "dagger": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "wall-breaker",
+    "created_at": "2024-12-12T04:24:31.396Z"
+  },
+  {
+    "name": "Wizard's Tiara",
+    "quality": "green",
+    "buy_value": 3450,
+    "sell_value": 690,
+    "guild_activity_points": 6,
+    "stats": {
+      "intelligence": 10,
+      "magic attack": 50
+    },
+    "hero_level_required": 20,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "light-crystal": 1,
+        "lost-ring": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "wizards-tiara",
+    "created_at": "2024-12-12T04:25:48.729Z"
+  },
+  {
+    "name": "Branch of the World Tree",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "health": 800,
+      "dodge": 24
+    },
+    "hero_level_required": 42,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "wyverns-heart": 1,
+        "portal-gem": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "branch-of-the-world-tree",
+    "created_at": "2024-12-13T01:31:25.732Z"
+  },
+  {
+    "name": "Dark Grail",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "health": 800,
+      "magic defense": 80
+    },
+    "hero_level_required": 38,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "wyverns-heart": 1,
+        "enchanted-lute": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "dark-grail",
+    "created_at": "2024-12-13T01:34:16.210Z"
+  },
+  {
+    "name": "Dragonslayer's Spear",
+    "quality": "blue",
+    "buy_value": 30500,
+    "sell_value": 6100,
+    "guild_activity_points": 75,
+    "stats": {
+      "intelligence": 5,
+      "agility": 15,
+      "strength": 5,
+      "physical attack": 70
+    },
+    "hero_level_required": 45,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "dragonslayers-spear-recipe": 1,
+        "needle": 1,
+        "scorching-quiver": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "dragonslayers-spear",
+    "created_at": "2024-12-13T01:38:41.146Z"
+  },
+  {
+    "name": "Dragonslayer's Spear - Recipe",
+    "quality": "blue",
+    "buy_value": 0,
+    "sell_value": 2200,
+    "guild_activity_points": 30,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "dragonslayers-spear-recipe-fragment": 10
+      }
+    },
+    "type": "recipe",
+    "slug": "dragonslayers-spear-recipe",
+    "created_at": "2024-12-13T01:37:09.905Z"
+  },
+  {
+    "name": "Dragonslayer's Spear - Recipe (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "5-3",
+      "7-5",
+      "9-12",
+      "11-13",
+      "12-15"
+    ],
+    "type": "fragment",
+    "slug": "dragonslayers-spear-recipe-fragment",
+    "created_at": "2024-12-13T01:35:48.684Z"
+  },
+  {
+    "name": "Elven Shield",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "magic attack": 80,
+      "armor": 80
+    },
+    "hero_level_required": 40,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "sacred-rosary": 1,
+        "serenity-stone": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "elven-shield",
+    "created_at": "2024-12-13T01:50:18.762Z"
+  },
+  {
+    "name": "Enchanted Lute",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "magic defense": 100
+    },
+    "hero_level_required": 30,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "enchanted-lute-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "enchanted-lute",
+    "created_at": "2024-12-13T01:33:21.168Z"
+  },
+  {
+    "name": "Enchanted Lute (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-5",
+      "5-2",
+      "6-12",
+      "8-8",
+      "12-6"
+    ],
+    "type": "fragment",
+    "slug": "enchanted-lute-fragment",
+    "created_at": "2024-12-13T01:32:38.270Z"
+  },
+  {
+    "name": "Folding Crossbow",
+    "quality": "blue",
+    "buy_value": 26750,
+    "sell_value": 5350,
+    "guild_activity_points": 66,
+    "stats": {
+      "agility": 16,
+      "physical attack": 56,
+      "critical hit chance": 30
+    },
+    "hero_level_required": 46,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "splitter": 1,
+        "ghostly-blade": 1,
+        "folding-crossbow-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "folding-crossbow",
+    "created_at": "2024-12-13T01:58:21.556Z"
+  },
+  {
+    "name": "Folding Crossbow - Recipe",
+    "quality": "blue",
+    "buy_value": 0,
+    "sell_value": 2200,
+    "guild_activity_points": 30,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "folding-crossbow-recipe-fragment": 10
+      }
+    },
+    "type": "recipe",
+    "slug": "folding-crossbow-recipe",
+    "created_at": "2024-12-13T01:57:22.852Z"
+  },
+  {
+    "name": "Folding Crossbow - Recipe (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "5-5",
+      "7-11",
+      "9-13",
+      "11-15",
+      "13-2"
+    ],
+    "type": "fragment",
+    "slug": "folding-crossbow-recipe-fragment",
+    "created_at": "2024-12-13T01:54:36.159Z"
+  },
+  {
+    "name": "Ghostly Blade",
+    "quality": "blue",
+    "buy_value": 8250,
+    "sell_value": 1650,
+    "guild_activity_points": 21,
+    "stats": {
+      "agility": 16,
+      "physical attack": 56
+    },
+    "hero_level_required": 40,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "trackers-boots": 2,
+        "needle": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "ghostly-blade",
+    "created_at": "2024-12-13T01:53:38.070Z"
+  },
+  {
+    "name": "Globus Cruciger",
+    "quality": "blue",
+    "buy_value": 39000,
+    "sell_value": 7800,
+    "guild_activity_points": 90,
+    "stats": {
+      "intelligence": 20,
+      "agility": 20,
+      "strength": 20
+    },
+    "hero_level_required": 45,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "storm-hammer": 1,
+        "magic-hat": 1,
+        "scorching-quiver": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "globus-cruciger",
+    "created_at": "2024-12-13T02:03:19.685Z"
+  },
+  {
+    "name": "Hand of Midas",
+    "quality": "blue",
+    "buy_value": 30500,
+    "sell_value": 6100,
+    "guild_activity_points": 75,
+    "stats": {
+      "intelligence": 5,
+      "agility": 5,
+      "strength": 15,
+      "health": 1000
+    },
+    "hero_level_required": 47,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "wyverns-heart": 1,
+        "storm-hammer": 1,
+        "hand-of-midas-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "hand-of-midas",
+    "created_at": "2024-12-13T02:06:03.155Z"
+  },
+  {
+    "name": "Hand of Midas - Recipe",
+    "quality": "blue",
+    "buy_value": 0,
+    "sell_value": 2200,
+    "guild_activity_points": 30,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "hand-of-midas-recipe-fragment": 10
+      }
+    },
+    "type": "recipe",
+    "slug": "hand-of-midas-recipe",
+    "created_at": "2024-12-13T02:05:04.121Z"
+  },
+  {
+    "name": "Hand of Midas - Recipe (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-14",
+      "6-15",
+      "9-10",
+      "10-7",
+      "11-11",
+      "12-13"
+    ],
+    "type": "fragment",
+    "slug": "hand-of-midas-recipe-fragment",
+    "created_at": "2024-12-13T02:04:28.685Z"
+  },
+  {
+    "name": "Hunter",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "physical attack": 56,
+      "critical hit chance": 24
+    },
+    "hero_level_required": 35,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "needle": 1,
+        "splitter": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "hunter",
+    "created_at": "2024-12-13T02:06:56.428Z"
+  },
+  {
+    "name": "Lion Armor",
+    "quality": "blue",
+    "buy_value": 28250,
+    "sell_value": 5650,
+    "guild_activity_points": 75,
+    "stats": {
+      "health": 800,
+      "magic attack": 80,
+      "armor": 100
+    },
+    "hero_level_required": 50,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "serenity-stone": 1,
+        "prosperos-helmet": 1,
+        "lion-armor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "lion-armor",
+    "created_at": "2024-12-13T02:11:02.074Z"
+  },
+  {
+    "name": "Lion Armor - Recipe",
+    "quality": "blue",
+    "buy_value": 0,
+    "sell_value": 2200,
+    "guild_activity_points": 30,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "lion-armor-recipe-fragment": 10
+      }
+    },
+    "type": "recipe",
+    "slug": "lion-armor-recipe",
+    "created_at": "2024-12-13T02:09:55.362Z"
+  },
+  {
+    "name": "Lion Armor - Recipe (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "5-4",
+      "7-8",
+      "10-4",
+      "11-14",
+      "13-1"
+    ],
+    "type": "fragment",
+    "slug": "lion-armor-recipe-fragment",
+    "created_at": "2024-12-13T02:09:27.408Z"
+  },
+  {
+    "name": "Magic Hat",
+    "quality": "blue",
+    "buy_value": 12000,
+    "sell_value": 2400,
+    "guild_activity_points": 30,
+    "stats": {
+      "intelligence": 15,
+      "agility": 5,
+      "strength": 5
+    },
+    "hero_level_required": 43,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "magic-hat-fragment": 10
+      }
+    },
+    "type": "equipment",
+    "slug": "magic-hat",
+    "created_at": "2024-12-13T02:01:05.402Z"
+  },
+  {
+    "name": "Magic Hat (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-11",
+      "7-7",
+      "8-9",
+      "10-14",
+      "11-8",
+      "12-10"
+    ],
+    "type": "fragment",
+    "slug": "magic-hat-fragment",
+    "created_at": "2024-12-13T02:00:21.517Z"
+  },
+  {
+    "name": "Needle",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "physical attack": 70
+    },
+    "hero_level_required": 28,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "needle-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "needle",
+    "created_at": "2024-12-13T01:43:25.384Z"
+  },
+  {
+    "name": "Needle (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-2",
+      "4-6",
+      "6-8",
+      "8-3",
+      "8-10",
+      "10-5",
+      "11-1",
+      "12-3"
+    ],
+    "type": "fragment",
+    "slug": "needle-fragment",
+    "created_at": "2024-12-13T01:42:46.556Z"
+  },
+  {
+    "name": "Portal Gem",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "dodge": 30
+    },
+    "hero_level_required": 32,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "portal-gem-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "portal-gem",
+    "created_at": "2024-12-13T01:20:49.844Z"
+  },
+  {
+    "name": "Portal Gem (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-8",
+      "5-10",
+      "6-14",
+      "8-13",
+      "10-12",
+      "11-6",
+      "12-8"
+    ],
+    "type": "fragment",
+    "slug": "portal-gem-fragment",
+    "created_at": "2024-12-13T01:19:22.637Z"
+  },
+  {
+    "name": "Prospero's Helmet",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "health": 800,
+      "magic attack": 80
+    },
+    "hero_level_required": 1,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "wyverns-heart": 1,
+        "sacred-rosary": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "prosperos-helmet",
+    "created_at": "2024-12-13T02:08:07.091Z"
+  },
+  {
+    "name": "Punishing Hand",
+    "quality": "blue",
+    "buy_value": 8250,
+    "sell_value": 1650,
+    "guild_activity_points": 21,
+    "stats": {
+      "physical attack": 56,
+      "armor penetration": 80
+    },
+    "hero_level_required": 41,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "cursed-dagger": 2,
+        "needle": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "punishing-hand",
+    "created_at": "2024-12-13T02:12:14.821Z"
+  },
+  {
+    "name": "Raven King's Cloak",
+    "quality": "blue",
+    "buy_value": 9750,
+    "sell_value": 1950,
+    "guild_activity_points": 30,
+    "stats": {
+      "magic attack": 80,
+      "magic defense": 80
+    },
+    "hero_level_required": 40,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "sacred-rosary": 1,
+        "enchanted-lute": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "raven-kings-cloak",
+    "created_at": "2024-12-13T02:13:00.992Z"
+  },
+  {
+    "name": "Sacred Rosary",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "magic attack": 100
+    },
+    "hero_level_required": 28,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "sacred-rosary-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "sacred-rosary",
+    "created_at": "2024-12-13T01:49:12.242Z"
+  },
+  {
+    "name": "Sacred Rosary (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-3",
+      "4-10",
+      "6-9",
+      "8-4",
+      "10-8",
+      "11-2",
+      "12-4"
+    ],
+    "type": "fragment",
+    "slug": "sacred-rosary-fragment",
+    "created_at": "2024-12-13T01:48:33.103Z"
+  },
+  {
+    "name": "Sacrificial Dagger",
+    "quality": "blue",
+    "buy_value": 12000,
+    "sell_value": 2400,
+    "guild_activity_points": 30,
+    "stats": {
+      "vampirism": 5
+    },
+    "hero_level_required": 44,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "sacrificial-dagger-fragment": 10
+      }
+    },
+    "type": "equipment",
+    "slug": "sacrificial-dagger",
+    "created_at": "2024-12-13T02:14:56.522Z"
+  },
+  {
+    "name": "Sacrificial Dagger (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-13",
+      "7-12",
+      "8-14",
+      "11-10",
+      "12-12"
+    ],
+    "type": "fragment",
+    "slug": "sacrificial-dagger-fragment",
+    "created_at": "2024-12-13T02:13:58.369Z"
+  },
+  {
+    "name": "Scorching Quiver",
+    "quality": "blue",
+    "buy_value": 12000,
+    "sell_value": 2400,
+    "guild_activity_points": 30,
+    "stats": {
+      "intelligence": 5,
+      "agility": 15,
+      "strength": 5
+    },
+    "hero_level_required": 43,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "scorching-quiver-fragment": 10
+      }
+    },
+    "type": "equipment",
+    "slug": "scorching-quiver",
+    "created_at": "2024-12-13T01:41:18.743Z"
+  },
+  {
+    "name": "Scorching Quiver (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-12",
+      "7-9",
+      "8-12",
+      "10-1",
+      "11-9",
+      "12-11"
+    ],
+    "type": "fragment",
+    "slug": "scorching-quiver-fragment",
+    "created_at": "2024-12-13T01:40:04.926Z"
+  },
+  {
+    "name": "Serenity Stone",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "armor": 100
+    },
+    "hero_level_required": 30,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "serenity-stone-fragment": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "serenity-stone",
+    "created_at": "2024-12-13T01:47:29.072Z"
+  },
+  {
+    "name": "Serenity Stone (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-4",
+      "4-15",
+      "6-11",
+      "8-5",
+      "10-9",
+      "11-3",
+      "12-5"
+    ],
+    "type": "fragment",
+    "slug": "serenity-stone-fragment",
+    "created_at": "2024-12-13T01:46:42.047Z"
+  },
+  {
+    "name": "Splitter",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "critical hit chance": 30
+    },
+    "hero_level_required": 32,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "splitter-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "splitter",
+    "created_at": "2024-12-13T01:52:47.115Z"
+  },
+  {
+    "name": "Splitter (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-7",
+      "5-6",
+      "6-13",
+      "8-11",
+      "10-11",
+      "11-5",
+      "12-7"
+    ],
+    "type": "fragment",
+    "slug": "splitter-fragment",
+    "created_at": "2024-12-13T01:52:00.251Z"
+  },
+  {
+    "name": "Storm Hammer",
+    "quality": "blue",
+    "buy_value": 12000,
+    "sell_value": 2400,
+    "guild_activity_points": 30,
+    "stats": {
+      "intelligence": 5,
+      "agility": 5,
+      "strength": 15
+    },
+    "hero_level_required": 43,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "storm-hammer-fragment": 10
+      }
+    },
+    "type": "equipment",
+    "slug": "storm-hammer",
+    "created_at": "2024-12-13T02:02:32.303Z"
+  },
+  {
+    "name": "Storm Hammer (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "4-9",
+      "7-4",
+      "8-7",
+      "10-13",
+      "11-7",
+      "12-9"
+    ],
+    "type": "fragment",
+    "slug": "storm-hammer-fragment",
+    "created_at": "2024-12-13T02:01:45.991Z"
+  },
+  {
+    "name": "Wyvern's Heart",
+    "quality": "blue",
+    "buy_value": 4500,
+    "sell_value": 900,
+    "guild_activity_points": 15,
+    "stats": {
+      "health": 1000
+    },
+    "hero_level_required": 28,
+    "crafting": {
+      "gold_cost": 22500,
+      "required_items": {
+        "wyverns-heart-fragment": 5
+      }
+    },
+    "type": "equipment",
+    "slug": "wyverns-heart",
+    "created_at": "2024-12-13T01:17:49.702Z"
+  },
+  {
+    "name": "Wyvern's Heart (Fragment)",
+    "quality": "blue",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "3-14",
+      "4-1",
+      "8-2",
+      "8-6",
+      "12-2"
+    ],
+    "type": "fragment",
+    "slug": "wyverns-heart-fragment",
+    "created_at": "2024-12-13T01:01:21.589Z"
+  }
+]
