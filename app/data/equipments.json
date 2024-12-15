@@ -3249,6 +3249,63 @@
     "created_at": "2024-12-15T04:32:46.159Z"
   },
   {
+    "name": "Panoptic Orb",
+    "quality": "purple",
+    "buy_value": 223250,
+    "sell_value": 44650,
+    "guild_activity_points": 1000,
+    "stats": {
+      "intelligence": 86,
+      "agility": 38,
+      "strength": 38
+    },
+    "hero_level_required": 80,
+    "crafting": {
+      "gold_cost": 382500,
+      "required_items": {
+        "diviners-orb": 2,
+        "panoptic-orb-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "panoptic-orb",
+    "created_at": "2024-12-15T12:29:48.101Z"
+  },
+  {
+    "name": "Panoptic Orb - Recipe",
+    "quality": "purple",
+    "buy_value": 2750,
+    "sell_value": 5500,
+    "guild_activity_points": 200,
+    "crafting": {
+      "gold_cost": 75000,
+      "required_items": {
+        "panoptic-orb-recipe-fragment": 50
+      }
+    },
+    "type": "recipe",
+    "slug": "panoptic-orb-recipe",
+    "created_at": "2024-12-15T12:28:19.989Z"
+  },
+  {
+    "name": "Panoptic Orb - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 500,
+    "sell_value": 100,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-13",
+      "10-6",
+      "11-1",
+      "11-7",
+      "13-5",
+      "13-11"
+    ],
+    "type": "fragment",
+    "slug": "panoptic-orb-recipe-fragment",
+    "created_at": "2024-12-15T12:27:41.974Z"
+  },
+  {
     "name": "Pastor's Seal",
     "quality": "purple",
     "buy_value": 16500,
@@ -3284,6 +3341,82 @@
     "type": "fragment",
     "slug": "pastors-seal-fragment",
     "created_at": "2024-12-15T04:02:41.642Z"
+  },
+  {
+    "name": "Primordial Word",
+    "quality": "purple",
+    "buy_value": 27000,
+    "sell_value": 5400,
+    "guild_activity_points": 110,
+    "stats": {
+      "dodge": 60
+    },
+    "hero_level_required": 61,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "portal-gem": 1,
+        "primordial-word-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "primordial-word",
+    "created_at": "2024-12-15T12:32:38.941Z"
+  },
+  {
+    "name": "Primordial Word - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "primordial-word-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "primordial-word-recipe",
+    "created_at": "2024-12-15T12:31:30.245Z"
+  },
+  {
+    "name": "Primordial Word - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "6-13",
+      "7-11",
+      "8-12"
+    ],
+    "type": "fragment",
+    "slug": "primordial-word-recipe-fragment",
+    "created_at": "2024-12-15T12:30:45.036Z"
+  },
+  {
+    "name": "Siege Crossbow",
+    "quality": "purple",
+    "buy_value": 54000,
+    "sell_value": 10800,
+    "guild_activity_points": 240,
+    "stats": {
+      "agility": 30,
+      "physical attack": 108,
+      "armor penetration": 160
+    },
+    "hero_level_required": 68,
+    "crafting": {
+      "gold_cost": 135000,
+      "required_items": {
+        "giant-slayer": 1,
+        "desert-blade": 1,
+        "advisor": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "siege-crossbow",
+    "created_at": "2024-12-15T12:33:45.199Z"
   },
   {
     "name": "Siren's Song",
@@ -3338,6 +3471,181 @@
     "created_at": "2024-12-13T16:47:30.736Z"
   },
   {
+    "name": "Staff of Morana's Nimbus",
+    "quality": "purple",
+    "buy_value": 223250,
+    "sell_value": 44650,
+    "guild_activity_points": 1000,
+    "stats": {
+      "intelligence": 38,
+      "agility": 86,
+      "strength": 38
+    },
+    "hero_level_required": 80,
+    "crafting": {
+      "gold_cost": 382500,
+      "required_items": {
+        "staff-of-selenas-halo": 2,
+        "staff-of-moranas-nimbus-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "staff-of-moranas-nimbus",
+    "created_at": "2024-12-15T12:40:50.085Z"
+  },
+  {
+    "name": "Staff of Morana's Nimbus - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 5500,
+    "guild_activity_points": 200,
+    "crafting": {
+      "gold_cost": 75000,
+      "required_items": {
+        "staff-of-moranas-nimbus-recipe-fragment": 1
+      }
+    },
+    "type": "recipe",
+    "slug": "staff-of-moranas-nimbus-recipe",
+    "created_at": "2024-12-15T12:34:58.775Z"
+  },
+  {
+    "name": "Staff of Morana's Nimbus - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 500,
+    "sell_value": 100,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-11",
+      "9-15",
+      "11-5",
+      "13-9"
+    ],
+    "type": "fragment",
+    "slug": "staff-of-moranas-nimbus-recipe-fragment",
+    "created_at": "2024-12-15T12:34:26.553Z"
+  },
+  {
+    "name": "Staff of Selena's Halo",
+    "quality": "purple",
+    "buy_value": 91500,
+    "sell_value": 18300,
+    "guild_activity_points": 400,
+    "stats": {
+      "intelligence": 24,
+      "agility": 54,
+      "strength": 24
+    },
+    "hero_level_required": 1,
+    "crafting": {
+      "gold_cost": 217500,
+      "required_items": {
+        "desert-blade": 1,
+        "trine": 1,
+        "staff-of-selenas-halo-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "staff-of-selenas-halo",
+    "created_at": "2024-12-15T12:39:16.192Z"
+  },
+  {
+    "name": "Staff of Selena's Halo - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 2750,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 60000,
+      "required_items": {
+        "staff-of-selenas-halo-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "staff-of-selenas-halo-recipe",
+    "created_at": "2024-12-15T12:38:17.940Z"
+  },
+  {
+    "name": "Staff of Selena's Halo - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 625,
+    "sell_value": 125,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "7-14",
+      "8-9"
+    ],
+    "type": "fragment",
+    "slug": "staff-of-selenas-halo-recipe-fragment",
+    "created_at": "2024-12-15T12:36:46.244Z"
+  },
+  {
+    "name": "Sword of Thorns",
+    "quality": "purple",
+    "buy_value": 47250,
+    "sell_value": 9450,
+    "guild_activity_points": 190,
+    "stats": {
+      "agility": 30,
+      "magic defense": 160
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 112500,
+      "required_items": {
+        "desert-blade": 1,
+        "sirens-song": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "sword-of-thorns",
+    "created_at": "2024-12-15T12:41:52.532Z"
+  },
+  {
+    "name": "Talisman",
+    "quality": "purple",
+    "buy_value": 47250,
+    "sell_value": 9450,
+    "guild_activity_points": 190,
+    "stats": {
+      "magic attack": 160,
+      "magic defense": 160
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 112500,
+      "required_items": {
+        "pastors-seal": 1,
+        "sirens-song": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "talisman",
+    "created_at": "2024-12-15T12:43:12.759Z"
+  },
+  {
+    "name": "Traitor's Crown",
+    "quality": "purple",
+    "buy_value": 36000,
+    "sell_value": 7200,
+    "guild_activity_points": 160,
+    "stats": {
+      "intelligence": 30,
+      "magic attack": 160
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "pastors-seal": 1,
+        "hand-of-glory": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "traitors-crown",
+    "created_at": "2024-12-15T12:44:39.218Z"
+  },
+  {
     "name": "Trine",
     "quality": "purple",
     "buy_value": 54000,
@@ -3360,6 +3668,59 @@
     "type": "equipment",
     "slug": "trine",
     "created_at": "2024-12-15T04:34:52.312Z"
+  },
+  {
+    "name": "Wasp",
+    "quality": "purple",
+    "buy_value": 44000,
+    "sell_value": 8800,
+    "guild_activity_points": 140,
+    "stats": {
+      "vampirism": 10
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 105000,
+      "required_items": {
+        "sacrificial-dagger": 2,
+        "wasp-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "wasp",
+    "created_at": "2024-12-15T12:46:52.629Z"
+  },
+  {
+    "name": "Wasp - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "wasp-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "wasp-recipe",
+    "created_at": "2024-12-15T12:45:46.917Z"
+  },
+  {
+    "name": "Wasp - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "6-15",
+      "7-13",
+      "8-14",
+      "13-13"
+    ],
+    "type": "fragment",
+    "slug": "wasp-recipe-fragment",
+    "created_at": "2024-12-15T12:45:20.691Z"
   },
   {
     "name": "World Tremor",
