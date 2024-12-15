@@ -20,44 +20,79 @@ export default function CraftingField({ form, existingItems, disabled = false }:
   const [open, setOpen] = useState(false);
   const [inputValue, setInputValue] = useState("");
   const [lastAddedItem, setLastAddedItem] = useState<string | null>(null);
+  const [accordionValue, setAccordionValue] = useState<string | undefined>(undefined);
   const inputRefs = useRef<Record<string, HTMLInputElement>>({});
 
   const craftingData = form.watch("crafting");
   const requiredItems = craftingData?.required_items || {};
   const hasRequirements = craftingData && (craftingData.gold_cost > 0 || Object.keys(requiredItems).length > 0);
 
-  // Helper function to find the item details by slug
+  // Watch for form errors
+  const craftingErrors = "crafting" in form.formState.errors ? form.formState.errors.crafting : null;
+
+  // Close accordion when component becomes disabled
+  useEffect(() => {
+    if (disabled) {
+      setAccordionValue(undefined);
+    }
+  }, [disabled]);
+
+  // Expand accordion when there are errors (only if not disabled)
+  useEffect(() => {
+    if (craftingErrors && !disabled) {
+      setAccordionValue("crafting");
+    }
+  }, [craftingErrors, disabled]);
+
+  // Clean up crafting data if there are no requirements
+  useEffect(() => {
+    if (craftingData) {
+      const goldCost = craftingData.gold_cost || 0;
+      const itemCount = Object.keys(craftingData.required_items || {}).length;
+
+      if (goldCost === 0 && itemCount === 0) {
+        form.setValue("crafting", undefined);
+      }
+    }
+  }, [craftingData, form]);
+
   const getItemBySlug = (slug: string) => {
     return existingItems.find((item) => item.slug === slug);
   };
 
-  // Filter items based on search input
   const filteredItems = existingItems
     .filter((item) => item.name.toLowerCase().includes(inputValue.toLowerCase()) && !requiredItems[item.slug])
     .sort((a, b) => a.name.localeCompare(b.name));
 
   const onSelectItem = (item: EquipmentRecord) => {
-    const newCrafting = {
-      gold_cost: craftingData?.gold_cost || 0,
-      required_items: {
-        ...requiredItems,
-        [item.slug]: 1,
-      },
-    };
-    form.setValue("crafting", newCrafting);
+    form.setValue("crafting.required_items", {
+      ...requiredItems,
+      [item.slug]: 1,
+    });
+    setLastAddedItem(item.slug);
     setOpen(false);
     setInputValue("");
-    setLastAddedItem(item.slug);
+  };
+
+  const handleCloseAutoFocus = (e: Event) => {
+    e.preventDefault();
+    if (lastAddedItem) {
+      const input = inputRefs.current[lastAddedItem];
+      input?.focus();
+      input?.select();
+    }
   };
 
   const removeItem = (slug: string) => {
     const newRequiredItems = { ...requiredItems };
     delete newRequiredItems[slug];
-    const newCrafting = {
-      gold_cost: craftingData?.gold_cost || 0,
-      required_items: newRequiredItems,
-    };
-    form.setValue("crafting", newCrafting);
+
+    // If this was the last item and gold cost is 0, remove crafting object entirely
+    if (Object.keys(newRequiredItems).length === 0 && (!craftingData?.gold_cost || craftingData.gold_cost === 0)) {
+      form.setValue("crafting", undefined);
+    } else {
+      form.setValue("crafting.required_items", newRequiredItems);
+    }
   };
 
   useEffect(() => {
@@ -68,14 +103,15 @@ export default function CraftingField({ form, existingItems, disabled = false }:
   }, [lastAddedItem]);
 
   const updateQuantity = (slug: string, quantity: number) => {
-    const newCrafting = {
-      gold_cost: craftingData?.gold_cost || 0,
-      required_items: {
-        ...requiredItems,
-        [slug]: quantity,
-      },
-    };
-    form.setValue("crafting", newCrafting);
+    form.setValue("crafting.required_items", { ...requiredItems, [slug]: quantity });
+  };
+
+  const handleGoldCostChange = (value: number) => {
+    if (value === 0 && Object.keys(requiredItems).length === 0) {
+      form.setValue("crafting", undefined);
+    } else {
+      form.setValue("crafting.gold_cost", value);
+    }
   };
 
   const getQualityColor = (quality: string) => {
@@ -95,7 +131,6 @@ export default function CraftingField({ form, existingItems, disabled = false }:
     }
   };
 
-  // Get selected items details for hover card
   const selectedItemsDetails = Object.entries(requiredItems)
     .map(([slug, quantity]) => {
       const item = getItemBySlug(slug);
@@ -105,7 +140,7 @@ export default function CraftingField({ form, existingItems, disabled = false }:
 
   return (
     <div className="pt-6">
-      <Accordion type="single" collapsible>
+      <Accordion type="single" collapsible value={accordionValue} onValueChange={setAccordionValue}>
         <AccordionItem value="crafting" className="border rounded-md px-4">
           <AccordionTrigger disabled={disabled} className="disabled:opacity-70">
             <div className="flex items-center gap-2 text-base">
@@ -155,7 +190,6 @@ export default function CraftingField({ form, existingItems, disabled = false }:
           </AccordionTrigger>
           <AccordionContent className="pt-4 pb-6">
             <div className="space-y-6">
-              {/* Gold Cost */}
               <FormField
                 control={form.control}
                 name="crafting.gold_cost"
@@ -168,7 +202,7 @@ export default function CraftingField({ form, existingItems, disabled = false }:
                           type="number"
                           {...field}
                           value={field.value || 0}
-                          onChange={(e) => field.onChange(Number(e.target.value))}
+                          onChange={(e) => handleGoldCostChange(Number(e.target.value))}
                           className="pl-10"
                         />
                         <img
@@ -183,7 +217,6 @@ export default function CraftingField({ form, existingItems, disabled = false }:
                 )}
               />
 
-              {/* Required Items */}
               <FormField
                 control={form.control}
                 name="crafting.required_items"
@@ -191,7 +224,6 @@ export default function CraftingField({ form, existingItems, disabled = false }:
                   <FormItem className="space-y-4">
                     <FormLabel>Required Items</FormLabel>
                     <div className="space-y-4 max-w-sm">
-                      {/* Existing items */}
                       {Object.entries(requiredItems).map(([slug, quantity]) => {
                         const item = getItemBySlug(slug);
                         if (!item) return null;
@@ -225,15 +257,14 @@ export default function CraftingField({ form, existingItems, disabled = false }:
                         );
                       })}
 
-                      {/* Item selection */}
                       <Popover open={open} onOpenChange={setOpen}>
-                        <PopoverTrigger asChild>
+                        <PopoverTrigger asChild disabled={disabled}>
                           <Button type="button" variant="outline" size="sm" className="w-full">
                             <PlusCircleIcon className="size-4 mr-2" />
                             Add Required Item
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-64" align="start">
+                        <PopoverContent className="w-64" align="start" onCloseAutoFocus={handleCloseAutoFocus}>
                           <div className="space-y-2 p-2">
                             <Input
                               placeholder="Search items..."
