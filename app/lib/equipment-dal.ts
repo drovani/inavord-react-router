@@ -69,8 +69,6 @@ export class EquipmentDAL {
   constructor() {
     this.store = getStore({
       name: "equipment",
-      siteID: "herowars-helper",
-      token: "nfp_issmYycyeVFStWR9YVMPn5zYUjpyr47i43b8",
     });
     this.localCache = new LocalEquipmentCache();
   }

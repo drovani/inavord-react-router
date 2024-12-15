@@ -57,8 +57,6 @@ export class MissionDAL {
   constructor() {
     this.store = getStore({
       name: "missions",
-      siteID: "herowars-helper",
-      token: "nfp_issmYycyeVFStWR9YVMPn5zYUjpyr47i43b8",
     });
     this.localCache = new LocalMissionCache();
   }
