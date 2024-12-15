@@ -1860,6 +1860,63 @@
     "created_at": "2024-12-13T01:19:22.637Z"
   },
   {
+    "name": "Prince of Thieves' Armor",
+    "quality": "blue",
+    "buy_value": 26750,
+    "sell_value": 5350,
+    "guild_activity_points": 66,
+    "stats": {
+      "strength": 16,
+      "physical attack": 70,
+      "armor": 80
+    },
+    "hero_level_required": 45,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "needle": 1,
+        "trackers-shield": 1,
+        "prince-of-thieves-armor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "prince-of-thieves-armor",
+    "created_at": "2024-12-15T04:01:19.161Z"
+  },
+  {
+    "name": "Prince of Thieves' Armor - Recipe",
+    "quality": "blue",
+    "buy_value": 0,
+    "sell_value": 2200,
+    "guild_activity_points": 30,
+    "crafting": {
+      "gold_cost": 30000,
+      "required_items": {
+        "prince-of-thieves-armor-recipe-fragment": 10
+      }
+    },
+    "type": "recipe",
+    "slug": "prince-of-thieves-armor-recipe",
+    "created_at": "2024-12-15T04:00:04.163Z"
+  },
+  {
+    "name": "Prince of Thieves' Armor - Recipe (Fragment)",
+    "quality": "blue",
+    "buy_value": 1000,
+    "sell_value": 200,
+    "guild_activity_points": 3,
+    "campaign_sources": [
+      "5-7",
+      "7-13",
+      "9-14",
+      "12-1",
+      "13-3"
+    ],
+    "type": "fragment",
+    "slug": "prince-of-thieves-armor-recipe-fragment",
+    "created_at": "2024-12-15T03:59:18.631Z"
+  },
+  {
     "name": "Prospero's Helmet",
     "quality": "blue",
     "buy_value": 9750,
@@ -2358,6 +2415,744 @@
     "created_at": "2024-12-13T16:13:35.945Z"
   },
   {
+    "name": "All-seer",
+    "quality": "purple",
+    "buy_value": 65250,
+    "sell_value": 13050,
+    "guild_activity_points": 270,
+    "stats": {
+      "intelligence": 30,
+      "magic attack": 160,
+      "magic defense": 160
+    },
+    "hero_level_required": 1,
+    "crafting": {
+      "gold_cost": 157500,
+      "required_items": {
+        "pastors-seal": 1,
+        "hand-of-glory": 1,
+        "sirens-song": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "all-seer",
+    "created_at": "2024-12-15T04:04:53.897Z"
+  },
+  {
+    "name": "Angel's Mace",
+    "quality": "purple",
+    "buy_value": 151500,
+    "sell_value": 30300,
+    "guild_activity_points": 620,
+    "stats": {
+      "physical attack": 345,
+      "magic defense": 256
+    },
+    "hero_level_required": 75,
+    "crafting": {
+      "gold_cost": 217500,
+      "required_items": {
+        "angels-mace-recipe": 1,
+        "apostles-mace": 2
+      }
+    },
+    "type": "equipment",
+    "slug": "angels-mace",
+    "created_at": "2024-12-15T04:08:32.144Z"
+  },
+  {
+    "name": "Angel's Mace - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 2750,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 60000,
+      "required_items": {
+        "angels-mace-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "angels-mace-recipe",
+    "created_at": "2024-12-15T04:07:08.678Z"
+  },
+  {
+    "name": "Angel's Mace - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 625,
+    "sell_value": 125,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-2",
+      "8-12",
+      "13-15"
+    ],
+    "type": "fragment",
+    "slug": "angels-mace-recipe-fragment",
+    "created_at": "2024-12-15T04:06:27.480Z"
+  },
+  {
+    "name": "Apostle's Mace",
+    "quality": "purple",
+    "buy_value": 65250,
+    "sell_value": 13050,
+    "guild_activity_points": 270,
+    "stats": {
+      "physical attack": 216,
+      "magic defense": 160
+    },
+    "hero_level_required": 69,
+    "crafting": {
+      "gold_cost": 157500,
+      "required_items": {
+        "giant-slayer": 2,
+        "sirens-song": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "apostles-mace",
+    "created_at": "2024-12-15T04:12:03.639Z"
+  },
+  {
+    "name": "Archangel's Mace",
+    "quality": "purple",
+    "buy_value": 343250,
+    "sell_value": 68650,
+    "guild_activity_points": 1440,
+    "stats": {
+      "physical attack": 552,
+      "magic defense": 409
+    },
+    "hero_level_required": 80,
+    "crafting": {
+      "gold_cost": 382500,
+      "required_items": {
+        "angels-mace": 2,
+        "archangels-mace-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "archangels-mace",
+    "created_at": "2024-12-15T04:16:02.982Z"
+  },
+  {
+    "name": "Archangel's Mace - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 5500,
+    "guild_activity_points": 200,
+    "crafting": {
+      "gold_cost": 75000,
+      "required_items": {
+        "archangels-mace-recipe-fragment": 50
+      }
+    },
+    "type": "recipe",
+    "slug": "archangels-mace-recipe",
+    "created_at": "2024-12-15T04:15:02.826Z"
+  },
+  {
+    "name": "Archangel's Mace - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 500,
+    "sell_value": 100,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-8",
+      "9-10",
+      "11-4",
+      "13-8"
+    ],
+    "type": "fragment",
+    "slug": "archangels-mace-recipe-fragment",
+    "created_at": "2024-12-15T04:13:47.386Z"
+  },
+  {
+    "name": "Blade Bow",
+    "quality": "purple",
+    "buy_value": 36000,
+    "sell_value": 7200,
+    "guild_activity_points": 160,
+    "stats": {
+      "agility": 30,
+      "physical attack": 108
+    },
+    "hero_level_required": 1,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "giant-slayer": 1,
+        "desert-blade": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "blade-bow",
+    "created_at": "2024-12-15T04:18:59.853Z"
+  },
+  {
+    "name": "Book of Fate",
+    "quality": "purple",
+    "buy_value": 298250,
+    "sell_value": 59650,
+    "guild_activity_points": 1320,
+    "stats": {
+      "health": 4096,
+      "magic attack": 819
+    },
+    "hero_level_required": 80,
+    "crafting": {
+      "gold_cost": 382500,
+      "required_items": {
+        "book-of-prophecies": 2,
+        "book-of-fate-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "book-of-fate",
+    "created_at": "2024-12-15T04:28:45.788Z"
+  },
+  {
+    "name": "Book of Fate - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 5500,
+    "guild_activity_points": 200,
+    "crafting": {
+      "gold_cost": 75000,
+      "required_items": {
+        "book-of-fate-recipe-fragment": 50
+      }
+    },
+    "type": "recipe",
+    "slug": "book-of-fate-recipe",
+    "created_at": "2024-12-15T04:22:03.299Z"
+  },
+  {
+    "name": "Book of Fate - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 500,
+    "sell_value": 100,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-5",
+      "9-6",
+      "11-3",
+      "13-7"
+    ],
+    "type": "fragment",
+    "slug": "book-of-fate-recipe-fragment",
+    "created_at": "2024-12-15T04:21:03.695Z"
+  },
+  {
+    "name": "Book of Prophecies",
+    "quality": "purple",
+    "buy_value": 129000,
+    "sell_value": 25800,
+    "guild_activity_points": 560,
+    "stats": {
+      "health": 2560,
+      "magic attack": 512
+    },
+    "hero_level_required": 75,
+    "crafting": {
+      "gold_cost": 217500,
+      "required_items": {
+        "book-of-tales": 2,
+        "book-of-prophecies-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "book-of-prophecies",
+    "created_at": "2024-12-15T04:27:04.739Z"
+  },
+  {
+    "name": "Book of Prophecies - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 2750,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 60000,
+      "required_items": {
+        "book-of-prophecies-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "book-of-prophecies-recipe",
+    "created_at": "2024-12-15T04:23:24.036Z"
+  },
+  {
+    "name": "Book of Prophecies - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 625,
+    "sell_value": 125,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-3",
+      "8-14",
+      "10-15",
+      "11-6",
+      "13-10",
+      "13-14"
+    ],
+    "type": "fragment",
+    "slug": "book-of-prophecies-recipe-fragment",
+    "created_at": "2024-12-15T04:22:47.531Z"
+  },
+  {
+    "name": "Book of Tales",
+    "quality": "purple",
+    "buy_value": 54000,
+    "sell_value": 10800,
+    "guild_activity_points": 240,
+    "stats": {
+      "health": 1600,
+      "magic attack": 320
+    },
+    "hero_level_required": 69,
+    "crafting": {
+      "gold_cost": 135000,
+      "required_items": {
+        "flaming-heart": 1,
+        "pastors-seal": 2
+      }
+    },
+    "type": "equipment",
+    "slug": "book-of-tales",
+    "created_at": "2024-12-15T04:26:00.387Z"
+  },
+  {
+    "name": "Cosmic Tremor",
+    "quality": "purple",
+    "buy_value": 223250,
+    "sell_value": 44650,
+    "guild_activity_points": 1000,
+    "stats": {
+      "intelligence": 38,
+      "agility": 38,
+      "strength": 86
+    },
+    "hero_level_required": 80,
+    "crafting": {
+      "gold_cost": 382500,
+      "required_items": {
+        "world-tremor": 2,
+        "cosmic-tremor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "cosmic-tremor",
+    "created_at": "2024-12-15T04:38:19.062Z"
+  },
+  {
+    "name": "Cosmic Tremor - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 5500,
+    "guild_activity_points": 200,
+    "crafting": {
+      "gold_cost": 75000,
+      "required_items": {
+        "cosmic-tremor-recipe-fragment": 50
+      }
+    },
+    "type": "recipe",
+    "slug": "cosmic-tremor-recipe",
+    "created_at": "2024-12-15T04:31:44.569Z"
+  },
+  {
+    "name": "Cosmic Tremor - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 500,
+    "sell_value": 100,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "8-4",
+      "10-10",
+      "11-8",
+      "13-4",
+      "13-12"
+    ],
+    "type": "fragment",
+    "slug": "cosmic-tremor-recipe-fragment",
+    "created_at": "2024-12-15T04:31:19.903Z"
+  },
+  {
+    "name": "Desert Blade",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "agility": 38
+    },
+    "hero_level_required": 59,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "desert-blade-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "desert-blade",
+    "created_at": "2024-12-15T04:18:19.804Z"
+  },
+  {
+    "name": "Desert Blade (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "5-14",
+      "7-2",
+      "7-6",
+      "8-11",
+      "9-1"
+    ],
+    "type": "fragment",
+    "slug": "desert-blade-fragment",
+    "created_at": "2024-12-15T04:17:38.265Z"
+  },
+  {
+    "name": "Diviner's Orb",
+    "quality": "purple",
+    "buy_value": 91500,
+    "sell_value": 18300,
+    "guild_activity_points": 400,
+    "stats": {
+      "intelligence": 54,
+      "agility": 24,
+      "strength": 24
+    },
+    "hero_level_required": 73,
+    "crafting": {
+      "gold_cost": 217500,
+      "required_items": {
+        "hand-of-glory": 1,
+        "trine": 1,
+        "diviners-orb-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "diviners-orb",
+    "created_at": "2024-12-15T04:48:45.300Z"
+  },
+  {
+    "name": "Diviner's Orb - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 2750,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 60000,
+      "required_items": {
+        "diviners-orb-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "diviners-orb-recipe",
+    "created_at": "2024-12-15T04:47:51.178Z"
+  },
+  {
+    "name": "Diviner's Orb - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 625,
+    "sell_value": 125,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "7-12",
+      "8-7",
+      "10-1"
+    ],
+    "type": "fragment",
+    "slug": "diviners-orb-recipe-fragment",
+    "created_at": "2024-12-15T04:41:17.011Z"
+  },
+  {
+    "name": "Dragon Shield",
+    "quality": "purple",
+    "buy_value": 27000,
+    "sell_value": 5400,
+    "guild_activity_points": 110,
+    "stats": {
+      "armor": 200
+    },
+    "hero_level_required": 61,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "serenity-stone": 1,
+        "dragon-shield-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "dragon-shield",
+    "created_at": "2024-12-15T04:51:15.949Z"
+  },
+  {
+    "name": "Dragon Shield - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "dragon-shield-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "dragon-shield-recipe",
+    "created_at": "2024-12-15T04:50:11.666Z"
+  },
+  {
+    "name": "Dragon Shield - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "6-5",
+      "7-5",
+      "8-4",
+      "8-15"
+    ],
+    "type": "fragment",
+    "slug": "dragon-shield-recipe-fragment",
+    "created_at": "2024-12-15T04:49:43.948Z"
+  },
+  {
+    "name": "Dragon Tooth",
+    "quality": "purple",
+    "buy_value": 27000,
+    "sell_value": 5400,
+    "guild_activity_points": 110,
+    "stats": {
+      "critical hit chance": 60
+    },
+    "hero_level_required": 61,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "splitter": 1,
+        "dragon-tooth-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "dragon-tooth",
+    "created_at": "2024-12-15T04:53:51.833Z"
+  },
+  {
+    "name": "Dragon Tooth - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "dragon-tooth-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "dragon-tooth-recipe",
+    "created_at": "2024-12-15T04:52:51.847Z"
+  },
+  {
+    "name": "Dragon Tooth - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "6-11",
+      "7-8",
+      "8-9"
+    ],
+    "type": "fragment",
+    "slug": "dragon-tooth-recipe-fragment",
+    "created_at": "2024-12-15T04:52:19.487Z"
+  },
+  {
+    "name": "Elephant Guard",
+    "quality": "purple",
+    "buy_value": 54000,
+    "sell_value": 10800,
+    "guild_activity_points": 240,
+    "stats": {
+      "intelligence": 30,
+      "magic attack": 160,
+      "magic penetration": 160
+    },
+    "hero_level_required": 68,
+    "crafting": {
+      "gold_cost": 13500,
+      "required_items": {
+        "pastors-seal": 1,
+        "hand-of-glory": 1,
+        "funeral-totem": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "elephant-guard",
+    "created_at": "2024-12-15T04:56:28.886Z"
+  },
+  {
+    "name": "Executioner's Sword",
+    "quality": "purple",
+    "buy_value": 47250,
+    "sell_value": 9450,
+    "guild_activity_points": 190,
+    "stats": {
+      "physical attack": 108,
+      "armor": 160
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 112500,
+      "required_items": {
+        "giant-slayer": 1,
+        "dragon-shield": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "executioners-sword",
+    "created_at": "2024-12-15T04:57:42.261Z"
+  },
+  {
+    "name": "Flaming Heart",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "health": 2000
+    },
+    "hero_level_required": 58,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "flaming-heart-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "flaming-heart",
+    "created_at": "2024-12-15T04:25:03.448Z"
+  },
+  {
+    "name": "Flaming Heart (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "5-8",
+      "5-15",
+      "6-4",
+      "7-14",
+      "8-1"
+    ],
+    "type": "fragment",
+    "slug": "flaming-heart-fragment",
+    "created_at": "2024-12-15T04:24:06.464Z"
+  },
+  {
+    "name": "Funeral Totem",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "magic penetration": 200
+    },
+    "hero_level_required": 60,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "funeral-totem-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "funeral-totem",
+    "created_at": "2024-12-15T04:55:08.153Z"
+  },
+  {
+    "name": "Funeral Totem (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "6-3",
+      "7-4",
+      "7-15",
+      "8-15"
+    ],
+    "type": "fragment",
+    "slug": "funeral-totem-fragment",
+    "created_at": "2024-12-15T04:54:29.820Z"
+  },
+  {
+    "name": "Giant-Slayer",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "physical attack": 135
+    },
+    "hero_level_required": 58,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "giant-slayer-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "giant-slayer",
+    "created_at": "2024-12-15T04:10:43.708Z"
+  },
+  {
+    "name": "Giant-Slayer (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "5-9",
+      "6-2",
+      "6-7",
+      "8-2",
+      "8-6"
+    ],
+    "type": "fragment",
+    "slug": "giant-slayer-fragment",
+    "created_at": "2024-12-15T04:09:47.483Z"
+  },
+  {
+    "name": "Governor",
+    "quality": "purple",
+    "buy_value": 54000,
+    "sell_value": 10800,
+    "guild_activity_points": 240,
+    "stats": {
+      "health": 1600,
+      "physical attack": 216
+    },
+    "hero_level_required": 68,
+    "crafting": {
+      "gold_cost": 135000,
+      "required_items": {
+        "flaming-heart": 1,
+        "giant-slayer": 2
+      }
+    },
+    "type": "equipment",
+    "slug": "governor",
+    "created_at": "2024-12-15T05:01:11.642Z"
+  },
+  {
     "name": "Hand of Glory",
     "quality": "purple",
     "buy_value": 16500,
@@ -2394,6 +3189,101 @@
     "type": "fragment",
     "slug": "hand-of-glory-fragment",
     "created_at": "2024-12-13T18:47:18.333Z"
+  },
+  {
+    "name": "Lion Helmet",
+    "quality": "purple",
+    "buy_value": 36000,
+    "sell_value": 7200,
+    "guild_activity_points": 160,
+    "stats": {
+      "strength": 30,
+      "health": 1600
+    },
+    "hero_level_required": 67,
+    "crafting": {
+      "gold_cost": 90000,
+      "required_items": {
+        "flaming-heart": 1,
+        "minotaurs-head": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "lion-helmet",
+    "created_at": "2024-12-15T04:39:30.924Z"
+  },
+  {
+    "name": "Minotaur's Head",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "strength": 38
+    },
+    "hero_level_required": 59,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "minotaurs-head-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "minotaurs-head",
+    "created_at": "2024-12-15T04:33:26.943Z"
+  },
+  {
+    "name": "Minotaur's Head (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "5-12",
+      "6-10",
+      "8-5",
+      "9-1"
+    ],
+    "type": "fragment",
+    "slug": "minotaurs-head-fragment",
+    "created_at": "2024-12-15T04:32:46.159Z"
+  },
+  {
+    "name": "Pastor's Seal",
+    "quality": "purple",
+    "buy_value": 16500,
+    "sell_value": 3300,
+    "guild_activity_points": 80,
+    "stats": {
+      "magic attack": 200
+    },
+    "hero_level_required": 58,
+    "crafting": {
+      "gold_cost": 45000,
+      "required_items": {
+        "pastors-seal-fragment": 20
+      }
+    },
+    "type": "equipment",
+    "slug": "pastors-seal",
+    "created_at": "2024-12-15T04:03:45.746Z"
+  },
+  {
+    "name": "Pastor's Seal (Fragment)",
+    "quality": "purple",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "5-11",
+      "6-6",
+      "6-9",
+      "8-3",
+      "8-10"
+    ],
+    "type": "fragment",
+    "slug": "pastors-seal-fragment",
+    "created_at": "2024-12-15T04:02:41.642Z"
   },
   {
     "name": "Siren's Song",
@@ -2446,5 +3336,84 @@
     "type": "fragment",
     "slug": "sirens-song-recipe-fragment",
     "created_at": "2024-12-13T16:47:30.736Z"
+  },
+  {
+    "name": "Trine",
+    "quality": "purple",
+    "buy_value": 54000,
+    "sell_value": 10800,
+    "guild_activity_points": 240,
+    "stats": {
+      "intelligence": 30,
+      "agility": 30,
+      "strength": 30
+    },
+    "hero_level_required": 69,
+    "crafting": {
+      "gold_cost": 135000,
+      "required_items": {
+        "minotaurs-head": 1,
+        "hand-of-glory": 1,
+        "desert-blade": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "trine",
+    "created_at": "2024-12-15T04:34:52.312Z"
+  },
+  {
+    "name": "World Tremor",
+    "quality": "purple",
+    "buy_value": 91500,
+    "sell_value": 18300,
+    "guild_activity_points": 400,
+    "stats": {
+      "intelligence": 24,
+      "agility": 24,
+      "strength": 54
+    },
+    "hero_level_required": 72,
+    "crafting": {
+      "gold_cost": 217500,
+      "required_items": {
+        "minotaurs-head": 1,
+        "trine": 1,
+        "world-tremor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "world-tremor",
+    "created_at": "2024-12-15T04:37:19.325Z"
+  },
+  {
+    "name": "World Tremor - Recipe",
+    "quality": "purple",
+    "buy_value": 0,
+    "sell_value": 2750,
+    "guild_activity_points": 80,
+    "crafting": {
+      "gold_cost": 60000,
+      "required_items": {
+        "world-tremor-recipe-fragment": 20
+      }
+    },
+    "type": "recipe",
+    "slug": "world-tremor-recipe",
+    "created_at": "2024-12-15T04:36:18.511Z"
+  },
+  {
+    "name": "World Tremor - Recipe (Fragment)",
+    "quality": "purple",
+    "buy_value": 625,
+    "sell_value": 125,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "7-9",
+      "11-2",
+      "13-6"
+    ],
+    "type": "fragment",
+    "slug": "world-tremor-recipe-fragment",
+    "created_at": "2024-12-15T04:35:35.759Z"
   }
 ]
