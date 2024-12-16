@@ -1,11 +1,13 @@
-import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
+import { AlertCircle } from "lucide-react";
 import { useEffect } from "react";
 import { Form, Link, useNavigate } from "react-router";
 import invariant from "tiny-invariant";
 import EquipmentImage from "~/components/EquipmentImage";
+import EquipmentNavigation from "~/components/EquipmentNavigation";
 import { Badge } from "~/components/ui/badge";
 import { Button, buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
 import type { Mission } from "~/data/mission.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
@@ -34,13 +36,13 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const prevEquipment = currentIndex > 0 ? sortedEquipment[currentIndex - 1] : null;
   const nextEquipment = currentIndex < sortedEquipment.length ? sortedEquipment[currentIndex + 1] : null;
 
-  // Get equipment that requires this item
   const requiredFor = await equipmentDAL.getEquipmentThatRequires(equipment.slug);
+  const requiredEquipment = await equipmentDAL.getEquipmentRequiredFor(equipment);
+  let requiredEquipmentRaw = await equipmentDAL.getEquipmentRequiredForRaw(equipment);
 
-  const requiredEquipment =
-    "crafting" in equipment && equipment.crafting
-      ? await equipmentDAL.getAllEquipment(Object.keys(equipment.crafting.required_items))
-      : [];
+  if ("crafting" in equipment && equipment.crafting?.gold_cost === requiredEquipmentRaw?.gold_cost) {
+    requiredEquipmentRaw = null;
+  }
 
   // Get all missions and filter for sources
   const allMissions = await missionDAL.getAllMissions();
@@ -58,6 +60,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   return {
     equipment,
     requiredEquipment,
+    requiredEquipmentRaw,
     requiredFor,
     missionSources,
     prevEquipment,
@@ -93,7 +96,15 @@ const EquipmentItem = ({ item, quantity }: { item: EquipmentRecord | null; quant
 };
 
 export default function Equipment({ loaderData }: Route.ComponentProps) {
-  const { equipment, requiredEquipment, requiredFor, missionSources, prevEquipment, nextEquipment } = loaderData;
+  const {
+    equipment,
+    requiredEquipment,
+    requiredEquipmentRaw,
+    requiredFor,
+    missionSources,
+    prevEquipment,
+    nextEquipment,
+  } = loaderData;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -165,7 +176,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           <CardHeader>
             <CardTitle>Stats</CardTitle>
           </CardHeader>
-          <CardContent className="grid grid-cols-2 sm:grid-cols-3 gap-4">
+          <CardContent className="flex gap-4">
             {Object.entries(equipment.stats).map(([stat, value]) => (
               <div key={stat} className="flex items-center gap-2">
                 <span className="capitalize">{stat}:</span>
@@ -183,7 +194,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
             <CardTitle>Found in Campaign</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-2">
+            <div className="flex gap-2 flex-wrap">
               {missionSources.map((mission) => (
                 <Link
                   key={mission.id}
@@ -229,6 +240,29 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
                 />
               ))}
             </div>
+            {requiredEquipmentRaw && (
+              <>
+                <Separator className="my-2" decorative={true} />
+                <div>
+                  <h4>Raw Components:</h4>
+                  <div className="flex items-center">
+                    <img src="/images/gold.webp" alt="Gold cost" className="w-6 h-6" />
+                    <span>{requiredEquipmentRaw.gold_cost.toLocaleString()} gold</span>
+                  </div>
+                  <div className="inline-grid gap-x-2 gap-y-1" style={{ gridTemplateColumns: "min-content auto" }}>
+                    {requiredEquipmentRaw.required_items.map((item) => {
+                      return [
+                        <span>{item.quantity}x</span>,
+                        <Link to={`/equipment/${item.equipment.slug}`} className="flex items-center gap-1 group">
+                          <EquipmentImage equipment={item.equipment} size={"xs"} />
+                          <span className="group-hover:underline">{item.equipment.name}</span>
+                        </Link>,
+                      ];
+                    })}
+                  </div>
+                </div>
+              </>
+            )}
           </CardContent>
         </Card>
       )}
@@ -240,7 +274,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
             <CardTitle>Required For</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            <div className="flex gap-4 flex-col">
               {requiredFor.map((item) => (
                 <Link
                   key={item.slug}
@@ -250,8 +284,8 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
                 >
                   <EquipmentImage equipment={item} size="sm" />
                   <div>
-                    <div className="group-hover:underline">{item.name}</div>
-                    <div className="text-sm text-muted-foreground">
+                    <div className="group-hover:underline whitespace-nowrap">{item.name}</div>
+                    <div className="text-sm text-muted-foreground whitespace-nowrap">
                       Requires {"crafting" in item ? item.crafting?.required_items[equipment.slug] : 0}x
                     </div>
                   </div>
@@ -287,37 +321,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
         </Form>
       </div>
       {/* Navigation Buttons */}
-      <div className="flex justify-between items-center gap-4 flex-1 order-1 sm:order-2">
-        {prevEquipment ? (
-          <Link
-            to={`/equipment/${prevEquipment.slug}`}
-            className={buttonVariants({ variant: "outline" })}
-            viewTransition
-          >
-            <ArrowLeftIcon className="mr-2 h-4 w-4" />
-            {prevEquipment.name}
-          </Link>
-        ) : (
-          <div />
-        )}
-
-        <Link to="/equipment" className={buttonVariants({ variant: "secondary" })} viewTransition>
-          All Equipment
-        </Link>
-
-        {nextEquipment ? (
-          <Link
-            to={`/equipment/${nextEquipment.slug}`}
-            className={buttonVariants({ variant: "outline" })}
-            viewTransition
-          >
-            {nextEquipment.name}
-            <ArrowRightIcon className="ml-2 h-4 w-4" />
-          </Link>
-        ) : (
-          <div />
-        )}
-      </div>
+      <EquipmentNavigation prevEquipment={prevEquipment} nextEquipment={nextEquipment} />
     </div>
   );
 }

@@ -1,12 +1,20 @@
 import { getStore } from "@netlify/blobs";
 import {
-    EQUIPMENT_QUALITIES,
-    type EquipmentMutation,
-    EquipmentMutationSchema,
-    type EquipmentRecord,
+  EQUIPMENT_QUALITIES,
+  type EquipmentMutation,
+  EquipmentMutationSchema,
+  type EquipmentRecord,
 } from "~/data/equipment.zod";
 import equipmentData from "~/data/equipments.json";
 import { generateSlug } from "~/lib/utils";
+
+interface EquipmentRequirements {
+  gold_cost: number;
+  required_items: {
+    equipment: EquipmentRecord;
+    quantity: number;
+  }[];
+}
 
 /**
  * In-memory cache for equipment when Netlify blob storage is unavailable
@@ -159,6 +167,63 @@ export class EquipmentDAL {
     } catch (error) {
       console.error("Failed to get all equipment:", error);
       throw new Error("Failed to retrieve equipment list");
+    }
+  }
+
+  async getEquipmentRequiredFor(itemFor: EquipmentRecord | string): Promise<EquipmentRecord[]> {
+    if (typeof itemFor === "string") {
+      const eqp = await this.getEquipmentBySlug(itemFor);
+      if (eqp === null) return [];
+      else return await this.getEquipmentRequiredFor(eqp);
+    } else if ("crafting" in itemFor && itemFor.crafting) {
+      return await this.getAllEquipment(Object.keys(itemFor.crafting.required_items));
+    } else {
+      return [];
+    }
+  }
+
+  async getEquipmentRequiredForRaw(equipment: EquipmentRecord): Promise<EquipmentRequirements | null> {
+    const baseItems = { gold_cost: 0, required_items: [] } as EquipmentRequirements;
+
+    if ("crafting" in equipment && equipment.crafting) {
+      baseItems.gold_cost += equipment.crafting.gold_cost;
+
+      for (const [slug, qty] of Object.entries(equipment.crafting.required_items)) {
+        const component = await this.getEquipmentBySlug(slug);
+        if (component === null) continue;
+
+        if ("crafting" in component && component.crafting) {
+          const raws = await this.getEquipmentRequiredForRaw(component);
+          if (raws === null) continue;
+          baseItems.gold_cost += raws.gold_cost;
+          this.combineEquipmentRequirements(baseItems.required_items, raws.required_items);
+        } else {
+          const found = baseItems.required_items.findIndex((ri) => ri.equipment.slug === component.slug);
+          if (found >= 0) baseItems.required_items[found].quantity += qty;
+          else baseItems.required_items.push({ equipment: component, quantity: qty });
+        }
+      }
+    } else {
+      return null;
+    }
+    return {
+      ...baseItems,
+      required_items: baseItems.required_items.sort((l, r) =>
+        l.equipment.quality !== r.equipment.quality
+          ? EQUIPMENT_QUALITIES.indexOf(l.equipment.quality) - EQUIPMENT_QUALITIES.indexOf(r.equipment.quality)
+          : l.equipment.name.localeCompare(r.equipment.name)
+      ),
+    };
+  }
+
+  combineEquipmentRequirements(
+    target: EquipmentRequirements["required_items"],
+    source: EquipmentRequirements["required_items"]
+  ): void {
+    for (const req of source) {
+      const found = target.findIndex((t) => t.equipment.slug === req.equipment.slug);
+      if (found >= 0) target[found].quantity += req.quantity;
+      else target.push({ ...req });
     }
   }
 
