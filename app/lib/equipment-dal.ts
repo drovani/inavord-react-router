@@ -195,8 +195,8 @@ export class EquipmentDAL {
         if ("crafting" in component && component.crafting) {
           const raws = await this.getEquipmentRequiredForRaw(component);
           if (raws === null) continue;
-          baseItems.gold_cost += raws.gold_cost;
-          this.combineEquipmentRequirements(baseItems.required_items, raws.required_items);
+          baseItems.gold_cost += raws.gold_cost * qty;
+          this.combineEquipmentRequirements(baseItems.required_items, raws.required_items, qty);
         } else {
           const found = baseItems.required_items.findIndex((ri) => ri.equipment.slug === component.slug);
           if (found >= 0) baseItems.required_items[found].quantity += qty;
@@ -218,12 +218,13 @@ export class EquipmentDAL {
 
   combineEquipmentRequirements(
     target: EquipmentRequirements["required_items"],
-    source: EquipmentRequirements["required_items"]
+    source: EquipmentRequirements["required_items"],
+    qty: number
   ): void {
     for (const req of source) {
       const found = target.findIndex((t) => t.equipment.slug === req.equipment.slug);
-      if (found >= 0) target[found].quantity += req.quantity;
-      else target.push({ ...req });
+      if (found >= 0) target[found].quantity += req.quantity * qty;
+      else target.push({ ...req, quantity: req.quantity * qty });
     }
   }
 
