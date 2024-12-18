@@ -1,7 +1,7 @@
 import type { Route } from ".react-router/types/app/routes/+types/missions.$missionId";
 import { MapIcon } from "lucide-react";
 import { useEffect } from "react";
-import { Link, useNavigate } from "react-router";
+import { Link, useNavigate, type UIMatch } from "react-router";
 import EquipmentImage from "~/components/EquipmentImage";
 import { buttonVariants } from "~/components/ui/button";
 import { type EquipmentRecord } from "~/data/equipment.zod";
@@ -14,6 +14,19 @@ export const meta = ({ data }: Route.MetaArgs) => {
     return [{ title: "Mission not found" }];
   }
   return [{ title: `${data.mission.id}: ${data.mission.name}` }];
+};
+
+export const handle = {
+  breadcrumb: (match: UIMatch<Route.ComponentProps["loaderData"], unknown>) => [
+    {
+      href: `/missions#chapter-${match.data.mission.chapter}`,
+      title: `Chapter ${match.data.mission.chapter}: ${match.data.mission.chapter_title}`,
+    },
+    {
+      href: match.pathname,
+      title: `Mission ${match.data.mission.mission_number}: ${match.data.mission.name}`,
+    },
+  ],
 };
 
 export const loader = async ({ params }: Route.LoaderArgs) => {

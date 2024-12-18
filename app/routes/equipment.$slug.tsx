@@ -1,9 +1,8 @@
-import { AlertCircle } from "lucide-react";
+import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useEffect } from "react";
-import { Form, Link, useNavigate } from "react-router";
+import { Form, Link, useNavigate, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
 import EquipmentImage from "~/components/EquipmentImage";
-import EquipmentNavigation from "~/components/EquipmentNavigation";
 import { Badge } from "~/components/ui/badge";
 import { Button, buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
@@ -16,6 +15,13 @@ import type { Route } from "./+types/equipment.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
   return [{ title: data?.equipment.name }];
+};
+
+export const handle = {
+  breadcrumb: (match: UIMatch<Route.ComponentProps["loaderData"], unknown>) => ({
+    href: match.pathname,
+    title: match.data.equipment.name,
+  }),
 };
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
@@ -169,7 +175,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
       </div>
-
       {/* Stats Section */}
       {"stats" in equipment && equipment.stats && Object.entries(equipment.stats).length > 0 && (
         <Card>
@@ -186,7 +191,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           </CardContent>
         </Card>
       )}
-
       {/* Campaign Sources Section */}
       {missionSources.length > 0 && (
         <Card>
@@ -217,7 +221,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           </CardContent>
         </Card>
       )}
-
       {/* Crafting Requirements Section */}
       {requiredEquipment.length > 0 && (
         <Card>
@@ -266,7 +269,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           </CardContent>
         </Card>
       )}
-
       {/* Required For Section */}
       {requiredFor.length > 0 && (
         <Card>
@@ -295,7 +297,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           </CardContent>
         </Card>
       )}
-
       {/* Action Buttons */}
       <div className="flex gap-4">
         <Link
@@ -321,7 +322,41 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
         </Form>
       </div>
       {/* Navigation Buttons */}
-      <EquipmentNavigation prevEquipment={prevEquipment} nextEquipment={nextEquipment} />
+      <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 w-full">
+        <div className="flex justify-start w-full sm:w-auto">
+          {prevEquipment ? (
+            <Link
+              to={`/equipment/${prevEquipment.slug}`}
+              className={buttonVariants({ variant: "outline" })}
+              viewTransition
+            >
+              <ArrowLeftIcon className="mr-2 h-4 w-4" />
+              {prevEquipment.name}
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
+        <div className="flex justify-center w-full sm:w-auto">
+          <Link to="/equipment" className={buttonVariants({ variant: "secondary" })} viewTransition>
+            All Equipment
+          </Link>
+        </div>
+        <div className="flex justify-end w-full sm:w-auto">
+          {nextEquipment ? (
+            <Link
+              to={`/equipment/${nextEquipment.slug}`}
+              className={buttonVariants({ variant: "outline" })}
+              viewTransition
+            >
+              {nextEquipment.name}
+              <ArrowRightIcon className="ml-2 h-4 w-4" />
+            </Link>
+          ) : (
+            <div />
+          )}
+        </div>
+      </div>
     </div>
   );
 }

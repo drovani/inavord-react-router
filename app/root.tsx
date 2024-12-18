@@ -1,4 +1,13 @@
-import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, ScrollRestoration } from "react-router";
+import {
+  isRouteErrorResponse,
+  Links,
+  Meta,
+  Outlet,
+  Scripts,
+  ScrollRestoration,
+  useMatches,
+  type UIMatch,
+} from "react-router";
 import SiteHeader from "~/components/SiteHeader";
 import type { Route } from "./+types/root";
 import { SiteSidebar } from "./components/SiteSidebar";
@@ -18,6 +27,24 @@ export const meta = (_: Route.MetaArgs) => {
 };
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  const matches = useMatches() as UIMatch<
+    unknown,
+    {
+      breadcrumb?: (
+        matches: UIMatch<unknown, unknown>
+      ) => { href?: string; title: string } | { href?: string; title: string }[];
+    }
+  >[];
+
+  const breadcrumbs = matches.filter((match) => match.handle && match.handle.breadcrumb) as UIMatch<
+    unknown,
+    {
+      breadcrumb?: (
+        matches: UIMatch<unknown, unknown>
+      ) => { href?: string; title: string } | { href?: string; title: string }[];
+    }
+  >[];
+
   return (
     <html lang="en" className="h-full bg-gray-100">
       <head>
@@ -30,7 +57,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <SidebarProvider defaultOpen={true}>
           <SiteSidebar />
           <SidebarInset>
-            <SiteHeader />
+            <SiteHeader breadcrumbs={breadcrumbs} />
             <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">{children}</main>
           </SidebarInset>
         </SidebarProvider>

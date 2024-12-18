@@ -2,11 +2,11 @@ import { Outlet, type UIMatch } from "react-router";
 
 export const handle = {
   breadcrumb: (_: UIMatch<unknown, unknown>) => ({
-    href: "/equipment",
-    title: "Equipment",
+    href: "/missions",
+    title: "Missions",
   }),
 };
 
-export default function Equipment() {
+export default function Missions() {
   return <Outlet />;
 }

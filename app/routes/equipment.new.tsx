@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { redirect } from "react-router";
+import { redirect, type UIMatch } from "react-router";
 import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
 import { type EquipmentMutation, EquipmentMutationSchema } from "~/data/equipment.zod";
@@ -10,6 +10,13 @@ import type { Route } from "./+types/equipment.new";
 
 export const meta = (_: Route.MetaArgs) => {
   return [{ title: "Create new equipment" }];
+};
+
+export const handle = {
+  breadcrumb: (matches: UIMatch<Route.ComponentProps["loaderData"], unknown>) => ({
+    href: matches.pathname,
+    title: "New",
+  }),
 };
 
 export const loader = async (_: Route.LoaderArgs) => {

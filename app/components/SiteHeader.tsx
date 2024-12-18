@@ -1,15 +1,21 @@
-import {
-  Breadcrumb,
-  BreadcrumbItem,
-  BreadcrumbLink,
-  BreadcrumbList,
-  BreadcrumbPage,
-  BreadcrumbSeparator,
-} from "./ui/breadcrumb";
+import React from "react";
+import { Link, type UIMatch } from "react-router";
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbSeparator } from "./ui/breadcrumb";
 import { Separator } from "./ui/separator";
 import { SidebarTrigger } from "./ui/sidebar";
 
-function SiteHeader() {
+function SiteHeader({
+  breadcrumbs,
+}: {
+  breadcrumbs: UIMatch<
+    unknown,
+    {
+      breadcrumb: (
+        matches: UIMatch<unknown, unknown>
+      ) => { href?: string; title: string } | { href?: string; title: string }[];
+    }
+  >[];
+}) {
   return (
     <header
       className="flex h-16 shrink-0 items-center gap-2 transition-[width,height] ease-linear group-has-[[data-collapsible=icon]]/sidebar-wrapper:h-12"
@@ -18,17 +24,34 @@ function SiteHeader() {
       <div className="flex items-center gap-2 px-4">
         <SidebarTrigger className="-ml-1" />
         <Separator orientation="vertical" className="mr-2 h-4" />
-        <Breadcrumb>
-          <BreadcrumbList>
-            <BreadcrumbItem className="hidden md:block">
-              <BreadcrumbLink href="#">Root folder</BreadcrumbLink>
-            </BreadcrumbItem>
-            <BreadcrumbSeparator className="hidden md:block" />
-            <BreadcrumbItem>
-              <BreadcrumbPage>Breadcrumb page</BreadcrumbPage>
-            </BreadcrumbItem>
-          </BreadcrumbList>
-        </Breadcrumb>
+        {breadcrumbs.length > 0 && (
+          <Breadcrumb>
+            <BreadcrumbList>
+              {breadcrumbs.map<React.ReactNode>((match, index) => {
+                const result = match.handle.breadcrumb(match);
+                console.debug(result);
+                const crumbs = Array.isArray(result) ? result : [result];
+                const nodes: React.ReactNode[] = [];
+                for (const crumb of crumbs) {
+                  if (crumb.href) {
+                    nodes.push(
+                      <BreadcrumbLink asChild>
+                        <Link to={crumb.href}>{crumb.title}</Link>
+                      </BreadcrumbLink>
+                    );
+                  } else {
+                    nodes.push(<BreadcrumbItem>{crumb.title}</BreadcrumbItem>);
+                  }
+                  nodes.push(<BreadcrumbSeparator />);
+                }
+                if (index + 1 >= breadcrumbs.length) {
+                  nodes.pop();
+                }
+                return nodes;
+              })}
+            </BreadcrumbList>
+          </Breadcrumb>
+        )}
       </div>
     </header>
   );

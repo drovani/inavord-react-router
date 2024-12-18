@@ -121,7 +121,7 @@ export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
       {/* Results */}
       {Object.entries(filteredMissionsByChapter).length > 0 ? (
         Object.entries(filteredMissionsByChapter).map(([chapter, { title, missions }]) => (
-          <div key={chapter} className="space-y-4">
+          <div key={chapter} className="space-y-4" id={`chapter-${chapter}`}>
             <div className="flex items-center gap-2">
               <MapIcon className="h-6 w-6" />
               <h2 className="text-2xl font-bold">
