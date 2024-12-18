@@ -264,7 +264,7 @@ export default function CraftingField({ form, existingItems, disabled = false }:
                             Add Required Item
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-64" align="start" onCloseAutoFocus={handleCloseAutoFocus}>
+                        <PopoverContent className="w-96" align="start" onCloseAutoFocus={handleCloseAutoFocus}>
                           <div className="space-y-2 p-2">
                             <Input
                               placeholder="Search items..."

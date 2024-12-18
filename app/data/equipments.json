@@ -3502,7 +3502,7 @@
     "crafting": {
       "gold_cost": 75000,
       "required_items": {
-        "staff-of-moranas-nimbus-recipe-fragment": 1
+        "staff-of-moranas-nimbus-recipe-fragment": 50
       }
     },
     "type": "recipe",
@@ -3776,5 +3776,1575 @@
     "type": "fragment",
     "slug": "world-tremor-recipe-fragment",
     "created_at": "2024-12-15T04:35:35.759Z"
+  },
+  {
+    "name": "Alchemist's Set",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "health": 6000
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "alchemists-set-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "alchemists-set",
+    "created_at": "2024-12-18T17:43:38.907Z"
+  },
+  {
+    "name": "Alchemist's Set (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-2",
+      "10-9",
+      "10-15",
+      "11-11",
+      "11-13",
+      "13-3"
+    ],
+    "type": "fragment",
+    "slug": "alchemists-set-fragment",
+    "created_at": "2024-12-18T17:42:50.434Z"
+  },
+  {
+    "name": "All-Seeing Eye",
+    "quality": "orange",
+    "buy_value": 268875,
+    "sell_value": 53775,
+    "guild_activity_points": 1200,
+    "stats": {
+      "intelligence": 198,
+      "agility": 24,
+      "strength": 24
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 506250,
+      "required_items": {
+        "trine": 2,
+        "enigmas-chronicles": 2,
+        "all-seeing-eye-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "all-seeing-eye",
+    "created_at": "2024-12-18T17:49:14.795Z"
+  },
+  {
+    "name": "All-Seeing Eye - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "all-seeing-eye-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "all-seeing-eye-recipe",
+    "created_at": "2024-12-18T17:47:13.367Z"
+  },
+  {
+    "name": "All-Seeing Eye - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-8",
+      "12-10",
+      "13-5",
+      "13-12"
+    ],
+    "type": "fragment",
+    "slug": "all-seeing-eye-recipe-fragment",
+    "created_at": "2024-12-18T17:46:31.793Z"
+  },
+  {
+    "name": "Alucard's Amulet",
+    "quality": "orange",
+    "buy_value": 246750,
+    "sell_value": 49350,
+    "guild_activity_points": 1120,
+    "stats": {
+      "health": 3200,
+      "physical attack": 640
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 472500,
+      "required_items": {
+        "flaming-heart": 2,
+        "lycanthropes-fang": 2,
+        "alucards-amulet-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "alucards-amulet",
+    "created_at": "2024-12-18T17:55:12.659Z"
+  },
+  {
+    "name": "Alucard's Amulet - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "alucards-amulet-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "alucards-amulet-recipe",
+    "created_at": "2024-12-18T17:52:20.163Z"
+  },
+  {
+    "name": "Alucard's Amulet - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-3",
+      "11-6",
+      "12-2",
+      "12-9"
+    ],
+    "type": "fragment",
+    "slug": "alucards-amulet-recipe-fragment",
+    "created_at": "2024-12-18T17:51:20.070Z"
+  },
+  {
+    "name": "Aquant's Trident",
+    "quality": "orange",
+    "buy_value": 268875,
+    "sell_value": 53775,
+    "guild_activity_points": 1180,
+    "stats": {
+      "physical attack": 320,
+      "critical hit chance": 228
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 506250,
+      "required_items": {
+        "dragon-tooth": 2,
+        "lycanthropes-fang": 1,
+        "hellion-harpoon": 1,
+        "aquants-trident-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "aquants-trident",
+    "created_at": "2024-12-18T18:04:26.032Z"
+  },
+  {
+    "name": "Aquant's Trident - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "aquants-trident-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "aquants-trident-recipe",
+    "created_at": "2024-12-18T18:01:47.432Z"
+  },
+  {
+    "name": "Aquant's Trident - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-13",
+      "13-2",
+      "13-12",
+      "13-14"
+    ],
+    "type": "fragment",
+    "slug": "aquants-trident-recipe-fragment",
+    "created_at": "2024-12-18T18:01:10.730Z"
+  },
+  {
+    "name": "Asklepius' Staff",
+    "quality": "orange",
+    "buy_value": 198375,
+    "sell_value": 39675,
+    "guild_activity_points": 860,
+    "stats": {
+      "health": 4800,
+      "magic defense": 320
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 371250,
+      "required_items": {
+        "sirens-song": 2,
+        "alchemists-set": 1,
+        "asklepius-staff-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "asklepius-staff",
+    "created_at": "2024-12-18T18:07:45.176Z"
+  },
+  {
+    "name": "Asklepius' Staff - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "asklepius-staff-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "asklepius-staff-recipe",
+    "created_at": "2024-12-18T18:06:47.127Z"
+  },
+  {
+    "name": "Asklepius' Staff - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-8",
+      "12-1",
+      "13-3",
+      "13-9"
+    ],
+    "type": "fragment",
+    "slug": "asklepius-staff-recipe-fragment",
+    "created_at": "2024-12-18T18:06:14.009Z"
+  },
+  {
+    "name": "Blade of the Immortals",
+    "quality": "orange",
+    "buy_value": 176250,
+    "sell_value": 35250,
+    "guild_activity_points": 800,
+    "stats": {
+      "physical attack": 320,
+      "armor penetration": 320
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "advisor": 2,
+        "lycanthropes-fang": 1,
+        "blade-of-the-immortals-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "blade-of-the-immortals",
+    "created_at": "2024-12-18T18:10:08.752Z"
+  },
+  {
+    "name": "Blade of the Immortals - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "blade-of-the-immortals-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "blade-of-the-immortals-recipe",
+    "created_at": "2024-12-18T18:09:11.099Z"
+  },
+  {
+    "name": "Blade of the Immortals - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-3",
+      "11-10",
+      "12-4",
+      "12-13"
+    ],
+    "type": "fragment",
+    "slug": "blade-of-the-immortals-recipe-fragment",
+    "created_at": "2024-12-18T18:08:43.049Z"
+  },
+  {
+    "name": "Blued Plate Armor",
+    "quality": "orange",
+    "buy_value": 198375,
+    "sell_value": 39675,
+    "guild_activity_points": 860,
+    "stats": {
+      "health": 4800,
+      "armor": 320
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 371250,
+      "required_items": {
+        "dragon-shield": 2,
+        "alchemists-set": 1,
+        "blued-plate-armor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "blued-plate-armor",
+    "created_at": "2024-12-18T18:16:59.310Z"
+  },
+  {
+    "name": "Blued Plate Armor - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "blued-plate-armor-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "blued-plate-armor-recipe",
+    "created_at": "2024-12-18T18:15:58.339Z"
+  },
+  {
+    "name": "Blued Plate Armor - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-7",
+      "11-15",
+      "13-1",
+      "13-8"
+    ],
+    "type": "fragment",
+    "slug": "blued-plate-armor-recipe-fragment",
+    "created_at": "2024-12-18T18:14:52.808Z"
+  },
+  {
+    "name": "Citadel Guardian",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "armor": 600
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "citadel-guardian-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "citadel-guardian",
+    "created_at": "2024-12-18T18:23:55.535Z"
+  },
+  {
+    "name": "Citadel Guardian (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-4",
+      "10-1",
+      "11-8",
+      "11-12",
+      "12-4"
+    ],
+    "type": "fragment",
+    "slug": "citadel-guardian-fragment",
+    "created_at": "2024-12-18T18:23:00.853Z"
+  },
+  {
+    "name": "Creator's Feathering",
+    "quality": "orange",
+    "buy_value": 268875,
+    "sell_value": 53775,
+    "guild_activity_points": 1200,
+    "stats": {
+      "intelligence": 24,
+      "agility": 198,
+      "strength": 24
+    },
+    "hero_level_required": 1,
+    "crafting": {
+      "gold_cost": 506250,
+      "required_items": {
+        "trine": 2,
+        "throwing-knives": 2,
+        "creators-feathering-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "creators-feathering",
+    "created_at": "2024-12-18T18:34:15.987Z"
+  },
+  {
+    "name": "Creator's Feathering - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "creators-feathering-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "creators-feathering-recipe",
+    "created_at": "2024-12-18T18:28:49.561Z"
+  },
+  {
+    "name": "Creator's Feathering - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-9",
+      "12-15",
+      "13-11",
+      "13-13"
+    ],
+    "type": "fragment",
+    "slug": "creators-feathering-recipe-fragment",
+    "created_at": "2024-12-18T18:28:21.026Z"
+  },
+  {
+    "name": "Dwarven Hardbane",
+    "quality": "orange",
+    "buy_value": 297000,
+    "sell_value": 59400,
+    "guild_activity_points": 1280,
+    "stats": {
+      "physical attack": 648,
+      "critical hit chance": 265
+    },
+    "hero_level_required": 108,
+    "crafting": {
+      "gold_cost": 567000,
+      "required_items": {
+        "desert-blade": 6,
+        "hellion-harpoon": 2,
+        "dwarven-hardbane-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "dwarven-hardbane",
+    "created_at": "2024-12-18T19:01:57.543Z"
+  },
+  {
+    "name": "Dwarven Hardbane - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "dwarven-hardbane-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "dwarven-hardbane-recipe",
+    "created_at": "2024-12-18T19:00:55.352Z"
+  },
+  {
+    "name": "Dwarven Hardbane - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-1",
+      "12-12",
+      "12-14",
+      "13-15"
+    ],
+    "type": "fragment",
+    "slug": "dwarven-hardbane-recipe-fragment",
+    "created_at": "2024-12-18T19:00:24.985Z"
+  },
+  {
+    "name": "Enchanted Chain",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "magic penetration": 600
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "enchanted-chain-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "enchanted-chain",
+    "created_at": "2024-12-18T19:03:20.922Z"
+  },
+  {
+    "name": "Enchanted Chain (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-7",
+      "10-6",
+      "10-11",
+      "11-9",
+      "12-3"
+    ],
+    "type": "fragment",
+    "slug": "enchanted-chain-fragment",
+    "created_at": "2024-12-18T19:02:44.382Z"
+  },
+  {
+    "name": "Enigma's Chronicles",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "intelligence": 109
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "enigmas-chronicles-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "enigmas-chronicles",
+    "created_at": "2024-12-18T17:48:17.613Z"
+  },
+  {
+    "name": "Enigma's Chronicles (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-14"
+    ],
+    "type": "fragment",
+    "slug": "enigmas-chronicles-fragment",
+    "created_at": "2024-12-18T17:47:37.161Z"
+  },
+  {
+    "name": "Evil Genius Cuirass - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "evil-genius-cuirass-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "evil-genius-cuirass-recipe",
+    "created_at": "2024-12-18T19:07:25.613Z"
+  },
+  {
+    "name": "Evil Genius Cuirass - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "type": "fragment",
+    "slug": "evil-genius-cuirass-recipe-fragment",
+    "created_at": "2024-12-18T19:05:51.637Z"
+  },
+  {
+    "name": "Evil Genius Cuirass (Fragment)",
+    "quality": "orange",
+    "buy_value": 561000,
+    "sell_value": 112200,
+    "guild_activity_points": 2560,
+    "stats": {
+      "intelligence": 76,
+      "agility": 76,
+      "strength": 355
+    },
+    "hero_level_required": 120,
+    "crafting": {
+      "gold_cost": 1181250,
+      "required_items": {
+        "radiant-armor": 2,
+        "evil-genius-cuirass-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "evil-genius-cuirass-fragment",
+    "created_at": "2024-12-18T19:40:35.060Z"
+  },
+  {
+    "name": "Gro Bulgor's Poleaxe",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "armor penetration": 600
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "gro-bulgors-poleaxe-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "gro-bulgors-poleaxe",
+    "created_at": "2024-12-18T19:42:59.824Z"
+  },
+  {
+    "name": "Gro Bulgor's Poleaxe (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-5",
+      "10-10",
+      "10-14",
+      "11-5",
+      "12-2",
+      "13-7"
+    ],
+    "type": "fragment",
+    "slug": "gro-bulgors-poleaxe-fragment",
+    "created_at": "2024-12-18T19:42:04.488Z"
+  },
+  {
+    "name": "Harunian Helm",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "strength": 109
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "harunian-helm-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "harunian-helm",
+    "created_at": "2024-12-18T19:10:50.621Z"
+  },
+  {
+    "name": "Harunian Helm (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-4"
+    ],
+    "type": "fragment",
+    "slug": "harunian-helm-fragment",
+    "created_at": "2024-12-18T19:10:01.354Z"
+  },
+  {
+    "name": "Hellion Harpoon",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "critical hit chance": 166
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "hellion-harpoon-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "hellion-harpoon",
+    "created_at": "2024-12-18T18:03:12.145Z"
+  },
+  {
+    "name": "Hellion Harpoon (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-10",
+      "9-13",
+      "11-11",
+      "11-13",
+      "12-7"
+    ],
+    "type": "fragment",
+    "slug": "hellion-harpoon-fragment",
+    "created_at": "2024-12-18T18:02:30.550Z"
+  },
+  {
+    "name": "Key to All Doors",
+    "quality": "orange",
+    "buy_value": 561000,
+    "sell_value": 112200,
+    "guild_activity_points": 2560,
+    "stats": {
+      "intelligence": 355,
+      "agility": 76,
+      "strength": 76
+    },
+    "hero_level_required": 120,
+    "crafting": {
+      "gold_cost": 1181250,
+      "required_items": {
+        "all-seeing-eye": 2,
+        "key-to-all-doors-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "key-to-all-doors",
+    "created_at": "2024-12-18T19:45:10.669Z"
+  },
+  {
+    "name": "Key to All Doors - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "key-to-all-doors-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "key-to-all-doors-recipe",
+    "created_at": "2024-12-18T19:44:09.235Z"
+  },
+  {
+    "name": "Key to All Doors - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "type": "fragment",
+    "slug": "key-to-all-doors-recipe-fragment",
+    "created_at": "2024-12-18T19:43:30.456Z"
+  },
+  {
+    "name": "La Mort's Map",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "magic attack": 600
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "la-morts-map-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "la-morts-map",
+    "created_at": "2024-12-18T19:46:53.707Z"
+  },
+  {
+    "name": "La Mort's Map (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-9",
+      "10-5",
+      "11-2",
+      "11-4",
+      "13-5"
+    ],
+    "type": "fragment",
+    "slug": "la-morts-map-fragment",
+    "created_at": "2024-12-18T19:46:08.245Z"
+  },
+  {
+    "name": "Light of Distant Stars",
+    "quality": "orange",
+    "buy_value": 577500,
+    "sell_value": 115500,
+    "guild_activity_points": 2480,
+    "stats": {
+      "intelligence": 121,
+      "health": 2560,
+      "magic attack": 1536
+    },
+    "hero_level_required": 115,
+    "crafting": {
+      "gold_cost": 1212750,
+      "required_items": {
+        "sphere-of-power": 1,
+        "oracles-censer": 1,
+        "light-of-distant-stars-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "light-of-distant-stars",
+    "created_at": "2024-12-18T19:56:09.023Z"
+  },
+  {
+    "name": "Light of Distant Stars - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "light-of-distant-stars-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "light-of-distant-stars-recipe",
+    "created_at": "2024-12-18T19:49:40.165Z"
+  },
+  {
+    "name": "Light of Distant Stars - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "13-2",
+      "13-8"
+    ],
+    "type": "fragment",
+    "slug": "light-of-distant-stars-recipe-fragment",
+    "created_at": "2024-12-18T19:49:07.021Z"
+  },
+  {
+    "name": "Lycanthrope's Fang",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "physical attack": 400
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "lycanthropes-fang-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "lycanthropes-fang",
+    "created_at": "2024-12-18T17:53:27.828Z"
+  },
+  {
+    "name": "Lycanthrope's Fang (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-12",
+      "10-2",
+      "11-1",
+      "11-3",
+      "11-14",
+      "13-4"
+    ],
+    "type": "fragment",
+    "slug": "lycanthropes-fang-fragment",
+    "created_at": "2024-12-18T17:52:52.868Z"
+  },
+  {
+    "name": "Oppressor's Crown",
+    "quality": "orange",
+    "buy_value": 495000,
+    "sell_value": 99000,
+    "guild_activity_points": 2240,
+    "stats": {
+      "strength": 174,
+      "health": 2560,
+      "magic attack": 1248
+    },
+    "hero_level_required": 115,
+    "crafting": {
+      "gold_cost": 1055250,
+      "required_items": {
+        "la-morts-map": 1,
+        "harunian-helm": 2,
+        "sphere-of-power": 1,
+        "oppressors-crown-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "oppressors-crown",
+    "created_at": "2024-12-18T19:59:05.119Z"
+  },
+  {
+    "name": "Oppressor's Crown - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "oppressors-crown-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "oppressors-crown-recipe",
+    "created_at": "2024-12-18T19:57:51.886Z"
+  },
+  {
+    "name": "Oppressor's Crown - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "13-6",
+      "13-9"
+    ],
+    "type": "fragment",
+    "slug": "oppressors-crown-recipe-fragment",
+    "created_at": "2024-12-18T19:57:16.615Z"
+  },
+  {
+    "name": "Oracle's Censer",
+    "quality": "orange",
+    "buy_value": 280500,
+    "sell_value": 56100,
+    "guild_activity_points": 1200,
+    "stats": {
+      "intelligence": 152,
+      "magic attack": 960
+    },
+    "hero_level_required": 108,
+    "crafting": {
+      "gold_cost": 535500,
+      "required_items": {
+        "hand-of-glory": 5,
+        "la-morts-map": 2,
+        "oracles-censer-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "oracles-censer",
+    "created_at": "2024-12-18T19:54:33.463Z"
+  },
+  {
+    "name": "Oracle's Censer - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "oracles-censer-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "oracles-censer-recipe",
+    "created_at": "2024-12-18T19:53:11.373Z"
+  },
+  {
+    "name": "Oracle's Censer - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-6",
+      "12-13",
+      "13-1"
+    ],
+    "type": "fragment",
+    "slug": "oracles-censer-recipe-fragment",
+    "created_at": "2024-12-18T19:52:42.623Z"
+  },
+  {
+    "name": "Radiant Armor",
+    "quality": "orange",
+    "buy_value": 268875,
+    "sell_value": 53775,
+    "guild_activity_points": 1200,
+    "stats": {
+      "intelligence": 24,
+      "agility": 24,
+      "strength": 198
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 506250,
+      "required_items": {
+        "trine": 2,
+        "harunian-helm": 2,
+        "radiant-armor-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "radiant-armor",
+    "created_at": "2024-12-18T19:20:38.557Z"
+  },
+  {
+    "name": "Radiant Armor - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "radiant-armor-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "radiant-armor-recipe",
+    "created_at": "2024-12-18T19:09:14.941Z"
+  },
+  {
+    "name": "Radiant Armor - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-6",
+      "12-7",
+      "13-4",
+      "13-11"
+    ],
+    "type": "fragment",
+    "slug": "radiant-armor-recipe-fragment",
+    "created_at": "2024-12-18T19:08:42.826Z"
+  },
+  {
+    "name": "Riversar's Tiara",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "magic defense": 600
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "riversars-tiara-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "riversars-tiara",
+    "created_at": "2024-12-18T20:00:51.582Z"
+  },
+  {
+    "name": "Riversar's Tiara (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-11",
+      "9-15",
+      "11-7",
+      "11-9",
+      "12-5"
+    ],
+    "type": "fragment",
+    "slug": "riversars-tiara-fragment",
+    "created_at": "2024-12-18T20:00:15.752Z"
+  },
+  {
+    "name": "Ruler's Globus",
+    "quality": "orange",
+    "buy_value": 528000,
+    "sell_value": 105600,
+    "guild_activity_points": 2400,
+    "stats": {
+      "health": 5120,
+      "physical attack": 1024
+    },
+    "hero_level_required": 108,
+    "crafting": {
+      "gold_cost": 1008000,
+      "required_items": {
+        "alucards-amulet": 2,
+        "rulers-globus-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "rulers-globus",
+    "created_at": "2024-12-18T20:03:18.592Z"
+  },
+  {
+    "name": "Ruler's Globus - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "rulers-globus-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "rulers-globus-recipe",
+    "created_at": "2024-12-18T20:02:17.777Z"
+  },
+  {
+    "name": "Ruler's Globus - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "11-15",
+      "12-11",
+      "13-10",
+      "13-14"
+    ],
+    "type": "fragment",
+    "slug": "rulers-globus-recipe-fragment",
+    "created_at": "2024-12-18T20:01:44.818Z"
+  },
+  {
+    "name": "Song of the Valkyries",
+    "quality": "orange",
+    "buy_value": 561000,
+    "sell_value": 112200,
+    "guild_activity_points": 2560,
+    "stats": {
+      "intelligence": 76,
+      "agility": 355,
+      "strength": 76
+    },
+    "hero_level_required": 120,
+    "crafting": {
+      "gold_cost": 1181250,
+      "required_items": {
+        "creators-feathering": 2,
+        "song-of-the-valkyries-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "song-of-the-valkyries",
+    "created_at": "2024-12-18T20:06:32.325Z"
+  },
+  {
+    "name": "Song of the Valkyries - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "song-of-the-valkyries-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "song-of-the-valkyries-recipe",
+    "created_at": "2024-12-18T20:05:13.157Z"
+  },
+  {
+    "name": "Song of the Valkyries - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "type": "fragment",
+    "slug": "song-of-the-valkyries-recipe-fragment",
+    "created_at": "2024-12-18T20:04:36.164Z"
+  },
+  {
+    "name": "Sphere of Power",
+    "quality": "orange",
+    "buy_value": 246750,
+    "sell_value": 49350,
+    "guild_activity_points": 1120,
+    "stats": {
+      "health": 3200,
+      "magic attack": 960
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 472500,
+      "required_items": {
+        "flaming-heart": 2,
+        "la-morts-map": 2,
+        "sphere-of-power-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "sphere-of-power",
+    "created_at": "2024-12-18T19:51:48.897Z"
+  },
+  {
+    "name": "Sphere of Power - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "sphere-of-power-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "sphere-of-power-recipe",
+    "created_at": "2024-12-18T19:50:40.461Z"
+  },
+  {
+    "name": "Sphere of Power - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-8",
+      "12-3",
+      "12-11",
+      "13-10"
+    ],
+    "type": "fragment",
+    "slug": "sphere-of-power-recipe-fragment",
+    "created_at": "2024-12-18T19:50:11.766Z"
+  },
+  {
+    "name": "Staff of Neutralization",
+    "quality": "orange",
+    "buy_value": 176250,
+    "sell_value": 35250,
+    "guild_activity_points": 800,
+    "stats": {
+      "magic attack": 480,
+      "magic penetration": 320
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "funeral-totem": 2,
+        "la-morts-map": 1,
+        "staff-of-neutralization-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "staff-of-neutralization",
+    "created_at": "2024-12-18T20:09:17.773Z"
+  },
+  {
+    "name": "Staff of Neutralization - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "staff-of-neutralization-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "staff-of-neutralization-recipe",
+    "created_at": "2024-12-18T20:08:17.500Z"
+  },
+  {
+    "name": "Staff of Neutralization - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-4",
+      "12-5",
+      "12-12",
+      "13-15"
+    ],
+    "type": "fragment",
+    "slug": "staff-of-neutralization-recipe-fragment",
+    "created_at": "2024-12-18T20:07:48.435Z"
+  },
+  {
+    "name": "Staff of Stubbornness",
+    "quality": "orange",
+    "buy_value": 610500,
+    "sell_value": 122100,
+    "guild_activity_points": 2620,
+    "stats": {
+      "physical attack": 774,
+      "critical hit chance": 394
+    },
+    "hero_level_required": 115,
+    "crafting": {
+      "gold_cost": 1275750,
+      "required_items": {
+        "aquants-trident": 1,
+        "dwarven-hardbane": 1,
+        "staff-of-stubbornness-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "staff-of-stubbornness",
+    "created_at": "2024-12-18T20:16:00.666Z"
+  },
+  {
+    "name": "Staff of Stubbornness - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "staff-of-stubbornness-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "staff-of-stubbornness-recipe",
+    "created_at": "2024-12-18T20:10:31.408Z"
+  },
+  {
+    "name": "Staff of Stubbornness - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-10",
+      "12-14"
+    ],
+    "type": "fragment",
+    "slug": "staff-of-stubbornness-recipe-fragment",
+    "created_at": "2024-12-18T20:09:58.023Z"
+  },
+  {
+    "name": "Thieves Guild Sign",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "dodge": 166
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "thieves-guild-sign-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "thieves-guild-sign",
+    "created_at": "2024-12-18T20:17:15.870Z"
+  },
+  {
+    "name": "Thieves Guild Sign (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "9-6",
+      "9-14",
+      "11-12",
+      "11-14",
+      "12-8"
+    ],
+    "type": "fragment",
+    "slug": "thieves-guild-sign-fragment",
+    "created_at": "2024-12-18T20:16:35.793Z"
+  },
+  {
+    "name": "Throwing Knives",
+    "quality": "orange",
+    "buy_value": 66000,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "stats": {
+      "agility": 109
+    },
+    "hero_level_required": 90,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "throwing-knives-fragment": 80
+      }
+    },
+    "type": "equipment",
+    "slug": "throwing-knives",
+    "created_at": "2024-12-18T18:29:47.910Z"
+  },
+  {
+    "name": "Throwing Knives (Fragment)",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-9"
+    ],
+    "type": "fragment",
+    "slug": "throwing-knives-fragment",
+    "created_at": "2024-12-18T18:29:12.940Z"
+  },
+  {
+    "name": "Trickster's Cane",
+    "quality": "orange",
+    "buy_value": 268875,
+    "sell_value": 53775,
+    "guild_activity_points": 1180,
+    "stats": {
+      "health": 4800,
+      "dodge": 228
+    },
+    "hero_level_required": 100,
+    "crafting": {
+      "gold_cost": 506250,
+      "required_items": {
+        "primordial-word": 2,
+        "alchemists-set": 1,
+        "thieves-guild-sign": 1,
+        "tricksters-cane-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "tricksters-cane",
+    "created_at": "2024-12-18T20:20:37.022Z"
+  },
+  {
+    "name": "Trickster's Cane - Recipe",
+    "quality": "orange",
+    "buy_value": 6600,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 180000,
+      "required_items": {
+        "tricksters-cane-recipe-fragment": 80
+      }
+    },
+    "type": "recipe",
+    "slug": "tricksters-cane-recipe",
+    "created_at": "2024-12-18T20:18:58.590Z"
+  },
+  {
+    "name": "Trickster's Cane - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "10-12",
+      "11-10",
+      "13-6",
+      "13-13"
+    ],
+    "type": "fragment",
+    "slug": "tricksters-cane-recipe-fragment",
+    "created_at": "2024-12-18T20:18:21.602Z"
+  },
+  {
+    "name": "Unity of Extremes",
+    "quality": "orange",
+    "buy_value": 825000,
+    "sell_value": 165000,
+    "guild_activity_points": 3680,
+    "stats": {
+      "health": 6656,
+      "physical attack": 1331
+    },
+    "hero_level_required": 115,
+    "crafting": {
+      "gold_cost": 1685250,
+      "required_items": {
+        "alucards-amulet": 1,
+        "rulers-globus": 1,
+        "unity-of-extremes-recipe": 1
+      }
+    },
+    "type": "equipment",
+    "slug": "unity-of-extremes",
+    "created_at": "2024-12-18T20:22:43.460Z"
+  },
+  {
+    "name": "Unity of Extremes - Recipe",
+    "quality": "orange",
+    "buy_value": 0,
+    "sell_value": 13200,
+    "guild_activity_points": 320,
+    "crafting": {
+      "gold_cost": 337500,
+      "required_items": {
+        "unity-of-extremes-recipe-fragment": 150
+      }
+    },
+    "type": "recipe",
+    "slug": "unity-of-extremes-recipe",
+    "created_at": "2024-12-18T20:21:45.059Z"
+  },
+  {
+    "name": "Unity of Extremes - Recipe (Fragment)",
+    "quality": "orange",
+    "buy_value": 750,
+    "sell_value": 150,
+    "guild_activity_points": 4,
+    "campaign_sources": [
+      "12-15",
+      "13-7"
+    ],
+    "type": "fragment",
+    "slug": "unity-of-extremes-recipe-fragment",
+    "created_at": "2024-12-18T20:21:08.502Z"
   }
 ]
