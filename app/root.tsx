@@ -39,9 +39,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const breadcrumbs = matches.filter((match) => match.handle && match.handle.breadcrumb) as UIMatch<
     unknown,
     {
-      breadcrumb?: (
+      breadcrumb: (
         matches: UIMatch<unknown, unknown>
-      ) => { href?: string; title: string } | { href?: string; title: string }[];
+      ) => { href?: string | undefined; title: string } | { href?: string | undefined; title: string }[];
     }
   >[];
 
