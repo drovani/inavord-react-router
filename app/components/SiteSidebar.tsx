@@ -1,21 +1,8 @@
 import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/react-dropdown-menu";
-import {
-  DropletIcon,
-  FileJson2Icon,
-  FileWarningIcon,
-  LoaderCircle,
-  MapIcon,
-  MoreHorizontalIcon,
-  PresentationIcon,
-  ShieldAlertIcon,
-  ShieldIcon,
-  ShieldPlusIcon,
-  ShoppingBagIcon,
-  SwordIcon,
-  UsersIcon
-} from "lucide-react";
+import { LoaderCircle, MoreHorizontalIcon } from "lucide-react";
 import type React from "react";
 import { Link, NavLink } from "react-router";
+import { navigation } from "~/data/navigation";
 import { cn } from "~/lib/utils";
 import { SiteSwitcher } from "./SiteSwitcher";
 import { SiteUser } from "./SiteUser";
@@ -34,60 +21,7 @@ import {
   SidebarRail,
   useSidebar,
 } from "./ui/sidebar";
-const navigation = [
-  { name: "Heroes", icon: UsersIcon },
-  { name: "Titans", icon: SwordIcon },
-  {
-    name: "Equipment",
-    icon: ShieldIcon,
-    href: "/equipment",
-    children: [
-      {
-        name: "Add new",
-        href: "/equipment/new",
-        icon: ShieldPlusIcon,
-      },
-      {
-        name: "Export as JSON",
-        href: "/equipment.json",
-        icon: FileJson2Icon,
-        reloadDocument: true,
-      },
-    ],
-  },
-  {
-    name: "Missions",
-    icon: MapIcon,
-    href: "/missions",
-    children: [
-      {
-        name: "Export as JSON",
-        href: "/missions.json",
-        icon: FileJson2Icon,
-        reloadDocument: true,
-      },
-    ],
-  },
-  { name: "Merchant", icon: ShoppingBagIcon },
-  { name: "Hydras", icon: DropletIcon },
-  {
-    name: "Admin Setup",
-    icon: PresentationIcon,
-    href: "/admin/setup",
-    children: [
-      {
-        name: "Force reload equipment records",
-        href: "/admin/setup?mode=force&data=equipment",
-        icon: ShieldAlertIcon,
-      },
-      {
-        name: "Force reload all records",
-        href: "/admin/setup?mode=force",
-        icon: FileWarningIcon,
-      },
-    ],
-  },
-];
+
 export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isMobile } = useSidebar();
 
@@ -103,7 +37,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
             {navigation.map((item) => (
               <SidebarMenuItem key={item.name} className="">
                 <SidebarMenuButton asChild>
-                  {item.href ? (
+                  {"href" in item ? (
                     <NavLink to={item.href} viewTransition>
                       {({ isPending, isActive }) => (
                         <>
@@ -120,7 +54,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     </div>
                   )}
                 </SidebarMenuButton>
-                {item.children && (
+                {"children" in item && (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <SidebarMenuAction showOnHover>
@@ -138,7 +72,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                           <Link
                             to={subnav.href}
                             className="flex gap-2 items-center text-sm"
-                            reloadDocument={subnav.reloadDocument || false}
+                            reloadDocument={"reloadDocument" in subnav && subnav.reloadDocument}
                             viewTransition
                           >
                             <subnav.icon className="text-muted-foreground w-8" />
