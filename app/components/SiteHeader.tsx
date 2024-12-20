@@ -29,7 +29,6 @@ function SiteHeader({
             <BreadcrumbList>
               {breadcrumbs.map<React.ReactNode>((match, index) => {
                 const result = match.handle.breadcrumb(match);
-                console.debug(result);
                 const crumbs = Array.isArray(result) ? result : [result];
                 const nodes: React.ReactNode[] = [];
                 for (const crumb of crumbs) {

@@ -154,12 +154,12 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           <div className="flex gap-4">
             <div className="text-sm space-y-2">
               <div>Buy Value:</div>
-              <div className="flex items-center gap-2">
+              <div className={`flex items-center gap-2 ${equipment.buy_value_gold === 0 && "opacity-40"}`}>
                 <img src="/images/gold.webp" alt="Gold" className="w-6 h-6" />
                 <span>{equipment.buy_value_gold.toLocaleString()}</span>
               </div>
-              <div className="flex items-center gap-2">
-                <img src="/images/arena-coin.png" alt="Arena Coin" className="w-6 h-6" />
+              <div className={`flex items-center gap-2 ${equipment.buy_value_coin === 0 && "opacity-40"}`}>
+                <img src="/images/arena-coin.png" alt="Arena Coin" className="w-6 h-6 rounded-full" />
                 <span>{equipment.buy_value_coin.toLocaleString()}</span>
               </div>
             </div>

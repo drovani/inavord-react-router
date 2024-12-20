@@ -18,7 +18,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "ashen-bow",
@@ -41,7 +42,8 @@
       "intelligence": 1,
       "agility": 5,
       "strength": 1
-    }
+    },
+    "buy_value_coin": 0
   },
   {
     "slug": "censer",
@@ -61,7 +63,8 @@
       "3-15",
       "4-3",
       "5-4"
-    ]
+    ],
+    "buy_value_coin": 0
   },
   {
     "slug": "crossbow",
@@ -82,7 +85,8 @@
         "orcish-yatagan": 1,
         "lucky-arrow": 1
       }
-    }
+    },
+    "buy_value_coin": 0
   },
   {
     "slug": "dagger",
@@ -103,7 +107,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "giants-belt",
@@ -126,7 +131,8 @@
         "oil-lamp": 1,
         "travellers-shoes": 1
       }
-    }
+    },
+    "buy_value_coin": 0
   },
   {
     "slug": "imperial-shield",
@@ -146,7 +152,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "lucky-arrow",
@@ -166,7 +173,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "lucky-dice",
@@ -187,7 +195,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "oil-lamp",
@@ -207,7 +216,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "orcish-hammer",
@@ -228,7 +238,8 @@
         "imperial-shield": 1,
         "dagger": 1
       }
-    }
+    },
+    "buy_value_coin": 0
   },
   {
     "slug": "orcish-knuckles",
@@ -248,7 +259,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "orcish-yatagan",
@@ -268,7 +280,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "quiver",
@@ -288,7 +301,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "sledgehammer",
@@ -311,7 +325,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "steel-pauldron",
@@ -332,7 +347,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "travellers-shoes",
@@ -353,7 +369,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "travellers-staff",
@@ -375,7 +392,8 @@
     ],
     "buy_value_gold": 1250,
     "sell_value": 250,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "slug": "wizards-staff",
@@ -396,7 +414,8 @@
         "apprentices-mantle": 2,
         "censer": 1
       }
-    }
+    },
+    "buy_value_coin": 0
   },
   {
     "slug": "wooden-shield",
@@ -416,7 +435,8 @@
     ],
     "buy_value_gold": 1000,
     "sell_value": 200,
-    "guild_activity_points": 2
+    "guild_activity_points": 2,
+    "buy_value_coin": 0
   },
   {
     "name": "Ancient Amulet",
@@ -439,7 +459,8 @@
       }
     },
     "slug": "ancient-amulet",
-    "created_at": "2024-11-09T01:43:17.749Z"
+    "created_at": "2024-11-09T01:43:17.749Z",
+    "buy_value_coin": 0
   },
   {
     "slug": "band-of-enlightenment",
@@ -460,7 +481,8 @@
     ],
     "buy_value_gold": 1500,
     "sell_value": 300,
-    "guild_activity_points": 3
+    "guild_activity_points": 3,
+    "buy_value_coin": 0
   },
   {
     "name": "Branch of Antiaris",
@@ -481,7 +503,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "branch-of-antiaris",
-    "created_at": "2024-11-09T01:39:11.794Z"
+    "created_at": "2024-11-09T01:39:11.794Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Brothers",
@@ -503,7 +526,8 @@
       }
     },
     "slug": "brothers",
-    "created_at": "2024-11-09T01:57:37.950Z"
+    "created_at": "2024-11-09T01:57:37.950Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Brothers (Fragment)",
@@ -520,7 +544,8 @@
     "guild_activity_points": 2,
     "slug": "brothers-fragment",
     "created_at": "2024-11-09T01:47:39.508Z",
-    "type": "fragment"
+    "type": "fragment",
+    "buy_value_coin": 0
   },
   {
     "name": "Cain's Seal",
@@ -541,7 +566,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cains-seal",
-    "created_at": "2024-11-09T01:59:31.614Z"
+    "created_at": "2024-11-09T01:59:31.614Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Cuirass",
@@ -562,7 +588,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cuirass",
-    "created_at": "2024-11-09T02:00:42.602Z"
+    "created_at": "2024-11-09T02:00:42.602Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Cursed Dagger",
@@ -582,7 +609,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cursed-dagger",
-    "created_at": "2024-11-09T02:01:45.253Z"
+    "created_at": "2024-11-09T02:01:45.253Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dawnguard",
@@ -603,7 +631,8 @@
       }
     },
     "slug": "dawnguard",
-    "created_at": "2024-11-09T02:02:59.409Z"
+    "created_at": "2024-11-09T02:02:59.409Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dawnguard (Fragment)",
@@ -620,7 +649,8 @@
     "guild_activity_points": 2,
     "slug": "dawnguard-fragment",
     "created_at": "2024-11-09T02:04:51.453Z",
-    "type": "fragment"
+    "type": "fragment",
+    "buy_value_coin": 0
   },
   {
     "name": "Elven Armor",
@@ -642,7 +672,8 @@
       }
     },
     "slug": "elven-armor",
-    "created_at": "2024-12-09T23:00:48.797Z"
+    "created_at": "2024-12-09T23:00:48.797Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Elven Bow",
@@ -665,7 +696,8 @@
       }
     },
     "slug": "elven-bow",
-    "created_at": "2024-12-09T23:01:55.574Z"
+    "created_at": "2024-12-09T23:01:55.574Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Elven Saber",
@@ -687,7 +719,8 @@
       }
     },
     "slug": "elven-saber",
-    "created_at": "2024-12-09T23:06:31.789Z"
+    "created_at": "2024-12-09T23:06:31.789Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Enchanter's Staff",
@@ -710,7 +743,8 @@
       }
     },
     "slug": "enchanters-staff",
-    "created_at": "2024-12-09T23:07:32.661Z"
+    "created_at": "2024-12-09T23:07:32.661Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Fire Sword",
@@ -732,7 +766,8 @@
     },
     "hero_level_required": 10,
     "slug": "fire-sword",
-    "created_at": "2024-12-09T23:05:38.500Z"
+    "created_at": "2024-12-09T23:05:38.500Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Guardian's Shield",
@@ -754,7 +789,8 @@
     },
     "hero_level_required": 10,
     "slug": "guardians-shield",
-    "created_at": "2024-12-10T02:00:57.762Z"
+    "created_at": "2024-12-10T02:00:57.762Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Infernal Messenger",
@@ -776,7 +812,8 @@
     },
     "type": "equipment",
     "slug": "infernal-messenger",
-    "created_at": "2024-12-12T03:27:18.836Z"
+    "created_at": "2024-12-12T03:27:18.836Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Light Crystal",
@@ -797,7 +834,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "light-crystal",
-    "created_at": "2024-11-09T01:40:30.135Z"
+    "created_at": "2024-11-09T01:40:30.135Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Lost Ring",
@@ -819,7 +857,8 @@
     ],
     "type": "equipment",
     "slug": "lost-ring",
-    "created_at": "2024-12-12T03:29:01.917Z"
+    "created_at": "2024-12-12T03:29:01.917Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Midnight Crystal",
@@ -841,7 +880,8 @@
     ],
     "type": "equipment",
     "slug": "midnight-crystal",
-    "created_at": "2024-12-12T03:30:29.786Z"
+    "created_at": "2024-12-12T03:30:29.786Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Poleaxe",
@@ -864,7 +904,8 @@
     },
     "type": "equipment",
     "slug": "poleaxe",
-    "created_at": "2024-12-12T03:34:06.979Z"
+    "created_at": "2024-12-12T03:34:06.979Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Poleaxe - Recipe",
@@ -880,7 +921,8 @@
     ],
     "type": "recipe",
     "slug": "poleaxe-recipe",
-    "created_at": "2024-12-12T03:32:27.352Z"
+    "created_at": "2024-12-12T03:32:27.352Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Portal Key",
@@ -902,7 +944,8 @@
     },
     "type": "equipment",
     "slug": "portal-key",
-    "created_at": "2024-12-12T03:35:07.523Z"
+    "created_at": "2024-12-12T03:35:07.523Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Reaper",
@@ -924,7 +967,8 @@
     ],
     "type": "equipment",
     "slug": "reaper",
-    "created_at": "2024-12-12T03:26:09.480Z"
+    "created_at": "2024-12-12T03:26:09.480Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Screaming Blade",
@@ -947,7 +991,8 @@
     },
     "type": "equipment",
     "slug": "screaming-blade",
-    "created_at": "2024-12-12T03:37:01.982Z"
+    "created_at": "2024-12-12T03:37:01.982Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Screaming Blade - Recipe",
@@ -963,7 +1008,8 @@
     ],
     "type": "recipe",
     "slug": "screaming-blade-recipe",
-    "created_at": "2024-12-12T03:35:52.728Z"
+    "created_at": "2024-12-12T03:35:52.728Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Shining Armor",
@@ -985,7 +1031,8 @@
     },
     "type": "equipment",
     "slug": "shining-armor",
-    "created_at": "2024-12-12T03:57:29.814Z"
+    "created_at": "2024-12-12T03:57:29.814Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Silent Guardian",
@@ -1007,7 +1054,8 @@
     },
     "type": "equipment",
     "slug": "silent-guardian",
-    "created_at": "2024-12-12T03:59:41.681Z"
+    "created_at": "2024-12-12T03:59:41.681Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Skull Crusher",
@@ -1029,7 +1077,8 @@
     },
     "type": "equipment",
     "slug": "skull-crusher",
-    "created_at": "2024-12-12T04:03:29.094Z"
+    "created_at": "2024-12-12T04:03:29.094Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Skull Crusher (Fragment)",
@@ -1047,7 +1096,8 @@
     ],
     "type": "fragment",
     "slug": "skull-crusher-fragment",
-    "created_at": "2024-12-12T04:02:18.143Z"
+    "created_at": "2024-12-12T04:02:18.143Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Soul Catcher",
@@ -1070,7 +1120,8 @@
     },
     "type": "equipment",
     "slug": "soul-catcher",
-    "created_at": "2024-12-12T04:06:58.083Z"
+    "created_at": "2024-12-12T04:06:58.083Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Soul Catcher - Recipe",
@@ -1086,7 +1137,8 @@
     ],
     "type": "recipe",
     "slug": "soul-catcher-recipe",
-    "created_at": "2024-12-12T04:05:40.413Z"
+    "created_at": "2024-12-12T04:05:40.413Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Spear of Thunder",
@@ -1108,7 +1160,8 @@
     },
     "type": "equipment",
     "slug": "spear-of-thunder",
-    "created_at": "2024-12-12T04:12:45.981Z"
+    "created_at": "2024-12-12T04:12:45.981Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sword of Storms",
@@ -1130,7 +1183,8 @@
     },
     "type": "equipment",
     "slug": "sword-of-storms",
-    "created_at": "2024-12-12T04:16:24.557Z"
+    "created_at": "2024-12-12T04:16:24.557Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sword of Storms (Fragment)",
@@ -1148,7 +1202,8 @@
     ],
     "type": "fragment",
     "slug": "sword-of-storms-fragment",
-    "created_at": "2024-12-12T04:14:55.873Z"
+    "created_at": "2024-12-12T04:14:55.873Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Tracker's Boots",
@@ -1169,7 +1224,8 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "trackers-boots",
-    "created_at": "2024-11-09T01:41:30.658Z"
+    "created_at": "2024-11-09T01:41:30.658Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Traitor's Shield",
@@ -1192,7 +1248,8 @@
     },
     "type": "equipment",
     "slug": "traitors-shield",
-    "created_at": "2024-12-12T04:19:48.133Z"
+    "created_at": "2024-12-12T04:19:48.133Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Traitor's Shield - Recipe",
@@ -1208,7 +1265,8 @@
     ],
     "type": "recipe",
     "slug": "traitors-shield-recipe",
-    "created_at": "2024-12-12T04:18:39.987Z"
+    "created_at": "2024-12-12T04:18:39.987Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Veil of Fog",
@@ -1230,7 +1288,8 @@
     },
     "type": "equipment",
     "slug": "veil-of-fog",
-    "created_at": "2024-12-12T04:20:42.119Z"
+    "created_at": "2024-12-12T04:20:42.119Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Victor's Helmet",
@@ -1252,7 +1311,8 @@
     },
     "type": "equipment",
     "slug": "victors-helmet",
-    "created_at": "2024-12-12T04:21:31.240Z"
+    "created_at": "2024-12-12T04:21:31.240Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Voodoo Doll",
@@ -1275,7 +1335,8 @@
     },
     "type": "equipment",
     "slug": "voodoo-doll",
-    "created_at": "2024-12-12T04:23:29.630Z"
+    "created_at": "2024-12-12T04:23:29.630Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Voodoo Doll - Recipe",
@@ -1291,7 +1352,8 @@
     ],
     "type": "recipe",
     "slug": "voodoo-doll-recipe",
-    "created_at": "2024-12-12T04:22:32.543Z"
+    "created_at": "2024-12-12T04:22:32.543Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Wall-Breaker",
@@ -1314,7 +1376,8 @@
     },
     "type": "equipment",
     "slug": "wall-breaker",
-    "created_at": "2024-12-12T04:24:31.396Z"
+    "created_at": "2024-12-12T04:24:31.396Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Wizard's Tiara",
@@ -1336,7 +1399,8 @@
     },
     "type": "equipment",
     "slug": "wizards-tiara",
-    "created_at": "2024-12-12T04:25:48.729Z"
+    "created_at": "2024-12-12T04:25:48.729Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Branch of the World Tree",
@@ -1358,7 +1422,8 @@
     },
     "type": "equipment",
     "slug": "branch-of-the-world-tree",
-    "created_at": "2024-12-13T01:31:25.732Z"
+    "created_at": "2024-12-13T01:31:25.732Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Dark Grail",
@@ -1380,7 +1445,8 @@
     },
     "type": "equipment",
     "slug": "dark-grail",
-    "created_at": "2024-12-13T01:34:16.210Z"
+    "created_at": "2024-12-13T01:34:16.210Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Dragonslayer's Spear",
@@ -1405,7 +1471,8 @@
     },
     "type": "equipment",
     "slug": "dragonslayers-spear",
-    "created_at": "2024-12-13T01:38:41.146Z"
+    "created_at": "2024-12-13T01:38:41.146Z",
+    "buy_value_coin": 1007
   },
   {
     "name": "Dragonslayer's Spear - Recipe",
@@ -1421,7 +1488,8 @@
     },
     "type": "recipe",
     "slug": "dragonslayers-spear-recipe",
-    "created_at": "2024-12-13T01:37:09.905Z"
+    "created_at": "2024-12-13T01:37:09.905Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Dragonslayer's Spear - Recipe (Fragment)",
@@ -1438,7 +1506,8 @@
     ],
     "type": "fragment",
     "slug": "dragonslayers-spear-recipe-fragment",
-    "created_at": "2024-12-13T01:35:48.684Z"
+    "created_at": "2024-12-13T01:35:48.684Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Elven Shield",
@@ -1460,7 +1529,8 @@
     },
     "type": "equipment",
     "slug": "elven-shield",
-    "created_at": "2024-12-13T01:50:18.762Z"
+    "created_at": "2024-12-13T01:50:18.762Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Enchanted Lute",
@@ -1480,7 +1550,8 @@
     },
     "type": "equipment",
     "slug": "enchanted-lute",
-    "created_at": "2024-12-13T01:33:21.168Z"
+    "created_at": "2024-12-13T01:33:21.168Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Enchanted Lute (Fragment)",
@@ -1497,7 +1568,8 @@
     ],
     "type": "fragment",
     "slug": "enchanted-lute-fragment",
-    "created_at": "2024-12-13T01:32:38.270Z"
+    "created_at": "2024-12-13T01:32:38.270Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Folding Crossbow",
@@ -1521,7 +1593,8 @@
     },
     "type": "equipment",
     "slug": "folding-crossbow",
-    "created_at": "2024-12-13T01:58:21.556Z"
+    "created_at": "2024-12-13T01:58:21.556Z",
+    "buy_value_coin": 883
   },
   {
     "name": "Folding Crossbow - Recipe",
@@ -1537,7 +1610,8 @@
     },
     "type": "recipe",
     "slug": "folding-crossbow-recipe",
-    "created_at": "2024-12-13T01:57:22.852Z"
+    "created_at": "2024-12-13T01:57:22.852Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Folding Crossbow - Recipe (Fragment)",
@@ -1554,7 +1628,8 @@
     ],
     "type": "fragment",
     "slug": "folding-crossbow-recipe-fragment",
-    "created_at": "2024-12-13T01:54:36.159Z"
+    "created_at": "2024-12-13T01:54:36.159Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Ghostly Blade",
@@ -1576,7 +1651,8 @@
     },
     "type": "equipment",
     "slug": "ghostly-blade",
-    "created_at": "2024-12-13T01:53:38.070Z"
+    "created_at": "2024-12-13T01:53:38.070Z",
+    "buy_value_coin": 273
   },
   {
     "name": "Globus Cruciger",
@@ -1600,7 +1676,8 @@
     },
     "type": "equipment",
     "slug": "globus-cruciger",
-    "created_at": "2024-12-13T02:03:19.685Z"
+    "created_at": "2024-12-13T02:03:19.685Z",
+    "buy_value_coin": 1287
   },
   {
     "name": "Hand of Midas",
@@ -1625,7 +1702,8 @@
     },
     "type": "equipment",
     "slug": "hand-of-midas",
-    "created_at": "2024-12-13T02:06:03.155Z"
+    "created_at": "2024-12-13T02:06:03.155Z",
+    "buy_value_coin": 1007
   },
   {
     "name": "Hand of Midas - Recipe",
@@ -1641,7 +1719,8 @@
     },
     "type": "recipe",
     "slug": "hand-of-midas-recipe",
-    "created_at": "2024-12-13T02:05:04.121Z"
+    "created_at": "2024-12-13T02:05:04.121Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Hand of Midas - Recipe (Fragment)",
@@ -1659,7 +1738,8 @@
     ],
     "type": "fragment",
     "slug": "hand-of-midas-recipe-fragment",
-    "created_at": "2024-12-13T02:04:28.685Z"
+    "created_at": "2024-12-13T02:04:28.685Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Hunter",
@@ -1681,7 +1761,8 @@
     },
     "type": "equipment",
     "slug": "hunter",
-    "created_at": "2024-12-13T02:06:56.428Z"
+    "created_at": "2024-12-13T02:06:56.428Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Lion Armor",
@@ -1705,7 +1786,8 @@
     },
     "type": "equipment",
     "slug": "lion-armor",
-    "created_at": "2024-12-13T02:11:02.074Z"
+    "created_at": "2024-12-13T02:11:02.074Z",
+    "buy_value_coin": 933
   },
   {
     "name": "Lion Armor - Recipe",
@@ -1721,7 +1803,8 @@
     },
     "type": "recipe",
     "slug": "lion-armor-recipe",
-    "created_at": "2024-12-13T02:09:55.362Z"
+    "created_at": "2024-12-13T02:09:55.362Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Lion Armor - Recipe (Fragment)",
@@ -1738,7 +1821,8 @@
     ],
     "type": "fragment",
     "slug": "lion-armor-recipe-fragment",
-    "created_at": "2024-12-13T02:09:27.408Z"
+    "created_at": "2024-12-13T02:09:27.408Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Magic Hat",
@@ -1760,7 +1844,8 @@
     },
     "type": "equipment",
     "slug": "magic-hat",
-    "created_at": "2024-12-13T02:01:05.402Z"
+    "created_at": "2024-12-13T02:01:05.402Z",
+    "buy_value_coin": 396
   },
   {
     "name": "Magic Hat (Fragment)",
@@ -1778,7 +1863,8 @@
     ],
     "type": "fragment",
     "slug": "magic-hat-fragment",
-    "created_at": "2024-12-13T02:00:21.517Z"
+    "created_at": "2024-12-13T02:00:21.517Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Needle",
@@ -1798,7 +1884,8 @@
     },
     "type": "equipment",
     "slug": "needle",
-    "created_at": "2024-12-13T01:43:25.384Z"
+    "created_at": "2024-12-13T01:43:25.384Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Needle (Fragment)",
@@ -1818,7 +1905,8 @@
     ],
     "type": "fragment",
     "slug": "needle-fragment",
-    "created_at": "2024-12-13T01:42:46.556Z"
+    "created_at": "2024-12-13T01:42:46.556Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Portal Gem",
@@ -1838,7 +1926,8 @@
     },
     "type": "equipment",
     "slug": "portal-gem",
-    "created_at": "2024-12-13T01:20:49.844Z"
+    "created_at": "2024-12-13T01:20:49.844Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Portal Gem (Fragment)",
@@ -1857,7 +1946,8 @@
     ],
     "type": "fragment",
     "slug": "portal-gem-fragment",
-    "created_at": "2024-12-13T01:19:22.637Z"
+    "created_at": "2024-12-13T01:19:22.637Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Prince of Thieves' Armor",
@@ -1881,7 +1971,8 @@
     },
     "type": "equipment",
     "slug": "prince-of-thieves-armor",
-    "created_at": "2024-12-15T04:01:19.161Z"
+    "created_at": "2024-12-15T04:01:19.161Z",
+    "buy_value_coin": 883
   },
   {
     "name": "Prince of Thieves' Armor - Recipe",
@@ -1897,7 +1988,8 @@
     },
     "type": "recipe",
     "slug": "prince-of-thieves-armor-recipe",
-    "created_at": "2024-12-15T04:00:04.163Z"
+    "created_at": "2024-12-15T04:00:04.163Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Prince of Thieves' Armor - Recipe (Fragment)",
@@ -1914,7 +2006,8 @@
     ],
     "type": "fragment",
     "slug": "prince-of-thieves-armor-recipe-fragment",
-    "created_at": "2024-12-15T03:59:18.631Z"
+    "created_at": "2024-12-15T03:59:18.631Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Prospero's Helmet",
@@ -1936,7 +2029,8 @@
     },
     "type": "equipment",
     "slug": "prosperos-helmet",
-    "created_at": "2024-12-13T02:08:07.091Z"
+    "created_at": "2024-12-13T02:08:07.091Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Punishing Hand",
@@ -1958,7 +2052,8 @@
     },
     "type": "equipment",
     "slug": "punishing-hand",
-    "created_at": "2024-12-13T02:12:14.821Z"
+    "created_at": "2024-12-13T02:12:14.821Z",
+    "buy_value_coin": 273
   },
   {
     "name": "Raven King's Cloak",
@@ -1980,7 +2075,8 @@
     },
     "type": "equipment",
     "slug": "raven-kings-cloak",
-    "created_at": "2024-12-13T02:13:00.992Z"
+    "created_at": "2024-12-13T02:13:00.992Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Sacred Rosary",
@@ -2000,7 +2096,8 @@
     },
     "type": "equipment",
     "slug": "sacred-rosary",
-    "created_at": "2024-12-13T01:49:12.242Z"
+    "created_at": "2024-12-13T01:49:12.242Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Sacred Rosary (Fragment)",
@@ -2019,7 +2116,8 @@
     ],
     "type": "fragment",
     "slug": "sacred-rosary-fragment",
-    "created_at": "2024-12-13T01:48:33.103Z"
+    "created_at": "2024-12-13T01:48:33.103Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sacrificial Dagger",
@@ -2039,7 +2137,8 @@
     },
     "type": "equipment",
     "slug": "sacrificial-dagger",
-    "created_at": "2024-12-13T02:14:56.522Z"
+    "created_at": "2024-12-13T02:14:56.522Z",
+    "buy_value_coin": 396
   },
   {
     "name": "Sacrificial Dagger (Fragment)",
@@ -2056,7 +2155,8 @@
     ],
     "type": "fragment",
     "slug": "sacrificial-dagger-fragment",
-    "created_at": "2024-12-13T02:13:58.369Z"
+    "created_at": "2024-12-13T02:13:58.369Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sage's Crown",
@@ -2081,7 +2181,8 @@
     },
     "type": "equipment",
     "slug": "sages-crown",
-    "created_at": "2024-12-13T15:29:04.839Z"
+    "created_at": "2024-12-13T15:29:04.839Z",
+    "buy_value_coin": 1007
   },
   {
     "name": "Sage's Crown - Recipe",
@@ -2097,7 +2198,8 @@
     },
     "type": "recipe",
     "slug": "sages-crown-recipe",
-    "created_at": "2024-12-13T15:28:01.548Z"
+    "created_at": "2024-12-13T15:28:01.548Z",
+    "buy_value_coin": 363
   },
   {
     "name": "Sage's Crown - Recipe (Fragment)",
@@ -2115,7 +2217,8 @@
     ],
     "type": "fragment",
     "slug": "sages-crown-recipe-fragment",
-    "created_at": "2024-12-13T15:26:59.103Z"
+    "created_at": "2024-12-13T15:26:59.103Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Scorching Quiver",
@@ -2137,7 +2240,8 @@
     },
     "type": "equipment",
     "slug": "scorching-quiver",
-    "created_at": "2024-12-13T01:41:18.743Z"
+    "created_at": "2024-12-13T01:41:18.743Z",
+    "buy_value_coin": 396
   },
   {
     "name": "Scorching Quiver (Fragment)",
@@ -2155,7 +2259,8 @@
     ],
     "type": "fragment",
     "slug": "scorching-quiver-fragment",
-    "created_at": "2024-12-13T01:40:04.926Z"
+    "created_at": "2024-12-13T01:40:04.926Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Serenity Stone",
@@ -2175,7 +2280,8 @@
     },
     "type": "equipment",
     "slug": "serenity-stone",
-    "created_at": "2024-12-13T01:47:29.072Z"
+    "created_at": "2024-12-13T01:47:29.072Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Serenity Stone (Fragment)",
@@ -2194,7 +2300,8 @@
     ],
     "type": "fragment",
     "slug": "serenity-stone-fragment",
-    "created_at": "2024-12-13T01:46:42.047Z"
+    "created_at": "2024-12-13T01:46:42.047Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Splitter",
@@ -2214,7 +2321,8 @@
     },
     "type": "equipment",
     "slug": "splitter",
-    "created_at": "2024-12-13T01:52:47.115Z"
+    "created_at": "2024-12-13T01:52:47.115Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Splitter (Fragment)",
@@ -2233,7 +2341,8 @@
     ],
     "type": "fragment",
     "slug": "splitter-fragment",
-    "created_at": "2024-12-13T01:52:00.251Z"
+    "created_at": "2024-12-13T01:52:00.251Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Storm Hammer",
@@ -2255,7 +2364,8 @@
     },
     "type": "equipment",
     "slug": "storm-hammer",
-    "created_at": "2024-12-13T02:02:32.303Z"
+    "created_at": "2024-12-13T02:02:32.303Z",
+    "buy_value_coin": 396
   },
   {
     "name": "Storm Hammer (Fragment)",
@@ -2273,7 +2383,8 @@
     ],
     "type": "fragment",
     "slug": "storm-hammer-fragment",
-    "created_at": "2024-12-13T02:01:45.991Z"
+    "created_at": "2024-12-13T02:01:45.991Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Thunderfoot Boots",
@@ -2295,7 +2406,8 @@
     },
     "type": "equipment",
     "slug": "thunderfoot-boots",
-    "created_at": "2024-12-13T15:38:35.615Z"
+    "created_at": "2024-12-13T15:38:35.615Z",
+    "buy_value_coin": 322
   },
   {
     "name": "Tracker's Shield",
@@ -2317,7 +2429,8 @@
     },
     "type": "equipment",
     "slug": "trackers-shield",
-    "created_at": "2024-12-13T15:39:28.627Z"
+    "created_at": "2024-12-13T15:39:28.627Z",
+    "buy_value_coin": 273
   },
   {
     "name": "Voodoo Staff",
@@ -2339,7 +2452,8 @@
     },
     "type": "equipment",
     "slug": "voodoo-staff",
-    "created_at": "2024-12-13T15:41:14.718Z"
+    "created_at": "2024-12-13T15:41:14.718Z",
+    "buy_value_coin": 273
   },
   {
     "name": "Wyvern's Heart",
@@ -2359,7 +2473,8 @@
     },
     "type": "equipment",
     "slug": "wyverns-heart",
-    "created_at": "2024-12-13T01:17:49.702Z"
+    "created_at": "2024-12-13T01:17:49.702Z",
+    "buy_value_coin": 149
   },
   {
     "name": "Wyvern's Heart (Fragment)",
@@ -2376,7 +2491,8 @@
     ],
     "type": "fragment",
     "slug": "wyverns-heart-fragment",
-    "created_at": "2024-12-13T01:01:21.589Z"
+    "created_at": "2024-12-13T01:01:21.589Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Advisor",
@@ -2396,7 +2512,8 @@
     },
     "type": "equipment",
     "slug": "advisor",
-    "created_at": "2024-12-13T16:20:07.097Z"
+    "created_at": "2024-12-13T16:20:07.097Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Advisor (Fragment)",
@@ -2412,7 +2529,8 @@
     ],
     "type": "fragment",
     "slug": "advisor-fragment",
-    "created_at": "2024-12-13T16:13:35.945Z"
+    "created_at": "2024-12-13T16:13:35.945Z",
+    "buy_value_coin": 0
   },
   {
     "name": "All-seer",
@@ -2436,7 +2554,8 @@
     },
     "type": "equipment",
     "slug": "all-seer",
-    "created_at": "2024-12-15T04:04:53.897Z"
+    "created_at": "2024-12-15T04:04:53.897Z",
+    "buy_value_coin": 6525
   },
   {
     "name": "Angel's Mace",
@@ -2458,7 +2577,8 @@
     },
     "type": "equipment",
     "slug": "angels-mace",
-    "created_at": "2024-12-15T04:08:32.144Z"
+    "created_at": "2024-12-15T04:08:32.144Z",
+    "buy_value_coin": 15150
   },
   {
     "name": "Angel's Mace - Recipe",
@@ -2474,7 +2594,8 @@
     },
     "type": "recipe",
     "slug": "angels-mace-recipe",
-    "created_at": "2024-12-15T04:07:08.678Z"
+    "created_at": "2024-12-15T04:07:08.678Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Angel's Mace - Recipe (Fragment)",
@@ -2489,7 +2610,8 @@
     ],
     "type": "fragment",
     "slug": "angels-mace-recipe-fragment",
-    "created_at": "2024-12-15T04:06:27.480Z"
+    "created_at": "2024-12-15T04:06:27.480Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Apostle's Mace",
@@ -2511,7 +2633,8 @@
     },
     "type": "equipment",
     "slug": "apostles-mace",
-    "created_at": "2024-12-15T04:12:03.639Z"
+    "created_at": "2024-12-15T04:12:03.639Z",
+    "buy_value_coin": 6525
   },
   {
     "name": "Archangel's Mace",
@@ -2533,7 +2656,8 @@
     },
     "type": "equipment",
     "slug": "archangels-mace",
-    "created_at": "2024-12-15T04:16:02.982Z"
+    "created_at": "2024-12-15T04:16:02.982Z",
+    "buy_value_coin": 34325
   },
   {
     "name": "Archangel's Mace - Recipe",
@@ -2549,7 +2673,8 @@
     },
     "type": "recipe",
     "slug": "archangels-mace-recipe",
-    "created_at": "2024-12-15T04:15:02.826Z"
+    "created_at": "2024-12-15T04:15:02.826Z",
+    "buy_value_coin": 4125
   },
   {
     "name": "Archangel's Mace - Recipe (Fragment)",
@@ -2565,7 +2690,8 @@
     ],
     "type": "fragment",
     "slug": "archangels-mace-recipe-fragment",
-    "created_at": "2024-12-15T04:13:47.386Z"
+    "created_at": "2024-12-15T04:13:47.386Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Blade Bow",
@@ -2587,7 +2713,8 @@
     },
     "type": "equipment",
     "slug": "blade-bow",
-    "created_at": "2024-12-15T04:18:59.853Z"
+    "created_at": "2024-12-15T04:18:59.853Z",
+    "buy_value_coin": 3600
   },
   {
     "name": "Book of Fate",
@@ -2609,7 +2736,8 @@
     },
     "type": "equipment",
     "slug": "book-of-fate",
-    "created_at": "2024-12-15T04:28:45.788Z"
+    "created_at": "2024-12-15T04:28:45.788Z",
+    "buy_value_coin": 29825
   },
   {
     "name": "Book of Fate - Recipe",
@@ -2625,7 +2753,8 @@
     },
     "type": "recipe",
     "slug": "book-of-fate-recipe",
-    "created_at": "2024-12-15T04:22:03.299Z"
+    "created_at": "2024-12-15T04:22:03.299Z",
+    "buy_value_coin": 4125
   },
   {
     "name": "Book of Fate - Recipe (Fragment)",
@@ -2641,7 +2770,8 @@
     ],
     "type": "fragment",
     "slug": "book-of-fate-recipe-fragment",
-    "created_at": "2024-12-15T04:21:03.695Z"
+    "created_at": "2024-12-15T04:21:03.695Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Book of Prophecies",
@@ -2663,7 +2793,8 @@
     },
     "type": "equipment",
     "slug": "book-of-prophecies",
-    "created_at": "2024-12-15T04:27:04.739Z"
+    "created_at": "2024-12-15T04:27:04.739Z",
+    "buy_value_coin": 12900
   },
   {
     "name": "Book of Prophecies - Recipe",
@@ -2679,7 +2810,8 @@
     },
     "type": "recipe",
     "slug": "book-of-prophecies-recipe",
-    "created_at": "2024-12-15T04:23:24.036Z"
+    "created_at": "2024-12-15T04:23:24.036Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Book of Prophecies - Recipe (Fragment)",
@@ -2697,7 +2829,8 @@
     ],
     "type": "fragment",
     "slug": "book-of-prophecies-recipe-fragment",
-    "created_at": "2024-12-15T04:22:47.531Z"
+    "created_at": "2024-12-15T04:22:47.531Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Book of Tales",
@@ -2719,7 +2852,8 @@
     },
     "type": "equipment",
     "slug": "book-of-tales",
-    "created_at": "2024-12-15T04:26:00.387Z"
+    "created_at": "2024-12-15T04:26:00.387Z",
+    "buy_value_coin": 5400
   },
   {
     "name": "Cosmic Tremor",
@@ -2742,7 +2876,8 @@
     },
     "type": "equipment",
     "slug": "cosmic-tremor",
-    "created_at": "2024-12-15T04:38:19.062Z"
+    "created_at": "2024-12-15T04:38:19.062Z",
+    "buy_value_coin": 22325
   },
   {
     "name": "Cosmic Tremor - Recipe",
@@ -2758,7 +2893,8 @@
     },
     "type": "recipe",
     "slug": "cosmic-tremor-recipe",
-    "created_at": "2024-12-15T04:31:44.569Z"
+    "created_at": "2024-12-15T04:31:44.569Z",
+    "buy_value_coin": 4125
   },
   {
     "name": "Cosmic Tremor - Recipe (Fragment)",
@@ -2775,7 +2911,8 @@
     ],
     "type": "fragment",
     "slug": "cosmic-tremor-recipe-fragment",
-    "created_at": "2024-12-15T04:31:19.903Z"
+    "created_at": "2024-12-15T04:31:19.903Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Desert Blade",
@@ -2795,7 +2932,8 @@
     },
     "type": "equipment",
     "slug": "desert-blade",
-    "created_at": "2024-12-15T04:18:19.804Z"
+    "created_at": "2024-12-15T04:18:19.804Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Desert Blade (Fragment)",
@@ -2812,7 +2950,8 @@
     ],
     "type": "fragment",
     "slug": "desert-blade-fragment",
-    "created_at": "2024-12-15T04:17:38.265Z"
+    "created_at": "2024-12-15T04:17:38.265Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Diviner's Orb",
@@ -2836,7 +2975,8 @@
     },
     "type": "equipment",
     "slug": "diviners-orb",
-    "created_at": "2024-12-15T04:48:45.300Z"
+    "created_at": "2024-12-15T04:48:45.300Z",
+    "buy_value_coin": 9150
   },
   {
     "name": "Diviner's Orb - Recipe",
@@ -2852,7 +2992,8 @@
     },
     "type": "recipe",
     "slug": "diviners-orb-recipe",
-    "created_at": "2024-12-15T04:47:51.178Z"
+    "created_at": "2024-12-15T04:47:51.178Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Diviner's Orb - Recipe (Fragment)",
@@ -2867,7 +3008,8 @@
     ],
     "type": "fragment",
     "slug": "diviners-orb-recipe-fragment",
-    "created_at": "2024-12-15T04:41:17.011Z"
+    "created_at": "2024-12-15T04:41:17.011Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dragon Shield",
@@ -2888,7 +3030,8 @@
     },
     "type": "equipment",
     "slug": "dragon-shield",
-    "created_at": "2024-12-15T04:51:15.949Z"
+    "created_at": "2024-12-15T04:51:15.949Z",
+    "buy_value_coin": 2700
   },
   {
     "name": "Dragon Shield - Recipe",
@@ -2904,7 +3047,8 @@
     },
     "type": "recipe",
     "slug": "dragon-shield-recipe",
-    "created_at": "2024-12-15T04:50:11.666Z"
+    "created_at": "2024-12-15T04:50:11.666Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Dragon Shield - Recipe (Fragment)",
@@ -2920,7 +3064,8 @@
     ],
     "type": "fragment",
     "slug": "dragon-shield-recipe-fragment",
-    "created_at": "2024-12-15T04:49:43.948Z"
+    "created_at": "2024-12-15T04:49:43.948Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dragon Tooth",
@@ -2941,7 +3086,8 @@
     },
     "type": "equipment",
     "slug": "dragon-tooth",
-    "created_at": "2024-12-15T04:53:51.833Z"
+    "created_at": "2024-12-15T04:53:51.833Z",
+    "buy_value_coin": 2700
   },
   {
     "name": "Dragon Tooth - Recipe",
@@ -2957,7 +3103,8 @@
     },
     "type": "recipe",
     "slug": "dragon-tooth-recipe",
-    "created_at": "2024-12-15T04:52:51.847Z"
+    "created_at": "2024-12-15T04:52:51.847Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Dragon Tooth - Recipe (Fragment)",
@@ -2972,7 +3119,8 @@
     ],
     "type": "fragment",
     "slug": "dragon-tooth-recipe-fragment",
-    "created_at": "2024-12-15T04:52:19.487Z"
+    "created_at": "2024-12-15T04:52:19.487Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Elephant Guard",
@@ -2996,7 +3144,8 @@
     },
     "type": "equipment",
     "slug": "elephant-guard",
-    "created_at": "2024-12-15T04:56:28.886Z"
+    "created_at": "2024-12-15T04:56:28.886Z",
+    "buy_value_coin": 5400
   },
   {
     "name": "Executioner's Sword",
@@ -3018,7 +3167,8 @@
     },
     "type": "equipment",
     "slug": "executioners-sword",
-    "created_at": "2024-12-15T04:57:42.261Z"
+    "created_at": "2024-12-15T04:57:42.261Z",
+    "buy_value_coin": 4725
   },
   {
     "name": "Flaming Heart",
@@ -3038,7 +3188,8 @@
     },
     "type": "equipment",
     "slug": "flaming-heart",
-    "created_at": "2024-12-15T04:25:03.448Z"
+    "created_at": "2024-12-15T04:25:03.448Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Flaming Heart (Fragment)",
@@ -3055,7 +3206,8 @@
     ],
     "type": "fragment",
     "slug": "flaming-heart-fragment",
-    "created_at": "2024-12-15T04:24:06.464Z"
+    "created_at": "2024-12-15T04:24:06.464Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Funeral Totem",
@@ -3075,7 +3227,8 @@
     },
     "type": "equipment",
     "slug": "funeral-totem",
-    "created_at": "2024-12-15T04:55:08.153Z"
+    "created_at": "2024-12-15T04:55:08.153Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Funeral Totem (Fragment)",
@@ -3091,7 +3244,8 @@
     ],
     "type": "fragment",
     "slug": "funeral-totem-fragment",
-    "created_at": "2024-12-15T04:54:29.820Z"
+    "created_at": "2024-12-15T04:54:29.820Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Giant-Slayer",
@@ -3111,7 +3265,8 @@
     },
     "type": "equipment",
     "slug": "giant-slayer",
-    "created_at": "2024-12-15T04:10:43.708Z"
+    "created_at": "2024-12-15T04:10:43.708Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Giant-Slayer (Fragment)",
@@ -3128,7 +3283,8 @@
     ],
     "type": "fragment",
     "slug": "giant-slayer-fragment",
-    "created_at": "2024-12-15T04:09:47.483Z"
+    "created_at": "2024-12-15T04:09:47.483Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Governor",
@@ -3150,7 +3306,8 @@
     },
     "type": "equipment",
     "slug": "governor",
-    "created_at": "2024-12-15T05:01:11.642Z"
+    "created_at": "2024-12-15T05:01:11.642Z",
+    "buy_value_coin": 5400
   },
   {
     "name": "Hand of Glory",
@@ -3170,7 +3327,8 @@
     },
     "type": "equipment",
     "slug": "hand-of-glory",
-    "created_at": "2024-12-13T18:48:21.205Z"
+    "created_at": "2024-12-13T18:48:21.205Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Hand of Glory (Fragment)",
@@ -3188,7 +3346,8 @@
     ],
     "type": "fragment",
     "slug": "hand-of-glory-fragment",
-    "created_at": "2024-12-13T18:47:18.333Z"
+    "created_at": "2024-12-13T18:47:18.333Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Lion Helmet",
@@ -3210,7 +3369,8 @@
     },
     "type": "equipment",
     "slug": "lion-helmet",
-    "created_at": "2024-12-15T04:39:30.924Z"
+    "created_at": "2024-12-15T04:39:30.924Z",
+    "buy_value_coin": 3600
   },
   {
     "name": "Minotaur's Head",
@@ -3230,7 +3390,8 @@
     },
     "type": "equipment",
     "slug": "minotaurs-head",
-    "created_at": "2024-12-15T04:33:26.943Z"
+    "created_at": "2024-12-15T04:33:26.943Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Minotaur's Head (Fragment)",
@@ -3246,7 +3407,8 @@
     ],
     "type": "fragment",
     "slug": "minotaurs-head-fragment",
-    "created_at": "2024-12-15T04:32:46.159Z"
+    "created_at": "2024-12-15T04:32:46.159Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Panoptic Orb",
@@ -3269,7 +3431,8 @@
     },
     "type": "equipment",
     "slug": "panoptic-orb",
-    "created_at": "2024-12-15T12:29:48.101Z"
+    "created_at": "2024-12-15T12:29:48.101Z",
+    "buy_value_coin": 22325
   },
   {
     "name": "Panoptic Orb - Recipe",
@@ -3285,7 +3448,8 @@
     },
     "type": "recipe",
     "slug": "panoptic-orb-recipe",
-    "created_at": "2024-12-15T12:28:19.989Z"
+    "created_at": "2024-12-15T12:28:19.989Z",
+    "buy_value_coin": 4125
   },
   {
     "name": "Panoptic Orb - Recipe (Fragment)",
@@ -3303,7 +3467,8 @@
     ],
     "type": "fragment",
     "slug": "panoptic-orb-recipe-fragment",
-    "created_at": "2024-12-15T12:27:41.974Z"
+    "created_at": "2024-12-15T12:27:41.974Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Pastor's Seal",
@@ -3323,7 +3488,8 @@
     },
     "type": "equipment",
     "slug": "pastors-seal",
-    "created_at": "2024-12-15T04:03:45.746Z"
+    "created_at": "2024-12-15T04:03:45.746Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Pastor's Seal (Fragment)",
@@ -3340,7 +3506,8 @@
     ],
     "type": "fragment",
     "slug": "pastors-seal-fragment",
-    "created_at": "2024-12-15T04:02:41.642Z"
+    "created_at": "2024-12-15T04:02:41.642Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Primordial Word",
@@ -3361,7 +3528,8 @@
     },
     "type": "equipment",
     "slug": "primordial-word",
-    "created_at": "2024-12-15T12:32:38.941Z"
+    "created_at": "2024-12-15T12:32:38.941Z",
+    "buy_value_coin": 2700
   },
   {
     "name": "Primordial Word - Recipe",
@@ -3377,7 +3545,8 @@
     },
     "type": "recipe",
     "slug": "primordial-word-recipe",
-    "created_at": "2024-12-15T12:31:30.245Z"
+    "created_at": "2024-12-15T12:31:30.245Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Primordial Word - Recipe (Fragment)",
@@ -3392,7 +3561,8 @@
     ],
     "type": "fragment",
     "slug": "primordial-word-recipe-fragment",
-    "created_at": "2024-12-15T12:30:45.036Z"
+    "created_at": "2024-12-15T12:30:45.036Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Siege Crossbow",
@@ -3416,7 +3586,8 @@
     },
     "type": "equipment",
     "slug": "siege-crossbow",
-    "created_at": "2024-12-15T12:33:45.199Z"
+    "created_at": "2024-12-15T12:33:45.199Z",
+    "buy_value_coin": 5400
   },
   {
     "name": "Siren's Song",
@@ -3437,7 +3608,8 @@
     },
     "type": "equipment",
     "slug": "sirens-song",
-    "created_at": "2024-12-13T18:46:23.939Z"
+    "created_at": "2024-12-13T18:46:23.939Z",
+    "buy_value_coin": 2700
   },
   {
     "name": "Siren's Song - Recipe",
@@ -3453,7 +3625,8 @@
     },
     "type": "recipe",
     "slug": "sirens-song-recipe",
-    "created_at": "2024-12-13T18:06:37.640Z"
+    "created_at": "2024-12-13T18:06:37.640Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Siren's Song - Recipe (Fragment)",
@@ -3468,7 +3641,8 @@
     ],
     "type": "fragment",
     "slug": "sirens-song-recipe-fragment",
-    "created_at": "2024-12-13T16:47:30.736Z"
+    "created_at": "2024-12-13T16:47:30.736Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Morana's Nimbus",
@@ -3491,7 +3665,8 @@
     },
     "type": "equipment",
     "slug": "staff-of-moranas-nimbus",
-    "created_at": "2024-12-15T12:40:50.085Z"
+    "created_at": "2024-12-15T12:40:50.085Z",
+    "buy_value_coin": 22325
   },
   {
     "name": "Staff of Morana's Nimbus - Recipe",
@@ -3507,7 +3682,8 @@
     },
     "type": "recipe",
     "slug": "staff-of-moranas-nimbus-recipe",
-    "created_at": "2024-12-15T12:34:58.775Z"
+    "created_at": "2024-12-15T12:34:58.775Z",
+    "buy_value_coin": 4125
   },
   {
     "name": "Staff of Morana's Nimbus - Recipe (Fragment)",
@@ -3523,7 +3699,8 @@
     ],
     "type": "fragment",
     "slug": "staff-of-moranas-nimbus-recipe-fragment",
-    "created_at": "2024-12-15T12:34:26.553Z"
+    "created_at": "2024-12-15T12:34:26.553Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Selena's Halo",
@@ -3547,7 +3724,8 @@
     },
     "type": "equipment",
     "slug": "staff-of-selenas-halo",
-    "created_at": "2024-12-15T12:39:16.192Z"
+    "created_at": "2024-12-15T12:39:16.192Z",
+    "buy_value_coin": 9150
   },
   {
     "name": "Staff of Selena's Halo - Recipe",
@@ -3563,7 +3741,8 @@
     },
     "type": "recipe",
     "slug": "staff-of-selenas-halo-recipe",
-    "created_at": "2024-12-15T12:38:17.940Z"
+    "created_at": "2024-12-15T12:38:17.940Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Staff of Selena's Halo - Recipe (Fragment)",
@@ -3577,7 +3756,8 @@
     ],
     "type": "fragment",
     "slug": "staff-of-selenas-halo-recipe-fragment",
-    "created_at": "2024-12-15T12:36:46.244Z"
+    "created_at": "2024-12-15T12:36:46.244Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sword of Thorns",
@@ -3599,7 +3779,8 @@
     },
     "type": "equipment",
     "slug": "sword-of-thorns",
-    "created_at": "2024-12-15T12:41:52.532Z"
+    "created_at": "2024-12-15T12:41:52.532Z",
+    "buy_value_coin": 4725
   },
   {
     "name": "Talisman",
@@ -3621,7 +3802,8 @@
     },
     "type": "equipment",
     "slug": "talisman",
-    "created_at": "2024-12-15T12:43:12.759Z"
+    "created_at": "2024-12-15T12:43:12.759Z",
+    "buy_value_coin": 4725
   },
   {
     "name": "Traitor's Crown",
@@ -3643,7 +3825,8 @@
     },
     "type": "equipment",
     "slug": "traitors-crown",
-    "created_at": "2024-12-15T12:44:39.218Z"
+    "created_at": "2024-12-15T12:44:39.218Z",
+    "buy_value_coin": 3600
   },
   {
     "name": "Trine",
@@ -3667,7 +3850,8 @@
     },
     "type": "equipment",
     "slug": "trine",
-    "created_at": "2024-12-15T04:34:52.312Z"
+    "created_at": "2024-12-15T04:34:52.312Z",
+    "buy_value_coin": 5400
   },
   {
     "name": "Wasp",
@@ -3688,7 +3872,8 @@
     },
     "type": "equipment",
     "slug": "wasp",
-    "created_at": "2024-12-15T12:46:52.629Z"
+    "created_at": "2024-12-15T12:46:52.629Z",
+    "buy_value_coin": 4400
   },
   {
     "name": "Wasp - Recipe",
@@ -3704,7 +3889,8 @@
     },
     "type": "recipe",
     "slug": "wasp-recipe",
-    "created_at": "2024-12-15T12:45:46.917Z"
+    "created_at": "2024-12-15T12:45:46.917Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "Wasp - Recipe (Fragment)",
@@ -3720,7 +3906,8 @@
     ],
     "type": "fragment",
     "slug": "wasp-recipe-fragment",
-    "created_at": "2024-12-15T12:45:20.691Z"
+    "created_at": "2024-12-15T12:45:20.691Z",
+    "buy_value_coin": 0
   },
   {
     "name": "World Tremor",
@@ -3744,7 +3931,8 @@
     },
     "type": "equipment",
     "slug": "world-tremor",
-    "created_at": "2024-12-15T04:37:19.325Z"
+    "created_at": "2024-12-15T04:37:19.325Z",
+    "buy_value_coin": 9150
   },
   {
     "name": "World Tremor - Recipe",
@@ -3760,7 +3948,8 @@
     },
     "type": "recipe",
     "slug": "world-tremor-recipe",
-    "created_at": "2024-12-15T04:36:18.511Z"
+    "created_at": "2024-12-15T04:36:18.511Z",
+    "buy_value_coin": 1650
   },
   {
     "name": "World Tremor - Recipe (Fragment)",
@@ -3775,7 +3964,8 @@
     ],
     "type": "fragment",
     "slug": "world-tremor-recipe-fragment",
-    "created_at": "2024-12-15T04:35:35.759Z"
+    "created_at": "2024-12-15T04:35:35.759Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Alchemist's Set",
@@ -3795,7 +3985,8 @@
     },
     "type": "equipment",
     "slug": "alchemists-set",
-    "created_at": "2024-12-18T17:43:38.907Z"
+    "created_at": "2024-12-18T17:43:38.907Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Alchemist's Set (Fragment)",
@@ -3813,7 +4004,8 @@
     ],
     "type": "fragment",
     "slug": "alchemists-set-fragment",
-    "created_at": "2024-12-18T17:42:50.434Z"
+    "created_at": "2024-12-18T17:42:50.434Z",
+    "buy_value_coin": 82
   },
   {
     "name": "All-Seeing Eye",
@@ -3837,7 +4029,8 @@
     },
     "type": "equipment",
     "slug": "all-seeing-eye",
-    "created_at": "2024-12-18T17:49:14.795Z"
+    "created_at": "2024-12-18T17:49:14.795Z",
+    "buy_value_coin": 0
   },
   {
     "name": "All-Seeing Eye - Recipe",
@@ -3853,7 +4046,8 @@
     },
     "type": "recipe",
     "slug": "all-seeing-eye-recipe",
-    "created_at": "2024-12-18T17:47:13.367Z"
+    "created_at": "2024-12-18T17:47:13.367Z",
+    "buy_value_coin": 0
   },
   {
     "name": "All-Seeing Eye - Recipe (Fragment)",
@@ -3869,7 +4063,8 @@
     ],
     "type": "fragment",
     "slug": "all-seeing-eye-recipe-fragment",
-    "created_at": "2024-12-18T17:46:31.793Z"
+    "created_at": "2024-12-18T17:46:31.793Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Alucard's Amulet",
@@ -3892,7 +4087,8 @@
     },
     "type": "equipment",
     "slug": "alucards-amulet",
-    "created_at": "2024-12-18T17:55:12.659Z"
+    "created_at": "2024-12-18T17:55:12.659Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Alucard's Amulet - Recipe",
@@ -3908,7 +4104,8 @@
     },
     "type": "recipe",
     "slug": "alucards-amulet-recipe",
-    "created_at": "2024-12-18T17:52:20.163Z"
+    "created_at": "2024-12-18T17:52:20.163Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Alucard's Amulet - Recipe (Fragment)",
@@ -3924,7 +4121,8 @@
     ],
     "type": "fragment",
     "slug": "alucards-amulet-recipe-fragment",
-    "created_at": "2024-12-18T17:51:20.070Z"
+    "created_at": "2024-12-18T17:51:20.070Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Aquant's Trident",
@@ -3948,7 +4146,8 @@
     },
     "type": "equipment",
     "slug": "aquants-trident",
-    "created_at": "2024-12-18T18:04:26.032Z"
+    "created_at": "2024-12-18T18:04:26.032Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Aquant's Trident - Recipe",
@@ -3964,7 +4163,8 @@
     },
     "type": "recipe",
     "slug": "aquants-trident-recipe",
-    "created_at": "2024-12-18T18:01:47.432Z"
+    "created_at": "2024-12-18T18:01:47.432Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Aquant's Trident - Recipe (Fragment)",
@@ -3980,7 +4180,8 @@
     ],
     "type": "fragment",
     "slug": "aquants-trident-recipe-fragment",
-    "created_at": "2024-12-18T18:01:10.730Z"
+    "created_at": "2024-12-18T18:01:10.730Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Asklepius' Staff",
@@ -4003,7 +4204,8 @@
     },
     "type": "equipment",
     "slug": "asklepius-staff",
-    "created_at": "2024-12-18T18:07:45.176Z"
+    "created_at": "2024-12-18T18:07:45.176Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Asklepius' Staff - Recipe",
@@ -4019,7 +4221,8 @@
     },
     "type": "recipe",
     "slug": "asklepius-staff-recipe",
-    "created_at": "2024-12-18T18:06:47.127Z"
+    "created_at": "2024-12-18T18:06:47.127Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Asklepius' Staff - Recipe (Fragment)",
@@ -4035,7 +4238,8 @@
     ],
     "type": "fragment",
     "slug": "asklepius-staff-recipe-fragment",
-    "created_at": "2024-12-18T18:06:14.009Z"
+    "created_at": "2024-12-18T18:06:14.009Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Blade of the Immortals",
@@ -4058,7 +4262,8 @@
     },
     "type": "equipment",
     "slug": "blade-of-the-immortals",
-    "created_at": "2024-12-18T18:10:08.752Z"
+    "created_at": "2024-12-18T18:10:08.752Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Blade of the Immortals - Recipe",
@@ -4074,7 +4279,8 @@
     },
     "type": "recipe",
     "slug": "blade-of-the-immortals-recipe",
-    "created_at": "2024-12-18T18:09:11.099Z"
+    "created_at": "2024-12-18T18:09:11.099Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Blade of the Immortals - Recipe (Fragment)",
@@ -4090,7 +4296,8 @@
     ],
     "type": "fragment",
     "slug": "blade-of-the-immortals-recipe-fragment",
-    "created_at": "2024-12-18T18:08:43.049Z"
+    "created_at": "2024-12-18T18:08:43.049Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Blued Plate Armor",
@@ -4113,7 +4320,8 @@
     },
     "type": "equipment",
     "slug": "blued-plate-armor",
-    "created_at": "2024-12-18T18:16:59.310Z"
+    "created_at": "2024-12-18T18:16:59.310Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Blued Plate Armor - Recipe",
@@ -4129,7 +4337,8 @@
     },
     "type": "recipe",
     "slug": "blued-plate-armor-recipe",
-    "created_at": "2024-12-18T18:15:58.339Z"
+    "created_at": "2024-12-18T18:15:58.339Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Blued Plate Armor - Recipe (Fragment)",
@@ -4145,7 +4354,8 @@
     ],
     "type": "fragment",
     "slug": "blued-plate-armor-recipe-fragment",
-    "created_at": "2024-12-18T18:14:52.808Z"
+    "created_at": "2024-12-18T18:14:52.808Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Citadel Guardian",
@@ -4165,7 +4375,8 @@
     },
     "type": "equipment",
     "slug": "citadel-guardian",
-    "created_at": "2024-12-18T18:23:55.535Z"
+    "created_at": "2024-12-18T18:23:55.535Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Citadel Guardian (Fragment)",
@@ -4182,7 +4393,8 @@
     ],
     "type": "fragment",
     "slug": "citadel-guardian-fragment",
-    "created_at": "2024-12-18T18:23:00.853Z"
+    "created_at": "2024-12-18T18:23:00.853Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Creator's Feathering",
@@ -4206,7 +4418,8 @@
     },
     "type": "equipment",
     "slug": "creators-feathering",
-    "created_at": "2024-12-18T18:34:15.987Z"
+    "created_at": "2024-12-18T18:34:15.987Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Creator's Feathering - Recipe",
@@ -4222,7 +4435,8 @@
     },
     "type": "recipe",
     "slug": "creators-feathering-recipe",
-    "created_at": "2024-12-18T18:28:49.561Z"
+    "created_at": "2024-12-18T18:28:49.561Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Creator's Feathering - Recipe (Fragment)",
@@ -4238,7 +4452,8 @@
     ],
     "type": "fragment",
     "slug": "creators-feathering-recipe-fragment",
-    "created_at": "2024-12-18T18:28:21.026Z"
+    "created_at": "2024-12-18T18:28:21.026Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Dwarven Hardbane",
@@ -4261,7 +4476,8 @@
     },
     "type": "equipment",
     "slug": "dwarven-hardbane",
-    "created_at": "2024-12-18T19:01:57.543Z"
+    "created_at": "2024-12-18T19:01:57.543Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dwarven Hardbane - Recipe",
@@ -4277,7 +4493,8 @@
     },
     "type": "recipe",
     "slug": "dwarven-hardbane-recipe",
-    "created_at": "2024-12-18T19:00:55.352Z"
+    "created_at": "2024-12-18T19:00:55.352Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Dwarven Hardbane - Recipe (Fragment)",
@@ -4293,7 +4510,8 @@
     ],
     "type": "fragment",
     "slug": "dwarven-hardbane-recipe-fragment",
-    "created_at": "2024-12-18T19:00:24.985Z"
+    "created_at": "2024-12-18T19:00:24.985Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Enchanted Chain",
@@ -4313,7 +4531,8 @@
     },
     "type": "equipment",
     "slug": "enchanted-chain",
-    "created_at": "2024-12-18T19:03:20.922Z"
+    "created_at": "2024-12-18T19:03:20.922Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Enchanted Chain (Fragment)",
@@ -4330,7 +4549,8 @@
     ],
     "type": "fragment",
     "slug": "enchanted-chain-fragment",
-    "created_at": "2024-12-18T19:02:44.382Z"
+    "created_at": "2024-12-18T19:02:44.382Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Enigma's Chronicles",
@@ -4350,7 +4570,8 @@
     },
     "type": "equipment",
     "slug": "enigmas-chronicles",
-    "created_at": "2024-12-18T17:48:17.613Z"
+    "created_at": "2024-12-18T17:48:17.613Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Enigma's Chronicles (Fragment)",
@@ -4363,7 +4584,8 @@
     ],
     "type": "fragment",
     "slug": "enigmas-chronicles-fragment",
-    "created_at": "2024-12-18T17:47:37.161Z"
+    "created_at": "2024-12-18T17:47:37.161Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Evil Genius Cuirass - Recipe",
@@ -4379,7 +4601,8 @@
     },
     "type": "recipe",
     "slug": "evil-genius-cuirass-recipe",
-    "created_at": "2024-12-18T19:07:25.613Z"
+    "created_at": "2024-12-18T19:07:25.613Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Evil Genius Cuirass - Recipe (Fragment)",
@@ -4389,7 +4612,8 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "evil-genius-cuirass-recipe-fragment",
-    "created_at": "2024-12-18T19:05:51.637Z"
+    "created_at": "2024-12-18T19:05:51.637Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Evil Genius Cuirass (Fragment)",
@@ -4412,7 +4636,8 @@
     },
     "type": "equipment",
     "slug": "evil-genius-cuirass-fragment",
-    "created_at": "2024-12-18T19:40:35.060Z"
+    "created_at": "2024-12-18T19:40:35.060Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Gro Bulgor's Poleaxe",
@@ -4432,7 +4657,8 @@
     },
     "type": "equipment",
     "slug": "gro-bulgors-poleaxe",
-    "created_at": "2024-12-18T19:42:59.824Z"
+    "created_at": "2024-12-18T19:42:59.824Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Gro Bulgor's Poleaxe (Fragment)",
@@ -4450,7 +4676,8 @@
     ],
     "type": "fragment",
     "slug": "gro-bulgors-poleaxe-fragment",
-    "created_at": "2024-12-18T19:42:04.488Z"
+    "created_at": "2024-12-18T19:42:04.488Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Harunian Helm",
@@ -4470,7 +4697,8 @@
     },
     "type": "equipment",
     "slug": "harunian-helm",
-    "created_at": "2024-12-18T19:10:50.621Z"
+    "created_at": "2024-12-18T19:10:50.621Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Harunian Helm (Fragment)",
@@ -4483,7 +4711,8 @@
     ],
     "type": "fragment",
     "slug": "harunian-helm-fragment",
-    "created_at": "2024-12-18T19:10:01.354Z"
+    "created_at": "2024-12-18T19:10:01.354Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Hellion Harpoon",
@@ -4503,7 +4732,8 @@
     },
     "type": "equipment",
     "slug": "hellion-harpoon",
-    "created_at": "2024-12-18T18:03:12.145Z"
+    "created_at": "2024-12-18T18:03:12.145Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Hellion Harpoon (Fragment)",
@@ -4520,7 +4750,8 @@
     ],
     "type": "fragment",
     "slug": "hellion-harpoon-fragment",
-    "created_at": "2024-12-18T18:02:30.550Z"
+    "created_at": "2024-12-18T18:02:30.550Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Key to All Doors",
@@ -4543,7 +4774,8 @@
     },
     "type": "equipment",
     "slug": "key-to-all-doors",
-    "created_at": "2024-12-18T19:45:10.669Z"
+    "created_at": "2024-12-18T19:45:10.669Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Key to All Doors - Recipe",
@@ -4559,7 +4791,8 @@
     },
     "type": "recipe",
     "slug": "key-to-all-doors-recipe",
-    "created_at": "2024-12-18T19:44:09.235Z"
+    "created_at": "2024-12-18T19:44:09.235Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Key to All Doors - Recipe (Fragment)",
@@ -4569,7 +4802,8 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "key-to-all-doors-recipe-fragment",
-    "created_at": "2024-12-18T19:43:30.456Z"
+    "created_at": "2024-12-18T19:43:30.456Z",
+    "buy_value_coin": 82
   },
   {
     "name": "La Mort's Map",
@@ -4589,7 +4823,8 @@
     },
     "type": "equipment",
     "slug": "la-morts-map",
-    "created_at": "2024-12-18T19:46:53.707Z"
+    "created_at": "2024-12-18T19:46:53.707Z",
+    "buy_value_coin": 0
   },
   {
     "name": "La Mort's Map (Fragment)",
@@ -4606,7 +4841,8 @@
     ],
     "type": "fragment",
     "slug": "la-morts-map-fragment",
-    "created_at": "2024-12-18T19:46:08.245Z"
+    "created_at": "2024-12-18T19:46:08.245Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Light of Distant Stars",
@@ -4630,7 +4866,8 @@
     },
     "type": "equipment",
     "slug": "light-of-distant-stars",
-    "created_at": "2024-12-18T19:56:09.023Z"
+    "created_at": "2024-12-18T19:56:09.023Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Light of Distant Stars - Recipe",
@@ -4646,7 +4883,8 @@
     },
     "type": "recipe",
     "slug": "light-of-distant-stars-recipe",
-    "created_at": "2024-12-18T19:49:40.165Z"
+    "created_at": "2024-12-18T19:49:40.165Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Light of Distant Stars - Recipe (Fragment)",
@@ -4660,7 +4898,8 @@
     ],
     "type": "fragment",
     "slug": "light-of-distant-stars-recipe-fragment",
-    "created_at": "2024-12-18T19:49:07.021Z"
+    "created_at": "2024-12-18T19:49:07.021Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Lycanthrope's Fang",
@@ -4680,7 +4919,8 @@
     },
     "type": "equipment",
     "slug": "lycanthropes-fang",
-    "created_at": "2024-12-18T17:53:27.828Z"
+    "created_at": "2024-12-18T17:53:27.828Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Lycanthrope's Fang (Fragment)",
@@ -4698,7 +4938,8 @@
     ],
     "type": "fragment",
     "slug": "lycanthropes-fang-fragment",
-    "created_at": "2024-12-18T17:52:52.868Z"
+    "created_at": "2024-12-18T17:52:52.868Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Oppressor's Crown",
@@ -4723,7 +4964,8 @@
     },
     "type": "equipment",
     "slug": "oppressors-crown",
-    "created_at": "2024-12-18T19:59:05.119Z"
+    "created_at": "2024-12-18T19:59:05.119Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Oppressor's Crown - Recipe",
@@ -4739,7 +4981,8 @@
     },
     "type": "recipe",
     "slug": "oppressors-crown-recipe",
-    "created_at": "2024-12-18T19:57:51.886Z"
+    "created_at": "2024-12-18T19:57:51.886Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Oppressor's Crown - Recipe (Fragment)",
@@ -4753,7 +4996,8 @@
     ],
     "type": "fragment",
     "slug": "oppressors-crown-recipe-fragment",
-    "created_at": "2024-12-18T19:57:16.615Z"
+    "created_at": "2024-12-18T19:57:16.615Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Oracle's Censer",
@@ -4776,7 +5020,8 @@
     },
     "type": "equipment",
     "slug": "oracles-censer",
-    "created_at": "2024-12-18T19:54:33.463Z"
+    "created_at": "2024-12-18T19:54:33.463Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Oracle's Censer - Recipe",
@@ -4792,7 +5037,8 @@
     },
     "type": "recipe",
     "slug": "oracles-censer-recipe",
-    "created_at": "2024-12-18T19:53:11.373Z"
+    "created_at": "2024-12-18T19:53:11.373Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Oracle's Censer - Recipe (Fragment)",
@@ -4807,7 +5053,8 @@
     ],
     "type": "fragment",
     "slug": "oracles-censer-recipe-fragment",
-    "created_at": "2024-12-18T19:52:42.623Z"
+    "created_at": "2024-12-18T19:52:42.623Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Radiant Armor",
@@ -4831,7 +5078,8 @@
     },
     "type": "equipment",
     "slug": "radiant-armor",
-    "created_at": "2024-12-18T19:20:38.557Z"
+    "created_at": "2024-12-18T19:20:38.557Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Radiant Armor - Recipe",
@@ -4847,7 +5095,8 @@
     },
     "type": "recipe",
     "slug": "radiant-armor-recipe",
-    "created_at": "2024-12-18T19:09:14.941Z"
+    "created_at": "2024-12-18T19:09:14.941Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Radiant Armor - Recipe (Fragment)",
@@ -4863,7 +5112,8 @@
     ],
     "type": "fragment",
     "slug": "radiant-armor-recipe-fragment",
-    "created_at": "2024-12-18T19:08:42.826Z"
+    "created_at": "2024-12-18T19:08:42.826Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Riversar's Tiara",
@@ -4883,7 +5133,8 @@
     },
     "type": "equipment",
     "slug": "riversars-tiara",
-    "created_at": "2024-12-18T20:00:51.582Z"
+    "created_at": "2024-12-18T20:00:51.582Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Riversar's Tiara (Fragment)",
@@ -4900,7 +5151,8 @@
     ],
     "type": "fragment",
     "slug": "riversars-tiara-fragment",
-    "created_at": "2024-12-18T20:00:15.752Z"
+    "created_at": "2024-12-18T20:00:15.752Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Ruler's Globus",
@@ -4922,7 +5174,8 @@
     },
     "type": "equipment",
     "slug": "rulers-globus",
-    "created_at": "2024-12-18T20:03:18.592Z"
+    "created_at": "2024-12-18T20:03:18.592Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Ruler's Globus - Recipe",
@@ -4938,7 +5191,8 @@
     },
     "type": "recipe",
     "slug": "rulers-globus-recipe",
-    "created_at": "2024-12-18T20:02:17.777Z"
+    "created_at": "2024-12-18T20:02:17.777Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Ruler's Globus - Recipe (Fragment)",
@@ -4954,7 +5208,8 @@
     ],
     "type": "fragment",
     "slug": "rulers-globus-recipe-fragment",
-    "created_at": "2024-12-18T20:01:44.818Z"
+    "created_at": "2024-12-18T20:01:44.818Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Song of the Valkyries",
@@ -4977,7 +5232,8 @@
     },
     "type": "equipment",
     "slug": "song-of-the-valkyries",
-    "created_at": "2024-12-18T20:06:32.325Z"
+    "created_at": "2024-12-18T20:06:32.325Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Song of the Valkyries - Recipe",
@@ -4993,7 +5249,8 @@
     },
     "type": "recipe",
     "slug": "song-of-the-valkyries-recipe",
-    "created_at": "2024-12-18T20:05:13.157Z"
+    "created_at": "2024-12-18T20:05:13.157Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Song of the Valkyries - Recipe (Fragment)",
@@ -5003,7 +5260,8 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "song-of-the-valkyries-recipe-fragment",
-    "created_at": "2024-12-18T20:04:36.164Z"
+    "created_at": "2024-12-18T20:04:36.164Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Sphere of Power",
@@ -5026,7 +5284,8 @@
     },
     "type": "equipment",
     "slug": "sphere-of-power",
-    "created_at": "2024-12-18T19:51:48.897Z"
+    "created_at": "2024-12-18T19:51:48.897Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sphere of Power - Recipe",
@@ -5042,7 +5301,8 @@
     },
     "type": "recipe",
     "slug": "sphere-of-power-recipe",
-    "created_at": "2024-12-18T19:50:40.461Z"
+    "created_at": "2024-12-18T19:50:40.461Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Sphere of Power - Recipe (Fragment)",
@@ -5058,7 +5318,8 @@
     ],
     "type": "fragment",
     "slug": "sphere-of-power-recipe-fragment",
-    "created_at": "2024-12-18T19:50:11.766Z"
+    "created_at": "2024-12-18T19:50:11.766Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Staff of Neutralization",
@@ -5081,7 +5342,8 @@
     },
     "type": "equipment",
     "slug": "staff-of-neutralization",
-    "created_at": "2024-12-18T20:09:17.773Z"
+    "created_at": "2024-12-18T20:09:17.773Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Neutralization - Recipe",
@@ -5097,7 +5359,8 @@
     },
     "type": "recipe",
     "slug": "staff-of-neutralization-recipe",
-    "created_at": "2024-12-18T20:08:17.500Z"
+    "created_at": "2024-12-18T20:08:17.500Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Neutralization - Recipe (Fragment)",
@@ -5113,7 +5376,8 @@
     ],
     "type": "fragment",
     "slug": "staff-of-neutralization-recipe-fragment",
-    "created_at": "2024-12-18T20:07:48.435Z"
+    "created_at": "2024-12-18T20:07:48.435Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Staff of Stubbornness",
@@ -5136,7 +5400,8 @@
     },
     "type": "equipment",
     "slug": "staff-of-stubbornness",
-    "created_at": "2024-12-18T20:16:00.666Z"
+    "created_at": "2024-12-18T20:16:00.666Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Stubbornness - Recipe",
@@ -5152,7 +5417,8 @@
     },
     "type": "recipe",
     "slug": "staff-of-stubbornness-recipe",
-    "created_at": "2024-12-18T20:10:31.408Z"
+    "created_at": "2024-12-18T20:10:31.408Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Staff of Stubbornness - Recipe (Fragment)",
@@ -5166,7 +5432,8 @@
     ],
     "type": "fragment",
     "slug": "staff-of-stubbornness-recipe-fragment",
-    "created_at": "2024-12-18T20:09:58.023Z"
+    "created_at": "2024-12-18T20:09:58.023Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Thieves Guild Sign",
@@ -5186,7 +5453,8 @@
     },
     "type": "equipment",
     "slug": "thieves-guild-sign",
-    "created_at": "2024-12-18T20:17:15.870Z"
+    "created_at": "2024-12-18T20:17:15.870Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Thieves Guild Sign (Fragment)",
@@ -5203,7 +5471,8 @@
     ],
     "type": "fragment",
     "slug": "thieves-guild-sign-fragment",
-    "created_at": "2024-12-18T20:16:35.793Z"
+    "created_at": "2024-12-18T20:16:35.793Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Throwing Knives",
@@ -5223,7 +5492,8 @@
     },
     "type": "equipment",
     "slug": "throwing-knives",
-    "created_at": "2024-12-18T18:29:47.910Z"
+    "created_at": "2024-12-18T18:29:47.910Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Throwing Knives (Fragment)",
@@ -5236,7 +5506,8 @@
     ],
     "type": "fragment",
     "slug": "throwing-knives-fragment",
-    "created_at": "2024-12-18T18:29:12.940Z"
+    "created_at": "2024-12-18T18:29:12.940Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Trickster's Cane",
@@ -5260,7 +5531,8 @@
     },
     "type": "equipment",
     "slug": "tricksters-cane",
-    "created_at": "2024-12-18T20:20:37.022Z"
+    "created_at": "2024-12-18T20:20:37.022Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Trickster's Cane - Recipe",
@@ -5276,7 +5548,8 @@
     },
     "type": "recipe",
     "slug": "tricksters-cane-recipe",
-    "created_at": "2024-12-18T20:18:58.590Z"
+    "created_at": "2024-12-18T20:18:58.590Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Trickster's Cane - Recipe (Fragment)",
@@ -5292,7 +5565,8 @@
     ],
     "type": "fragment",
     "slug": "tricksters-cane-recipe-fragment",
-    "created_at": "2024-12-18T20:18:21.602Z"
+    "created_at": "2024-12-18T20:18:21.602Z",
+    "buy_value_coin": 82
   },
   {
     "name": "Unity of Extremes",
@@ -5315,7 +5589,8 @@
     },
     "type": "equipment",
     "slug": "unity-of-extremes",
-    "created_at": "2024-12-18T20:22:43.460Z"
+    "created_at": "2024-12-18T20:22:43.460Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Unity of Extremes - Recipe",
@@ -5331,7 +5606,8 @@
     },
     "type": "recipe",
     "slug": "unity-of-extremes-recipe",
-    "created_at": "2024-12-18T20:21:45.059Z"
+    "created_at": "2024-12-18T20:21:45.059Z",
+    "buy_value_coin": 0
   },
   {
     "name": "Unity of Extremes - Recipe (Fragment)",
@@ -5345,6 +5621,7 @@
     ],
     "type": "fragment",
     "slug": "unity-of-extremes-recipe-fragment",
-    "created_at": "2024-12-18T20:21:08.502Z"
+    "created_at": "2024-12-18T20:21:08.502Z",
+    "buy_value_coin": 82
   }
 ]
