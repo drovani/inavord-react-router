@@ -12,6 +12,12 @@
                 "missions.json"
             ],
             "url": "./app/data/mission-schema.json"
+        },
+        {
+            "fileMatch": [
+                "heroes.json"
+            ],
+            "url": "./app/data/hero-schema.json"
         }
     ]
 }

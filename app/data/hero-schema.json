@@ -1,0 +1,101 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "name": {
+                "type": "string"
+            },
+            "class": {
+                "type": "string",
+                "enum": [
+                    "tank",
+                    "warrior",
+                    "mage",
+                    "support",
+                    "control",
+                    "marksman",
+                    "healer"
+                ]
+            },
+            "faction": {
+                "type": "string",
+                "enum": [
+                    "nature",
+                    "chaos",
+                    "honor",
+                    "eternity",
+                    "mystery",
+                    "progress"
+                ]
+            },
+            "main_stat": {
+                "type": "string",
+                "enum": [
+                    "strength",
+                    "agility",
+                    "intelligence"
+                ]
+            },
+            "attack_type": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "physical",
+                        "magic",
+                        "pure"
+                    ]
+                }
+            },
+            "artifact_team_buff": {
+                "type": "string",
+                "enum": [
+                    "armor",
+                    "dodge",
+                    "physical attack",
+                    "magic attack",
+                    "magic defense",
+                    "armor penetration",
+                    "crit hit chance",
+                    "magic penetration"
+                ]
+            },
+            "stone_source": {
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "Arena Shop",
+                        "Campaign",
+                        "Heroic Chest",
+                        "Outland Shop",
+                        "Special Events",
+                        "Dungeon Shop",
+                        "Guild War Shop",
+                        "Grand Arena Shop",
+                        "Tower Shop",
+                        "Highwayman Shop",
+                        "Hydra Shop",
+                        "Soul Shop"
+                    ]
+                }
+            },
+            "order_rank": {
+                "type": "integer",
+                "minimum": 1
+            }
+        },
+        "required": [
+            "name",
+            "class",
+            "faction",
+            "main_stat",
+            "attack_type",
+            "stone_source",
+            "order_rank"
+        ],
+        "additionalProperties": false
+    }
+}
