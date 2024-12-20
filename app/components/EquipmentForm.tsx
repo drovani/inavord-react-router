@@ -218,10 +218,10 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
         <div className="space-y-4 md:space-y-0 md:grid md:grid-cols-3 md:gap-4">
           <FormField
             control={form.control}
-            name="buy_value"
+            name="buy_value_gold"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Buy Value</FormLabel>
+                <FormLabel>Buy Value (Gold)</FormLabel>
                 <FormControl>
                   <div className="relative">
                     <Input
@@ -234,6 +234,31 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
                       src="/images/gold.webp"
                       alt="Gold"
                       className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8"
+                    />
+                  </div>
+                </FormControl>
+                <FormMessage />
+              </FormItem>
+            )}
+          />
+          <FormField
+            control={form.control}
+            name="buy_value_coin"
+            render={({ field }) => (
+              <FormItem>
+                <FormLabel>Buy Value (Merchant Coins)</FormLabel>
+                <FormControl>
+                  <div className="relative">
+                    <Input
+                      type="number"
+                      {...field}
+                      onChange={(e) => field.onChange(+e.target.value)}
+                      className="pl-10"
+                    />
+                    <img
+                      src="/images/arena-coin.png"
+                      alt="Merchant Coin"
+                      className="absolute left-1 top-1/2 -translate-y-1/2 w-8 h-8 rounded-full"
                     />
                   </div>
                 </FormControl>

@@ -10,7 +10,8 @@
       "created_at",
       "name",
       "quality",
-      "buy_value",
+      "buy_value_gold",
+      "buy_value_coin",
       "sell_value",
       "guild_activity_points"
     ],
@@ -51,10 +52,15 @@
         ],
         "description": "Quality tier of the equipment"
       },
-      "buy_value": {
+      "buy_value_gold": {
         "type": "integer",
         "minimum": 0,
         "description": "Amount of gold required to purchase this item"
+      },
+      "buy_value_coin": {
+        "type": "integer",
+        "minimum": 0,
+        "description": "Amount of merchant coin required to purchase this item"
       },
       "sell_value": {
         "type": "integer",
@@ -111,6 +117,15 @@
           "required_items"
         ],
         "description": "Crafting requirements for this item"
+      },
+      "sources": {
+        "type": "object",
+        "description": "Store sources where the equipment can be purchased, with store name as key and currency cost as value",
+        "additionalProperties": {
+          "type": "integer",
+          "minimum": 1,
+          "description": "Amount of store currency required to purchase this item"
+        }
       }
     },
     "oneOf": [

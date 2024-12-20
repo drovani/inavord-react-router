@@ -6,7 +6,8 @@ export const EQUIPMENT_QUALITIES = ["gray", "green", "blue", "purple", "orange"]
 const EquipmentPropertiesSchema = z.object({
   name: z.string(),
   quality: z.enum(EQUIPMENT_QUALITIES),
-  buy_value: z.number().int().min(0),
+  buy_value_gold: z.number().int().min(0),
+  buy_value_coin: z.number().int().min(0),
   sell_value: z.number().int().min(0),
   guild_activity_points: z.number().int().min(0),
   stats: z.record(z.string(), z.number()).refine((stats) => Object.keys(stats).length > 0, {

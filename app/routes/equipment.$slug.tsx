@@ -156,7 +156,11 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
               <div>Buy Value:</div>
               <div className="flex items-center gap-2">
                 <img src="/images/gold.webp" alt="Gold" className="w-6 h-6" />
-                <span>{equipment.buy_value.toLocaleString()}</span>
+                <span>{equipment.buy_value_gold.toLocaleString()}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                <img src="/images/arena-coin.png" alt="Arena Coin" className="w-6 h-6" />
+                <span>{equipment.buy_value_coin.toLocaleString()}</span>
               </div>
             </div>
             <div className="text-sm space-y-2">

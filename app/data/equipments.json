@@ -16,7 +16,7 @@
       "9-4",
       "9-12"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -28,7 +28,7 @@
     "hero_level_required": 5,
     "sell_value": 1,
     "guild_activity_points": 2,
-    "buy_value": 3,
+    "buy_value_gold": 3,
     "campaign_sources": [
       "1-10",
       "3-1",
@@ -52,7 +52,7 @@
     "stats": {
       "intelligence": 7
     },
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -73,7 +73,7 @@
       "physical attack": 25
     },
     "hero_level_required": 4,
-    "buy_value": 2650,
+    "buy_value_gold": 2650,
     "sell_value": 530,
     "guild_activity_points": 4,
     "crafting": {
@@ -101,7 +101,7 @@
       "4-2",
       "5-3"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -116,7 +116,7 @@
       "strength": 5
     },
     "hero_level_required": 3,
-    "buy_value": 3125,
+    "buy_value_gold": 3125,
     "sell_value": 625,
     "guild_activity_points": 6,
     "crafting": {
@@ -144,7 +144,7 @@
       "3-12",
       "4-14"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -164,7 +164,7 @@
       "4-4",
       "5-5"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -185,7 +185,7 @@
       "9-6",
       "10-5"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -205,7 +205,7 @@
       "3-10",
       "4-7"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -219,7 +219,7 @@
       "health": 385
     },
     "hero_level_required": 4,
-    "buy_value": 2650,
+    "buy_value_gold": 2650,
     "sell_value": 530,
     "guild_activity_points": 4,
     "crafting": {
@@ -246,7 +246,7 @@
       "9-9",
       "10-8"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -266,7 +266,7 @@
       "3-13",
       "5-1"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -286,7 +286,7 @@
       "3-6",
       "4-5"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -309,7 +309,7 @@
       "9-7",
       "10-9"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -330,7 +330,7 @@
       "9-5",
       "9-14"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -351,7 +351,7 @@
       "9-3",
       "10-14"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -373,7 +373,7 @@
       "4-9",
       "5-9"
     ],
-    "buy_value": 1250,
+    "buy_value_gold": 1250,
     "sell_value": 250,
     "guild_activity_points": 2
   },
@@ -387,7 +387,7 @@
       "intelligence": 7,
       "magic attack": 50
     },
-    "buy_value": 3400,
+    "buy_value_gold": 3400,
     "sell_value": 680,
     "guild_activity_points": 6,
     "crafting": {
@@ -414,7 +414,7 @@
       "9-2",
       "10-10"
     ],
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2
   },
@@ -427,7 +427,7 @@
       "agility": 10
     },
     "hero_level_required": 20,
-    "buy_value": 5400,
+    "buy_value_gold": 5400,
     "sell_value": 1080,
     "guild_activity_points": 9,
     "crafting": {
@@ -458,7 +458,7 @@
       "9-7",
       "9-13"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3
   },
@@ -477,7 +477,7 @@
       "5-8",
       "6-8"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "branch-of-antiaris",
@@ -493,7 +493,7 @@
       "armor": 42
     },
     "hero_level_required": 24,
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 10,
     "crafting": {
@@ -515,7 +515,7 @@
       "7-13",
       "10-3"
     ],
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 2,
     "slug": "brothers-fragment",
@@ -537,7 +537,7 @@
       "7-2",
       "9-2"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cains-seal",
@@ -558,7 +558,7 @@
       "6-1",
       "6-15"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cuirass",
@@ -578,7 +578,7 @@
       "7-4",
       "10-12"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cursed-dagger",
@@ -593,7 +593,7 @@
       "armor": 42
     },
     "hero_level_required": 24,
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 10,
     "crafting": {
@@ -615,7 +615,7 @@
       "10-2",
       "10-13"
     ],
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 2,
     "slug": "dawnguard-fragment",
@@ -625,7 +625,7 @@
   {
     "name": "Elven Armor",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "type": "equipment",
@@ -647,7 +647,7 @@
   {
     "name": "Elven Bow",
     "quality": "green",
-    "buy_value": 4825,
+    "buy_value_gold": 4825,
     "sell_value": 965,
     "guild_activity_points": 8,
     "type": "equipment",
@@ -670,7 +670,7 @@
   {
     "name": "Elven Saber",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "type": "equipment",
@@ -692,7 +692,7 @@
   {
     "name": "Enchanter's Staff",
     "quality": "green",
-    "buy_value": 4825,
+    "buy_value_gold": 4825,
     "sell_value": 965,
     "guild_activity_points": 8,
     "type": "equipment",
@@ -715,7 +715,7 @@
   {
     "name": "Fire Sword",
     "quality": "green",
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -737,7 +737,7 @@
   {
     "name": "Guardian's Shield",
     "quality": "green",
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -759,7 +759,7 @@
   {
     "name": "Infernal Messenger",
     "quality": "green",
-    "buy_value": 3600,
+    "buy_value_gold": 3600,
     "sell_value": 720,
     "guild_activity_points": 6,
     "stats": {
@@ -793,7 +793,7 @@
       "5-9",
       "6-9"
     ],
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "light-crystal",
@@ -802,7 +802,7 @@
   {
     "name": "Lost Ring",
     "quality": "green",
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "stats": {
@@ -824,7 +824,7 @@
   {
     "name": "Midnight Crystal",
     "quality": "green",
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "stats": {
@@ -846,7 +846,7 @@
   {
     "name": "Poleaxe",
     "quality": "green",
-    "buy_value": 4450,
+    "buy_value_gold": 4450,
     "sell_value": 890,
     "guild_activity_points": 8,
     "stats": {
@@ -869,7 +869,7 @@
   {
     "name": "Poleaxe - Recipe",
     "quality": "green",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -885,7 +885,7 @@
   {
     "name": "Portal Key",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "stats": {
@@ -907,7 +907,7 @@
   {
     "name": "Reaper",
     "quality": "green",
-    "buy_value": 1500,
+    "buy_value_gold": 1500,
     "sell_value": 300,
     "guild_activity_points": 3,
     "stats": {
@@ -929,7 +929,7 @@
   {
     "name": "Screaming Blade",
     "quality": "green",
-    "buy_value": 4450,
+    "buy_value_gold": 4450,
     "sell_value": 890,
     "guild_activity_points": 8,
     "stats": {
@@ -952,7 +952,7 @@
   {
     "name": "Screaming Blade - Recipe",
     "quality": "green",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -968,7 +968,7 @@
   {
     "name": "Shining Armor",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "stats": {
@@ -990,7 +990,7 @@
   {
     "name": "Silent Guardian",
     "quality": "green",
-    "buy_value": 3600,
+    "buy_value_gold": 3600,
     "sell_value": 720,
     "guild_activity_points": 6,
     "stats": {
@@ -1012,7 +1012,7 @@
   {
     "name": "Skull Crusher",
     "quality": "green",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 10,
     "stats": {
@@ -1034,7 +1034,7 @@
   {
     "name": "Skull Crusher (Fragment)",
     "quality": "green",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -1052,7 +1052,7 @@
   {
     "name": "Soul Catcher",
     "quality": "green",
-    "buy_value": 4450,
+    "buy_value_gold": 4450,
     "sell_value": 890,
     "guild_activity_points": 8,
     "stats": {
@@ -1075,7 +1075,7 @@
   {
     "name": "Soul Catcher - Recipe",
     "quality": "green",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -1091,7 +1091,7 @@
   {
     "name": "Spear of Thunder",
     "quality": "green",
-    "buy_value": 3600,
+    "buy_value_gold": 3600,
     "sell_value": 720,
     "guild_activity_points": 6,
     "stats": {
@@ -1113,7 +1113,7 @@
   {
     "name": "Sword of Storms",
     "quality": "green",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 10,
     "stats": {
@@ -1135,7 +1135,7 @@
   {
     "name": "Sword of Storms (Fragment)",
     "quality": "green",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -1165,7 +1165,7 @@
       "5-11",
       "6-11"
     ],
-    "buy_value": 1400,
+    "buy_value_gold": 1400,
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "trackers-boots",
@@ -1174,7 +1174,7 @@
   {
     "name": "Traitor's Shield",
     "quality": "green",
-    "buy_value": 4450,
+    "buy_value_gold": 4450,
     "sell_value": 890,
     "guild_activity_points": 8,
     "stats": {
@@ -1197,7 +1197,7 @@
   {
     "name": "Traitor's Shield - Recipe",
     "quality": "green",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -1213,7 +1213,7 @@
   {
     "name": "Veil of Fog",
     "quality": "green",
-    "buy_value": 3600,
+    "buy_value_gold": 3600,
     "sell_value": 720,
     "guild_activity_points": 6,
     "stats": {
@@ -1235,7 +1235,7 @@
   {
     "name": "Victor's Helmet",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "stats": {
@@ -1257,7 +1257,7 @@
   {
     "name": "Voodoo Doll",
     "quality": "green",
-    "buy_value": 4450,
+    "buy_value_gold": 4450,
     "sell_value": 890,
     "guild_activity_points": 8,
     "stats": {
@@ -1280,7 +1280,7 @@
   {
     "name": "Voodoo Doll - Recipe",
     "quality": "green",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 2,
     "campaign_sources": [
@@ -1296,7 +1296,7 @@
   {
     "name": "Wall-Breaker",
     "quality": "green",
-    "buy_value": 4825,
+    "buy_value_gold": 4825,
     "sell_value": 965,
     "guild_activity_points": 8,
     "stats": {
@@ -1319,7 +1319,7 @@
   {
     "name": "Wizard's Tiara",
     "quality": "green",
-    "buy_value": 3450,
+    "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
     "stats": {
@@ -1341,7 +1341,7 @@
   {
     "name": "Branch of the World Tree",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1363,7 +1363,7 @@
   {
     "name": "Dark Grail",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1385,7 +1385,7 @@
   {
     "name": "Dragonslayer's Spear",
     "quality": "blue",
-    "buy_value": 30500,
+    "buy_value_gold": 30500,
     "sell_value": 6100,
     "guild_activity_points": 75,
     "stats": {
@@ -1410,7 +1410,7 @@
   {
     "name": "Dragonslayer's Spear - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -1426,7 +1426,7 @@
   {
     "name": "Dragonslayer's Spear - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1443,7 +1443,7 @@
   {
     "name": "Elven Shield",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1465,7 +1465,7 @@
   {
     "name": "Enchanted Lute",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -1485,7 +1485,7 @@
   {
     "name": "Enchanted Lute (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1502,7 +1502,7 @@
   {
     "name": "Folding Crossbow",
     "quality": "blue",
-    "buy_value": 26750,
+    "buy_value_gold": 26750,
     "sell_value": 5350,
     "guild_activity_points": 66,
     "stats": {
@@ -1526,7 +1526,7 @@
   {
     "name": "Folding Crossbow - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -1542,7 +1542,7 @@
   {
     "name": "Folding Crossbow - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1559,7 +1559,7 @@
   {
     "name": "Ghostly Blade",
     "quality": "blue",
-    "buy_value": 8250,
+    "buy_value_gold": 8250,
     "sell_value": 1650,
     "guild_activity_points": 21,
     "stats": {
@@ -1581,7 +1581,7 @@
   {
     "name": "Globus Cruciger",
     "quality": "blue",
-    "buy_value": 39000,
+    "buy_value_gold": 39000,
     "sell_value": 7800,
     "guild_activity_points": 90,
     "stats": {
@@ -1605,7 +1605,7 @@
   {
     "name": "Hand of Midas",
     "quality": "blue",
-    "buy_value": 30500,
+    "buy_value_gold": 30500,
     "sell_value": 6100,
     "guild_activity_points": 75,
     "stats": {
@@ -1630,7 +1630,7 @@
   {
     "name": "Hand of Midas - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -1646,7 +1646,7 @@
   {
     "name": "Hand of Midas - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1664,7 +1664,7 @@
   {
     "name": "Hunter",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1686,7 +1686,7 @@
   {
     "name": "Lion Armor",
     "quality": "blue",
-    "buy_value": 28250,
+    "buy_value_gold": 28250,
     "sell_value": 5650,
     "guild_activity_points": 75,
     "stats": {
@@ -1710,7 +1710,7 @@
   {
     "name": "Lion Armor - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -1726,7 +1726,7 @@
   {
     "name": "Lion Armor - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1743,7 +1743,7 @@
   {
     "name": "Magic Hat",
     "quality": "blue",
-    "buy_value": 12000,
+    "buy_value_gold": 12000,
     "sell_value": 2400,
     "guild_activity_points": 30,
     "stats": {
@@ -1765,7 +1765,7 @@
   {
     "name": "Magic Hat (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1783,7 +1783,7 @@
   {
     "name": "Needle",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -1803,7 +1803,7 @@
   {
     "name": "Needle (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1823,7 +1823,7 @@
   {
     "name": "Portal Gem",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -1843,7 +1843,7 @@
   {
     "name": "Portal Gem (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1862,7 +1862,7 @@
   {
     "name": "Prince of Thieves' Armor",
     "quality": "blue",
-    "buy_value": 26750,
+    "buy_value_gold": 26750,
     "sell_value": 5350,
     "guild_activity_points": 66,
     "stats": {
@@ -1886,7 +1886,7 @@
   {
     "name": "Prince of Thieves' Armor - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -1902,7 +1902,7 @@
   {
     "name": "Prince of Thieves' Armor - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -1919,7 +1919,7 @@
   {
     "name": "Prospero's Helmet",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1941,7 +1941,7 @@
   {
     "name": "Punishing Hand",
     "quality": "blue",
-    "buy_value": 8250,
+    "buy_value_gold": 8250,
     "sell_value": 1650,
     "guild_activity_points": 21,
     "stats": {
@@ -1963,7 +1963,7 @@
   {
     "name": "Raven King's Cloak",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -1985,7 +1985,7 @@
   {
     "name": "Sacred Rosary",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -2005,7 +2005,7 @@
   {
     "name": "Sacred Rosary (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2024,7 +2024,7 @@
   {
     "name": "Sacrificial Dagger",
     "quality": "blue",
-    "buy_value": 12000,
+    "buy_value_gold": 12000,
     "sell_value": 2400,
     "guild_activity_points": 30,
     "stats": {
@@ -2044,7 +2044,7 @@
   {
     "name": "Sacrificial Dagger (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2061,7 +2061,7 @@
   {
     "name": "Sage's Crown",
     "quality": "blue",
-    "buy_value": 30500,
+    "buy_value_gold": 30500,
     "sell_value": 6100,
     "guild_activity_points": 75,
     "stats": {
@@ -2086,7 +2086,7 @@
   {
     "name": "Sage's Crown - Recipe",
     "quality": "blue",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2200,
     "guild_activity_points": 30,
     "crafting": {
@@ -2102,7 +2102,7 @@
   {
     "name": "Sage's Crown - Recipe (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2120,7 +2120,7 @@
   {
     "name": "Scorching Quiver",
     "quality": "blue",
-    "buy_value": 12000,
+    "buy_value_gold": 12000,
     "sell_value": 2400,
     "guild_activity_points": 30,
     "stats": {
@@ -2142,7 +2142,7 @@
   {
     "name": "Scorching Quiver (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2160,7 +2160,7 @@
   {
     "name": "Serenity Stone",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -2180,7 +2180,7 @@
   {
     "name": "Serenity Stone (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2199,7 +2199,7 @@
   {
     "name": "Splitter",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -2219,7 +2219,7 @@
   {
     "name": "Splitter (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2238,7 +2238,7 @@
   {
     "name": "Storm Hammer",
     "quality": "blue",
-    "buy_value": 12000,
+    "buy_value_gold": 12000,
     "sell_value": 2400,
     "guild_activity_points": 30,
     "stats": {
@@ -2260,7 +2260,7 @@
   {
     "name": "Storm Hammer (Fragment)",
     "quality": "blue",
-    "buy_value": 1000,
+    "buy_value_gold": 1000,
     "sell_value": 200,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2278,7 +2278,7 @@
   {
     "name": "Thunderfoot Boots",
     "quality": "blue",
-    "buy_value": 9750,
+    "buy_value_gold": 9750,
     "sell_value": 1950,
     "guild_activity_points": 30,
     "stats": {
@@ -2300,7 +2300,7 @@
   {
     "name": "Tracker's Shield",
     "quality": "blue",
-    "buy_value": 8250,
+    "buy_value_gold": 8250,
     "sell_value": 1650,
     "guild_activity_points": 21,
     "stats": {
@@ -2322,7 +2322,7 @@
   {
     "name": "Voodoo Staff",
     "quality": "blue",
-    "buy_value": 8250,
+    "buy_value_gold": 8250,
     "sell_value": 1650,
     "guild_activity_points": 21,
     "stats": {
@@ -2344,7 +2344,7 @@
   {
     "name": "Wyvern's Heart",
     "quality": "blue",
-    "buy_value": 4500,
+    "buy_value_gold": 4500,
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
@@ -2364,7 +2364,7 @@
   {
     "name": "Wyvern's Heart (Fragment)",
     "quality": "blue",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 3,
     "campaign_sources": [
@@ -2381,7 +2381,7 @@
   {
     "name": "Advisor",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -2401,7 +2401,7 @@
   {
     "name": "Advisor (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2417,7 +2417,7 @@
   {
     "name": "All-seer",
     "quality": "purple",
-    "buy_value": 65250,
+    "buy_value_gold": 65250,
     "sell_value": 13050,
     "guild_activity_points": 270,
     "stats": {
@@ -2441,7 +2441,7 @@
   {
     "name": "Angel's Mace",
     "quality": "purple",
-    "buy_value": 151500,
+    "buy_value_gold": 151500,
     "sell_value": 30300,
     "guild_activity_points": 620,
     "stats": {
@@ -2463,7 +2463,7 @@
   {
     "name": "Angel's Mace - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
     "crafting": {
@@ -2479,7 +2479,7 @@
   {
     "name": "Angel's Mace - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 625,
+    "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2494,7 +2494,7 @@
   {
     "name": "Apostle's Mace",
     "quality": "purple",
-    "buy_value": 65250,
+    "buy_value_gold": 65250,
     "sell_value": 13050,
     "guild_activity_points": 270,
     "stats": {
@@ -2516,7 +2516,7 @@
   {
     "name": "Archangel's Mace",
     "quality": "purple",
-    "buy_value": 343250,
+    "buy_value_gold": 343250,
     "sell_value": 68650,
     "guild_activity_points": 1440,
     "stats": {
@@ -2538,7 +2538,7 @@
   {
     "name": "Archangel's Mace - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
     "crafting": {
@@ -2554,7 +2554,7 @@
   {
     "name": "Archangel's Mace - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 500,
+    "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2570,7 +2570,7 @@
   {
     "name": "Blade Bow",
     "quality": "purple",
-    "buy_value": 36000,
+    "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
     "stats": {
@@ -2592,7 +2592,7 @@
   {
     "name": "Book of Fate",
     "quality": "purple",
-    "buy_value": 298250,
+    "buy_value_gold": 298250,
     "sell_value": 59650,
     "guild_activity_points": 1320,
     "stats": {
@@ -2614,7 +2614,7 @@
   {
     "name": "Book of Fate - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
     "crafting": {
@@ -2630,7 +2630,7 @@
   {
     "name": "Book of Fate - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 500,
+    "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2646,7 +2646,7 @@
   {
     "name": "Book of Prophecies",
     "quality": "purple",
-    "buy_value": 129000,
+    "buy_value_gold": 129000,
     "sell_value": 25800,
     "guild_activity_points": 560,
     "stats": {
@@ -2668,7 +2668,7 @@
   {
     "name": "Book of Prophecies - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
     "crafting": {
@@ -2684,7 +2684,7 @@
   {
     "name": "Book of Prophecies - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 625,
+    "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2702,7 +2702,7 @@
   {
     "name": "Book of Tales",
     "quality": "purple",
-    "buy_value": 54000,
+    "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
     "stats": {
@@ -2724,7 +2724,7 @@
   {
     "name": "Cosmic Tremor",
     "quality": "purple",
-    "buy_value": 223250,
+    "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
     "stats": {
@@ -2747,7 +2747,7 @@
   {
     "name": "Cosmic Tremor - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
     "crafting": {
@@ -2763,7 +2763,7 @@
   {
     "name": "Cosmic Tremor - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 500,
+    "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2780,7 +2780,7 @@
   {
     "name": "Desert Blade",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -2800,7 +2800,7 @@
   {
     "name": "Desert Blade (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2817,7 +2817,7 @@
   {
     "name": "Diviner's Orb",
     "quality": "purple",
-    "buy_value": 91500,
+    "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
     "stats": {
@@ -2841,7 +2841,7 @@
   {
     "name": "Diviner's Orb - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
     "crafting": {
@@ -2857,7 +2857,7 @@
   {
     "name": "Diviner's Orb - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 625,
+    "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2872,7 +2872,7 @@
   {
     "name": "Dragon Shield",
     "quality": "purple",
-    "buy_value": 27000,
+    "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
     "stats": {
@@ -2893,7 +2893,7 @@
   {
     "name": "Dragon Shield - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "crafting": {
@@ -2909,7 +2909,7 @@
   {
     "name": "Dragon Shield - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2925,7 +2925,7 @@
   {
     "name": "Dragon Tooth",
     "quality": "purple",
-    "buy_value": 27000,
+    "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
     "stats": {
@@ -2946,7 +2946,7 @@
   {
     "name": "Dragon Tooth - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "crafting": {
@@ -2962,7 +2962,7 @@
   {
     "name": "Dragon Tooth - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -2977,7 +2977,7 @@
   {
     "name": "Elephant Guard",
     "quality": "purple",
-    "buy_value": 54000,
+    "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
     "stats": {
@@ -3001,7 +3001,7 @@
   {
     "name": "Executioner's Sword",
     "quality": "purple",
-    "buy_value": 47250,
+    "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
     "stats": {
@@ -3023,7 +3023,7 @@
   {
     "name": "Flaming Heart",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3043,7 +3043,7 @@
   {
     "name": "Flaming Heart (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3060,7 +3060,7 @@
   {
     "name": "Funeral Totem",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3080,7 +3080,7 @@
   {
     "name": "Funeral Totem (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3096,7 +3096,7 @@
   {
     "name": "Giant-Slayer",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3116,7 +3116,7 @@
   {
     "name": "Giant-Slayer (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3133,7 +3133,7 @@
   {
     "name": "Governor",
     "quality": "purple",
-    "buy_value": 54000,
+    "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
     "stats": {
@@ -3155,7 +3155,7 @@
   {
     "name": "Hand of Glory",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3175,7 +3175,7 @@
   {
     "name": "Hand of Glory (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3193,7 +3193,7 @@
   {
     "name": "Lion Helmet",
     "quality": "purple",
-    "buy_value": 36000,
+    "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
     "stats": {
@@ -3215,7 +3215,7 @@
   {
     "name": "Minotaur's Head",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3235,7 +3235,7 @@
   {
     "name": "Minotaur's Head (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3251,7 +3251,7 @@
   {
     "name": "Panoptic Orb",
     "quality": "purple",
-    "buy_value": 223250,
+    "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
     "stats": {
@@ -3274,7 +3274,7 @@
   {
     "name": "Panoptic Orb - Recipe",
     "quality": "purple",
-    "buy_value": 2750,
+    "buy_value_gold": 2750,
     "sell_value": 5500,
     "guild_activity_points": 200,
     "crafting": {
@@ -3290,7 +3290,7 @@
   {
     "name": "Panoptic Orb - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 500,
+    "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3308,7 +3308,7 @@
   {
     "name": "Pastor's Seal",
     "quality": "purple",
-    "buy_value": 16500,
+    "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "stats": {
@@ -3328,7 +3328,7 @@
   {
     "name": "Pastor's Seal (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3345,7 +3345,7 @@
   {
     "name": "Primordial Word",
     "quality": "purple",
-    "buy_value": 27000,
+    "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
     "stats": {
@@ -3366,7 +3366,7 @@
   {
     "name": "Primordial Word - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "crafting": {
@@ -3382,7 +3382,7 @@
   {
     "name": "Primordial Word - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3397,7 +3397,7 @@
   {
     "name": "Siege Crossbow",
     "quality": "purple",
-    "buy_value": 54000,
+    "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
     "stats": {
@@ -3421,7 +3421,7 @@
   {
     "name": "Siren's Song",
     "quality": "purple",
-    "buy_value": 27000,
+    "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
     "stats": {
@@ -3442,7 +3442,7 @@
   {
     "name": "Siren's Song - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "crafting": {
@@ -3458,7 +3458,7 @@
   {
     "name": "Siren's Song - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3473,7 +3473,7 @@
   {
     "name": "Staff of Morana's Nimbus",
     "quality": "purple",
-    "buy_value": 223250,
+    "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
     "stats": {
@@ -3496,7 +3496,7 @@
   {
     "name": "Staff of Morana's Nimbus - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
     "crafting": {
@@ -3512,7 +3512,7 @@
   {
     "name": "Staff of Morana's Nimbus - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 500,
+    "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3528,7 +3528,7 @@
   {
     "name": "Staff of Selena's Halo",
     "quality": "purple",
-    "buy_value": 91500,
+    "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
     "stats": {
@@ -3552,7 +3552,7 @@
   {
     "name": "Staff of Selena's Halo - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
     "crafting": {
@@ -3568,7 +3568,7 @@
   {
     "name": "Staff of Selena's Halo - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 625,
+    "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3582,7 +3582,7 @@
   {
     "name": "Sword of Thorns",
     "quality": "purple",
-    "buy_value": 47250,
+    "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
     "stats": {
@@ -3604,7 +3604,7 @@
   {
     "name": "Talisman",
     "quality": "purple",
-    "buy_value": 47250,
+    "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
     "stats": {
@@ -3626,7 +3626,7 @@
   {
     "name": "Traitor's Crown",
     "quality": "purple",
-    "buy_value": 36000,
+    "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
     "stats": {
@@ -3648,7 +3648,7 @@
   {
     "name": "Trine",
     "quality": "purple",
-    "buy_value": 54000,
+    "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
     "stats": {
@@ -3672,7 +3672,7 @@
   {
     "name": "Wasp",
     "quality": "purple",
-    "buy_value": 44000,
+    "buy_value_gold": 44000,
     "sell_value": 8800,
     "guild_activity_points": 140,
     "stats": {
@@ -3693,7 +3693,7 @@
   {
     "name": "Wasp - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
     "crafting": {
@@ -3709,7 +3709,7 @@
   {
     "name": "Wasp - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3725,7 +3725,7 @@
   {
     "name": "World Tremor",
     "quality": "purple",
-    "buy_value": 91500,
+    "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
     "stats": {
@@ -3749,7 +3749,7 @@
   {
     "name": "World Tremor - Recipe",
     "quality": "purple",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
     "crafting": {
@@ -3765,7 +3765,7 @@
   {
     "name": "World Tremor - Recipe (Fragment)",
     "quality": "purple",
-    "buy_value": 625,
+    "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3780,7 +3780,7 @@
   {
     "name": "Alchemist's Set",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -3800,7 +3800,7 @@
   {
     "name": "Alchemist's Set (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3818,7 +3818,7 @@
   {
     "name": "All-Seeing Eye",
     "quality": "orange",
-    "buy_value": 268875,
+    "buy_value_gold": 268875,
     "sell_value": 53775,
     "guild_activity_points": 1200,
     "stats": {
@@ -3842,7 +3842,7 @@
   {
     "name": "All-Seeing Eye - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -3858,7 +3858,7 @@
   {
     "name": "All-Seeing Eye - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3874,7 +3874,7 @@
   {
     "name": "Alucard's Amulet",
     "quality": "orange",
-    "buy_value": 246750,
+    "buy_value_gold": 246750,
     "sell_value": 49350,
     "guild_activity_points": 1120,
     "stats": {
@@ -3897,7 +3897,7 @@
   {
     "name": "Alucard's Amulet - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -3913,7 +3913,7 @@
   {
     "name": "Alucard's Amulet - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3929,7 +3929,7 @@
   {
     "name": "Aquant's Trident",
     "quality": "orange",
-    "buy_value": 268875,
+    "buy_value_gold": 268875,
     "sell_value": 53775,
     "guild_activity_points": 1180,
     "stats": {
@@ -3953,7 +3953,7 @@
   {
     "name": "Aquant's Trident - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -3969,7 +3969,7 @@
   {
     "name": "Aquant's Trident - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -3985,7 +3985,7 @@
   {
     "name": "Asklepius' Staff",
     "quality": "orange",
-    "buy_value": 198375,
+    "buy_value_gold": 198375,
     "sell_value": 39675,
     "guild_activity_points": 860,
     "stats": {
@@ -4008,7 +4008,7 @@
   {
     "name": "Asklepius' Staff - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4024,7 +4024,7 @@
   {
     "name": "Asklepius' Staff - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4040,7 +4040,7 @@
   {
     "name": "Blade of the Immortals",
     "quality": "orange",
-    "buy_value": 176250,
+    "buy_value_gold": 176250,
     "sell_value": 35250,
     "guild_activity_points": 800,
     "stats": {
@@ -4063,7 +4063,7 @@
   {
     "name": "Blade of the Immortals - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4079,7 +4079,7 @@
   {
     "name": "Blade of the Immortals - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4095,7 +4095,7 @@
   {
     "name": "Blued Plate Armor",
     "quality": "orange",
-    "buy_value": 198375,
+    "buy_value_gold": 198375,
     "sell_value": 39675,
     "guild_activity_points": 860,
     "stats": {
@@ -4118,7 +4118,7 @@
   {
     "name": "Blued Plate Armor - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4134,7 +4134,7 @@
   {
     "name": "Blued Plate Armor - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4150,7 +4150,7 @@
   {
     "name": "Citadel Guardian",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4170,7 +4170,7 @@
   {
     "name": "Citadel Guardian (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4187,7 +4187,7 @@
   {
     "name": "Creator's Feathering",
     "quality": "orange",
-    "buy_value": 268875,
+    "buy_value_gold": 268875,
     "sell_value": 53775,
     "guild_activity_points": 1200,
     "stats": {
@@ -4211,7 +4211,7 @@
   {
     "name": "Creator's Feathering - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4227,7 +4227,7 @@
   {
     "name": "Creator's Feathering - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4243,7 +4243,7 @@
   {
     "name": "Dwarven Hardbane",
     "quality": "orange",
-    "buy_value": 297000,
+    "buy_value_gold": 297000,
     "sell_value": 59400,
     "guild_activity_points": 1280,
     "stats": {
@@ -4266,7 +4266,7 @@
   {
     "name": "Dwarven Hardbane - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4282,7 +4282,7 @@
   {
     "name": "Dwarven Hardbane - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4298,7 +4298,7 @@
   {
     "name": "Enchanted Chain",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4318,7 +4318,7 @@
   {
     "name": "Enchanted Chain (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4335,7 +4335,7 @@
   {
     "name": "Enigma's Chronicles",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4355,7 +4355,7 @@
   {
     "name": "Enigma's Chronicles (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4368,7 +4368,7 @@
   {
     "name": "Evil Genius Cuirass - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4384,7 +4384,7 @@
   {
     "name": "Evil Genius Cuirass - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "type": "fragment",
@@ -4394,7 +4394,7 @@
   {
     "name": "Evil Genius Cuirass (Fragment)",
     "quality": "orange",
-    "buy_value": 561000,
+    "buy_value_gold": 561000,
     "sell_value": 112200,
     "guild_activity_points": 2560,
     "stats": {
@@ -4417,7 +4417,7 @@
   {
     "name": "Gro Bulgor's Poleaxe",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4437,7 +4437,7 @@
   {
     "name": "Gro Bulgor's Poleaxe (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4455,7 +4455,7 @@
   {
     "name": "Harunian Helm",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4475,7 +4475,7 @@
   {
     "name": "Harunian Helm (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4488,7 +4488,7 @@
   {
     "name": "Hellion Harpoon",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4508,7 +4508,7 @@
   {
     "name": "Hellion Harpoon (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4525,7 +4525,7 @@
   {
     "name": "Key to All Doors",
     "quality": "orange",
-    "buy_value": 561000,
+    "buy_value_gold": 561000,
     "sell_value": 112200,
     "guild_activity_points": 2560,
     "stats": {
@@ -4548,7 +4548,7 @@
   {
     "name": "Key to All Doors - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4564,7 +4564,7 @@
   {
     "name": "Key to All Doors - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "type": "fragment",
@@ -4574,7 +4574,7 @@
   {
     "name": "La Mort's Map",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4594,7 +4594,7 @@
   {
     "name": "La Mort's Map (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4611,7 +4611,7 @@
   {
     "name": "Light of Distant Stars",
     "quality": "orange",
-    "buy_value": 577500,
+    "buy_value_gold": 577500,
     "sell_value": 115500,
     "guild_activity_points": 2480,
     "stats": {
@@ -4635,7 +4635,7 @@
   {
     "name": "Light of Distant Stars - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4651,7 +4651,7 @@
   {
     "name": "Light of Distant Stars - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4665,7 +4665,7 @@
   {
     "name": "Lycanthrope's Fang",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4685,7 +4685,7 @@
   {
     "name": "Lycanthrope's Fang (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4703,7 +4703,7 @@
   {
     "name": "Oppressor's Crown",
     "quality": "orange",
-    "buy_value": 495000,
+    "buy_value_gold": 495000,
     "sell_value": 99000,
     "guild_activity_points": 2240,
     "stats": {
@@ -4728,7 +4728,7 @@
   {
     "name": "Oppressor's Crown - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4744,7 +4744,7 @@
   {
     "name": "Oppressor's Crown - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4758,7 +4758,7 @@
   {
     "name": "Oracle's Censer",
     "quality": "orange",
-    "buy_value": 280500,
+    "buy_value_gold": 280500,
     "sell_value": 56100,
     "guild_activity_points": 1200,
     "stats": {
@@ -4781,7 +4781,7 @@
   {
     "name": "Oracle's Censer - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4797,7 +4797,7 @@
   {
     "name": "Oracle's Censer - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4812,7 +4812,7 @@
   {
     "name": "Radiant Armor",
     "quality": "orange",
-    "buy_value": 268875,
+    "buy_value_gold": 268875,
     "sell_value": 53775,
     "guild_activity_points": 1200,
     "stats": {
@@ -4836,7 +4836,7 @@
   {
     "name": "Radiant Armor - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4852,7 +4852,7 @@
   {
     "name": "Radiant Armor - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4868,7 +4868,7 @@
   {
     "name": "Riversar's Tiara",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -4888,7 +4888,7 @@
   {
     "name": "Riversar's Tiara (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4905,7 +4905,7 @@
   {
     "name": "Ruler's Globus",
     "quality": "orange",
-    "buy_value": 528000,
+    "buy_value_gold": 528000,
     "sell_value": 105600,
     "guild_activity_points": 2400,
     "stats": {
@@ -4927,7 +4927,7 @@
   {
     "name": "Ruler's Globus - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4943,7 +4943,7 @@
   {
     "name": "Ruler's Globus - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -4959,7 +4959,7 @@
   {
     "name": "Song of the Valkyries",
     "quality": "orange",
-    "buy_value": 561000,
+    "buy_value_gold": 561000,
     "sell_value": 112200,
     "guild_activity_points": 2560,
     "stats": {
@@ -4982,7 +4982,7 @@
   {
     "name": "Song of the Valkyries - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -4998,7 +4998,7 @@
   {
     "name": "Song of the Valkyries - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "type": "fragment",
@@ -5008,7 +5008,7 @@
   {
     "name": "Sphere of Power",
     "quality": "orange",
-    "buy_value": 246750,
+    "buy_value_gold": 246750,
     "sell_value": 49350,
     "guild_activity_points": 1120,
     "stats": {
@@ -5031,7 +5031,7 @@
   {
     "name": "Sphere of Power - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -5047,7 +5047,7 @@
   {
     "name": "Sphere of Power - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5063,7 +5063,7 @@
   {
     "name": "Staff of Neutralization",
     "quality": "orange",
-    "buy_value": 176250,
+    "buy_value_gold": 176250,
     "sell_value": 35250,
     "guild_activity_points": 800,
     "stats": {
@@ -5086,7 +5086,7 @@
   {
     "name": "Staff of Neutralization - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -5102,7 +5102,7 @@
   {
     "name": "Staff of Neutralization - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5118,7 +5118,7 @@
   {
     "name": "Staff of Stubbornness",
     "quality": "orange",
-    "buy_value": 610500,
+    "buy_value_gold": 610500,
     "sell_value": 122100,
     "guild_activity_points": 2620,
     "stats": {
@@ -5141,7 +5141,7 @@
   {
     "name": "Staff of Stubbornness - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -5157,7 +5157,7 @@
   {
     "name": "Staff of Stubbornness - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5171,7 +5171,7 @@
   {
     "name": "Thieves Guild Sign",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -5191,7 +5191,7 @@
   {
     "name": "Thieves Guild Sign (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5208,7 +5208,7 @@
   {
     "name": "Throwing Knives",
     "quality": "orange",
-    "buy_value": 66000,
+    "buy_value_gold": 66000,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
@@ -5228,7 +5228,7 @@
   {
     "name": "Throwing Knives (Fragment)",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5241,7 +5241,7 @@
   {
     "name": "Trickster's Cane",
     "quality": "orange",
-    "buy_value": 268875,
+    "buy_value_gold": 268875,
     "sell_value": 53775,
     "guild_activity_points": 1180,
     "stats": {
@@ -5265,7 +5265,7 @@
   {
     "name": "Trickster's Cane - Recipe",
     "quality": "orange",
-    "buy_value": 6600,
+    "buy_value_gold": 6600,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -5281,7 +5281,7 @@
   {
     "name": "Trickster's Cane - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [
@@ -5297,7 +5297,7 @@
   {
     "name": "Unity of Extremes",
     "quality": "orange",
-    "buy_value": 825000,
+    "buy_value_gold": 825000,
     "sell_value": 165000,
     "guild_activity_points": 3680,
     "stats": {
@@ -5320,7 +5320,7 @@
   {
     "name": "Unity of Extremes - Recipe",
     "quality": "orange",
-    "buy_value": 0,
+    "buy_value_gold": 0,
     "sell_value": 13200,
     "guild_activity_points": 320,
     "crafting": {
@@ -5336,7 +5336,7 @@
   {
     "name": "Unity of Extremes - Recipe (Fragment)",
     "quality": "orange",
-    "buy_value": 750,
+    "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
     "campaign_sources": [

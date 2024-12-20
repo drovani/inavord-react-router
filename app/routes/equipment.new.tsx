@@ -52,7 +52,8 @@ export default function NewEquipment({ loaderData }: Route.ComponentProps) {
     defaultValues: {
       quality: "gray",
       hero_level_required: 1,
-      buy_value: 0,
+      buy_value_gold: 0,
+      buy_value_coin: 0,
       sell_value: 0,
       guild_activity_points: 0,
     },
