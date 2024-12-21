@@ -28,7 +28,7 @@ class LocalHeroCache {
   }
 
   async getAll(): Promise<HeroRecord[]> {
-    return Array.from(this.heroes.values()).sort((a, b) => a.order_rank - b.order_rank);
+    return Array.from(this.heroes.values()).sort((a, b) => a.name.localeCompare(b.name));
   }
 
   async get(slug: string): Promise<HeroRecord | null> {

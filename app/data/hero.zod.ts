@@ -35,7 +35,7 @@ export const HeroSchema = z.object({
       "Soul Shop",
     ])
   ),
-  order_rank: z.number().int().positive(),
+  order_rank: z.number().positive(),
 });
 
 export type HeroRecord = z.infer<typeof HeroSchema>;

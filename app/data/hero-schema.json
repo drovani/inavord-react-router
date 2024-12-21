@@ -89,7 +89,7 @@
                 }
             },
             "order_rank": {
-                "type": "integer",
+                "type": "number",
                 "minimum": 1
             }
         },

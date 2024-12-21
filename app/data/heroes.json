@@ -957,5 +957,74 @@
         ],
         "order_rank": 6,
         "slug": "ziri"
+    },
+    {
+        "name": "Tempus",
+        "class": "support",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 30,
+        "slug": "tempus"
+    },
+    {
+        "name": "Soleil",
+        "class": "support",
+        "faction": "honor",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 40,
+        "slug": "soleil"
+    },
+    {
+        "name": "Folio",
+        "class": "mage",
+        "faction": "mystery",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 44,
+        "slug": "folio"
+    },
+    {
+        "name": "Ninja Turtles",
+        "class":"warrior",
+        "faction": "nature",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 16.5,
+        "slug": "ninja-turtles"
     }
+
 ]
