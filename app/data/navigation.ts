@@ -1,20 +1,19 @@
 import {
-    DropletIcon,
-    FileJson2Icon,
-    FileWarningIcon,
-    MapIcon,
-    PresentationIcon,
-    ShieldAlertIcon,
-    ShieldIcon,
-    ShieldPlusIcon,
-    ShoppingBagIcon,
-    StoreIcon,
-    SwordIcon,
-    UsersIcon,
+  DropletIcon,
+  FileJson2Icon,
+  FileWarningIcon,
+  MapIcon,
+  PresentationIcon,
+  ShieldIcon,
+  ShieldPlusIcon,
+  ShoppingBagIcon,
+  StoreIcon,
+  SwordIcon,
+  UsersIcon
 } from "lucide-react";
 
 export const navigation = [
-  { name: "Heroes", icon: UsersIcon },
+  { name: "Heroes", icon: UsersIcon, href: "/heroes" },
   { name: "Titans", icon: SwordIcon },
   {
     name: "Equipment",
@@ -55,9 +54,9 @@ export const navigation = [
     href: "/admin/setup",
     children: [
       {
-        name: "Force reload equipment records",
-        href: "/admin/setup?mode=force&data=equipment",
-        icon: ShieldAlertIcon,
+        name: "Force reload hero records",
+        href: "/admin/setup?mode=force&data=heroes",
+        icon: UsersIcon,
       },
       {
         name: "Force reload all records",

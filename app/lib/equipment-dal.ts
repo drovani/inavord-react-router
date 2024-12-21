@@ -147,6 +147,8 @@ export class EquipmentDAL {
 
       const storeList = await this.store.list();
       const equipmentPromises = storeList.blobs.map(async (blob) => {
+        if (slugs && !slugs.includes(blob.key)) return null;
+
         const data = await this.store.get(blob.key);
         if (!data) return null;
         return JSON.parse(data) as EquipmentRecord;

@@ -2,6 +2,7 @@ import { z } from "zod";
 
 export const HeroSchema = z.object({
   name: z.string(),
+  slug: z.string(),
   class: z.enum(["tank", "warrior", "mage", "support", "control", "marksman", "healer"]),
   faction: z.enum(["nature", "chaos", "honor", "eternity", "mystery", "progress"]),
   main_stat: z.enum(["strength", "agility", "intelligence"]),

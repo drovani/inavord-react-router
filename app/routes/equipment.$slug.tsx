@@ -1,10 +1,10 @@
 import { AlertCircle, ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useEffect } from "react";
-import { Form, Link, useNavigate, type UIMatch } from "react-router";
+import { Link, useNavigate, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
 import EquipmentImage from "~/components/EquipmentImage";
 import { Badge } from "~/components/ui/badge";
-import { Button, buttonVariants } from "~/components/ui/button";
+import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
@@ -20,7 +20,7 @@ export const meta = ({ data }: Route.MetaArgs) => {
 export const handle = {
   breadcrumb: (match: UIMatch<Route.ComponentProps["loaderData"], unknown>) => ({
     href: match.pathname,
-    title: match.data.equipment.name,
+    title: match.data?.equipment.name,
   }),
 };
 
@@ -310,20 +310,6 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
         >
           Edit
         </Link>
-        <Form
-          action="destroy"
-          method="post"
-          onSubmit={(event) => {
-            const response = confirm(`Please confirm you want to delete ${equipment.name}.`);
-            if (!response) {
-              event.preventDefault();
-            }
-          }}
-        >
-          <Button type="submit" variant="destructive">
-            Delete
-          </Button>
-        </Form>
       </div>
       {/* Navigation Buttons */}
       <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 w-full">

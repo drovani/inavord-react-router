@@ -7,6 +7,9 @@
             "name": {
                 "type": "string"
             },
+            "slug": {
+                "type": "string"
+            },
             "class": {
                 "type": "string",
                 "enum": [
@@ -89,6 +92,7 @@
         },
         "required": [
             "name",
+            "slug",
             "class",
             "faction",
             "main_stat",
