@@ -9,11 +9,23 @@ import {
   ShoppingBagIcon,
   StoreIcon,
   SwordIcon,
-  UsersIcon
+  UsersIcon,
 } from "lucide-react";
 
 export const navigation = [
-  { name: "Heroes", icon: UsersIcon, href: "/heroes" },
+  {
+    name: "Heroes",
+    icon: UsersIcon,
+    href: "/heroes",
+    children: [
+      {
+        name: "Export as JSON",
+        href: "/heroes.json",
+        icon: FileJson2Icon,
+        reloadDocument: true,
+      },
+    ],
+  },
   { name: "Titans", icon: SwordIcon },
   {
     name: "Equipment",

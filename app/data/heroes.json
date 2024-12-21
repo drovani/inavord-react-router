@@ -1,322 +1,20 @@
 [
     {
-        "name": "Chabba",
-        "class": "tank",
-        "faction": "nature",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Arena Shop"
-        ],
-        "order_rank": 1
-    },
-    {
-        "name": "Aurora",
-        "class": "tank",
-        "faction": "nature",
-        "main_stat": "strength",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "dodge",
-        "stone_source": [
-            "Campaign"
-        ],
-        "order_rank": 2
-    },
-    {
-        "name": "Cleaver",
-        "class": "tank",
-        "faction": "chaos",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Heroic Chest"
-        ],
-        "order_rank": 3
-    },
-    {
-        "name": "Luther",
-        "class": "tank",
-        "faction": "honor",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Outland Shop"
-        ],
-        "order_rank": 4
-    },
-    {
-        "name": "Corvus",
-        "class": "tank",
-        "faction": "eternity",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Special Events",
-            "Dungeon Shop"
-        ],
-        "order_rank": 5
-    },
-    {
-        "name": "Ziri",
-        "class": "tank",
-        "faction": "mystery",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Guild War Shop"
-        ],
-        "order_rank": 6
-    },
-    {
-        "name": "Rufus",
-        "class": "tank",
-        "faction": "mystery",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Grand Arena Shop"
-        ],
-        "order_rank": 7
-    },
-    {
-        "name": "Julius",
-        "class": "tank",
-        "faction": "progress",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "crit hit chance",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 8
-    },
-    {
-        "name": "Astaroth",
-        "class": "tank",
-        "faction": "chaos",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 9
-    },
-    {
-        "name": "Galahad",
-        "class": "warrior",
-        "faction": "honor",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 10
-    },
-    {
-        "name": "Tristan",
-        "class": "warrior",
-        "faction": "honor",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor penetration",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 11
-    },
-    {
-        "name": "Oya",
-        "class": "warrior",
-        "faction": "nature",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "crit hit chance",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 12
-    },
-    {
-        "name": "Ishmael",
-        "class": "warrior",
-        "faction": "honor",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "crit hit chance",
-        "stone_source": [
-            "Grand Arena Shop"
-        ],
-        "order_rank": 13
-    },
-    {
-        "name": "K'arkh",
-        "class": "warrior",
-        "faction": "eternity",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Guild War Shop"
-        ],
-        "order_rank": 14
-    },
-    {
-        "name": "Markus",
+        "name": "Aidan",
         "class": "healer",
-        "faction": "honor",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic defense",
-        "stone_source": [
-            "Grand Arena Shop"
-        ],
-        "order_rank": 15
-    },
-    {
-        "name": "Elmir",
-        "class": "warrior",
-        "faction": "nature",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor penetration",
-        "stone_source": [
-            "Outland Shop"
-        ],
-        "order_rank": 16
-    },
-    {
-        "name": "Andvari",
-        "class": "control",
-        "faction": "mystery",
-        "main_stat": "strength",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 17
-    },
-    {
-        "name": "Kayla",
-        "class": "warrior",
         "faction": "chaos",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 18
-    },
-    {
-        "name": "Yasmine",
-        "class": "warrior",
-        "faction": "nature",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Hydra Shop"
-        ],
-        "order_rank": 19
-    },
-    {
-        "name": "Qing Mao",
-        "class": "warrior",
-        "faction": "honor",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "armor penetration",
-        "stone_source": [
-            "Outland Shop"
-        ],
-        "order_rank": 20
-    },
-    {
-        "name": "Satori",
-        "class": "mage",
-        "faction": "mystery",
         "main_stat": "intelligence",
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Highwayman Shop",
-            "Heroic Chest"
+        "artifact_team_buff": [
+            "magic defense"
         ],
-        "order_rank": 21
-    },
-    {
-        "name": "Mushy and Shroom",
-        "class": "tank",
-        "faction": "nature",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "armor",
         "stone_source": [
             "Special Events"
         ],
-        "order_rank": 22
+        "order_rank": 62,
+        "slug": "aidan"
     },
     {
         "name": "Alvanor",
@@ -326,27 +24,49 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": "magic attack",
+        "artifact_team_buff": [
+            "magic attack"
+        ],
         "stone_source": [
             "Special Events",
             "Dungeon Shop"
         ],
-        "order_rank": 23
+        "order_rank": 23,
+        "slug": "alvanor"
     },
     {
-        "name": "Maya",
-        "class": "healer",
+        "name": "Amira",
+        "class": "support",
         "faction": "mystery",
         "main_stat": "intelligence",
         "attack_type": [
-            "pure"
+            "magic"
         ],
-        "artifact_team_buff": "magic defense",
+        "artifact_team_buff": [
+            "magic defense"
+        ],
         "stone_source": [
-            "Tower Shop",
-            "Heroic Chest"
+            "Special Events"
         ],
-        "order_rank": 24
+        "order_rank": 43,
+        "slug": "amira"
+    },
+    {
+        "name": "Andvari",
+        "class": "control",
+        "faction": "mystery",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 17,
+        "slug": "andvari"
     },
     {
         "name": "Arachne",
@@ -357,256 +77,49 @@
             "magic",
             "pure"
         ],
-        "artifact_team_buff": "armor",
+        "artifact_team_buff": [
+            "armor"
+        ],
         "stone_source": [
             "Heroic Chest"
         ],
-        "order_rank": 25
+        "order_rank": 25,
+        "slug": "arachne"
     },
     {
-        "name": "Dante",
-        "class": "marksman",
-        "faction": "eternity",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "dodge",
-        "stone_source": [
-            "Tower Shop"
-        ],
-        "order_rank": 26
-    },
-    {
-        "name": "Krista",
-        "class": "support",
+        "name": "Astaroth",
+        "class": "tank",
         "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 27
-    },
-    {
-        "name": "Keira",
-        "class": "marksman",
-        "faction": "eternity",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 28
-    },
-    {
-        "name": "Judge",
-        "class": "control",
-        "faction": "progress",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Arena Shop"
-        ],
-        "order_rank": 29
-    },
-    {
-        "name": "Morrigan",
-        "class": "healer",
-        "faction": "eternity",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor penetration",
-        "stone_source": [
-            "Hydra Shop"
-        ],
-        "order_rank": 31
-    },
-    {
-        "name": "Celeste",
-        "class": "support",
-        "faction": "mystery",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Heroic Chest"
-        ],
-        "order_rank": 32
-    },
-    {
-        "name": "Kai",
-        "class": "mage",
-        "faction": "nature",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic",
-            "pure"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Tower Shop"
-        ],
-        "order_rank": 33
-    },
-    {
-        "name": "Jhu",
-        "class": "marksman",
-        "faction": "nature",
         "main_stat": "strength",
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": "crit hit chance",
-        "stone_source": [
-            "Guild War Shop"
+        "artifact_team_buff": [
+            "armor"
         ],
-        "order_rank": 34
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 9,
+        "slug": "astaroth"
     },
     {
-        "name": "Sebastian",
-        "class": "support",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical",
-            "pure"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 35
-    },
-    {
-        "name": "Nebula",
-        "class": "support",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Guild War Shop"
-        ],
-        "order_rank": 36
-    },
-    {
-        "name": "Mojo",
-        "class": "mage",
+        "name": "Aurora",
+        "class": "tank",
         "faction": "nature",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic penetration",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 37
-    },
-    {
-        "name": "Heidi",
-        "class": "mage",
-        "faction": "mystery",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "pure"
-        ],
-        "artifact_team_buff": "dodge",
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 38
-    },
-    {
-        "name": "Jorgen",
-        "class": "control",
-        "faction": "chaos",
         "main_stat": "strength",
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": "magic attack",
+        "artifact_team_buff": [
+            "dodge"
+        ],
         "stone_source": [
-            "Outland Shop"
+            "Campaign"
         ],
-        "order_rank": 39
-    },
-    {
-        "name": "Iris",
-        "class": "mage",
-        "faction": "eternity",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 41
-    },
-    {
-        "name": "Xe'Sha",
-        "class": "mage",
-        "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic attack",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 42
-    },
-    {
-        "name": "Amira",
-        "class": "support",
-        "faction": "mystery",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic defense",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 43
-    },
-    {
-        "name": "Isaac",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "magic defense",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 45
+        "order_rank": 2,
+        "slug": "aurora"
     },
     {
         "name": "Cascade",
@@ -619,64 +132,65 @@
         "stone_source": [
             "Special Events"
         ],
-        "order_rank": 46
+        "order_rank": 46,
+        "slug": "cascade",
+        "artifact_team_buff": [
+            "magic penetration",
+            "armor penetration"
+        ]
     },
     {
-        "name": "Orion",
-        "class": "mage",
-        "faction": "progress",
+        "name": "Celeste",
+        "class": "support",
+        "faction": "mystery",
         "main_stat": "intelligence",
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": "magic penetration",
-        "stone_source": [
-            "Tower Shop"
+        "artifact_team_buff": [
+            "magic attack"
         ],
-        "order_rank": 47
-    },
-    {
-        "name": "Daredevil",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "physical attack",
         "stone_source": [
-            "Campaign",
             "Heroic Chest"
         ],
-        "order_rank": 48
+        "order_rank": 32,
+        "slug": "celeste"
     },
     {
-        "name": "Lara Croft",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 50
-    },
-    {
-        "name": "Dark Star",
-        "class": "marksman",
+        "name": "Chabba",
+        "class": "tank",
         "faction": "nature",
-        "main_stat": "agility",
+        "main_stat": "strength",
         "attack_type": [
-            "physical"
+            "physical",
+            "pure"
         ],
-        "artifact_team_buff": "physical attack",
+        "artifact_team_buff": [
+            "armor"
+        ],
         "stone_source": [
             "Arena Shop"
         ],
-        "order_rank": 51
+        "order_rank": 1,
+        "slug": "chabba"
+    },
+    {
+        "name": "Cleaver",
+        "class": "tank",
+        "faction": "chaos",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Heroic Chest"
+        ],
+        "order_rank": 3,
+        "slug": "cleaver"
     },
     {
         "name": "Cornelius",
@@ -686,11 +200,102 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": "magic defense",
+        "artifact_team_buff": [
+            "magic defense"
+        ],
         "stone_source": [
             "Highwayman Shop"
         ],
-        "order_rank": 54
+        "order_rank": 54,
+        "slug": "cornelius"
+    },
+    {
+        "name": "Corvus",
+        "class": "tank",
+        "faction": "eternity",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Special Events",
+            "Dungeon Shop"
+        ],
+        "order_rank": 5,
+        "slug": "corvus"
+    },
+    {
+        "name": "Dante",
+        "class": "marksman",
+        "faction": "eternity",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "dodge"
+        ],
+        "stone_source": [
+            "Tower Shop"
+        ],
+        "order_rank": 26,
+        "slug": "dante"
+    },
+    {
+        "name": "Daredevil",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 48,
+        "slug": "daredevil"
+    },
+    {
+        "name": "Dark Star",
+        "class": "marksman",
+        "faction": "nature",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Arena Shop"
+        ],
+        "order_rank": 51,
+        "slug": "dark-star"
+    },
+    {
+        "name": "Elmir",
+        "class": "warrior",
+        "faction": "nature",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Outland Shop"
+        ],
+        "order_rank": 16,
+        "slug": "elmir"
     },
     {
         "name": "Faceless",
@@ -700,11 +305,310 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": "magic penetration",
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
         "stone_source": [
             "Highwayman Shop"
         ],
-        "order_rank": 55
+        "order_rank": 55,
+        "slug": "faceless"
+    },
+    {
+        "name": "Fafnir",
+        "class": "support",
+        "faction": "honor",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 65,
+        "slug": "fafnir"
+    },
+    {
+        "name": "Galahad",
+        "class": "warrior",
+        "faction": "honor",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 10,
+        "slug": "galahad"
+    },
+    {
+        "name": "Heidi",
+        "class": "mage",
+        "faction": "mystery",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "dodge"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 38,
+        "slug": "heidi"
+    },
+    {
+        "name": "Iris",
+        "class": "mage",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 41,
+        "slug": "iris"
+    },
+    {
+        "name": "Isaac",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 45,
+        "slug": "isaac"
+    },
+    {
+        "name": "Ishmael",
+        "class": "warrior",
+        "faction": "honor",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "crit hit chance"
+        ],
+        "stone_source": [
+            "Grand Arena Shop"
+        ],
+        "order_rank": 13,
+        "slug": "ishmael"
+    },
+    {
+        "name": "Jet",
+        "class": "support",
+        "faction": "progress",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Soul Shop"
+        ],
+        "order_rank": 63,
+        "slug": "jet"
+    },
+    {
+        "name": "Jhu",
+        "class": "marksman",
+        "faction": "nature",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "crit hit chance"
+        ],
+        "stone_source": [
+            "Guild War Shop"
+        ],
+        "order_rank": 34,
+        "slug": "jhu"
+    },
+    {
+        "name": "Jorgen",
+        "class": "control",
+        "faction": "chaos",
+        "main_stat": "strength",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Outland Shop"
+        ],
+        "order_rank": 39,
+        "slug": "jorgen"
+    },
+    {
+        "name": "Judge",
+        "class": "control",
+        "faction": "progress",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Arena Shop"
+        ],
+        "order_rank": 29,
+        "slug": "judge"
+    },
+    {
+        "name": "Julius",
+        "class": "tank",
+        "faction": "progress",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "crit hit chance"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 8,
+        "slug": "julius"
+    },
+    {
+        "name": "K'arkh",
+        "class": "warrior",
+        "faction": "eternity",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Guild War Shop"
+        ],
+        "order_rank": 14,
+        "slug": "karkh"
+    },
+    {
+        "name": "Kai",
+        "class": "mage",
+        "faction": "nature",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Tower Shop"
+        ],
+        "order_rank": 33,
+        "slug": "kai"
+    },
+    {
+        "name": "Kayla",
+        "class": "warrior",
+        "faction": "chaos",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 18,
+        "slug": "kayla"
+    },
+    {
+        "name": "Keira",
+        "class": "marksman",
+        "faction": "eternity",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 28,
+        "slug": "keira"
+    },
+    {
+        "name": "Krista",
+        "class": "support",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 27,
+        "slug": "krista"
+    },
+    {
+        "name": "Lara Croft",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 50,
+        "slug": "lara-croft"
     },
     {
         "name": "Lian",
@@ -715,53 +619,48 @@
             "magic",
             "pure"
         ],
-        "artifact_team_buff": "magic attack",
+        "artifact_team_buff": [
+            "magic attack"
+        ],
         "stone_source": [
             "Grand Arena Shop"
         ],
-        "order_rank": 57
+        "order_rank": 57,
+        "slug": "lian"
     },
     {
-        "name": "Aidan",
-        "class": "healer",
-        "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": "magic defense",
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 62
-    },
-    {
-        "name": "Jet",
-        "class": "support",
-        "faction": "progress",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": "armor",
-        "stone_source": [
-            "Soul Shop"
-        ],
-        "order_rank": 63
-    },
-    {
-        "name": "Fafnir",
-        "class": "support",
+        "name": "Luther",
+        "class": "tank",
         "faction": "honor",
         "main_stat": "strength",
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": "physical attack",
-        "stone_source": [
-            "Special Events"
+        "artifact_team_buff": [
+            "armor"
         ],
-        "order_rank": 65
+        "stone_source": [
+            "Outland Shop"
+        ],
+        "order_rank": 4,
+        "slug": "luther"
+    },
+    {
+        "name": "Markus",
+        "class": "healer",
+        "faction": "honor",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Grand Arena Shop"
+        ],
+        "order_rank": 15,
+        "slug": "markus"
     },
     {
         "name": "Martha",
@@ -771,11 +670,101 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": "armor",
+        "artifact_team_buff": [
+            "armor"
+        ],
         "stone_source": [
             "Special Events"
         ],
-        "order_rank": 68
+        "order_rank": 68,
+        "slug": "martha"
+    },
+    {
+        "name": "Maya",
+        "class": "healer",
+        "faction": "mystery",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Tower Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 24,
+        "slug": "maya"
+    },
+    {
+        "name": "Mojo",
+        "class": "mage",
+        "faction": "nature",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 37,
+        "slug": "mojo"
+    },
+    {
+        "name": "Morrigan",
+        "class": "healer",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Hydra Shop"
+        ],
+        "order_rank": 31,
+        "slug": "morrigan"
+    },
+    {
+        "name": "Mushy and Shroom",
+        "class": "tank",
+        "faction": "nature",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 22,
+        "slug": "mushy-and-shroom"
+    },
+    {
+        "name": "Nebula",
+        "class": "support",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Guild War Shop"
+        ],
+        "order_rank": 36,
+        "slug": "nebula"
     },
     {
         "name": "Octavia",
@@ -785,10 +774,188 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": "dodge",
+        "artifact_team_buff": [
+            "dodge"
+        ],
         "stone_source": [
             "Special Events"
         ],
-        "order_rank": 69
+        "order_rank": 69,
+        "slug": "octavia"
+    },
+    {
+        "name": "Orion",
+        "class": "mage",
+        "faction": "progress",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Tower Shop"
+        ],
+        "order_rank": 47,
+        "slug": "orion"
+    },
+    {
+        "name": "Oya",
+        "class": "warrior",
+        "faction": "nature",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "crit hit chance"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 12,
+        "slug": "oya"
+    },
+    {
+        "name": "Qing Mao",
+        "class": "warrior",
+        "faction": "honor",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Outland Shop"
+        ],
+        "order_rank": 20,
+        "slug": "qing-mao"
+    },
+    {
+        "name": "Rufus",
+        "class": "tank",
+        "faction": "mystery",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Grand Arena Shop"
+        ],
+        "order_rank": 7,
+        "slug": "rufus"
+    },
+    {
+        "name": "Satori",
+        "class": "mage",
+        "faction": "mystery",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Highwayman Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 21,
+        "slug": "satori"
+    },
+    {
+        "name": "Sebastian",
+        "class": "support",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 35,
+        "slug": "sebastian"
+    },
+    {
+        "name": "Tristan",
+        "class": "warrior",
+        "faction": "honor",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 11,
+        "slug": "tristan"
+    },
+    {
+        "name": "Xe'Sha",
+        "class": "mage",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 42,
+        "slug": "xesha"
+    },
+    {
+        "name": "Yasmine",
+        "class": "warrior",
+        "faction": "nature",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical",
+            "pure"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Hydra Shop"
+        ],
+        "order_rank": 19,
+        "slug": "yasmine"
+    },
+    {
+        "name": "Ziri",
+        "class": "tank",
+        "faction": "mystery",
+        "main_stat": "strength",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Guild War Shop"
+        ],
+        "order_rank": 6,
+        "slug": "ziri"
     }
 ]

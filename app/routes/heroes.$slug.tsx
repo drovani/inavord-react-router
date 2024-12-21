@@ -71,8 +71,8 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
     <div className="space-y-8">
       {/* Header Section */}
       <div className="flex items-start gap-6">
-        <div className="w-32 h-32 bg-muted rounded-lg flex items-center justify-center">
-          <span className="text-4xl">{hero.name[0]}</span>
+        <div className="size-32 bg-muted rounded">
+          <img src={`/images/heroes/${hero.slug}.webp`} alt={hero.name[0]} className="size-32" />
         </div>
         <div className="space-y-4">
           <div>
@@ -112,10 +112,12 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
           <CardHeader>
             <CardTitle>Artifact Team Buff</CardTitle>
           </CardHeader>
-          <CardContent>
-            <Badge variant="secondary" className="capitalize">
-              {hero.artifact_team_buff}
-            </Badge>
+          <CardContent className="flex gap-2 flex-wrap">
+            {hero.artifact_team_buff.map((buff) => (
+              <Badge key={buff} variant="secondary" className="capitalize">
+                {buff}
+              </Badge>
+            ))}
           </CardContent>
         </Card>
       )}

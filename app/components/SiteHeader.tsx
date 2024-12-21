@@ -34,14 +34,14 @@ function SiteHeader({
                 for (const crumb of crumbs) {
                   if (crumb.href) {
                     nodes.push(
-                      <BreadcrumbLink asChild>
+                      <BreadcrumbLink key={crumb.title} asChild>
                         <Link to={crumb.href}>{crumb.title}</Link>
                       </BreadcrumbLink>
                     );
                   } else {
-                    nodes.push(<BreadcrumbItem>{crumb.title}</BreadcrumbItem>);
+                    nodes.push(<BreadcrumbItem key={crumb.title}>{crumb.title}</BreadcrumbItem>);
                   }
-                  nodes.push(<BreadcrumbSeparator />);
+                  nodes.push(<BreadcrumbSeparator key={`${crumb.title}-after`} />);
                 }
                 if (index + 1 >= breadcrumbs.length) {
                   nodes.pop();

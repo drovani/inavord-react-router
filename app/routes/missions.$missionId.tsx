@@ -111,11 +111,13 @@ export default function MissionDetails({ loaderData }: Route.ComponentProps) {
         {mission.boss && (
           <div className="text-center">
             <div className="relative w-16 h-16 mx-auto">
-              <img
-                src={getBossImageUrl(mission.boss)}
-                alt={mission.boss}
-                className="w-full h-full object-cover rounded-lg"
-              />
+              <Link to={`/heroes/${generateSlug(mission.boss)}`} viewTransition>
+                <img
+                  src={getBossImageUrl(mission.boss)}
+                  alt={mission.boss}
+                  className="w-full h-full object-cover rounded-lg"
+                />
+              </Link>
             </div>
             <p className="mt-1 text-sm font-medium">Boss: {mission.boss}</p>
           </div>

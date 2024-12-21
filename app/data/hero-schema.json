@@ -53,17 +53,20 @@
                 }
             },
             "artifact_team_buff": {
-                "type": "string",
-                "enum": [
-                    "armor",
-                    "dodge",
-                    "physical attack",
-                    "magic attack",
-                    "magic defense",
-                    "armor penetration",
-                    "crit hit chance",
-                    "magic penetration"
-                ]
+                "type": "array",
+                "items": {
+                    "type": "string",
+                    "enum": [
+                        "armor",
+                        "dodge",
+                        "physical attack",
+                        "magic attack",
+                        "magic defense",
+                        "armor penetration",
+                        "crit hit chance",
+                        "magic penetration"
+                    ]
+                }
             },
             "stone_source": {
                 "type": "array",
@@ -98,7 +101,8 @@
             "main_stat",
             "attack_type",
             "stone_source",
-            "order_rank"
+            "order_rank",
+            "artifact_team_buff"
         ],
         "additionalProperties": false
     }

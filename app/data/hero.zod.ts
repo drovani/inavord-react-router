@@ -7,16 +7,18 @@ export const HeroSchema = z.object({
   faction: z.enum(["nature", "chaos", "honor", "eternity", "mystery", "progress"]),
   main_stat: z.enum(["strength", "agility", "intelligence"]),
   attack_type: z.array(z.enum(["physical", "magic", "pure"])),
-  artifact_team_buff: z.enum([
-    "armor",
-    "dodge",
-    "physical attack",
-    "magic attack",
-    "magic defense",
-    "armor penetration",
-    "crit hit chance",
-    "magic penetration",
-  ]),
+  artifact_team_buff: z.array(
+    z.enum([
+      "armor",
+      "dodge",
+      "physical attack",
+      "magic attack",
+      "magic defense",
+      "armor penetration",
+      "crit hit chance",
+      "magic penetration",
+    ])
+  ),
   stone_source: z.array(
     z.enum([
       "Arena Shop",
@@ -41,5 +43,5 @@ export type HeroClass = HeroRecord["class"];
 export type HeroFaction = HeroRecord["faction"];
 export type HeroMainStat = HeroRecord["main_stat"];
 export type HeroAttackType = HeroRecord["attack_type"][number];
-export type HeroArtifactTeamBuff = HeroRecord["artifact_team_buff"];
+export type HeroArtifactTeamBuff = HeroRecord["artifact_team_buff"][number];
 export type HeroStoneSource = HeroRecord["stone_source"][number];
