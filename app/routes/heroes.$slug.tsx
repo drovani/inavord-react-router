@@ -6,6 +6,7 @@ import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { heroDAL } from "~/lib/hero-dal";
+import { missionDAL } from "~/lib/mission-dal";
 import type { Route } from "./+types/heroes.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -30,17 +31,19 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
+  const campaignSources = await missionDAL.getMissionsByBoss(hero.name);
+
   const allHeroes = await heroDAL.getAllHeroes();
 
   const currentIndex = allHeroes.findIndex((h) => h.slug === hero.slug);
   const prevHero = currentIndex > 0 ? allHeroes[currentIndex - 1] : null;
   const nextHero = currentIndex < allHeroes.length - 1 ? allHeroes[currentIndex + 1] : null;
 
-  return { hero, prevHero, nextHero };
+  return { hero, prevHero, nextHero, campaignSources };
 };
 
 export default function Hero({ loaderData }: Route.ComponentProps) {
-  const { hero, prevHero, nextHero } = loaderData;
+  const { hero, prevHero, nextHero, campaignSources } = loaderData;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -129,11 +132,21 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
         </CardHeader>
         <CardContent>
           <div className="flex gap-2 flex-wrap">
-            {hero.stone_source.map((source) => (
-              <Badge key={source} variant="outline">
-                {source}
-              </Badge>
-            ))}
+            {hero.stone_source
+              .filter((s) => s !== "Campaign")
+              .map((source) => (
+                <Badge key={source} variant="outline">
+                  {source}
+                </Badge>
+              ))}
+            {campaignSources.length > 0 &&
+              campaignSources.map((mission) => (
+                <Link to={`/missions/${mission.id}`} key={mission.id}>
+                  <Badge variant="outline">
+                    {mission.chapter}-{mission.mission_number}: {mission.name}
+                  </Badge>
+                </Link>
+              ))}
           </div>
         </CardContent>
       </Card>
