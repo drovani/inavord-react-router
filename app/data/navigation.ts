@@ -26,7 +26,7 @@ export const navigation = [
       },
     ],
   },
-  { name: "Titans", icon: SwordIcon },
+  { name: "Titans", icon: SwordIcon, href: "/titans" },
   {
     name: "Equipment",
     icon: ShieldIcon,
