@@ -23,7 +23,7 @@ import {
 } from "./ui/sidebar";
 
 export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { isMobile } = useSidebar();
+  const { isMobile, setOpenMobile } = useSidebar();
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -38,7 +38,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
               <SidebarMenuItem key={item.name} className="">
                 <SidebarMenuButton asChild>
                   {"href" in item ? (
-                    <NavLink to={item.href} viewTransition>
+                    <NavLink to={item.href} viewTransition onClick={isMobile ? () => setOpenMobile(false) : undefined}>
                       {({ isPending, isActive }) => (
                         <>
                           <item.icon className={cn("inline", isActive && "fill-green-300")} />
@@ -73,6 +73,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                             to={subnav.href}
                             className="flex gap-2 items-center text-sm"
                             reloadDocument={"reloadDocument" in subnav && subnav.reloadDocument}
+                            onClick={isMobile ? () => setOpenMobile(false) : undefined}
                             viewTransition
                           >
                             <subnav.icon className="text-muted-foreground w-8" />
