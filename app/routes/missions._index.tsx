@@ -51,7 +51,7 @@ export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
   const [selectedBoss, setSelectedBoss] = useState<string | null>(null);
 
   const getBossImageUrl = (bossName: string) => {
-    return `/images/heroes/${generateSlug(bossName)}.webp`;
+    return `/images/heroes/${generateSlug(bossName)}.png`;
   };
 
   // Filter missions based on search criteria

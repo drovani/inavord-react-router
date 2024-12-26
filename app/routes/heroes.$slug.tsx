@@ -75,7 +75,7 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
       {/* Header Section */}
       <div className="flex items-start gap-6">
         <div className="size-32 bg-muted rounded">
-          <img src={`/images/heroes/${hero.slug}.webp`} alt={hero.name[0]} className="size-32" />
+          <img src={`/images/heroes/${hero.slug}.png`} alt={hero.name[0]} className="size-32" />
         </div>
         <div className="space-y-4">
           <div>

@@ -89,7 +89,7 @@ export default function MissionDetails({ loaderData }: Route.ComponentProps) {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [navigate, prevMission, nextMission]);
   const getBossImageUrl = (bossName: string) => {
-    return `/images/heroes/${generateSlug(bossName)}.webp`;
+    return `/images/heroes/${generateSlug(bossName)}.png`;
   };
 
   return (

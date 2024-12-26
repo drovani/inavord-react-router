@@ -18,9 +18,9 @@ export default function HeroesIndex({ loaderData }: Route.ComponentProps) {
           {heroes.map((hero) => (
             <Link to={`/heroes/${hero.slug}`} key={hero.slug} viewTransition>
               <Card
-                className="bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500"
+                className={"bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500 hover:bg-transparent"}
                 style={{
-                  backgroundImage: `url('/images/heroes/${hero.slug}.webp')`,
+                  backgroundImage: `url('/images/heroes/${hero.slug}.png')`,
                 }}
               >
                 <CardHeader className="p-1 bottom-0 absolute w-full text-center bg-white/80">
