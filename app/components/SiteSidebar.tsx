@@ -3,9 +3,10 @@ import { LoaderCircle, MoreHorizontalIcon } from "lucide-react";
 import type React from "react";
 import { Link, NavLink } from "react-router";
 import { navigation } from "~/data/navigation";
+import { useNetlifyAuth } from "~/hooks/useNetlifyAuth";
 import { cn } from "~/lib/utils";
 import { SiteSwitcher } from "./SiteSwitcher";
-import { SiteUser } from "./SiteUser";
+import { SiteUserMenu } from "./SiteUserMenu";
 import { DropdownMenuContent } from "./ui/dropdown-menu";
 import {
   Sidebar,
@@ -24,6 +25,7 @@ import {
 
 export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isMobile, setOpenMobile } = useSidebar();
+  const { isAuthenticated, user, authenticate } = useNetlifyAuth();
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -90,7 +92,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
         </SidebarGroup>
       </SidebarContent>
       <SidebarFooter>
-        <SiteUser user={{ name: "Aerynlore", email: "lore.family@gmail.com", avatar: "aurora", fallback: "AL" }} />
+        <SiteUserMenu />
       </SidebarFooter>
       <SidebarRail />
     </Sidebar>
