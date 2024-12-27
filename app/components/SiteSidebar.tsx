@@ -25,7 +25,13 @@ import {
 
 export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isMobile, setOpenMobile } = useSidebar();
-  const { isAuthenticated, user, authenticate } = useNetlifyAuth();
+  const { isAuthenticated, user } = useNetlifyAuth();
+
+  const navitems = navigation.filter(
+    (item) =>
+      !("roles" in item) ||
+      (isAuthenticated && user?.app_metadata.roles.some((role) => (item.roles as ReadonlyArray<string>).includes(role)))
+  );
 
   return (
     <Sidebar collapsible="icon" {...props}>
@@ -36,7 +42,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
         <SidebarGroup>
           <SidebarGroupLabel>Hero Wars Helper Tools</SidebarGroupLabel>
           <SidebarMenu>
-            {navigation.map((item) => (
+            {navitems.map((item) => (
               <SidebarMenuItem key={item.name} className="">
                 <SidebarMenuButton asChild>
                   {"href" in item ? (
