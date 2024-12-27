@@ -1,5 +1,5 @@
 import { ChevronDown, type LucideProps } from "lucide-react";
-import * as React from "react";
+import type { ForwardRefExoticComponent } from "react";
 import { Link } from "react-router";
 import {
   DropdownMenu,
@@ -14,7 +14,7 @@ import HSMercsIcon from "~/images/hsmercs-helper-icon.png";
 
 const tools: {
   name: string;
-  logo: string | React.ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
+  logo: string | ForwardRefExoticComponent<Omit<LucideProps, "ref"> & React.RefAttributes<SVGSVGElement>>;
   subtext?: string;
   href: string;
 }[] = [

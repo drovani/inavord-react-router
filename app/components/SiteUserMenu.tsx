@@ -1,5 +1,6 @@
-import { BadgeCheck, Bell, ChevronsUpDown, CreditCard, LogInIcon, LogOut, Sparkles } from "lucide-react";
+import { BadgeCheck, ChevronsUpDown, LogInIcon, LogOut } from "lucide-react";
 import { useMemo } from "react";
+import { Link } from "react-router";
 import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import {
   DropdownMenu,
@@ -73,24 +74,11 @@ export function SiteUserMenu() {
                 </DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuGroup>
-                  <DropdownMenuItem disabled className="w-full flex items-center gap-2">
-                    <Sparkles />
-                    Upgrade to Pro
-                  </DropdownMenuItem>
-                </DropdownMenuGroup>
-                <DropdownMenuSeparator />
-                <DropdownMenuGroup>
-                  <DropdownMenuItem className="w-full flex items-center gap-2">
-                    <BadgeCheck />
-                    Account
-                  </DropdownMenuItem>
-                  <DropdownMenuItem disabled className="w-full flex items-center gap-2">
-                    <CreditCard />
-                    Billing
-                  </DropdownMenuItem>
-                  <DropdownMenuItem className="w-full flex items-center gap-2">
-                    <Bell />
-                    Notifications
+                  <DropdownMenuItem asChild>
+                    <Link to="/account" className="flex items-center gap-2" viewTransition>
+                      <BadgeCheck />
+                      Account
+                    </Link>
                   </DropdownMenuItem>
                 </DropdownMenuGroup>
                 <DropdownMenuSeparator />
