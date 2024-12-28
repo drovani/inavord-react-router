@@ -20,8 +20,11 @@ interface InitializationResult {
   details: string[];
 }
 
-export async function initializeMissionBlobs(options: InitializationOptions = {}): Promise<InitializationResult> {
-  const { skipExisting = true, failIfExists = false, forceUpdate = false } = options;
+export async function initializeMissionBlobs(
+  options: InitializationOptions = { skipExisting: true, failIfExists: false, forceUpdate: false }
+): Promise<InitializationResult> {
+
+  const { skipExisting, failIfExists, forceUpdate } = options;
   const details: string[] = [];
 
   try {

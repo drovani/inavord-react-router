@@ -1,4 +1,3 @@
-import type { Route } from ".react-router/types/app/routes/+types/missions.$missionId";
 import { MapIcon } from "lucide-react";
 import { useEffect } from "react";
 import { Link, useNavigate, type UIMatch } from "react-router";
@@ -8,6 +7,7 @@ import { type EquipmentRecord } from "~/data/equipment.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
 import { missionDAL } from "~/lib/mission-dal";
 import { generateSlug } from "~/lib/utils";
+import type { Route } from "./+types/missions.$missionId";
 
 export const meta = ({ data }: Route.MetaArgs) => {
   if (!data) {
