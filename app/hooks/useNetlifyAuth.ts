@@ -5,7 +5,10 @@ export { type User } from "netlify-identity-widget";
 
 export function useNetlifyAuth() {
   useEffect(() => {
-    netlifyIdentity.init();
+    netlifyIdentity.init({
+      namePlaceholder: "Gamer handle",
+      logo: false,
+    });
   }, []);
 
   const isAuthenticated = useMemo(() => netlifyIdentity.currentUser() !== null, [netlifyIdentity.currentUser()]);
