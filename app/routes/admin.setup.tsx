@@ -1,4 +1,13 @@
+import { AlertCircle, ArrowRight, CheckCircle2, RefreshCwIcon } from "lucide-react";
+import { useMemo } from "react";
 import { data, useFetcher } from "react-router";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
+import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
+import { Button } from "~/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Label } from "~/components/ui/label";
+import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import { ScrollArea } from "~/components/ui/scroll-area";
 import { initializeEquipmentBlobs } from "~/lib/initialize-equipment-blobs";
 import { initializeHeroBlobs } from "~/lib/initialize-hero-blobs";
 import { initializeMissionBlobs } from "~/lib/initialize-mission-blobs";
@@ -38,21 +47,11 @@ export async function action({ request }: Route.ActionArgs) {
         error: message,
       },
       {
-        status: error instanceof Error && error.message.includes("Existing equipment") ? 409 : 500,
+        status: error instanceof Error && error.message.includes("Existing data conflict.") ? 409 : 500,
       }
     );
   }
 }
-
-import { AlertCircle, ArrowRight, CheckCircle2, RefreshCwIcon } from "lucide-react";
-import { useMemo } from "react";
-import { Accordion, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
-import { Alert, AlertDescription } from "~/components/ui/alert";
-import { Button } from "~/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
-import { Label } from "~/components/ui/label";
-import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
-import { ScrollArea } from "~/components/ui/scroll-area";
 
 export default function AdminSetup({ actionData }: Route.ComponentProps) {
   const initdata = useMemo(() => actionData, [actionData]);
@@ -221,6 +220,24 @@ function StatsCard({ title, value, icon }: { title: string; value: string | numb
         </div>
         {icon}
       </div>
+    </div>
+  );
+}
+
+export function ErrorBoundary(props: Route.ErrorBoundaryProps) {
+  return (
+    <div className="space-y-4">
+      <Alert variant={"destructive"}>
+        <AlertCircle className="h-4 w-4" />
+        <AlertTitle>Error in this route</AlertTitle>
+        <AlertDescription>
+          For some reason, after the form is posted and the data is processed, React Router throws an AbortError. I
+          can't figure out why, but I know the data is there and the results are good. I'll try to fix this soon.
+        </AlertDescription>
+        <AlertDescription>
+          <pre>{JSON.stringify(props, null, 2)}</pre>
+        </AlertDescription>
+      </Alert>
     </div>
   );
 }
