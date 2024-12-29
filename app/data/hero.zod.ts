@@ -30,6 +30,7 @@ export const HeroSchema = z.object({
       "Guild War Shop",
       "Grand Arena Shop",
       "Tower Shop",
+      "Town Shop",
       "Highwayman Shop",
       "Hydra Shop",
       "Soul Shop",

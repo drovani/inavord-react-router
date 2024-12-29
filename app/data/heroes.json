@@ -1011,7 +1011,7 @@
     },
     {
         "name": "Ninja Turtles",
-        "class":"warrior",
+        "class": "warrior",
         "faction": "nature",
         "main_stat": "agility",
         "attack_type": [
@@ -1025,6 +1025,203 @@
         ],
         "order_rank": 16.5,
         "slug": "ninja-turtles"
+    },
+    {
+        "name": "Artemis",
+        "class": "marksman",
+        "faction": "honor",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 59,
+        "slug": "artemis"
+    },
+    {
+        "name": "Astrid and Lucas",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Arena Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 53,
+        "slug": "astrid-and-lucas"
+    },
+    {
+        "name": "Dorian",
+        "class": "healer",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Town Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 60,
+        "slug": "dorian"
+    },
+    {
+        "name": "Ginger",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 49,
+        "slug": "ginger"
+    },
+    {
+        "name": "Fox",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 56,
+        "slug": "fox"
+    },
+    {
+        "name": "Helios",
+        "class": "support",
+        "faction": "honor",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 66,
+        "slug": "helios"
+    },
+    {
+        "name": "Lars",
+        "class": "mage",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 52,
+        "slug": "lars"
+    },
+    {
+        "name": "Lilith",
+        "class": "mage",
+        "faction": "chaos",
+        "main_stat": "strength",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Highwayman Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 67,
+        "slug": "lilith"
+    },
+    {
+        "name": "Peppy",
+        "class": "control",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 61,
+        "slug": "peppy"
+    },
+    {
+        "name": "Phobos",
+        "class": "control",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 58,
+        "slug": "phobos"
+    },
+    {
+        "name": "Thea",
+        "class": "healer",
+        "faction": "nature",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 64,
+        "slug": "thea"
     }
-
 ]

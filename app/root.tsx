@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useMatches,
-  type UIMatch,
+  type UIMatch
 } from "react-router";
 import SiteHeader from "~/components/SiteHeader";
 import type { Route } from "./+types/root";
