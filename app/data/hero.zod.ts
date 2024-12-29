@@ -7,18 +7,6 @@ export const HeroSchema = z.object({
   faction: z.enum(["nature", "chaos", "honor", "eternity", "mystery", "progress"]),
   main_stat: z.enum(["strength", "agility", "intelligence"]),
   attack_type: z.array(z.enum(["physical", "magic", "pure"])),
-  artifact_team_buff: z.array(
-    z.enum([
-      "armor",
-      "dodge",
-      "physical attack",
-      "magic attack",
-      "magic defense",
-      "armor penetration",
-      "crit hit chance",
-      "magic penetration",
-    ])
-  ),
   stone_source: z.array(
     z.enum([
       "Arena Shop",
@@ -37,6 +25,34 @@ export const HeroSchema = z.object({
     ])
   ),
   order_rank: z.number().positive(),
+  artifacts: z
+    .object({
+      weapon: z.object({
+        name: z.string(),
+        team_buff: z.array(
+          z.enum([
+            "armor",
+            "dodge",
+            "physical attack",
+            "magic attack",
+            "magic defense",
+            "armor penetration",
+            "crit hit chance",
+            "magic penetration",
+          ])
+        ),
+      }),
+      book: z.enum([
+        "Alchemist's Folio",
+        "Book of Illusions",
+        "Defender's Covenant",
+        "Manuscript of the Void",
+        "Tome of Arcane Knowledge",
+        "Warrior's Code",
+      ]),
+      ring: z.never(),
+    })
+    .optional(),
 });
 
 export type HeroRecord = z.infer<typeof HeroSchema>;
@@ -44,5 +60,13 @@ export type HeroClass = HeroRecord["class"];
 export type HeroFaction = HeroRecord["faction"];
 export type HeroMainStat = HeroRecord["main_stat"];
 export type HeroAttackType = HeroRecord["attack_type"][number];
-export type HeroArtifactTeamBuff = HeroRecord["artifact_team_buff"][number];
 export type HeroStoneSource = HeroRecord["stone_source"][number];
+
+export const BOOK_STATS: Record<string, string[]> = {
+  "Alchemist's Folio": ["armor penetration", "physical attack"],
+  "Book of Illusions": ["dodge", "health"],
+  "Defender's Covenant": ["armor", "magic defense"],
+  "Manuscript of the Void": ["magic attack", "magic penetration"],
+  "Tome of Arcane Knowledge": ["magic attack", "health"],
+  "Warrior's Code": ["physical attack", "crit hit chance"],
+} as const;

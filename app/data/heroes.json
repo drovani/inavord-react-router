@@ -112,14 +112,21 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
         "stone_source": [
             "Campaign"
         ],
         "order_rank": 2,
-        "slug": "aurora"
+        "slug": "aurora",
+        "artifacts": {
+            "weapon": {
+                "name": "Selias' Legacy",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        }
     },
     {
         "name": "Cascade",

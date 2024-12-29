@@ -58,7 +58,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <SiteSidebar />
           <SidebarInset>
             <SiteHeader breadcrumbs={breadcrumbs} />
-            <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6">{children}</main>
+            <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 max-w-4xl">{children}</main>
           </SidebarInset>
         </SidebarProvider>
         <ScrollRestoration />

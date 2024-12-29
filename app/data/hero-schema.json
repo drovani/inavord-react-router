@@ -52,22 +52,6 @@
                     ]
                 }
             },
-            "artifact_team_buff": {
-                "type": "array",
-                "items": {
-                    "type": "string",
-                    "enum": [
-                        "armor",
-                        "dodge",
-                        "physical attack",
-                        "magic attack",
-                        "magic defense",
-                        "armor penetration",
-                        "crit hit chance",
-                        "magic penetration"
-                    ]
-                }
-            },
             "stone_source": {
                 "type": "array",
                 "items": {
@@ -92,6 +76,58 @@
             "order_rank": {
                 "type": "number",
                 "minimum": 1
+            },
+            "artifacts": {
+                "type": "object",
+                "properties": {
+                    "weapon": {
+                        "type": "object",
+                        "properties": {
+                            "name": {
+                                "type": "string"
+                            },
+                            "team_buff": {
+                                "type": "array",
+                                "items": {
+                                    "type": "string",
+                                    "enum": [
+                                        "armor",
+                                        "dodge",
+                                        "physical attack",
+                                        "magic attack",
+                                        "magic defense",
+                                        "armor penetration",
+                                        "crit hit chance",
+                                        "magic penetration"
+                                    ]
+                                }
+                            }
+                        },
+                        "required": [
+                            "name",
+                            "team_buff"
+                        ]
+                    },
+                    "book": {
+                        "type": "string",
+                        "enum": [
+                            "Alchemist's Folio",
+                            "Book of Illusions",
+                            "Defender's Covenant",
+                            "Manuscript of the Void",
+                            "Tome of Arcane Knowledge",
+                            "Warrior's Code"
+                        ]
+                    },
+                    "ring": {
+                        "type": "null"
+                    }
+                },
+                "required": [
+                    "weapon",
+                    "book",
+                    "ring"
+                ]
             }
         },
         "required": [
@@ -102,9 +138,7 @@
             "main_stat",
             "attack_type",
             "stone_source",
-            "order_rank",
-            "artifact_team_buff"
-        ],
-        "additionalProperties": false
+            "order_rank"
+        ]
     }
 }
