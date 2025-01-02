@@ -37,9 +37,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
   const [allMissions, existingItems] = await Promise.all([missionDAL.getAllMissions(), equipmentDAL.getAllEquipment()]);
 
-  const existingStats = [...new Set(existingItems.flatMap((ae) => ("stats" in ae ? Object.keys(ae.stats || {}) : [])))];
-
-  return { existingItems, existingStats, allMissions, equipment };
+  return { existingItems, allMissions, equipment };
 };
 
 export const action = async ({ params, request }: Route.ActionArgs) => {
@@ -63,14 +61,12 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
 };
 
 export default function EditEquipment({ loaderData }: Route.ComponentProps) {
-  const { allMissions, existingStats, existingItems, equipment } = loaderData;
+  const { allMissions, existingItems, equipment } = loaderData;
 
   const form = useForm<EquipmentMutation>({
     resolver: zodResolver(EquipmentMutationSchema),
     defaultValues: equipment,
   });
 
-  return (
-    <EquipmentForm form={form} existingStats={existingStats} existingItems={existingItems} missions={allMissions} />
-  );
+  return <EquipmentForm form={form} existingItems={existingItems} missions={allMissions} />;
 }

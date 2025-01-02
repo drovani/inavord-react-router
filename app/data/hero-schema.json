@@ -110,6 +110,7 @@
                                 "magic defense",
                                 "dodge",
                                 "magic penetration",
+                                "armor penetration",
                                 "vampirism"
                             ]
                         },
@@ -259,7 +260,8 @@
                         "magic defense",
                         "dodge",
                         "magic penetration",
-                        "vampirism"
+                        "vampirism",
+                        "armor penetration"
                     ]
                 },
                 "minItems": 5,
@@ -294,8 +296,7 @@
                                         "magic defense",
                                         "armor penetration",
                                         "crit hit chance",
-                                        "magic penetration",
-                                        "vampirism"
+                                        "magic penetration"
                                     ]
                                 }
                             }

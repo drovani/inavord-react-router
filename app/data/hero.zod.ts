@@ -12,7 +12,8 @@ export const Stats = [
   "magic defense",
   "dodge",
   "magic penetration",
-  "vampirism"
+  "vampirism",
+  "armor penetration",
 ] as const;
 
 const WeaponTeamBuff = [

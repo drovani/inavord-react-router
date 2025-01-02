@@ -1,13 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
+import ChapterMissions from "~/components/equipment-form/ChapterMissions";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
+import { Badge } from "~/components/ui/badge";
 import { FormControl, FormField, FormItem, FormMessage } from "~/components/ui/form";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "~/components/ui/hover-card";
 import { Input } from "~/components/ui/input";
 import type { EquipmentMutation } from "~/data/equipment.zod";
 import { type Mission, groupMissionsByChapter } from "~/data/mission.zod";
-import ChapterMissions from "./ChapterMissions";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "./ui/accordion";
-import { Badge } from "./ui/badge";
 
 interface CampaignSourcesFieldProps {
   form: UseFormReturn<EquipmentMutation>;

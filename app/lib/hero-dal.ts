@@ -193,8 +193,6 @@ export class HeroDAL {
   async updateHero(slug: string, hero: HeroMutation): Promise<HeroRecord> {
     await this.initializeStorage();
 
-    console.debug("Updating hero", slug, hero);
-
     try {
       const existing = await this.getHero(slug);
       const updatedHero = {
