@@ -90,8 +90,7 @@
                     "type": "object",
                     "required": [
                         "name",
-                        "stat",
-                        "source"
+                        "stat"
                     ],
                     "properties": {
                         "name": {
