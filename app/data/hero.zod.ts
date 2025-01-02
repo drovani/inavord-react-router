@@ -87,21 +87,21 @@ export const QualityLevels = [
 
 // Equipment list for each quality level must have exactly 6 items
 export const ItemsSchema = z.object({
-  white: z.array(z.string()).length(6),
-  green: z.array(z.string()).length(6),
-  "green+1": z.array(z.string()).length(6),
-  blue: z.array(z.string()).length(6),
-  "blue+1": z.array(z.string()).length(6),
-  "blue+2": z.array(z.string()).length(6),
-  purple: z.array(z.string()).length(6),
-  "purple+1": z.array(z.string()).length(6),
-  "purple+2": z.array(z.string()).length(6),
-  "purple+3": z.array(z.string()).length(6),
-  orange: z.array(z.string()).length(6),
-  "orange+1": z.array(z.string()).length(6),
-  "orange+2": z.array(z.string()).length(6),
-  "orange+3": z.array(z.string()).length(6),
-  "orange+4": z.array(z.string()).length(6),
+  white: z.array(z.string()).length(6).optional(),
+  green: z.array(z.string()).length(6).optional(),
+  "green+1": z.array(z.string()).length(6).optional(),
+  blue: z.array(z.string()).length(6).optional(),
+  "blue+1": z.array(z.string()).length(6).optional(),
+  "blue+2": z.array(z.string()).length(6).optional(),
+  purple: z.array(z.string()).length(6).optional(),
+  "purple+1": z.array(z.string()).length(6).optional(),
+  "purple+2": z.array(z.string()).length(6).optional(),
+  "purple+3": z.array(z.string()).length(6).optional(),
+  orange: z.array(z.string()).length(6).optional(),
+  "orange+1": z.array(z.string()).length(6).optional(),
+  "orange+2": z.array(z.string()).length(6).optional(),
+  "orange+3": z.array(z.string()).length(6).optional(),
+  "orange+4": z.array(z.string()).length(6).optional(),
 });
 
 // Complete Hero Schema that includes all fields

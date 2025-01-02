@@ -251,6 +251,11 @@ export class EquipmentDAL {
     }
   }
 
+  async getEquipmentThatIsEquipable(): Promise<EquipmentRecord[]> {
+    const allEquipment = await this.getAllEquipment();
+    return allEquipment.filter((e) => e.type !== "fragment" && e.type !== "recipe");
+  }
+
   /**
    * Create a new equipment item
    */

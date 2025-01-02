@@ -7,6 +7,7 @@ import { ZodError } from "zod";
 import HeroForm from "~/components/HeroForm";
 import { Badge } from "~/components/ui/badge";
 import { HeroMutationSchema, type HeroMutation } from "~/data/hero.zod";
+import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
 import type { Route } from "./+types/heroes.$slug_.edit";
 
@@ -36,7 +37,9 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  return { hero };
+  const equipment = await equipmentDAL.getEquipmentThatIsEquipable();
+
+  return { hero, equipment };
 };
 
 export const action = async ({ params, request }: Route.ActionArgs) => {
@@ -58,7 +61,7 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
 };
 
 export default function EditHero({ loaderData }: Route.ComponentProps) {
-  const { hero } = loaderData;
+  const { hero, equipment } = loaderData;
 
   const form = useForm<HeroMutation>({
     resolver: zodResolver(HeroMutationSchema),
@@ -79,14 +82,15 @@ export default function EditHero({ loaderData }: Route.ComponentProps) {
             <Badge variant="outline" className="capitalize">
               {hero.faction}
             </Badge>
-            <Badge variant="outline" className="capitalize">
+            <div className="capitalize flex gap-1 items-center">
+              <img src={`/images/stats/${hero.main_stat}.png`} alt={hero.main_stat} className="size-4 inline-block" />
               {hero.main_stat}
-            </Badge>
+            </div>
           </div>
         </div>
       </div>
 
-      <HeroForm form={form} hero={hero} />
+      <HeroForm form={form} hero={hero} equipment={equipment} />
     </div>
   );
 }

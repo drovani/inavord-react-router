@@ -4,17 +4,19 @@ import { Button } from "~/components/ui/button";
 import { Form } from "~/components/ui/form";
 import { HeroMutationSchema, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
 // import ArtifactsField from "./hero-form/ArtifactsField";
-import GlyphsField from "./hero-form/GlyphsField";
-// import ItemsField from "./hero-form/ItemsField";
 import { ZodError } from "zod";
 import SkinsField from "~/components/hero-form/SkinsField";
+import type { EquipmentRecord } from "~/data/equipment.zod";
+import GlyphsField from "./hero-form/GlyphsField";
+import ItemsField from "./hero-form/ItemsField";
 
 interface HeroFormProps {
   form: UseFormReturn<HeroMutation>;
   hero: HeroRecord;
+  equipment: EquipmentRecord[];
 }
 
-export default function HeroForm({ form, hero }: HeroFormProps) {
+export default function HeroForm({ form, hero, equipment }: HeroFormProps) {
   const navigate = useNavigate();
   const submit = useSubmit();
 
@@ -37,9 +39,9 @@ export default function HeroForm({ form, hero }: HeroFormProps) {
     <Form {...form}>
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         {/* <ArtifactsField form={form} hero={hero} /> */}
-        <SkinsField form={form} hero={hero} />
-        {/* <ItemsField form={form} /> */}
         <GlyphsField form={form} hero={hero} />
+        <ItemsField form={form} hero={hero} equipment={equipment} />
+        <SkinsField form={form} hero={hero} />
 
         <div className="flex gap-4">
           <Button type="submit">Save Hero</Button>
