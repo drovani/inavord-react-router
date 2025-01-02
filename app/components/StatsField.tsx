@@ -5,37 +5,23 @@ import { Button } from "~/components/ui/button";
 import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
-import type { EquipmentMutation } from "~/data/equipment.zod";
+import { type EquipmentMutation } from "~/data/equipment.zod";
+import { Stats } from "~/data/hero.zod";
+import { generateSlug } from "~/lib/utils";
 
 interface StatsFieldProps {
   form: UseFormReturn<EquipmentMutation>;
-  existingStats: string[];
   disabled?: boolean;
 }
 
-export default function StatsField({ form, existingStats, disabled = false }: StatsFieldProps) {
+export default function StatsField({ form, disabled = false }: StatsFieldProps) {
   const [open, setOpen] = useState(false);
-  const [inputValue, setInputValue] = useState("");
   const [lastAddedStat, setLastAddedStat] = useState<string | null>(null);
   const inputRefs = useRef<Record<string, HTMLInputElement>>({});
-
   const stats = form.watch("stats") || {};
-  const uniqueStats = [...new Set(existingStats)]
-    .sort()
-    .filter((stat) => stat.includes(inputValue.toLowerCase()) && !stats[stat]);
 
-  const onAddStat = () => {
-    const newStat = inputValue.toLowerCase().trim();
-    if (newStat && !stats[newStat]) {
-      form.setValue("stats", {
-        ...stats,
-        [newStat]: 0,
-      });
-      setInputValue("");
-      setOpen(false);
-      setLastAddedStat(newStat);
-    }
-  };
+  // Get available stats (those not already selected)
+  const availableStats = Stats.filter((stat) => !stats[stat]).sort();
 
   const onSelectStat = (stat: string) => {
     form.setValue("stats", {
@@ -43,7 +29,6 @@ export default function StatsField({ form, existingStats, disabled = false }: St
       [stat]: 0,
     });
     setOpen(false);
-    setInputValue("");
     setLastAddedStat(stat);
   };
 
@@ -59,7 +44,7 @@ export default function StatsField({ form, existingStats, disabled = false }: St
   const removeStat = (stat: string) => {
     const newStats = { ...stats };
     delete newStats[stat];
-    form.setValue("stats", newStats);
+    form.setValue("stats", Object.keys(newStats).length > 0 ? newStats : undefined);
   };
 
   return (
@@ -73,7 +58,10 @@ export default function StatsField({ form, existingStats, disabled = false }: St
             {/* Existing stats */}
             {Object.entries(stats).map(([stat, value]) => (
               <div key={stat} className="flex items-center gap-2">
-                <div className="w-40 capitalize">{stat}</div>
+                <div className="flex items-center gap-2 w-40">
+                  <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
+                  <span className="capitalize">{stat}</span>
+                </div>
                 <FormControl>
                   <Input
                     type="number"
@@ -91,44 +79,41 @@ export default function StatsField({ form, existingStats, disabled = false }: St
                   />
                 </FormControl>
                 <Button type="button" variant="ghost" size="icon" onClick={() => removeStat(stat)}>
-                  <XIcon className="size-4" />
+                  <XIcon className="h-4 w-4" />
                 </Button>
               </div>
             ))}
 
             {/* Add new stat */}
             <Popover open={open} onOpenChange={setOpen}>
-              <PopoverTrigger asChild disabled={disabled}>
-                <Button type="button" variant="outline" size="sm" className="w-full">
-                  <PlusCircleIcon className="size-4 mr-2" />
+              <PopoverTrigger asChild disabled={disabled || availableStats.length === 0}>
+                <Button
+                  type="button"
+                  variant="outline"
+                  size="sm"
+                  className="w-full"
+                  disabled={disabled || availableStats.length === 0}
+                >
+                  <PlusCircleIcon className="h-4 w-4 mr-2" />
                   Add Stat
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-64" align="start" onCloseAutoFocus={handleCloseAutoFocus}>
-                <div className="space-y-2 p-2">
-                  <Input
-                    placeholder="Search or add new stat..."
-                    value={inputValue}
-                    onChange={(e) => setInputValue(e.target.value)}
-                  />
-                  <div className="max-h-64 overflow-y-auto space-y-1">
-                    {uniqueStats.map((stat) => (
-                      <Button
-                        key={stat}
-                        variant="ghost"
-                        size="sm"
-                        className="w-full justify-start font-normal capitalize"
-                        onClick={() => onSelectStat(stat)}
-                      >
-                        {stat}
-                      </Button>
-                    ))}
-                    {inputValue.trim() && !uniqueStats.includes(inputValue.toLowerCase()) && (
-                      <Button variant="secondary" size="sm" className="w-full" onClick={onAddStat}>
-                        Add "{inputValue}"
-                      </Button>
-                    )}
-                  </div>
+                <div className="space-y-1 p-2">
+                  {availableStats.map((stat) => (
+                    <Button
+                      key={stat}
+                      variant="ghost"
+                      size="sm"
+                      className="w-full justify-start font-normal"
+                      onClick={() => onSelectStat(stat)}
+                    >
+                      <div className="flex items-center gap-2">
+                        <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
+                        <span className="capitalize">{stat}</span>
+                      </div>
+                    </Button>
+                  ))}
                 </div>
               </PopoverContent>
             </Popover>

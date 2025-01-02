@@ -1,5 +1,5 @@
 import { getStore, type Store } from "@netlify/blobs";
-import { HeroSchema, type HeroClass, type HeroFaction, type HeroRecord } from "~/data/hero.zod";
+import { HeroSchema, type HeroClass, type HeroFaction, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
 import heroData from "~/data/heroes.json";
 import { generateSlug } from "~/lib/utils";
 
@@ -190,17 +190,19 @@ export class HeroDAL {
     }
   }
 
-  async updateHero(slug: string, hero: HeroRecord): Promise<HeroRecord> {
+  async updateHero(slug: string, hero: HeroMutation): Promise<HeroRecord> {
     await this.initializeStorage();
 
-    try {
-      const heroWithSlug = {
-        ...hero,
-        slug: generateSlug(hero.name),
-      };
-      const validated = HeroSchema.parse(heroWithSlug);
+    console.debug("Updating hero", slug, hero);
 
+    try {
       const existing = await this.getHero(slug);
+      const updatedHero = {
+        ...existing,
+        ...hero,
+      };
+      const validated = HeroSchema.parse(updatedHero);
+
       if (!existing) {
         throw new Error(`Hero with slug ${slug} not found`);
       }

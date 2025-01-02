@@ -14,6 +14,7 @@ import {
   EquipmentMutationSchema,
   type EquipmentRecord,
 } from "~/data/equipment.zod";
+import { Stats } from "~/data/hero.zod";
 import type { Mission } from "~/data/mission.zod";
 import { generateSlug } from "~/lib/utils";
 import CampaignSourcesField from "./CampaignSourcesField";
@@ -23,7 +24,6 @@ import StatsField from "./StatsField";
 
 type EquipmentFormProps = {
   form: UseFormReturn<EquipmentMutation>;
-  existingStats: string[];
   existingItems: EquipmentRecord[];
   missions: Mission[];
 };
@@ -50,9 +50,10 @@ function appendToFormData(formData: FormData, data: unknown, schema: z.ZodSchema
   }
 }
 
-export default function EquipmentForm({ form, existingStats, existingItems, missions }: EquipmentFormProps) {
+export default function EquipmentForm({ form, existingItems, missions }: EquipmentFormProps) {
   const navigate = useNavigate();
   const submit = useSubmit();
+  const existingStats = [...Stats].sort();
 
   const [previewSlug, setPreviewSlug] = useState(form.getValues("name") ? generateSlug(form.getValues("name")) : "");
   const itemType = form.watch("type");
@@ -322,7 +323,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
           </div>
         </div>
 
-        <StatsField form={form} existingStats={existingStats} disabled={isFragment || isRecipe} />
+        <StatsField form={form} disabled={isFragment || isRecipe} />
         <CraftingField form={form} existingItems={existingItems} disabled={isFragment} />
         <CampaignSourcesField form={form} missions={missions} />
 

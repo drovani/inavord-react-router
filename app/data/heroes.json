@@ -115,6 +115,24 @@
         "stone_source": [
             "Campaign"
         ],
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "strength",
+                "source": "Default"
+            },
+            {
+                "name": "Nordic Skin",
+                "stat": "dodge"
+            }
+        ],
+        "glyphs": [
+            "magic attack",
+            "health",
+            "magic penetration",
+            "dodge",
+            "strength"
+        ],
         "order_rank": 2,
         "slug": "aurora",
         "artifacts": {
@@ -243,9 +261,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Spear of Fate",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Tower Shop"
         ],
@@ -347,9 +372,16 @@
             "physical",
             "pure"
         ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Harunian Sword",
+                "team_buff": [
+                    "physical attack"
+                ]
+            },
+            "book": "Defender's Covenant",
+            "ring": null
+        },
         "stone_source": [
             "Campaign",
             "Heroic Chest"
@@ -383,9 +415,16 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Tome of Enslaved Souls",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -417,9 +456,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "crit hit chance"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Hidden Demon's Katars",
+                "team_buff": [
+                    "crit hit chance"
+                ]
+            },
+            "book": "Alchemist's Folio",
+            "ring": null
+        },
         "stone_source": [
             "Grand Arena Shop"
         ],
@@ -451,9 +497,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "crit hit chance"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Zarahhar Bones",
+                "team_buff": [
+                    "crit hit chance"
+                ]
+            },
+            "book": "Warrior's Code",
+            "ring": null
+        },
         "stone_source": [
             "Guild War Shop"
         ],
@@ -468,9 +521,16 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Shavarakk's Blood",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Defender's Covenant",
+            "ring": null
+        },
         "stone_source": [
             "Outland Shop"
         ],
@@ -677,9 +737,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "armor"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Zarakkari Teapot",
+                "team_buff": [
+                    "armor"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -694,9 +761,16 @@
         "attack_type": [
             "pure"
         ],
-        "artifact_team_buff": [
-            "magic defense"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Mother Tree's Branch",
+                "team_buff": [
+                    "magic defense"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Tower Shop",
             "Heroic Chest"
@@ -764,9 +838,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Unborn Stars",
+                "team_buff": [
+                    "physical attack"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Guild War Shop"
         ],
@@ -781,9 +862,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Mirror of Truth",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -904,9 +992,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "armor penetration"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Demonic Reliquary",
+                "team_buff": [
+                    "armor penetration"
+                ]
+            },
+            "book": "Alchemist's Folio",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -990,9 +1085,16 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Prison of the Ancient God",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],

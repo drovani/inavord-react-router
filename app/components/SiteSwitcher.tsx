@@ -19,7 +19,7 @@ const tools: {
   href: string;
 }[] = [
   {
-    name: "Hero Wars Helper",
+    name: "HW Helper",
     logo: HeroWarsLogo,
     subtext: "Tools for players",
     href: "/",

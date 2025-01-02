@@ -11,6 +11,7 @@ import type { EquipmentRecord } from "~/data/equipment.zod";
 import type { Mission } from "~/data/mission.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
 import { missionDAL } from "~/lib/mission-dal";
+import { generateSlug } from "~/lib/utils";
 import type { Route } from "./+types/equipment.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -185,10 +186,13 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
           <CardHeader>
             <CardTitle>Stats</CardTitle>
           </CardHeader>
-          <CardContent className="flex gap-4">
+          <CardContent className="flex flex-col md:flex-row md:flex-wrap gap-4">
             {Object.entries(equipment.stats).map(([stat, value]) => (
               <div key={stat} className="flex items-center gap-2">
-                <span className="capitalize">{stat}:</span>
+                <div className="flex items-center gap-2">
+                  <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
+                  <span className="capitalize">{stat}:</span>
+                </div>
                 <span className="font-semibold">{value}</span>
               </div>
             ))}
