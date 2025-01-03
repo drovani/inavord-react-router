@@ -1,7 +1,11 @@
 import { useEffect, useMemo, useState } from "react";
 import { type UseFormReturn } from "react-hook-form";
-import { useNavigate, useSubmit } from "react-router";
-import { z } from "zod";
+import { data, useNavigate, useSubmit } from "react-router";
+import { ZodError } from "zod";
+import CampaignSourcesField from "~/components/equipment-form/CampaignSourcesField";
+import CraftingField from "~/components/equipment-form/CraftingField";
+import StatsField from "~/components/equipment-form/StatsField";
+import EquipmentImage from "~/components/EquipmentImage";
 import { Button } from "~/components/ui/button";
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
@@ -16,41 +20,14 @@ import {
 } from "~/data/equipment.zod";
 import type { Mission } from "~/data/mission.zod";
 import { generateSlug } from "~/lib/utils";
-import CampaignSourcesField from "./CampaignSourcesField";
-import CraftingField from "./CraftingField";
-import EquipmentImage from "./EquipmentImage";
-import StatsField from "./StatsField";
 
 type EquipmentFormProps = {
   form: UseFormReturn<EquipmentMutation>;
-  existingStats: string[];
   existingItems: EquipmentRecord[];
   missions: Mission[];
 };
 
-// Helper function to append data to FormData based on Zod schema
-function appendToFormData(formData: FormData, data: unknown, schema: z.ZodSchema, prefix: string = "") {
-  if (schema instanceof z.ZodObject) {
-    const obj = data as Record<string, unknown>;
-    Object.entries(schema.shape).forEach(([key, value]) => {
-      const fullKey = prefix ? `${prefix}.${key}` : key;
-      appendToFormData(formData, obj[key], value as z.ZodSchema, fullKey);
-    });
-  } else if (schema instanceof z.ZodArray) {
-    const arr = data as unknown[];
-    arr?.forEach((item) => {
-      formData.append(prefix, item as string);
-    });
-  } else if (schema instanceof z.ZodOptional || schema instanceof z.ZodNullable) {
-    if (data !== undefined && data !== null) {
-      appendToFormData(formData, data, schema.unwrap(), prefix);
-    }
-  } else if (data !== undefined && data !== null) {
-    formData.append(prefix, typeof data === "object" ? JSON.stringify(data) : String(data));
-  }
-}
-
-export default function EquipmentForm({ form, existingStats, existingItems, missions }: EquipmentFormProps) {
+export default function EquipmentForm({ form, existingItems, missions }: EquipmentFormProps) {
   const navigate = useNavigate();
   const submit = useSubmit();
 
@@ -85,10 +62,19 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
     return () => subscription.unsubscribe();
   }, [form, isFragment, isRecipe]);
 
-  const onSubmit = (data: EquipmentMutation) => {
-    const formData = new FormData();
-    appendToFormData(formData, data, EquipmentMutationSchema, "equipment");
-    submit(formData, { method: "post" });
+  const onSubmit = (submittedData: EquipmentMutation) => {
+    try {
+      const validated = EquipmentMutationSchema.parse(submittedData);
+
+      const formData = new FormData();
+      formData.append("equipment", JSON.stringify(validated));
+      submit(formData, { method: "post" });
+    } catch (error) {
+      console.error(error);
+      if (error instanceof ZodError) {
+        return data({ errors: error.format() }, { status: 400 });
+      }
+    }
   };
 
   return (
@@ -322,7 +308,7 @@ export default function EquipmentForm({ form, existingStats, existingItems, miss
           </div>
         </div>
 
-        <StatsField form={form} existingStats={existingStats} disabled={isFragment || isRecipe} />
+        <StatsField form={form} disabled={isFragment || isRecipe} />
         <CraftingField form={form} existingItems={existingItems} disabled={isFragment} />
         <CampaignSourcesField form={form} missions={missions} />
 

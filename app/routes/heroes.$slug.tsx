@@ -2,9 +2,12 @@ import { ArrowLeftIcon, ArrowRightIcon } from "lucide-react";
 import { useEffect } from "react";
 import { Link, useNavigate, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
+import HeroArtifacts from "~/components/hero/HeroArtifacts";
+import HeroGlyphs from "~/components/hero/HeroGlyphs";
+import HeroSkins from "~/components/hero/HeroSkins";
+import HeroStoneSources from "~/components/hero/HeroStoneSources";
 import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { heroDAL } from "~/lib/hero-dal";
 import { missionDAL } from "~/lib/mission-dal";
 import type { Route } from "./+types/heroes.$slug";
@@ -81,11 +84,12 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
           <div>
             <h1 className="text-3xl font-bold mb-2">{hero.name}</h1>
             <div className="flex gap-2">
-              <Badge variant="secondary" className="capitalize">
+              <div className="capitalize flex gap-1">
+                <img src={`/images/classes/${hero.class}.png`} alt={hero.class} className="w-6 h-6" />
                 {hero.class}
-              </Badge>
-              <Badge variant="outline" className="capitalize">
-                {hero.faction}
+              </div>
+              <Badge variant="outline">
+                Way of&nbsp;<span className="capitalize">{hero.faction}</span>
               </Badge>
             </div>
           </div>
@@ -93,7 +97,10 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
           <div className="flex gap-4">
             <div className="text-sm space-y-2">
               <div>Main Stat:</div>
-              <div className="font-semibold capitalize">{hero.main_stat}</div>
+              <div className="font-semibold capitalize flex gap-1">
+                <img src={`/images/stats/${hero.main_stat}.png`} alt={hero.main_stat} className="w-6 h-6" />
+                {hero.main_stat}
+              </div>
             </div>
             <div className="text-sm space-y-2">
               <div>Attack Types:</div>
@@ -109,53 +116,25 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
         </div>
       </div>
 
-      {/* Artifact Team Buff Section */}
-      {hero.artifact_team_buff && (
-        <Card>
-          <CardHeader>
-            <CardTitle>Artifact Team Buff</CardTitle>
-          </CardHeader>
-          <CardContent className="flex gap-2 flex-wrap">
-            {hero.artifact_team_buff.map((buff) => (
-              <Badge key={buff} variant="secondary" className="capitalize">
-                {buff}
-              </Badge>
-            ))}
-          </CardContent>
-        </Card>
-      )}
+      {/* Glyphs Section */}
+      <HeroGlyphs hero={hero} />
+
+      {/* Skins Section */}
+      <HeroSkins hero={hero} />
+
+      {/* Artifacts Section */}
+      <HeroArtifacts hero={hero} />
 
       {/* Stone Sources Section */}
-      <Card>
-        <CardHeader>
-          <CardTitle>Stone Sources</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="flex gap-2 flex-wrap">
-            {hero.stone_source
-              .filter((s) => s !== "Campaign")
-              .map((source) => (
-                <Badge key={source} variant="outline">
-                  {source}
-                </Badge>
-              ))}
-            {campaignSources.length > 0 &&
-              campaignSources.map((mission) => (
-                <Link to={`/missions/${mission.id}`} key={mission.id}>
-                  <Badge variant="outline">
-                    {mission.chapter}-{mission.mission_number}: {mission.name}
-                  </Badge>
-                </Link>
-              ))}
-          </div>
-        </CardContent>
-      </Card>
+      <HeroStoneSources hero={hero} campaignSources={campaignSources} />
+
       {/* Action Buttons */}
       <div className="flex gap-4">
         <Link to={`/heroes/${hero.slug}/edit`} className={buttonVariants({ variant: "default" })} viewTransition>
           Edit
         </Link>
       </div>
+
       {/* Navigation Buttons */}
       <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 w-full">
         <div className="flex justify-start w-full sm:w-auto">

@@ -87,6 +87,24 @@
         "slug": "arachne"
     },
     {
+        "name": "Artemis",
+        "class": "marksman",
+        "faction": "honor",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 59,
+        "slug": "artemis"
+    },
+    {
         "name": "Astaroth",
         "class": "tank",
         "faction": "chaos",
@@ -105,21 +123,80 @@
         "slug": "astaroth"
     },
     {
+        "name": "Astrid and Lucas",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Arena Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 53,
+        "slug": "astrid-and-lucas"
+    },
+    {
         "name": "Aurora",
+        "slug": "aurora",
         "class": "tank",
         "faction": "nature",
         "main_stat": "strength",
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
         "stone_source": [
             "Campaign"
         ],
         "order_rank": 2,
-        "slug": "aurora"
+        "artifacts": {
+            "weapon": {
+                "name": "Selias' Legacy",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "strength",
+                "source": "Default"
+            },
+            {
+                "name": "Nordic Skin",
+                "stat": "dodge"
+            },
+            {
+                "name": "Spring Skin",
+                "stat": "health"
+            },
+            {
+                "name": "Demonic Skin",
+                "stat": "armor"
+            },
+            {
+                "name": "Romantic Skin",
+                "stat": "magic penetration"
+            },
+            {
+                "name": "Thunder Skin",
+                "stat": "health"
+            }
+        ],
+        "glyphs": [
+            "magic attack",
+            "health",
+            "magic penetration",
+            "dodge",
+            "strength"
+        ]
     },
     {
         "name": "Cascade",
@@ -236,9 +313,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Spear of Fate",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Tower Shop"
         ],
@@ -279,6 +363,24 @@
         ],
         "order_rank": 51,
         "slug": "dark-star"
+    },
+    {
+        "name": "Dorian",
+        "class": "healer",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "physical attack"
+        ],
+        "stone_source": [
+            "Town Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 60,
+        "slug": "dorian"
     },
     {
         "name": "Elmir",
@@ -332,6 +434,41 @@
         "slug": "fafnir"
     },
     {
+        "name": "Folio",
+        "class": "mage",
+        "faction": "mystery",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 44,
+        "slug": "folio"
+    },
+    {
+        "name": "Fox",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 56,
+        "slug": "fox"
+    },
+    {
         "name": "Galahad",
         "class": "warrior",
         "faction": "honor",
@@ -340,6 +477,31 @@
             "physical",
             "pure"
         ],
+        "artifacts": {
+            "weapon": {
+                "name": "Harunian Sword",
+                "team_buff": [
+                    "physical attack"
+                ]
+            },
+            "book": "Defender's Covenant",
+            "ring": null
+        },
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 10,
+        "slug": "galahad"
+    },
+    {
+        "name": "Ginger",
+        "class": "marksman",
+        "faction": "progress",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
         "artifact_team_buff": [
             "physical attack"
         ],
@@ -347,8 +509,8 @@
             "Campaign",
             "Heroic Chest"
         ],
-        "order_rank": 10,
-        "slug": "galahad"
+        "order_rank": 49,
+        "slug": "ginger"
     },
     {
         "name": "Heidi",
@@ -369,6 +531,24 @@
         "slug": "heidi"
     },
     {
+        "name": "Helios",
+        "class": "support",
+        "faction": "honor",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "armor"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 66,
+        "slug": "helios"
+    },
+    {
         "name": "Iris",
         "class": "mage",
         "faction": "eternity",
@@ -376,9 +556,16 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Tome of Enslaved Souls",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -410,9 +597,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "crit hit chance"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Hidden Demon's Katars",
+                "team_buff": [
+                    "crit hit chance"
+                ]
+            },
+            "book": "Alchemist's Folio",
+            "ring": null
+        },
         "stone_source": [
             "Grand Arena Shop"
         ],
@@ -444,9 +638,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "crit hit chance"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Zarahhar Bones",
+                "team_buff": [
+                    "crit hit chance"
+                ]
+            },
+            "book": "Warrior's Code",
+            "ring": null
+        },
         "stone_source": [
             "Guild War Shop"
         ],
@@ -461,9 +662,16 @@
         "attack_type": [
             "magic"
         ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Shavarakk's Blood",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Defender's Covenant",
+            "ring": null
+        },
         "stone_source": [
             "Outland Shop"
         ],
@@ -611,6 +819,24 @@
         "slug": "lara-croft"
     },
     {
+        "name": "Lars",
+        "class": "mage",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 52,
+        "slug": "lars"
+    },
+    {
         "name": "Lian",
         "class": "control",
         "faction": "mystery",
@@ -627,6 +853,24 @@
         ],
         "order_rank": 57,
         "slug": "lian"
+    },
+    {
+        "name": "Lilith",
+        "class": "mage",
+        "faction": "chaos",
+        "main_stat": "strength",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic penetration"
+        ],
+        "stone_source": [
+            "Highwayman Shop",
+            "Heroic Chest"
+        ],
+        "order_rank": 67,
+        "slug": "lilith"
     },
     {
         "name": "Luther",
@@ -670,9 +914,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "armor"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Zarakkari Teapot",
+                "team_buff": [
+                    "armor"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -687,9 +938,16 @@
         "attack_type": [
             "pure"
         ],
-        "artifact_team_buff": [
-            "magic defense"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Mother Tree's Branch",
+                "team_buff": [
+                    "magic defense"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
         "stone_source": [
             "Tower Shop",
             "Heroic Chest"
@@ -757,14 +1015,38 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Unborn Stars",
+                "team_buff": [
+                    "physical attack"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Guild War Shop"
         ],
         "order_rank": 36,
         "slug": "nebula"
+    },
+    {
+        "name": "Ninja Turtles",
+        "class": "warrior",
+        "faction": "nature",
+        "main_stat": "agility",
+        "attack_type": [
+            "physical"
+        ],
+        "artifact_team_buff": [
+            "armor penetration"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 16.5,
+        "slug": "ninja-turtles"
     },
     {
         "name": "Octavia",
@@ -774,9 +1056,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "dodge"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Mirror of Truth",
+                "team_buff": [
+                    "dodge"
+                ]
+            },
+            "book": "Book of Illusions",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -816,6 +1105,42 @@
         ],
         "order_rank": 12,
         "slug": "oya"
+    },
+    {
+        "name": "Peppy",
+        "class": "control",
+        "faction": "chaos",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 61,
+        "slug": "peppy"
+    },
+    {
+        "name": "Phobos",
+        "class": "control",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 58,
+        "slug": "phobos"
     },
     {
         "name": "Qing Mao",
@@ -890,6 +1215,65 @@
         "slug": "sebastian"
     },
     {
+        "name": "Soleil",
+        "class": "support",
+        "faction": "honor",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Prison of the Ancient God",
+                "team_buff": [
+                    "magic attack"
+                ]
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 40,
+        "slug": "soleil"
+    },
+    {
+        "name": "Tempus",
+        "class": "support",
+        "faction": "eternity",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic attack"
+        ],
+        "stone_source": [
+            "Special Events"
+        ],
+        "order_rank": 30,
+        "slug": "tempus"
+    },
+    {
+        "name": "Thea",
+        "class": "healer",
+        "faction": "nature",
+        "main_stat": "intelligence",
+        "attack_type": [
+            "magic"
+        ],
+        "artifact_team_buff": [
+            "magic defense"
+        ],
+        "stone_source": [
+            "Campaign",
+            "Heroic Chest"
+        ],
+        "order_rank": 64,
+        "slug": "thea"
+    },
+    {
         "name": "Tristan",
         "class": "warrior",
         "faction": "honor",
@@ -897,9 +1281,16 @@
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "armor penetration"
-        ],
+        "artifacts": {
+            "weapon": {
+                "name": "Demonic Reliquary",
+                "team_buff": [
+                    "armor penetration"
+                ]
+            },
+            "book": "Alchemist's Folio",
+            "ring": null
+        },
         "stone_source": [
             "Special Events"
         ],
@@ -957,271 +1348,5 @@
         ],
         "order_rank": 6,
         "slug": "ziri"
-    },
-    {
-        "name": "Tempus",
-        "class": "support",
-        "faction": "eternity",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 30,
-        "slug": "tempus"
-    },
-    {
-        "name": "Soleil",
-        "class": "support",
-        "faction": "honor",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 40,
-        "slug": "soleil"
-    },
-    {
-        "name": "Folio",
-        "class": "mage",
-        "faction": "mystery",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic attack"
-        ],
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 44,
-        "slug": "folio"
-    },
-    {
-        "name": "Ninja Turtles",
-        "class": "warrior",
-        "faction": "nature",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": [
-            "armor penetration"
-        ],
-        "stone_source": [
-            "Special Events"
-        ],
-        "order_rank": 16.5,
-        "slug": "ninja-turtles"
-    },
-    {
-        "name": "Artemis",
-        "class": "marksman",
-        "faction": "honor",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 59,
-        "slug": "artemis"
-    },
-    {
-        "name": "Astrid and Lucas",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": [
-            "armor"
-        ],
-        "stone_source": [
-            "Arena Shop",
-            "Heroic Chest"
-        ],
-        "order_rank": 53,
-        "slug": "astrid-and-lucas"
-    },
-    {
-        "name": "Dorian",
-        "class": "healer",
-        "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
-        "stone_source": [
-            "Town Shop",
-            "Heroic Chest"
-        ],
-        "order_rank": 60,
-        "slug": "dorian"
-    },
-    {
-        "name": "Ginger",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": [
-            "physical attack"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 49,
-        "slug": "ginger"
-    },
-    {
-        "name": "Fox",
-        "class": "marksman",
-        "faction": "progress",
-        "main_stat": "agility",
-        "attack_type": [
-            "physical"
-        ],
-        "artifact_team_buff": [
-            "armor penetration"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 56,
-        "slug": "fox"
-    },
-    {
-        "name": "Helios",
-        "class": "support",
-        "faction": "honor",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "armor"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 66,
-        "slug": "helios"
-    },
-    {
-        "name": "Lars",
-        "class": "mage",
-        "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic penetration"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 52,
-        "slug": "lars"
-    },
-    {
-        "name": "Lilith",
-        "class": "mage",
-        "faction": "chaos",
-        "main_stat": "strength",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic penetration"
-        ],
-        "stone_source": [
-            "Highwayman Shop",
-            "Heroic Chest"
-        ],
-        "order_rank": 67,
-        "slug": "lilith"
-    },
-    {
-        "name": "Peppy",
-        "class": "control",
-        "faction": "chaos",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic defense"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 61,
-        "slug": "peppy"
-    },
-    {
-        "name": "Phobos",
-        "class": "control",
-        "faction": "eternity",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic defense"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 58,
-        "slug": "phobos"
-    },
-    {
-        "name": "Thea",
-        "class": "healer",
-        "faction": "nature",
-        "main_stat": "intelligence",
-        "attack_type": [
-            "magic"
-        ],
-        "artifact_team_buff": [
-            "magic defense"
-        ],
-        "stone_source": [
-            "Campaign",
-            "Heroic Chest"
-        ],
-        "order_rank": 64,
-        "slug": "thea"
     }
 ]

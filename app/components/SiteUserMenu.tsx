@@ -16,7 +16,7 @@ import { useNetlifyAuth } from "~/hooks/useNetlifyAuth";
 import { Button } from "./ui/button";
 
 export function SiteUserMenu() {
-  const { isMobile } = useSidebar();
+  const { isMobile, state } = useSidebar();
   const { isAuthenticated, user, authenticate, signout } = useNetlifyAuth();
 
   const userWithDefaults = useMemo(() => {
@@ -95,7 +95,7 @@ export function SiteUserMenu() {
             </DropdownMenu>
           </SidebarMenuItem>
         </SidebarMenu>
-      ) : (
+      ) : state === "expanded" ? (
         <Button
           variant={"outline"}
           className="w-full flex items-center gap-2"
@@ -106,6 +106,13 @@ export function SiteUserMenu() {
           <LogInIcon />
           <span>Sign in</span>
         </Button>
+      ) : (
+        <LogInIcon
+          className="size-8 p-0.5 border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+          onClick={() => {
+            authenticate((_) => window.location.reload());
+          }}
+        />
       )}
     </div>
   );
