@@ -52,9 +52,9 @@ export default function HeroItems({ items, equipment, className }: HeroItemsProp
                 <div className="grid grid-cols-2">
                   {items.map((item, index) =>
                     item ? (
-                      <Link to={`/equipment/${item.slug}`} key={index} className={`flex items-center gap-2`}>
+                      <Link to={`/equipment/${item.slug}`} key={index} className={`group flex items-center gap-2`}>
                         <EquipmentImage equipment={item} size={"md"} />
-                        <span>{item.name}</span>
+                        <span className="group-hover:underline">{item.name}</span>
                       </Link>
                     ) : (
                       <img
