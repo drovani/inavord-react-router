@@ -1,7 +1,9 @@
-import { XIcon } from "lucide-react";
+import { SearchIcon, XIcon } from "lucide-react";
+import { useState } from "react";
 import EquipmentImage from "~/components/EquipmentImage";
 import { Button } from "~/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "~/components/ui/dialog";
+import { Input } from "~/components/ui/input";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { type EquipmentRecord } from "~/data/equipment.zod";
 import { type HeroQualityLevel } from "~/data/hero.zod";
@@ -15,17 +17,27 @@ interface ItemSelectionDialogProps {
 }
 
 export default function ItemSelectionDialog({ open, onClose, onSelect, equipment, quality }: ItemSelectionDialogProps) {
-  const availableEquipment = equipment;
+  const [searchQuery, setSearchQuery] = useState("");
+
+  const availableEquipment = equipment.filter((item) => item.name.toLowerCase().includes(searchQuery.toLowerCase()));
 
   return (
     <Dialog open={open} onOpenChange={(open) => !open && onClose()}>
       <DialogContent className="max-w-2xl">
         <DialogHeader>
           <DialogTitle className="capitalize">Select {quality.replace("+", " +")} Equipment</DialogTitle>
+          <div className="relative mt-4">
+            <SearchIcon className="absolute left-2.5 top-2.5 h-4 w-4 text-muted-foreground" />
+            <Input
+              placeholder="Search equipment..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-8"
+            />
+          </div>
         </DialogHeader>
         <ScrollArea className="h-[60vh] pr-4">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
-            {/* Empty slot option */}
             <Button
               variant="ghost"
               className="flex items-center gap-2 justify-start p-2 h-16"
@@ -39,7 +51,7 @@ export default function ItemSelectionDialog({ open, onClose, onSelect, equipment
               </div>
               <span>Empty Slot</span>
             </Button>
-            {/* Equipment options */}
+
             {availableEquipment.map((equip) => (
               <Button
                 key={equip.slug}
@@ -57,6 +69,9 @@ export default function ItemSelectionDialog({ open, onClose, onSelect, equipment
               </Button>
             ))}
           </div>
+          {availableEquipment.length === 0 && searchQuery && (
+            <div className="text-center text-muted-foreground py-8">No equipment found matching "{searchQuery}"</div>
+          )}
         </ScrollArea>
       </DialogContent>
     </Dialog>
