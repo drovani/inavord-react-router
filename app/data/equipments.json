@@ -2526,7 +2526,7 @@
   },
   {
     "name": "Advisor",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -2547,7 +2547,7 @@
   },
   {
     "name": "Advisor (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -2564,7 +2564,7 @@
   },
   {
     "name": "All-seer",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 65250,
     "sell_value": 13050,
     "guild_activity_points": 270,
@@ -2589,7 +2589,7 @@
   },
   {
     "name": "Angel's Mace",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 151500,
     "sell_value": 30300,
     "guild_activity_points": 620,
@@ -2612,7 +2612,7 @@
   },
   {
     "name": "Angel's Mace - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
@@ -2629,7 +2629,7 @@
   },
   {
     "name": "Angel's Mace - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
@@ -2645,7 +2645,7 @@
   },
   {
     "name": "Apostle's Mace",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 65250,
     "sell_value": 13050,
     "guild_activity_points": 270,
@@ -2668,7 +2668,7 @@
   },
   {
     "name": "Archangel's Mace",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 343250,
     "sell_value": 68650,
     "guild_activity_points": 1440,
@@ -2691,7 +2691,7 @@
   },
   {
     "name": "Archangel's Mace - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
@@ -2708,7 +2708,7 @@
   },
   {
     "name": "Archangel's Mace - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
@@ -2725,7 +2725,7 @@
   },
   {
     "name": "Blade Bow",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
@@ -2748,7 +2748,7 @@
   },
   {
     "name": "Book of Fate",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 298250,
     "sell_value": 59650,
     "guild_activity_points": 1320,
@@ -2771,7 +2771,7 @@
   },
   {
     "name": "Book of Fate - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
@@ -2788,7 +2788,7 @@
   },
   {
     "name": "Book of Fate - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
@@ -2805,7 +2805,7 @@
   },
   {
     "name": "Book of Prophecies",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 129000,
     "sell_value": 25800,
     "guild_activity_points": 560,
@@ -2828,7 +2828,7 @@
   },
   {
     "name": "Book of Prophecies - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
@@ -2845,7 +2845,7 @@
   },
   {
     "name": "Book of Prophecies - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
@@ -2864,7 +2864,7 @@
   },
   {
     "name": "Book of Tales",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
@@ -2887,7 +2887,7 @@
   },
   {
     "name": "Cosmic Tremor",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
@@ -2911,7 +2911,7 @@
   },
   {
     "name": "Cosmic Tremor - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
@@ -2928,7 +2928,7 @@
   },
   {
     "name": "Cosmic Tremor - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
@@ -2946,7 +2946,7 @@
   },
   {
     "name": "Desert Blade",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -2967,7 +2967,7 @@
   },
   {
     "name": "Desert Blade (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -2985,7 +2985,7 @@
   },
   {
     "name": "Diviner's Orb",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
@@ -3010,7 +3010,7 @@
   },
   {
     "name": "Diviner's Orb - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
@@ -3027,7 +3027,7 @@
   },
   {
     "name": "Diviner's Orb - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
@@ -3043,7 +3043,7 @@
   },
   {
     "name": "Dragon Shield",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
@@ -3065,7 +3065,7 @@
   },
   {
     "name": "Dragon Shield - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3082,7 +3082,7 @@
   },
   {
     "name": "Dragon Shield - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3099,7 +3099,7 @@
   },
   {
     "name": "Dragon Tooth",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
@@ -3121,7 +3121,7 @@
   },
   {
     "name": "Dragon Tooth - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3138,7 +3138,7 @@
   },
   {
     "name": "Dragon Tooth - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3154,7 +3154,7 @@
   },
   {
     "name": "Elephant Guard",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
@@ -3179,7 +3179,7 @@
   },
   {
     "name": "Executioner's Sword",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
@@ -3202,7 +3202,7 @@
   },
   {
     "name": "Flaming Heart",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3223,7 +3223,7 @@
   },
   {
     "name": "Flaming Heart (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3241,7 +3241,7 @@
   },
   {
     "name": "Funeral Totem",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3262,7 +3262,7 @@
   },
   {
     "name": "Funeral Totem (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3279,7 +3279,7 @@
   },
   {
     "name": "Giant-Slayer",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3300,7 +3300,7 @@
   },
   {
     "name": "Giant-Slayer (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3318,7 +3318,7 @@
   },
   {
     "name": "Governor",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
@@ -3341,7 +3341,7 @@
   },
   {
     "name": "Hand of Glory",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3362,7 +3362,7 @@
   },
   {
     "name": "Hand of Glory (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3381,7 +3381,7 @@
   },
   {
     "name": "Lion Helmet",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
@@ -3404,7 +3404,7 @@
   },
   {
     "name": "Minotaur's Head",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3425,7 +3425,7 @@
   },
   {
     "name": "Minotaur's Head (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3442,7 +3442,7 @@
   },
   {
     "name": "Panoptic Orb",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
@@ -3466,7 +3466,7 @@
   },
   {
     "name": "Panoptic Orb - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 2750,
     "sell_value": 5500,
     "guild_activity_points": 200,
@@ -3483,7 +3483,7 @@
   },
   {
     "name": "Panoptic Orb - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
@@ -3502,7 +3502,7 @@
   },
   {
     "name": "Pastor's Seal",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 16500,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3523,7 +3523,7 @@
   },
   {
     "name": "Pastor's Seal (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3541,7 +3541,7 @@
   },
   {
     "name": "Primordial Word",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
@@ -3563,7 +3563,7 @@
   },
   {
     "name": "Primordial Word - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3580,7 +3580,7 @@
   },
   {
     "name": "Primordial Word - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3596,7 +3596,7 @@
   },
   {
     "name": "Siege Crossbow",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
@@ -3621,7 +3621,7 @@
   },
   {
     "name": "Siren's Song",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 27000,
     "sell_value": 5400,
     "guild_activity_points": 110,
@@ -3643,7 +3643,7 @@
   },
   {
     "name": "Siren's Song - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3660,7 +3660,7 @@
   },
   {
     "name": "Siren's Song - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3676,7 +3676,7 @@
   },
   {
     "name": "Staff of Morana's Nimbus",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 223250,
     "sell_value": 44650,
     "guild_activity_points": 1000,
@@ -3700,7 +3700,7 @@
   },
   {
     "name": "Staff of Morana's Nimbus - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 5500,
     "guild_activity_points": 200,
@@ -3717,7 +3717,7 @@
   },
   {
     "name": "Staff of Morana's Nimbus - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 500,
     "sell_value": 100,
     "guild_activity_points": 4,
@@ -3734,7 +3734,7 @@
   },
   {
     "name": "Staff of Selena's Halo",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
@@ -3759,7 +3759,7 @@
   },
   {
     "name": "Staff of Selena's Halo - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
@@ -3776,7 +3776,7 @@
   },
   {
     "name": "Staff of Selena's Halo - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,
@@ -3791,7 +3791,7 @@
   },
   {
     "name": "Sword of Thorns",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
@@ -3814,7 +3814,7 @@
   },
   {
     "name": "Talisman",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 47250,
     "sell_value": 9450,
     "guild_activity_points": 190,
@@ -3837,7 +3837,7 @@
   },
   {
     "name": "Traitor's Crown",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 36000,
     "sell_value": 7200,
     "guild_activity_points": 160,
@@ -3860,7 +3860,7 @@
   },
   {
     "name": "Trine",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 54000,
     "sell_value": 10800,
     "guild_activity_points": 240,
@@ -3885,7 +3885,7 @@
   },
   {
     "name": "Wasp",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 44000,
     "sell_value": 8800,
     "guild_activity_points": 140,
@@ -3907,7 +3907,7 @@
   },
   {
     "name": "Wasp - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 3300,
     "guild_activity_points": 80,
@@ -3924,7 +3924,7 @@
   },
   {
     "name": "Wasp - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 750,
     "sell_value": 150,
     "guild_activity_points": 4,
@@ -3941,7 +3941,7 @@
   },
   {
     "name": "World Tremor",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 91500,
     "sell_value": 18300,
     "guild_activity_points": 400,
@@ -3966,7 +3966,7 @@
   },
   {
     "name": "World Tremor - Recipe",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 0,
     "sell_value": 2750,
     "guild_activity_points": 80,
@@ -3983,7 +3983,7 @@
   },
   {
     "name": "World Tremor - Recipe (Fragment)",
-    "quality": "purple",
+    "quality": "violet",
     "buy_value_gold": 625,
     "sell_value": 125,
     "guild_activity_points": 4,

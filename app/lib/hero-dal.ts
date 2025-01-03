@@ -279,6 +279,19 @@ export class HeroDAL {
       throw new Error(`Failed to get heroes for faction ${faction}`);
     }
   }
+
+  async getHeroesByItem(slug: string): Promise<HeroRecord[]> {
+    try {
+      const allHeroes = await this.getAllHeroes();
+      return allHeroes.filter((hero) => {
+        if (!hero.items) return false;
+        return Object.values(hero.items).flat().includes(slug);
+      });
+    } catch (error) {
+      console.error(`Failed to get heroes for item ${slug}:`, error);
+      throw new Error(`Failed to get heroes for item ${slug}`);
+    }
+  }
 }
 
 export const heroDAL = new HeroDAL();

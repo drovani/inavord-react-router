@@ -17,7 +17,7 @@ const cardVariants = cva("p-1 bottom-0 absolute w-full text-center", {
       gray: "bg-gray-100/80",
       green: "bg-green-300/80",
       blue: "bg-blue-300/80",
-      purple: "bg-purple-300/80",
+      violet: "bg-purple-300/80",
       orange: "bg-orange-300/80",
       default: "bg-white/80",
     },

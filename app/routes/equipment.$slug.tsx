@@ -10,6 +10,7 @@ import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
 import type { Mission } from "~/data/mission.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
+import { heroDAL } from "~/lib/hero-dal";
 import { missionDAL } from "~/lib/mission-dal";
 import { generateSlug } from "~/lib/utils";
 import type { Route } from "./+types/equipment.$slug";
@@ -64,6 +65,8 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
         })
     : [];
 
+  const heroesUsingItem = await heroDAL.getHeroesByItem(equipment.slug);
+
   return {
     equipment,
     requiredEquipment,
@@ -72,6 +75,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     missionSources,
     prevEquipment,
     nextEquipment,
+    heroesUsingItem,
   };
 };
 
@@ -111,6 +115,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
     missionSources,
     prevEquipment,
     nextEquipment,
+    heroesUsingItem,
   } = loaderData;
   const navigate = useNavigate();
 
@@ -284,7 +289,7 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
             <CardTitle>Required For</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="flex gap-4 flex-col">
+            <div className="flex gap-4 flex-wrap">
               {requiredFor.map((item) => (
                 <Link
                   key={item.slug}
@@ -302,6 +307,21 @@ export default function Equipment({ loaderData }: Route.ComponentProps) {
                 </Link>
               ))}
             </div>
+          </CardContent>
+        </Card>
+      )}
+      {heroesUsingItem.length > 0 && (
+        <Card>
+          <CardHeader>
+            <CardTitle>Heroes Using Item</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-wrap gap-2">
+            {heroesUsingItem.map((hero) => (
+              <Link to={`/heroes/${hero.slug}`} key={hero.slug} className="group flex items-center gap-2">
+                <img src={`/images/heroes/${hero.slug}.png`} alt={hero.name[0]} className="size-8" />
+                <span className="group-hover:underline">{hero.name}</span>
+              </Link>
+            ))}
           </CardContent>
         </Card>
       )}
