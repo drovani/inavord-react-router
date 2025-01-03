@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const EQUIPMENT_QUALITIES = ["gray", "green", "blue", "purple", "orange"] as const;
+export const EQUIPMENT_QUALITIES = ["gray", "green", "blue", "violet", "orange"] as const;
 
 // Base shared properties without readonly fields
 const EquipmentPropertiesSchema = z.object({

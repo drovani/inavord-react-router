@@ -106,21 +106,177 @@
     },
     {
         "name": "Astaroth",
+        "slug": "astaroth",
         "class": "tank",
         "faction": "chaos",
         "main_stat": "strength",
         "attack_type": [
             "physical"
         ],
-        "artifact_team_buff": [
-            "armor"
-        ],
         "stone_source": [
             "Campaign",
             "Heroic Chest"
         ],
         "order_rank": 9,
-        "slug": "astaroth"
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "strength"
+            },
+            {
+                "name": "Demonic Skin",
+                "stat": "magic attack"
+            },
+            {
+                "name": "Barbarian Skin",
+                "stat": "armor"
+            },
+            {
+                "name": "Lunar Skin",
+                "stat": "magic defense"
+            },
+            {
+                "name": "Cybernetic Skin",
+                "stat": "health"
+            },
+            {
+                "name": "Thunder Skin",
+                "stat": "health"
+            },
+            {
+                "name": "Thunder Skin (Plus)",
+                "stat": "health"
+            }
+        ],
+        "items": {
+            "white": [
+                "wooden-shield",
+                "giants-belt",
+                "apprentices-mantle",
+                "steel-pauldron",
+                "lucky-dice",
+                "imperial-shield"
+            ],
+            "green": [
+                "imperial-shield",
+                "orcish-yatagan",
+                "sledgehammer",
+                "orcish-hammer",
+                "cuirass",
+                "cains-seal"
+            ],
+            "green+1": [
+                "orcish-hammer",
+                "orcish-yatagan",
+                "cuirass",
+                "cains-seal",
+                "shining-armor",
+                "traitors-shield"
+            ],
+            "blue": [
+                "guardians-shield",
+                "shining-armor",
+                "voodoo-doll",
+                "brothers",
+                "serenity-stone",
+                "enchanted-lute"
+            ],
+            "blue+1": [
+                "lost-ring",
+                "wall-breaker",
+                "brothers",
+                "wyverns-heart",
+                "serenity-stone",
+                "dark-grail"
+            ],
+            "blue+2": [
+                "elven-armor",
+                "voodoo-doll",
+                "serenity-stone",
+                "enchanted-lute",
+                "prosperos-helmet",
+                "prince-of-thieves-armor"
+            ],
+            "purple": [
+                "raven-kings-cloak",
+                "prosperos-helmet",
+                "storm-hammer",
+                "lion-armor",
+                "dragon-shield",
+                "sirens-song"
+            ],
+            "purple+1": [
+                "raven-kings-cloak",
+                "elven-shield",
+                "sages-crown",
+                "storm-hammer",
+                "executioners-sword",
+                "talisman"
+            ],
+            "purple+2": [
+                "book-of-tales",
+                "raven-kings-cloak",
+                "lion-armor",
+                "talisman",
+                "executioners-sword",
+                "world-tremor"
+            ],
+            "purple+3": [
+                "prince-of-thieves-armor",
+                "sages-crown",
+                "talisman",
+                "book-of-tales",
+                "book-of-prophecies",
+                "cosmic-tremor"
+            ],
+            "orange": [
+                "talisman",
+                "executioners-sword",
+                "book-of-tales",
+                "cosmic-tremor",
+                "harunian-helm",
+                "citadel-guardian"
+            ],
+            "orange+1": [
+                "trine",
+                "governor",
+                "book-of-prophecies",
+                "harunian-helm",
+                "citadel-guardian",
+                "asklepius-staff"
+            ],
+            "orange+2": [
+                "lion-helmet",
+                "cosmic-tremor",
+                "alchemists-set",
+                "citadel-guardian",
+                "asklepius-staff",
+                "radiant-armor"
+            ],
+            "orange+3": [
+                "all-seer",
+                "lion-helmet",
+                "asklepius-staff",
+                "sphere-of-power",
+                "oracles-censer",
+                "oppressors-crown"
+            ],
+            "orange+4": [
+                "flaming-heart",
+                "giant-slayer",
+                "asklepius-staff",
+                "sphere-of-power",
+                "oppressors-crown",
+                "evil-genius-cuirass-fragment"
+            ]
+        },
+        "glyphs": [
+            "magic attack",
+            "armor",
+            "health",
+            "magic defense",
+            "strength"
+        ]
     },
     {
         "name": "Astrid and Lucas",
@@ -190,6 +346,128 @@
                 "stat": "health"
             }
         ],
+        "items": {
+            "white": [
+                "orcish-knuckles",
+                "apprentices-mantle",
+                "giants-belt",
+                "wooden-shield",
+                "imperial-shield",
+                "oil-lamp"
+            ],
+            "green": [
+                "wooden-shield",
+                "apprentices-mantle",
+                "sledgehammer",
+                "orcish-hammer",
+                "fire-sword",
+                "cuirass"
+            ],
+            "green+1": [
+                "imperial-shield",
+                "wizards-staff",
+                "cuirass",
+                "cains-seal",
+                "screaming-blade",
+                "soul-catcher"
+            ],
+            "blue": [
+                "midnight-crystal",
+                "wall-breaker",
+                "soul-catcher",
+                "silent-guardian",
+                "sacred-rosary",
+                "enchanted-lute"
+            ],
+            "blue+1": [
+                "midnight-crystal",
+                "wall-breaker",
+                "soul-catcher",
+                "wyverns-heart",
+                "portal-gem",
+                "voodoo-staff"
+            ],
+            "blue+2": [
+                "poleaxe",
+                "voodoo-doll",
+                "wyverns-heart",
+                "portal-gem",
+                "voodoo-staff",
+                "hand-of-midas"
+            ],
+            "purple": [
+                "wyverns-heart",
+                "portal-gem",
+                "voodoo-staff",
+                "globus-cruciger",
+                "pastors-seal",
+                "minotaurs-head"
+            ],
+            "purple+1": [
+                "enchanted-lute",
+                "branch-of-the-world-tree",
+                "prince-of-thieves-armor",
+                "flaming-heart",
+                "funeral-totem",
+                "book-of-tales"
+            ],
+            "purple+2": [
+                "voodoo-staff",
+                "voodoo-staff",
+                "hand-of-midas",
+                "primordial-word",
+                "trine",
+                "book-of-prophecies"
+            ],
+            "purple+3": [
+                "voodoo-staff",
+                "globus-cruciger",
+                "primordial-word",
+                "elephant-guard",
+                "book-of-prophecies",
+                "cosmic-tremor"
+            ],
+            "orange": [
+                "trine",
+                "all-seer",
+                "executioners-sword",
+                "book-of-prophecies",
+                "harunian-helm",
+                "enchanted-chain"
+            ],
+            "orange+1": [
+                "elephant-guard",
+                "trine",
+                "book-of-prophecies",
+                "harunian-helm",
+                "thieves-guild-sign",
+                "staff-of-neutralization"
+            ],
+            "orange+2": [
+                "talisman",
+                "executioners-sword",
+                "enchanted-chain",
+                "la-morts-map",
+                "tricksters-cane",
+                "radiant-armor"
+            ],
+            "orange+3": [
+                "talisman",
+                "executioners-sword",
+                "enchanted-chain",
+                "tricksters-cane",
+                "oracles-censer",
+                "oppressors-crown"
+            ],
+            "orange+4": [
+                "executioners-sword",
+                "apostles-mace",
+                "tricksters-cane",
+                "staff-of-neutralization",
+                "oppressors-crown",
+                "evil-genius-cuirass-fragment"
+            ]
+        },
         "glyphs": [
             "magic attack",
             "health",

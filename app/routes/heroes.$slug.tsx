@@ -4,10 +4,12 @@ import { Link, useNavigate, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
 import HeroArtifacts from "~/components/hero/HeroArtifacts";
 import HeroGlyphs from "~/components/hero/HeroGlyphs";
+import HeroItems from "~/components/hero/HeroItems";
 import HeroSkins from "~/components/hero/HeroSkins";
 import HeroStoneSources from "~/components/hero/HeroStoneSources";
 import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
+import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
 import { missionDAL } from "~/lib/mission-dal";
 import type { Route } from "./+types/heroes.$slug";
@@ -35,18 +37,24 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   }
 
   const campaignSources = await missionDAL.getMissionsByBoss(hero.name);
-
+  const equipmentSlugs: string[] = [];
+  if (hero.items !== undefined) {
+    for (const tier of Object.entries(hero.items)) {
+      equipmentSlugs.push(...tier[1]);
+    }
+  }
+  const equipmentUsed = await equipmentDAL.getAllEquipment(equipmentSlugs);
   const allHeroes = await heroDAL.getAllHeroes();
 
   const currentIndex = allHeroes.findIndex((h) => h.slug === hero.slug);
   const prevHero = currentIndex > 0 ? allHeroes[currentIndex - 1] : null;
   const nextHero = currentIndex < allHeroes.length - 1 ? allHeroes[currentIndex + 1] : null;
 
-  return { hero, prevHero, nextHero, campaignSources };
+  return { hero, prevHero, nextHero, campaignSources, equipmentUsed };
 };
 
 export default function Hero({ loaderData }: Route.ComponentProps) {
-  const { hero, prevHero, nextHero, campaignSources } = loaderData;
+  const { hero, prevHero, nextHero, campaignSources, equipmentUsed } = loaderData;
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -118,6 +126,8 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
 
       {/* Glyphs Section */}
       <HeroGlyphs hero={hero} />
+
+      <HeroItems items={hero.items} equipment={equipmentUsed} />
 
       {/* Skins Section */}
       <HeroSkins hero={hero} />
