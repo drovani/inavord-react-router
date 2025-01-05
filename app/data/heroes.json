@@ -197,7 +197,7 @@
                 "prosperos-helmet",
                 "prince-of-thieves-armor"
             ],
-            "purple": [
+            "violet": [
                 "raven-kings-cloak",
                 "prosperos-helmet",
                 "storm-hammer",
@@ -205,7 +205,7 @@
                 "dragon-shield",
                 "sirens-song"
             ],
-            "purple+1": [
+            "violet+1": [
                 "raven-kings-cloak",
                 "elven-shield",
                 "sages-crown",
@@ -213,7 +213,7 @@
                 "executioners-sword",
                 "talisman"
             ],
-            "purple+2": [
+            "violet+2": [
                 "book-of-tales",
                 "raven-kings-cloak",
                 "lion-armor",
@@ -221,7 +221,7 @@
                 "executioners-sword",
                 "world-tremor"
             ],
-            "purple+3": [
+            "violet+3": [
                 "prince-of-thieves-armor",
                 "sages-crown",
                 "talisman",
@@ -395,7 +395,7 @@
                 "voodoo-staff",
                 "hand-of-midas"
             ],
-            "purple": [
+            "violet": [
                 "wyverns-heart",
                 "portal-gem",
                 "voodoo-staff",
@@ -403,7 +403,7 @@
                 "pastors-seal",
                 "minotaurs-head"
             ],
-            "purple+1": [
+            "violet+1": [
                 "enchanted-lute",
                 "branch-of-the-world-tree",
                 "prince-of-thieves-armor",
@@ -411,7 +411,7 @@
                 "funeral-totem",
                 "book-of-tales"
             ],
-            "purple+2": [
+            "violet+2": [
                 "voodoo-staff",
                 "voodoo-staff",
                 "hand-of-midas",
@@ -419,7 +419,7 @@
                 "trine",
                 "book-of-prophecies"
             ],
-            "purple+3": [
+            "violet+3": [
                 "voodoo-staff",
                 "globus-cruciger",
                 "primordial-word",
