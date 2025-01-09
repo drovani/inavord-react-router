@@ -1,14 +1,14 @@
 import { Outlet } from "react-router";
-import { useNetlifyAuth } from "~/hooks/useNetlifyAuth";
+import { useAuth } from "~/contexts/AuthContext";
 import { Button } from "../components/ui/button";
 
 export default function ProtectedLayout({ roles = [] }: { roles?: string[] }) {
-  const { isAuthenticated, user, authenticate } = useNetlifyAuth();
-  const hasRole = roles.length === 0 || user?.app_metadata.roles.some((role) => roles?.includes(role));
+  const { isAuthenticated, user, signIn } = useAuth();
+  const hasRole = roles.length === 0 || user?.roles.some((role) => roles?.includes(role));
 
   if (isAuthenticated && hasRole) {
     return <Outlet />;
   } else {
-    return <Button onClick={() => authenticate((_) => window.location.reload())}>Sign in</Button>;
+    return <Button onClick={signIn}>Sign in</Button>;
   }
 }
