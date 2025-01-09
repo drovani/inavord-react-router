@@ -6,12 +6,13 @@ import {
   Scripts,
   ScrollRestoration,
   useMatches,
-  type UIMatch
+  type UIMatch,
 } from "react-router";
 import SiteHeader from "~/components/SiteHeader";
 import type { Route } from "./+types/root";
 import { SiteSidebar } from "./components/SiteSidebar";
 import { SidebarInset, SidebarProvider } from "./components/ui/sidebar";
+import { AuthProvider } from "./contexts/AuthContext";
 import styles from "./tailwind.css?url";
 
 export const links: Route.LinksFunction = () => [{ rel: "stylesheet", href: styles, as: "style" }];
@@ -54,13 +55,15 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Links />
       </head>
       <body>
-        <SidebarProvider defaultOpen={true}>
-          <SiteSidebar />
-          <SidebarInset>
-            <SiteHeader breadcrumbs={breadcrumbs} />
-            <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 max-w-4xl">{children}</main>
-          </SidebarInset>
-        </SidebarProvider>
+        <AuthProvider>
+          <SidebarProvider defaultOpen={true}>
+            <SiteSidebar />
+            <SidebarInset>
+              <SiteHeader breadcrumbs={breadcrumbs} />
+              <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 max-w-4xl">{children}</main>
+            </SidebarInset>
+          </SidebarProvider>
+        </AuthProvider>
         <ScrollRestoration />
         <Scripts />
       </body>

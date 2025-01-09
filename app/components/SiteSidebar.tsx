@@ -2,8 +2,8 @@ import { DropdownMenu, DropdownMenuItem, DropdownMenuTrigger } from "@radix-ui/r
 import { LoaderCircle, MoreHorizontalIcon } from "lucide-react";
 import type React from "react";
 import { Link, NavLink } from "react-router";
+import { useAuth } from "~/contexts/AuthContext";
 import { navigation } from "~/data/navigation";
-import { useNetlifyAuth } from "~/hooks/useNetlifyAuth";
 import { cn } from "~/lib/utils";
 import { SiteSwitcher } from "./SiteSwitcher";
 import { SiteUserMenu } from "./SiteUserMenu";
@@ -25,12 +25,12 @@ import {
 
 export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   const { isMobile, setOpenMobile } = useSidebar();
-  const { isAuthenticated, user } = useNetlifyAuth();
+  const { isAuthenticated, user } = useAuth();
 
   const navitems = navigation.filter(
     (item) =>
       !("roles" in item) ||
-      (isAuthenticated && user?.app_metadata.roles.some((role) => (item.roles as ReadonlyArray<string>).includes(role)))
+      (isAuthenticated && user?.roles.some((role) => (item.roles as ReadonlyArray<string>).includes(role)))
   );
 
   return (
