@@ -11,7 +11,7 @@ import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
 import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
-import { missionDAL } from "~/lib/mission-dal";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/heroes.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -36,7 +36,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const campaignSources = await missionDAL.getMissionsByBoss(hero.name);
+  const campaignSources = await MissionDataService.getMissionsByBoss(hero.name);
   const equipmentSlugs: string[] = [];
   if (hero.items !== undefined) {
     for (const tier of Object.entries(hero.items)) {

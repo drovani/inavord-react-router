@@ -8,11 +8,10 @@ import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
-import type { Mission } from "~/data/mission.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
-import { missionDAL } from "~/lib/mission-dal";
 import { generateSlug } from "~/lib/utils";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -53,17 +52,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   }
 
   // Get all missions and filter for sources
-  const allMissions = await missionDAL.getAllMissions();
-  const missionSources = equipment.campaign_sources
-    ? equipment.campaign_sources
-        .map((source) => allMissions.find((m) => m.id === source))
-        .filter((m): m is Mission => m !== undefined)
-        .sort((a, b) => {
-          const [aChapter, aMission] = a.id.split("-").map(Number);
-          const [bChapter, bMission] = b.id.split("-").map(Number);
-          return aChapter === bChapter ? aMission - bMission : aChapter - bChapter;
-        })
-    : [];
+  const missionSources = equipment.campaign_sources ? await MissionDataService.getAll(equipment.campaign_sources) : [];
 
   const heroesUsingItem = await heroDAL.getHeroesByItem(equipment.slug);
 

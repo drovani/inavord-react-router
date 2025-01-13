@@ -18,13 +18,13 @@ import {
   EquipmentMutationSchema,
   type EquipmentRecord,
 } from "~/data/equipment.zod";
-import type { Mission } from "~/data/mission.zod";
+import type { MissionRecord } from "~/data/mission.zod";
 import { generateSlug } from "~/lib/utils";
 
 type EquipmentFormProps = {
   form: UseFormReturn<EquipmentMutation>;
   existingItems: EquipmentRecord[];
-  missions: Mission[];
+  missions: MissionRecord[];
 };
 
 export default function EquipmentForm({ form, existingItems, missions }: EquipmentFormProps) {

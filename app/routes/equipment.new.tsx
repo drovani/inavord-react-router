@@ -5,7 +5,7 @@ import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
 import { type EquipmentMutation, EquipmentMutationSchema } from "~/data/equipment.zod";
 import { equipmentDAL } from "~/lib/equipment-dal";
-import { missionDAL } from "~/lib/mission-dal";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.new";
 
 export const meta = (_: Route.MetaArgs) => {
@@ -20,11 +20,9 @@ export const handle = {
 };
 
 export const loader = async (_: Route.LoaderArgs) => {
-  const [allMissions, existingItems] = await Promise.all([missionDAL.getAllMissions(), equipmentDAL.getAllEquipment()]);
+  const [allMissions, existingItems] = await Promise.all([MissionDataService.getAll(), equipmentDAL.getAllEquipment()]);
 
-  const existingStats = [...new Set(existingItems.flatMap((ae) => ("stats" in ae ? Object.keys(ae.stats || {}) : [])))];
-
-  return { existingItems, existingStats, allMissions };
+  return { existingItems, allMissions };
 };
 
 export const action = async ({ request }: Route.ActionArgs) => {
@@ -46,7 +44,7 @@ export const action = async ({ request }: Route.ActionArgs) => {
 };
 
 export default function NewEquipment({ loaderData }: Route.ComponentProps) {
-  const { allMissions, existingStats, existingItems } = loaderData;
+  const { allMissions, existingItems } = loaderData;
   const form = useForm<EquipmentMutation>({
     resolver: zodResolver(EquipmentMutationSchema),
     defaultValues: {
@@ -61,7 +59,7 @@ export default function NewEquipment({ loaderData }: Route.ComponentProps) {
   return (
     <section className="space-y-4">
       <h1>New Equipment</h1>
-      <EquipmentForm form={form} missions={allMissions} existingStats={existingStats} existingItems={existingItems} />
+      <EquipmentForm form={form} missions={allMissions} existingItems={existingItems} />
     </section>
   );
 }
