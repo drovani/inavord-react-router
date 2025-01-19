@@ -7,8 +7,8 @@ import { ZodError } from "zod";
 import HeroForm from "~/components/HeroForm";
 import { Badge } from "~/components/ui/badge";
 import { HeroMutationSchema, type HeroMutation } from "~/data/hero.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import type { Route } from "./+types/heroes.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -37,7 +37,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const equipment = await equipmentDAL.getEquipmentThatIsEquipable();
+  const equipment = await EquipmentDataService.getEquipableEquipment();
 
   return { hero, equipment };
 };

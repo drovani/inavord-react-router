@@ -1,10 +1,10 @@
 import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
-import { type Mission } from "~/data/mission.zod";
+import { type MissionRecord } from "~/data/mission.zod";
 
 interface ChapterMissionsProps {
     chapter: string;
-    missions: Mission[];
+    missions: MissionRecord[];
     selectedMissions: string[];
     onMissionToggle: (missionId: string, checked: boolean) => void;
 }

@@ -6,15 +6,7 @@ class MissionDataService extends BaseDataService<MissionRecord, MissionMutation>
   protected mutationSchema = MissionMutationSchema;
 
   constructor() {
-    super("missions", "Mission");
-  }
-
-  protected initializeLocalCacheFromData(): void {
-    const records = missionJson as MissionRecord[];
-    records.forEach((record) => {
-      this.localRecordsCache.set(record.id, record);
-    });
-    this.initializedLocalCache = true;
+    super("missions", "Mission", missionJson as MissionRecord[]);
   }
 
   protected getRecordId(record: MissionRecord | MissionMutation): string {

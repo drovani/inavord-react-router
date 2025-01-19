@@ -9,8 +9,8 @@ import HeroSkins from "~/components/hero/HeroSkins";
 import HeroStoneSources from "~/components/hero/HeroStoneSources";
 import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
-import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/heroes.$slug";
 
@@ -43,7 +43,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
       equipmentSlugs.push(...tier[1]);
     }
   }
-  const equipmentUsed = await equipmentDAL.getAllEquipment(equipmentSlugs);
+  const equipmentUsed = await EquipmentDataService.getAll(equipmentSlugs);
   const allHeroes = await heroDAL.getAllHeroes();
 
   const currentIndex = allHeroes.findIndex((h) => h.slug === hero.slug);

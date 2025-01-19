@@ -10,6 +10,24 @@ export interface DataService<TRecord, TMutation> {
   isInitialized(): boolean;
 }
 
+interface HydrateDataOptions {
+  /** If true, will skip items that already exist */
+  skipExisting?: boolean;
+  /** If true, will throw an error if any items exist */
+  failIfExists?: boolean;
+  /** If true, will force update all items regardless of existence */
+  forceUpdate?: boolean;
+}
+
+interface HydrateDataResult {
+  success: number;
+  skipped: number;
+  errors: number;
+  total: number;
+  existingCount: number;
+  details: string[];
+}
+
 export const ChangeTrackedSchema = z.object({
   updatedOn: z.string().date(),
 });
@@ -27,15 +45,23 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   protected useLocalCache: boolean = true;
   protected dirtyLocalRecords: Map<string, TRecord | undefined> = new Map();
 
-  constructor(storeName: string, recordName: string) {
+  constructor(storeName: string, recordName: string, records: TRecord[]) {
     this.netlifyStore = getStore({ name: storeName });
-    this.initializeLocalCacheFromData();
+    if (records) {
+      this.initializeLocalCacheFromData(records);
+    }
     this.recordName = recordName;
   }
 
-  protected abstract initializeLocalCacheFromData(): void;
   protected abstract getRecordId(record: TRecord | TMutation): string;
   protected abstract sortRecords(records: TRecord[]): TRecord[];
+
+  protected initializeLocalCacheFromData(records: TRecord[]): void {
+    records.forEach((record) => {
+      this.localRecordsCache.set(this.getRecordId(record), record);
+    });
+    this.initializedLocalCache = true;
+  }
 
   protected async isNetlifyStorageAccessible(): Promise<boolean> {
     try {
@@ -46,7 +72,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
     }
   }
 
-  protected async initializeLocalStorage(): Promise<void> {
+  protected async pingNetlifyStorage(): Promise<void> {
     if (!this.initializedLocalCache) {
       throw new Error("Local cache was not initialized during class instantiation.");
     }
@@ -95,7 +121,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
 
   async getAll(ids?: string[]): Promise<TRecord[]> {
-    await this.initializeLocalStorage();
+    await this.pingNetlifyStorage();
 
     try {
       if (this.useLocalCache) {
@@ -131,7 +157,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
 
   async getById(id: string): Promise<TRecord | null> {
-    await this.initializeLocalStorage();
+    await this.pingNetlifyStorage();
 
     try {
       if (this.useLocalCache) {
@@ -149,7 +175,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
 
   async create(record: TMutation): Promise<TRecord | ZodError<TMutation>> {
-    await this.initializeLocalStorage();
+    await this.pingNetlifyStorage();
 
     try {
       const parseResults = this.mutationSchema.safeParse(record);
@@ -185,7 +211,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
 
   async update(id: string, mutation: TMutation): Promise<TRecord | ZodError<TMutation>> {
-    await this.initializeLocalStorage();
+    await this.pingNetlifyStorage();
     try {
       const parseResults = this.mutationSchema.safeParse(mutation);
       if (!parseResults.success) {
@@ -224,7 +250,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
 
   async delete(id: string): Promise<void> {
-    await this.initializeLocalStorage();
+    await this.pingNetlifyStorage();
 
     try {
       const existing = await this.getById(id);
@@ -252,5 +278,78 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
 
   isInitialized(): boolean {
     return this.initializedLocalCache;
+  }
+
+  async hydrateBlobData(
+    records: TRecord[],
+    options: HydrateDataOptions = { skipExisting: true, failIfExists: false, forceUpdate: false }
+  ): Promise<HydrateDataResult> {
+    const { skipExisting, failIfExists, forceUpdate } = options;
+    const details: string[] = [];
+
+    try {
+      details.push(`Starting ${this.recordName} blob data hydration...`);
+
+      // Check for existing data by listing all keys
+      const existingKeys = await this.netlifyStore.list();
+      const existingCount = existingKeys.blobs.length;
+
+      if (existingCount > 0) {
+        details.push(`Found ${existingCount} existing ${this.recordName} records`);
+
+        if (failIfExists) {
+          throw new Error(`Existing ${this.recordName} data found. Aborting data hydration.`);
+        }
+      }
+
+      let successCount = 0;
+      let errorCount = 0;
+      let skippedCount = 0;
+
+      for (const record of records) {
+        const id = this.getRecordId(record);
+
+        try {
+          const exists = Boolean(await this.getById(id));
+
+          if (exists && !forceUpdate) {
+            if (skipExisting) {
+              details.push(`⤍ Skipping existing ${this.recordName}: ${id}`);
+              skippedCount++;
+              continue;
+            } else {
+              throw new Error(`${this.recordName} already exists and skipExisting is false`);
+            }
+          }
+          await this.netlifyStore.set(id, JSON.stringify(record));
+
+          const action = exists ? "updated" : "stored";
+          details.push(`✓ Successfully ${action} ${this.recordName} ${id}`);
+          successCount++;
+        } catch (error) {
+          console.error(`✗ Failed to handle ${this.recordName} ${id}:`, error);
+          errorCount++;
+        }
+      }
+
+      details.push("Initialization complete:");
+      details.push(`✓ Successfully stored ${successCount} ${this.recordName} records`);
+      details.push(`⤍ Skipped ${skippedCount} existing ${this.recordName} records`);
+      if (errorCount > 0) {
+        details.push(`✗ Failed to store ${errorCount} ${this.recordName} records`);
+      }
+
+      return {
+        success: successCount,
+        skipped: skippedCount,
+        errors: errorCount,
+        total: records.length,
+        existingCount,
+        details,
+      };
+    } catch (error) {
+      console.error("Fatal error during initialization:", error);
+      throw error;
+    }
   }
 }

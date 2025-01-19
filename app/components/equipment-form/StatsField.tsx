@@ -44,7 +44,7 @@ export default function StatsField({ form, disabled = false }: StatsFieldProps) 
   const removeStat = (stat: string) => {
     const newStats = { ...stats };
     delete newStats[stat];
-    form.setValue("stats", Object.keys(newStats).length > 0 ? newStats : undefined);
+    form.setValue("stats", newStats);
   };
 
   return (

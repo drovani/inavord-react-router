@@ -1,12 +1,12 @@
 import { cva } from "class-variance-authority";
 import { Link } from "react-router";
 import { Card, CardHeader, CardTitle } from "~/components/ui/card";
-import { equipmentDAL } from "~/lib/equipment-dal";
 import { cn, parseSlugGetImageUrl } from "~/lib/utils";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import type { Route } from "./+types/equipment._index";
 
 export const loader = async (_: Route.LoaderArgs) => {
-  const equipments = await equipmentDAL.getAllEquipment();
+  const equipments = await EquipmentDataService.getAll();
 
   return { equipments };
 };

@@ -106,12 +106,12 @@ export default function EquipmentForm({ form, existingItems, missions }: Equipme
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
-                      defaultValue={field.value || "equipment"}
+                      defaultValue={field.value || "equipable"}
                       className="flex flex-col gap-0"
                     >
                       <FormItem className="flex items-center gap-1">
                         <FormControl>
-                          <RadioGroupItem value="equipment" />
+                          <RadioGroupItem value="equipable" />
                         </FormControl>
                         <FormLabel>Normal equipment</FormLabel>
                       </FormItem>
@@ -138,7 +138,7 @@ export default function EquipmentForm({ form, existingItems, missions }: Equipme
                 name: form.watch("name"),
                 slug: previewSlug,
                 quality: form.watch("quality"),
-                type: isFragment ? "fragment" : "equipment",
+                type: isFragment ? "fragment" : "equipable",
               }}
               size="lg"
             />

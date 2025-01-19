@@ -8,9 +8,9 @@ import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
 import { heroDAL } from "~/lib/hero-dal";
 import { generateSlug } from "~/lib/utils";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug";
 
@@ -29,7 +29,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing equipment slug param");
 
   // Get main equipment details
-  const equipment = await equipmentDAL.getEquipmentBySlug(params.slug);
+  const equipment = await EquipmentDataService.getById(params.slug);
 
   if (!equipment) {
     throw new Response(null, {
@@ -38,14 +38,14 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const sortedEquipment = await equipmentDAL.getAllEquipment();
+  const sortedEquipment = await EquipmentDataService.getAll();
   const currentIndex = sortedEquipment.findIndex((e) => e.slug === equipment.slug);
   const prevEquipment = currentIndex > 0 ? sortedEquipment[currentIndex - 1] : null;
   const nextEquipment = currentIndex < sortedEquipment.length ? sortedEquipment[currentIndex + 1] : null;
 
-  const requiredFor = await equipmentDAL.getEquipmentThatRequires(equipment.slug);
-  const requiredEquipment = await equipmentDAL.getEquipmentRequiredFor(equipment);
-  let requiredEquipmentRaw = await equipmentDAL.getEquipmentRequiredForRaw(equipment);
+  const requiredFor = await EquipmentDataService.getEquipmentThatRequires(equipment.slug);
+  const requiredEquipment = await EquipmentDataService.getEquipmentRequiredFor(equipment);
+  let requiredEquipmentRaw = await EquipmentDataService.getEquipmentRequiredForRaw(equipment);
 
   if ("crafting" in equipment && equipment.crafting?.gold_cost === requiredEquipmentRaw?.gold_cost) {
     requiredEquipmentRaw = null;

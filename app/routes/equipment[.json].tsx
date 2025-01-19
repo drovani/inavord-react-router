@@ -1,7 +1,7 @@
 import { createReadableStreamFromReadable } from "@react-router/node";
 import { Readable } from "node:stream";
 import { type EquipmentRecord } from "~/data/equipment.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import type { Route } from "./+types/equipment[.json]";
 
 function removeEmptyArrays<T>(_: string, value: T): T | undefined {
@@ -16,12 +16,12 @@ function removeEmptyArrays<T>(_: string, value: T): T | undefined {
 function formatEquipmentForExport(equipment: EquipmentRecord[]): EquipmentRecord[] {
   return equipment.map((item) => ({
     ...item,
-    created_at: new Date(item.created_at).toISOString(),
+    updatedOn: new Date(item.updatedOn).toISOString(),
   }));
 }
 
 export async function loader(_: Route.LoaderArgs) {
-  const equipment = await equipmentDAL.getAllEquipment();
+  const equipment = await EquipmentDataService.getAll();
   const formattedEquipment = formatEquipmentForExport(equipment);
 
   const file = createReadableStreamFromReadable(

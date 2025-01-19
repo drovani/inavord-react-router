@@ -18,13 +18,13 @@
       "9-4",
       "9-12"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "apprentices-mantle",
-    "created_at": "2024-09-10T17:16:56.000Z"
+    "updatedOn": "2024-09-10T17:16:56.000Z"
   },
   {
     "slug": "ashen-bow",
-    "created_at": "2024-09-10T17:16:56.000Z",
+    "updatedOn": "2024-09-10T17:16:56.000Z",
     "name": "Ashen Bow",
     "quality": "gray",
     "hero_level_required": 5,
@@ -45,11 +45,11 @@
       "strength": 1
     },
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "censer",
-    "created_at": "2024-09-10T17:16:56.000Z",
+    "updatedOn": "2024-09-10T17:16:56.000Z",
     "name": "Censer",
     "hero_level_required": 3,
     "quality": "gray",
@@ -67,11 +67,11 @@
       "5-4"
     ],
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "crossbow",
-    "created_at": "2024-11-06T21:09:00.096Z",
+    "updatedOn": "2024-11-06T21:09:00.096Z",
     "name": "Crossbow",
     "quality": "gray",
     "stats": {
@@ -90,11 +90,11 @@
       }
     },
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "dagger",
-    "created_at": "2024-11-06T22:22:38.900Z",
+    "updatedOn": "2024-11-06T22:22:38.900Z",
     "name": "Dagger",
     "quality": "gray",
     "stats": {
@@ -113,7 +113,7 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Giant's Belt",
@@ -136,13 +136,13 @@
         "travellers-shoes": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "giants-belt",
-    "created_at": "2024-11-06T22:44:02.994Z"
+    "updatedOn": "2024-11-06T22:44:02.994Z"
   },
   {
     "slug": "imperial-shield",
-    "created_at": "2024-11-06T22:21:01.966Z",
+    "updatedOn": "2024-11-06T22:21:01.966Z",
     "name": "Imperial Shield",
     "quality": "gray",
     "stats": {
@@ -160,11 +160,11 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "lucky-arrow",
-    "created_at": "2024-11-06T21:07:59.976Z",
+    "updatedOn": "2024-11-06T21:07:59.976Z",
     "name": "Lucky Arrow",
     "quality": "gray",
     "stats": {
@@ -182,11 +182,11 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "lucky-dice",
-    "created_at": "2024-11-06T22:45:41.691Z",
+    "updatedOn": "2024-11-06T22:45:41.691Z",
     "name": "Lucky Dice",
     "quality": "gray",
     "stats": {
@@ -205,7 +205,7 @@
     "sell_value": 200,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Oil Lamp",
@@ -225,13 +225,13 @@
       "3-10",
       "4-7"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "oil-lamp",
-    "created_at": "2024-11-06T22:42:17.694Z"
+    "updatedOn": "2024-11-06T22:42:17.694Z"
   },
   {
     "slug": "orcish-hammer",
-    "created_at": "2024-11-06T22:28:28.465Z",
+    "updatedOn": "2024-11-06T22:28:28.465Z",
     "name": "Orcish Hammer",
     "quality": "gray",
     "stats": {
@@ -250,11 +250,11 @@
       }
     },
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "orcish-knuckles",
-    "created_at": "2024-11-06T22:23:45.010Z",
+    "updatedOn": "2024-11-06T22:23:45.010Z",
     "name": "Orcish Knuckles",
     "quality": "gray",
     "stats": {
@@ -272,11 +272,11 @@
     "sell_value": 200,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "orcish-yatagan",
-    "created_at": "2024-11-06T21:07:03.702Z",
+    "updatedOn": "2024-11-06T21:07:03.702Z",
     "name": "Orcish Yatagan",
     "quality": "gray",
     "stats": {
@@ -294,11 +294,11 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "quiver",
-    "created_at": "2024-11-06T22:41:35.474Z",
+    "updatedOn": "2024-11-06T22:41:35.474Z",
     "name": "Quiver",
     "quality": "gray",
     "stats": {
@@ -316,11 +316,11 @@
     "sell_value": 200,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "sledgehammer",
-    "created_at": "2024-11-06T22:25:24.017Z",
+    "updatedOn": "2024-11-06T22:25:24.017Z",
     "name": "Sledgehammer",
     "quality": "gray",
     "stats": {
@@ -341,11 +341,11 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "steel-pauldron",
-    "created_at": "2024-11-06T22:26:20.983Z",
+    "updatedOn": "2024-11-06T22:26:20.983Z",
     "name": "Steel Pauldron",
     "quality": "gray",
     "stats": {
@@ -364,7 +364,7 @@
     "sell_value": 200,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Traveller's Shoes",
@@ -385,13 +385,13 @@
       "9-3",
       "10-14"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "travellers-shoes",
-    "created_at": "2024-11-06T22:43:15.321Z"
+    "updatedOn": "2024-11-06T22:43:15.321Z"
   },
   {
     "slug": "travellers-staff",
-    "created_at": "2024-11-06T22:27:34.661Z",
+    "updatedOn": "2024-11-06T22:27:34.661Z",
     "name": "Traveller's Staff",
     "quality": "gray",
     "stats": {
@@ -411,11 +411,11 @@
     "sell_value": 250,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "wizards-staff",
-    "created_at": "2024-09-10T17:16:56.000Z",
+    "updatedOn": "2024-09-10T17:16:56.000Z",
     "name": "Wizard's Staff",
     "hero_level_required": 4,
     "quality": "gray",
@@ -434,11 +434,11 @@
       }
     },
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "wooden-shield",
-    "created_at": "2024-09-10T17:16:56.000Z",
+    "updatedOn": "2024-09-10T17:16:56.000Z",
     "name": "Wooden Shield",
     "hero_level_required": 1,
     "quality": "gray",
@@ -456,7 +456,7 @@
     "sell_value": 200,
     "guild_activity_points": 2,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Ancient Amulet",
@@ -479,13 +479,13 @@
       }
     },
     "slug": "ancient-amulet",
-    "created_at": "2024-11-09T01:43:17.749Z",
+    "updatedOn": "2024-11-09T01:43:17.749Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "slug": "band-of-enlightenment",
-    "created_at": "2024-11-06T22:47:14.202Z",
+    "updatedOn": "2024-11-06T22:47:14.202Z",
     "name": "Band of Enlightenment",
     "quality": "green",
     "stats": {
@@ -504,7 +504,7 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Branch of Antiaris",
@@ -525,9 +525,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "branch-of-antiaris",
-    "created_at": "2024-11-09T01:39:11.794Z",
+    "updatedOn": "2024-11-09T01:39:11.794Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Brothers",
@@ -549,9 +549,9 @@
       }
     },
     "slug": "brothers",
-    "created_at": "2024-11-09T01:57:37.950Z",
+    "updatedOn": "2024-11-09T01:57:37.950Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Brothers (Fragment)",
@@ -567,7 +567,7 @@
     "sell_value": 150,
     "guild_activity_points": 2,
     "slug": "brothers-fragment",
-    "created_at": "2024-11-09T01:47:39.508Z",
+    "updatedOn": "2024-11-09T01:47:39.508Z",
     "type": "fragment",
     "buy_value_coin": 0
   },
@@ -590,9 +590,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cains-seal",
-    "created_at": "2024-11-09T01:59:31.614Z",
+    "updatedOn": "2024-11-09T01:59:31.614Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Cuirass",
@@ -613,9 +613,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cuirass",
-    "created_at": "2024-11-09T02:00:42.602Z",
+    "updatedOn": "2024-11-09T02:00:42.602Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Cursed Dagger",
@@ -635,9 +635,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "cursed-dagger",
-    "created_at": "2024-11-09T02:01:45.253Z",
+    "updatedOn": "2024-11-09T02:01:45.253Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Dawnguard",
@@ -658,9 +658,9 @@
       }
     },
     "slug": "dawnguard",
-    "created_at": "2024-11-09T02:02:59.409Z",
+    "updatedOn": "2024-11-09T02:02:59.409Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Dawnguard (Fragment)",
@@ -676,7 +676,7 @@
     "sell_value": 150,
     "guild_activity_points": 2,
     "slug": "dawnguard-fragment",
-    "created_at": "2024-11-09T02:04:51.453Z",
+    "updatedOn": "2024-11-09T02:04:51.453Z",
     "type": "fragment",
     "buy_value_coin": 0
   },
@@ -686,7 +686,7 @@
     "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "strength": 10,
       "armor": 50
@@ -700,7 +700,7 @@
       }
     },
     "slug": "elven-armor",
-    "created_at": "2024-12-09T23:00:48.797Z",
+    "updatedOn": "2024-12-09T23:00:48.797Z",
     "buy_value_coin": 0
   },
   {
@@ -709,7 +709,7 @@
     "buy_value_gold": 4825,
     "sell_value": 965,
     "guild_activity_points": 8,
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "intelligence": 5,
       "agility": 12,
@@ -724,7 +724,7 @@
       }
     },
     "slug": "elven-bow",
-    "created_at": "2024-12-09T23:01:55.574Z",
+    "updatedOn": "2024-12-09T23:01:55.574Z",
     "buy_value_coin": 0
   },
   {
@@ -733,7 +733,7 @@
     "buy_value_gold": 3450,
     "sell_value": 690,
     "guild_activity_points": 6,
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "agility": 10,
       "physical attack": 33
@@ -747,7 +747,7 @@
       }
     },
     "slug": "elven-saber",
-    "created_at": "2024-12-09T23:06:31.789Z",
+    "updatedOn": "2024-12-09T23:06:31.789Z",
     "buy_value_coin": 0
   },
   {
@@ -756,7 +756,7 @@
     "buy_value_gold": 4825,
     "sell_value": 965,
     "guild_activity_points": 8,
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "intelligence": 12,
       "agility": 5,
@@ -771,7 +771,7 @@
       }
     },
     "slug": "enchanters-staff",
-    "created_at": "2024-12-09T23:07:32.661Z",
+    "updatedOn": "2024-12-09T23:07:32.661Z",
     "buy_value_coin": 0
   },
   {
@@ -788,13 +788,13 @@
       "5-13",
       "6-13"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "physical attack": 33
     },
     "hero_level_required": 10,
     "slug": "fire-sword",
-    "created_at": "2024-12-09T23:05:38.500Z",
+    "updatedOn": "2024-12-09T23:05:38.500Z",
     "buy_value_coin": 0
   },
   {
@@ -811,13 +811,13 @@
       "5-12",
       "6-12"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "stats": {
       "health": 500
     },
     "hero_level_required": 10,
     "slug": "guardians-shield",
-    "created_at": "2024-12-10T02:00:57.762Z",
+    "updatedOn": "2024-12-10T02:00:57.762Z",
     "buy_value_coin": 0
   },
   {
@@ -838,9 +838,9 @@
         "reaper": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "infernal-messenger",
-    "created_at": "2024-12-12T03:27:18.836Z",
+    "updatedOn": "2024-12-12T03:27:18.836Z",
     "buy_value_coin": 0
   },
   {
@@ -862,9 +862,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "light-crystal",
-    "created_at": "2024-11-09T01:40:30.135Z",
+    "updatedOn": "2024-11-09T01:40:30.135Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Lost Ring",
@@ -884,9 +884,9 @@
       "5-14",
       "6-14"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "lost-ring",
-    "created_at": "2024-12-12T03:29:01.917Z",
+    "updatedOn": "2024-12-12T03:29:01.917Z",
     "buy_value_coin": 0
   },
   {
@@ -907,9 +907,9 @@
       "7-5",
       "9-4"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "midnight-crystal",
-    "created_at": "2024-12-12T03:30:29.786Z",
+    "updatedOn": "2024-12-12T03:30:29.786Z",
     "buy_value_coin": 0
   },
   {
@@ -931,9 +931,9 @@
         "poleaxe-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "poleaxe",
-    "created_at": "2024-12-12T03:34:06.979Z",
+    "updatedOn": "2024-12-12T03:34:06.979Z",
     "buy_value_coin": 0
   },
   {
@@ -950,7 +950,7 @@
     ],
     "type": "recipe",
     "slug": "poleaxe-recipe",
-    "created_at": "2024-12-12T03:32:27.352Z",
+    "updatedOn": "2024-12-12T03:32:27.352Z",
     "buy_value_coin": 0
   },
   {
@@ -971,9 +971,9 @@
         "cains-seal": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "portal-key",
-    "created_at": "2024-12-12T03:35:07.523Z",
+    "updatedOn": "2024-12-12T03:35:07.523Z",
     "buy_value_coin": 0
   },
   {
@@ -994,9 +994,9 @@
       "9-11",
       "10-6"
     ],
-    "type": "equipment",
+    "type": "equipable",
     "slug": "reaper",
-    "created_at": "2024-12-12T03:26:09.480Z",
+    "updatedOn": "2024-12-12T03:26:09.480Z",
     "buy_value_coin": 0
   },
   {
@@ -1018,9 +1018,9 @@
         "screaming-blade-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "screaming-blade",
-    "created_at": "2024-12-12T03:37:01.982Z",
+    "updatedOn": "2024-12-12T03:37:01.982Z",
     "buy_value_coin": 0
   },
   {
@@ -1037,7 +1037,7 @@
     ],
     "type": "recipe",
     "slug": "screaming-blade-recipe",
-    "created_at": "2024-12-12T03:35:52.728Z",
+    "updatedOn": "2024-12-12T03:35:52.728Z",
     "buy_value_coin": 0
   },
   {
@@ -1058,9 +1058,9 @@
         "guardians-shield": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "shining-armor",
-    "created_at": "2024-12-12T03:57:29.814Z",
+    "updatedOn": "2024-12-12T03:57:29.814Z",
     "buy_value_coin": 0
   },
   {
@@ -1081,9 +1081,9 @@
         "midnight-crystal": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "silent-guardian",
-    "created_at": "2024-12-12T03:59:41.681Z",
+    "updatedOn": "2024-12-12T03:59:41.681Z",
     "buy_value_coin": 0
   },
   {
@@ -1104,9 +1104,9 @@
         "skull-crusher-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "skull-crusher",
-    "created_at": "2024-12-12T04:03:29.094Z",
+    "updatedOn": "2024-12-12T04:03:29.094Z",
     "buy_value_coin": 0
   },
   {
@@ -1125,7 +1125,7 @@
     ],
     "type": "fragment",
     "slug": "skull-crusher-fragment",
-    "created_at": "2024-12-12T04:02:18.143Z",
+    "updatedOn": "2024-12-12T04:02:18.143Z",
     "buy_value_coin": 0
   },
   {
@@ -1147,9 +1147,9 @@
         "soul-catcher-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "soul-catcher",
-    "created_at": "2024-12-12T04:06:58.083Z",
+    "updatedOn": "2024-12-12T04:06:58.083Z",
     "buy_value_coin": 0
   },
   {
@@ -1166,7 +1166,7 @@
     ],
     "type": "recipe",
     "slug": "soul-catcher-recipe",
-    "created_at": "2024-12-12T04:05:40.413Z",
+    "updatedOn": "2024-12-12T04:05:40.413Z",
     "buy_value_coin": 0
   },
   {
@@ -1187,9 +1187,9 @@
         "cursed-dagger": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "spear-of-thunder",
-    "created_at": "2024-12-12T04:12:45.981Z",
+    "updatedOn": "2024-12-12T04:12:45.981Z",
     "buy_value_coin": 0
   },
   {
@@ -1210,9 +1210,9 @@
         "sword-of-storms-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sword-of-storms",
-    "created_at": "2024-12-12T04:16:24.557Z",
+    "updatedOn": "2024-12-12T04:16:24.557Z",
     "buy_value_coin": 0
   },
   {
@@ -1231,7 +1231,7 @@
     ],
     "type": "fragment",
     "slug": "sword-of-storms-fragment",
-    "created_at": "2024-12-12T04:14:55.873Z",
+    "updatedOn": "2024-12-12T04:14:55.873Z",
     "buy_value_coin": 0
   },
   {
@@ -1253,9 +1253,9 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "slug": "trackers-boots",
-    "created_at": "2024-11-09T01:41:30.658Z",
+    "updatedOn": "2024-11-09T01:41:30.658Z",
     "buy_value_coin": 0,
-    "type": "equipment"
+    "type": "equipable"
   },
   {
     "name": "Traitor's Shield",
@@ -1276,9 +1276,9 @@
         "traitors-shield-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "traitors-shield",
-    "created_at": "2024-12-12T04:19:48.133Z",
+    "updatedOn": "2024-12-12T04:19:48.133Z",
     "buy_value_coin": 0
   },
   {
@@ -1295,7 +1295,7 @@
     ],
     "type": "recipe",
     "slug": "traitors-shield-recipe",
-    "created_at": "2024-12-12T04:18:39.987Z",
+    "updatedOn": "2024-12-12T04:18:39.987Z",
     "buy_value_coin": 0
   },
   {
@@ -1316,9 +1316,9 @@
         "band-of-enlightenment": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "veil-of-fog",
-    "created_at": "2024-12-12T04:20:42.119Z",
+    "updatedOn": "2024-12-12T04:20:42.119Z",
     "buy_value_coin": 0
   },
   {
@@ -1339,9 +1339,9 @@
         "cuirass": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "victors-helmet",
-    "created_at": "2024-12-12T04:21:31.240Z",
+    "updatedOn": "2024-12-12T04:21:31.240Z",
     "buy_value_coin": 0
   },
   {
@@ -1363,9 +1363,9 @@
         "voodoo-doll-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "voodoo-doll",
-    "created_at": "2024-12-12T04:23:29.630Z",
+    "updatedOn": "2024-12-12T04:23:29.630Z",
     "buy_value_coin": 0
   },
   {
@@ -1382,7 +1382,7 @@
     ],
     "type": "recipe",
     "slug": "voodoo-doll-recipe",
-    "created_at": "2024-12-12T04:22:32.543Z",
+    "updatedOn": "2024-12-12T04:22:32.543Z",
     "buy_value_coin": 0
   },
   {
@@ -1404,9 +1404,9 @@
         "dagger": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "wall-breaker",
-    "created_at": "2024-12-12T04:24:31.396Z",
+    "updatedOn": "2024-12-12T04:24:31.396Z",
     "buy_value_coin": 0
   },
   {
@@ -1427,9 +1427,9 @@
         "lost-ring": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "wizards-tiara",
-    "created_at": "2024-12-12T04:25:48.729Z",
+    "updatedOn": "2024-12-12T04:25:48.729Z",
     "buy_value_coin": 0
   },
   {
@@ -1450,9 +1450,9 @@
         "portal-gem": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "branch-of-the-world-tree",
-    "created_at": "2024-12-13T01:31:25.732Z",
+    "updatedOn": "2024-12-13T01:31:25.732Z",
     "buy_value_coin": 322
   },
   {
@@ -1473,9 +1473,9 @@
         "enchanted-lute": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "dark-grail",
-    "created_at": "2024-12-13T01:34:16.210Z",
+    "updatedOn": "2024-12-13T01:34:16.210Z",
     "buy_value_coin": 322
   },
   {
@@ -1499,9 +1499,9 @@
         "scorching-quiver": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "dragonslayers-spear",
-    "created_at": "2024-12-13T01:38:41.146Z",
+    "updatedOn": "2024-12-13T01:38:41.146Z",
     "buy_value_coin": 1007
   },
   {
@@ -1518,7 +1518,7 @@
     },
     "type": "recipe",
     "slug": "dragonslayers-spear-recipe",
-    "created_at": "2024-12-13T01:37:09.905Z",
+    "updatedOn": "2024-12-13T01:37:09.905Z",
     "buy_value_coin": 363
   },
   {
@@ -1536,7 +1536,7 @@
     ],
     "type": "fragment",
     "slug": "dragonslayers-spear-recipe-fragment",
-    "created_at": "2024-12-13T01:35:48.684Z",
+    "updatedOn": "2024-12-13T01:35:48.684Z",
     "buy_value_coin": 0
   },
   {
@@ -1557,9 +1557,9 @@
         "serenity-stone": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "elven-shield",
-    "created_at": "2024-12-13T01:50:18.762Z",
+    "updatedOn": "2024-12-13T01:50:18.762Z",
     "buy_value_coin": 322
   },
   {
@@ -1578,9 +1578,9 @@
         "enchanted-lute-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "enchanted-lute",
-    "created_at": "2024-12-13T01:33:21.168Z",
+    "updatedOn": "2024-12-13T01:33:21.168Z",
     "buy_value_coin": 149
   },
   {
@@ -1598,7 +1598,7 @@
     ],
     "type": "fragment",
     "slug": "enchanted-lute-fragment",
-    "created_at": "2024-12-13T01:32:38.270Z",
+    "updatedOn": "2024-12-13T01:32:38.270Z",
     "buy_value_coin": 0
   },
   {
@@ -1621,9 +1621,9 @@
         "folding-crossbow-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "folding-crossbow",
-    "created_at": "2024-12-13T01:58:21.556Z",
+    "updatedOn": "2024-12-13T01:58:21.556Z",
     "buy_value_coin": 883
   },
   {
@@ -1640,7 +1640,7 @@
     },
     "type": "recipe",
     "slug": "folding-crossbow-recipe",
-    "created_at": "2024-12-13T01:57:22.852Z",
+    "updatedOn": "2024-12-13T01:57:22.852Z",
     "buy_value_coin": 363
   },
   {
@@ -1658,7 +1658,7 @@
     ],
     "type": "fragment",
     "slug": "folding-crossbow-recipe-fragment",
-    "created_at": "2024-12-13T01:54:36.159Z",
+    "updatedOn": "2024-12-13T01:54:36.159Z",
     "buy_value_coin": 0
   },
   {
@@ -1679,9 +1679,9 @@
         "needle": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "ghostly-blade",
-    "created_at": "2024-12-13T01:53:38.070Z",
+    "updatedOn": "2024-12-13T01:53:38.070Z",
     "buy_value_coin": 273
   },
   {
@@ -1704,9 +1704,9 @@
         "scorching-quiver": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "globus-cruciger",
-    "created_at": "2024-12-13T02:03:19.685Z",
+    "updatedOn": "2024-12-13T02:03:19.685Z",
     "buy_value_coin": 1287
   },
   {
@@ -1730,9 +1730,9 @@
         "hand-of-midas-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "hand-of-midas",
-    "created_at": "2024-12-13T02:06:03.155Z",
+    "updatedOn": "2024-12-13T02:06:03.155Z",
     "buy_value_coin": 1007
   },
   {
@@ -1749,7 +1749,7 @@
     },
     "type": "recipe",
     "slug": "hand-of-midas-recipe",
-    "created_at": "2024-12-13T02:05:04.121Z",
+    "updatedOn": "2024-12-13T02:05:04.121Z",
     "buy_value_coin": 363
   },
   {
@@ -1768,7 +1768,7 @@
     ],
     "type": "fragment",
     "slug": "hand-of-midas-recipe-fragment",
-    "created_at": "2024-12-13T02:04:28.685Z",
+    "updatedOn": "2024-12-13T02:04:28.685Z",
     "buy_value_coin": 0
   },
   {
@@ -1789,9 +1789,9 @@
         "splitter": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "hunter",
-    "created_at": "2024-12-13T02:06:56.428Z",
+    "updatedOn": "2024-12-13T02:06:56.428Z",
     "buy_value_coin": 322
   },
   {
@@ -1814,9 +1814,9 @@
         "lion-armor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "lion-armor",
-    "created_at": "2024-12-13T02:11:02.074Z",
+    "updatedOn": "2024-12-13T02:11:02.074Z",
     "buy_value_coin": 933
   },
   {
@@ -1833,7 +1833,7 @@
     },
     "type": "recipe",
     "slug": "lion-armor-recipe",
-    "created_at": "2024-12-13T02:09:55.362Z",
+    "updatedOn": "2024-12-13T02:09:55.362Z",
     "buy_value_coin": 363
   },
   {
@@ -1851,7 +1851,7 @@
     ],
     "type": "fragment",
     "slug": "lion-armor-recipe-fragment",
-    "created_at": "2024-12-13T02:09:27.408Z",
+    "updatedOn": "2024-12-13T02:09:27.408Z",
     "buy_value_coin": 0
   },
   {
@@ -1872,9 +1872,9 @@
         "magic-hat-fragment": 10
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "magic-hat",
-    "created_at": "2024-12-13T02:01:05.402Z",
+    "updatedOn": "2024-12-13T02:01:05.402Z",
     "buy_value_coin": 396
   },
   {
@@ -1893,7 +1893,7 @@
     ],
     "type": "fragment",
     "slug": "magic-hat-fragment",
-    "created_at": "2024-12-13T02:00:21.517Z",
+    "updatedOn": "2024-12-13T02:00:21.517Z",
     "buy_value_coin": 0
   },
   {
@@ -1912,9 +1912,9 @@
         "needle-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "needle",
-    "created_at": "2024-12-13T01:43:25.384Z",
+    "updatedOn": "2024-12-13T01:43:25.384Z",
     "buy_value_coin": 149
   },
   {
@@ -1935,7 +1935,7 @@
     ],
     "type": "fragment",
     "slug": "needle-fragment",
-    "created_at": "2024-12-13T01:42:46.556Z",
+    "updatedOn": "2024-12-13T01:42:46.556Z",
     "buy_value_coin": 0
   },
   {
@@ -1954,9 +1954,9 @@
         "portal-gem-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "portal-gem",
-    "created_at": "2024-12-13T01:20:49.844Z",
+    "updatedOn": "2024-12-13T01:20:49.844Z",
     "buy_value_coin": 149
   },
   {
@@ -1976,7 +1976,7 @@
     ],
     "type": "fragment",
     "slug": "portal-gem-fragment",
-    "created_at": "2024-12-13T01:19:22.637Z",
+    "updatedOn": "2024-12-13T01:19:22.637Z",
     "buy_value_coin": 0
   },
   {
@@ -1999,9 +1999,9 @@
         "prince-of-thieves-armor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "prince-of-thieves-armor",
-    "created_at": "2024-12-15T04:01:19.161Z",
+    "updatedOn": "2024-12-15T04:01:19.161Z",
     "buy_value_coin": 883
   },
   {
@@ -2018,7 +2018,7 @@
     },
     "type": "recipe",
     "slug": "prince-of-thieves-armor-recipe",
-    "created_at": "2024-12-15T04:00:04.163Z",
+    "updatedOn": "2024-12-15T04:00:04.163Z",
     "buy_value_coin": 363
   },
   {
@@ -2036,7 +2036,7 @@
     ],
     "type": "fragment",
     "slug": "prince-of-thieves-armor-recipe-fragment",
-    "created_at": "2024-12-15T03:59:18.631Z",
+    "updatedOn": "2024-12-15T03:59:18.631Z",
     "buy_value_coin": 0
   },
   {
@@ -2057,9 +2057,9 @@
         "sacred-rosary": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "prosperos-helmet",
-    "created_at": "2024-12-13T02:08:07.091Z",
+    "updatedOn": "2024-12-13T02:08:07.091Z",
     "buy_value_coin": 322
   },
   {
@@ -2080,9 +2080,9 @@
         "needle": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "punishing-hand",
-    "created_at": "2024-12-13T02:12:14.821Z",
+    "updatedOn": "2024-12-13T02:12:14.821Z",
     "buy_value_coin": 273
   },
   {
@@ -2103,9 +2103,9 @@
         "enchanted-lute": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "raven-kings-cloak",
-    "created_at": "2024-12-13T02:13:00.992Z",
+    "updatedOn": "2024-12-13T02:13:00.992Z",
     "buy_value_coin": 322
   },
   {
@@ -2124,9 +2124,9 @@
         "sacred-rosary-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sacred-rosary",
-    "created_at": "2024-12-13T01:49:12.242Z",
+    "updatedOn": "2024-12-13T01:49:12.242Z",
     "buy_value_coin": 149
   },
   {
@@ -2146,7 +2146,7 @@
     ],
     "type": "fragment",
     "slug": "sacred-rosary-fragment",
-    "created_at": "2024-12-13T01:48:33.103Z",
+    "updatedOn": "2024-12-13T01:48:33.103Z",
     "buy_value_coin": 0
   },
   {
@@ -2165,9 +2165,9 @@
         "sacrificial-dagger-fragment": 10
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sacrificial-dagger",
-    "created_at": "2024-12-13T02:14:56.522Z",
+    "updatedOn": "2024-12-13T02:14:56.522Z",
     "buy_value_coin": 396
   },
   {
@@ -2185,7 +2185,7 @@
     ],
     "type": "fragment",
     "slug": "sacrificial-dagger-fragment",
-    "created_at": "2024-12-13T02:13:58.369Z",
+    "updatedOn": "2024-12-13T02:13:58.369Z",
     "buy_value_coin": 0
   },
   {
@@ -2209,9 +2209,9 @@
         "sages-crown-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sages-crown",
-    "created_at": "2024-12-13T15:29:04.839Z",
+    "updatedOn": "2024-12-13T15:29:04.839Z",
     "buy_value_coin": 1007
   },
   {
@@ -2228,7 +2228,7 @@
     },
     "type": "recipe",
     "slug": "sages-crown-recipe",
-    "created_at": "2024-12-13T15:28:01.548Z",
+    "updatedOn": "2024-12-13T15:28:01.548Z",
     "buy_value_coin": 363
   },
   {
@@ -2247,7 +2247,7 @@
     ],
     "type": "fragment",
     "slug": "sages-crown-recipe-fragment",
-    "created_at": "2024-12-13T15:26:59.103Z",
+    "updatedOn": "2024-12-13T15:26:59.103Z",
     "buy_value_coin": 0
   },
   {
@@ -2268,9 +2268,9 @@
         "scorching-quiver-fragment": 10
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "scorching-quiver",
-    "created_at": "2024-12-13T01:41:18.743Z",
+    "updatedOn": "2024-12-13T01:41:18.743Z",
     "buy_value_coin": 396
   },
   {
@@ -2289,7 +2289,7 @@
     ],
     "type": "fragment",
     "slug": "scorching-quiver-fragment",
-    "created_at": "2024-12-13T01:40:04.926Z",
+    "updatedOn": "2024-12-13T01:40:04.926Z",
     "buy_value_coin": 0
   },
   {
@@ -2308,9 +2308,9 @@
         "serenity-stone-fragment": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "serenity-stone",
-    "created_at": "2024-12-13T01:47:29.072Z",
+    "updatedOn": "2024-12-13T01:47:29.072Z",
     "buy_value_coin": 149
   },
   {
@@ -2330,7 +2330,7 @@
     ],
     "type": "fragment",
     "slug": "serenity-stone-fragment",
-    "created_at": "2024-12-13T01:46:42.047Z",
+    "updatedOn": "2024-12-13T01:46:42.047Z",
     "buy_value_coin": 0
   },
   {
@@ -2349,9 +2349,9 @@
         "splitter-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "splitter",
-    "created_at": "2024-12-13T01:52:47.115Z",
+    "updatedOn": "2024-12-13T01:52:47.115Z",
     "buy_value_coin": 149
   },
   {
@@ -2371,7 +2371,7 @@
     ],
     "type": "fragment",
     "slug": "splitter-fragment",
-    "created_at": "2024-12-13T01:52:00.251Z",
+    "updatedOn": "2024-12-13T01:52:00.251Z",
     "buy_value_coin": 0
   },
   {
@@ -2392,9 +2392,9 @@
         "storm-hammer-fragment": 10
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "storm-hammer",
-    "created_at": "2024-12-13T02:02:32.303Z",
+    "updatedOn": "2024-12-13T02:02:32.303Z",
     "buy_value_coin": 396
   },
   {
@@ -2413,7 +2413,7 @@
     ],
     "type": "fragment",
     "slug": "storm-hammer-fragment",
-    "created_at": "2024-12-13T02:01:45.991Z",
+    "updatedOn": "2024-12-13T02:01:45.991Z",
     "buy_value_coin": 0
   },
   {
@@ -2434,9 +2434,9 @@
         "enchanted-lute": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "thunderfoot-boots",
-    "created_at": "2024-12-13T15:38:35.615Z",
+    "updatedOn": "2024-12-13T15:38:35.615Z",
     "buy_value_coin": 322
   },
   {
@@ -2457,9 +2457,9 @@
         "serenity-stone": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "trackers-shield",
-    "created_at": "2024-12-13T15:39:28.627Z",
+    "updatedOn": "2024-12-13T15:39:28.627Z",
     "buy_value_coin": 273
   },
   {
@@ -2480,9 +2480,9 @@
         "sacred-rosary": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "voodoo-staff",
-    "created_at": "2024-12-13T15:41:14.718Z",
+    "updatedOn": "2024-12-13T15:41:14.718Z",
     "buy_value_coin": 273
   },
   {
@@ -2501,9 +2501,9 @@
         "wyverns-heart-fragment": 5
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "wyverns-heart",
-    "created_at": "2024-12-13T01:17:49.702Z",
+    "updatedOn": "2024-12-13T01:17:49.702Z",
     "buy_value_coin": 149
   },
   {
@@ -2521,7 +2521,7 @@
     ],
     "type": "fragment",
     "slug": "wyverns-heart-fragment",
-    "created_at": "2024-12-13T01:01:21.589Z",
+    "updatedOn": "2024-12-13T01:01:21.589Z",
     "buy_value_coin": 0
   },
   {
@@ -2540,9 +2540,9 @@
         "advisor-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "advisor",
-    "created_at": "2024-12-13T16:20:07.097Z",
+    "updatedOn": "2024-12-13T16:20:07.097Z",
     "buy_value_coin": 1650
   },
   {
@@ -2559,7 +2559,7 @@
     ],
     "type": "fragment",
     "slug": "advisor-fragment",
-    "created_at": "2024-12-13T16:13:35.945Z",
+    "updatedOn": "2024-12-13T16:13:35.945Z",
     "buy_value_coin": 0
   },
   {
@@ -2582,9 +2582,9 @@
         "sirens-song": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "all-seer",
-    "created_at": "2024-12-15T04:04:53.897Z",
+    "updatedOn": "2024-12-15T04:04:53.897Z",
     "buy_value_coin": 6525
   },
   {
@@ -2605,9 +2605,9 @@
         "apostles-mace": 2
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "angels-mace",
-    "created_at": "2024-12-15T04:08:32.144Z",
+    "updatedOn": "2024-12-15T04:08:32.144Z",
     "buy_value_coin": 15150
   },
   {
@@ -2624,7 +2624,7 @@
     },
     "type": "recipe",
     "slug": "angels-mace-recipe",
-    "created_at": "2024-12-15T04:07:08.678Z",
+    "updatedOn": "2024-12-15T04:07:08.678Z",
     "buy_value_coin": 1650
   },
   {
@@ -2640,7 +2640,7 @@
     ],
     "type": "fragment",
     "slug": "angels-mace-recipe-fragment",
-    "created_at": "2024-12-15T04:06:27.480Z",
+    "updatedOn": "2024-12-15T04:06:27.480Z",
     "buy_value_coin": 0
   },
   {
@@ -2661,9 +2661,9 @@
         "sirens-song": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "apostles-mace",
-    "created_at": "2024-12-15T04:12:03.639Z",
+    "updatedOn": "2024-12-15T04:12:03.639Z",
     "buy_value_coin": 6525
   },
   {
@@ -2684,9 +2684,9 @@
         "archangels-mace-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "archangels-mace",
-    "created_at": "2024-12-15T04:16:02.982Z",
+    "updatedOn": "2024-12-15T04:16:02.982Z",
     "buy_value_coin": 34325
   },
   {
@@ -2703,7 +2703,7 @@
     },
     "type": "recipe",
     "slug": "archangels-mace-recipe",
-    "created_at": "2024-12-15T04:15:02.826Z",
+    "updatedOn": "2024-12-15T04:15:02.826Z",
     "buy_value_coin": 4125
   },
   {
@@ -2720,7 +2720,7 @@
     ],
     "type": "fragment",
     "slug": "archangels-mace-recipe-fragment",
-    "created_at": "2024-12-15T04:13:47.386Z",
+    "updatedOn": "2024-12-15T04:13:47.386Z",
     "buy_value_coin": 0
   },
   {
@@ -2741,9 +2741,9 @@
         "desert-blade": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "blade-bow",
-    "created_at": "2024-12-15T04:18:59.853Z",
+    "updatedOn": "2024-12-15T04:18:59.853Z",
     "buy_value_coin": 3600
   },
   {
@@ -2764,9 +2764,9 @@
         "book-of-fate-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "book-of-fate",
-    "created_at": "2024-12-15T04:28:45.788Z",
+    "updatedOn": "2024-12-15T04:28:45.788Z",
     "buy_value_coin": 29825
   },
   {
@@ -2783,7 +2783,7 @@
     },
     "type": "recipe",
     "slug": "book-of-fate-recipe",
-    "created_at": "2024-12-15T04:22:03.299Z",
+    "updatedOn": "2024-12-15T04:22:03.299Z",
     "buy_value_coin": 4125
   },
   {
@@ -2800,7 +2800,7 @@
     ],
     "type": "fragment",
     "slug": "book-of-fate-recipe-fragment",
-    "created_at": "2024-12-15T04:21:03.695Z",
+    "updatedOn": "2024-12-15T04:21:03.695Z",
     "buy_value_coin": 0
   },
   {
@@ -2821,9 +2821,9 @@
         "book-of-prophecies-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "book-of-prophecies",
-    "created_at": "2024-12-15T04:27:04.739Z",
+    "updatedOn": "2024-12-15T04:27:04.739Z",
     "buy_value_coin": 12900
   },
   {
@@ -2840,7 +2840,7 @@
     },
     "type": "recipe",
     "slug": "book-of-prophecies-recipe",
-    "created_at": "2024-12-15T04:23:24.036Z",
+    "updatedOn": "2024-12-15T04:23:24.036Z",
     "buy_value_coin": 1650
   },
   {
@@ -2859,7 +2859,7 @@
     ],
     "type": "fragment",
     "slug": "book-of-prophecies-recipe-fragment",
-    "created_at": "2024-12-15T04:22:47.531Z",
+    "updatedOn": "2024-12-15T04:22:47.531Z",
     "buy_value_coin": 0
   },
   {
@@ -2880,9 +2880,9 @@
         "pastors-seal": 2
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "book-of-tales",
-    "created_at": "2024-12-15T04:26:00.387Z",
+    "updatedOn": "2024-12-15T04:26:00.387Z",
     "buy_value_coin": 5400
   },
   {
@@ -2904,9 +2904,9 @@
         "cosmic-tremor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "cosmic-tremor",
-    "created_at": "2024-12-15T04:38:19.062Z",
+    "updatedOn": "2024-12-15T04:38:19.062Z",
     "buy_value_coin": 22325
   },
   {
@@ -2923,7 +2923,7 @@
     },
     "type": "recipe",
     "slug": "cosmic-tremor-recipe",
-    "created_at": "2024-12-15T04:31:44.569Z",
+    "updatedOn": "2024-12-15T04:31:44.569Z",
     "buy_value_coin": 4125
   },
   {
@@ -2941,7 +2941,7 @@
     ],
     "type": "fragment",
     "slug": "cosmic-tremor-recipe-fragment",
-    "created_at": "2024-12-15T04:31:19.903Z",
+    "updatedOn": "2024-12-15T04:31:19.903Z",
     "buy_value_coin": 0
   },
   {
@@ -2960,9 +2960,9 @@
         "desert-blade-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "desert-blade",
-    "created_at": "2024-12-15T04:18:19.804Z",
+    "updatedOn": "2024-12-15T04:18:19.804Z",
     "buy_value_coin": 1650
   },
   {
@@ -2980,7 +2980,7 @@
     ],
     "type": "fragment",
     "slug": "desert-blade-fragment",
-    "created_at": "2024-12-15T04:17:38.265Z",
+    "updatedOn": "2024-12-15T04:17:38.265Z",
     "buy_value_coin": 0
   },
   {
@@ -3003,9 +3003,9 @@
         "diviners-orb-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "diviners-orb",
-    "created_at": "2024-12-15T04:48:45.300Z",
+    "updatedOn": "2024-12-15T04:48:45.300Z",
     "buy_value_coin": 9150
   },
   {
@@ -3022,7 +3022,7 @@
     },
     "type": "recipe",
     "slug": "diviners-orb-recipe",
-    "created_at": "2024-12-15T04:47:51.178Z",
+    "updatedOn": "2024-12-15T04:47:51.178Z",
     "buy_value_coin": 1650
   },
   {
@@ -3038,7 +3038,7 @@
     ],
     "type": "fragment",
     "slug": "diviners-orb-recipe-fragment",
-    "created_at": "2024-12-15T04:41:17.011Z",
+    "updatedOn": "2024-12-15T04:41:17.011Z",
     "buy_value_coin": 0
   },
   {
@@ -3058,9 +3058,9 @@
         "dragon-shield-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "dragon-shield",
-    "created_at": "2024-12-15T04:51:15.949Z",
+    "updatedOn": "2024-12-15T04:51:15.949Z",
     "buy_value_coin": 2700
   },
   {
@@ -3077,7 +3077,7 @@
     },
     "type": "recipe",
     "slug": "dragon-shield-recipe",
-    "created_at": "2024-12-15T04:50:11.666Z",
+    "updatedOn": "2024-12-15T04:50:11.666Z",
     "buy_value_coin": 1650
   },
   {
@@ -3094,7 +3094,7 @@
     ],
     "type": "fragment",
     "slug": "dragon-shield-recipe-fragment",
-    "created_at": "2024-12-15T04:49:43.948Z",
+    "updatedOn": "2024-12-15T04:49:43.948Z",
     "buy_value_coin": 0
   },
   {
@@ -3114,9 +3114,9 @@
         "dragon-tooth-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "dragon-tooth",
-    "created_at": "2024-12-15T04:53:51.833Z",
+    "updatedOn": "2024-12-15T04:53:51.833Z",
     "buy_value_coin": 2700
   },
   {
@@ -3133,7 +3133,7 @@
     },
     "type": "recipe",
     "slug": "dragon-tooth-recipe",
-    "created_at": "2024-12-15T04:52:51.847Z",
+    "updatedOn": "2024-12-15T04:52:51.847Z",
     "buy_value_coin": 1650
   },
   {
@@ -3149,7 +3149,7 @@
     ],
     "type": "fragment",
     "slug": "dragon-tooth-recipe-fragment",
-    "created_at": "2024-12-15T04:52:19.487Z",
+    "updatedOn": "2024-12-15T04:52:19.487Z",
     "buy_value_coin": 0
   },
   {
@@ -3172,9 +3172,9 @@
         "funeral-totem": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "elephant-guard",
-    "created_at": "2024-12-15T04:56:28.886Z",
+    "updatedOn": "2024-12-15T04:56:28.886Z",
     "buy_value_coin": 5400
   },
   {
@@ -3195,9 +3195,9 @@
         "dragon-shield": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "executioners-sword",
-    "created_at": "2024-12-15T04:57:42.261Z",
+    "updatedOn": "2024-12-15T04:57:42.261Z",
     "buy_value_coin": 4725
   },
   {
@@ -3216,9 +3216,9 @@
         "flaming-heart-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "flaming-heart",
-    "created_at": "2024-12-15T04:25:03.448Z",
+    "updatedOn": "2024-12-15T04:25:03.448Z",
     "buy_value_coin": 1650
   },
   {
@@ -3236,7 +3236,7 @@
     ],
     "type": "fragment",
     "slug": "flaming-heart-fragment",
-    "created_at": "2024-12-15T04:24:06.464Z",
+    "updatedOn": "2024-12-15T04:24:06.464Z",
     "buy_value_coin": 0
   },
   {
@@ -3255,9 +3255,9 @@
         "funeral-totem-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "funeral-totem",
-    "created_at": "2024-12-15T04:55:08.153Z",
+    "updatedOn": "2024-12-15T04:55:08.153Z",
     "buy_value_coin": 1650
   },
   {
@@ -3274,7 +3274,7 @@
     ],
     "type": "fragment",
     "slug": "funeral-totem-fragment",
-    "created_at": "2024-12-15T04:54:29.820Z",
+    "updatedOn": "2024-12-15T04:54:29.820Z",
     "buy_value_coin": 0
   },
   {
@@ -3293,9 +3293,9 @@
         "giant-slayer-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "giant-slayer",
-    "created_at": "2024-12-15T04:10:43.708Z",
+    "updatedOn": "2024-12-15T04:10:43.708Z",
     "buy_value_coin": 1650
   },
   {
@@ -3313,7 +3313,7 @@
     ],
     "type": "fragment",
     "slug": "giant-slayer-fragment",
-    "created_at": "2024-12-15T04:09:47.483Z",
+    "updatedOn": "2024-12-15T04:09:47.483Z",
     "buy_value_coin": 0
   },
   {
@@ -3334,9 +3334,9 @@
         "giant-slayer": 2
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "governor",
-    "created_at": "2024-12-15T05:01:11.642Z",
+    "updatedOn": "2024-12-15T05:01:11.642Z",
     "buy_value_coin": 5400
   },
   {
@@ -3355,9 +3355,9 @@
         "hand-of-glory-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "hand-of-glory",
-    "created_at": "2024-12-13T18:48:21.205Z",
+    "updatedOn": "2024-12-13T18:48:21.205Z",
     "buy_value_coin": 1650
   },
   {
@@ -3376,7 +3376,7 @@
     ],
     "type": "fragment",
     "slug": "hand-of-glory-fragment",
-    "created_at": "2024-12-13T18:47:18.333Z",
+    "updatedOn": "2024-12-13T18:47:18.333Z",
     "buy_value_coin": 0
   },
   {
@@ -3397,9 +3397,9 @@
         "minotaurs-head": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "lion-helmet",
-    "created_at": "2024-12-15T04:39:30.924Z",
+    "updatedOn": "2024-12-15T04:39:30.924Z",
     "buy_value_coin": 3600
   },
   {
@@ -3418,9 +3418,9 @@
         "minotaurs-head-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "minotaurs-head",
-    "created_at": "2024-12-15T04:33:26.943Z",
+    "updatedOn": "2024-12-15T04:33:26.943Z",
     "buy_value_coin": 1650
   },
   {
@@ -3437,7 +3437,7 @@
     ],
     "type": "fragment",
     "slug": "minotaurs-head-fragment",
-    "created_at": "2024-12-15T04:32:46.159Z",
+    "updatedOn": "2024-12-15T04:32:46.159Z",
     "buy_value_coin": 0
   },
   {
@@ -3459,9 +3459,9 @@
         "panoptic-orb-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "panoptic-orb",
-    "created_at": "2024-12-15T12:29:48.101Z",
+    "updatedOn": "2024-12-15T12:29:48.101Z",
     "buy_value_coin": 22325
   },
   {
@@ -3478,7 +3478,7 @@
     },
     "type": "recipe",
     "slug": "panoptic-orb-recipe",
-    "created_at": "2024-12-15T12:28:19.989Z",
+    "updatedOn": "2024-12-15T12:28:19.989Z",
     "buy_value_coin": 4125
   },
   {
@@ -3497,7 +3497,7 @@
     ],
     "type": "fragment",
     "slug": "panoptic-orb-recipe-fragment",
-    "created_at": "2024-12-15T12:27:41.974Z",
+    "updatedOn": "2024-12-15T12:27:41.974Z",
     "buy_value_coin": 0
   },
   {
@@ -3516,9 +3516,9 @@
         "pastors-seal-fragment": 20
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "pastors-seal",
-    "created_at": "2024-12-15T04:03:45.746Z",
+    "updatedOn": "2024-12-15T04:03:45.746Z",
     "buy_value_coin": 1650
   },
   {
@@ -3536,7 +3536,7 @@
     ],
     "type": "fragment",
     "slug": "pastors-seal-fragment",
-    "created_at": "2024-12-15T04:02:41.642Z",
+    "updatedOn": "2024-12-15T04:02:41.642Z",
     "buy_value_coin": 0
   },
   {
@@ -3556,9 +3556,9 @@
         "primordial-word-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "primordial-word",
-    "created_at": "2024-12-15T12:32:38.941Z",
+    "updatedOn": "2024-12-15T12:32:38.941Z",
     "buy_value_coin": 2700
   },
   {
@@ -3575,7 +3575,7 @@
     },
     "type": "recipe",
     "slug": "primordial-word-recipe",
-    "created_at": "2024-12-15T12:31:30.245Z",
+    "updatedOn": "2024-12-15T12:31:30.245Z",
     "buy_value_coin": 1650
   },
   {
@@ -3591,7 +3591,7 @@
     ],
     "type": "fragment",
     "slug": "primordial-word-recipe-fragment",
-    "created_at": "2024-12-15T12:30:45.036Z",
+    "updatedOn": "2024-12-15T12:30:45.036Z",
     "buy_value_coin": 0
   },
   {
@@ -3614,9 +3614,9 @@
         "advisor": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "siege-crossbow",
-    "created_at": "2024-12-15T12:33:45.199Z",
+    "updatedOn": "2024-12-15T12:33:45.199Z",
     "buy_value_coin": 5400
   },
   {
@@ -3636,9 +3636,9 @@
         "sirens-song-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sirens-song",
-    "created_at": "2024-12-13T18:46:23.939Z",
+    "updatedOn": "2024-12-13T18:46:23.939Z",
     "buy_value_coin": 2700
   },
   {
@@ -3655,7 +3655,7 @@
     },
     "type": "recipe",
     "slug": "sirens-song-recipe",
-    "created_at": "2024-12-13T18:06:37.640Z",
+    "updatedOn": "2024-12-13T18:06:37.640Z",
     "buy_value_coin": 1650
   },
   {
@@ -3671,7 +3671,7 @@
     ],
     "type": "fragment",
     "slug": "sirens-song-recipe-fragment",
-    "created_at": "2024-12-13T16:47:30.736Z",
+    "updatedOn": "2024-12-13T16:47:30.736Z",
     "buy_value_coin": 0
   },
   {
@@ -3693,9 +3693,9 @@
         "staff-of-moranas-nimbus-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "staff-of-moranas-nimbus",
-    "created_at": "2024-12-15T12:40:50.085Z",
+    "updatedOn": "2024-12-15T12:40:50.085Z",
     "buy_value_coin": 22325
   },
   {
@@ -3712,7 +3712,7 @@
     },
     "type": "recipe",
     "slug": "staff-of-moranas-nimbus-recipe",
-    "created_at": "2024-12-15T12:34:58.775Z",
+    "updatedOn": "2024-12-15T12:34:58.775Z",
     "buy_value_coin": 4125
   },
   {
@@ -3729,7 +3729,7 @@
     ],
     "type": "fragment",
     "slug": "staff-of-moranas-nimbus-recipe-fragment",
-    "created_at": "2024-12-15T12:34:26.553Z",
+    "updatedOn": "2024-12-15T12:34:26.553Z",
     "buy_value_coin": 0
   },
   {
@@ -3752,9 +3752,9 @@
         "staff-of-selenas-halo-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "staff-of-selenas-halo",
-    "created_at": "2024-12-15T12:39:16.192Z",
+    "updatedOn": "2024-12-15T12:39:16.192Z",
     "buy_value_coin": 9150
   },
   {
@@ -3771,7 +3771,7 @@
     },
     "type": "recipe",
     "slug": "staff-of-selenas-halo-recipe",
-    "created_at": "2024-12-15T12:38:17.940Z",
+    "updatedOn": "2024-12-15T12:38:17.940Z",
     "buy_value_coin": 1650
   },
   {
@@ -3786,7 +3786,7 @@
     ],
     "type": "fragment",
     "slug": "staff-of-selenas-halo-recipe-fragment",
-    "created_at": "2024-12-15T12:36:46.244Z",
+    "updatedOn": "2024-12-15T12:36:46.244Z",
     "buy_value_coin": 0
   },
   {
@@ -3807,9 +3807,9 @@
         "sirens-song": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sword-of-thorns",
-    "created_at": "2024-12-15T12:41:52.532Z",
+    "updatedOn": "2024-12-15T12:41:52.532Z",
     "buy_value_coin": 4725
   },
   {
@@ -3830,9 +3830,9 @@
         "sirens-song": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "talisman",
-    "created_at": "2024-12-15T12:43:12.759Z",
+    "updatedOn": "2024-12-15T12:43:12.759Z",
     "buy_value_coin": 4725
   },
   {
@@ -3853,9 +3853,9 @@
         "hand-of-glory": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "traitors-crown",
-    "created_at": "2024-12-15T12:44:39.218Z",
+    "updatedOn": "2024-12-15T12:44:39.218Z",
     "buy_value_coin": 3600
   },
   {
@@ -3878,9 +3878,9 @@
         "desert-blade": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "trine",
-    "created_at": "2024-12-15T04:34:52.312Z",
+    "updatedOn": "2024-12-15T04:34:52.312Z",
     "buy_value_coin": 5400
   },
   {
@@ -3900,9 +3900,9 @@
         "wasp-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "wasp",
-    "created_at": "2024-12-15T12:46:52.629Z",
+    "updatedOn": "2024-12-15T12:46:52.629Z",
     "buy_value_coin": 4400
   },
   {
@@ -3919,7 +3919,7 @@
     },
     "type": "recipe",
     "slug": "wasp-recipe",
-    "created_at": "2024-12-15T12:45:46.917Z",
+    "updatedOn": "2024-12-15T12:45:46.917Z",
     "buy_value_coin": 1650
   },
   {
@@ -3936,7 +3936,7 @@
     ],
     "type": "fragment",
     "slug": "wasp-recipe-fragment",
-    "created_at": "2024-12-15T12:45:20.691Z",
+    "updatedOn": "2024-12-15T12:45:20.691Z",
     "buy_value_coin": 0
   },
   {
@@ -3959,9 +3959,9 @@
         "world-tremor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "world-tremor",
-    "created_at": "2024-12-15T04:37:19.325Z",
+    "updatedOn": "2024-12-15T04:37:19.325Z",
     "buy_value_coin": 9150
   },
   {
@@ -3978,7 +3978,7 @@
     },
     "type": "recipe",
     "slug": "world-tremor-recipe",
-    "created_at": "2024-12-15T04:36:18.511Z",
+    "updatedOn": "2024-12-15T04:36:18.511Z",
     "buy_value_coin": 1650
   },
   {
@@ -3994,7 +3994,7 @@
     ],
     "type": "fragment",
     "slug": "world-tremor-recipe-fragment",
-    "created_at": "2024-12-15T04:35:35.759Z",
+    "updatedOn": "2024-12-15T04:35:35.759Z",
     "buy_value_coin": 0
   },
   {
@@ -4013,9 +4013,9 @@
         "alchemists-set-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "alchemists-set",
-    "created_at": "2024-12-18T17:43:38.907Z",
+    "updatedOn": "2024-12-18T17:43:38.907Z",
     "buy_value_coin": 0
   },
   {
@@ -4034,7 +4034,7 @@
     ],
     "type": "fragment",
     "slug": "alchemists-set-fragment",
-    "created_at": "2024-12-18T17:42:50.434Z",
+    "updatedOn": "2024-12-18T17:42:50.434Z",
     "buy_value_coin": 82
   },
   {
@@ -4057,9 +4057,9 @@
         "all-seeing-eye-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "all-seeing-eye",
-    "created_at": "2024-12-18T17:49:14.795Z",
+    "updatedOn": "2024-12-18T17:49:14.795Z",
     "buy_value_coin": 0
   },
   {
@@ -4076,7 +4076,7 @@
     },
     "type": "recipe",
     "slug": "all-seeing-eye-recipe",
-    "created_at": "2024-12-18T17:47:13.367Z",
+    "updatedOn": "2024-12-18T17:47:13.367Z",
     "buy_value_coin": 0
   },
   {
@@ -4093,7 +4093,7 @@
     ],
     "type": "fragment",
     "slug": "all-seeing-eye-recipe-fragment",
-    "created_at": "2024-12-18T17:46:31.793Z",
+    "updatedOn": "2024-12-18T17:46:31.793Z",
     "buy_value_coin": 82
   },
   {
@@ -4115,9 +4115,9 @@
         "alucards-amulet-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "alucards-amulet",
-    "created_at": "2024-12-18T17:55:12.659Z",
+    "updatedOn": "2024-12-18T17:55:12.659Z",
     "buy_value_coin": 0
   },
   {
@@ -4134,7 +4134,7 @@
     },
     "type": "recipe",
     "slug": "alucards-amulet-recipe",
-    "created_at": "2024-12-18T17:52:20.163Z",
+    "updatedOn": "2024-12-18T17:52:20.163Z",
     "buy_value_coin": 0
   },
   {
@@ -4151,7 +4151,7 @@
     ],
     "type": "fragment",
     "slug": "alucards-amulet-recipe-fragment",
-    "created_at": "2024-12-18T17:51:20.070Z",
+    "updatedOn": "2024-12-18T17:51:20.070Z",
     "buy_value_coin": 82
   },
   {
@@ -4174,9 +4174,9 @@
         "aquants-trident-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "aquants-trident",
-    "created_at": "2024-12-18T18:04:26.032Z",
+    "updatedOn": "2024-12-18T18:04:26.032Z",
     "buy_value_coin": 0
   },
   {
@@ -4193,7 +4193,7 @@
     },
     "type": "recipe",
     "slug": "aquants-trident-recipe",
-    "created_at": "2024-12-18T18:01:47.432Z",
+    "updatedOn": "2024-12-18T18:01:47.432Z",
     "buy_value_coin": 0
   },
   {
@@ -4210,7 +4210,7 @@
     ],
     "type": "fragment",
     "slug": "aquants-trident-recipe-fragment",
-    "created_at": "2024-12-18T18:01:10.730Z",
+    "updatedOn": "2024-12-18T18:01:10.730Z",
     "buy_value_coin": 82
   },
   {
@@ -4232,9 +4232,9 @@
         "asklepius-staff-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "asklepius-staff",
-    "created_at": "2024-12-18T18:07:45.176Z",
+    "updatedOn": "2024-12-18T18:07:45.176Z",
     "buy_value_coin": 0
   },
   {
@@ -4251,7 +4251,7 @@
     },
     "type": "recipe",
     "slug": "asklepius-staff-recipe",
-    "created_at": "2024-12-18T18:06:47.127Z",
+    "updatedOn": "2024-12-18T18:06:47.127Z",
     "buy_value_coin": 0
   },
   {
@@ -4268,7 +4268,7 @@
     ],
     "type": "fragment",
     "slug": "asklepius-staff-recipe-fragment",
-    "created_at": "2024-12-18T18:06:14.009Z",
+    "updatedOn": "2024-12-18T18:06:14.009Z",
     "buy_value_coin": 82
   },
   {
@@ -4290,9 +4290,9 @@
         "blade-of-the-immortals-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "blade-of-the-immortals",
-    "created_at": "2024-12-18T18:10:08.752Z",
+    "updatedOn": "2024-12-18T18:10:08.752Z",
     "buy_value_coin": 0
   },
   {
@@ -4309,7 +4309,7 @@
     },
     "type": "recipe",
     "slug": "blade-of-the-immortals-recipe",
-    "created_at": "2024-12-18T18:09:11.099Z",
+    "updatedOn": "2024-12-18T18:09:11.099Z",
     "buy_value_coin": 0
   },
   {
@@ -4326,7 +4326,7 @@
     ],
     "type": "fragment",
     "slug": "blade-of-the-immortals-recipe-fragment",
-    "created_at": "2024-12-18T18:08:43.049Z",
+    "updatedOn": "2024-12-18T18:08:43.049Z",
     "buy_value_coin": 82
   },
   {
@@ -4348,9 +4348,9 @@
         "blued-plate-armor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "blued-plate-armor",
-    "created_at": "2024-12-18T18:16:59.310Z",
+    "updatedOn": "2024-12-18T18:16:59.310Z",
     "buy_value_coin": 0
   },
   {
@@ -4367,7 +4367,7 @@
     },
     "type": "recipe",
     "slug": "blued-plate-armor-recipe",
-    "created_at": "2024-12-18T18:15:58.339Z",
+    "updatedOn": "2024-12-18T18:15:58.339Z",
     "buy_value_coin": 0
   },
   {
@@ -4384,7 +4384,7 @@
     ],
     "type": "fragment",
     "slug": "blued-plate-armor-recipe-fragment",
-    "created_at": "2024-12-18T18:14:52.808Z",
+    "updatedOn": "2024-12-18T18:14:52.808Z",
     "buy_value_coin": 82
   },
   {
@@ -4403,9 +4403,9 @@
         "citadel-guardian-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "citadel-guardian",
-    "created_at": "2024-12-18T18:23:55.535Z",
+    "updatedOn": "2024-12-18T18:23:55.535Z",
     "buy_value_coin": 0
   },
   {
@@ -4423,7 +4423,7 @@
     ],
     "type": "fragment",
     "slug": "citadel-guardian-fragment",
-    "created_at": "2024-12-18T18:23:00.853Z",
+    "updatedOn": "2024-12-18T18:23:00.853Z",
     "buy_value_coin": 82
   },
   {
@@ -4446,9 +4446,9 @@
         "creators-feathering-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "creators-feathering",
-    "created_at": "2024-12-18T18:34:15.987Z",
+    "updatedOn": "2024-12-18T18:34:15.987Z",
     "buy_value_coin": 0
   },
   {
@@ -4465,7 +4465,7 @@
     },
     "type": "recipe",
     "slug": "creators-feathering-recipe",
-    "created_at": "2024-12-18T18:28:49.561Z",
+    "updatedOn": "2024-12-18T18:28:49.561Z",
     "buy_value_coin": 0
   },
   {
@@ -4482,7 +4482,7 @@
     ],
     "type": "fragment",
     "slug": "creators-feathering-recipe-fragment",
-    "created_at": "2024-12-18T18:28:21.026Z",
+    "updatedOn": "2024-12-18T18:28:21.026Z",
     "buy_value_coin": 82
   },
   {
@@ -4504,9 +4504,9 @@
         "dwarven-hardbane-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "dwarven-hardbane",
-    "created_at": "2024-12-18T19:01:57.543Z",
+    "updatedOn": "2024-12-18T19:01:57.543Z",
     "buy_value_coin": 0
   },
   {
@@ -4523,7 +4523,7 @@
     },
     "type": "recipe",
     "slug": "dwarven-hardbane-recipe",
-    "created_at": "2024-12-18T19:00:55.352Z",
+    "updatedOn": "2024-12-18T19:00:55.352Z",
     "buy_value_coin": 0
   },
   {
@@ -4540,7 +4540,7 @@
     ],
     "type": "fragment",
     "slug": "dwarven-hardbane-recipe-fragment",
-    "created_at": "2024-12-18T19:00:24.985Z",
+    "updatedOn": "2024-12-18T19:00:24.985Z",
     "buy_value_coin": 82
   },
   {
@@ -4559,9 +4559,9 @@
         "enchanted-chain-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "enchanted-chain",
-    "created_at": "2024-12-18T19:03:20.922Z",
+    "updatedOn": "2024-12-18T19:03:20.922Z",
     "buy_value_coin": 0
   },
   {
@@ -4579,7 +4579,7 @@
     ],
     "type": "fragment",
     "slug": "enchanted-chain-fragment",
-    "created_at": "2024-12-18T19:02:44.382Z",
+    "updatedOn": "2024-12-18T19:02:44.382Z",
     "buy_value_coin": 82
   },
   {
@@ -4598,9 +4598,9 @@
         "enigmas-chronicles-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "enigmas-chronicles",
-    "created_at": "2024-12-18T17:48:17.613Z",
+    "updatedOn": "2024-12-18T17:48:17.613Z",
     "buy_value_coin": 0
   },
   {
@@ -4614,7 +4614,7 @@
     ],
     "type": "fragment",
     "slug": "enigmas-chronicles-fragment",
-    "created_at": "2024-12-18T17:47:37.161Z",
+    "updatedOn": "2024-12-18T17:47:37.161Z",
     "buy_value_coin": 82
   },
   {
@@ -4631,7 +4631,7 @@
     },
     "type": "recipe",
     "slug": "evil-genius-cuirass-recipe",
-    "created_at": "2024-12-18T19:07:25.613Z",
+    "updatedOn": "2024-12-18T19:07:25.613Z",
     "buy_value_coin": 0
   },
   {
@@ -4642,7 +4642,7 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "evil-genius-cuirass-recipe-fragment",
-    "created_at": "2024-12-18T19:05:51.637Z",
+    "updatedOn": "2024-12-18T19:05:51.637Z",
     "buy_value_coin": 82
   },
   {
@@ -4664,9 +4664,9 @@
         "evil-genius-cuirass-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "evil-genius-cuirass-fragment",
-    "created_at": "2024-12-18T19:40:35.060Z",
+    "updatedOn": "2024-12-18T19:40:35.060Z",
     "buy_value_coin": 0
   },
   {
@@ -4685,9 +4685,9 @@
         "gro-bulgors-poleaxe-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "gro-bulgors-poleaxe",
-    "created_at": "2024-12-18T19:42:59.824Z",
+    "updatedOn": "2024-12-18T19:42:59.824Z",
     "buy_value_coin": 0
   },
   {
@@ -4706,7 +4706,7 @@
     ],
     "type": "fragment",
     "slug": "gro-bulgors-poleaxe-fragment",
-    "created_at": "2024-12-18T19:42:04.488Z",
+    "updatedOn": "2024-12-18T19:42:04.488Z",
     "buy_value_coin": 82
   },
   {
@@ -4725,9 +4725,9 @@
         "harunian-helm-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "harunian-helm",
-    "created_at": "2024-12-18T19:10:50.621Z",
+    "updatedOn": "2024-12-18T19:10:50.621Z",
     "buy_value_coin": 0
   },
   {
@@ -4741,7 +4741,7 @@
     ],
     "type": "fragment",
     "slug": "harunian-helm-fragment",
-    "created_at": "2024-12-18T19:10:01.354Z",
+    "updatedOn": "2024-12-18T19:10:01.354Z",
     "buy_value_coin": 82
   },
   {
@@ -4760,9 +4760,9 @@
         "hellion-harpoon-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "hellion-harpoon",
-    "created_at": "2024-12-18T18:03:12.145Z",
+    "updatedOn": "2024-12-18T18:03:12.145Z",
     "buy_value_coin": 0
   },
   {
@@ -4780,7 +4780,7 @@
     ],
     "type": "fragment",
     "slug": "hellion-harpoon-fragment",
-    "created_at": "2024-12-18T18:02:30.550Z",
+    "updatedOn": "2024-12-18T18:02:30.550Z",
     "buy_value_coin": 82
   },
   {
@@ -4802,9 +4802,9 @@
         "key-to-all-doors-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "key-to-all-doors",
-    "created_at": "2024-12-18T19:45:10.669Z",
+    "updatedOn": "2024-12-18T19:45:10.669Z",
     "buy_value_coin": 0
   },
   {
@@ -4821,7 +4821,7 @@
     },
     "type": "recipe",
     "slug": "key-to-all-doors-recipe",
-    "created_at": "2024-12-18T19:44:09.235Z",
+    "updatedOn": "2024-12-18T19:44:09.235Z",
     "buy_value_coin": 0
   },
   {
@@ -4832,7 +4832,7 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "key-to-all-doors-recipe-fragment",
-    "created_at": "2024-12-18T19:43:30.456Z",
+    "updatedOn": "2024-12-18T19:43:30.456Z",
     "buy_value_coin": 82
   },
   {
@@ -4851,9 +4851,9 @@
         "la-morts-map-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "la-morts-map",
-    "created_at": "2024-12-18T19:46:53.707Z",
+    "updatedOn": "2024-12-18T19:46:53.707Z",
     "buy_value_coin": 0
   },
   {
@@ -4871,7 +4871,7 @@
     ],
     "type": "fragment",
     "slug": "la-morts-map-fragment",
-    "created_at": "2024-12-18T19:46:08.245Z",
+    "updatedOn": "2024-12-18T19:46:08.245Z",
     "buy_value_coin": 0
   },
   {
@@ -4894,9 +4894,9 @@
         "light-of-distant-stars-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "light-of-distant-stars",
-    "created_at": "2024-12-18T19:56:09.023Z",
+    "updatedOn": "2024-12-18T19:56:09.023Z",
     "buy_value_coin": 0
   },
   {
@@ -4913,7 +4913,7 @@
     },
     "type": "recipe",
     "slug": "light-of-distant-stars-recipe",
-    "created_at": "2024-12-18T19:49:40.165Z",
+    "updatedOn": "2024-12-18T19:49:40.165Z",
     "buy_value_coin": 0
   },
   {
@@ -4928,7 +4928,7 @@
     ],
     "type": "fragment",
     "slug": "light-of-distant-stars-recipe-fragment",
-    "created_at": "2024-12-18T19:49:07.021Z",
+    "updatedOn": "2024-12-18T19:49:07.021Z",
     "buy_value_coin": 82
   },
   {
@@ -4947,9 +4947,9 @@
         "lycanthropes-fang-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "lycanthropes-fang",
-    "created_at": "2024-12-18T17:53:27.828Z",
+    "updatedOn": "2024-12-18T17:53:27.828Z",
     "buy_value_coin": 0
   },
   {
@@ -4968,7 +4968,7 @@
     ],
     "type": "fragment",
     "slug": "lycanthropes-fang-fragment",
-    "created_at": "2024-12-18T17:52:52.868Z",
+    "updatedOn": "2024-12-18T17:52:52.868Z",
     "buy_value_coin": 82
   },
   {
@@ -4992,9 +4992,9 @@
         "oppressors-crown-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "oppressors-crown",
-    "created_at": "2024-12-18T19:59:05.119Z",
+    "updatedOn": "2024-12-18T19:59:05.119Z",
     "buy_value_coin": 0
   },
   {
@@ -5011,7 +5011,7 @@
     },
     "type": "recipe",
     "slug": "oppressors-crown-recipe",
-    "created_at": "2024-12-18T19:57:51.886Z",
+    "updatedOn": "2024-12-18T19:57:51.886Z",
     "buy_value_coin": 0
   },
   {
@@ -5026,7 +5026,7 @@
     ],
     "type": "fragment",
     "slug": "oppressors-crown-recipe-fragment",
-    "created_at": "2024-12-18T19:57:16.615Z",
+    "updatedOn": "2024-12-18T19:57:16.615Z",
     "buy_value_coin": 82
   },
   {
@@ -5048,9 +5048,9 @@
         "oracles-censer-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "oracles-censer",
-    "created_at": "2024-12-18T19:54:33.463Z",
+    "updatedOn": "2024-12-18T19:54:33.463Z",
     "buy_value_coin": 0
   },
   {
@@ -5067,7 +5067,7 @@
     },
     "type": "recipe",
     "slug": "oracles-censer-recipe",
-    "created_at": "2024-12-18T19:53:11.373Z",
+    "updatedOn": "2024-12-18T19:53:11.373Z",
     "buy_value_coin": 0
   },
   {
@@ -5083,7 +5083,7 @@
     ],
     "type": "fragment",
     "slug": "oracles-censer-recipe-fragment",
-    "created_at": "2024-12-18T19:52:42.623Z",
+    "updatedOn": "2024-12-18T19:52:42.623Z",
     "buy_value_coin": 82
   },
   {
@@ -5106,9 +5106,9 @@
         "radiant-armor-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "radiant-armor",
-    "created_at": "2024-12-18T19:20:38.557Z",
+    "updatedOn": "2024-12-18T19:20:38.557Z",
     "buy_value_coin": 0
   },
   {
@@ -5125,7 +5125,7 @@
     },
     "type": "recipe",
     "slug": "radiant-armor-recipe",
-    "created_at": "2024-12-18T19:09:14.941Z",
+    "updatedOn": "2024-12-18T19:09:14.941Z",
     "buy_value_coin": 0
   },
   {
@@ -5142,7 +5142,7 @@
     ],
     "type": "fragment",
     "slug": "radiant-armor-recipe-fragment",
-    "created_at": "2024-12-18T19:08:42.826Z",
+    "updatedOn": "2024-12-18T19:08:42.826Z",
     "buy_value_coin": 0
   },
   {
@@ -5161,9 +5161,9 @@
         "riversars-tiara-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "riversars-tiara",
-    "created_at": "2024-12-18T20:00:51.582Z",
+    "updatedOn": "2024-12-18T20:00:51.582Z",
     "buy_value_coin": 0
   },
   {
@@ -5181,7 +5181,7 @@
     ],
     "type": "fragment",
     "slug": "riversars-tiara-fragment",
-    "created_at": "2024-12-18T20:00:15.752Z",
+    "updatedOn": "2024-12-18T20:00:15.752Z",
     "buy_value_coin": 82
   },
   {
@@ -5202,9 +5202,9 @@
         "rulers-globus-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "rulers-globus",
-    "created_at": "2024-12-18T20:03:18.592Z",
+    "updatedOn": "2024-12-18T20:03:18.592Z",
     "buy_value_coin": 0
   },
   {
@@ -5221,7 +5221,7 @@
     },
     "type": "recipe",
     "slug": "rulers-globus-recipe",
-    "created_at": "2024-12-18T20:02:17.777Z",
+    "updatedOn": "2024-12-18T20:02:17.777Z",
     "buy_value_coin": 0
   },
   {
@@ -5238,7 +5238,7 @@
     ],
     "type": "fragment",
     "slug": "rulers-globus-recipe-fragment",
-    "created_at": "2024-12-18T20:01:44.818Z",
+    "updatedOn": "2024-12-18T20:01:44.818Z",
     "buy_value_coin": 82
   },
   {
@@ -5260,9 +5260,9 @@
         "song-of-the-valkyries-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "song-of-the-valkyries",
-    "created_at": "2024-12-18T20:06:32.325Z",
+    "updatedOn": "2024-12-18T20:06:32.325Z",
     "buy_value_coin": 0
   },
   {
@@ -5279,7 +5279,7 @@
     },
     "type": "recipe",
     "slug": "song-of-the-valkyries-recipe",
-    "created_at": "2024-12-18T20:05:13.157Z",
+    "updatedOn": "2024-12-18T20:05:13.157Z",
     "buy_value_coin": 0
   },
   {
@@ -5290,7 +5290,7 @@
     "guild_activity_points": 4,
     "type": "fragment",
     "slug": "song-of-the-valkyries-recipe-fragment",
-    "created_at": "2024-12-18T20:04:36.164Z",
+    "updatedOn": "2024-12-18T20:04:36.164Z",
     "buy_value_coin": 82
   },
   {
@@ -5312,9 +5312,9 @@
         "sphere-of-power-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "sphere-of-power",
-    "created_at": "2024-12-18T19:51:48.897Z",
+    "updatedOn": "2024-12-18T19:51:48.897Z",
     "buy_value_coin": 0
   },
   {
@@ -5331,7 +5331,7 @@
     },
     "type": "recipe",
     "slug": "sphere-of-power-recipe",
-    "created_at": "2024-12-18T19:50:40.461Z",
+    "updatedOn": "2024-12-18T19:50:40.461Z",
     "buy_value_coin": 0
   },
   {
@@ -5348,7 +5348,7 @@
     ],
     "type": "fragment",
     "slug": "sphere-of-power-recipe-fragment",
-    "created_at": "2024-12-18T19:50:11.766Z",
+    "updatedOn": "2024-12-18T19:50:11.766Z",
     "buy_value_coin": 82
   },
   {
@@ -5370,9 +5370,9 @@
         "staff-of-neutralization-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "staff-of-neutralization",
-    "created_at": "2024-12-18T20:09:17.773Z",
+    "updatedOn": "2024-12-18T20:09:17.773Z",
     "buy_value_coin": 0
   },
   {
@@ -5389,7 +5389,7 @@
     },
     "type": "recipe",
     "slug": "staff-of-neutralization-recipe",
-    "created_at": "2024-12-18T20:08:17.500Z",
+    "updatedOn": "2024-12-18T20:08:17.500Z",
     "buy_value_coin": 0
   },
   {
@@ -5406,7 +5406,7 @@
     ],
     "type": "fragment",
     "slug": "staff-of-neutralization-recipe-fragment",
-    "created_at": "2024-12-18T20:07:48.435Z",
+    "updatedOn": "2024-12-18T20:07:48.435Z",
     "buy_value_coin": 82
   },
   {
@@ -5428,9 +5428,9 @@
         "staff-of-stubbornness-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "staff-of-stubbornness",
-    "created_at": "2024-12-18T20:16:00.666Z",
+    "updatedOn": "2024-12-18T20:16:00.666Z",
     "buy_value_coin": 0
   },
   {
@@ -5447,7 +5447,7 @@
     },
     "type": "recipe",
     "slug": "staff-of-stubbornness-recipe",
-    "created_at": "2024-12-18T20:10:31.408Z",
+    "updatedOn": "2024-12-18T20:10:31.408Z",
     "buy_value_coin": 0
   },
   {
@@ -5462,7 +5462,7 @@
     ],
     "type": "fragment",
     "slug": "staff-of-stubbornness-recipe-fragment",
-    "created_at": "2024-12-18T20:09:58.023Z",
+    "updatedOn": "2024-12-18T20:09:58.023Z",
     "buy_value_coin": 82
   },
   {
@@ -5481,9 +5481,9 @@
         "thieves-guild-sign-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "thieves-guild-sign",
-    "created_at": "2024-12-18T20:17:15.870Z",
+    "updatedOn": "2024-12-18T20:17:15.870Z",
     "buy_value_coin": 0
   },
   {
@@ -5501,7 +5501,7 @@
     ],
     "type": "fragment",
     "slug": "thieves-guild-sign-fragment",
-    "created_at": "2024-12-18T20:16:35.793Z",
+    "updatedOn": "2024-12-18T20:16:35.793Z",
     "buy_value_coin": 82
   },
   {
@@ -5520,9 +5520,9 @@
         "throwing-knives-fragment": 80
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "throwing-knives",
-    "created_at": "2024-12-18T18:29:47.910Z",
+    "updatedOn": "2024-12-18T18:29:47.910Z",
     "buy_value_coin": 0
   },
   {
@@ -5536,7 +5536,7 @@
     ],
     "type": "fragment",
     "slug": "throwing-knives-fragment",
-    "created_at": "2024-12-18T18:29:12.940Z",
+    "updatedOn": "2024-12-18T18:29:12.940Z",
     "buy_value_coin": 82
   },
   {
@@ -5559,9 +5559,9 @@
         "tricksters-cane-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "tricksters-cane",
-    "created_at": "2024-12-18T20:20:37.022Z",
+    "updatedOn": "2024-12-18T20:20:37.022Z",
     "buy_value_coin": 0
   },
   {
@@ -5578,7 +5578,7 @@
     },
     "type": "recipe",
     "slug": "tricksters-cane-recipe",
-    "created_at": "2024-12-18T20:18:58.590Z",
+    "updatedOn": "2024-12-18T20:18:58.590Z",
     "buy_value_coin": 0
   },
   {
@@ -5595,7 +5595,7 @@
     ],
     "type": "fragment",
     "slug": "tricksters-cane-recipe-fragment",
-    "created_at": "2024-12-18T20:18:21.602Z",
+    "updatedOn": "2024-12-18T20:18:21.602Z",
     "buy_value_coin": 82
   },
   {
@@ -5617,9 +5617,9 @@
         "unity-of-extremes-recipe": 1
       }
     },
-    "type": "equipment",
+    "type": "equipable",
     "slug": "unity-of-extremes",
-    "created_at": "2024-12-18T20:22:43.460Z",
+    "updatedOn": "2024-12-18T20:22:43.460Z",
     "buy_value_coin": 0
   },
   {
@@ -5636,7 +5636,7 @@
     },
     "type": "recipe",
     "slug": "unity-of-extremes-recipe",
-    "created_at": "2024-12-18T20:21:45.059Z",
+    "updatedOn": "2024-12-18T20:21:45.059Z",
     "buy_value_coin": 0
   },
   {
@@ -5651,7 +5651,7 @@
     ],
     "type": "fragment",
     "slug": "unity-of-extremes-recipe-fragment",
-    "created_at": "2024-12-18T20:21:08.502Z",
+    "updatedOn": "2024-12-18T20:21:08.502Z",
     "buy_value_coin": 82
   }
 ]

@@ -8,9 +8,13 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/com
 import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { ScrollArea } from "~/components/ui/scroll-area";
-import { initializeEquipmentBlobs } from "~/lib/initialize-equipment-blobs";
+import type { EquipmentRecord } from "~/data/equipment.zod";
+import equipmentData from "~/data/equipments.json";
+import type { MissionRecord } from "~/data/mission.zod";
+import missionData from "~/data/missions.json";
 import { initializeHeroBlobs } from "~/lib/initialize-hero-blobs";
-import { initializeMissionBlobs } from "~/lib/initialize-mission-blobs";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/admin.setup";
 
 export async function action({ request }: Route.ActionArgs) {
@@ -27,9 +31,13 @@ export async function action({ request }: Route.ActionArgs) {
     };
 
     const resultE =
-      !dataset || dataset === "equipment" ? await initializeEquipmentBlobs(options) : { status: "not loaded" };
+      !dataset || dataset === "equipment"
+        ? await EquipmentDataService.hydrateBlobData(equipmentData as EquipmentRecord[], options)
+        : { status: "not loaded" };
     const resultM =
-      !dataset || dataset === "missions" ? await initializeMissionBlobs(options) : { status: "not loaded" };
+      !dataset || dataset === "missions"
+        ? await MissionDataService.hydrateBlobData(missionData as MissionRecord[], options)
+        : { status: "not loaded" };
     const resultH = !dataset || dataset === "heroes" ? await initializeHeroBlobs(options) : { status: "not loaded" };
 
     return {
