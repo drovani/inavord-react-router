@@ -155,6 +155,25 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
       throw new Error(`Failed to retrieve ${this.recordName} records.`);
     }
   }
+  async getAllAsJson(ids?: string[]): Promise<string> {
+    const records = await this.getAll(ids);
+    const formatted = records.map((record) => ({
+      ...record,
+      updatedOn: new Date(record.updatedOn).toISOString(),
+    }));
+    const jsonString = JSON.stringify(
+      formatted,
+      (_: string, value: any): any | undefined => {
+        if (Array.isArray(value) && value.length === 0) {
+          // remove properties that are empty arrays
+          return undefined;
+        }
+        return value;
+      },
+      2
+    );
+    return jsonString;
+  }
 
   async getById(id: string): Promise<TRecord | null> {
     await this.pingNetlifyStorage();

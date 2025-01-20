@@ -6,7 +6,8 @@ import { Button } from "~/components/ui/button";
 import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger } from "~/components/ui/select";
-import { Stats, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
+import { type HeroMutation, type HeroRecord } from "~/data/hero.zod";
+import { Stats } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 function StatDisplay({ stat }: { stat: string }) {

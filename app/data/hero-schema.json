@@ -8,6 +8,7 @@
             "name",
             "slug",
             "class",
+            "updatedOn",
             "faction",
             "main_stat",
             "attack_type",
@@ -269,6 +270,12 @@
             "order_rank": {
                 "type": "number",
                 "minimum": 1
+            },
+            "updatedOn": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp when the equipment was last updated.",
+                "readOnly": true
             },
             "artifacts": {
                 "type": "object",

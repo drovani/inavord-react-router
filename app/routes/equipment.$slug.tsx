@@ -8,9 +8,9 @@ import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
-import { heroDAL } from "~/lib/hero-dal";
 import { generateSlug } from "~/lib/utils";
 import EquipmentDataService from "~/services/EquipmentDataService";
+import HeroDataService from "~/services/HeroDataService";
 import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug";
 
@@ -54,7 +54,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   // Get all missions and filter for sources
   const missionSources = equipment.campaign_sources ? await MissionDataService.getAll(equipment.campaign_sources) : [];
 
-  const heroesUsingItem = await heroDAL.getHeroesByItem(equipment.slug);
+  const heroesUsingItem = await HeroDataService.getHeroesUsingItem(equipment.slug);
 
   return {
     equipment,

@@ -4,8 +4,9 @@ import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/missions[.json]";
 
 export async function loader(_: Route.LoaderArgs) {
-  const missions = await MissionDataService.getAll();
-  const file = createReadableStreamFromReadable(Readable.from(JSON.stringify(missions)));
+  const missionsJson = await MissionDataService.getAllAsJson();
+
+  const file = createReadableStreamFromReadable(Readable.from(missionsJson));
 
   return new Response(file, {
     headers: {

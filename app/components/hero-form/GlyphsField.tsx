@@ -2,7 +2,8 @@
 import { type UseFormReturn } from "react-hook-form";
 import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
-import { Stats, type HeroMutation, type HeroRecord, type HeroStat } from "~/data/hero.zod";
+import type { HeroMutation, HeroRecord } from "~/data/hero.zod";
+import { Stats, type HeroStat } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface GlyphsFieldProps {

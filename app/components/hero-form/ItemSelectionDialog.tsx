@@ -6,14 +6,14 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "~/components/u
 import { Input } from "~/components/ui/input";
 import { ScrollArea } from "~/components/ui/scroll-area";
 import { type EquipmentRecord } from "~/data/equipment.zod";
-import { type HeroQualityLevel } from "~/data/hero.zod";
+import type { HeroRankLevel } from "~/data/ReadonlyArrays";
 
 interface ItemSelectionDialogProps {
   open: boolean;
   onClose: () => void;
   onSelect: (equipmentSlug: string | null) => void;
   equipment: EquipmentRecord[];
-  quality: HeroQualityLevel;
+  quality: HeroRankLevel;
 }
 
 export default function ItemSelectionDialog({ open, onClose, onSelect, equipment, quality }: ItemSelectionDialogProps) {

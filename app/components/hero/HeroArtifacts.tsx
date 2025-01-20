@@ -1,7 +1,7 @@
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import type { HeroRecord } from "~/data/hero.zod";
-import { BOOK_STATS } from "~/data/hero.zod";
+import { ArtifactBookStats } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface HeroArtifactsProps {
@@ -24,6 +24,9 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
               src={`/images/heroes/artifacts/${generateSlug(hero.artifacts.weapon.name)}.png`}
               alt={hero.artifacts.weapon.name}
               className="object-contain"
+              onError={(e) => {
+                e.currentTarget.src = "/images/heroes/border-white.png";
+              }}
             />
           </div>
           <div>
@@ -57,7 +60,7 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
           </div>
           <div>
             <div className="flex flex-col gap-2">
-              {BOOK_STATS[hero.artifacts.book].map((stat) => (
+              {ArtifactBookStats[hero.artifacts.book].map((stat) => (
                 <div key={stat} className="capitalize flex gap-1">
                   <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
                   {stat}

@@ -828,7 +828,7 @@
     "guild_activity_points": 6,
     "stats": {
       "physical attack": 33,
-      "critical hit chance": 15
+      "crit hit chance": 15
     },
     "hero_level_required": 24,
     "crafting": {
@@ -983,7 +983,7 @@
     "sell_value": 300,
     "guild_activity_points": 3,
     "stats": {
-      "critical hit chance": 15
+      "crit hit chance": 15
     },
     "hero_level_required": 24,
     "campaign_sources": [
@@ -1610,7 +1610,7 @@
     "stats": {
       "agility": 16,
       "physical attack": 56,
-      "critical hit chance": 30
+      "crit hit chance": 30
     },
     "hero_level_required": 46,
     "crafting": {
@@ -1779,7 +1779,7 @@
     "guild_activity_points": 30,
     "stats": {
       "physical attack": 56,
-      "critical hit chance": 24
+      "crit hit chance": 24
     },
     "hero_level_required": 35,
     "crafting": {
@@ -2340,7 +2340,7 @@
     "sell_value": 900,
     "guild_activity_points": 15,
     "stats": {
-      "critical hit chance": 30
+      "crit hit chance": 30
     },
     "hero_level_required": 32,
     "crafting": {
@@ -3104,7 +3104,7 @@
     "sell_value": 5400,
     "guild_activity_points": 110,
     "stats": {
-      "critical hit chance": 60
+      "crit hit chance": 60
     },
     "hero_level_required": 61,
     "crafting": {
@@ -4162,7 +4162,7 @@
     "guild_activity_points": 1180,
     "stats": {
       "physical attack": 320,
-      "critical hit chance": 228
+      "crit hit chance": 228
     },
     "hero_level_required": 100,
     "crafting": {
@@ -4493,7 +4493,7 @@
     "guild_activity_points": 1280,
     "stats": {
       "physical attack": 648,
-      "critical hit chance": 265
+      "crit hit chance": 265
     },
     "hero_level_required": 108,
     "crafting": {
@@ -4751,7 +4751,7 @@
     "sell_value": 13200,
     "guild_activity_points": 320,
     "stats": {
-      "critical hit chance": 166
+      "crit hit chance": 166
     },
     "hero_level_required": 90,
     "crafting": {
@@ -5417,7 +5417,7 @@
     "guild_activity_points": 2620,
     "stats": {
       "physical attack": 774,
-      "critical hit chance": 394
+      "crit hit chance": 394
     },
     "hero_level_required": 115,
     "crafting": {
