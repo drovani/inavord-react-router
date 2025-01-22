@@ -12,7 +12,7 @@ export const MissionMutationSchema = z
     return {
       ...mutation,
       id: `${mutation.chapter}-${mutation.mission_number}`,
-      updatedOn: new Date().toISOString(),
+      updated_on: new Date().toISOString(),
     };
   });
 

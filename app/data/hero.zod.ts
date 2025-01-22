@@ -57,7 +57,7 @@ export const HeroMutationSchema = z
   .transform((hero) => {
     return {
       ...hero,
-      updatedOn: new Date().toISOString(),
+      updated_on: new Date().toISOString(),
     };
   });
 

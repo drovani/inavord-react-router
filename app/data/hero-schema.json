@@ -8,7 +8,7 @@
             "name",
             "slug",
             "class",
-            "updatedOn",
+            "updated_on",
             "faction",
             "main_stat",
             "attack_type",
@@ -271,7 +271,7 @@
                 "type": "number",
                 "minimum": 1
             },
-            "updatedOn": {
+            "updated_on": {
                 "type": "string",
                 "format": "date-time",
                 "description": "Timestamp when the equipment was last updated.",

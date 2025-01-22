@@ -58,7 +58,7 @@ export const EquipmentMutationSchema = z
     return {
       ...mutation,
       slug: generateSlug(mutation.name),
-      updatedOn: new Date().toISOString(),
+      updated_on: new Date().toISOString(),
     };
   });
 

@@ -29,7 +29,7 @@ interface HydrateDataResult {
 }
 
 export const ChangeTrackedSchema = z.object({
-  updatedOn: z.string().date(),
+  updated_on: z.string().date(),
 });
 export interface IChangeTracked extends z.infer<typeof ChangeTrackedSchema> {}
 
@@ -244,7 +244,7 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
         throw new Error(`${this.recordName} record with id ${id} not found.`);
       }
 
-      const updated = { ...existing, ...parseResults.data, updatedOn: new Date().toISOString() };
+      const updated = { ...existing, ...parseResults.data, updated_on: new Date().toISOString() };
 
       if (this.useLocalCache) {
         this.localRecordsCache.set(id, updated);

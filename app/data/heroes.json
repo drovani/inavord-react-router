@@ -15,7 +15,7 @@
         ],
         "order_rank": 62,
         "slug": "aidan",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Alvanor",
@@ -34,7 +34,7 @@
         ],
         "order_rank": 23,
         "slug": "alvanor",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Amira",
@@ -52,7 +52,7 @@
         ],
         "order_rank": 43,
         "slug": "amira",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Andvari",
@@ -70,7 +70,7 @@
         ],
         "order_rank": 17,
         "slug": "andvari",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Arachne",
@@ -89,7 +89,7 @@
         ],
         "order_rank": 25,
         "slug": "arachne",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Artemis",
@@ -108,7 +108,7 @@
         ],
         "order_rank": 59,
         "slug": "artemis",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Astaroth",
@@ -283,7 +283,7 @@
             "magic defense",
             "strength"
         ],
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Astrid and Lucas",
@@ -302,11 +302,11 @@
         ],
         "order_rank": 53,
         "slug": "astrid-and-lucas",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Aurora",
-        "updatedOn": "2024-09-10T17:16:56.000Z",
+        "updated_on": "2024-09-10T17:16:56.000Z",
         "slug": "aurora",
         "class": "tank",
         "faction": "nature",
@@ -500,7 +500,7 @@
             "magic penetration",
             "armor penetration"
         ],
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Celeste",
@@ -518,7 +518,7 @@
         ],
         "order_rank": 32,
         "slug": "celeste",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Chabba",
@@ -537,7 +537,7 @@
         ],
         "order_rank": 1,
         "slug": "chabba",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Cleaver",
@@ -556,7 +556,7 @@
         ],
         "order_rank": 3,
         "slug": "cleaver",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Cornelius",
@@ -574,7 +574,7 @@
         ],
         "order_rank": 54,
         "slug": "cornelius",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Corvus",
@@ -594,7 +594,7 @@
         ],
         "order_rank": 5,
         "slug": "corvus",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dante",
@@ -617,7 +617,7 @@
         ],
         "order_rank": 26,
         "slug": "dante",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Daredevil",
@@ -636,7 +636,7 @@
         ],
         "order_rank": 48,
         "slug": "daredevil",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dark Star",
@@ -654,7 +654,7 @@
         ],
         "order_rank": 51,
         "slug": "dark-star",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dorian",
@@ -673,7 +673,7 @@
         ],
         "order_rank": 60,
         "slug": "dorian",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Elmir",
@@ -691,7 +691,7 @@
         ],
         "order_rank": 16,
         "slug": "elmir",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Faceless",
@@ -709,7 +709,7 @@
         ],
         "order_rank": 55,
         "slug": "faceless",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Fafnir",
@@ -727,7 +727,7 @@
         ],
         "order_rank": 65,
         "slug": "fafnir",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Folio",
@@ -745,7 +745,7 @@
         ],
         "order_rank": 44,
         "slug": "folio",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Fox",
@@ -764,7 +764,7 @@
         ],
         "order_rank": 56,
         "slug": "fox",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Galahad",
@@ -789,7 +789,7 @@
         ],
         "order_rank": 10,
         "slug": "galahad",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ginger",
@@ -808,7 +808,7 @@
         ],
         "order_rank": 49,
         "slug": "ginger",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Heidi",
@@ -827,7 +827,7 @@
         ],
         "order_rank": 38,
         "slug": "heidi",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Helios",
@@ -846,7 +846,7 @@
         ],
         "order_rank": 66,
         "slug": "helios",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Iris",
@@ -869,7 +869,7 @@
         ],
         "order_rank": 41,
         "slug": "iris",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Isaac",
@@ -887,10 +887,10 @@
         ],
         "order_rank": 45,
         "slug": "isaac",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
-        "updatedOn": "2024-09-10T17:16:56.000Z",
+        "updated_on": "2024-09-10T17:16:56.000Z",
         "name": "Ishmael",
         "class": "warrior",
         "faction": "honor",
@@ -928,7 +928,7 @@
         ],
         "order_rank": 63,
         "slug": "jet",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Jhu",
@@ -951,7 +951,7 @@
         ],
         "order_rank": 34,
         "slug": "jhu",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Jorgen",
@@ -974,7 +974,7 @@
         ],
         "order_rank": 39,
         "slug": "jorgen",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Judge",
@@ -992,7 +992,7 @@
         ],
         "order_rank": 29,
         "slug": "judge",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Julius",
@@ -1010,7 +1010,7 @@
         ],
         "order_rank": 8,
         "slug": "julius",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "K'arkh",
@@ -1028,7 +1028,7 @@
         ],
         "order_rank": 14,
         "slug": "karkh",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Kai",
@@ -1047,7 +1047,7 @@
         ],
         "order_rank": 33,
         "slug": "kai",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Kayla",
@@ -1065,7 +1065,7 @@
         ],
         "order_rank": 18,
         "slug": "kayla",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Keira",
@@ -1085,7 +1085,7 @@
         ],
         "order_rank": 28,
         "slug": "keira",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Krista",
@@ -1104,7 +1104,7 @@
         ],
         "order_rank": 27,
         "slug": "krista",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lara Croft",
@@ -1122,7 +1122,7 @@
         ],
         "order_rank": 50,
         "slug": "lara-croft",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lars",
@@ -1141,7 +1141,7 @@
         ],
         "order_rank": 52,
         "slug": "lars",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lian",
@@ -1160,7 +1160,7 @@
         ],
         "order_rank": 57,
         "slug": "lian",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lilith",
@@ -1179,7 +1179,7 @@
         ],
         "order_rank": 67,
         "slug": "lilith",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Luther",
@@ -1197,7 +1197,7 @@
         ],
         "order_rank": 4,
         "slug": "luther",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Markus",
@@ -1215,7 +1215,7 @@
         ],
         "order_rank": 15,
         "slug": "markus",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Martha",
@@ -1238,7 +1238,7 @@
         ],
         "order_rank": 68,
         "slug": "martha",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Maya",
@@ -1262,7 +1262,7 @@
         ],
         "order_rank": 24,
         "slug": "maya",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Mojo",
@@ -1281,7 +1281,7 @@
         ],
         "order_rank": 37,
         "slug": "mojo",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Morrigan",
@@ -1299,7 +1299,7 @@
         ],
         "order_rank": 31,
         "slug": "morrigan",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Mushy and Shroom",
@@ -1317,7 +1317,7 @@
         ],
         "order_rank": 22,
         "slug": "mushy-and-shroom",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Nebula",
@@ -1340,7 +1340,7 @@
         ],
         "order_rank": 36,
         "slug": "nebula",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ninja Turtles",
@@ -1358,7 +1358,7 @@
         ],
         "order_rank": 16.5,
         "slug": "ninja-turtles",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Octavia",
@@ -1381,7 +1381,7 @@
         ],
         "order_rank": 69,
         "slug": "octavia",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Orion",
@@ -1399,7 +1399,7 @@
         ],
         "order_rank": 47,
         "slug": "orion",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Oya",
@@ -1417,7 +1417,7 @@
         ],
         "order_rank": 12,
         "slug": "oya",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Peppy",
@@ -1436,7 +1436,7 @@
         ],
         "order_rank": 61,
         "slug": "peppy",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Phobos",
@@ -1455,7 +1455,7 @@
         ],
         "order_rank": 58,
         "slug": "phobos",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Qing Mao",
@@ -1474,7 +1474,7 @@
         ],
         "order_rank": 20,
         "slug": "qing-mao",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Rufus",
@@ -1493,7 +1493,7 @@
         ],
         "order_rank": 7,
         "slug": "rufus",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Satori",
@@ -1512,7 +1512,7 @@
         ],
         "order_rank": 21,
         "slug": "satori",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Sebastian",
@@ -1531,7 +1531,7 @@
         ],
         "order_rank": 35,
         "slug": "sebastian",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Soleil",
@@ -1554,7 +1554,7 @@
         ],
         "order_rank": 40,
         "slug": "soleil",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Tempus",
@@ -1572,7 +1572,7 @@
         ],
         "order_rank": 30,
         "slug": "tempus",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Thea",
@@ -1591,7 +1591,7 @@
         ],
         "order_rank": 64,
         "slug": "thea",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Tristan",
@@ -1614,7 +1614,7 @@
         ],
         "order_rank": 11,
         "slug": "tristan",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Xe'Sha",
@@ -1632,7 +1632,7 @@
         ],
         "order_rank": 42,
         "slug": "xesha",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Yasmine",
@@ -1651,7 +1651,7 @@
         ],
         "order_rank": 19,
         "slug": "yasmine",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ziri",
@@ -1669,6 +1669,6 @@
         ],
         "order_rank": 6,
         "slug": "ziri",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2024-09-10T17:16:56.000Z"
     }
 ]
