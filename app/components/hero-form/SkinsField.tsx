@@ -25,18 +25,15 @@ interface SkinsFieldProps {
 }
 
 export default function SkinsField({ form, hero }: SkinsFieldProps) {
-  const skins = form.watch("skins") || [];
+  const skins = form.watch("skins", [{ name: "Default Skin", stat: "health" }]);
+  if (skins === undefined) throw new Error("Skins are undefined");
+
   const inputRefs = useRef<Record<number, HTMLInputElement>>({});
 
   const theOtherMainStats = ["strength", "agility", "intelligence"].filter((stat) => stat !== hero.main_stat);
   const availableStats = Stats.map((stat) => ({ stat, disabled: theOtherMainStats.includes(stat) })).sort((l, r) =>
     l.stat.localeCompare(r.stat)
   );
-
-  // Ensure default skin always exists
-  if (skins.length === 0) {
-    form.setValue("skins", [{ name: "Default Skin", stat: "health" }]);
-  }
 
   const addSkin = () => {
     const newIndex = skins.length;

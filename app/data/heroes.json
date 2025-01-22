@@ -127,33 +127,27 @@
         "skins": [
             {
                 "name": "Default Skin",
-                "stat": "strength",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "strength"
             },
             {
                 "name": "Demonic Skin",
-                "stat": "magic attack",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "magic attack"
             },
             {
                 "name": "Barbarian Skin",
-                "stat": "armor",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "armor"
             },
             {
                 "name": "Lunar Skin",
-                "stat": "magic defense",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "magic defense"
             },
             {
                 "name": "Cybernetic Skin",
-                "stat": "health",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "health"
             },
             {
                 "name": "Thunder Skin",
-                "stat": "health",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "health"
             },
             {
                 "name": "Thunder Skin (Plus)",
@@ -280,8 +274,7 @@
                 "sphere-of-power",
                 "oppressors-crown",
                 "evil-genius-cuirass-fragment"
-            ],
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            ]
         },
         "glyphs": [
             "magic attack",
@@ -313,6 +306,7 @@
     },
     {
         "name": "Aurora",
+        "updatedOn": "2024-09-10T17:16:56.000Z",
         "slug": "aurora",
         "class": "tank",
         "faction": "nature",
@@ -327,41 +321,32 @@
         "artifacts": {
             "weapon": {
                 "name": "Selias' Legacy",
-                "team_buff": [
-                    "dodge"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "skins": [
             {
                 "name": "Default Skin",
                 "stat": "strength",
-                "source": "Default",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "source": "Default"
             },
             {
                 "name": "Nordic Skin",
-                "stat": "dodge",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "dodge"
             },
             {
                 "name": "Spring Skin",
-                "stat": "health",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "health"
             },
             {
                 "name": "Demonic Skin",
-                "stat": "armor",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "armor"
             },
             {
                 "name": "Romantic Skin",
-                "stat": "magic penetration",
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "stat": "magic penetration"
             },
             {
                 "name": "Thunder Skin",
@@ -488,8 +473,7 @@
                 "staff-of-neutralization",
                 "oppressors-crown",
                 "evil-genius-cuirass-fragment"
-            ],
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            ]
         },
         "glyphs": [
             "magic attack",
@@ -497,8 +481,7 @@
             "magic penetration",
             "dodge",
             "strength"
-        ],
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        ]
     },
     {
         "name": "Cascade",
@@ -624,14 +607,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Spear of Fate",
-                "team_buff": [
-                    "dodge"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Tower Shop"
@@ -799,14 +778,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Harunian Sword",
-                "team_buff": [
-                    "physical attack"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "physical attack"
             },
             "book": "Defender's Covenant",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Campaign",
@@ -884,14 +859,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Tome of Enslaved Souls",
-                "team_buff": [
-                    "magic attack"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "magic attack"
             },
             "book": "Tome of Arcane Knowledge",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Special Events"
@@ -919,6 +890,7 @@
         "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
+        "updatedOn": "2024-09-10T17:16:56.000Z",
         "name": "Ishmael",
         "class": "warrior",
         "faction": "honor",
@@ -929,21 +901,16 @@
         "artifacts": {
             "weapon": {
                 "name": "Hidden Demon's Katars",
-                "team_buff": [
-                    "crit hit chance"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "crit hit chance"
             },
             "book": "Alchemist's Folio",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Grand Arena Shop"
         ],
         "order_rank": 13,
-        "slug": "ishmael",
-        "updatedOn": "2024-09-10T17:16:56.000Z"
+        "slug": "ishmael"
     },
     {
         "name": "Jet",
@@ -974,14 +941,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Zarahhar Bones",
-                "team_buff": [
-                    "crit hit chance"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "crit hit chance"
             },
             "book": "Warrior's Code",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Guild War Shop"
@@ -1001,14 +964,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Shavarakk's Blood",
-                "team_buff": [
-                    "magic attack"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "magic attack"
             },
             "book": "Defender's Covenant",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Outland Shop"
@@ -1269,14 +1228,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Zarakkari Teapot",
-                "team_buff": [
-                    "armor"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "armor"
             },
             "book": "Tome of Arcane Knowledge",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Special Events"
@@ -1296,14 +1251,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Mother Tree's Branch",
-                "team_buff": [
-                    "magic defense"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "magic defense"
             },
             "book": "Tome of Arcane Knowledge",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Tower Shop",
@@ -1379,14 +1330,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Unborn Stars",
-                "team_buff": [
-                    "physical attack"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "physical attack"
             },
             "book": "Book of Illusions",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Guild War Shop"
@@ -1424,14 +1371,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Mirror of Truth",
-                "team_buff": [
-                    "dodge"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Special Events"
@@ -1601,14 +1544,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Prison of the Ancient God",
-                "team_buff": [
-                    "magic attack"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "magic attack"
             },
             "book": "Tome of Arcane Knowledge",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Special Events"
@@ -1665,14 +1604,10 @@
         "artifacts": {
             "weapon": {
                 "name": "Demonic Reliquary",
-                "team_buff": [
-                    "armor penetration"
-                ],
-                "updatedOn": "2024-09-10T17:16:56.000Z"
+                "team_buff": "armor penetration"
             },
             "book": "Alchemist's Folio",
-            "ring": null,
-            "updatedOn": "2024-09-10T17:16:56.000Z"
+            "ring": null
         },
         "stone_source": [
             "Special Events"

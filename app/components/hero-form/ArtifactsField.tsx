@@ -5,8 +5,8 @@ import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/for
 import { Input } from "~/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import type { HeroMutation, HeroRecord } from "~/data/hero.zod";
-import { ArtifactBookStats, Stats } from "~/data/ReadonlyArrays";
-import { generateSlug } from "~/lib/utils";
+import { ArtifactBookStats, WeaponTeamBuff } from "~/data/ReadonlyArrays";
+import { cn, generateSlug } from "~/lib/utils";
 
 interface ArtifactsFieldProps {
   form: UseFormReturn<HeroMutation>;
@@ -33,22 +33,17 @@ function BookDisplay({ book }: { book: string }) {
 }
 
 export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
-  const artifacts = form.watch("artifacts");
-  const availableStats = [...Stats].sort((a, b) => a.localeCompare(b));
-  const availableBooks = Object.keys(ArtifactBookStats).sort();
-  const mainStats = ["strength", "agility", "intelligence"];
+  const artifacts = form.watch("artifacts", {
+    weapon: {
+      name: "Weapon Name",
+      team_buff: "armor",
+    },
+    book: Object.keys(ArtifactBookStats)[0] as keyof typeof ArtifactBookStats,
+    ring: null,
+  });
 
-  // Initialize artifacts if empty
-  if (!artifacts) {
-    form.setValue("artifacts", {
-      weapon: {
-        name: "Weapon Name",
-        team_buff: ["armor"],
-      },
-      book: Object.keys(ArtifactBookStats)[0] as keyof typeof ArtifactBookStats,
-      ring: null,
-    });
-  }
+  const availableWeaponStats = [...WeaponTeamBuff].sort((a, b) => a.localeCompare(b));
+  const availableBooks = Object.keys(ArtifactBookStats).sort();
 
   // Get the second buff value for UI display, returning "none" if not present
   const [buff2Selection, setBuff2Selection] = useState<string>(() => {
@@ -72,14 +67,19 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                     control={form.control}
                     name="artifacts.weapon.name"
                     render={({ field }) => (
-                      <div className="flex flex-col items-center">
-                        <img
-                          src={`/images/heroes/artifacts/${generateSlug(artifacts?.weapon?.name || "weapon-name")}.png`}
-                          alt={artifacts?.weapon?.name || "Artifact Weapon"}
-                          className="size-16 object-contain rounded-md"
-                          onError={(e) => (e.currentTarget.src = "/images/heroes/artifacts/weapon-name.png")}
-                        />
-                        <Input {...field} placeholder="Weapon Name" className="mt-1 font-normal" />
+                      <div className="flex flex-col gap-2">
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={`/images/heroes/artifacts/${generateSlug(
+                              artifacts?.weapon?.name || "weapon-name"
+                            )}.png`}
+                            alt={artifacts?.weapon?.name || "Artifact Weapon"}
+                            className="size-16 object-contain rounded-md"
+                            onError={(e) => (e.currentTarget.src = "/images/heroes/artifacts/weapon-name.png")}
+                          />
+                          <Input {...field} placeholder="Weapon Name" className="mt-1 font-normal" />
+                        </div>
+                        <FormMessage />
                       </div>
                     )}
                   />
@@ -91,68 +91,74 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                     <FormLabel className="text-sm">Team Buff 1</FormLabel>
                     <FormField
                       control={form.control}
-                      name="artifacts.weapon.team_buff.0"
+                      name="artifacts.weapon.team_buff"
                       render={({ field }) => (
-                        <Select value={field.value} onValueChange={field.onChange}>
-                          <SelectTrigger>
-                            {field.value ? (
-                              <StatDisplay stat={field.value} />
-                            ) : (
-                              <SelectValue placeholder="Select stat" />
-                            )}
-                          </SelectTrigger>
-                          <SelectContent>
-                            {availableStats.map((stat) => (
-                              <SelectItem key={stat} value={stat}>
-                                <StatDisplay stat={stat} />
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="flex flex-col gap-2">
+                          <Select value={field.value} onValueChange={field.onChange}>
+                            <SelectTrigger>
+                              {field.value ? (
+                                <StatDisplay stat={field.value} />
+                              ) : (
+                                <SelectValue placeholder="Select stat" />
+                              )}
+                            </SelectTrigger>
+                            <SelectContent>
+                              {availableWeaponStats.map((stat) => (
+                                <SelectItem key={stat} value={stat}>
+                                  <StatDisplay stat={stat} />
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </div>
                       )}
                     />
                   </div>
 
                   <div className="w-full">
-                    <FormLabel className="text-sm">Team Buff 2</FormLabel>
+                    <FormLabel className={cn("text-sm", form.watch("artifacts.weapon.team_buff") === undefined && "opacity-50")}>Team Buff 2</FormLabel>
                     <FormField
                       control={form.control}
-                      name="artifacts.weapon.team_buff.1"
+                      name="artifacts.weapon.team_buff_secondary"
                       render={({ field }) => (
-                        <Select
-                          value={buff2Selection}
-                          onValueChange={(newValue) => {
-                            setBuff2Selection(newValue);
-                            if (newValue === "none") {
-                              const currentBuff = form.getValues("artifacts.weapon.team_buff");
-                              form.setValue("artifacts.weapon.team_buff", [currentBuff[0]]);
-                            } else {
-                              field.onChange(newValue);
-                            }
-                          }}
-                        >
-                          <SelectTrigger>
-                            {buff2Selection !== "none" ? (
-                              <StatDisplay stat={buff2Selection} />
-                            ) : (
-                              <span className="text-muted-foreground">None</span>
-                            )}
-                          </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="none">
-                              <span className="text-muted-foreground">None</span>
-                            </SelectItem>
-                            {availableStats.map((stat) => (
-                              <SelectItem
-                                key={stat}
-                                value={stat}
-                                disabled={stat === form.watch("artifacts.weapon.team_buff.0")}
-                              >
-                                <StatDisplay stat={stat} />
+                        <div className="flex flex-col gap-2">
+                          <Select
+                            value={buff2Selection}
+                            onValueChange={(newValue) => {
+                              setBuff2Selection(newValue);
+                              if (newValue === "none") {
+                                form.resetField("artifacts.weapon.team_buff_secondary", undefined);
+                              } else {
+                                field.onChange(newValue);
+                              }
+                            }}
+                            disabled={form.watch("artifacts.weapon.team_buff") === undefined}
+                          >
+                            <SelectTrigger>
+                              {buff2Selection !== "none" ? (
+                                <StatDisplay stat={buff2Selection} />
+                              ) : (
+                                <span className="text-muted-foreground">None</span>
+                              )}
+                            </SelectTrigger>
+                            <SelectContent>
+                              <SelectItem value="none">
+                                <span className="text-muted-foreground">None</span>
                               </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                              {availableWeaponStats.map((stat) => (
+                                <SelectItem
+                                  key={stat}
+                                  value={stat}
+                                  disabled={stat === form.watch("artifacts.weapon.team_buff")}
+                                >
+                                  <StatDisplay stat={stat} />
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </div>
                       )}
                     />
                   </div>
@@ -175,22 +181,25 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                       control={form.control}
                       name="artifacts.book"
                       render={({ field }) => (
-                        <Select value={field.value} onValueChange={field.onChange}>
-                          <SelectTrigger>
-                            {field.value ? (
-                              <span className="capitalize">{field.value}</span>
-                            ) : (
-                              <SelectValue placeholder="Select artifact book" />
-                            )}
-                          </SelectTrigger>
-                          <SelectContent>
-                            {availableBooks.map((book) => (
-                              <SelectItem key={book} value={book}>
-                                <BookDisplay book={book} />
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="flex flex-col gap-2">
+                          <Select value={field.value} onValueChange={field.onChange}>
+                            <SelectTrigger>
+                              {field.value ? (
+                                <span className="capitalize">{field.value}</span>
+                              ) : (
+                                <SelectValue placeholder="Select artifact book" />
+                              )}
+                            </SelectTrigger>
+                            <SelectContent>
+                              {availableBooks.map((book) => (
+                                <SelectItem key={book} value={book}>
+                                  <BookDisplay book={book} />
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </div>
                       )}
                     />
                   </div>

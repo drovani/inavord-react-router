@@ -52,12 +52,14 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
     const validated = HeroMutationSchema.parse(data);
     const updateResults = await HeroDataService.update(params.slug, validated);
     if (updateResults instanceof ZodError) {
+      console.error("Captured validation ZodError:", updateResults.format());
       return data({ errors: updateResults.format() }, { status: 400 });
     }
 
     return redirect(`/heroes/${updateResults.slug}`);
   } catch (error) {
     if (error instanceof ZodError) {
+      console.error("Caught ZodError: ", error.format());
       return data({ errors: error.format() }, { status: 400 });
     }
     throw error;
@@ -69,11 +71,7 @@ export default function EditHero({ loaderData }: Route.ComponentProps) {
 
   const form = useForm<HeroMutation>({
     resolver: zodResolver(HeroMutationSchema),
-    defaultValues: { ...hero, glyphs: hero.glyphs || [undefined, undefined, undefined, undefined, hero.main_stat],
-      artifacts: hero.artifacts || {
-
-      }
-     },
+    defaultValues: hero,
   });
 
   return (

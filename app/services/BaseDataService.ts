@@ -157,12 +157,8 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
   }
   async getAllAsJson(ids?: string[]): Promise<string> {
     const records = await this.getAll(ids);
-    const formatted = records.map((record) => ({
-      ...record,
-      updatedOn: new Date(record.updatedOn).toISOString(),
-    }));
     const jsonString = JSON.stringify(
-      formatted,
+      records,
       (_: string, value: any): any | undefined => {
         if (Array.isArray(value) && value.length === 0) {
           // remove properties that are empty arrays
@@ -248,17 +244,19 @@ export abstract class BaseDataService<TRecord extends IChangeTracked, TMutation>
         throw new Error(`${this.recordName} record with id ${id} not found.`);
       }
 
+      const updated = { ...existing, ...parseResults.data, updatedOn: new Date().toISOString() };
+
       if (this.useLocalCache) {
-        this.localRecordsCache.set(id, parseResults.data);
-        this.dirtyLocalRecords.set(id, parseResults.data);
+        this.localRecordsCache.set(id, updated);
+        this.dirtyLocalRecords.set(id, updated);
         await this.syncToNetlify().catch((error) => {
           console.warn(`Failed to sync updated ${this.recordName} record to Netlify:`, error);
         });
       } else {
-        await this.netlifyStore.set(id, JSON.stringify(parseResults.data));
+        await this.netlifyStore.set(id, JSON.stringify(updated));
       }
 
-      return parseResults.data;
+      return updated;
     } catch (error) {
       console.error(`Failed to update ${this.recordName} record ${id}:`, error);
       if (error instanceof Error) {

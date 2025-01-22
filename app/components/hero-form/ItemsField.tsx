@@ -17,8 +17,9 @@ interface ItemsFieldProps {
 const ITEMS_PER_TIER = 6;
 
 export default function ItemsField({ form, hero, equipment }: ItemsFieldProps) {
-  const [selectedSlot, setSelectedSlot] = useState<{ quality: HeroRankLevel; slot: number } | null>(null);
   const items = form.watch("items", hero.items);
+
+   const [selectedSlot, setSelectedSlot] = useState<{ quality: HeroRankLevel; slot: number } | null>(null);
 
   const handleItemSelect = (quality: HeroRankLevel, slot: number, equipmentSlug: string | null) => {
     const qualityItems = [...(items?.[quality] || Array(ITEMS_PER_TIER).fill(""))];

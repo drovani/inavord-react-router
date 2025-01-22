@@ -291,20 +291,30 @@
                                 "type": "string"
                             },
                             "team_buff": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string",
-                                    "enum": [
-                                        "armor",
-                                        "dodge",
-                                        "physical attack",
-                                        "magic attack",
-                                        "magic defense",
-                                        "armor penetration",
-                                        "crit hit chance",
-                                        "magic penetration"
-                                    ]
-                                }
+                                "type": "string",
+                                "enum": [
+                                    "armor",
+                                    "dodge",
+                                    "physical attack",
+                                    "magic attack",
+                                    "magic defense",
+                                    "armor penetration",
+                                    "crit hit chance",
+                                    "magic penetration"
+                                ]
+                            },
+                            "team_buff_secondary": {
+                                "type": "string",
+                                "enum": [
+                                    "armor",
+                                    "dodge",
+                                    "physical attack",
+                                    "magic attack",
+                                    "magic defense",
+                                    "armor penetration",
+                                    "crit hit chance",
+                                    "magic penetration"
+                                ]
                             }
                         }
                     },

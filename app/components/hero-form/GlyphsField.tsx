@@ -21,15 +21,11 @@ function StatDisplay({ stat }: { stat: string }) {
 }
 
 export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
-  const glyphs = form.watch("glyphs") || [];
+  const glyphs = form.watch("glyphs", [undefined, undefined, undefined, undefined, hero.main_stat]);
+  if (glyphs === undefined) throw new Error("Glyphs are undefined");
 
   const mainStats = ["strength", "agility", "intelligence"];
   const availableStats = [...Stats].sort((l, r) => l.localeCompare(r));
-
-  // Initialize glyphs if empty with empty slots and main stat as last glyph
-  if (glyphs.length === 0) {
-    form.setValue("glyphs", [undefined, undefined, undefined, undefined, hero.main_stat]);
-  }
 
   const updateGlyph = (index: number, stat: HeroStat) => {
     const newGlyphs = [...glyphs];

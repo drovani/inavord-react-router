@@ -8,7 +8,7 @@ import {
   HeroMainStat,
   Stats,
   StoneSource,
-  WeaponTeamBuff
+  WeaponTeamBuff,
 } from "./ReadonlyArrays";
 
 export const SkinSchema = z.object({
@@ -20,10 +20,11 @@ export const SkinSchema = z.object({
 export const ArtifactSchema = z.object({
   weapon: z.object({
     name: z.string(),
-    team_buff: z.array(z.enum(WeaponTeamBuff)).min(1),
+    team_buff: z.enum(WeaponTeamBuff),
+    team_buff_secondary: z.enum(WeaponTeamBuff).optional(),
   }),
   book: z.enum(ArtifactBookOptions),
-  ring: z.null(),
+  ring: z.null().optional(),
 });
 
 // Equipment list for each quality level must have exactly 6 items
@@ -51,6 +52,7 @@ export const HeroMutationSchema = z
     skins: z.array(SkinSchema).min(1).optional(),
     items: ItemsSchema.optional(),
     glyphs: z.array(z.enum(Stats).optional()).length(5).optional(),
+    slug: z.string().readonly(),
   })
   .transform((hero) => {
     return {
@@ -63,7 +65,6 @@ export type HeroMutation = z.input<typeof HeroMutationSchema>;
 
 export type HeroRecord = z.infer<typeof HeroMutationSchema> & {
   name: string;
-  slug: string;
   class: HeroClass;
   faction: HeroFaction;
   main_stat: HeroMainStat;

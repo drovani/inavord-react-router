@@ -5,6 +5,7 @@ export default [
   route("heroes", "./routes/heroes.tsx", [
     index("./routes/heroes._index.tsx"),
     route(":slug", "./routes/heroes.$slug.tsx"),
+    route(":slug.json", "./routes/heroes.$slug[.json].tsx"),
     route(":slug/edit", "./routes/heroes.$slug_.edit.tsx"),
   ]),
   route("titans", "./routes/titans.tsx", [index("./routes/titans._index.tsx")]),

@@ -11,11 +11,7 @@ class HeroDataService extends BaseDataService<HeroRecord, HeroMutation> {
   }
 
   protected getRecordId(record: HeroRecord | HeroMutation): string {
-    if ("slug" in record) {
-      return record.slug;
-    } else {
-      throw new Error("Cannot get record id from a HeroMutation");
-    }
+    return record.slug;
   }
 
   protected sortRecords(records: HeroRecord[]): HeroRecord[] {
