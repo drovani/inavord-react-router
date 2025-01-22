@@ -1,7 +1,7 @@
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import type { HeroRecord } from "~/data/hero.zod";
-import { BOOK_STATS } from "~/data/hero.zod";
+import { ArtifactBookStats } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface HeroArtifactsProps {
@@ -19,11 +19,14 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
           <CardTitle>{hero.artifacts.weapon.name}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center gap-2">
-          <div className="size-12 xl:size-16 aspect-square bg-muted rounded relative overflow-hidden">
+          <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
               src={`/images/heroes/artifacts/${generateSlug(hero.artifacts.weapon.name)}.png`}
               alt={hero.artifacts.weapon.name}
               className="object-contain"
+              onError={(e) => {
+                e.currentTarget.src = "/images/heroes/border-white.png";
+              }}
             />
           </div>
           <div>
@@ -31,12 +34,24 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
               <Badge variant="secondary" className="capitalize">
                 Activation chance
               </Badge>
-              {hero.artifacts.weapon.team_buff.map((buff) => (
-                <div key={buff} className="capitalize flex gap-1">
-                  <img src={`/images/stats/${generateSlug(buff)}.png`} alt={buff} className="w-6 h-6" />
-                  {buff}
+              <div key={hero.artifacts.weapon.team_buff} className="capitalize flex gap-1">
+                <img
+                  src={`/images/stats/${generateSlug(hero.artifacts.weapon.team_buff)}.png`}
+                  alt={hero.artifacts.weapon.team_buff}
+                  className="w-6 h-6"
+                />
+                {hero.artifacts.weapon.team_buff}
+              </div>
+              {hero.artifacts.weapon.team_buff_secondary && (
+                <div key={hero.artifacts.weapon.team_buff_secondary} className="capitalize flex gap-1">
+                  <img
+                    src={`/images/stats/${generateSlug(hero.artifacts.weapon.team_buff_secondary)}.png`}
+                    alt={hero.artifacts.weapon.team_buff_secondary}
+                    className="w-6 h-6"
+                  />
+                  {hero.artifacts.weapon.team_buff_secondary}
                 </div>
-              ))}
+              )}
             </div>
           </div>
         </CardContent>
@@ -47,8 +62,8 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
         <CardHeader>
           <CardTitle>{hero.artifacts.book}</CardTitle>
         </CardHeader>
-        <CardContent className="flex items-center gap-4">
-          <div className="size-12 xl:size-16 aspect-square bg-muted rounded relative overflow-hidden">
+        <CardContent className="flex items-start gap-4">
+          <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
               src={`/images/heroes/artifacts/${generateSlug(hero.artifacts.book)}.png`}
               alt={hero.artifacts.book}
@@ -57,7 +72,7 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
           </div>
           <div>
             <div className="flex flex-col gap-2">
-              {BOOK_STATS[hero.artifacts.book].map((stat) => (
+              {ArtifactBookStats[hero.artifacts.book].map((stat) => (
                 <div key={stat} className="capitalize flex gap-1">
                   <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
                   {stat}
@@ -74,7 +89,7 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
           <CardTitle>Ring of {hero.main_stat}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center gap-4">
-          <div className="size-12 xl:size-16 aspect-square bg-muted rounded relative overflow-hidden">
+          <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
               src={`/images/heroes/artifacts/ring-of-${hero.main_stat}.png`}
               alt={`Ring of ${hero.main_stat}`}

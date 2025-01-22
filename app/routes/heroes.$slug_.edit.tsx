@@ -7,8 +7,8 @@ import { ZodError } from "zod";
 import HeroForm from "~/components/HeroForm";
 import { Badge } from "~/components/ui/badge";
 import { HeroMutationSchema, type HeroMutation } from "~/data/hero.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { heroDAL } from "~/lib/hero-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import HeroDataService from "~/services/HeroDataService";
 import type { Route } from "./+types/heroes.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -29,7 +29,7 @@ export const handle = {
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing hero slug param.");
-  const hero = await heroDAL.getHero(params.slug);
+  const hero = await HeroDataService.getById(params.slug);
   if (!hero) {
     throw new Response(null, {
       status: 404,
@@ -37,7 +37,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const equipment = await equipmentDAL.getEquipmentThatIsEquipable();
+  const equipment = await EquipmentDataService.getEquipableEquipment();
 
   return { hero, equipment };
 };
@@ -50,10 +50,16 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
 
   try {
     const validated = HeroMutationSchema.parse(data);
-    const updatedHero = await heroDAL.updateHero(params.slug, validated);
-    return redirect(`/heroes/${updatedHero.slug}`);
+    const updateResults = await HeroDataService.update(params.slug, validated);
+    if (updateResults instanceof ZodError) {
+      console.error("Captured validation ZodError:", updateResults.format());
+      return data({ errors: updateResults.format() }, { status: 400 });
+    }
+
+    return redirect(`/heroes/${updateResults.slug}`);
   } catch (error) {
     if (error instanceof ZodError) {
+      console.error("Caught ZodError: ", error.format());
       return data({ errors: error.format() }, { status: 400 });
     }
     throw error;

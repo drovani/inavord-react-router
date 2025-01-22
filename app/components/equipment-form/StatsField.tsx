@@ -6,7 +6,7 @@ import { FormControl, FormField, FormItem, FormLabel, FormMessage } from "~/comp
 import { Input } from "~/components/ui/input";
 import { Popover, PopoverContent, PopoverTrigger } from "~/components/ui/popover";
 import { type EquipmentMutation } from "~/data/equipment.zod";
-import { Stats } from "~/data/hero.zod";
+import { Stats } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface StatsFieldProps {
@@ -44,7 +44,7 @@ export default function StatsField({ form, disabled = false }: StatsFieldProps) 
   const removeStat = (stat: string) => {
     const newStats = { ...stats };
     delete newStats[stat];
-    form.setValue("stats", Object.keys(newStats).length > 0 ? newStats : undefined);
+    form.setValue("stats", newStats);
   };
 
   return (

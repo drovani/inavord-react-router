@@ -1,14 +1,13 @@
 import { type UseFormReturn } from "react-hook-form";
 import { data, useNavigate, useSubmit } from "react-router";
 import { ZodError } from "zod";
-import ArtifactsField from "~/components/hero-form/ArtifactsField";
-import SkinsField from "~/components/hero-form/SkinsField";
 import { Button } from "~/components/ui/button";
 import { Form } from "~/components/ui/form";
 import type { EquipmentRecord } from "~/data/equipment.zod";
 import { HeroMutationSchema, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
+import ArtifactsField from "./hero-form/ArtifactsField";
 import GlyphsField from "./hero-form/GlyphsField";
-import ItemsField from "./hero-form/ItemsField";
+import SkinsField from "./hero-form/SkinsField";
 
 interface HeroFormProps {
   form: UseFormReturn<HeroMutation>;
@@ -40,7 +39,7 @@ export default function HeroForm({ form, hero, equipment }: HeroFormProps) {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <ArtifactsField form={form} hero={hero} />
         <GlyphsField form={form} hero={hero} />
-        <ItemsField form={form} hero={hero} equipment={equipment} />
+        {/* <ItemsField form={form} hero={hero} equipment={equipment} /> */}
         <SkinsField form={form} hero={hero} />
 
         <div className="flex gap-4">

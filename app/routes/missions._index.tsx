@@ -5,17 +5,19 @@ import { Link } from "react-router";
 import { Card, CardHeader, CardTitle } from "~/components/ui/card";
 import { Input } from "~/components/ui/input";
 import { Select, SelectContent, SelectGroup, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
-import type { Mission } from "~/data/mission.zod";
-import { missionDAL } from "~/lib/mission-dal";
+import type { MissionRecord } from "~/data/mission.zod";
 import { cn, generateSlug } from "~/lib/utils";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/missions._index";
 
 export const loader = async () => {
-  const missions = await missionDAL.getAllMissions();
+  const missions = await MissionDataService.getAll();
 
   // Get unique boss names for the select dropdown
   const uniqueBosses = Array.from(
-    new Set(missions.filter((m): m is Mission & Required<Pick<Mission, "boss">> => !!m.boss).map((m) => m.boss))
+    new Set(
+      missions.filter((m): m is MissionRecord & Required<Pick<MissionRecord, "boss">> => !!m.boss).map((m) => m.boss)
+    )
   ).sort();
 
   // Group missions by chapter for organized display
@@ -28,7 +30,7 @@ export const loader = async () => {
     }
     acc[mission.chapter].missions.push(mission);
     return acc;
-  }, {} as Record<number, { title: string; missions: Mission[] }>);
+  }, {} as Record<number, { title: string; missions: MissionRecord[] }>);
 
   return { missionsByChapter, uniqueBosses };
 };
@@ -61,9 +63,8 @@ export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
     return Object.entries(missionsByChapter).reduce((acc, [chapter, data]) => {
       const chapterNum = Number(chapter);
       const filteredMissions = data.missions.filter((mission) => {
-        const missionNumber = `${mission.chapter}-${mission.mission_number}`;
         const matchesSearch =
-          missionNumber.toLowerCase().includes(lowercaseQuery) || mission.name.toLowerCase().includes(lowercaseQuery);
+          mission.id.toLowerCase().includes(lowercaseQuery) || mission.name.toLowerCase().includes(lowercaseQuery);
 
         const matchesBoss = !selectedBoss || mission.boss === selectedBoss;
 
@@ -78,7 +79,7 @@ export default function MissionsIndex({ loaderData }: Route.ComponentProps) {
       }
 
       return acc;
-    }, {} as Record<number, { title: string; missions: Mission[] }>);
+    }, {} as Record<number, { title: string; missions: MissionRecord[] }>);
   }, [missionsByChapter, searchQuery, selectedBoss]);
 
   return (

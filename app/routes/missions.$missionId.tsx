@@ -4,9 +4,9 @@ import { Link, useNavigate, type UIMatch } from "react-router";
 import EquipmentImage from "~/components/EquipmentImage";
 import { buttonVariants } from "~/components/ui/button";
 import { type EquipmentRecord } from "~/data/equipment.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { missionDAL } from "~/lib/mission-dal";
 import { generateSlug } from "~/lib/utils";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/missions.$missionId";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -37,14 +37,14 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   }
 
   // Find the mission
-  const [missions, mission] = await Promise.all([missionDAL.getAllMissions(), missionDAL.getMission(missionId)]);
+  const [missions, mission] = await Promise.all([MissionDataService.getAll(), MissionDataService.getById(missionId)]);
 
   if (!mission) {
     throw new Response(`Mission ${missionId} not found`, { status: 404 });
   }
 
   // Get equipment that can be found in this mission
-  const allEquipment = await equipmentDAL.getAllEquipment();
+  const allEquipment = await EquipmentDataService.getAll();
   const equipmentInMission = allEquipment.filter((equipment) => equipment.campaign_sources?.includes(missionId));
 
   // Get previous and next missions for navigation

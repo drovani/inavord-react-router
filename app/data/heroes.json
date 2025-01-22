@@ -14,7 +14,8 @@
             "Special Events"
         ],
         "order_rank": 62,
-        "slug": "aidan"
+        "slug": "aidan",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Alvanor",
@@ -32,7 +33,8 @@
             "Dungeon Shop"
         ],
         "order_rank": 23,
-        "slug": "alvanor"
+        "slug": "alvanor",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Amira",
@@ -49,7 +51,8 @@
             "Special Events"
         ],
         "order_rank": 43,
-        "slug": "amira"
+        "slug": "amira",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Andvari",
@@ -66,7 +69,8 @@
             "Special Events"
         ],
         "order_rank": 17,
-        "slug": "andvari"
+        "slug": "andvari",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Arachne",
@@ -84,7 +88,8 @@
             "Heroic Chest"
         ],
         "order_rank": 25,
-        "slug": "arachne"
+        "slug": "arachne",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Artemis",
@@ -102,7 +107,8 @@
             "Heroic Chest"
         ],
         "order_rank": 59,
-        "slug": "artemis"
+        "slug": "artemis",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Astaroth",
@@ -276,7 +282,8 @@
             "health",
             "magic defense",
             "strength"
-        ]
+        ],
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Astrid and Lucas",
@@ -294,10 +301,12 @@
             "Heroic Chest"
         ],
         "order_rank": 53,
-        "slug": "astrid-and-lucas"
+        "slug": "astrid-and-lucas",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Aurora",
+        "updatedOn": "2024-09-10T17:16:56.000Z",
         "slug": "aurora",
         "class": "tank",
         "faction": "nature",
@@ -312,9 +321,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Selias' Legacy",
-                "team_buff": [
-                    "dodge"
-                ]
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
             "ring": null
@@ -492,7 +499,8 @@
         "artifact_team_buff": [
             "magic penetration",
             "armor penetration"
-        ]
+        ],
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Celeste",
@@ -509,7 +517,8 @@
             "Heroic Chest"
         ],
         "order_rank": 32,
-        "slug": "celeste"
+        "slug": "celeste",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Chabba",
@@ -527,7 +536,8 @@
             "Arena Shop"
         ],
         "order_rank": 1,
-        "slug": "chabba"
+        "slug": "chabba",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Cleaver",
@@ -545,7 +555,8 @@
             "Heroic Chest"
         ],
         "order_rank": 3,
-        "slug": "cleaver"
+        "slug": "cleaver",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Cornelius",
@@ -562,7 +573,8 @@
             "Highwayman Shop"
         ],
         "order_rank": 54,
-        "slug": "cornelius"
+        "slug": "cornelius",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Corvus",
@@ -581,7 +593,8 @@
             "Dungeon Shop"
         ],
         "order_rank": 5,
-        "slug": "corvus"
+        "slug": "corvus",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dante",
@@ -594,9 +607,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Spear of Fate",
-                "team_buff": [
-                    "dodge"
-                ]
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
             "ring": null
@@ -605,7 +616,8 @@
             "Tower Shop"
         ],
         "order_rank": 26,
-        "slug": "dante"
+        "slug": "dante",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Daredevil",
@@ -623,7 +635,8 @@
             "Heroic Chest"
         ],
         "order_rank": 48,
-        "slug": "daredevil"
+        "slug": "daredevil",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dark Star",
@@ -640,7 +653,8 @@
             "Arena Shop"
         ],
         "order_rank": 51,
-        "slug": "dark-star"
+        "slug": "dark-star",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Dorian",
@@ -658,7 +672,8 @@
             "Heroic Chest"
         ],
         "order_rank": 60,
-        "slug": "dorian"
+        "slug": "dorian",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Elmir",
@@ -675,7 +690,8 @@
             "Outland Shop"
         ],
         "order_rank": 16,
-        "slug": "elmir"
+        "slug": "elmir",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Faceless",
@@ -692,7 +708,8 @@
             "Highwayman Shop"
         ],
         "order_rank": 55,
-        "slug": "faceless"
+        "slug": "faceless",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Fafnir",
@@ -709,7 +726,8 @@
             "Special Events"
         ],
         "order_rank": 65,
-        "slug": "fafnir"
+        "slug": "fafnir",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Folio",
@@ -726,7 +744,8 @@
             "Special Events"
         ],
         "order_rank": 44,
-        "slug": "folio"
+        "slug": "folio",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Fox",
@@ -744,7 +763,8 @@
             "Heroic Chest"
         ],
         "order_rank": 56,
-        "slug": "fox"
+        "slug": "fox",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Galahad",
@@ -758,9 +778,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Harunian Sword",
-                "team_buff": [
-                    "physical attack"
-                ]
+                "team_buff": "physical attack"
             },
             "book": "Defender's Covenant",
             "ring": null
@@ -770,7 +788,8 @@
             "Heroic Chest"
         ],
         "order_rank": 10,
-        "slug": "galahad"
+        "slug": "galahad",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ginger",
@@ -788,7 +807,8 @@
             "Heroic Chest"
         ],
         "order_rank": 49,
-        "slug": "ginger"
+        "slug": "ginger",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Heidi",
@@ -806,7 +826,8 @@
             "Heroic Chest"
         ],
         "order_rank": 38,
-        "slug": "heidi"
+        "slug": "heidi",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Helios",
@@ -824,7 +845,8 @@
             "Heroic Chest"
         ],
         "order_rank": 66,
-        "slug": "helios"
+        "slug": "helios",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Iris",
@@ -837,9 +859,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Tome of Enslaved Souls",
-                "team_buff": [
-                    "magic attack"
-                ]
+                "team_buff": "magic attack"
             },
             "book": "Tome of Arcane Knowledge",
             "ring": null
@@ -848,7 +868,8 @@
             "Special Events"
         ],
         "order_rank": 41,
-        "slug": "iris"
+        "slug": "iris",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Isaac",
@@ -865,9 +886,11 @@
             "Special Events"
         ],
         "order_rank": 45,
-        "slug": "isaac"
+        "slug": "isaac",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
+        "updatedOn": "2024-09-10T17:16:56.000Z",
         "name": "Ishmael",
         "class": "warrior",
         "faction": "honor",
@@ -878,9 +901,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Hidden Demon's Katars",
-                "team_buff": [
-                    "crit hit chance"
-                ]
+                "team_buff": "crit hit chance"
             },
             "book": "Alchemist's Folio",
             "ring": null
@@ -906,7 +927,8 @@
             "Soul Shop"
         ],
         "order_rank": 63,
-        "slug": "jet"
+        "slug": "jet",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Jhu",
@@ -919,9 +941,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Zarahhar Bones",
-                "team_buff": [
-                    "crit hit chance"
-                ]
+                "team_buff": "crit hit chance"
             },
             "book": "Warrior's Code",
             "ring": null
@@ -930,7 +950,8 @@
             "Guild War Shop"
         ],
         "order_rank": 34,
-        "slug": "jhu"
+        "slug": "jhu",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Jorgen",
@@ -943,9 +964,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Shavarakk's Blood",
-                "team_buff": [
-                    "magic attack"
-                ]
+                "team_buff": "magic attack"
             },
             "book": "Defender's Covenant",
             "ring": null
@@ -954,7 +973,8 @@
             "Outland Shop"
         ],
         "order_rank": 39,
-        "slug": "jorgen"
+        "slug": "jorgen",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Judge",
@@ -971,7 +991,8 @@
             "Arena Shop"
         ],
         "order_rank": 29,
-        "slug": "judge"
+        "slug": "judge",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Julius",
@@ -988,7 +1009,8 @@
             "Special Events"
         ],
         "order_rank": 8,
-        "slug": "julius"
+        "slug": "julius",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "K'arkh",
@@ -1005,7 +1027,8 @@
             "Guild War Shop"
         ],
         "order_rank": 14,
-        "slug": "karkh"
+        "slug": "karkh",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Kai",
@@ -1023,7 +1046,8 @@
             "Tower Shop"
         ],
         "order_rank": 33,
-        "slug": "kai"
+        "slug": "kai",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Kayla",
@@ -1040,7 +1064,8 @@
             "Special Events"
         ],
         "order_rank": 18,
-        "slug": "kayla"
+        "slug": "kayla",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Keira",
@@ -1059,7 +1084,8 @@
             "Heroic Chest"
         ],
         "order_rank": 28,
-        "slug": "keira"
+        "slug": "keira",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Krista",
@@ -1077,7 +1103,8 @@
             "Heroic Chest"
         ],
         "order_rank": 27,
-        "slug": "krista"
+        "slug": "krista",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lara Croft",
@@ -1094,7 +1121,8 @@
             "Special Events"
         ],
         "order_rank": 50,
-        "slug": "lara-croft"
+        "slug": "lara-croft",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lars",
@@ -1112,7 +1140,8 @@
             "Heroic Chest"
         ],
         "order_rank": 52,
-        "slug": "lars"
+        "slug": "lars",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lian",
@@ -1130,7 +1159,8 @@
             "Grand Arena Shop"
         ],
         "order_rank": 57,
-        "slug": "lian"
+        "slug": "lian",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Lilith",
@@ -1148,7 +1178,8 @@
             "Heroic Chest"
         ],
         "order_rank": 67,
-        "slug": "lilith"
+        "slug": "lilith",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Luther",
@@ -1165,7 +1196,8 @@
             "Outland Shop"
         ],
         "order_rank": 4,
-        "slug": "luther"
+        "slug": "luther",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Markus",
@@ -1182,7 +1214,8 @@
             "Grand Arena Shop"
         ],
         "order_rank": 15,
-        "slug": "markus"
+        "slug": "markus",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Martha",
@@ -1195,9 +1228,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Zarakkari Teapot",
-                "team_buff": [
-                    "armor"
-                ]
+                "team_buff": "armor"
             },
             "book": "Tome of Arcane Knowledge",
             "ring": null
@@ -1206,7 +1237,8 @@
             "Special Events"
         ],
         "order_rank": 68,
-        "slug": "martha"
+        "slug": "martha",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Maya",
@@ -1219,9 +1251,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Mother Tree's Branch",
-                "team_buff": [
-                    "magic defense"
-                ]
+                "team_buff": "magic defense"
             },
             "book": "Tome of Arcane Knowledge",
             "ring": null
@@ -1231,7 +1261,8 @@
             "Heroic Chest"
         ],
         "order_rank": 24,
-        "slug": "maya"
+        "slug": "maya",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Mojo",
@@ -1249,7 +1280,8 @@
             "Heroic Chest"
         ],
         "order_rank": 37,
-        "slug": "mojo"
+        "slug": "mojo",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Morrigan",
@@ -1266,7 +1298,8 @@
             "Hydra Shop"
         ],
         "order_rank": 31,
-        "slug": "morrigan"
+        "slug": "morrigan",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Mushy and Shroom",
@@ -1283,7 +1316,8 @@
             "Special Events"
         ],
         "order_rank": 22,
-        "slug": "mushy-and-shroom"
+        "slug": "mushy-and-shroom",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Nebula",
@@ -1296,9 +1330,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Unborn Stars",
-                "team_buff": [
-                    "physical attack"
-                ]
+                "team_buff": "physical attack"
             },
             "book": "Book of Illusions",
             "ring": null
@@ -1307,7 +1339,8 @@
             "Guild War Shop"
         ],
         "order_rank": 36,
-        "slug": "nebula"
+        "slug": "nebula",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ninja Turtles",
@@ -1324,7 +1357,8 @@
             "Special Events"
         ],
         "order_rank": 16.5,
-        "slug": "ninja-turtles"
+        "slug": "ninja-turtles",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Octavia",
@@ -1337,9 +1371,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Mirror of Truth",
-                "team_buff": [
-                    "dodge"
-                ]
+                "team_buff": "dodge"
             },
             "book": "Book of Illusions",
             "ring": null
@@ -1348,7 +1380,8 @@
             "Special Events"
         ],
         "order_rank": 69,
-        "slug": "octavia"
+        "slug": "octavia",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Orion",
@@ -1365,7 +1398,8 @@
             "Tower Shop"
         ],
         "order_rank": 47,
-        "slug": "orion"
+        "slug": "orion",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Oya",
@@ -1382,7 +1416,8 @@
             "Special Events"
         ],
         "order_rank": 12,
-        "slug": "oya"
+        "slug": "oya",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Peppy",
@@ -1400,7 +1435,8 @@
             "Heroic Chest"
         ],
         "order_rank": 61,
-        "slug": "peppy"
+        "slug": "peppy",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Phobos",
@@ -1418,7 +1454,8 @@
             "Heroic Chest"
         ],
         "order_rank": 58,
-        "slug": "phobos"
+        "slug": "phobos",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Qing Mao",
@@ -1436,7 +1473,8 @@
             "Outland Shop"
         ],
         "order_rank": 20,
-        "slug": "qing-mao"
+        "slug": "qing-mao",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Rufus",
@@ -1454,7 +1492,8 @@
             "Grand Arena Shop"
         ],
         "order_rank": 7,
-        "slug": "rufus"
+        "slug": "rufus",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Satori",
@@ -1472,7 +1511,8 @@
             "Heroic Chest"
         ],
         "order_rank": 21,
-        "slug": "satori"
+        "slug": "satori",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Sebastian",
@@ -1490,7 +1530,8 @@
             "Special Events"
         ],
         "order_rank": 35,
-        "slug": "sebastian"
+        "slug": "sebastian",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Soleil",
@@ -1503,9 +1544,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Prison of the Ancient God",
-                "team_buff": [
-                    "magic attack"
-                ]
+                "team_buff": "magic attack"
             },
             "book": "Tome of Arcane Knowledge",
             "ring": null
@@ -1514,7 +1553,8 @@
             "Special Events"
         ],
         "order_rank": 40,
-        "slug": "soleil"
+        "slug": "soleil",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Tempus",
@@ -1531,7 +1571,8 @@
             "Special Events"
         ],
         "order_rank": 30,
-        "slug": "tempus"
+        "slug": "tempus",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Thea",
@@ -1549,7 +1590,8 @@
             "Heroic Chest"
         ],
         "order_rank": 64,
-        "slug": "thea"
+        "slug": "thea",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Tristan",
@@ -1562,9 +1604,7 @@
         "artifacts": {
             "weapon": {
                 "name": "Demonic Reliquary",
-                "team_buff": [
-                    "armor penetration"
-                ]
+                "team_buff": "armor penetration"
             },
             "book": "Alchemist's Folio",
             "ring": null
@@ -1573,7 +1613,8 @@
             "Special Events"
         ],
         "order_rank": 11,
-        "slug": "tristan"
+        "slug": "tristan",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Xe'Sha",
@@ -1590,7 +1631,8 @@
             "Special Events"
         ],
         "order_rank": 42,
-        "slug": "xesha"
+        "slug": "xesha",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Yasmine",
@@ -1608,7 +1650,8 @@
             "Hydra Shop"
         ],
         "order_rank": 19,
-        "slug": "yasmine"
+        "slug": "yasmine",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     },
     {
         "name": "Ziri",
@@ -1625,6 +1668,7 @@
             "Guild War Shop"
         ],
         "order_rank": 6,
-        "slug": "ziri"
+        "slug": "ziri",
+        "updatedOn": "2024-09-10T17:16:56.000Z"
     }
 ]

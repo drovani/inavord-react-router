@@ -2,11 +2,11 @@ import { Link } from "react-router";
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import type { HeroRecord } from "~/data/hero.zod";
-import type { Mission } from "~/data/mission.zod";
+import type { MissionRecord } from "~/data/mission.zod";
 
 interface HeroStoneSourcesProps {
   hero: HeroRecord;
-  campaignSources: Mission[];
+  campaignSources: MissionRecord[];
 }
 
 export default function HeroStoneSources({ hero, campaignSources }: HeroStoneSourcesProps) {

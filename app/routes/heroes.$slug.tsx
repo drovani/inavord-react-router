@@ -9,9 +9,9 @@ import HeroSkins from "~/components/hero/HeroSkins";
 import HeroStoneSources from "~/components/hero/HeroStoneSources";
 import { Badge } from "~/components/ui/badge";
 import { buttonVariants } from "~/components/ui/button";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { heroDAL } from "~/lib/hero-dal";
-import { missionDAL } from "~/lib/mission-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import HeroDataService from "~/services/HeroDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/heroes.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -28,7 +28,7 @@ export const handle = {
 export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing hero slug param");
 
-  const hero = await heroDAL.getHero(params.slug);
+  const hero = await HeroDataService.getById(params.slug);
   if (!hero) {
     throw new Response(null, {
       status: 404,
@@ -36,15 +36,15 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const campaignSources = await missionDAL.getMissionsByBoss(hero.name);
+  const campaignSources = await MissionDataService.getMissionsByBoss(hero.name);
   const equipmentSlugs: string[] = [];
   if (hero.items !== undefined) {
     for (const tier of Object.entries(hero.items)) {
       equipmentSlugs.push(...tier[1]);
     }
   }
-  const equipmentUsed = await equipmentDAL.getAllEquipment(equipmentSlugs);
-  const allHeroes = await heroDAL.getAllHeroes();
+  const equipmentUsed = await EquipmentDataService.getAll(equipmentSlugs);
+  const allHeroes = await HeroDataService.getAll();
 
   const currentIndex = allHeroes.findIndex((h) => h.slug === hero.slug);
   const prevHero = currentIndex > 0 ? allHeroes[currentIndex - 1] : null;

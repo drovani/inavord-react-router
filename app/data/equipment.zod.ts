@@ -1,20 +1,17 @@
 import { z } from "zod";
-
+import { generateSlug } from "~/lib/utils";
 export const EQUIPMENT_QUALITIES = ["gray", "green", "blue", "violet", "orange"] as const;
 
-// Base shared properties without readonly fields
-const EquipmentPropertiesSchema = z.object({
+const BaseEquipmentProperties = z.object({
   name: z.string(),
   quality: z.enum(EQUIPMENT_QUALITIES),
   buy_value_gold: z.number().int().min(0),
   buy_value_coin: z.number().int().min(0),
   sell_value: z.number().int().min(0),
   guild_activity_points: z.number().int().min(0),
-  stats: z.record(z.string(), z.number()).refine((stats) => Object.keys(stats).length > 0, {
-    message: "At least one stat must be provided",
-  }),
-  hero_level_required: z.number().int().min(1).max(120),
-  campaign_sources: z.array(z.string()).optional(),
+});
+
+const CraftedProperties = z.object({
   crafting: z
     .object({
       gold_cost: z.number().int().min(0),
@@ -25,80 +22,55 @@ const EquipmentPropertiesSchema = z.object({
     .optional(),
 });
 
-// Full equipment specific properties
-const FullEquipmentPropertiesSchema = EquipmentPropertiesSchema.extend({
-  type: z.literal("equipment").optional().default("equipment"),
+const CampaignSourcedProperties = z.object({
+  campaign_sources: z.array(z.string()).optional(),
 });
 
-// Fragment specific properties
-const FragmentPropertiesSchema = EquipmentPropertiesSchema.omit({
-  hero_level_required: true,
-  stats: true,
-  crafting: true,
-})
+const EquipableEquipmentSchema = BaseEquipmentProperties.merge(CampaignSourcedProperties)
+  .merge(CraftedProperties)
   .extend({
-    type: z.literal("fragment"),
-    name: z.string().refine((name) => name.endsWith(" (Fragment)"), {
-      message: "Fragment names must end with ' (Fragment)'",
+    type: z.literal("equipable"),
+    stats: z.record(z.string(), z.number()).refine((stats) => Object.keys(stats).length > 0, {
+      message: "At least one stat must be provided",
     }),
-  })
-  .strip();
+    hero_level_required: z.number().int().min(1).max(120),
+  });
 
-// Recipe specific properties
-const RecipePropertiesSchema = EquipmentPropertiesSchema.omit({ hero_level_required: true, stats: true })
+const FragmentEquipmentSchema = BaseEquipmentProperties.merge(CampaignSourcedProperties).extend({
+  type: z.literal("fragment"),
+  name: z.string().refine((name) => name.endsWith(" (Fragment)"), {
+    message: "Fragment names must end with ' (Fragment)'",
+  }),
+});
+
+const RecipeEquipmentSchema = BaseEquipmentProperties.merge(CraftedProperties)
+  .merge(CampaignSourcedProperties)
   .extend({
     type: z.literal("recipe"),
     name: z.string().refine((name) => name.indexOf(" Recipe") > 0, {
       message: "Recipe names must contain ' Recipe'",
     }),
-  })
-  .strip();
+  });
 
-// Schemas for stored records (including readonly fields)
-const StoredMetadataSchema = z.object({
-  slug: z.string(),
-  created_at: z.string().datetime(),
-});
-
-// Schemas for mutations (creating/updating)
 export const EquipmentMutationSchema = z
-  .discriminatedUnion("type", [FullEquipmentPropertiesSchema, FragmentPropertiesSchema, RecipePropertiesSchema])
-  .transform((data) => ({
-    ...data,
-    type: data.type || "equipment",
-  }));
+  .discriminatedUnion("type", [EquipableEquipmentSchema, FragmentEquipmentSchema, RecipeEquipmentSchema])
+  .transform((mutation) => {
+    return {
+      ...mutation,
+      slug: generateSlug(mutation.name),
+      updatedOn: new Date().toISOString(),
+    };
+  });
 
-export const EquipmentSchema = z
-  .discriminatedUnion("type", [
-    FullEquipmentPropertiesSchema.merge(StoredMetadataSchema),
-    FragmentPropertiesSchema.merge(StoredMetadataSchema),
-    RecipePropertiesSchema.merge(StoredMetadataSchema),
-  ])
-  .transform((data) => ({
-    ...data,
-    type: data.type || "equipment",
-  }));
+export type EquipmentMutation = z.input<typeof EquipmentMutationSchema>;
+export type EquipmentRecord = z.infer<typeof EquipmentMutationSchema>;
 
-// Type exports
-export type EquipmentQuality = (typeof EQUIPMENT_QUALITIES)[number];
-export type EquipmentMutation = z.infer<typeof EquipmentMutationSchema>;
-export type EquipmentRecord = z.infer<typeof EquipmentSchema>;
-
-// Type guard functions
-export function isFragment(
-  equipment: EquipmentRecord
-): equipment is z.infer<typeof FragmentPropertiesSchema & typeof StoredMetadataSchema> {
+export function isFragment(equipment: EquipmentMutation): equipment is z.infer<typeof FragmentEquipmentSchema> {
   return equipment.type === "fragment";
 }
-
-export function isRecipe(
-  equipment: EquipmentRecord
-): equipment is z.infer<typeof RecipePropertiesSchema & typeof StoredMetadataSchema> {
+export function isRecipe(equipment: EquipmentMutation): equipment is z.infer<typeof RecipeEquipmentSchema> {
   return equipment.type === "recipe";
 }
-
-export function isFullEquipment(
-  equipment: EquipmentRecord
-): equipment is z.infer<typeof FullEquipmentPropertiesSchema & typeof StoredMetadataSchema> {
-  return !equipment.type || equipment.type === "equipment";
+export function isEquipable(equipment: EquipmentMutation): equipment is z.infer<typeof EquipableEquipmentSchema> {
+  return equipment.type === "equipable";
 }

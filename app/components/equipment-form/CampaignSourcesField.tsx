@@ -7,11 +7,11 @@ import { FormControl, FormField, FormItem, FormMessage } from "~/components/ui/f
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "~/components/ui/hover-card";
 import { Input } from "~/components/ui/input";
 import type { EquipmentMutation } from "~/data/equipment.zod";
-import { type Mission, groupMissionsByChapter } from "~/data/mission.zod";
+import { type MissionRecord, groupMissionsByChapter } from "~/data/mission.zod";
 
 interface CampaignSourcesFieldProps {
   form: UseFormReturn<EquipmentMutation>;
-  missions: Mission[];
+  missions: MissionRecord[];
 }
 
 export default function CampaignSourcesField({ form, missions }: CampaignSourcesFieldProps) {

@@ -1,10 +1,10 @@
 import { Link } from "react-router";
 import { Card, CardHeader, CardTitle } from "~/components/ui/card";
-import { heroDAL } from "~/lib/hero-dal";
+import HeroDataService from "~/services/HeroDataService";
 import type { Route } from "./+types/heroes._index";
 
 export const loader = async (_: Route.LoaderArgs) => {
-  const heroes = await heroDAL.getAllHeroes();
+  const heroes = await HeroDataService.getAll();
 
   return { heroes };
 };
@@ -18,7 +18,9 @@ export default function HeroesIndex({ loaderData }: Route.ComponentProps) {
           {heroes.map((hero) => (
             <Link to={`/heroes/${hero.slug}`} key={hero.slug} viewTransition>
               <Card
-                className={"bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500 hover:bg-transparent"}
+                className={
+                  "bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500 hover:bg-transparent"
+                }
                 style={{
                   backgroundImage: `url('/images/heroes/${hero.slug}.png')`,
                 }}

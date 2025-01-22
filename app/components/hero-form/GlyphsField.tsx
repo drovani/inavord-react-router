@@ -2,7 +2,8 @@
 import { type UseFormReturn } from "react-hook-form";
 import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
-import { Stats, type HeroMutation, type HeroRecord, type HeroStat } from "~/data/hero.zod";
+import type { HeroMutation, HeroRecord } from "~/data/hero.zod";
+import { Stats, type HeroStat } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface GlyphsFieldProps {
@@ -20,15 +21,11 @@ function StatDisplay({ stat }: { stat: string }) {
 }
 
 export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
-  const glyphs = form.watch("glyphs") || [];
+  const glyphs = form.watch("glyphs", [undefined, undefined, undefined, undefined, hero.main_stat]);
+  if (glyphs === undefined) throw new Error("Glyphs are undefined");
 
   const mainStats = ["strength", "agility", "intelligence"];
   const availableStats = [...Stats].sort((l, r) => l.localeCompare(r));
-
-  // Initialize glyphs if empty with empty slots and main stat as last glyph
-  if (glyphs.length === 0) {
-    form.setValue("glyphs", [undefined, undefined, undefined, undefined, hero.main_stat]);
-  }
 
   const updateGlyph = (index: number, stat: HeroStat) => {
     const newGlyphs = [...glyphs];

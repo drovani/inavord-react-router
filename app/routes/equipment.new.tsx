@@ -4,8 +4,8 @@ import { redirect, type UIMatch } from "react-router";
 import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
 import { type EquipmentMutation, EquipmentMutationSchema } from "~/data/equipment.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { missionDAL } from "~/lib/mission-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.new";
 
 export const meta = (_: Route.MetaArgs) => {
@@ -20,11 +20,9 @@ export const handle = {
 };
 
 export const loader = async (_: Route.LoaderArgs) => {
-  const [allMissions, existingItems] = await Promise.all([missionDAL.getAllMissions(), equipmentDAL.getAllEquipment()]);
+  const [allMissions, existingItems] = await Promise.all([MissionDataService.getAll(), EquipmentDataService.getAll()]);
 
-  const existingStats = [...new Set(existingItems.flatMap((ae) => ("stats" in ae ? Object.keys(ae.stats || {}) : [])))];
-
-  return { existingItems, existingStats, allMissions };
+  return { existingItems, allMissions };
 };
 
 export const action = async ({ request }: Route.ActionArgs) => {
@@ -34,9 +32,13 @@ export const action = async ({ request }: Route.ActionArgs) => {
   try {
     const validated = EquipmentMutationSchema.parse(data);
 
-    const newEquipment = await equipmentDAL.createEquipment(validated);
+    const createResult = await EquipmentDataService.create(validated);
 
-    return redirect(`/equipment/${newEquipment.slug}`);
+    if (createResult instanceof ZodError) {
+      return data({ errors: createResult.format() }, { status: 400 });
+    }
+    return redirect(`/equipment/${createResult.slug}`);
+
   } catch (error) {
     if (error instanceof ZodError) {
       return data({ errors: error.format() }, { status: 400 });
@@ -46,7 +48,7 @@ export const action = async ({ request }: Route.ActionArgs) => {
 };
 
 export default function NewEquipment({ loaderData }: Route.ComponentProps) {
-  const { allMissions, existingStats, existingItems } = loaderData;
+  const { allMissions, existingItems } = loaderData;
   const form = useForm<EquipmentMutation>({
     resolver: zodResolver(EquipmentMutationSchema),
     defaultValues: {
@@ -61,7 +63,7 @@ export default function NewEquipment({ loaderData }: Route.ComponentProps) {
   return (
     <section className="space-y-4">
       <h1>New Equipment</h1>
-      <EquipmentForm form={form} missions={allMissions} existingStats={existingStats} existingItems={existingItems} />
+      <EquipmentForm form={form} missions={allMissions} existingItems={existingItems} />
     </section>
   );
 }

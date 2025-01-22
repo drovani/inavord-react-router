@@ -8,11 +8,10 @@ import { buttonVariants } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Separator } from "~/components/ui/separator";
 import type { EquipmentRecord } from "~/data/equipment.zod";
-import type { Mission } from "~/data/mission.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { heroDAL } from "~/lib/hero-dal";
-import { missionDAL } from "~/lib/mission-dal";
 import { generateSlug } from "~/lib/utils";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import HeroDataService from "~/services/HeroDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -30,7 +29,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing equipment slug param");
 
   // Get main equipment details
-  const equipment = await equipmentDAL.getEquipmentBySlug(params.slug);
+  const equipment = await EquipmentDataService.getById(params.slug);
 
   if (!equipment) {
     throw new Response(null, {
@@ -39,33 +38,23 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const sortedEquipment = await equipmentDAL.getAllEquipment();
+  const sortedEquipment = await EquipmentDataService.getAll();
   const currentIndex = sortedEquipment.findIndex((e) => e.slug === equipment.slug);
   const prevEquipment = currentIndex > 0 ? sortedEquipment[currentIndex - 1] : null;
   const nextEquipment = currentIndex < sortedEquipment.length ? sortedEquipment[currentIndex + 1] : null;
 
-  const requiredFor = await equipmentDAL.getEquipmentThatRequires(equipment.slug);
-  const requiredEquipment = await equipmentDAL.getEquipmentRequiredFor(equipment);
-  let requiredEquipmentRaw = await equipmentDAL.getEquipmentRequiredForRaw(equipment);
+  const requiredFor = await EquipmentDataService.getEquipmentThatRequires(equipment.slug);
+  const requiredEquipment = await EquipmentDataService.getEquipmentRequiredFor(equipment);
+  let requiredEquipmentRaw = await EquipmentDataService.getEquipmentRequiredForRaw(equipment);
 
   if ("crafting" in equipment && equipment.crafting?.gold_cost === requiredEquipmentRaw?.gold_cost) {
     requiredEquipmentRaw = null;
   }
 
   // Get all missions and filter for sources
-  const allMissions = await missionDAL.getAllMissions();
-  const missionSources = equipment.campaign_sources
-    ? equipment.campaign_sources
-        .map((source) => allMissions.find((m) => m.id === source))
-        .filter((m): m is Mission => m !== undefined)
-        .sort((a, b) => {
-          const [aChapter, aMission] = a.id.split("-").map(Number);
-          const [bChapter, bMission] = b.id.split("-").map(Number);
-          return aChapter === bChapter ? aMission - bMission : aChapter - bChapter;
-        })
-    : [];
+  const missionSources = equipment.campaign_sources ? await MissionDataService.getAll(equipment.campaign_sources) : [];
 
-  const heroesUsingItem = await heroDAL.getHeroesByItem(equipment.slug);
+  const heroesUsingItem = await HeroDataService.getHeroesUsingItem(equipment.slug);
 
   return {
     equipment,

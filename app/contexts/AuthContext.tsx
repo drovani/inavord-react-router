@@ -5,8 +5,10 @@ interface AuthContextType {
   user: {
     id: string;
     email: string;
-    fullName?: string;
+    name: string;
+    avatar: string;
     roles: string[];
+    fallback: string;
   } | null;
   isAuthenticated: boolean;
   signIn: () => Promise<void>;

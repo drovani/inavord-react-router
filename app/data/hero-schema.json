@@ -8,6 +8,7 @@
             "name",
             "slug",
             "class",
+            "updatedOn",
             "faction",
             "main_stat",
             "attack_type",
@@ -270,6 +271,12 @@
                 "type": "number",
                 "minimum": 1
             },
+            "updatedOn": {
+                "type": "string",
+                "format": "date-time",
+                "description": "Timestamp when the equipment was last updated.",
+                "readOnly": true
+            },
             "artifacts": {
                 "type": "object",
                 "properties": {
@@ -284,20 +291,30 @@
                                 "type": "string"
                             },
                             "team_buff": {
-                                "type": "array",
-                                "items": {
-                                    "type": "string",
-                                    "enum": [
-                                        "armor",
-                                        "dodge",
-                                        "physical attack",
-                                        "magic attack",
-                                        "magic defense",
-                                        "armor penetration",
-                                        "crit hit chance",
-                                        "magic penetration"
-                                    ]
-                                }
+                                "type": "string",
+                                "enum": [
+                                    "armor",
+                                    "dodge",
+                                    "physical attack",
+                                    "magic attack",
+                                    "magic defense",
+                                    "armor penetration",
+                                    "crit hit chance",
+                                    "magic penetration"
+                                ]
+                            },
+                            "team_buff_secondary": {
+                                "type": "string",
+                                "enum": [
+                                    "armor",
+                                    "dodge",
+                                    "physical attack",
+                                    "magic attack",
+                                    "magic defense",
+                                    "armor penetration",
+                                    "crit hit chance",
+                                    "magic penetration"
+                                ]
                             }
                         }
                     },

@@ -7,7 +7,7 @@
     "type": "object",
     "required": [
       "slug",
-      "created_at",
+      "updatedOn",
       "name",
       "quality",
       "buy_value_gold",
@@ -19,22 +19,22 @@
       "type": {
         "type": "string",
         "enum": [
-          "equipment",
+          "equipable",
           "fragment",
           "recipe"
         ],
-        "default": "equipment",
-        "description": "Discriminator field to distinguish among equipment, fragments, and recipes"
+        "default": "equipable",
+        "description": "Discriminator field to distinguish among equipable items, fragments, and recipes"
       },
       "slug": {
         "type": "string",
         "description": "URL-friendly unique identifier for the equipment",
         "readOnly": true
       },
-      "created_at": {
+      "updatedOn": {
         "type": "string",
         "format": "date-time",
-        "description": "Timestamp when the equipment was created",
+        "description": "Timestamp when the equipment was last updated.",
         "readOnly": true
       },
       "name": {
@@ -82,7 +82,7 @@
       },
       "stats": {
         "type": "object",
-        "description": "Statistical bonuses provided by the equipment (not present for fragments or recipes)",
+        "description": "Stat bonuses provided by the equipment (not present for fragments or recipes)",
         "minProperties": 1,
         "additionalProperties": {
           "type": "number"
@@ -172,7 +172,7 @@
         "properties": {
           "type": {
             "enum": [
-              "equipment",
+              "equipable",
               null
             ]
           }

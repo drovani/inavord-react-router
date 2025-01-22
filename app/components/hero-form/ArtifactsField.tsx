@@ -4,8 +4,9 @@ import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
 import { Input } from "~/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
-import { BOOK_STATS, Stats, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
-import { generateSlug } from "~/lib/utils";
+import type { HeroMutation, HeroRecord } from "~/data/hero.zod";
+import { ArtifactBookStats, WeaponTeamBuff } from "~/data/ReadonlyArrays";
+import { cn, generateSlug } from "~/lib/utils";
 
 interface ArtifactsFieldProps {
   form: UseFormReturn<HeroMutation>;
@@ -15,30 +16,34 @@ interface ArtifactsFieldProps {
 function StatDisplay({ stat, prefix }: { stat: string; prefix?: string }) {
   return (
     <div className="flex items-center gap-1 text-nowrap">
-      <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
+      <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="size-6" />
       {prefix && <span>{prefix}</span>}
       <span className="capitalize">{stat}</span>
     </div>
   );
 }
 
-export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
-  const artifacts = form.watch("artifacts");
-  const availableStats = [...Stats].sort((a, b) => a.localeCompare(b));
-  const availableBooks = Object.keys(BOOK_STATS).sort();
-  const mainStats = ["strength", "agility", "intelligence"];
+function BookDisplay({ book }: { book: string }) {
+  return (
+    <div className="flex items-center gap-1 text-nowrap">
+      <img src={`/images/heroes/artifacts/${generateSlug(book)}.png`} alt={book} className="size-6 rounded-sm" />
+      <span className="capitalize">{book}</span>
+    </div>
+  );
+}
 
-  // Initialize artifacts if empty
-  if (!artifacts) {
-    form.setValue("artifacts", {
-      weapon: {
-        name: "Weapon Name",
-        team_buff: ["armor"],
-      },
-      book: Object.keys(BOOK_STATS)[0] as keyof typeof BOOK_STATS,
-      ring: null,
-    });
-  }
+export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
+  const artifacts = form.watch("artifacts", {
+    weapon: {
+      name: "Weapon Name",
+      team_buff: "armor",
+    },
+    book: Object.keys(ArtifactBookStats)[0] as keyof typeof ArtifactBookStats,
+    ring: null,
+  });
+
+  const availableWeaponStats = [...WeaponTeamBuff].sort((a, b) => a.localeCompare(b));
+  const availableBooks = Object.keys(ArtifactBookStats).sort();
 
   // Get the second buff value for UI display, returning "none" if not present
   const [buff2Selection, setBuff2Selection] = useState<string>(() => {
@@ -62,13 +67,19 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                     control={form.control}
                     name="artifacts.weapon.name"
                     render={({ field }) => (
-                      <div className="flex flex-col items-center">
-                        <img
-                          src={`/images/heroes/artifacts/${generateSlug(artifacts?.weapon.name || "weapon")}.png`}
-                          alt={artifacts?.weapon.name || "Weapon"}
-                          className="size-16 object-contain"
-                        />
-                        <Input {...field} placeholder="Weapon Name" className="mt-1 font-normal" />
+                      <div className="flex flex-col gap-2">
+                        <div className="flex flex-col items-center">
+                          <img
+                            src={`/images/heroes/artifacts/${generateSlug(
+                              artifacts?.weapon?.name || "weapon-name"
+                            )}.png`}
+                            alt={artifacts?.weapon?.name || "Artifact Weapon"}
+                            className="size-16 object-contain rounded-md"
+                            onError={(e) => (e.currentTarget.src = "/images/heroes/artifacts/weapon-name.png")}
+                          />
+                          <Input {...field} placeholder="Weapon Name" className="mt-1 font-normal" />
+                        </div>
+                        <FormMessage />
                       </div>
                     )}
                   />
@@ -76,13 +87,13 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex flex-col items-center gap-4">
-                  <div className="flex-1 space-y-4">
-                    <div>
-                      <FormLabel className="text-sm">Team Buff 1</FormLabel>
-                      <FormField
-                        control={form.control}
-                        name="artifacts.weapon.team_buff.0"
-                        render={({ field }) => (
+                  <div className="w-full">
+                    <FormLabel className="text-sm">Team Buff 1</FormLabel>
+                    <FormField
+                      control={form.control}
+                      name="artifacts.weapon.team_buff"
+                      render={({ field }) => (
+                        <div className="flex flex-col gap-2">
                           <Select value={field.value} onValueChange={field.onChange}>
                             <SelectTrigger>
                               {field.value ? (
@@ -92,34 +103,37 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                               )}
                             </SelectTrigger>
                             <SelectContent>
-                              {availableStats.map((stat) => (
+                              {availableWeaponStats.map((stat) => (
                                 <SelectItem key={stat} value={stat}>
                                   <StatDisplay stat={stat} />
                                 </SelectItem>
                               ))}
                             </SelectContent>
                           </Select>
-                        )}
-                      />
-                    </div>
+                          <FormMessage />
+                        </div>
+                      )}
+                    />
+                  </div>
 
-                    <div>
-                      <FormLabel className="text-sm">Team Buff 2</FormLabel>
-                      <FormField
-                        control={form.control}
-                        name="artifacts.weapon.team_buff.1"
-                        render={({ field }) => (
+                  <div className="w-full">
+                    <FormLabel className={cn("text-sm", form.watch("artifacts.weapon.team_buff") === undefined && "opacity-50")}>Team Buff 2</FormLabel>
+                    <FormField
+                      control={form.control}
+                      name="artifacts.weapon.team_buff_secondary"
+                      render={({ field }) => (
+                        <div className="flex flex-col gap-2">
                           <Select
                             value={buff2Selection}
                             onValueChange={(newValue) => {
                               setBuff2Selection(newValue);
                               if (newValue === "none") {
-                                const currentBuff = form.getValues("artifacts.weapon.team_buff");
-                                form.setValue("artifacts.weapon.team_buff", [currentBuff[0]]);
+                                form.resetField("artifacts.weapon.team_buff_secondary", undefined);
                               } else {
                                 field.onChange(newValue);
                               }
                             }}
+                            disabled={form.watch("artifacts.weapon.team_buff") === undefined}
                           >
                             <SelectTrigger>
                               {buff2Selection !== "none" ? (
@@ -132,20 +146,21 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                               <SelectItem value="none">
                                 <span className="text-muted-foreground">None</span>
                               </SelectItem>
-                              {availableStats.map((stat) => (
+                              {availableWeaponStats.map((stat) => (
                                 <SelectItem
                                   key={stat}
                                   value={stat}
-                                  disabled={stat === form.watch("artifacts.weapon.team_buff.0")}
+                                  disabled={stat === form.watch("artifacts.weapon.team_buff")}
                                 >
                                   <StatDisplay stat={stat} />
                                 </SelectItem>
                               ))}
                             </SelectContent>
                           </Select>
-                        )}
-                      />
-                    </div>
+                          <FormMessage />
+                        </div>
+                      )}
+                    />
                   </div>
                 </div>
               </CardContent>
@@ -156,33 +171,42 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
               <CardContent className="pt-6 space-y-4">
                 <div className="flex flex-col items-center gap-2">
                   <img
-                    src={`/images/heroes/artifacts/${generateSlug(artifacts?.book || "book")}.png`}
+                    src={`/images/heroes/artifacts/${generateSlug(artifacts?.book || "default-book")}.png`}
                     alt={artifacts?.book || "Book"}
-                    className="size-16 object-contain"
+                    className="size-16 object-contain rounded-md"
+                    onError={(e) => (e.currentTarget.src = "/images/heroes/artifacts/default-book.png")}
                   />
-                  <div className="flex-1">
+                  <div className="flex-1 w-full">
                     <FormField
                       control={form.control}
                       name="artifacts.book"
                       render={({ field }) => (
-                        <Select value={field.value} onValueChange={field.onChange}>
-                          <SelectTrigger>
-                            {field.value && <span className="capitalize">{field.value}</span>}
-                          </SelectTrigger>
-                          <SelectContent>
-                            {availableBooks.map((book) => (
-                              <SelectItem key={book} value={book}>
-                                <span className="capitalize">{book}</span>
-                              </SelectItem>
-                            ))}
-                          </SelectContent>
-                        </Select>
+                        <div className="flex flex-col gap-2">
+                          <Select value={field.value} onValueChange={field.onChange}>
+                            <SelectTrigger>
+                              {field.value ? (
+                                <span className="capitalize">{field.value}</span>
+                              ) : (
+                                <SelectValue placeholder="Select artifact book" />
+                              )}
+                            </SelectTrigger>
+                            <SelectContent>
+                              {availableBooks.map((book) => (
+                                <SelectItem key={book} value={book}>
+                                  <BookDisplay book={book} />
+                                </SelectItem>
+                              ))}
+                            </SelectContent>
+                          </Select>
+                          <FormMessage />
+                        </div>
                       )}
                     />
                   </div>
                 </div>
                 <div className="flex flex-col gap-2">
-                  {artifacts?.book && BOOK_STATS[artifacts.book].map((stat) => <StatDisplay key={stat} stat={stat} />)}
+                  {artifacts?.book &&
+                    ArtifactBookStats[artifacts.book].map((stat) => <StatDisplay key={stat} stat={stat} />)}
                 </div>
               </CardContent>
             </Card>
@@ -190,28 +214,13 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
             {/* Ring Card */}
             <Card>
               <CardContent className="pt-6">
-                <div className="flex flex-col items-center gap-2">
-                  <div className="relative w-16 h-16 shrink-0">
-                    <img
-                      src={`/images/heroes/artifacts/ring-of-${hero.main_stat}.png`}
-                      alt={`Ring of ${hero.main_stat}`}
-                      className="w-full h-full object-contain"
-                    />
-                  </div>
-                  <div className="flex-1">
-                    <Select value={hero.main_stat}>
-                      <SelectTrigger>
-                        <StatDisplay stat={hero.main_stat} prefix="Ring of" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {mainStats.map((stat) => (
-                          <SelectItem key={stat} value={stat} disabled={stat !== hero.main_stat}>
-                            <StatDisplay stat={stat} prefix="Ring of" />
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
+                <div className="flex flex-col items-center gap-3">
+                  <img
+                    src={`/images/heroes/artifacts/ring-of-${hero.main_stat}.png`}
+                    alt={`Ring of ${hero.main_stat}`}
+                    className="size-16 object-contain rounded-md"
+                  />
+                  <StatDisplay stat={hero.main_stat} prefix="Ring of" />
                 </div>
               </CardContent>
             </Card>

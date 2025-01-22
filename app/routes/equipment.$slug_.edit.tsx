@@ -5,8 +5,8 @@ import invariant from "tiny-invariant";
 import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
 import { EquipmentMutationSchema, type EquipmentMutation } from "~/data/equipment.zod";
-import { equipmentDAL } from "~/lib/equipment-dal";
-import { missionDAL } from "~/lib/mission-dal";
+import EquipmentDataService from "~/services/EquipmentDataService";
+import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
@@ -27,7 +27,7 @@ export const handle = {
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing equipment slug param.");
-  const equipment = await equipmentDAL.getEquipmentBySlug(params.slug);
+  const equipment = await EquipmentDataService.getById(params.slug);
   if (!equipment) {
     throw new Response(null, {
       status: 404,
@@ -35,7 +35,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
     });
   }
 
-  const [allMissions, existingItems] = await Promise.all([missionDAL.getAllMissions(), equipmentDAL.getAllEquipment()]);
+  const [allMissions, existingItems] = await Promise.all([MissionDataService.getAll(), EquipmentDataService.getAll()]);
 
   return { existingItems, allMissions, equipment };
 };
@@ -49,9 +49,13 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
   try {
     const validated = EquipmentMutationSchema.parse(data);
 
-    const updatedEquipment = await equipmentDAL.updateEquipment(params.slug, validated);
+    const updateResults = await EquipmentDataService.update(params.slug, validated);
 
-    return redirect(`/equipment/${updatedEquipment.slug}`);
+    if (updateResults instanceof ZodError) {
+      return data({ errors: updateResults.format() }, { stats: 400 });
+    } else {
+      return redirect(`/equipment/${updateResults.slug}`);
+    }
   } catch (error) {
     if (error instanceof ZodError) {
       return data({ errors: error.format() }, { status: 400 });
