@@ -7,6 +7,7 @@ import type { EquipmentRecord } from "~/data/equipment.zod";
 import { HeroMutationSchema, type HeroMutation, type HeroRecord } from "~/data/hero.zod";
 import ArtifactsField from "./hero-form/ArtifactsField";
 import GlyphsField from "./hero-form/GlyphsField";
+import ItemsField from "./hero-form/ItemsField";
 import SkinsField from "./hero-form/SkinsField";
 
 interface HeroFormProps {
@@ -39,7 +40,7 @@ export default function HeroForm({ form, hero, equipment }: HeroFormProps) {
       <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
         <ArtifactsField form={form} hero={hero} />
         <GlyphsField form={form} hero={hero} />
-        {/* <ItemsField form={form} hero={hero} equipment={equipment} /> */}
+        <ItemsField form={form} hero={hero} equipment={equipment} />
         <SkinsField form={form} hero={hero} />
 
         <div className="flex gap-4">
@@ -48,6 +49,7 @@ export default function HeroForm({ form, hero, equipment }: HeroFormProps) {
             Cancel
           </Button>
         </div>
+        {form.formState.errors && <pre>{JSON.stringify(form.formState.errors, null, 2)}</pre>}
       </form>
     </Form>
   );

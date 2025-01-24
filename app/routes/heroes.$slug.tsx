@@ -39,8 +39,8 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   const campaignSources = await MissionDataService.getMissionsByBoss(hero.name);
   const equipmentSlugs: string[] = [];
   if (hero.items !== undefined) {
-    for (const tier of Object.entries(hero.items)) {
-      equipmentSlugs.push(...tier[1]);
+    for (const itemSlugs of Object.values(hero.items)) {
+      equipmentSlugs.push(...itemSlugs);
     }
   }
   const equipmentUsed = await EquipmentDataService.getAll(equipmentSlugs);
@@ -83,7 +83,6 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
 
   return (
     <div className="space-y-8">
-      {/* Header Section */}
       <div className="flex items-start gap-6">
         <div className="size-32 bg-muted rounded">
           <img src={`/images/heroes/${hero.slug}.png`} alt={hero.name[0]} className="size-32" />
@@ -124,28 +123,18 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
         </div>
       </div>
 
-      {/* Glyphs Section */}
-      <HeroGlyphs hero={hero} />
-
       <HeroItems items={hero.items} equipment={equipmentUsed} />
-
-      {/* Skins Section */}
       <HeroSkins hero={hero} />
-
-      {/* Artifacts Section */}
       <HeroArtifacts hero={hero} />
-
-      {/* Stone Sources Section */}
+      <HeroGlyphs hero={hero} />
       <HeroStoneSources hero={hero} campaignSources={campaignSources} />
 
-      {/* Action Buttons */}
       <div className="flex gap-4">
         <Link to={`/heroes/${hero.slug}/edit`} className={buttonVariants({ variant: "default" })} viewTransition>
           Edit
         </Link>
       </div>
 
-      {/* Navigation Buttons */}
       <div className="flex flex-col sm:flex-row justify-between items-stretch sm:items-center gap-4 w-full">
         <div className="flex justify-start w-full sm:w-auto">
           {prevHero ? (

@@ -2,7 +2,9 @@ import { clsx, type ClassValue } from "clsx";
 import slugify from "slugify";
 import { twMerge } from "tailwind-merge";
 
-export function generateSlug(text: string, suffixToStrip?: string): string {
+export function generateSlug(text: string | undefined, suffixToStrip?: string): string {
+  if (!text) return "";
+
   const slug = slugify(text, {
     lower: true, // Convert to lowercase
     strict: true, // Strip special characters

@@ -1,10 +1,11 @@
 //components/hero-form/GlyphsField.tsx
 import { type UseFormReturn } from "react-hook-form";
-import { FormField, FormItem, FormLabel, FormMessage } from "~/components/ui/form";
+import { FormField, FormLabel, FormMessage } from "~/components/ui/form";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "~/components/ui/select";
 import type { HeroMutation, HeroRecord } from "~/data/hero.zod";
 import { Stats, type HeroStat } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
+import { Card } from "../ui/card";
 
 interface GlyphsFieldProps {
   form: UseFormReturn<HeroMutation>;
@@ -21,7 +22,7 @@ function StatDisplay({ stat }: { stat: string }) {
 }
 
 export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
-  const glyphs = form.watch("glyphs", [undefined, undefined, undefined, undefined, hero.main_stat]);
+  const glyphs = form.watch("glyphs", hero.glyphs);
   if (glyphs === undefined) throw new Error("Glyphs are undefined");
 
   const mainStats = ["strength", "agility", "intelligence"];
@@ -40,17 +41,19 @@ export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
   };
 
   return (
-    <FormField
-      control={form.control}
-      name="glyphs"
-      render={() => (
-        <FormItem className="space-y-4">
-          <FormLabel className="text-lg font-semibold">Glyphs</FormLabel>
-          <div className="space-y-2 rounded-lg border p-4">
-            <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
-              {glyphs.map((glyph, index) => (
+    <section>
+      <div className="text-lg font-semibold">Glyphs</div>
+      <Card className="p-4">
+        <div className="grid gap-4 grid-cols-1 sm:grid-cols-3 md:grid-cols-5">
+          {glyphs.map((glyph, index) => (
+            <FormField
+              control={form.control}
+              name={`glyphs.${index}`}
+              key={index}
+              render={({ fieldState }) => (
                 <div key={index} className="space-y-2">
                   <FormLabel className="text-sm text-muted-foreground">Glyph {index + 1}</FormLabel>
+                  <FormMessage />
                   {index === 4 ? (
                     <div className="h-10 px-3 py-2 border rounded-md bg-muted flex items-center gap-2">
                       <img
@@ -62,7 +65,7 @@ export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
                     </div>
                   ) : (
                     <Select value={glyph || undefined} onValueChange={(value) => updateGlyph(index, value as HeroStat)}>
-                      <SelectTrigger>
+                      <SelectTrigger className={fieldState.error && "border-destructive"}>
                         {glyph ? <StatDisplay stat={glyph} /> : <SelectValue placeholder="Select stat" />}
                       </SelectTrigger>
                       <SelectContent>
@@ -75,12 +78,11 @@ export default function GlyphsField({ form, hero }: GlyphsFieldProps) {
                     </Select>
                   )}
                 </div>
-              ))}
-            </div>
-          </div>
-          <FormMessage />
-        </FormItem>
-      )}
-    />
+              )}
+            />
+          ))}
+        </div>
+      </Card>
+    </section>
   );
 }

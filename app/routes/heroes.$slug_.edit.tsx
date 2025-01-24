@@ -47,31 +47,34 @@ export const action = async ({ params, request }: Route.ActionArgs) => {
 
   const formData = await request.formData();
   const data = JSON.parse(formData.get("hero") as string);
+  const dustedData = {
+    ...data,
+    glyphs: data.glyphs.map((glyph: string | null | undefined) => glyph || undefined),
+    artifact: {
+      ...data.artifact,
+      ring: null,
+    },
+  };
 
-  try {
-    const validated = HeroMutationSchema.parse(data);
-    const updateResults = await HeroDataService.update(params.slug, validated);
-    if (updateResults instanceof ZodError) {
-      console.error("Captured validation ZodError:", updateResults.format());
-      return data({ errors: updateResults.format() }, { status: 400 });
-    }
-
-    return redirect(`/heroes/${updateResults.slug}`);
-  } catch (error) {
-    if (error instanceof ZodError) {
-      console.error("Caught ZodError: ", error.format());
-      return data({ errors: error.format() }, { status: 400 });
-    }
-    throw error;
+  const updateResults = await HeroDataService.update(params.slug, dustedData as HeroMutation);
+  if (updateResults instanceof ZodError) {
+    console.error("Captured validation ZodError:", JSON.stringify(updateResults.format(), null, 2));
+    return data({ errors: updateResults.format() }, { status: 400 });
   }
+
+  return redirect(`/heroes/${updateResults.slug}`);
 };
 
-export default function EditHero({ loaderData }: Route.ComponentProps) {
+export default function EditHero({ loaderData, actionData }: Route.ComponentProps) {
   const { hero, equipment } = loaderData;
 
   const form = useForm<HeroMutation>({
     resolver: zodResolver(HeroMutationSchema),
-    defaultValues: hero,
+    defaultValues: {
+      ...hero,
+      skins: hero.skins || [{ name: "Default Skin", stat: undefined }],
+      glyphs: hero.glyphs || [undefined, undefined, undefined, undefined, hero.main_stat],
+    },
   });
 
   return (
@@ -95,7 +98,6 @@ export default function EditHero({ loaderData }: Route.ComponentProps) {
           </div>
         </div>
       </div>
-
       <HeroForm form={form} hero={hero} equipment={equipment} />
     </div>
   );

@@ -19,7 +19,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
           {hero.skins.map((skin, index) => {
             return (
-              <div key={index} className="flex items-center gap-4 p-4 border rounded-lg">
+              <div key={index} className="flex items-center gap-4 p-4 border rounded-lg ">
                 <div className="flex-1">
                   <h4 className="font-medium">{skin.name}</h4>
                   <div className="flex items-center gap-2 mt-1">
@@ -36,6 +36,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                     />
                   </HoverCardTrigger>
                   <HoverCardContent>
+                    <div>{skin.name}</div>
                     <img
                       src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}.png`}
                       alt={skin.name}
@@ -43,6 +44,25 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                     />
                   </HoverCardContent>
                 </HoverCard>
+                {skin.has_plus && (
+                  <HoverCard>
+                    <HoverCardTrigger asChild>
+                      <img
+                        src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}-plus.png`}
+                        alt={skin.name}
+                        className="h-16"
+                      />
+                    </HoverCardTrigger>
+                    <HoverCardContent>
+                      <div>{skin.name} (+) variant</div>
+                      <img
+                        src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}-plus.png`}
+                        alt={skin.name}
+                        className="h-96 w-auto"
+                      />
+                    </HoverCardContent>
+                  </HoverCard>
+                )}
               </div>
             );
           })}

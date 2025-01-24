@@ -14,6 +14,7 @@ import {
 export const SkinSchema = z.object({
   name: z.string(),
   stat: z.enum(Stats),
+  has_plus: z.boolean().default(false),
   source: z.string().optional(),
 });
 

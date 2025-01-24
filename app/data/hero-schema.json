@@ -116,6 +116,9 @@
                         },
                         "source": {
                             "type": "string"
+                        },
+                        "has_plus": {
+                            "type": "boolean"
                         }
                     }
                 }

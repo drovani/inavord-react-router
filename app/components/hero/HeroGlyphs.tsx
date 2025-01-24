@@ -19,11 +19,11 @@ export default function HeroGlyphs({ hero }: HeroGlyphsProps) {
           {hero.glyphs.map((glyph, index) => (
             <div key={index} className="flex flex-col text-center items-center gap-2 p-2 border rounded-lg">
               <img
-                src={`/images/stats/${generateSlug(glyph || "empty")}.png`}
-                alt={glyph || "Empty glyph"}
+                src={`/images/stats/${generateSlug(glyph || "placeholder")}.png`}
+                alt={glyph || "No glyph selected"}
                 className="w-8 h-8"
               />
-              <div className="font-medium capitalize">{glyph || "Empty"}</div>
+              <div className="font-medium capitalize">{glyph}</div>
             </div>
           ))}
         </div>

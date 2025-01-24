@@ -15,7 +15,65 @@
         ],
         "order_rank": 62,
         "slug": "aidan",
-        "updated_on": "2024-09-10T17:16:56.000Z"
+        "artifacts": {
+            "weapon": {
+                "name": "Phoenix Seal",
+                "team_buff": "magic defense"
+            },
+            "book": "Tome of Arcane Knowledge",
+            "ring": null
+        },
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "intelligence",
+                "has_plus": false
+            },
+            {
+                "name": "Solar Skin",
+                "stat": "magic attack",
+                "has_plus": false
+            },
+            {
+                "name": "Celestial Skin",
+                "stat": "health",
+                "has_plus": false
+            }
+        ],
+        "glyphs": [
+            "magic attack",
+            "armor",
+            "magic defense",
+            "health",
+            "intelligence"
+        ],
+        "updated_on": "2025-01-24T13:42:13.905Z",
+        "items": {
+            "white": [
+                "wooden-shield",
+                "steel-pauldron",
+                "apprentices-mantle",
+                "oil-lamp",
+                "travellers-staff",
+                "lucky-dice"
+            ],
+            "green": [
+                "apprentices-mantle",
+                "lucky-dice",
+                "travellers-staff",
+                "censer",
+                "lost-ring",
+                "elven-bow"
+            ],
+            "green+1": [
+                "wooden-shield",
+                "censer",
+                "lost-ring",
+                "soul-catcher",
+                "victors-helmet",
+                "soul-catcher"
+            ]
+        }
     },
     {
         "name": "Alvanor",
@@ -34,7 +92,49 @@
         ],
         "order_rank": 23,
         "slug": "alvanor",
-        "updated_on": "2024-09-10T17:16:56.000Z"
+        "artifacts": {
+            "weapon": {
+                "name": "Soul of the Forest",
+                "team_buff": "magic attack"
+            },
+            "book": "Manuscript of the Void",
+            "ring": null
+        },
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "intelligence",
+                "has_plus": false
+            },
+            {
+                "name": "Spring Skin",
+                "stat": "magic attack",
+                "has_plus": false
+            },
+            {
+                "name": "Lunar Skin",
+                "stat": "armor",
+                "has_plus": false
+            },
+            {
+                "name": "Winter Skin",
+                "stat": "health",
+                "has_plus": false
+            },
+            {
+                "name": "Dark Depths Skin",
+                "stat": "magic penetration",
+                "has_plus": true
+            }
+        ],
+        "glyphs": [
+            "magic attack",
+            "health",
+            "magic penetration",
+            "magic defense",
+            "intelligence"
+        ],
+        "updated_on": "2025-01-22T21:06:53.594Z"
     },
     {
         "name": "Amira",
@@ -127,31 +227,33 @@
         "skins": [
             {
                 "name": "Default Skin",
-                "stat": "strength"
+                "stat": "strength",
+                "has_plus": false
             },
             {
                 "name": "Demonic Skin",
-                "stat": "magic attack"
+                "stat": "magic attack",
+                "has_plus": false
             },
             {
                 "name": "Barbarian Skin",
-                "stat": "armor"
+                "stat": "armor",
+                "has_plus": false
             },
             {
                 "name": "Lunar Skin",
-                "stat": "magic defense"
+                "stat": "magic defense",
+                "has_plus": false
             },
             {
                 "name": "Cybernetic Skin",
-                "stat": "health"
+                "stat": "health",
+                "has_plus": false
             },
             {
                 "name": "Thunder Skin",
-                "stat": "health"
-            },
-            {
-                "name": "Thunder Skin (Plus)",
-                "stat": "health"
+                "stat": "health",
+                "has_plus": true
             }
         ],
         "items": {
@@ -283,7 +385,15 @@
             "magic defense",
             "strength"
         ],
-        "updated_on": "2024-09-10T17:16:56.000Z"
+        "artifacts": {
+            "weapon": {
+                "name": "Scythe of Redemption",
+                "team_buff": "armor"
+            },
+            "book": "Defender's Covenant",
+            "ring": null
+        },
+        "updated_on": "2025-01-22T21:23:13.672Z"
     },
     {
         "name": "Astrid and Lucas",
@@ -869,7 +979,21 @@
         ],
         "order_rank": 41,
         "slug": "iris",
-        "updated_on": "2024-09-10T17:16:56.000Z"
+        "glyphs": [
+            "magic attack",
+            "health",
+            "magic penetration",
+            "magic defense",
+            "intelligence"
+        ],
+        "updated_on": "2025-01-23T21:41:54.500Z",
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "armor penetration",
+                "has_plus": false
+            }
+        ]
     },
     {
         "name": "Isaac",

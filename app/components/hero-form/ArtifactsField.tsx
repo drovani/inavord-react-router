@@ -33,22 +33,14 @@ function BookDisplay({ book }: { book: string }) {
 }
 
 export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
-  const artifacts = form.watch("artifacts", {
-    weapon: {
-      name: "Weapon Name",
-      team_buff: "armor",
-    },
-    book: Object.keys(ArtifactBookStats)[0] as keyof typeof ArtifactBookStats,
-    ring: null,
-  });
+  const artifacts = form.watch("artifacts", hero.artifacts);
 
   const availableWeaponStats = [...WeaponTeamBuff].sort((a, b) => a.localeCompare(b));
   const availableBooks = Object.keys(ArtifactBookStats).sort();
 
   // Get the second buff value for UI display, returning "none" if not present
-  const [buff2Selection, setBuff2Selection] = useState<string>(() => {
-    const buffs = form.getValues("artifacts.weapon.team_buff");
-    return buffs?.length > 1 ? buffs[1] : "none";
+  const [buff2Selection, setBuff2Selection] = useState<string | undefined>(() => {
+    return form.getValues("artifacts.weapon.team_buff_secondary");
   });
 
   return (
@@ -70,10 +62,8 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                       <div className="flex flex-col gap-2">
                         <div className="flex flex-col items-center">
                           <img
-                            src={`/images/heroes/artifacts/${generateSlug(
-                              artifacts?.weapon?.name || "weapon-name"
-                            )}.png`}
-                            alt={artifacts?.weapon?.name || "Artifact Weapon"}
+                            src={`/images/heroes/artifacts/${generateSlug(artifacts?.weapon?.name)}.png`}
+                            alt={artifacts?.weapon?.name}
                             className="size-16 object-contain rounded-md"
                             onError={(e) => (e.currentTarget.src = "/images/heroes/artifacts/weapon-name.png")}
                           />
@@ -117,7 +107,11 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                   </div>
 
                   <div className="w-full">
-                    <FormLabel className={cn("text-sm", form.watch("artifacts.weapon.team_buff") === undefined && "opacity-50")}>Team Buff 2</FormLabel>
+                    <FormLabel
+                      className={cn("text-sm", form.watch("artifacts.weapon.team_buff") === undefined && "opacity-50")}
+                    >
+                      Team Buff 2
+                    </FormLabel>
                     <FormField
                       control={form.control}
                       name="artifacts.weapon.team_buff_secondary"
@@ -136,7 +130,7 @@ export default function ArtifactsField({ form, hero }: ArtifactsFieldProps) {
                             disabled={form.watch("artifacts.weapon.team_buff") === undefined}
                           >
                             <SelectTrigger>
-                              {buff2Selection !== "none" ? (
+                              {buff2Selection !== "none" && buff2Selection !== undefined ? (
                                 <StatDisplay stat={buff2Selection} />
                               ) : (
                                 <span className="text-muted-foreground">None</span>
