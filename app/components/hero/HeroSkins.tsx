@@ -4,11 +4,12 @@ import { generateSlug } from "~/lib/utils";
 import { HoverCard, HoverCardContent, HoverCardTrigger } from "../ui/hover-card";
 
 interface HeroSkinsProps {
-  hero: HeroRecord;
+  skins: HeroRecord["skins"];
+  heroSlug: string;
 }
 
-export default function HeroSkins({ hero }: HeroSkinsProps) {
-  if (!hero.skins) return null;
+export default function HeroSkins({ skins, heroSlug }: HeroSkinsProps) {
+  if (!skins) return null;
 
   return (
     <Card>
@@ -17,7 +18,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
       </CardHeader>
       <CardContent>
         <div className="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-          {hero.skins.map((skin, index) => {
+          {skins.map((skin, index) => {
             return (
               <div key={index} className="flex items-center gap-4 p-4 border rounded-lg ">
                 <div className="flex-1">
@@ -30,7 +31,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                 <HoverCard>
                   <HoverCardTrigger asChild>
                     <img
-                      src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}.png`}
+                      src={`/images/heroes/skins/${heroSlug}-${generateSlug(skin.name, "-skin")}.png`}
                       alt={skin.name}
                       className="h-16"
                     />
@@ -38,7 +39,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                   <HoverCardContent>
                     <div>{skin.name}</div>
                     <img
-                      src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}.png`}
+                      src={`/images/heroes/skins/${heroSlug}-${generateSlug(skin.name, "-skin")}.png`}
                       alt={skin.name}
                       className="h-96 w-auto"
                     />
@@ -48,7 +49,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                   <HoverCard>
                     <HoverCardTrigger asChild>
                       <img
-                        src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}-plus.png`}
+                        src={`/images/heroes/skins/${heroSlug}-${generateSlug(skin.name, "-skin")}-plus.png`}
                         alt={skin.name}
                         className="h-16"
                       />
@@ -56,7 +57,7 @@ export default function HeroSkins({ hero }: HeroSkinsProps) {
                     <HoverCardContent>
                       <div>{skin.name} (+) variant</div>
                       <img
-                        src={`/images/heroes/skins/${hero.slug}-${generateSlug(skin.name, "-skin")}-plus.png`}
+                        src={`/images/heroes/skins/${heroSlug}-${generateSlug(skin.name, "-skin")}-plus.png`}
                         alt={skin.name}
                         className="h-96 w-auto"
                       />

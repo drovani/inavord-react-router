@@ -124,10 +124,10 @@ export default function Hero({ loaderData }: Route.ComponentProps) {
       </div>
 
       <HeroItems items={hero.items} equipment={equipmentUsed} />
-      <HeroSkins hero={hero} />
-      <HeroArtifacts hero={hero} />
-      <HeroGlyphs hero={hero} />
-      <HeroStoneSources hero={hero} campaignSources={campaignSources} />
+      <HeroSkins skins={hero.skins} heroSlug={hero.slug} />
+      <HeroArtifacts artifacts={hero.artifacts} main_stat={hero.main_stat} />
+      <HeroGlyphs glyphs={hero.glyphs} />
+      <HeroStoneSources stoneSource={hero.stone_source} campaignSources={campaignSources} />
 
       <div className="flex gap-4">
         <Link to={`/heroes/${hero.slug}/edit`} className={buttonVariants({ variant: "default" })} viewTransition>
