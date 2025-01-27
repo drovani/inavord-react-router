@@ -220,7 +220,7 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
 
 function StatsCard({ title, value, icon }: { title: string; value: string | number; icon?: React.ReactNode }) {
   return (
-    <div className="bg-white rounded-lg p-4 shadow-sm border">
+    <div className="bg-white rounded-lg p-4 shadow-xs border">
       <div className="flex items-center justify-between">
         <div>
           <p className="text-sm text-slate-600">{title}</p>
