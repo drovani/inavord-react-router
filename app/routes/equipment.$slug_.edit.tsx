@@ -1,6 +1,6 @@
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { redirect, type UIMatch } from "react-router";
+import { data, redirect, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
 import { ZodError } from "zod";
 import EquipmentForm from "~/components/EquipmentForm";
@@ -10,7 +10,15 @@ import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/equipment.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
-  return [{ title: `Edit ${data?.equipment.name}` }];
+  return [
+    { title: `Edit ${data?.equipment.name}` },
+    { name: "robots", content: "noindex" },
+    { rel: "canonical", href: `/equipment/${data?.equipment.slug}` },
+    {
+      name: "description",
+      content: `Edit details for ${data?.equipment.name} item. Internal administrative page.`,
+    },
+  ];
 };
 
 export const handle = {
@@ -37,7 +45,15 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
   const [allMissions, existingItems] = await Promise.all([MissionDataService.getAll(), EquipmentDataService.getAll()]);
 
-  return { existingItems, allMissions, equipment };
+  return data(
+    { existingItems, allMissions, equipment },
+    {
+      headers: {
+        "Cache-Control": "no-store, must-revalidate",
+        Pragma: "no-cache",
+      },
+    }
+  );
 };
 
 export const action = async ({ params, request }: Route.ActionArgs) => {
