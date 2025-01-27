@@ -47,7 +47,7 @@
             "health",
             "intelligence"
         ],
-        "updated_on": "2025-01-24T13:42:13.905Z",
+        "updated_on": "2025-01-27T22:00:36.876Z",
         "items": {
             "white": [
                 "wooden-shield",
@@ -1075,7 +1075,163 @@
         ],
         "order_rank": 34,
         "slug": "jhu",
-        "updated_on": "2024-09-10T17:16:56.000Z"
+        "updated_on": "2025-01-27T22:19:22.780Z",
+        "skins": [
+            {
+                "name": "Default Skin",
+                "stat": "strength",
+                "has_plus": false
+            },
+            {
+                "name": "Winter Skin",
+                "stat": "armor penetration",
+                "has_plus": false
+            },
+            {
+                "name": "Champion's Skin",
+                "stat": "magic defense",
+                "has_plus": false
+            },
+            {
+                "name": "Solar Skin",
+                "stat": "crit hit chance",
+                "has_plus": false
+            },
+            {
+                "name": "Masquerade Skin",
+                "stat": "physical attack",
+                "has_plus": false
+            }
+        ],
+        "glyphs": [
+            "physical attack",
+            "health",
+            "armor penetration",
+            "crit hit chance",
+            "strength"
+        ],
+        "items": {
+            "white": [
+                "orcish-knuckles",
+                "steel-pauldron",
+                "dagger",
+                "orcish-yatagan",
+                "wooden-shield",
+                "lucky-dice"
+            ],
+            "green": [
+                "guardians-shield",
+                "orcish-hammer",
+                "dagger",
+                "fire-sword",
+                "orcish-yatagan",
+                "orcish-yatagan"
+            ],
+            "green+1": [
+                "orcish-yatagan",
+                "fire-sword",
+                "screaming-blade",
+                "cuirass",
+                "poleaxe",
+                "orcish-hammer"
+            ],
+            "blue": [
+                "guardians-shield",
+                "infernal-messenger",
+                "cains-seal",
+                "needle",
+                "spear-of-thunder",
+                "wall-breaker"
+            ],
+            "blue+1": [
+                "wall-breaker",
+                "needle",
+                "brothers",
+                "serenity-stone",
+                "infernal-messenger",
+                "hunter"
+            ],
+            "blue+2": [
+                "reaper",
+                "hunter",
+                "poleaxe",
+                "thunderfoot-boots",
+                "needle",
+                "hand-of-midas"
+            ],
+            "violet": [
+                "storm-hammer",
+                "prince-of-thieves-armor",
+                "hunter",
+                "giant-slayer",
+                "punishing-hand",
+                "dragon-shield"
+            ],
+            "violet+1": [
+                "giant-slayer",
+                "advisor",
+                "thunderfoot-boots",
+                "dragon-tooth",
+                "prince-of-thieves-armor",
+                "lion-helmet"
+            ],
+            "violet+2": [
+                "governor",
+                "executioners-sword",
+                "sirens-song",
+                "lion-helmet",
+                "dragon-tooth",
+                "world-tremor"
+            ],
+            "violet+3": [
+                "dragon-tooth",
+                "blade-bow",
+                "sirens-song",
+                "apostles-mace",
+                "executioners-sword",
+                "cosmic-tremor"
+            ],
+            "orange": [
+                "lion-helmet",
+                "cosmic-tremor",
+                "governor",
+                "gro-bulgors-poleaxe",
+                "executioners-sword",
+                "hellion-harpoon"
+            ],
+            "orange+1": [
+                "governor",
+                "gro-bulgors-poleaxe",
+                "lion-helmet",
+                "hellion-harpoon",
+                "cosmic-tremor",
+                "blade-of-the-immortals"
+            ],
+            "orange+2": [
+                "executioners-sword",
+                "hellion-harpoon",
+                "executioners-sword",
+                "aquants-trident",
+                "gro-bulgors-poleaxe",
+                "radiant-armor"
+            ],
+            "orange+3": [
+                "governor",
+                "harunian-helm",
+                "world-tremor",
+                "rulers-globus",
+                "harunian-helm",
+                "staff-of-stubbornness"
+            ],
+            "orange+4": [
+                "world-tremor",
+                "blade-of-the-immortals",
+                "lion-helmet",
+                "staff-of-stubbornness",
+                "alucards-amulet",
+                "evil-genius-cuirass"
+            ]
+        }
     },
     {
         "name": "Jorgen",
