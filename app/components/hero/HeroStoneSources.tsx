@@ -5,11 +5,11 @@ import type { HeroRecord } from "~/data/hero.zod";
 import type { MissionRecord } from "~/data/mission.zod";
 
 interface HeroStoneSourcesProps {
-  hero: HeroRecord;
+  stoneSource: HeroRecord["stone_source"];
   campaignSources: MissionRecord[];
 }
 
-export default function HeroStoneSources({ hero, campaignSources }: HeroStoneSourcesProps) {
+export default function HeroStoneSources({ stoneSource, campaignSources }: HeroStoneSourcesProps) {
   return (
     <Card>
       <CardHeader>
@@ -17,7 +17,7 @@ export default function HeroStoneSources({ hero, campaignSources }: HeroStoneSou
       </CardHeader>
       <CardContent>
         <div className="flex gap-2 flex-wrap">
-          {hero.stone_source
+          {stoneSource
             .filter((s) => s !== "Campaign")
             .map((source) => (
               <Badge key={source} variant="outline">

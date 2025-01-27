@@ -1,28 +1,29 @@
 import { Badge } from "~/components/ui/badge";
 import { Card, CardContent, CardHeader, CardTitle } from "~/components/ui/card";
 import type { HeroRecord } from "~/data/hero.zod";
-import { ArtifactBookStats } from "~/data/ReadonlyArrays";
+import { ArtifactBookStats, HeroMainStat } from "~/data/ReadonlyArrays";
 import { generateSlug } from "~/lib/utils";
 
 interface HeroArtifactsProps {
-  hero: HeroRecord;
+  artifacts: HeroRecord["artifacts"];
+  main_stat: HeroMainStat;
 }
 
-export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
-  if (!hero.artifacts) return null;
+export default function HeroArtifacts({ artifacts, main_stat }: HeroArtifactsProps) {
+  if (artifacts === undefined) return null;
 
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
       {/* Weapon Card */}
       <Card>
         <CardHeader>
-          <CardTitle>{hero.artifacts.weapon.name}</CardTitle>
+          <CardTitle>{artifacts.weapon.name}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center gap-2">
           <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
-              src={`/images/heroes/artifacts/${generateSlug(hero.artifacts.weapon.name)}.png`}
-              alt={hero.artifacts.weapon.name}
+              src={`/images/heroes/artifacts/${generateSlug(artifacts.weapon.name)}.png`}
+              alt={artifacts.weapon.name}
               className="object-contain"
               onError={(e) => {
                 e.currentTarget.src = "/images/heroes/border-white.png";
@@ -34,22 +35,22 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
               <Badge variant="secondary" className="capitalize">
                 Activation chance
               </Badge>
-              <div key={hero.artifacts.weapon.team_buff} className="capitalize flex gap-1">
+              <div key={artifacts.weapon.team_buff} className="capitalize flex gap-1">
                 <img
-                  src={`/images/stats/${generateSlug(hero.artifacts.weapon.team_buff)}.png`}
-                  alt={hero.artifacts.weapon.team_buff}
+                  src={`/images/stats/${generateSlug(artifacts.weapon.team_buff)}.png`}
+                  alt={artifacts.weapon.team_buff}
                   className="w-6 h-6"
                 />
-                {hero.artifacts.weapon.team_buff}
+                {artifacts.weapon.team_buff}
               </div>
-              {hero.artifacts.weapon.team_buff_secondary && (
-                <div key={hero.artifacts.weapon.team_buff_secondary} className="capitalize flex gap-1">
+              {artifacts.weapon.team_buff_secondary && (
+                <div key={artifacts.weapon.team_buff_secondary} className="capitalize flex gap-1">
                   <img
-                    src={`/images/stats/${generateSlug(hero.artifacts.weapon.team_buff_secondary)}.png`}
-                    alt={hero.artifacts.weapon.team_buff_secondary}
+                    src={`/images/stats/${generateSlug(artifacts.weapon.team_buff_secondary)}.png`}
+                    alt={artifacts.weapon.team_buff_secondary}
                     className="w-6 h-6"
                   />
-                  {hero.artifacts.weapon.team_buff_secondary}
+                  {artifacts.weapon.team_buff_secondary}
                 </div>
               )}
             </div>
@@ -60,19 +61,19 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
       {/* Book Card */}
       <Card>
         <CardHeader>
-          <CardTitle>{hero.artifacts.book}</CardTitle>
+          <CardTitle>{artifacts.book}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-start gap-4">
           <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
-              src={`/images/heroes/artifacts/${generateSlug(hero.artifacts.book)}.png`}
-              alt={hero.artifacts.book}
+              src={`/images/heroes/artifacts/${generateSlug(artifacts.book)}.png`}
+              alt={artifacts.book}
               className="object-contain"
             />
           </div>
           <div>
             <div className="flex flex-col gap-2">
-              {ArtifactBookStats[hero.artifacts.book].map((stat) => (
+              {ArtifactBookStats[artifacts.book].map((stat) => (
                 <div key={stat} className="capitalize flex gap-1">
                   <img src={`/images/stats/${generateSlug(stat)}.png`} alt={stat} className="w-6 h-6" />
                   {stat}
@@ -86,20 +87,20 @@ export default function HeroArtifacts({ hero }: HeroArtifactsProps) {
       {/* Ring Card */}
       <Card>
         <CardHeader>
-          <CardTitle>Ring of {hero.main_stat}</CardTitle>
+          <CardTitle>Ring of {main_stat}</CardTitle>
         </CardHeader>
         <CardContent className="flex items-center gap-4">
           <div className="size-12 xl:size-16 aspect-square rounded relative overflow-hidden">
             <img
-              src={`/images/heroes/artifacts/ring-of-${hero.main_stat}.png`}
-              alt={`Ring of ${hero.main_stat}`}
+              src={`/images/heroes/artifacts/ring-of-${main_stat}.png`}
+              alt={`Ring of ${main_stat}`}
               className="object-contain"
             />
           </div>
           <div>
             <div className="capitalize flex gap-2">
-              <img src={`/images/stats/${generateSlug(hero.main_stat)}.png`} alt={hero.main_stat} className="w-6 h-6" />
-              {hero.main_stat}
+              <img src={`/images/stats/${generateSlug(main_stat)}.png`} alt={main_stat} className="w-6 h-6" />
+              {main_stat}
             </div>
           </div>
         </CardContent>

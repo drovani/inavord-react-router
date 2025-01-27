@@ -1,37 +1,79 @@
-import { Link } from "react-router";
-import { Card, CardHeader, CardTitle } from "~/components/ui/card";
+import { ToggleGroup } from "@radix-ui/react-toggle-group";
+import { LayoutGridIcon, LayoutListIcon } from "lucide-react";
+import { useState } from "react";
+import HeroCard from "~/components/hero/HeroCard";
+import HeroTile from "~/components/hero/HeroTile";
+import { Input } from "~/components/ui/input";
+import { ToggleGroupItem } from "~/components/ui/toggle-group";
+import { useQueryState } from "~/hooks/useQueryState";
+import EquipmentDataService from "~/services/EquipmentDataService";
 import HeroDataService from "~/services/HeroDataService";
 import type { Route } from "./+types/heroes._index";
 
 export const loader = async (_: Route.LoaderArgs) => {
   const heroes = await HeroDataService.getAll();
+  const equipment = await EquipmentDataService.getEquipableEquipment();
 
-  return { heroes };
+  return { heroes, equipment };
 };
 
 export default function HeroesIndex({ loaderData }: Route.ComponentProps) {
-  const { heroes } = loaderData;
+  const { heroes, equipment } = loaderData;
+
+  const [search, setSearch] = useState("");
+  const [displayMode, setDisplayMode] = useQueryState<"cards" | "tiles">("mode", "cards");
+
+  const filteredHeroes = search
+    ? heroes.filter((hero) => hero.name.toLowerCase().includes(search.toLowerCase()))
+    : heroes;
+
   return (
-    <div>
-      {heroes.length ? (
-        <div className="gap-2 grid grid-cols-3 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-          {heroes.map((hero) => (
-            <Link to={`/heroes/${hero.slug}`} key={hero.slug} viewTransition>
-              <Card
-                className={
-                  "bg-cover h-28 w-28 relative bg-center hover:scale-110 transition-all duration-500 hover:bg-transparent"
-                }
-                style={{
-                  backgroundImage: `url('/images/heroes/${hero.slug}.png')`,
-                }}
-              >
-                <CardHeader className="p-1 bottom-0 absolute w-full text-center bg-white/80">
-                  <CardTitle className="text-base">{hero.name}</CardTitle>
-                </CardHeader>
-              </Card>
-            </Link>
-          ))}
-        </div>
+    <div className="flex flex-col gap-4">
+      <div className="flex justify-between gap-4">
+        <Input
+          placeholder="Search heroes"
+          value={search}
+          onChange={(e) => setSearch(e.target.value)}
+          className="w-full max-w-sm"
+        />
+        <ToggleGroup
+          type="single"
+          value={displayMode}
+          onValueChange={(value) => setDisplayMode(value as "cards" | "tiles")}
+        >
+          <ToggleGroupItem value="cards">
+            <LayoutGridIcon />
+          </ToggleGroupItem>
+          <ToggleGroupItem value="tiles">
+            <LayoutListIcon />
+          </ToggleGroupItem>
+        </ToggleGroup>
+      </div>
+      {filteredHeroes.length ? (
+        displayMode === "cards" ? (
+          <div className="gap-2 grid grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {filteredHeroes.map((hero) => (
+              <HeroCard hero={hero} key={hero.slug} />
+            ))}
+          </div>
+        ) : displayMode === "tiles" ? (
+          <>
+            <div className="grid grid-cols-5 text-center font-medium sticky">
+              <div>Hero</div>
+              <div className="bg-muted rounded-t-md">Equipment</div>
+              <div>Skins</div>
+              <div className="bg-muted rounded-t-md">Artifacts</div>
+              <div>Glyphs</div>
+            </div>
+            <div className="flex flex-col gap-4">
+              {filteredHeroes.map((hero) => (
+                <HeroTile hero={hero} key={hero.slug} equipment={equipment} />
+              ))}
+            </div>
+          </>
+        ) : (
+          <p>Unknown display mode {displayMode}</p>
+        )
       ) : (
         <p>No heroes found.</p>
       )}
