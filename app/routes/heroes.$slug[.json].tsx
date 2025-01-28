@@ -6,7 +6,15 @@ import MissionDataService from "~/services/MissionDataService";
 import type { Route } from "./+types/heroes.$slug";
 
 export const meta = ({ data }: Route.MetaArgs) => {
-  return [{ title: data?.hero.name }];
+  return [
+    { title: data?.hero.name },
+    { name: "robots", content: "noindex" },
+    { rel: "canonical", href: `/heroes/${data?.hero.slug}` },
+    {
+      name: "description",
+      content: `JSON details for ${data?.hero.name} hero. Internal administrative page.`,
+    },
+  ];
 };
 
 export const handle = {

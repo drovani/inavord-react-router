@@ -5,6 +5,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/
 import { Alert, AlertDescription, AlertTitle } from "~/components/ui/alert";
 import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { ScrollArea } from "~/components/ui/scroll-area";
@@ -22,12 +23,14 @@ export async function action({ request }: Route.ActionArgs) {
     const formData = await request.formData();
     const mode = formData.get("mode")?.toString() || "basic";
     const dataset = formData.get("dataset")?.toString();
+    const purge = formData.get("purge") === "true";
 
     // Set initialization options based on mode
     const options = {
       skipExisting: mode !== "force",
       failIfExists: mode === "safe",
       forceUpdate: mode === "force",
+      purgeFirst: purge,
     };
 
     const resultE =
@@ -98,6 +101,12 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
                       </Label>
                     </div>
                   </RadioGroup>
+                  <div className="flex items-center space-x-2">
+                    <Checkbox name="purge" className="mt-4" value="true" />
+                    <Label htmlFor="purge" className="font-normal pt-4">
+                      Purge existing data
+                    </Label>
+                  </div>
                 </div>
 
                 <div>
