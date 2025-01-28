@@ -19,7 +19,7 @@ export default function HeroSkinsCompact({ skins, heroSlug, className }: HeroSki
   return (
     <div className={cn("flex flex-col gap-2", className)}>
       {skinsSorts.map((skin) => (
-        <HoverCard>
+        <HoverCard key={skin.name}>
           <HoverCardTrigger asChild>
             <div key={skin.name} className="flex gap-2 cursor-pointer hover:bg-muted rounded-md p-1">
               <div className="flex-1">
