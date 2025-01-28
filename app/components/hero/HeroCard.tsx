@@ -1,6 +1,6 @@
 import { Link } from "react-router";
 import { type HeroRecord } from "~/data/hero.zod";
-import { Card, CardHeader, CardTitle } from "../ui/card";
+import { Card, CardHeader } from "../ui/card";
 
 export default function HeroCard({ hero }: { hero: HeroRecord }) {
   return (
@@ -14,7 +14,7 @@ export default function HeroCard({ hero }: { hero: HeroRecord }) {
         }}
       >
         <CardHeader className="p-1 bottom-0 absolute w-full text-center bg-white/80">
-          <CardTitle className="text-base">{hero.name}</CardTitle>
+          <div className="font-semibold">{hero.name}</div>
         </CardHeader>
       </Card>
     </Link>

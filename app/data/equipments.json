@@ -4646,7 +4646,7 @@
     "buy_value_coin": 82
   },
   {
-    "name": "Evil Genius Cuirass (Fragment)",
+    "name": "Evil Genius Cuirass",
     "quality": "orange",
     "buy_value_gold": 561000,
     "sell_value": 112200,
@@ -4665,7 +4665,7 @@
       }
     },
     "type": "equipable",
-    "slug": "evil-genius-cuirass-fragment",
+    "slug": "evil-genius-cuirass",
     "updated_on": "2024-12-18T19:40:35.060Z",
     "buy_value_coin": 0
   },

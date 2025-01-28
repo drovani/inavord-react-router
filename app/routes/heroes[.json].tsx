@@ -12,6 +12,8 @@ export async function loader(_: Route.LoaderArgs) {
     headers: {
       "Content-Disposition": 'attachment; filename="heroes.json"',
       "Content-Type": "application/json",
+      "Cache-Control": "no-store, must-revalidate",
+      Pragma: "no-cache",
     },
   });
 }

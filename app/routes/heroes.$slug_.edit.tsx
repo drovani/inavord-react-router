@@ -1,7 +1,7 @@
 // heroes.$slug_.edit.tsx
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
-import { redirect, type UIMatch } from "react-router";
+import { data, redirect, type UIMatch } from "react-router";
 import invariant from "tiny-invariant";
 import { ZodError } from "zod";
 import HeroForm from "~/components/HeroForm";
@@ -12,7 +12,15 @@ import HeroDataService from "~/services/HeroDataService";
 import type { Route } from "./+types/heroes.$slug_.edit";
 
 export const meta = ({ data }: Route.MetaArgs) => {
-  return [{ title: `Edit ${data?.hero.name}` }];
+  return [
+    { title: `Edit ${data?.hero.name}` },
+    { name: "robots", content: "noindex" },
+    { rel: "canonical", href: `/heroes/${data?.hero.slug}` },
+    {
+      name: "description",
+      content: `Edit details for ${data?.hero.name} hero. Internal administrative page.`,
+    },
+  ];
 };
 
 export const handle = {
@@ -31,7 +39,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
   invariant(params.slug, "Missing hero slug param.");
   const hero = await HeroDataService.getById(params.slug);
   if (!hero) {
-    throw new Response(null, {
+    throw data(null, {
       status: 404,
       statusText: `Hero with slug ${params.slug} not found.`,
     });
@@ -39,7 +47,15 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
   const equipment = await EquipmentDataService.getEquipableEquipment();
 
-  return { hero, equipment };
+  return data(
+    { hero, equipment },
+    {
+      headers: {
+        "Cache-Control": "no-store, must-revalidate",
+        Pragma: "no-cache",
+      },
+    }
+  );
 };
 
 export const action = async ({ params, request }: Route.ActionArgs) => {

@@ -14,7 +14,7 @@ interface HeroTileProps {
 
 export default function HeroTile({ hero, equipment }: HeroTileProps) {
   return (
-    <Card className="w-full grid grid-cols-5">
+    <Card className="w-full grid grid-cols-2 md:grid-cols-5">
       <Link to={`/heroes/${hero.slug}`} key={hero.slug} viewTransition>
         <div className="flex flex-col items-start p-2">
           <img src={`/images/heroes/${hero.slug}.png`} alt={hero.name} className="size-28 rounded-md" />

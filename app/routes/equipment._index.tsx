@@ -1,6 +1,6 @@
 import { cva } from "class-variance-authority";
 import { Link } from "react-router";
-import { Card, CardHeader, CardTitle } from "~/components/ui/card";
+import { Card, CardHeader } from "~/components/ui/card";
 import { cn, parseSlugGetImageUrl } from "~/lib/utils";
 import EquipmentDataService from "~/services/EquipmentDataService";
 import type { Route } from "./+types/equipment._index";
@@ -49,7 +49,7 @@ export default function EquipmentIndex({ loaderData }: Route.ComponentProps) {
                     })
                   )}
                 >
-                  <CardTitle className="text-base">{equipment.name}</CardTitle>
+                  <div className="font-semibold">{equipment.name}</div>
                 </CardHeader>
               </Card>
             </Link>

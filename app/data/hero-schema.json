@@ -111,7 +111,8 @@
                                 "dodge",
                                 "magic penetration",
                                 "armor penetration",
-                                "vampirism"
+                                "vampirism",
+                                "crit hit chance"
                             ]
                         },
                         "source": {
@@ -264,7 +265,8 @@
                         "dodge",
                         "magic penetration",
                         "vampirism",
-                        "armor penetration"
+                        "armor penetration",
+                        "crit hit chance"
                     ]
                 },
                 "minItems": 5,

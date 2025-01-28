@@ -1,8 +1,10 @@
+import type { ClassValue } from "clsx";
 import { AlertCircle } from "lucide-react";
 import { useState } from "react";
 import { Link } from "react-router";
 import type { EquipmentRecord } from "~/data/equipment.zod";
 import type { HeroRecord } from "~/data/hero.zod";
+import { cn } from "~/lib/utils";
 import EquipmentImage from "../EquipmentImage";
 import { Card, CardContent, CardHeader, CardTitle } from "../ui/card";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "../ui/select";
@@ -10,12 +12,13 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from ".
 interface HeroItemsProps {
   equipment: EquipmentRecord[];
   items: HeroRecord["items"];
+  className?: ClassValue;
 }
 
 type ItemRank = keyof NonNullable<HeroRecord["items"]>;
 
-export default function HeroItems({ items, equipment }: HeroItemsProps) {
-  if (items === undefined) return null;
+export default function HeroItems({ items, equipment, className }: HeroItemsProps) {
+  if (items === undefined) return <div className={cn(className)}></div>;
 
   const ranks = Object.keys(items);
   const [selectedRank, setSelectedRank] = useState<ItemRank>(ranks[0] as ItemRank);
@@ -24,7 +27,7 @@ export default function HeroItems({ items, equipment }: HeroItemsProps) {
 
   if (!items || Object.keys(items).length === 0) {
     return (
-      <div className="flex items-center gap-2 text-muted-foreground">
+      <div className={cn("flex items-center gap-2 text-muted-foreground", className)}>
         <AlertCircle className="h-4 w-4" />
         <span>No items configured for this hero</span>
       </div>
@@ -32,7 +35,7 @@ export default function HeroItems({ items, equipment }: HeroItemsProps) {
   }
 
   return (
-    <Card>
+    <Card className={cn(className)}>
       <CardHeader>
         <div className="flex gap-4 items-center">
           <CardTitle>Equipment Ranks:</CardTitle>
