@@ -5,6 +5,7 @@ import HeroCard from "~/components/hero/HeroCard";
 import HeroTile from "~/components/hero/HeroTile";
 import { Input } from "~/components/ui/input";
 import { ToggleGroupItem } from "~/components/ui/toggle-group";
+import { useIsMobile } from "~/hooks/useIsMobile";
 import { useQueryState } from "~/hooks/useQueryState";
 import EquipmentDataService from "~/services/EquipmentDataService";
 import HeroDataService from "~/services/HeroDataService";
@@ -22,6 +23,7 @@ export default function HeroesIndex({ loaderData }: Route.ComponentProps) {
 
   const [search, setSearch] = useState("");
   const [displayMode, setDisplayMode] = useQueryState<"cards" | "tiles">("mode", "cards");
+  const isMobile = useIsMobile();
 
   const filteredHeroes = search
     ? heroes.filter((hero) => hero.name.toLowerCase().includes(search.toLowerCase()))
@@ -36,18 +38,20 @@ export default function HeroesIndex({ loaderData }: Route.ComponentProps) {
           onChange={(e) => setSearch(e.target.value)}
           className="w-full max-w-sm"
         />
-        <ToggleGroup
-          type="single"
-          value={displayMode}
-          onValueChange={(value) => setDisplayMode(value as "cards" | "tiles")}
-        >
-          <ToggleGroupItem value="cards">
-            <LayoutGridIcon />
-          </ToggleGroupItem>
-          <ToggleGroupItem value="tiles">
-            <LayoutListIcon />
-          </ToggleGroupItem>
-        </ToggleGroup>
+        {!isMobile && (
+          <ToggleGroup
+            type="single"
+            value={displayMode}
+            onValueChange={(value) => setDisplayMode(value as "cards" | "tiles")}
+          >
+            <ToggleGroupItem value="cards">
+              <LayoutGridIcon />
+            </ToggleGroupItem>
+            <ToggleGroupItem value="tiles">
+              <LayoutListIcon />
+            </ToggleGroupItem>
+          </ToggleGroup>
+        )}
       </div>
       {filteredHeroes.length ? (
         displayMode === "cards" ? (
