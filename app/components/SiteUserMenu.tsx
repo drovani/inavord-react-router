@@ -77,9 +77,11 @@ export function SiteUserMenu() {
           </SidebarMenuItem>
         </SidebarMenu>
       ) : state === "expanded" ? (
-        <Button variant={"outline"} className="w-full flex items-center gap-2" onClick={signIn}>
-          <LogInIcon />
-          <span>Sign in</span>
+        <Button variant={"outline"} asChild className="w-full flex items-center gap-2">
+          <Link to="/login">
+            <LogInIcon />
+            <span>Sign in</span>
+          </Link>
         </Button>
       ) : (
         <LogInIcon
