@@ -5,7 +5,7 @@ export default function Titans() {
     {
       round: "Round 1",
       items: {
-        "Sigurd Weapon (Siungur's Aegis) to Level 105": false,
+        "Sigurd Weapon (Siungur's Aegis) to Level 105": true,
         "Angus Seal (Defense Seal) to Level 105": false,
         "Hyperion Weapon (Siungur's Staff) to Level 105": false,
         "Angus Crown (Earth Crown) to Level 105": false,
@@ -43,8 +43,8 @@ export default function Titans() {
   const skinPriorities = {
     "Angus & Sigurd Primordial Skin to Level 45": true,
     "Angus & Sigurd Primordial Skin to Level 55": true,
-    "Hyperion, Angus, Araji, Iyari Default Skins to Level 55": false,
-    "Sigurd Default Skin to level 45": false,
+    "Hyperion, Angus, Araji, Iyari Default Skins to Level 55": true,
+    "Sigurd Default Skin to level 45": true,
     "Angus & Sigurd Primordial Skin to Level 60": false,
     "Hyperion, Angus, Araji, Iyari Default Skins to Level 60": false,
     "Sigurd Default Skin to level 60": false,
