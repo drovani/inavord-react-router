@@ -16,7 +16,7 @@ import { Button } from "./ui/button";
 
 export function SiteUserMenu() {
   const { isMobile, state } = useSidebar();
-  const { isAuthenticated, user, signIn, signOut } = useAuth();
+  const { isAuthenticated, user, signOut } = useAuth();
 
   return (
     <div>
