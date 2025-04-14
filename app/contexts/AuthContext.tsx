@@ -12,7 +12,6 @@ interface AuthContextType {
     fallback: string;
   } | null;
   isAuthenticated: boolean;
-  signIn: () => Promise<void>;
   signOut: () => Promise<void>;
 }
 
@@ -70,21 +69,6 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
     };
   }, [supabaseUser]);
 
-  // Authentication methods
-  const signIn = useCallback(async () => {
-    try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email: transformedUser?.email || "default@example.com",
-        password: "password", // Replace with actual password input
-      });
-
-      if (error) throw error;
-    } catch (error) {
-      const authError = error as AuthError;
-      console.error('Sign in error:', authError.message);
-    }
-  }, []);
-
   const signOut = useCallback(async () => {
     try {
       const { error } = await supabase.auth.signOut();
@@ -99,10 +83,9 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
     () => ({
       user: transformedUser,
       isAuthenticated: !!supabaseUser,
-      signIn,
       signOut,
     }),
-    [transformedUser, supabaseUser, signIn, signOut]
+    [transformedUser, supabaseUser, signOut]
   );
 
   return (
