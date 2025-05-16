@@ -45,8 +45,8 @@ export default function Titans() {
     "Angus & Sigurd Primordial Skin to Level 55": true,
     "Hyperion, Angus, Araji, Iyari Default Skins to Level 55": true,
     "Sigurd Default Skin to level 45": true,
-    "Angus & Sigurd Primordial Skin to Level 60": false,
-    "Hyperion, Angus, Araji, Iyari Default Skins to Level 60": false,
+    "Angus & Sigurd Primordial Skin to Level 60 (Max)": true,
+    "Angus, Iyari, Hyperion, Araji Default Skins to Level 60": false,
     "Sigurd Default Skin to level 60": false,
   };
 
