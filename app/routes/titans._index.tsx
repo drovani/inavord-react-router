@@ -56,17 +56,21 @@ export default function Titans() {
         <CardHeader>
           <CardTitle>Titan Quick Guide</CardTitle>
           <CardDescription>
-            Based on the{" "}
-            <a
-              href="https://www.reddit.com/r/HeroWarsApp/comments/1bq1r65/titan_guide_infographic_march_2024/#lightbox"
-              className="text-blue-500 hover:text-blue-600"
-            >
-              infograph
-            </a>{" "}
-            created by{" "}
-            <a href="https://www.reddit.com/user/FancyGamesStudio/" className="text-blue-500 hover:text-blue-600">
-              FancyGamesStudio
-            </a>
+            <p>Based on the{" "}
+              <a
+                href="https://www.reddit.com/r/HeroWarsApp/comments/1bq1r65/titan_guide_infographic_march_2024/#lightbox"
+                className="text-blue-500 hover:text-blue-600"
+              >
+                infograph
+              </a>{" "}
+              created by{" "}
+              <a href="https://www.reddit.com/user/FancyGamesStudio/" className="text-blue-500 hover:text-blue-600">
+                FancyGamesStudio
+              </a>.
+            </p>
+            <p>
+              This guide is a work in progress and will be updated as new information becomes available. It particular, it has not been updated since the release of Verdoc, Verdant Protector.
+            </p>
           </CardDescription>
         </CardHeader>
       </Card>
