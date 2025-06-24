@@ -11,9 +11,11 @@ export default [
   route("forgot-password", "./routes/forgot-password.tsx"),
   route("update-password", "./routes/update-password.tsx"),
   route("sign-up", "./routes/sign-up.tsx"),
+  route("api/admin/users", "./routes/api.admin.users.tsx"),
   ...prefix("admin", [
     layout("./layouts/ProtectedAdminLayout.tsx", [
       route("setup", "./routes/admin.setup.tsx"),
+      route("users", "./routes/admin.users.tsx"),
       route("/*", "./routes/admin.tsx"),
     ]),
   ]),

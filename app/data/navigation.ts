@@ -1,5 +1,6 @@
 import {
-  PresentationIcon
+  PresentationIcon,
+  UsersIcon
 } from "lucide-react";
 
 interface NavigationItem {
@@ -16,6 +17,12 @@ export const navigation: NavigationItem[] = [
     name: "Admin Setup",
     icon: PresentationIcon,
     href: "/admin/setup",
+    roles: ["admin"],
+  },
+  {
+    name: "User Management",
+    icon: UsersIcon,
+    href: "/admin/users",
     roles: ["admin"],
   },
 ] as const;
