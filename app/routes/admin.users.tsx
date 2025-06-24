@@ -1,4 +1,4 @@
-import { UserRoundCheckIcon, UserRoundXIcon } from "lucide-react";
+import { UserRoundCheckIcon, UserRoundMinusIcon, UserRoundXIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { redirect, useFetcher, useLoaderData, useRevalidator } from "react-router";
 import { Badge } from "~/components/ui/badge";
@@ -6,6 +6,7 @@ import { Button } from "~/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "~/components/ui/dialog";
+import { AlertDialog, AlertDialogAction, AlertDialogCancel, AlertDialogContent, AlertDialogDescription, AlertDialogFooter, AlertDialogHeader, AlertDialogTitle, AlertDialogTrigger } from "~/components/ui/alert-dialog";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Switch } from "~/components/ui/switch";
@@ -129,6 +130,7 @@ export default function AdminUsers() {
   });
   const [updatingUserId, setUpdatingUserId] = useState<string | null>(null);
   const [optimisticUserStates, setOptimisticUserStates] = useState<Record<string, { disabled?: boolean; roles?: string[]; deleted?: boolean }>>({});
+  const [isRevalidating, setIsRevalidating] = useState(false);
 
   // Handle fetcher results
   useEffect(() => {
@@ -143,24 +145,31 @@ export default function AdminUsers() {
           }
           return prev;
         });
-      } else if (fetcher.data.message?.includes("deleted")) {
-        // For successful deletion, refresh the data
-        revalidator.revalidate();
+      } else if (fetcher.data.success && fetcher.data.message?.includes("deleted")) {
+        // For successful deletion, keep optimistic state until revalidation completes
+        if (!isRevalidating) {
+          setIsRevalidating(true);
+          revalidator.revalidate();
+        }
       }
       setUpdatingUserId(null); // Clear updating state
     }
   }, [fetcher.data, updatingUserId, revalidator]);
 
-  // Clear updating state and optimistic updates when fetcher becomes idle
+  // Clear updating state when fetcher becomes idle
   useEffect(() => {
     if (fetcher.state === "idle") {
       setUpdatingUserId(null);
-      // Clear optimistic states after a brief delay to allow server data to load
-      setTimeout(() => {
-        setOptimisticUserStates({});
-      }, 100);
     }
   }, [fetcher.state]);
+
+  // Clear revalidating flag and optimistic states when revalidator is done
+  useEffect(() => {
+    if (revalidator.state === "idle" && isRevalidating) {
+      setIsRevalidating(false);
+      setOptimisticUserStates({});
+    }
+  }, [revalidator.state, isRevalidating]);
 
   // Handle create user results
   useEffect(() => {
@@ -476,8 +485,40 @@ export default function AdminUsers() {
                         onCheckedChange={(checked) => handleUserStatusChange(user.id, checked)}
                         disabled={!hasServiceRole || updatingUserId === user.id || user.id === currentUser?.id}
                         checkedIcon={<UserRoundCheckIcon className="size-4 text-green-900" />}
-                        uncheckedIcon={<UserRoundXIcon className="size-4 text-red-900" />}
+                        uncheckedIcon={<UserRoundMinusIcon className="size-4 text-red-900" />}
                       />
+                      {isDisabled && (
+                        <AlertDialog>
+                          <AlertDialogTrigger asChild>
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50 ml-2"
+                              disabled={!hasServiceRole || updatingUserId === user.id}
+                              title="Delete user permanently"
+                            >
+                              <UserRoundXIcon className="h-4 w-4" />
+                            </Button>
+                          </AlertDialogTrigger>
+                          <AlertDialogContent>
+                            <AlertDialogHeader>
+                              <AlertDialogTitle>Delete User</AlertDialogTitle>
+                              <AlertDialogDescription>
+                                Are you sure you want to permanently delete the user "{user.email}"? This action cannot be undone and will remove all user data from the system.
+                              </AlertDialogDescription>
+                            </AlertDialogHeader>
+                            <AlertDialogFooter>
+                              <AlertDialogCancel>Cancel</AlertDialogCancel>
+                              <AlertDialogAction
+                                onClick={() => handleDeleteUser(user.id)}
+                                className="bg-red-600 hover:bg-red-700"
+                              >
+                                Delete User
+                              </AlertDialogAction>
+                            </AlertDialogFooter>
+                          </AlertDialogContent>
+                        </AlertDialog>
+                      )}
                     </TableCell>
                     <TableCell className="w-32">
                       {updatingUserId === user.id ? (
