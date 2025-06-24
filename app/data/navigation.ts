@@ -1,7 +1,11 @@
-import {
-  PresentationIcon,
-  UsersIcon
-} from "lucide-react";
+import { PresentationIcon, UsersIcon } from "lucide-react";
+
+interface NavigationGroup {
+  name: string;
+  icon?: React.ComponentType<any>;
+  items: NavigationItem[];
+  roles?: string[];
+}
 
 interface NavigationItem {
   name: string;
@@ -9,20 +13,23 @@ interface NavigationItem {
   href?: string;
   children?: NavigationItem[];
   reloadDocument?: boolean;
-  roles?: string[];
 }
 
-export const navigation: NavigationItem[] = [
+export const navigation: NavigationGroup[] = [
   {
-    name: "Admin Setup",
-    icon: PresentationIcon,
-    href: "/admin/setup",
+    name: "Administration",
     roles: ["admin"],
-  },
-  {
-    name: "User Management",
-    icon: UsersIcon,
-    href: "/admin/users",
-    roles: ["admin"],
+    items: [
+      {
+        name: "Admin Setup",
+        icon: PresentationIcon,
+        href: "/admin/setup",
+      },
+      {
+        name: "User Management",
+        icon: UsersIcon,
+        href: "/admin/users",
+      },
+    ],
   },
 ] as const;

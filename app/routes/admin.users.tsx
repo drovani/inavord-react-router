@@ -434,7 +434,7 @@ export default function AdminUsers() {
                 <TableHead>Email</TableHead>
                 <TableHead>Display Name</TableHead>
                 <TableHead>Roles</TableHead>
-                <TableHead>Enable/Disable</TableHead>
+                <TableHead>Enabled</TableHead>
                 <TableHead>Status</TableHead>
               </TableRow>
             </TableHeader>

@@ -62,7 +62,11 @@ export function Layout(props: Route.ComponentProps) {
       <body className="max-h-screen">
         <AuthProvider request={request as unknown as Request}>
           <SidebarProvider defaultOpen={true}>
-            <SiteSidebar />
+            <SiteSidebar settings={{
+              site_title: "Inavord Template",
+              site_subtitle: "An opinionated starter app",
+              site_logo: <img src="/logo.png" alt="Site Logo" className="size-8" />,
+            }} />
             <SidebarInset>
               <SiteHeader breadcrumbs={breadcrumbs} />
               <main className="flex flex-1 flex-col gap-4 p-4 lg:gap-6 lg:p-6 max-w-4xl">
