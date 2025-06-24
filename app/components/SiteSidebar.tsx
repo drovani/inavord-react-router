@@ -53,7 +53,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
             {navitems.map((item) => (
               <SidebarMenuItem key={item.name} className="">
                 <SidebarMenuButton asChild>
-                  {"href" in item ? (
+                  {"href" in item && item.href ? (
                     <NavLink to={item.href} viewTransition onClick={isMobile ? () => setOpenMobile(false) : undefined}>
                       {({ isPending, isActive }) => (
                         <>
@@ -70,7 +70,7 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     </div>
                   )}
                 </SidebarMenuButton>
-                {"children" in item && (
+                {"children" in item && item.children && (
                   <DropdownMenu>
                     <DropdownMenuTrigger asChild>
                       <SidebarMenuAction showOnHover>
@@ -85,16 +85,21 @@ export function SiteSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) 
                     >
                       {item.children.map((subnav) => (
                         <DropdownMenuItem key={subnav.name} asChild>
-                          <Link
-                            to={subnav.href}
-                            className="flex gap-2 items-center text-sm"
-                            reloadDocument={"reloadDocument" in subnav && subnav.reloadDocument}
-                            onClick={isMobile ? () => setOpenMobile(false) : undefined}
-                            viewTransition
-                          >
-                            <subnav.icon className="text-muted-foreground w-8" />
+                          {subnav.href ? (
+                            <Link
+                              to={subnav.href}
+                              className="flex gap-2 items-center text-sm"
+                              reloadDocument={"reloadDocument" in subnav && subnav.reloadDocument}
+                              onClick={isMobile ? () => setOpenMobile(false) : undefined}
+                              viewTransition
+                            >
+                              <subnav.icon className="text-muted-foreground w-8" />
+                              <span>{subnav.name}</span>
+                            </Link>
+                          ) : (<div className="flex gap-2 items-center opacity-50 cursor-default" title="Coming soon">
+                            <subnav.icon className="inline" />
                             <span>{subnav.name}</span>
-                          </Link>
+                          </div>)}
                         </DropdownMenuItem>
                       ))}
                     </DropdownMenuContent>

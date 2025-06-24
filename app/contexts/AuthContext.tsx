@@ -13,6 +13,7 @@ interface AuthContextType {
   } | null;
   isAuthenticated: boolean;
   signOut: () => Promise<void>;
+  updateProfile: (data: { full_name: string }) => Promise<void>;
 }
 
 const AuthContext = createContext<AuthContextType | null>(null);
@@ -31,7 +32,7 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
     });
 
     // Listen for auth changes
-    const { data: { subscription } } = supabase.auth.onAuthStateChange((event, session) => {
+    const { data: { subscription } } = supabase.auth.onAuthStateChange((_event, session) => {
       setSupabaseUser(session?.user ?? null);
       setLoading(false);
     });
@@ -63,7 +64,7 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
       id: supabaseUser.id,
       email: supabaseUser.email || "anonymousshroom@example.com",
       name: fullName,
-      roles: appMetadata.roles || ['admin'],
+      roles: appMetadata.roles || ['user'],
       fallback: fallback,
       avatar: userMetadata.avatar_url,
     };
@@ -77,15 +78,30 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
       const authError = error as AuthError;
       console.error('Sign out error:', authError.message);
     }
-  }, []);
+  }, [supabase.auth]);
+
+  const updateProfile = useCallback(async (data: { full_name: string }) => {
+    try {
+      const { error } = await supabase.auth.updateUser({
+        data: { full_name: data.full_name }
+      });
+      if (error) throw error;
+    } catch (error) {
+      const authError = error as AuthError;
+      console.error('Update profile error:', authError.message);
+      throw error;
+    }
+  }, [supabase.auth]);
+
 
   const value = useMemo(
     () => ({
       user: transformedUser,
       isAuthenticated: !!supabaseUser,
       signOut,
+      updateProfile,
     }),
-    [transformedUser, supabaseUser, signOut]
+    [transformedUser, supabaseUser, signOut, updateProfile]
   );
 
   return (

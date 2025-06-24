@@ -20,9 +20,11 @@ This is the **inavord-react-router** template - a modern React Router v7 applica
 - **Supabase Auth**: Complete authentication system with email/password, OAuth providers
 - **AuthContext**: Centralized auth state management (`app/contexts/AuthContext.tsx`)
 - **Role-based Access**: Users have roles array, routes can be restricted by role
+- **Default Roles**: New users get `['user']` role, admins can assign `admin`, `editor`, `user` roles
 - **Protected Layouts**: 
   - `ProtectedUserLayout.tsx` - General authenticated users
   - `ProtectedAdminLayout.tsx` - Admin-only routes
+- **User Management**: Admin page at `/admin/users` (requires service role for full functionality)
 
 ### Routing Structure
 - **React Router v7**: File-based routing with layouts and nested routes
@@ -32,6 +34,7 @@ This is the **inavord-react-router** template - a modern React Router v7 applica
 
 ### UI Components
 - **shadcn/ui**: Complete component library in `app/components/ui/`
+- **Component Installation**: ALWAYS use `npx shadcn@latest add [component-name]` to install shadcn/ui components
 - **Tailwind CSS v4**: Utility-first styling with CSS variables for theming
 - **Sidebar Navigation**: Collapsible sidebar with role-based menu items
 - **Responsive Design**: Mobile-first approach with custom hooks (`useIsMobile.tsx`)
@@ -60,6 +63,9 @@ Required environment variables:
 - `VITE_SUPABASE_URL` - Supabase project URL
 - `VITE_SUPABASE_ANON_KEY` - Supabase anon public key
 
+Optional for full user management:
+- `SUPABASE_SERVICE_ROLE_KEY` - Service role key for admin user management functions
+
 ## Deployment
 
 - **Netlify**: Configured for automatic deployment
@@ -73,3 +79,10 @@ Required environment variables:
 - Components follow shadcn/ui patterns and conventions
 - Responsive design uses Tailwind breakpoints and custom mobile detection
 - Role-based access control is enforced at both route and component levels
+
+## Component Development Guidelines
+
+- **Use shadcn CLI**: When adding UI components, always use `npx shadcn@latest add [component-name]` instead of manually creating components
+- **Check Available Components**: Before creating custom components, verify if shadcn/ui has an official version
+- **Component Consistency**: All UI components should follow shadcn/ui patterns for styling and structure
+- **Manual Components**: Only create manual components when shadcn/ui doesn't provide the needed functionality
