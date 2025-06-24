@@ -1,3 +1,4 @@
+import { UserRoundCheckIcon, UserRoundXIcon } from "lucide-react";
 import { useEffect, useState } from "react";
 import { redirect, useFetcher, useLoaderData, useRevalidator } from "react-router";
 import { Badge } from "~/components/ui/badge";
@@ -474,6 +475,8 @@ export default function AdminUsers() {
                         checked={!isUserDisabledOptimistic(user)}
                         onCheckedChange={(checked) => handleUserStatusChange(user.id, checked)}
                         disabled={!hasServiceRole || updatingUserId === user.id || user.id === currentUser?.id}
+                        checkedIcon={<UserRoundCheckIcon className="size-4 text-green-900" />}
+                        uncheckedIcon={<UserRoundXIcon className="size-4 text-red-900" />}
                       />
                     </TableCell>
                     <TableCell className="w-32">
