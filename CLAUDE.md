@@ -86,3 +86,18 @@ Optional for full user management:
 - **Check Available Components**: Before creating custom components, verify if shadcn/ui has an official version
 - **Component Consistency**: All UI components should follow shadcn/ui patterns for styling and structure
 - **Manual Components**: Only create manual components when shadcn/ui doesn't provide the needed functionality
+
+## User Role Management
+
+- **Initial Admin Setup**: Use SQL Editor in Supabase Dashboard to assign admin role:
+  ```sql
+  UPDATE auth.users 
+  SET raw_app_meta_data = jsonb_set(
+    COALESCE(raw_app_meta_data, '{}'), 
+    '{roles}', 
+    '["admin"]'
+  ) 
+  WHERE email = 'your-email@example.com';
+  ```
+- **Available Roles**: `admin`, `editor`, `user` (new users default to `user`)
+- **Role Assignment**: Admins can manage user roles through `/admin/users` page (requires service role configuration)
