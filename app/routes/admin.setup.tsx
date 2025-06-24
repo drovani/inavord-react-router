@@ -50,7 +50,7 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
         <Card>
           <CardHeader>
             <CardTitle>Initialize Data</CardTitle>
-            <CardDescription>Configure initialization settings for equipment, missions, and hero data.</CardDescription>
+            <CardDescription>Configure initialization settings.</CardDescription>
           </CardHeader>
           <CardContent>
             <fetcher.Form method="post" className="space-y-6">
@@ -92,24 +92,6 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
                       <RadioGroupItem value="" id="all" />
                       <Label htmlFor="all" className="font-normal">
                         All datasets
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="equipment" id="equipment" />
-                      <Label htmlFor="equipment" className="font-normal">
-                        Equipment only
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="missions" id="missions" />
-                      <Label htmlFor="missions" className="font-normal">
-                        Missions only
-                      </Label>
-                    </div>
-                    <div className="flex items-center space-x-2">
-                      <RadioGroupItem value="heroes" id="heroes" />
-                      <Label htmlFor="heroes" className="font-normal">
-                        Heroes only
                       </Label>
                     </div>
                   </RadioGroup>
