@@ -86,6 +86,11 @@ Optional for full user management:
 - **Check Available Components**: Before creating custom components, verify if shadcn/ui has an official version
 - **Component Consistency**: All UI components should follow shadcn/ui patterns for styling and structure
 - **Manual Components**: Only create manual components when shadcn/ui doesn't provide the needed functionality
+- **Pre-Installation Check**: Before calling shadcn cli, check to see if the component already exists in the repo
+
+## Development Best Practices
+
+- Use loglevel for error logging and debugging instead of using console
 
 ## User Role Management
 

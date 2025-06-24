@@ -1,3 +1,4 @@
+import log from "loglevel";
 import { AlertCircle, RefreshCwIcon } from "lucide-react";
 import { useMemo } from "react";
 import { data, useFetcher } from "react-router";
@@ -26,7 +27,7 @@ export async function action({ request }: Route.ActionArgs) {
 
   } catch (error) {
     const message = error instanceof Error ? error.message : "Unknown error";
-    console.error("Setup failed:", message);
+    log.error("Setup failed:", message);
 
     return data(
       {

@@ -1,4 +1,5 @@
 import { createClient } from '@supabase/supabase-js';
+import log from 'loglevel';
 
 // Canonical list of assignable roles (user role is always default)
 export const ASSIGNABLE_ROLES = ['admin', 'editor'] as const;
@@ -105,7 +106,7 @@ export const adminUserOperations = {
    */
   async enableUser(userId: string) {
     const supabase = createAdminClient();
-    
+
     const { data, error } = await supabase.auth.admin.updateUserById(userId, {
       ban_duration: 'none'
     } as any);
@@ -115,5 +116,86 @@ export const adminUserOperations = {
     }
 
     return data.user;
+  },
+
+  /**
+   * Create a new user with email and password
+   */
+  async createUser(email: string, password: string, userData?: { full_name?: string; roles?: string[] }) {
+    const supabase = createAdminClient();
+
+    log.debug('Creating user with data:', {
+      email,
+      password: password ? '[REDACTED]' : 'missing',
+      userData
+    });
+
+    // Check if user already exists
+    try {
+      const { data: existingUsers } = await supabase.auth.admin.listUsers();
+      const existingUser = existingUsers.users.find(u => u.email === email);
+      if (existingUser) {
+        throw new Error(`A user with email ${email} already exists`);
+      }
+    } catch (checkError) {
+      log.debug('Could not check existing users:', checkError);
+      // Continue with creation attempt
+    }
+
+    // Try with minimal parameters first
+    log.debug('Attempting createUser with minimal params...');
+    const { data, error } = await supabase.auth.admin.createUser({
+      email,
+      password,
+      email_confirm: true
+    });
+
+    if (error) {
+      log.error('Supabase createUser error details:', {
+        message: error.message,
+        status: error.status,
+        code: error.code,
+        details: error
+      });
+
+      // Provide more specific error messages
+      if (error.message?.includes('already exists') || error.message?.includes('duplicate')) {
+        throw new Error(`A user with email ${email} already exists`);
+      }
+
+      throw new Error(`Failed to create user: ${error.message || 'Database error'}`);
+    }
+
+    log.info('User created successfully:', data.user?.id);
+    return data.user;
+  },
+
+  /**
+   * Delete user permanently (only allowed for disabled users)
+   */
+  async deleteUser(userId: string) {
+    const supabase = createAdminClient();
+
+    // First check if user is disabled
+    const { data: userData, error: getUserError } = await supabase.auth.admin.getUserById(userId);
+    if (getUserError) {
+      throw new Error(`Failed to fetch user: ${getUserError.message}`);
+    }
+
+    const user = userData.user;
+    const isDisabled = (user as any).banned_until && new Date((user as any).banned_until) > new Date();
+
+    if (!isDisabled) {
+      throw new Error('Can only delete disabled users. Please disable the user first.');
+    }
+
+    const { error } = await supabase.auth.admin.deleteUser(userId);
+
+    if (error) {
+      throw new Error(`Failed to delete user: ${error.message}`);
+    }
+
+    log.info('User deleted successfully:', userId);
+    return { success: true };
   }
 };

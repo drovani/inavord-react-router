@@ -1,5 +1,5 @@
 import { AuthError, type User } from '@supabase/supabase-js';
-import log from "loglevel";
+import log from 'loglevel';
 import { createContext, useCallback, useContext, useEffect, useMemo, useState } from "react";
 import { createClient } from "~/lib/supabase/client";
 interface AuthContextType {
@@ -42,7 +42,6 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
 
   // Transform Supabase user data into our simplified user object
   const transformedUser = useMemo(() => {
-    log.debug("Supabase user:", supabaseUser);
     if (!supabaseUser) return null;
 
     // Extract user metadata - handle null cases
@@ -76,7 +75,7 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
       if (error) throw error;
     } catch (error) {
       const authError = error as AuthError;
-      console.error('Sign out error:', authError.message);
+      log.error('Sign out error:', authError.message);
     }
   }, [supabase.auth]);
 
@@ -88,7 +87,7 @@ export function AuthProvider({ children, request }: { children: React.ReactNode,
       if (error) throw error;
     } catch (error) {
       const authError = error as AuthError;
-      console.error('Update profile error:', authError.message);
+      log.error('Update profile error:', authError.message);
       throw error;
     }
   }, [supabase.auth]);
