@@ -92,6 +92,8 @@ Optional for full user management:
 
 - Use loglevel for error logging and debugging instead of using console
 - After completing a task with code changes, run `npm run tsc` to test for Typescript errors
+- **NEVER** push to the `main` branch
+- Always try to associate PRs with an open issue
 
 ## Testing Framework
 
