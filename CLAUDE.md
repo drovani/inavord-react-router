@@ -91,6 +91,42 @@ Optional for full user management:
 ## Development Best Practices
 
 - Use loglevel for error logging and debugging instead of using console
+- After completing a task with code changes, run `npm run tsc` to test for Typescript errors
+
+## Testing Framework
+
+The project uses **Vitest** with React Testing Library for comprehensive testing:
+
+### Available Test Commands
+- `npm test` - Run tests in watch mode
+- `npm run test:run` - Run tests once
+- `npm run test:coverage` - Run tests with coverage report
+- `npm run test:ui` - Run tests with UI interface
+
+### Test Structure
+- **Unit Tests**: Components, hooks, utility functions
+- **Integration Tests**: API business logic, auth flows (mocked)
+- **Repository Tests**: Supabase database operations (mocked)
+
+### Testing Guidelines
+- **Components**: Test rendering, interactions, props, and accessibility
+- **Hooks**: Test state changes, effects, and edge cases  
+- **Business Logic**: Test validation, permissions, and error handling
+- **Supabase Operations**: Mock the client and test query building and data transformation
+
+### Test Files Location
+- Component tests: `app/components/**/*.test.tsx`
+- Hook tests: `app/hooks/**/*.test.tsx`
+- Context tests: `app/contexts/**/*.test.tsx`
+- Example patterns: `app/__tests__/examples/`
+- Test utilities: `app/__tests__/utils/`
+- Mocks: `app/__tests__/mocks/`
+
+### Mocking Patterns
+- **Supabase Client**: Use `app/__tests__/mocks/supabase.ts` for database operations
+- **Auth Context**: Mock authentication state for component testing
+- **External APIs**: Use MSW for HTTP request mocking
+- **Browser APIs**: Mock matchMedia, IntersectionObserver, etc.
 
 ## Tailwind CSS Guidelines
 
