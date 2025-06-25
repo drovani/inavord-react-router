@@ -1,13 +1,13 @@
-import { useLoaderData } from 'react-router'
-import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
-import { Badge } from '~/components/ui/badge'
-import { Progress } from '~/components/ui/progress'
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '~/components/ui/collapsible'
-import { ChevronDown, ChevronRight, FileText, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
+import { CheckCircle, ChevronDown, ChevronRight, ExternalLink, FileText, XCircle } from 'lucide-react'
 import { useState } from 'react'
+import { useLoaderData } from 'react-router'
+import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
-import { createClient } from '~/lib/supabase/client'
+import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '~/components/ui/collapsible'
+import { Progress } from '~/components/ui/progress'
 import testCoverageData from '~/data/test-coverage.json'
+import { createClient } from '~/lib/supabase/client'
 
 interface CoverageFile {
   path: string
@@ -32,9 +32,9 @@ interface CoverageData {
 
 export async function loader({ request }: { request: Request }) {
   const { supabase } = createClient(request)
-  
+
   const { data: { user } } = await supabase.auth.getUser()
-  
+
   if (!user) {
     throw new Response('Unauthorized', { status: 401 })
   }
@@ -48,7 +48,7 @@ export async function loader({ request }: { request: Request }) {
   const fs = await import('fs')
   const path = await import('path')
   const coverageFilePath = path.resolve('app/data/test-coverage.json')
-  
+
   let lastUpdated = new Date().toISOString()
   try {
     const stats = fs.statSync(coverageFilePath)
@@ -76,37 +76,37 @@ function getBadgeVariant(pct: number): "default" | "secondary" | "destructive" |
 
 function FileDetails({ filePath, fileData }: { filePath: string; fileData: CoverageFile }) {
   const [isOpen, setIsOpen] = useState(false)
-  
+
   // Calculate coverage percentages
   const totalStatements = Object.keys(fileData.s).length
   const coveredStatements = Object.values(fileData.s).filter(count => count > 0).length
   const statementPct = totalStatements > 0 ? (coveredStatements / totalStatements) * 100 : 0
-  
+
   const totalFunctions = Object.keys(fileData.f).length
   const coveredFunctions = Object.values(fileData.f).filter(count => count > 0).length
   const functionPct = totalFunctions > 0 ? (coveredFunctions / totalFunctions) * 100 : 0
-  
+
   const totalBranches = Object.values(fileData.b).reduce((sum, branches) => sum + branches.length, 0)
-  const coveredBranches = Object.values(fileData.b).reduce((sum, branches) => 
+  const coveredBranches = Object.values(fileData.b).reduce((sum, branches) =>
     sum + branches.filter(count => count > 0).length, 0)
   const branchPct = totalBranches > 0 ? (coveredBranches / totalBranches) * 100 : 0
-  
+
   // Helper function to open file in VS Code
   const openInVSCode = (lineNumber?: number) => {
     const cleanPath = filePath.replace(/^\/.*\/inavord-react-router\//, '')
     // For local development, assume the project is in the current working directory
     const fullPath = `${window.location.origin.includes('localhost') ? '/home/drovani/inavord-react-router' : ''}/${cleanPath}`
-    const uri = lineNumber 
+    const uri = lineNumber
       ? `vscode://file${fullPath}:${lineNumber}`
       : `vscode://file${fullPath}`
     window.location.href = uri
   }
-  
+
   // Helper function to open file on GitHub
   const openOnGitHub = (lineNumber?: number) => {
     const cleanPath = filePath.replace(/^\/.*\/inavord-react-router\//, '')
     // Update this with your actual GitHub repository URL
-    const githubUrl = lineNumber 
+    const githubUrl = lineNumber
       ? `https://github.com/drovani/inavord-react-router/blob/main/${cleanPath}#L${lineNumber}`
       : `https://github.com/drovani/inavord-react-router/blob/main/${cleanPath}`
     window.open(githubUrl, '_blank')
@@ -133,8 +133,8 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                   }}
                   className="h-6 px-1 sm:px-2 text-xs"
                 >
-                  <ExternalLink className="size-3 sm:mr-1" />
-                  <span className="hidden sm:inline">VS Code</span>
+                  <ExternalLink className="size-3 mr-1" />
+                  <span>VS Code</span>
                 </Button>
                 <Button
                   variant="ghost"
@@ -145,8 +145,8 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                   }}
                   className="h-6 px-1 sm:px-2 text-xs"
                 >
-                  <ExternalLink className="size-3 sm:mr-1" />
-                  <span className="hidden sm:inline">GitHub</span>
+                  <ExternalLink className="size-3 mr-1" />
+                  <span>GitHub</span>
                 </Button>
                 <Badge variant={getBadgeVariant(statementPct)} className="text-xs">
                   {formatPercentage(statementPct)}
@@ -155,7 +155,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
             </div>
           </CardHeader>
         </CollapsibleTrigger>
-        
+
         <CollapsibleContent>
           <CardContent className="pt-0">
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
@@ -167,7 +167,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                 <Progress value={statementPct} className="h-2" />
                 <span className="text-xs text-muted-foreground">{formatPercentage(statementPct)}</span>
               </div>
-              
+
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">Functions</span>
@@ -176,7 +176,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                 <Progress value={functionPct} className="h-2" />
                 <span className="text-xs text-muted-foreground">{formatPercentage(functionPct)}</span>
               </div>
-              
+
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">Branches</span>
@@ -186,7 +186,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                 <span className="text-xs text-muted-foreground">{formatPercentage(branchPct)}</span>
               </div>
             </div>
-            
+
             {/* Uncovered statements */}
             {totalStatements > 0 && (
               <div className="space-y-2">
@@ -195,7 +195,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                   {Object.entries(fileData.s).map(([statementId, count]) => {
                     const statementInfo = fileData.statementMap[statementId]
                     const lineNumber = statementInfo?.start?.line
-                    
+
                     return (
                       <div key={statementId} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 rounded border gap-2">
                         <div className="flex items-center gap-2 min-w-0 flex-1">
@@ -245,11 +245,11 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
 export default function AdminTestCoverage() {
   const data = useLoaderData<typeof loader>()
   const { coverage, lastUpdated } = data as { coverage: CoverageData; lastUpdated: string }
-  
+
   // Separate files from summary data
   const files = Object.entries(coverage).filter(([key]) => !key.includes('total'))
   const summary = (coverage as any).total as CoverageSummary | undefined
-  
+
   return (
     <div className="space-y-6">
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
@@ -285,7 +285,7 @@ export default function AdminTestCoverage() {
                 </div>
                 <Progress value={summary.statements.pct} className="mt-2 h-2" />
               </div>
-              
+
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">
                   {formatPercentage(summary.branches.pct)}
@@ -296,7 +296,7 @@ export default function AdminTestCoverage() {
                 </div>
                 <Progress value={summary.branches.pct} className="mt-2 h-2" />
               </div>
-              
+
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">
                   {formatPercentage(summary.functions.pct)}
@@ -307,7 +307,7 @@ export default function AdminTestCoverage() {
                 </div>
                 <Progress value={summary.functions.pct} className="mt-2 h-2" />
               </div>
-              
+
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">
                   {formatPercentage(summary.lines.pct)}
@@ -328,10 +328,10 @@ export default function AdminTestCoverage() {
         <h2 className="text-xl font-semibold mb-4">File Coverage Details</h2>
         <div className="space-y-2">
           {files.map(([filePath, fileData]) => (
-            <FileDetails 
-              key={filePath} 
-              filePath={filePath} 
-              fileData={fileData as CoverageFile} 
+            <FileDetails
+              key={filePath}
+              filePath={filePath}
+              fileData={fileData as CoverageFile}
             />
           ))}
         </div>
