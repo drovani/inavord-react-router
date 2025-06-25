@@ -109,7 +109,7 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
                   "Initialize"
                 ) : (
                   <>
-                    <RefreshCwIcon className="mr-2 h-4 w-4 animate-spin" />
+                    <RefreshCwIcon className="mr-2 size-4 animate-spin" />
                     Initializing...
                   </>
                 )}
@@ -135,7 +135,7 @@ export function ErrorBoundary(props: Route.ErrorBoundaryProps) {
   return (
     <div className="space-y-4">
       <Alert variant={"destructive"}>
-        <AlertCircle className="h-4 w-4" />
+        <AlertCircle className="size-4" />
         <AlertTitle>Error in this route</AlertTitle>
         <AlertDescription>
           For some reason, after the form is posted and the data is processed, React Router throws an AbortError. I

@@ -495,18 +495,18 @@ export default function AdminUsers() {
                             uncheckedIcon={<UserRoundMinusIcon className="size-4 text-red-900" />}
                           />
                           {/* Reserve space for delete button to prevent column resizing */}
-                          <div className="w-8 h-8 flex items-center justify-center">
+                          <div className="size-8 flex items-center justify-center">
                             {isDisabled && (
                               <AlertDialog>
                                 <AlertDialogTrigger asChild>
                                   <Button
                                     variant="ghost"
                                     size="sm"
-                                    className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
+                                    className="size-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50">
                                     disabled={!hasServiceRole || updatingUserId === user.id}
                                     title="Delete user permanently"
                                   >
-                                    <UserRoundXIcon className="h-4 w-4" />
+                                    <UserRoundXIcon className="size-4" />
                                   </Button>
                                 </AlertDialogTrigger>
                                 <AlertDialogContent>
@@ -534,7 +534,7 @@ export default function AdminUsers() {
                       <TableCell>
                         {updatingUserId === user.id ? (
                           <div className="flex items-center">
-                            <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900 mr-2"></div>
+                            <div className="animate-spin rounded-full size-4 border-b-2 border-gray-900 mr-2"></div>
                             <span className="text-sm">Updating...</span>
                           </div>
                         ) : !hasServiceRole ? (
@@ -588,7 +588,7 @@ export default function AdminUsers() {
                     {/* Status Loading */}
                     {updatingUserId === user.id && (
                       <div className="flex items-center mb-3 p-2 bg-gray-50 rounded">
-                        <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-gray-900 mr-2"></div>
+                        <div className="animate-spin rounded-full size-4 border-b-2 border-gray-900 mr-2"></div>
                         <span className="text-sm">Updating...</span>
                       </div>
                     )}
@@ -640,11 +640,11 @@ export default function AdminUsers() {
                               <Button
                                 variant="ghost"
                                 size="sm"
-                                className="h-8 w-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
+                                className="size-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
                                 disabled={!hasServiceRole || updatingUserId === user.id}
                                 title="Delete user permanently"
                               >
-                                <UserRoundXIcon className="h-4 w-4" />
+                                <UserRoundXIcon className="size-4" />
                               </Button>
                             </AlertDialogTrigger>
                             <AlertDialogContent className="max-w-sm">

@@ -7,7 +7,7 @@ const Avatar = forwardRef<React.ElementRef<typeof Root>, React.ComponentPropsWit
   ({ className, ...props }, ref) => (
     <Root
       ref={ref}
-      className={cn("relative flex h-10 w-10 shrink-0 overflow-hidden rounded-full", className)}
+      className={cn("relative flex size-10 shrink-0 overflow-hidden rounded-full", className)}
       {...props}
     />
   )

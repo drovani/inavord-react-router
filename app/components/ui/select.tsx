@@ -42,7 +42,7 @@ const SelectTrigger = forwardRef<
   >
     {children}
     <Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
+      <ChevronDown className="size-4 opacity-50" />
     </Icon>
   </Trigger>
 ));
@@ -59,7 +59,7 @@ const SelectScrollUpButton = forwardRef<
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronUp className="h-4 w-4" />
+    <ChevronUp className="size-4" />
   </ScrollUpButton>
 ));
 SelectScrollUpButton.displayName = ScrollUpButton.displayName;
@@ -75,7 +75,7 @@ const SelectScrollDownButton = forwardRef<
     className={cn("flex cursor-default items-center justify-center py-1", className)}
     {...props}
   >
-    <ChevronDown className="h-4 w-4" />
+    <ChevronDown className="size-4" />
   </ScrollDownButton>
 ));
 SelectScrollDownButton.displayName = ScrollDownButton.displayName;
@@ -141,7 +141,7 @@ const SelectItem = forwardRef<
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
       <ItemIndicator>
-        <Check className="h-4 w-4" />
+        <Check className="size-4" />
       </ItemIndicator>
     </span>
 

@@ -62,7 +62,7 @@ export default function Index(_: Route.ComponentProps) {
                 <Card className="bg-muted/50">
                   <CardHeader className="p-4 pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Code className="h-5 w-5" />
+                      <Code className="size-5" />
                       Authentication Ready
                     </CardTitle>
                   </CardHeader>
@@ -73,7 +73,7 @@ export default function Index(_: Route.ComponentProps) {
                 <Card className="bg-muted/50">
                   <CardHeader className="p-4 pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Layers className="h-5 w-5" />
+                      <Layers className="size-5" />
                       Role-Based Access
                     </CardTitle>
                   </CardHeader>
@@ -84,7 +84,7 @@ export default function Index(_: Route.ComponentProps) {
                 <Card className="bg-muted/50">
                   <CardHeader className="p-4 pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <Sparkles className="h-5 w-5" />
+                      <Sparkles className="size-5" />
                       Modern UI
                     </CardTitle>
                   </CardHeader>
@@ -95,7 +95,7 @@ export default function Index(_: Route.ComponentProps) {
                 <Card className="bg-muted/50">
                   <CardHeader className="p-4 pb-2">
                     <CardTitle className="text-lg flex items-center gap-2">
-                      <CheckCircle2 className="h-5 w-5" />
+                      <CheckCircle2 className="size-5" />
                       Production Ready
                     </CardTitle>
                   </CardHeader>
@@ -115,7 +115,7 @@ export default function Index(_: Route.ComponentProps) {
               <div className="grid grid-cols-1 gap-3">
                 {templateInfo.features.map((feature, index) => (
                   <div key={index} className="flex items-start gap-2">
-                    <CheckCircle2 className="h-5 w-5 text-green-500 mt-0.5" />
+                    <CheckCircle2 className="size-5 text-green-500 mt-0.5" />
                     <span>{feature}</span>
                   </div>
                 ))}
@@ -210,21 +210,21 @@ export default function Index(_: Route.ComponentProps) {
                   <h3 className="font-medium text-lg mb-2">Near Term (Next 3 months)</h3>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5" />
+                      <CheckCircle2 className="size-5 text-amber-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Enhanced User Management</span>
                         <p className="text-muted-foreground">Bulk user operations, user profiles, and advanced role management</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5" />
+                      <CheckCircle2 className="size-5 text-amber-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Repository Pattern Implementation</span>
                         <p className="text-muted-foreground">Complete data layer abstraction with base repository classes</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <CheckCircle2 className="h-5 w-5 text-amber-500 mt-0.5" />
+                      <CheckCircle2 className="size-5 text-amber-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Testing Setup</span>
                         <p className="text-muted-foreground">Vitest configuration, component tests, and E2E testing with Playwright</p>
@@ -237,21 +237,21 @@ export default function Index(_: Route.ComponentProps) {
                   <h3 className="font-medium text-lg mb-2">Medium Term (3-6 months)</h3>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-blue-500 mt-0.5" />
+                      <Sparkles className="size-5 text-blue-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Multi-tenant Architecture</span>
                         <p className="text-muted-foreground">Organization-based user management and role isolation</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-blue-500 mt-0.5" />
+                      <Sparkles className="size-5 text-blue-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Advanced Analytics</span>
                         <p className="text-muted-foreground">User activity tracking, performance monitoring, and usage dashboards</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-blue-500 mt-0.5" />
+                      <Sparkles className="size-5 text-blue-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Internationalization</span>
                         <p className="text-muted-foreground">i18n support with React Router v7 and dynamic locale loading</p>
@@ -264,21 +264,21 @@ export default function Index(_: Route.ComponentProps) {
                   <h3 className="font-medium text-lg mb-2">Long Term (6+ months)</h3>
                   <div className="space-y-2">
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-purple-500 mt-0.5" />
+                      <Sparkles className="size-5 text-purple-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Real-time Features</span>
                         <p className="text-muted-foreground">WebSocket integration, live notifications, and collaborative features</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-purple-500 mt-0.5" />
+                      <Sparkles className="size-5 text-purple-500 mt-0.5" />
                       <div>
                         <span className="font-medium">Mobile App Template</span>
                         <p className="text-muted-foreground">React Native version with shared authentication and design system</p>
                       </div>
                     </div>
                     <div className="flex items-start gap-2">
-                      <Sparkles className="h-5 w-5 text-purple-500 mt-0.5" />
+                      <Sparkles className="size-5 text-purple-500 mt-0.5" />
                       <div>
                         <span className="font-medium">CLI Generator</span>
                         <p className="text-muted-foreground">Command-line tool to scaffold new projects from this template</p>

@@ -30,7 +30,7 @@ const AccordionTrigger = forwardRef<
       {...props}
     >
       {children}
-      <ChevronDown className={cn(props.disabled && "hidden", "h-4 w-4 shrink-0 transition-transform duration-200")} />
+      <ChevronDown className={cn(props.disabled && "hidden", "size-4 shrink-0 transition-transform duration-200")} />
     </Trigger>
   </Header>
 ));
