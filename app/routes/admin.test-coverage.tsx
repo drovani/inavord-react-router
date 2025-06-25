@@ -117,13 +117,13 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
       <Collapsible open={isOpen} onOpenChange={setIsOpen}>
         <CollapsibleTrigger asChild>
           <CardHeader className="cursor-pointer hover:bg-muted/50 transition-colors">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                {isOpen ? <ChevronDown className="size-4" /> : <ChevronRight className="size-4" />}
-                <FileText className="size-4" />
-                <CardTitle className="text-sm font-mono">{filePath.replace(/^\/.*\/inavord-react-router\//, '')}</CardTitle>
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+              <div className="flex items-center gap-2 min-w-0 flex-1">
+                {isOpen ? <ChevronDown className="size-4 flex-shrink-0" /> : <ChevronRight className="size-4 flex-shrink-0" />}
+                <FileText className="size-4 flex-shrink-0" />
+                <CardTitle className="text-sm font-mono truncate">{filePath.replace(/^\/.*\/inavord-react-router\//, '')}</CardTitle>
               </div>
-              <div className="flex items-center gap-2">
+              <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
                 <Button
                   variant="ghost"
                   size="sm"
@@ -131,10 +131,10 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                     e.stopPropagation()
                     openInVSCode()
                   }}
-                  className="h-6 px-2"
+                  className="h-6 px-1 sm:px-2 text-xs"
                 >
-                  <ExternalLink className="size-3 mr-1" />
-                  VS Code
+                  <ExternalLink className="size-3 sm:mr-1" />
+                  <span className="hidden sm:inline">VS Code</span>
                 </Button>
                 <Button
                   variant="ghost"
@@ -143,12 +143,12 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                     e.stopPropagation()
                     openOnGitHub()
                   }}
-                  className="h-6 px-2"
+                  className="h-6 px-1 sm:px-2 text-xs"
                 >
-                  <ExternalLink className="size-3 mr-1" />
-                  GitHub
+                  <ExternalLink className="size-3 sm:mr-1" />
+                  <span className="hidden sm:inline">GitHub</span>
                 </Button>
-                <Badge variant={getBadgeVariant(statementPct)}>
+                <Badge variant={getBadgeVariant(statementPct)} className="text-xs">
                   {formatPercentage(statementPct)}
                 </Badge>
               </div>
@@ -158,7 +158,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
         
         <CollapsibleContent>
           <CardContent className="pt-0">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-4">
               <div>
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-sm font-medium">Statements</span>
@@ -191,26 +191,26 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
             {totalStatements > 0 && (
               <div className="space-y-2">
                 <h4 className="text-sm font-medium">Coverage Details</h4>
-                <div className="grid grid-cols-1 gap-2 text-xs">
+                <div className="grid grid-cols-1 gap-2 text-xs max-h-96 overflow-y-auto">
                   {Object.entries(fileData.s).map(([statementId, count]) => {
                     const statementInfo = fileData.statementMap[statementId]
                     const lineNumber = statementInfo?.start?.line
                     
                     return (
-                      <div key={statementId} className="flex items-center justify-between p-2 rounded border">
-                        <div className="flex items-center gap-2">
+                      <div key={statementId} className="flex flex-col sm:flex-row sm:items-center sm:justify-between p-2 rounded border gap-2">
+                        <div className="flex items-center gap-2 min-w-0 flex-1">
                           {count > 0 ? (
-                            <CheckCircle className="size-3 text-green-500" />
+                            <CheckCircle className="size-3 text-green-500 flex-shrink-0" />
                           ) : (
-                            <XCircle className="size-3 text-red-500" />
+                            <XCircle className="size-3 text-red-500 flex-shrink-0" />
                           )}
-                          <span className="font-mono">
+                          <span className="font-mono text-xs break-all">
                             Statement {statementId}: {count > 0 ? `Hit ${count} times` : 'Not covered'}
                             {lineNumber && <span className="text-muted-foreground ml-2">(Line {lineNumber})</span>}
                           </span>
                         </div>
                         {count === 0 && lineNumber && (
-                          <div className="flex gap-1">
+                          <div className="flex gap-1 flex-shrink-0">
                             <Button
                               variant="outline"
                               size="sm"
@@ -252,14 +252,14 @@ export default function AdminTestCoverage() {
   
   return (
     <div className="space-y-6">
-      <div className="flex items-center justify-between">
+      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-3xl font-bold tracking-tight">Test Coverage</h1>
+          <h1 className="text-2xl sm:text-3xl font-bold tracking-tight">Test Coverage</h1>
           <p className="text-muted-foreground">
             Code coverage analysis from test execution
           </p>
         </div>
-        <div className="text-right">
+        <div className="text-left sm:text-right">
           <p className="text-sm text-muted-foreground">Last updated</p>
           <p className="text-sm font-mono">
             {new Date(lastUpdated).toLocaleString()}
@@ -274,7 +274,7 @@ export default function AdminTestCoverage() {
             <CardTitle>Overall Coverage Summary</CardTitle>
           </CardHeader>
           <CardContent>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 sm:gap-6">
               <div className="text-center">
                 <div className="text-2xl font-bold text-primary">
                   {formatPercentage(summary.statements.pct)}
