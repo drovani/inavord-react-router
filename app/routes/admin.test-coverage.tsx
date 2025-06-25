@@ -3,8 +3,9 @@ import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import { Badge } from '~/components/ui/badge'
 import { Progress } from '~/components/ui/progress'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '~/components/ui/collapsible'
-import { ChevronDown, ChevronRight, FileText, CheckCircle, XCircle } from 'lucide-react'
+import { ChevronDown, ChevronRight, FileText, CheckCircle, XCircle, ExternalLink } from 'lucide-react'
 import { useState } from 'react'
+import { Button } from '~/components/ui/button'
 import { createClient } from '~/lib/supabase/client'
 import testCoverageData from '~/data/test-coverage.json'
 
@@ -89,6 +90,27 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
   const coveredBranches = Object.values(fileData.b).reduce((sum, branches) => 
     sum + branches.filter(count => count > 0).length, 0)
   const branchPct = totalBranches > 0 ? (coveredBranches / totalBranches) * 100 : 0
+  
+  // Helper function to open file in VS Code
+  const openInVSCode = (lineNumber?: number) => {
+    const cleanPath = filePath.replace(/^\/.*\/inavord-react-router\//, '')
+    // For local development, assume the project is in the current working directory
+    const fullPath = `${window.location.origin.includes('localhost') ? '/home/drovani/inavord-react-router' : ''}/${cleanPath}`
+    const uri = lineNumber 
+      ? `vscode://file${fullPath}:${lineNumber}`
+      : `vscode://file${fullPath}`
+    window.location.href = uri
+  }
+  
+  // Helper function to open file on GitHub
+  const openOnGitHub = (lineNumber?: number) => {
+    const cleanPath = filePath.replace(/^\/.*\/inavord-react-router\//, '')
+    // Update this with your actual GitHub repository URL
+    const githubUrl = lineNumber 
+      ? `https://github.com/drovani/inavord-react-router/blob/main/${cleanPath}#L${lineNumber}`
+      : `https://github.com/drovani/inavord-react-router/blob/main/${cleanPath}`
+    window.open(githubUrl, '_blank')
+  }
 
   return (
     <Card className="mb-4">
@@ -102,6 +124,30 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
                 <CardTitle className="text-sm font-mono">{filePath.replace(/^\/.*\/inavord-react-router\//, '')}</CardTitle>
               </div>
               <div className="flex items-center gap-2">
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    openInVSCode()
+                  }}
+                  className="h-6 px-2"
+                >
+                  <ExternalLink className="size-3 mr-1" />
+                  VS Code
+                </Button>
+                <Button
+                  variant="ghost"
+                  size="sm"
+                  onClick={(e) => {
+                    e.stopPropagation()
+                    openOnGitHub()
+                  }}
+                  className="h-6 px-2"
+                >
+                  <ExternalLink className="size-3 mr-1" />
+                  GitHub
+                </Button>
                 <Badge variant={getBadgeVariant(statementPct)}>
                   {formatPercentage(statementPct)}
                 </Badge>
@@ -146,18 +192,46 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
               <div className="space-y-2">
                 <h4 className="text-sm font-medium">Coverage Details</h4>
                 <div className="grid grid-cols-1 gap-2 text-xs">
-                  {Object.entries(fileData.s).map(([statementId, count]) => (
-                    <div key={statementId} className="flex items-center gap-2 p-2 rounded border">
-                      {count > 0 ? (
-                        <CheckCircle className="size-3 text-green-500" />
-                      ) : (
-                        <XCircle className="size-3 text-red-500" />
-                      )}
-                      <span className="font-mono">
-                        Statement {statementId}: {count > 0 ? `Hit ${count} times` : 'Not covered'}
-                      </span>
-                    </div>
-                  ))}
+                  {Object.entries(fileData.s).map(([statementId, count]) => {
+                    const statementInfo = fileData.statementMap[statementId]
+                    const lineNumber = statementInfo?.start?.line
+                    
+                    return (
+                      <div key={statementId} className="flex items-center justify-between p-2 rounded border">
+                        <div className="flex items-center gap-2">
+                          {count > 0 ? (
+                            <CheckCircle className="size-3 text-green-500" />
+                          ) : (
+                            <XCircle className="size-3 text-red-500" />
+                          )}
+                          <span className="font-mono">
+                            Statement {statementId}: {count > 0 ? `Hit ${count} times` : 'Not covered'}
+                            {lineNumber && <span className="text-muted-foreground ml-2">(Line {lineNumber})</span>}
+                          </span>
+                        </div>
+                        {count === 0 && lineNumber && (
+                          <div className="flex gap-1">
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => openInVSCode(lineNumber)}
+                              className="h-6 px-2 text-xs"
+                            >
+                              VS Code
+                            </Button>
+                            <Button
+                              variant="outline"
+                              size="sm"
+                              onClick={() => openOnGitHub(lineNumber)}
+                              className="h-6 px-2 text-xs"
+                            >
+                              GitHub
+                            </Button>
+                          </div>
+                        )}
+                      </div>
+                    )
+                  })}
                 </div>
               </div>
             )}
