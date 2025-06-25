@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 import { cn } from "~/lib/utils";
 
 const RadioGroup = forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ComponentRef<typeof Root>,
   React.ComponentPropsWithoutRef<typeof Root> & {
     className?: ClassValue;
   }
@@ -15,7 +15,7 @@ const RadioGroup = forwardRef<
 RadioGroup.displayName = Root.displayName;
 
 const RadioGroupItem = forwardRef<
-  React.ElementRef<typeof Item>,
+  React.ComponentRef<typeof Item>,
   React.ComponentPropsWithoutRef<typeof Item> & {
     className?: ClassValue;
   }

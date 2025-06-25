@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 
 import { cn } from "~/lib/utils";
 
-const Avatar = forwardRef<React.ElementRef<typeof Root>, React.ComponentPropsWithoutRef<typeof Root>>(
+const Avatar = forwardRef<React.ComponentRef<typeof Root>, React.ComponentPropsWithoutRef<typeof Root>>(
   ({ className, ...props }, ref) => (
     <Root
       ref={ref}
@@ -14,14 +14,14 @@ const Avatar = forwardRef<React.ElementRef<typeof Root>, React.ComponentPropsWit
 );
 Avatar.displayName = Root.displayName;
 
-const AvatarImage = forwardRef<React.ElementRef<typeof Image>, React.ComponentPropsWithoutRef<typeof Image>>(
+const AvatarImage = forwardRef<React.ComponentRef<typeof Image>, React.ComponentPropsWithoutRef<typeof Image>>(
   ({ className, ...props }, ref) => (
     <Image ref={ref} className={cn("aspect-square h-full w-full", className)} {...props} />
   )
 );
 AvatarImage.displayName = Image.displayName;
 
-const AvatarFallback = forwardRef<React.ElementRef<typeof Fallback>, React.ComponentPropsWithoutRef<typeof Fallback>>(
+const AvatarFallback = forwardRef<React.ComponentRef<typeof Fallback>, React.ComponentPropsWithoutRef<typeof Fallback>>(
   ({ className, ...props }, ref) => (
     <Fallback
       ref={ref}

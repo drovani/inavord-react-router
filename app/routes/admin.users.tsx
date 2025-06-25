@@ -502,7 +502,7 @@ export default function AdminUsers() {
                                   <Button
                                     variant="ghost"
                                     size="sm"
-                                    className="size-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50">
+                                    className="size-8 p-0 text-red-600 hover:text-red-700 hover:bg-red-50"
                                     disabled={!hasServiceRole || updatingUserId === user.id}
                                     title="Delete user permanently"
                                   >

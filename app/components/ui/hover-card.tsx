@@ -8,7 +8,7 @@ const HoverCard = Root;
 const HoverCardTrigger = Trigger;
 
 const HoverCardContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
     align?: "center" | "end" | "start" | undefined;

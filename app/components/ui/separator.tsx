@@ -5,7 +5,7 @@ import { type ClassValue } from "clsx";
 import { cn } from "~/lib/utils";
 
 const Separator = forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ComponentRef<typeof Root>,
   React.ComponentPropsWithoutRef<typeof Root> & {
     className?: ClassValue;
     orientation?: "horizontal" | "vertical" | undefined;

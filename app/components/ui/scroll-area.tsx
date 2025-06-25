@@ -3,7 +3,7 @@ import { forwardRef } from "react";
 
 import { cn } from "~/lib/utils";
 
-const ScrollArea = forwardRef<React.ElementRef<typeof Root>, React.ComponentPropsWithoutRef<typeof Root>>(
+const ScrollArea = forwardRef<React.ComponentRef<typeof Root>, React.ComponentPropsWithoutRef<typeof Root>>(
   ({ className, children, ...props }, ref) => (
     <Root ref={ref} className={cn("relative overflow-hidden", className)} {...props}>
       <Viewport className="h-full w-full rounded-[inherit]">{children}</Viewport>
@@ -15,7 +15,7 @@ const ScrollArea = forwardRef<React.ElementRef<typeof Root>, React.ComponentProp
 ScrollArea.displayName = Root.displayName;
 
 const ScrollBar = forwardRef<
-  React.ElementRef<typeof ScrollAreaScrollbar>,
+  React.ComponentRef<typeof ScrollAreaScrollbar>,
   React.ComponentPropsWithoutRef<typeof ScrollAreaScrollbar>
 >(({ className, orientation = "vertical", ...props }, ref) => (
   <ScrollAreaScrollbar

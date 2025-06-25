@@ -5,7 +5,7 @@ import { forwardRef } from "react";
 import { cn } from "~/lib/utils";
 
 const Checkbox = forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ComponentRef<typeof Root>,
   React.ComponentPropsWithoutRef<typeof Root> & {
     className?: ClassValue;
   }

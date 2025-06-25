@@ -27,7 +27,7 @@ const SelectGroup = Group;
 const SelectValue = Value;
 
 const SelectTrigger = forwardRef<
-  React.ElementRef<typeof Trigger>,
+  React.ComponentRef<typeof Trigger>,
   React.ComponentPropsWithoutRef<typeof Trigger> & {
     className?: ClassValue;
   }
@@ -49,7 +49,7 @@ const SelectTrigger = forwardRef<
 SelectTrigger.displayName = Trigger.displayName;
 
 const SelectScrollUpButton = forwardRef<
-  React.ElementRef<typeof ScrollUpButton>,
+  React.ComponentRef<typeof ScrollUpButton>,
   React.ComponentPropsWithoutRef<typeof ScrollUpButton> & {
     className?: ClassValue;
   }
@@ -65,7 +65,7 @@ const SelectScrollUpButton = forwardRef<
 SelectScrollUpButton.displayName = ScrollUpButton.displayName;
 
 const SelectScrollDownButton = forwardRef<
-  React.ElementRef<typeof ScrollDownButton>,
+  React.ComponentRef<typeof ScrollDownButton>,
   React.ComponentPropsWithoutRef<typeof ScrollDownButton> & {
     className?: ClassValue;
   }
@@ -81,7 +81,7 @@ const SelectScrollDownButton = forwardRef<
 SelectScrollDownButton.displayName = ScrollDownButton.displayName;
 
 const SelectContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
     position?: "item-aligned" | "popper" | undefined;
@@ -116,7 +116,7 @@ const SelectContent = forwardRef<
 SelectContent.displayName = Content.displayName;
 
 const SelectLabel = forwardRef<
-  React.ElementRef<typeof Label>,
+  React.ComponentRef<typeof Label>,
   React.ComponentPropsWithoutRef<typeof Label> & {
     className?: ClassValue;
   }
@@ -126,7 +126,7 @@ const SelectLabel = forwardRef<
 SelectLabel.displayName = Label.displayName;
 
 const SelectItem = forwardRef<
-  React.ElementRef<typeof Item>,
+  React.ComponentRef<typeof Item>,
   React.ComponentPropsWithoutRef<typeof Item> & {
     className?: ClassValue;
   }
@@ -151,7 +151,7 @@ const SelectItem = forwardRef<
 SelectItem.displayName = Item.displayName;
 
 const SelectSeparator = forwardRef<
-  React.ElementRef<typeof Separator>,
+  React.ComponentRef<typeof Separator>,
   React.ComponentPropsWithoutRef<typeof Separator> & {
     className?: ClassValue;
   }

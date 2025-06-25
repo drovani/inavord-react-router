@@ -7,7 +7,7 @@ import { cn } from "~/lib/utils";
 const Accordion = Root;
 
 const AccordionItem = forwardRef<
-  React.ElementRef<typeof Item>,
+  React.ComponentRef<typeof Item>,
   React.ComponentPropsWithoutRef<typeof Item> & {
     className?: ClassValue;
   }
@@ -15,7 +15,7 @@ const AccordionItem = forwardRef<
 AccordionItem.displayName = "AccordionItem";
 
 const AccordionTrigger = forwardRef<
-  React.ElementRef<typeof Trigger>,
+  React.ComponentRef<typeof Trigger>,
   React.ComponentPropsWithoutRef<typeof Trigger> & {
     className?: ClassValue;
   }
@@ -37,7 +37,7 @@ const AccordionTrigger = forwardRef<
 AccordionTrigger.displayName = Trigger.displayName;
 
 const AccordionContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
   }

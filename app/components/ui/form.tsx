@@ -3,12 +3,12 @@ import { Slot } from "@radix-ui/react-slot";
 import { type ClassValue } from "clsx";
 import { createContext, forwardRef, useContext, useId } from "react";
 import {
-  Controller,
-  type ControllerProps,
-  type FieldPath,
-  type FieldValues,
-  FormProvider,
-  useFormContext,
+    Controller,
+    type ControllerProps,
+    type FieldPath,
+    type FieldValues,
+    FormProvider,
+    useFormContext,
 } from "react-hook-form";
 import { Label } from "~/components/ui/label";
 import { cn } from "~/lib/utils";
@@ -78,7 +78,7 @@ const FormItem = forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>
 FormItem.displayName = "FormItem";
 
 const FormLabel = forwardRef<
-  React.ElementRef<typeof Root>,
+  React.ComponentRef<typeof Root>,
   React.ComponentPropsWithoutRef<typeof Root> & {
     className?: ClassValue;
   }
@@ -89,7 +89,7 @@ const FormLabel = forwardRef<
 });
 FormLabel.displayName = "FormLabel";
 
-const FormControl = forwardRef<React.ElementRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
+const FormControl = forwardRef<React.ComponentRef<typeof Slot>, React.ComponentPropsWithoutRef<typeof Slot>>(
   ({ ...props }, ref) => {
     const { error, formItemId, formDescriptionId, formMessageId } = useFormField();
 

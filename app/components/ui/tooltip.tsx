@@ -9,7 +9,7 @@ const Tooltip = Root;
 
 const TooltipTrigger = Trigger;
 
-const TooltipContent = forwardRef<React.ElementRef<typeof Content>, React.ComponentPropsWithoutRef<typeof Content>>(
+const TooltipContent = forwardRef<React.ComponentRef<typeof Content>, React.ComponentPropsWithoutRef<typeof Content>>(
   ({ className, sideOffset = 4, ...props }, ref) => (
     <Content
       ref={ref}

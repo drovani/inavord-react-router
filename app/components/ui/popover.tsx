@@ -8,7 +8,7 @@ const Popover = Root;
 const PopoverTrigger = Trigger;
 
 const PopoverContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
     align?: "center" | "end" | "start" | undefined;

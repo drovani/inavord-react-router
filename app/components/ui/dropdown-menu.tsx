@@ -1,20 +1,20 @@
 import { type CheckedState } from "@radix-ui/react-checkbox";
 import {
-  CheckboxItem,
-  Content,
-  Group,
-  Item,
-  ItemIndicator,
-  Label,
-  Portal,
-  RadioGroup,
-  RadioItem,
-  Root,
-  Separator,
-  Sub,
-  SubContent,
-  SubTrigger,
-  Trigger,
+    CheckboxItem,
+    Content,
+    Group,
+    Item,
+    ItemIndicator,
+    Label,
+    Portal,
+    RadioGroup,
+    RadioItem,
+    Root,
+    Separator,
+    Sub,
+    SubContent,
+    SubTrigger,
+    Trigger,
 } from "@radix-ui/react-dropdown-menu";
 import { type ClassValue } from "clsx";
 import { Check, ChevronRight, Circle } from "lucide-react";
@@ -34,7 +34,7 @@ const DropdownMenuSub = Sub;
 const DropdownMenuRadioGroup = RadioGroup;
 
 const DropdownMenuSubTrigger = forwardRef<
-  React.ElementRef<typeof SubTrigger>,
+  React.ComponentRef<typeof SubTrigger>,
   React.ComponentPropsWithoutRef<typeof SubTrigger> & {
     inset?: boolean;
     className?: ClassValue;
@@ -56,7 +56,7 @@ const DropdownMenuSubTrigger = forwardRef<
 DropdownMenuSubTrigger.displayName = SubTrigger.displayName;
 
 const DropdownMenuSubContent = forwardRef<
-  React.ElementRef<typeof SubContent>,
+  React.ComponentRef<typeof SubContent>,
   React.ComponentPropsWithoutRef<typeof SubContent> & {
     className?: ClassValue;
   }
@@ -73,7 +73,7 @@ const DropdownMenuSubContent = forwardRef<
 DropdownMenuSubContent.displayName = SubContent.displayName;
 
 const DropdownMenuContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
     sideOffset?: number;
@@ -94,7 +94,7 @@ const DropdownMenuContent = forwardRef<
 DropdownMenuContent.displayName = Content.displayName;
 
 const DropdownMenuItem = forwardRef<
-  React.ElementRef<typeof Item>,
+  React.ComponentRef<typeof Item>,
   React.ComponentPropsWithoutRef<typeof Item> & {
     inset?: boolean;
     className?: ClassValue;
@@ -113,7 +113,7 @@ const DropdownMenuItem = forwardRef<
 DropdownMenuItem.displayName = Item.displayName;
 
 const DropdownMenuCheckboxItem = forwardRef<
-  React.ElementRef<typeof CheckboxItem>,
+  React.ComponentRef<typeof CheckboxItem>,
   React.ComponentPropsWithoutRef<typeof CheckboxItem> & {
     className?: ClassValue;
     checked: CheckedState | undefined;
@@ -139,7 +139,7 @@ const DropdownMenuCheckboxItem = forwardRef<
 DropdownMenuCheckboxItem.displayName = CheckboxItem.displayName;
 
 const DropdownMenuRadioItem = forwardRef<
-  React.ElementRef<typeof RadioItem>,
+  React.ComponentRef<typeof RadioItem>,
   React.ComponentPropsWithoutRef<typeof RadioItem> & {
     className?: ClassValue;
   }
@@ -163,7 +163,7 @@ const DropdownMenuRadioItem = forwardRef<
 DropdownMenuRadioItem.displayName = RadioItem.displayName;
 
 const DropdownMenuLabel = forwardRef<
-  React.ElementRef<typeof Label>,
+  React.ComponentRef<typeof Label>,
   React.ComponentPropsWithoutRef<typeof Label> & {
     inset?: boolean;
     className?: ClassValue;
@@ -174,7 +174,7 @@ const DropdownMenuLabel = forwardRef<
 DropdownMenuLabel.displayName = Label.displayName;
 
 const DropdownMenuSeparator = forwardRef<
-  React.ElementRef<typeof Separator>,
+  React.ComponentRef<typeof Separator>,
   React.ComponentPropsWithoutRef<typeof Separator> & {
     className?: ClassValue;
   }
@@ -189,20 +189,20 @@ const DropdownMenuShortcut = ({ className, ...props }: React.HTMLAttributes<HTML
 DropdownMenuShortcut.displayName = "DropdownMenuShortcut";
 
 export {
-  DropdownMenu,
-  DropdownMenuCheckboxItem,
-  DropdownMenuContent,
-  DropdownMenuGroup,
-  DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuPortal,
-  DropdownMenuRadioGroup,
-  DropdownMenuRadioItem,
-  DropdownMenuSeparator,
-  DropdownMenuShortcut,
-  DropdownMenuSub,
-  DropdownMenuSubContent,
-  DropdownMenuSubTrigger,
-  DropdownMenuTrigger
+    DropdownMenu,
+    DropdownMenuCheckboxItem,
+    DropdownMenuContent,
+    DropdownMenuGroup,
+    DropdownMenuItem,
+    DropdownMenuLabel,
+    DropdownMenuPortal,
+    DropdownMenuRadioGroup,
+    DropdownMenuRadioItem,
+    DropdownMenuSeparator,
+    DropdownMenuShortcut,
+    DropdownMenuSub,
+    DropdownMenuSubContent,
+    DropdownMenuSubTrigger,
+    DropdownMenuTrigger
 };
 

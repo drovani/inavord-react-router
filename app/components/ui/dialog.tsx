@@ -15,7 +15,7 @@ const DialogPortal = Portal;
 const DialogClose = Close;
 
 const DialogOverlay = forwardRef<
-  React.ElementRef<typeof Overlay>,
+  React.ComponentRef<typeof Overlay>,
   React.ComponentPropsWithoutRef<typeof Overlay> & {
     className?: ClassValue;
   }
@@ -32,7 +32,7 @@ const DialogOverlay = forwardRef<
 DialogOverlay.displayName = Overlay.displayName;
 
 const DialogContent = forwardRef<
-  React.ElementRef<typeof Content>,
+  React.ComponentRef<typeof Content>,
   React.ComponentPropsWithoutRef<typeof Content> & {
     className?: ClassValue;
   }
@@ -68,7 +68,7 @@ const DialogFooter = ({ className, ...props }: React.HTMLAttributes<HTMLDivEleme
 DialogFooter.displayName = "DialogFooter";
 
 const DialogTitle = forwardRef<
-  React.ElementRef<typeof Title>,
+  React.ComponentRef<typeof Title>,
   React.ComponentPropsWithoutRef<typeof Title> & {
     className?: ClassValue;
   }
@@ -78,7 +78,7 @@ const DialogTitle = forwardRef<
 DialogTitle.displayName = Title.displayName;
 
 const DialogDescription = forwardRef<
-  React.ElementRef<typeof Description>,
+  React.ComponentRef<typeof Description>,
   React.ComponentPropsWithoutRef<typeof Description> & {
     className?: ClassValue;
   }
@@ -88,15 +88,15 @@ const DialogDescription = forwardRef<
 DialogDescription.displayName = Description.displayName;
 
 export {
-  Dialog,
-  DialogClose,
-  DialogContent,
-  DialogDescription,
-  DialogFooter,
-  DialogHeader,
-  DialogOverlay,
-  DialogPortal,
-  DialogTitle,
-  DialogTrigger
+    Dialog,
+    DialogClose,
+    DialogContent,
+    DialogDescription,
+    DialogFooter,
+    DialogHeader,
+    DialogOverlay,
+    DialogPortal,
+    DialogTitle,
+    DialogTrigger
 };
 
