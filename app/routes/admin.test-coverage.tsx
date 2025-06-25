@@ -1,11 +1,12 @@
-import { CheckCircle, ChevronDown, ChevronRight, ExternalLink, FileText, XCircle } from 'lucide-react'
-import { useState } from 'react'
+import { CheckCircle, ChevronDown, ChevronRight, ExternalLink, FileText, XCircle, Filter } from 'lucide-react'
+import { useState, useMemo } from 'react'
 import { useLoaderData } from 'react-router'
 import { Badge } from '~/components/ui/badge'
 import { Button } from '~/components/ui/button'
 import { Card, CardContent, CardHeader, CardTitle } from '~/components/ui/card'
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '~/components/ui/collapsible'
 import { Progress } from '~/components/ui/progress'
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '~/components/ui/select'
 import testCoverageData from '~/data/test-coverage.json'
 import { createClient } from '~/lib/supabase/client'
 
@@ -72,6 +73,58 @@ function getBadgeVariant(pct: number): "default" | "secondary" | "destructive" |
   if (pct >= 60) return "secondary"
   if (pct >= 40) return "outline"
   return "destructive"
+}
+
+type CoverageThreshold = 'all' | 'high' | 'medium' | 'low' | 'uncovered'
+type FileType = 'all' | 'components' | 'routes' | 'hooks' | 'utils' | 'tests' | 'config'
+type CoverageIssue = 'all' | 'uncovered-functions' | 'uncovered-branches' | 'uncovered-statements' | 'mixed-coverage'
+
+function getCoverageThreshold(pct: number): CoverageThreshold {
+  if (pct === 0) return 'uncovered'
+  if (pct >= 80) return 'high'
+  if (pct >= 40) return 'medium'
+  return 'low'
+}
+
+function getFileType(filePath: string): FileType {
+  const cleanPath = filePath.replace(/^\/.*\/inavord-react-router\//, '')
+  if (cleanPath.startsWith('app/components/')) return 'components'
+  if (cleanPath.startsWith('app/routes/')) return 'routes'
+  if (cleanPath.startsWith('app/hooks/')) return 'hooks'
+  if (cleanPath.startsWith('app/lib/') || cleanPath.startsWith('app/utils/')) return 'utils'
+  if (cleanPath.startsWith('app/__tests__/') || cleanPath.includes('.test.')) return 'tests'
+  return 'config'
+}
+
+function getCoverageIssues(fileData: CoverageFile): CoverageIssue[] {
+  const issues: CoverageIssue[] = []
+  
+  const uncoveredFunctions = Object.values(fileData.f).filter(count => count === 0).length
+  const uncoveredBranches = Object.values(fileData.b).reduce((sum, branches) => 
+    sum + branches.filter(count => count === 0).length, 0)
+  const uncoveredStatements = Object.values(fileData.s).filter(count => count === 0).length
+  
+  const totalFunctions = Object.keys(fileData.f).length
+  const totalBranches = Object.values(fileData.b).reduce((sum, branches) => sum + branches.length, 0)
+  const totalStatements = Object.keys(fileData.s).length
+  
+  if (uncoveredFunctions > 0) issues.push('uncovered-functions')
+  if (uncoveredBranches > 0) issues.push('uncovered-branches')
+  if (uncoveredStatements > 0) issues.push('uncovered-statements')
+  
+  // Mixed coverage: has some covered and some uncovered code
+  const hasCoveredCode = (
+    (totalFunctions > uncoveredFunctions) ||
+    (totalBranches > uncoveredBranches) ||
+    (totalStatements > uncoveredStatements)
+  )
+  const hasUncoveredCode = uncoveredFunctions > 0 || uncoveredBranches > 0 || uncoveredStatements > 0
+  
+  if (hasCoveredCode && hasUncoveredCode) {
+    issues.push('mixed-coverage')
+  }
+  
+  return issues
 }
 
 function FileDetails({ filePath, fileData }: { filePath: string; fileData: CoverageFile }) {
@@ -246,9 +299,46 @@ export default function AdminTestCoverage() {
   const data = useLoaderData<typeof loader>()
   const { coverage, lastUpdated } = data as { coverage: CoverageData; lastUpdated: string }
 
+  // Filter state
+  const [coverageFilter, setCoverageFilter] = useState<CoverageThreshold>('all')
+  const [fileTypeFilter, setFileTypeFilter] = useState<FileType>('all')
+  const [issueFilter, setIssueFilter] = useState<CoverageIssue>('all')
+
   // Separate files from summary data
-  const files = Object.entries(coverage).filter(([key]) => !key.includes('total'))
+  const allFiles = Object.entries(coverage).filter(([key]) => !key.includes('total'))
   const summary = (coverage as any).total as CoverageSummary | undefined
+
+  // Filter files based on selected criteria
+  const filteredFiles = useMemo(() => {
+    return allFiles.filter(([filePath, fileData]) => {
+      const file = fileData as CoverageFile
+      
+      // Calculate statement coverage percentage
+      const totalStatements = Object.keys(file.s).length
+      const coveredStatements = Object.values(file.s).filter(count => count > 0).length
+      const statementPct = totalStatements > 0 ? (coveredStatements / totalStatements) * 100 : 0
+      
+      // Coverage threshold filter
+      if (coverageFilter !== 'all') {
+        const threshold = getCoverageThreshold(statementPct)
+        if (threshold !== coverageFilter) return false
+      }
+      
+      // File type filter
+      if (fileTypeFilter !== 'all') {
+        const fileType = getFileType(filePath)
+        if (fileType !== fileTypeFilter) return false
+      }
+      
+      // Coverage issues filter
+      if (issueFilter !== 'all') {
+        const issues = getCoverageIssues(file)
+        if (!issues.includes(issueFilter)) return false
+      }
+      
+      return true
+    })
+  }, [allFiles, coverageFilter, fileTypeFilter, issueFilter])
 
   return (
     <div className="space-y-6">
@@ -323,18 +413,111 @@ export default function AdminTestCoverage() {
         </Card>
       )}
 
+      {/* Filters */}
+      <Card>
+        <CardHeader>
+          <div className="flex items-center gap-2">
+            <Filter className="size-4" />
+            <CardTitle>Filters</CardTitle>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Coverage Threshold</label>
+              <Select value={coverageFilter} onValueChange={(value: CoverageThreshold) => setCoverageFilter(value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All coverage levels" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Files</SelectItem>
+                  <SelectItem value="high">High Coverage (≥80%)</SelectItem>
+                  <SelectItem value="medium">Medium Coverage (40-79%)</SelectItem>
+                  <SelectItem value="low">Low Coverage (&lt;40%)</SelectItem>
+                  <SelectItem value="uncovered">Uncovered (0%)</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-sm font-medium">File Type</label>
+              <Select value={fileTypeFilter} onValueChange={(value: FileType) => setFileTypeFilter(value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All file types" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Types</SelectItem>
+                  <SelectItem value="components">Components</SelectItem>
+                  <SelectItem value="routes">Routes</SelectItem>
+                  <SelectItem value="hooks">Hooks</SelectItem>
+                  <SelectItem value="utils">Utilities</SelectItem>
+                  <SelectItem value="tests">Tests</SelectItem>
+                  <SelectItem value="config">Configuration</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+            
+            <div className="space-y-2">
+              <label className="text-sm font-medium">Coverage Issues</label>
+              <Select value={issueFilter} onValueChange={(value: CoverageIssue) => setIssueFilter(value)}>
+                <SelectTrigger>
+                  <SelectValue placeholder="All issues" />
+                </SelectTrigger>
+                <SelectContent>
+                  <SelectItem value="all">All Issues</SelectItem>
+                  <SelectItem value="uncovered-functions">Uncovered Functions</SelectItem>
+                  <SelectItem value="uncovered-branches">Uncovered Branches</SelectItem>
+                  <SelectItem value="uncovered-statements">Uncovered Statements</SelectItem>
+                  <SelectItem value="mixed-coverage">Mixed Coverage</SelectItem>
+                </SelectContent>
+              </Select>
+            </div>
+          </div>
+          
+          {/* Filter results summary */}
+          <div className="mt-4 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
+            <p className="text-sm text-muted-foreground">
+              Showing {filteredFiles.length} of {allFiles.length} files
+            </p>
+            
+            {(coverageFilter !== 'all' || fileTypeFilter !== 'all' || issueFilter !== 'all') && (
+              <Button
+                variant="outline"
+                size="sm"
+                onClick={() => {
+                  setCoverageFilter('all')
+                  setFileTypeFilter('all')
+                  setIssueFilter('all')
+                }}
+                className="h-8 px-3 text-xs"
+              >
+                Clear Filters
+              </Button>
+            )}
+          </div>
+        </CardContent>
+      </Card>
+
       {/* File-by-file breakdown */}
       <div>
         <h2 className="text-xl font-semibold mb-4">File Coverage Details</h2>
-        <div className="space-y-2">
-          {files.map(([filePath, fileData]) => (
-            <FileDetails
-              key={filePath}
-              filePath={filePath}
-              fileData={fileData as CoverageFile}
-            />
-          ))}
-        </div>
+        {filteredFiles.length === 0 ? (
+          <Card>
+            <CardContent className="py-8 text-center">
+              <p className="text-muted-foreground">No files match the selected filters.</p>
+            </CardContent>
+          </Card>
+        ) : (
+          <div className="space-y-2">
+            {filteredFiles.map(([filePath, fileData]) => (
+              <FileDetails
+                key={filePath}
+                filePath={filePath}
+                fileData={fileData as CoverageFile}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </div>
   )
