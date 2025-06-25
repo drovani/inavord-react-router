@@ -92,9 +92,14 @@ Optional for full user management:
 
 - Use loglevel for error logging and debugging instead of using console
 
+## Tailwind CSS Guidelines
+
+- **Square Elements**: When an element has identical height and width classes (e.g., `h-8 w-8`), always use the `size` property instead (e.g., `size-8`)
+- **Consistency**: This rule applies to all square dimensions including icons, avatars, buttons, and other square UI elements
+
 ## User Role Management
 
-- **Initial Admin Setup**: Use SQL Editor in Supabase Dashboard to assign admin role:
+- **Initial Admin Setup**: Use SQL Editor in Supabase Dashboard to assign initial admin role:
   ```sql
   UPDATE auth.users 
   SET raw_app_meta_data = jsonb_set(
