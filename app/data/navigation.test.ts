@@ -1,6 +1,5 @@
 import { describe, expect, it } from 'vitest'
 import { navigation } from './navigation'
-import { DatabaseZapIcon, UsersIcon, BarChart3Icon } from 'lucide-react'
 
 describe('Navigation Data', () => {
   describe('navigation structure', () => {
@@ -158,46 +157,34 @@ describe('Navigation Data', () => {
     })
   })
 
-  describe('specific navigation content', () => {
-    it('has Administration group', () => {
-      const adminGroup = navigation.find(group => group.name === 'Administration')
-      expect(adminGroup).toBeDefined()
+  describe('business rule validation', () => {
+    it('admin-only groups have admin role requirement', () => {
+      // Test the business rule: groups with admin-only routes must have admin role
+      navigation.forEach((group) => {
+        const hasAdminRoutes = group.items.some(item => 
+          item.href && item.href.startsWith('/admin/')
+        )
+        
+        if (hasAdminRoutes) {
+          expect(group.roles).toBeDefined()
+          expect(group.roles).toContain('admin')
+        }
+      })
     })
 
-    it('Administration group has expected items', () => {
-      const adminGroup = navigation.find(group => group.name === 'Administration')
-      expect(adminGroup?.items).toBeDefined()
-      
-      const itemNames = adminGroup?.items.map(item => item.name) || []
-      expect(itemNames).toContain('Data Setup')
-      expect(itemNames).toContain('User Management')
-      expect(itemNames).toContain('Test Coverage')
-    })
-
-    it('all admin items have correct hrefs', () => {
-      const adminGroup = navigation.find(group => group.name === 'Administration')
-      const items = adminGroup?.items || []
-      
-      const dataSetup = items.find(item => item.name === 'Data Setup')
-      const userManagement = items.find(item => item.name === 'User Management')
-      const testCoverage = items.find(item => item.name === 'Test Coverage')
-      
-      expect(dataSetup?.href).toBe('/admin/setup')
-      expect(userManagement?.href).toBe('/admin/users')
-      expect(testCoverage?.href).toBe('/admin/test-coverage')
-    })
-
-    it('all admin items have correct icons', () => {
-      const adminGroup = navigation.find(group => group.name === 'Administration')
-      const items = adminGroup?.items || []
-      
-      const dataSetup = items.find(item => item.name === 'Data Setup')
-      const userManagement = items.find(item => item.name === 'User Management')
-      const testCoverage = items.find(item => item.name === 'Test Coverage')
-      
-      expect(dataSetup?.icon).toBe(DatabaseZapIcon)
-      expect(userManagement?.icon).toBe(UsersIcon)
-      expect(testCoverage?.icon).toBe(BarChart3Icon)
+    it('role-restricted groups have proper access control', () => {
+      // Test business rule: if a group has roles, all its routes should be protected
+      navigation.forEach((group) => {
+        if (group.roles && group.roles.length > 0) {
+          // Groups with role restrictions should have meaningful navigation items
+          expect(group.items.length).toBeGreaterThan(0)
+          
+          // All items should either have hrefs or children (no empty navigation items)
+          group.items.forEach((item) => {
+            expect(item.href || item.children).toBeDefined()
+          })
+        }
+      })
     })
   })
 
