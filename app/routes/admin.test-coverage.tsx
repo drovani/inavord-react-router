@@ -1,4 +1,4 @@
-import { CheckCircle, ChevronDown, ChevronRight, ExternalLink, FileText, XCircle, Filter } from 'lucide-react'
+import { CheckCircle, ChevronDown, ChevronRight, ExternalLink, FileText, XCircle, Filter, Blocks, Navigation, Anchor, Wrench, TestTube, Cog } from 'lucide-react'
 import { useState, useMemo } from 'react'
 import { useLoaderData } from 'react-router'
 import { Badge } from '~/components/ui/badge'
@@ -96,6 +96,18 @@ function getFileType(filePath: string): FileType {
   return 'config'
 }
 
+function getFileTypeIcon(fileType: FileType) {
+  switch (fileType) {
+    case 'components': return Blocks
+    case 'routes': return Navigation
+    case 'hooks': return Anchor
+    case 'utils': return Wrench
+    case 'tests': return TestTube
+    case 'config': return Cog
+    default: return FileText
+  }
+}
+
 function getCoverageIssues(fileData: CoverageFile): CoverageIssue[] {
   const issues: CoverageIssue[] = []
   
@@ -129,6 +141,10 @@ function getCoverageIssues(fileData: CoverageFile): CoverageIssue[] {
 
 function FileDetails({ filePath, fileData }: { filePath: string; fileData: CoverageFile }) {
   const [isOpen, setIsOpen] = useState(false)
+  
+  // Get file type and icon
+  const fileType = getFileType(filePath)
+  const FileTypeIcon = getFileTypeIcon(fileType)
 
   // Calculate coverage percentages
   const totalStatements = Object.keys(fileData.s).length
@@ -173,7 +189,7 @@ function FileDetails({ filePath, fileData }: { filePath: string; fileData: Cover
             <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2">
               <div className="flex items-center gap-2 min-w-0 flex-1">
                 {isOpen ? <ChevronDown className="size-4 flex-shrink-0" /> : <ChevronRight className="size-4 flex-shrink-0" />}
-                <FileText className="size-4 flex-shrink-0" />
+                <FileTypeIcon className="size-4 flex-shrink-0" />
                 <CardTitle className="text-sm font-mono truncate">{filePath.replace(/^\/.*\/inavord-react-router\//, '')}</CardTitle>
               </div>
               <div className="flex items-center gap-1 sm:gap-2 flex-shrink-0">
@@ -447,12 +463,42 @@ export default function AdminTestCoverage() {
                 </SelectTrigger>
                 <SelectContent>
                   <SelectItem value="all">All Types</SelectItem>
-                  <SelectItem value="components">Components</SelectItem>
-                  <SelectItem value="routes">Routes</SelectItem>
-                  <SelectItem value="hooks">Hooks</SelectItem>
-                  <SelectItem value="utils">Utilities</SelectItem>
-                  <SelectItem value="tests">Tests</SelectItem>
-                  <SelectItem value="config">Configuration</SelectItem>
+                  <SelectItem value="components">
+                    <div className="flex items-center gap-2">
+                      <Blocks className="size-4" />
+                      Components
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="routes">
+                    <div className="flex items-center gap-2">
+                      <Navigation className="size-4" />
+                      Routes
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="hooks">
+                    <div className="flex items-center gap-2">
+                      <Anchor className="size-4" />
+                      Hooks
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="utils">
+                    <div className="flex items-center gap-2">
+                      <Wrench className="size-4" />
+                      Utilities
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="tests">
+                    <div className="flex items-center gap-2">
+                      <TestTube className="size-4" />
+                      Tests
+                    </div>
+                  </SelectItem>
+                  <SelectItem value="config">
+                    <div className="flex items-center gap-2">
+                      <Cog className="size-4" />
+                      Configuration
+                    </div>
+                  </SelectItem>
                 </SelectContent>
               </Select>
             </div>
