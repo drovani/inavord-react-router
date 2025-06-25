@@ -16,6 +16,7 @@ export default [
     layout("./layouts/ProtectedAdminLayout.tsx", [
       route("setup", "./routes/admin.setup.tsx"),
       route("users", "./routes/admin.users.tsx"),
+      route("test-coverage", "./routes/admin.test-coverage.tsx"),
       route("/*", "./routes/admin.tsx"),
     ]),
   ]),
