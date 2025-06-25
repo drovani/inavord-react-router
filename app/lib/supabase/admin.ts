@@ -138,8 +138,12 @@ export const adminUserOperations = {
         throw new Error(`A user with email ${email} already exists`);
       }
     } catch (checkError) {
+      // If it's our custom error about existing user, rethrow it
+      if (checkError instanceof Error && checkError.message.includes('already exists')) {
+        throw checkError;
+      }
       log.debug('Could not check existing users:', checkError);
-      // Continue with creation attempt
+      // Continue with creation attempt for other errors
     }
 
     // Try with minimal parameters first

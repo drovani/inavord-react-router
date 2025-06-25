@@ -19,6 +19,29 @@ export const mockSession: Session = {
   }
 }
 
+// Mock admin user operations
+export const mockAdminAuth = {
+  listUsers: vi.fn().mockResolvedValue({ 
+    data: { users: [mockSession.user] }, 
+    error: null 
+  }),
+  getUserById: vi.fn().mockResolvedValue({ 
+    data: { user: mockSession.user }, 
+    error: null 
+  }),
+  updateUserById: vi.fn().mockResolvedValue({ 
+    data: { user: mockSession.user }, 
+    error: null 
+  }),
+  createUser: vi.fn().mockResolvedValue({ 
+    data: { user: mockSession.user }, 
+    error: null 
+  }),
+  deleteUser: vi.fn().mockResolvedValue({ 
+    error: null 
+  }),
+}
+
 // Mock Supabase client
 export const mockSupabaseClient = {
   auth: {
@@ -31,6 +54,7 @@ export const mockSupabaseClient = {
     onAuthStateChange: vi.fn().mockReturnValue({
       data: { subscription: { unsubscribe: vi.fn() } }
     }),
+    admin: mockAdminAuth,
   },
   from: vi.fn().mockReturnThis(),
   select: vi.fn().mockReturnThis(),
