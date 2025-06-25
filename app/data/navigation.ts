@@ -1,4 +1,4 @@
-import { DatabaseZapIcon, UsersIcon } from "lucide-react";
+import { DatabaseZapIcon, UsersIcon, BarChart3Icon } from "lucide-react";
 
 interface NavigationGroup {
   name: string;
@@ -29,6 +29,11 @@ export const navigation: NavigationGroup[] = [
         name: "User Management",
         icon: UsersIcon,
         href: "/admin/users",
+      },
+      {
+        name: "Test Coverage",
+        icon: BarChart3Icon,
+        href: "/admin/test-coverage",
       },
     ],
   },
