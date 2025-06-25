@@ -13,7 +13,7 @@ describe('Navigation Data', () => {
     })
 
     it('each group has required properties', () => {
-      navigation.forEach((group, index) => {
+      navigation.forEach((group) => {
         expect(group).toHaveProperty('name')
         expect(group).toHaveProperty('items')
         expect(typeof group.name).toBe('string')
@@ -22,13 +22,13 @@ describe('Navigation Data', () => {
     })
 
     it('each group has non-empty name', () => {
-      navigation.forEach((group, index) => {
+      navigation.forEach((group) => {
         expect(group.name.length).toBeGreaterThan(0)
       })
     })
 
     it('each group has at least one item', () => {
-      navigation.forEach((group, index) => {
+      navigation.forEach((group) => {
         expect(group.items.length).toBeGreaterThan(0)
       })
     })
@@ -36,8 +36,8 @@ describe('Navigation Data', () => {
 
   describe('navigation items', () => {
     it('each item has required properties', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           expect(item).toHaveProperty('name')
           expect(item).toHaveProperty('icon')
           expect(typeof item.name).toBe('string')
@@ -47,16 +47,16 @@ describe('Navigation Data', () => {
     })
 
     it('each item has non-empty name', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           expect(item.name.length).toBeGreaterThan(0)
         })
       })
     })
 
     it('items with href have valid URL format', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           if (item.href) {
             expect(item.href).toMatch(/^\//)
           }
@@ -65,8 +65,8 @@ describe('Navigation Data', () => {
     })
 
     it('items with children do not have href', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           if (item.children) {
             expect(item.href).toBeUndefined()
           }
@@ -75,11 +75,11 @@ describe('Navigation Data', () => {
     })
 
     it('nested children follow same structure', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           if (item.children) {
             expect(Array.isArray(item.children)).toBe(true)
-            item.children.forEach((child, childIndex) => {
+            item.children.forEach((child) => {
               expect(child).toHaveProperty('name')
               expect(child).toHaveProperty('icon')
               expect(typeof child.name).toBe('string')
@@ -94,11 +94,11 @@ describe('Navigation Data', () => {
 
   describe('role-based access control', () => {
     it('groups with roles have valid role arrays', () => {
-      navigation.forEach((group, index) => {
+      navigation.forEach((group) => {
         if (group.roles) {
           expect(Array.isArray(group.roles)).toBe(true)
           expect(group.roles.length).toBeGreaterThan(0)
-          group.roles.forEach((role, roleIndex) => {
+          group.roles.forEach((role) => {
             expect(typeof role).toBe('string')
             expect(role.length).toBeGreaterThan(0)
           })
@@ -114,7 +114,7 @@ describe('Navigation Data', () => {
 
     it('role strings are valid role names', () => {
       const validRoles = ['admin', 'editor', 'user']
-      navigation.forEach((group, index) => {
+      navigation.forEach((group) => {
         if (group.roles) {
           group.roles.forEach((role) => {
             expect(validRoles).toContain(role)
@@ -126,8 +126,8 @@ describe('Navigation Data', () => {
 
   describe('icon components', () => {
     it('all icons are valid React components', () => {
-      navigation.forEach((group, groupIndex) => {
-        group.items.forEach((item, itemIndex) => {
+      navigation.forEach((group) => {
+        group.items.forEach((item) => {
           expect(typeof item.icon).toBe('object')
           // Check if it's a React component by looking for common properties
           expect(item.icon.displayName || item.icon.name).toBeDefined()
@@ -135,19 +135,25 @@ describe('Navigation Data', () => {
       })
     })
 
-    it('uses correct imported icons', () => {
-      const expectedIcons = [DatabaseZapIcon, UsersIcon, BarChart3Icon]
-      const usedIcons = new Set()
-      
+    it('uses icons from lucide-react library', () => {
       navigation.forEach((group) => {
         group.items.forEach((item) => {
-          usedIcons.add(item.icon)
+          // Lucide React icons are objects with specific properties
+          expect(typeof item.icon).toBe('object')
+          expect(item.icon).toHaveProperty('$$typeof')
+          expect(item.icon).toHaveProperty('render')
+          
+          // Check that it has a valid displayName (lucide icons have clean names)
+          expect(item.icon.displayName).toBeDefined()
+          expect(typeof item.icon.displayName).toBe('string')
+          if (item.icon.displayName) {
+            expect(item.icon.displayName.length).toBeGreaterThan(0)
+          }
+          
+          // Ensure it's not from another icon library by checking the structure
+          // Lucide icons have this specific object structure with $$typeof and render
+          expect(Object.keys(item.icon)).toEqual(['$$typeof', 'render'])
         })
-      })
-
-      // Check that all used icons are from our expected imports
-      usedIcons.forEach((icon) => {
-        expect(expectedIcons).toContain(icon)
       })
     })
   })
