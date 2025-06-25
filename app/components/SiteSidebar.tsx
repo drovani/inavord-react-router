@@ -5,7 +5,6 @@ import type { ReactElement } from "react";
 import { Link, NavLink } from "react-router";
 import { useAuth } from "~/contexts/AuthContext";
 import { navigation } from "~/data/navigation";
-import HeroWarsLogo from "~/images/hero-wars-alliance-logo.webp";
 import { cn } from "~/lib/utils";
 import { SiteUserMenu } from "./SiteUserMenu";
 import { DropdownMenuContent } from "./ui/dropdown-menu";
@@ -47,7 +46,7 @@ export function SiteSidebar({ settings, ...props }
         <Link to="/" className="flex items-center gap-2 px-4" viewTransition>
           {settings.site_logo &&
             <div className="flex aspect-square size-10 items-center justify-center rounded-lg bg-background text-sidebar-primary-foreground">
-              <img src={HeroWarsLogo} alt="Hero Wars Helper" className="size-8" />
+              {settings.site_logo}
             </div>
           }
           <div className="grid flex-1 text-left text-sm leading-tight">

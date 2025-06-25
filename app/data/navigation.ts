@@ -1,4 +1,4 @@
-import { PresentationIcon, UsersIcon } from "lucide-react";
+import { DatabaseZapIcon, UsersIcon } from "lucide-react";
 
 interface NavigationGroup {
   name: string;
@@ -21,8 +21,8 @@ export const navigation: NavigationGroup[] = [
     roles: ["admin"],
     items: [
       {
-        name: "Admin Setup",
-        icon: PresentationIcon,
+        name: "Data Setup",
+        icon: DatabaseZapIcon,
         href: "/admin/setup",
       },
       {

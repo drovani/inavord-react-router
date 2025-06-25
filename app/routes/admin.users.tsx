@@ -11,6 +11,7 @@ import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Switch } from "~/components/ui/switch";
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "~/components/ui/table";
+import { formatTitle } from "~/config/site";
 import { useAuth } from "~/contexts/AuthContext";
 import { ASSIGNABLE_ROLES } from "~/lib/supabase/admin";
 import { createClient } from "~/lib/supabase/client";
@@ -93,7 +94,7 @@ export const action = async ({ request }: { request: Request }) => {
 };
 
 export const meta = () => {
-  return [{ title: "User Management - Admin" }];
+  return [{ title: formatTitle('User Management - Admin') }];
 };
 
 interface UserData {

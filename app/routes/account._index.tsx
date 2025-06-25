@@ -4,6 +4,7 @@ import { Button } from "~/components/ui/button";
 import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
+import { formatTitle } from "~/config/site";
 import type { Route } from "./+types/account._index";
 
 export const loader = async (_: Route.LoaderArgs) => {
@@ -15,7 +16,7 @@ export const action = async (_: Route.ActionArgs) => {
 };
 
 export const meta = (_: Route.MetaArgs) => {
-  return [{ title: "Account" }];
+  return [{ title: formatTitle('Account') }];
 };
 
 export default function AccountIndex(_: Route.ComponentProps) {

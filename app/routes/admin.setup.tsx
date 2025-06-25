@@ -8,6 +8,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/com
 import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
+import { formatTitle } from "~/config/site";
 import type { Route } from "./+types/admin.setup";
 
 export async function action({ request }: Route.ActionArgs) {
@@ -40,6 +41,10 @@ export async function action({ request }: Route.ActionArgs) {
     );
   }
 }
+
+export const meta = () => {
+  return [{ title: formatTitle('Data Setup - Admin') }];
+};
 
 export default function AdminSetup({ actionData }: Route.ComponentProps) {
   const initdata = useMemo(() => actionData, [actionData]);
@@ -125,19 +130,6 @@ export default function AdminSetup({ actionData }: Route.ComponentProps) {
   );
 }
 
-function StatsCard({ title, value, icon }: { title: string; value: string | number; icon?: React.ReactNode }) {
-  return (
-    <div className="bg-white rounded-lg p-4 shadow-xs border">
-      <div className="flex items-center justify-between">
-        <div>
-          <p className="text-sm text-slate-600">{title}</p>
-          <p className="text-2xl font-semibold">{value}</p>
-        </div>
-        {icon}
-      </div>
-    </div>
-  );
-}
 
 export function ErrorBoundary(props: Route.ErrorBoundaryProps) {
   return (
