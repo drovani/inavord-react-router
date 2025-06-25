@@ -12,5 +12,10 @@ export default defineConfig(({ isSsrBuild }) => ({
         }
       : undefined,
   },
+  server: {
+    host: process.env.CODESPACES ? "0.0.0.0" : "localhost",
+    port: 3000,
+    strictPort: true,
+  },
   plugins: [tailwindcss(), reactRouter(), tsconfigPaths(), devtoolsJson()],
 }));
