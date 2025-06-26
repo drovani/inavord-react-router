@@ -1,8 +1,38 @@
+import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
+
+// Mock react-router hooks
+vi.mock("react-router", () => ({
+  useLoaderData: vi.fn(),
+  useFetcher: vi.fn(() => ({
+    data: null,
+    state: 'idle',
+    Form: vi.fn(),
+    formAction: null,
+    formData: null,
+    formEncType: null,
+    formMethod: null,
+    json: vi.fn(),
+    load: vi.fn(),
+    submit: vi.fn(),
+  })),
+  useRevalidator: vi.fn(() => ({
+    state: 'idle',
+    revalidate: vi.fn(),
+  })),
+}));
+
+// Get the mocked function to use in tests
+const mockUseLoaderData = vi.mocked(useLoaderData);
+
+// Mock AuthContext
+vi.mock("~/contexts/AuthContext", () => ({
+  useAuth: vi.fn(),
+}));
+
 import type { User } from "@supabase/supabase-js";
 import { render, screen, waitFor } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { useLoaderData } from "react-router";
-import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
 import { TestUsers } from "~/__tests__/builders/user-builder";
 import {
   ERROR_SCENARIOS,
@@ -108,7 +138,7 @@ const renderAdminUsers = (
   });
 
   // Mock loader data
-  vi.mocked(useLoaderData).mockReturnValue(loaderData);
+  mockUseLoaderData.mockImplementation(() => loaderData);
 
   return render(<AdminUsers />);
 };
