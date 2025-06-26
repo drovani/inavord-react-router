@@ -346,10 +346,12 @@ describe('Admin Users Route', () => {
       renderAdminUsers()
 
       const switches = screen.getAllByRole('switch')
-      const currentUserSwitch = switches.find(switchEl =>
-        switchEl.closest('tr')?.textContent?.includes('admin@example.com') ||
-        switchEl.closest('.border')?.textContent?.includes('admin@example.com')
-      )
+      const currentUserSwitch = switches.find(switchEl => {
+        const container = switchEl.closest('tr') || switchEl.closest('.border')
+        const containsEmail = container?.textContent?.includes('admin@example.com')
+        const containsYou = container?.textContent?.includes('(You)')
+        return containsEmail && containsYou
+      })
 
       expect(currentUserSwitch).toBeDisabled()
     })
