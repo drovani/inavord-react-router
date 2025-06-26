@@ -18,7 +18,7 @@ export const mockUser: User = {
 
 export const mockAdminUser: User = {
   ...mockUser,
-  id: 'test-admin-id',
+  id: 'user-3',
   email: 'admin@example.com',
   app_metadata: {
     roles: ['admin']
