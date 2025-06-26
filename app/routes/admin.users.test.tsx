@@ -1,68 +1,89 @@
 import type { User } from '@supabase/supabase-js'
-import { render, screen, waitFor } from '@testing-library/react'
+import { screen, waitFor } from '@testing-library/react'
 import userEvent from '@testing-library/user-event'
 import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest'
+import { TestUsers } from '~/__tests__/builders/user-builder'
+import { ERROR_SCENARIOS, TEST_CONFIG } from '~/__tests__/config/admin-users.config'
 import { mockAdminUserOperations, mockUsers } from '~/__tests__/mocks/admin'
 import { mockSupabaseClient } from '~/__tests__/mocks/supabase'
+import type { AdminUsersLoaderData } from '~/__tests__/types/admin-users.types'
+import {
+  assertElementCount,
+  assertElementExists,
+  expectElementInBothViews,
+  expectElementsInBothViews,
+  findUserCheckbox,
+  findUserSwitch,
+  mockDesktopView,
+  mockMobileView
+} from '~/__tests__/utils/admin-users-test-utils'
+import { resetAllMocks, setupAdminUsersMocks } from '~/__tests__/utils/admin-users-setup'
 import { mockAdminUser, mockUser } from '~/__tests__/utils/test-utils'
-import { useAuth } from '~/contexts/AuthContext'
 import AdminUsers, { loader } from './admin.users'
 
-// Mock dependencies
-vi.mock('~/lib/supabase/client', () => ({
-  createClient: vi.fn()
-}))
+// Use centralized test configuration
+const { SCREEN_SIZES, COUNTS: TEST_COUNTS, TIMEOUTS } = TEST_CONFIG
 
-vi.mock('~/contexts/AuthContext', () => ({
-  useAuth: vi.fn()
-}))
+// Test data now centralized in builders/user-builder.ts
 
-// Track which fetcher we're creating (first call is main fetcher, second is create user fetcher)
-let fetcherCallCount = 0
+// DOM helpers now centralized in utils/admin-users-test-utils.ts
 
-vi.mock('react-router', async () => {
-  const actual = await vi.importActual('react-router')
-  
-  return {
-    ...actual,
-    useLoaderData: vi.fn(),
-    useFetcher: vi.fn(() => {
-      fetcherCallCount++
-      return {
-        data: null,
-        state: 'idle',
-        submit: fetcherCallCount === 1 ? mockFetcherSubmit : mockCreateUserFetcherSubmit
-      }
-    }),
-    useRevalidator: vi.fn(() => ({
-      revalidate: vi.fn(),
-      state: 'idle'
-    }))
-  }
-})
+// Assertion helpers now centralized in utils/admin-users-test-utils.ts
 
-vi.mock('loglevel', () => ({
-  default: {
-    error: vi.fn(),
-    debug: vi.fn(),
-    info: vi.fn()
-  }
-}))
+// Screen size utilities now centralized in utils/admin-users-test-utils.ts
+
+// Mock setup now centralized in utils/admin-users-setup.ts
+const { mockFetchers } = setupAdminUsersMocks()
 
 // Import after mocks
+import { render } from '@testing-library/react'
 import { useLoaderData } from 'react-router'
 import '~/__tests__/mocks/admin'
 import { createClient } from '~/lib/supabase/client'
+import { useAuth } from '~/contexts/AuthContext'
 
-// Create shared mock functions that we can track
-const mockFetcherSubmit = vi.fn()
-const mockCreateUserFetcherSubmit = vi.fn()
+// Simplified Mock Setup Functions
+const createMockSupabaseClient = (config = {}) => {
+  const {
+    shouldAuthenticate = true,
+    userToReturn = mockAdminUser,
+    shouldHaveAdminRole = true
+  } = config
 
-const renderAdminUsers = (currentUser: User | null = mockAdminUser, loaderData: { users: any[], error: string | null, hasServiceRole: boolean } = { users: mockUsers, error: null, hasServiceRole: true }) => {
+  return {
+    ...mockSupabaseClient,
+    auth: {
+      ...mockSupabaseClient.auth,
+      getUser: vi.fn().mockResolvedValue({
+        data: {
+          user: shouldAuthenticate ? userToReturn : null
+        }
+      })
+    }
+  }
+}
+
+const setupMockClient = (config = {}) => {
+  const client = createMockSupabaseClient(config)
+  vi.mocked(createClient).mockReturnValue({ supabase: client as any, headers: new Headers() })
+}
+
+const renderAdminUsers = (
+  currentUser: User | null = mockAdminUser,
+  loaderConfig = {}
+) => {
+  const testUsers = TestUsers.createTestUserArray()
+  
+  const loaderData = {
+    users: testUsers,
+    error: null,
+    hasServiceRole: true,
+    ...loaderConfig
+  }
+
   // Reset fetcher count and clear mock calls before each render
-  fetcherCallCount = 0
-  mockFetcherSubmit.mockClear()
-  mockCreateUserFetcherSubmit.mockClear()
+  mockFetchers.mockFetcherSubmit.mockClear()
+  mockFetchers.mockCreateUserFetcherSubmit.mockClear()
 
   // Mock useAuth hook
   vi.mocked(useAuth).mockReturnValue({
@@ -85,39 +106,33 @@ const renderAdminUsers = (currentUser: User | null = mockAdminUser, loaderData: 
   return render(<AdminUsers />)
 }
 
+/**
+ * Test Suite: Admin Users Route
+ * 
+ * This comprehensive test suite covers the admin user management interface including:
+ * - User list rendering and responsive design
+ * - Role-based access control and permissions
+ * - User creation, status management, and deletion
+ * - Optimistic updates and error handling
+ * - Accessibility compliance
+ * 
+ * The tests use factory functions for consistent test data creation and
+ * helper functions for DOM queries to reduce code duplication.
+ */
 describe('Admin Users Route', () => {
   beforeEach(() => {
-    vi.clearAllMocks()
-    // Reset the mockUsers array to initial state
-    mockUsers.splice(0, mockUsers.length,
-      { id: 'user-1', email: 'user@example.com', app_metadata: { roles: ['user'] }, user_metadata: { full_name: 'Regular User' }, aud: 'authenticated', created_at: '2024-01-01T00:00:00Z', updated_at: '2024-01-01T00:00:00Z', last_sign_in_at: '2024-01-01T00:00:00Z' },
-      { id: 'user-2', email: 'editor@example.com', app_metadata: { roles: ['user', 'editor'] }, user_metadata: { full_name: 'Editor User' }, aud: 'authenticated', created_at: '2024-01-01T00:00:00Z', updated_at: '2024-01-01T00:00:00Z', last_sign_in_at: '2024-01-01T00:00:00Z' },
-      { id: 'user-3', email: 'admin@example.com', app_metadata: { roles: ['user', 'admin'] }, user_metadata: { full_name: 'Admin User' }, aud: 'authenticated', created_at: '2024-01-01T00:00:00Z', updated_at: '2024-01-01T00:00:00Z', last_sign_in_at: '2024-01-01T00:00:00Z' },
-      { id: 'disabled-user', email: 'disabled@example.com', app_metadata: { roles: ['user'] }, user_metadata: { full_name: 'Disabled User' }, banned_until: '2034-01-01T00:00:00Z', aud: 'authenticated', created_at: '2024-01-01T00:00:00Z', updated_at: '2024-01-01T00:00:00Z', last_sign_in_at: '2024-01-01T00:00:00Z' } as any
-    )
+    resetAllMocks()
+    // Clean DOM state for consistent test environment
+    document.body.innerHTML = ''
   })
 
   describe('Loader Tests', () => {
     beforeEach(() => {
-      const adminSupabaseClient = {
-        ...mockSupabaseClient,
-        auth: {
-          ...mockSupabaseClient.auth,
-          getUser: vi.fn().mockResolvedValue({ data: { user: mockAdminUser } })
-        }
-      }
-      vi.mocked(createClient).mockReturnValue({ supabase: adminSupabaseClient as any, headers: new Headers() })
+      setupMockClient({ shouldAuthenticate: true, userToReturn: mockAdminUser })
     })
 
     it('should redirect unauthenticated users to login', async () => {
-      const unauthenticatedClient = {
-        ...mockSupabaseClient,
-        auth: {
-          ...mockSupabaseClient.auth,
-          getUser: vi.fn().mockResolvedValue({ data: { user: null } })
-        }
-      }
-      vi.mocked(createClient).mockReturnValue({ supabase: unauthenticatedClient as any, headers: new Headers() })
+      setupMockClient({ shouldAuthenticate: false })
 
       const request = new Request('http://localhost/admin/users')
 
@@ -131,14 +146,7 @@ describe('Admin Users Route', () => {
     })
 
     it('should redirect non-admin users to home', async () => {
-      const regularUserClient = {
-        ...mockSupabaseClient,
-        auth: {
-          ...mockSupabaseClient.auth,
-          getUser: vi.fn().mockResolvedValue({ data: { user: mockUser } })
-        }
-      }
-      vi.mocked(createClient).mockReturnValue({ supabase: regularUserClient as any, headers: new Headers() })
+      setupMockClient({ shouldAuthenticate: true, userToReturn: mockUser, shouldHaveAdminRole: false })
 
       const request = new Request('http://localhost/admin/users')
 
@@ -152,16 +160,17 @@ describe('Admin Users Route', () => {
     })
 
     it('should return users for authenticated admin with service role', async () => {
+      const testUsers = TestUsers.createTestUserArray()
       global.fetch = vi.fn().mockResolvedValueOnce({
         ok: true,
-        json: () => Promise.resolve({ users: mockUsers })
+        json: () => Promise.resolve({ users: testUsers })
       })
 
       const request = new Request('http://localhost/admin/users')
       const result = await loader({ request })
 
       expect(result).toEqual({
-        users: mockUsers,
+        users: testUsers,
         error: null,
         hasServiceRole: true
       })
@@ -210,6 +219,7 @@ describe('Admin Users Route', () => {
   })
 
   describe('User List Rendering', () => {
+    // Group rendering tests for better organization
     it('should render user management interface', () => {
       renderAdminUsers()
 
@@ -218,32 +228,31 @@ describe('Admin Users Route', () => {
       expect(screen.getByRole('button', { name: /add user/i })).toBeInTheDocument()
     })
 
-    it('should display users in table format on desktop', () => {
-      // Mock large screen
-      Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 1200 })
+    it('should render user data in desktop table layout', () => {
+      mockDesktopView()
       renderAdminUsers()
 
       // Check that all user emails are present (both table and card views render)
-      expect(screen.getAllByText('user@example.com')).toHaveLength(2) // Table + Card
-      expect(screen.getAllByText('editor@example.com')).toHaveLength(2) // Table + Card
-      expect(screen.getAllByText('admin@example.com')).toHaveLength(2) // Table + Card
-      expect(screen.getAllByText('disabled@example.com')).toHaveLength(2) // Table + Card
+      expectElementsInBothViews([
+        'user@example.com',
+        'editor@example.com', 
+        'admin@example.com',
+        'disabled@example.com'
+      ], 1)
 
       // Check that table exists
       expect(screen.getByRole('table')).toBeInTheDocument()
     })
 
-    it('should display users in card format on mobile', () => {
-      // Mock small screen
-      Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 480 })
+    it('should render user data in mobile card layout', () => {
+      mockMobileView()
       renderAdminUsers()
 
       // Both mobile cards and desktop table render in test environment
-      expect(screen.getAllByText('user@example.com')).toHaveLength(2)
-      expect(screen.getAllByText('Regular User')).toHaveLength(2)
+      expectElementsInBothViews(['user@example.com', 'Regular User'], 1)
     })
 
-    it('should display correct user roles', () => {
+    it('should display role checkboxes with accurate checked states', () => {
       renderAdminUsers()
 
       // Check that role checkboxes are present and checked correctly
@@ -254,12 +263,12 @@ describe('Admin Users Route', () => {
       expect(editorCheckboxes.length).toBeGreaterThan(0)
     })
 
-    it('should show user status badges correctly', () => {
+    it('should display accurate status badges for all users', () => {
       renderAdminUsers()
 
-      // Both table and card views render status badges (3 active users × 2 views = 6)
-      expect(screen.getAllByText('Active')).toHaveLength(6)
-      expect(screen.getAllByText('Disabled')).toHaveLength(2)
+      // Both table and card views render status badges
+      expectElementInBothViews('Active', TEST_COUNTS.ACTIVE_USERS)
+      expectElementInBothViews('Disabled', TEST_COUNTS.DISABLED_USERS)
     })
 
     it('should show service role configuration status', () => {
@@ -283,23 +292,18 @@ describe('Admin Users Route', () => {
   })
 
   describe('User Role Management', () => {
+    // Tests for role assignment, validation, and permissions
     it('should display current user roles correctly', () => {
       renderAdminUsers()
 
       // Admin user should have admin checkbox checked
-      const adminCheckboxes = screen.getAllByRole('checkbox', { name: /admin/i })
-      const adminUserCheckbox = adminCheckboxes.find(checkbox =>
-        checkbox.closest('tr')?.textContent?.includes('admin@example.com') ||
-        checkbox.closest('.border')?.textContent?.includes('admin@example.com')
-      )
+      const adminUserCheckbox = findUserCheckbox('admin', 'admin@example.com')
+      assertElementExists(adminUserCheckbox, 'admin checkbox for admin user')
       expect(adminUserCheckbox).toBeChecked()
 
       // Editor user should have editor checkbox checked
-      const editorCheckboxes = screen.getAllByRole('checkbox', { name: /editor/i })
-      const editorUserCheckbox = editorCheckboxes.find(checkbox =>
-        checkbox.closest('tr')?.textContent?.includes('editor@example.com') ||
-        checkbox.closest('.border')?.textContent?.includes('editor@example.com')
-      )
+      const editorUserCheckbox = findUserCheckbox('editor', 'editor@example.com')
+      assertElementExists(editorUserCheckbox, 'editor checkbox for editor user')
       expect(editorUserCheckbox).toBeChecked()
     })
 
@@ -307,12 +311,8 @@ describe('Admin Users Route', () => {
       renderAdminUsers()
 
       // Find the admin checkbox for the current admin user
-      const adminCheckboxes = screen.getAllByRole('checkbox', { name: /admin/i })
-      const currentAdminCheckbox = adminCheckboxes.find(checkbox =>
-        checkbox.closest('tr')?.textContent?.includes('admin@example.com') ||
-        checkbox.closest('.border')?.textContent?.includes('admin@example.com')
-      )
-
+      const currentAdminCheckbox = findUserCheckbox('admin', 'admin@example.com')
+      assertElementExists(currentAdminCheckbox, 'current admin user checkbox')
       expect(currentAdminCheckbox).toBeDisabled()
     })
 
@@ -321,18 +321,15 @@ describe('Admin Users Route', () => {
       renderAdminUsers()
 
       // Find editor checkbox for regular user
-      const editorCheckboxes = screen.getAllByRole('checkbox', { name: /editor/i })
-      const regularUserEditorCheckbox = editorCheckboxes.find(checkbox =>
-        checkbox.closest('tr')?.textContent?.includes('user@example.com') ||
-        checkbox.closest('.border')?.textContent?.includes('user@example.com')
-      )
-
+      const regularUserEditorCheckbox = findUserCheckbox('editor', 'user@example.com')
+      assertElementExists(regularUserEditorCheckbox, 'editor checkbox for regular user')
+      
       expect(regularUserEditorCheckbox).not.toBeChecked()
 
       await user.click(regularUserEditorCheckbox!)
 
       // Should trigger fetcher submit with correct parameters (unit test approach)
-      expect(mockFetcherSubmit).toHaveBeenCalledWith(
+      expect(mockFetchers.mockFetcherSubmit).toHaveBeenCalledWith(
         {
           action: "updateRoles",
           userId: "user-1",
@@ -343,7 +340,8 @@ describe('Admin Users Route', () => {
     })
 
     it('should disable role checkboxes when service role not available', () => {
-      renderAdminUsers(mockAdminUser, { users: mockUsers, error: null, hasServiceRole: false })
+      const testUsers = TestUsers.createTestUserArray()
+      renderAdminUsers(mockAdminUser, { users: testUsers, error: null, hasServiceRole: false })
 
       const checkboxes = screen.getAllByRole('checkbox')
       checkboxes.forEach(checkbox => {
@@ -355,6 +353,7 @@ describe('Admin Users Route', () => {
   })
 
   describe('User Status Management', () => {
+    // Tests for user enable/disable functionality and validation
     it('should show correct status switches', () => {
       renderAdminUsers()
 
@@ -368,14 +367,8 @@ describe('Admin Users Route', () => {
     it('should prevent current user from disabling themselves', () => {
       renderAdminUsers()
 
-      const switches = screen.getAllByRole('switch')
-      const currentUserSwitch = switches.find(switchEl => {
-        const container = switchEl.closest('tr') || switchEl.closest('.border')
-        const containsEmail = container?.textContent?.includes('admin@example.com')
-        const containsYou = container?.textContent?.includes('(You)')
-        return containsEmail && containsYou
-      })
-
+      const currentUserSwitch = findUserSwitch('admin@example.com', true)
+      assertElementExists(currentUserSwitch, 'current user status switch')
       expect(currentUserSwitch).toBeDisabled()
     })
 
@@ -384,11 +377,12 @@ describe('Admin Users Route', () => {
 
       // Should only show delete button for disabled user
       const deleteButtons = screen.queryAllByTitle('Delete user permanently')
-      expect(deleteButtons.length).toBe(2) // Desktop and mobile views
+      expect(deleteButtons.length).toBe(TEST_COUNTS.DISABLED_USERS * TEST_COUNTS.DUAL_VIEW_MULTIPLIER)
     })
   })
 
   describe('User Creation', () => {
+    // Tests for the create user dialog and form validation
     it('should open create user dialog', async () => {
       const user = userEvent.setup()
       renderAdminUsers()
@@ -432,7 +426,8 @@ describe('Admin Users Route', () => {
     })
 
     it('should disable create user button when service role not available', () => {
-      renderAdminUsers(mockAdminUser, { users: mockUsers, error: null, hasServiceRole: false })
+      const testUsers = TestUsers.createTestUserArray()
+      renderAdminUsers(mockAdminUser, { users: testUsers, error: null, hasServiceRole: false })
 
       const addButton = screen.getByRole('button', { name: /add user/i })
       expect(addButton).toBeDisabled()
@@ -440,12 +435,13 @@ describe('Admin Users Route', () => {
   })
 
   describe('Optimistic Updates', () => {
-    it('should show loading state during user operations', async () => {
+    // Tests for UI state management during async operations
+    it('should display loading state during async user operations', async () => {
       const user = userEvent.setup()
 
       // Mock slow response
       mockAdminUserOperations.updateUserRoles.mockImplementation(() =>
-        new Promise(resolve => setTimeout(() => resolve({ success: true }), 100))
+        new Promise(resolve => setTimeout(() => resolve({ success: true }), TIMEOUTS.SLOW_OPERATION))
       )
 
       renderAdminUsers()
@@ -457,12 +453,13 @@ describe('Admin Users Route', () => {
       await user.click(checkbox)
 
       // Should show updating state (both desktop and mobile views)
-      expect(screen.getAllByText('Updating...')).toHaveLength(2)
+      expectElementInBothViews('Updating...', 1)
     })
 
     it('should revert optimistic updates on error', async () => {
       // Test that error messages are displayed when provided
-      renderAdminUsers(mockAdminUser, { users: mockUsers, error: 'Operation failed', hasServiceRole: true })
+      const testUsers = TestUsers.createTestUserArray()
+      renderAdminUsers(mockAdminUser, { users: testUsers, error: 'Operation failed', hasServiceRole: true })
 
       // Should show error message
       expect(screen.getByText(/Operation failed/i)).toBeInTheDocument()
@@ -470,8 +467,10 @@ describe('Admin Users Route', () => {
   })
 
   describe('Permission Validation', () => {
+    // Tests for access control and service role requirements
     it('should show service role warning for operations', async () => {
-      renderAdminUsers(mockAdminUser, { users: mockUsers, error: null, hasServiceRole: false })
+      const testUsers = TestUsers.createTestUserArray()
+      renderAdminUsers(mockAdminUser, { users: testUsers, error: null, hasServiceRole: false })
 
       // Should show configuration warning
       expect(screen.getByText('🔧 Configuration Required')).toBeInTheDocument()
@@ -491,14 +490,22 @@ describe('Admin Users Route', () => {
   })
 
   describe('Error Handling', () => {
-    it('should display error messages from failed operations', () => {
-      renderAdminUsers(mockAdminUser, { users: [], error: 'API connection failed', hasServiceRole: false })
+    ERROR_SCENARIOS.forEach(({ name, error, expectedMessage }) => {
+      it(`should display error message when ${name.toLowerCase()}`, () => {
+        renderAdminUsers(mockAdminUser, { users: [], error, hasServiceRole: false })
+        expect(screen.getByText(expectedMessage)).toBeInTheDocument()
+      })
+    })
 
-      expect(screen.getByText('API connection failed')).toBeInTheDocument()
+    it('should handle null/undefined errors gracefully', () => {
+      const testUsers = TestUsers.createTestUserArray()
+      renderAdminUsers(mockAdminUser, { users: testUsers, error: null })
+      expect(screen.queryByRole('alert')).not.toBeInTheDocument()
     })
   })
 
   describe('User Deletion', () => {
+    // Tests for user deletion functionality and confirmation dialogs
     it('should show confirmation dialog for user deletion', async () => {
       const user = userEvent.setup()
       renderAdminUsers()
@@ -515,21 +522,22 @@ describe('Admin Users Route', () => {
 
       // Should only show delete buttons for disabled user
       const deleteButtons = screen.queryAllByTitle('Delete user permanently')
-      expect(deleteButtons.length).toBe(2) // Desktop and mobile
+      expect(deleteButtons.length).toBe(TEST_COUNTS.DISABLED_USERS * TEST_COUNTS.DUAL_VIEW_MULTIPLIER)
     })
   })
 
   describe('Responsive Design', () => {
-    it('should show table view on large screens', () => {
-      Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 1200 })
+    // Tests for desktop table view vs mobile card view
+    it('should render table layout for desktop viewport', () => {
+      mockDesktopView()
       renderAdminUsers()
 
       // Table should be visible
       expect(screen.getByRole('table')).toBeInTheDocument()
     })
 
-    it('should show card view on small screens', () => {
-      Object.defineProperty(window, 'innerWidth', { writable: true, configurable: true, value: 480 })
+    it('should render card layout for mobile viewport', () => {
+      mockMobileView()
       renderAdminUsers()
 
       // Cards should be present
@@ -538,20 +546,33 @@ describe('Admin Users Route', () => {
     })
   })
 
-  describe('Accessibility', () => {
-    it('should have proper labels for form controls', () => {
+  describe('Accessibility Compliance', () => {
+    // Tests for ARIA labels, keyboard navigation, and screen reader support
+    it('should provide proper ARIA labels for all form controls', () => {
       renderAdminUsers()
 
       // Check for proper labeling
-      expect(screen.getAllByLabelText(/admin/i)).toHaveLength(8) // 4 users × 2 views
-      expect(screen.getAllByLabelText(/editor/i)).toHaveLength(8)
+      assertElementCount(
+        screen.getAllByLabelText(/admin/i), 
+        TEST_COUNTS.TOTAL_USERS * TEST_COUNTS.DUAL_VIEW_MULTIPLIER,
+        'admin role checkboxes'
+      )
+      assertElementCount(
+        screen.getAllByLabelText(/editor/i), 
+        TEST_COUNTS.TOTAL_USERS * TEST_COUNTS.DUAL_VIEW_MULTIPLIER,
+        'editor role checkboxes'
+      )
     })
 
-    it('should have accessible button descriptions', () => {
+    it('should provide descriptive button labels for screen readers', () => {
       renderAdminUsers()
 
       expect(screen.getByRole('button', { name: /add user/i })).toBeInTheDocument()
-      expect(screen.getAllByTitle('Delete user permanently')).toHaveLength(2)
+      assertElementCount(
+        screen.getAllByTitle('Delete user permanently'),
+        TEST_COUNTS.DISABLED_USERS * TEST_COUNTS.DUAL_VIEW_MULTIPLIER,
+        'delete user buttons'
+      )
     })
 
     it('should provide tooltips for disabled actions', () => {
@@ -568,6 +589,7 @@ describe('Admin Users Route', () => {
   })
 
   describe('Data Refresh', () => {
+    // Tests for manual data refresh functionality
     it('should have refresh users button', () => {
       renderAdminUsers()
 
@@ -584,5 +606,6 @@ describe('Admin Users Route', () => {
 
   afterEach(() => {
     vi.restoreAllMocks()
+    vi.unstubAllGlobals()
   })
 })
