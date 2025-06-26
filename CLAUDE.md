@@ -94,6 +94,7 @@ Optional for full user management:
 - After completing a task with code changes, run `npm run tsc` to test for Typescript errors
 - **NEVER** push to the `main` branch
 - Always try to associate PRs with an open issue
+- After making code changes to a file, run Prettier to maintain consistent formatting
 
 ## Testing Framework
 
