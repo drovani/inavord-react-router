@@ -17,16 +17,23 @@ vi.mock('~/contexts/AuthContext', () => ({
   useAuth: vi.fn()
 }))
 
+// Track which fetcher we're creating (first call is main fetcher, second is create user fetcher)
+let fetcherCallCount = 0
+
 vi.mock('react-router', async () => {
   const actual = await vi.importActual('react-router')
+  
   return {
     ...actual,
     useLoaderData: vi.fn(),
-    useFetcher: vi.fn(() => ({
-      data: null,
-      state: 'idle',
-      submit: vi.fn()
-    })),
+    useFetcher: vi.fn(() => {
+      fetcherCallCount++
+      return {
+        data: null,
+        state: 'idle',
+        submit: fetcherCallCount === 1 ? mockFetcherSubmit : mockCreateUserFetcherSubmit
+      }
+    }),
     useRevalidator: vi.fn(() => ({
       revalidate: vi.fn(),
       state: 'idle'
@@ -47,7 +54,16 @@ import { useLoaderData } from 'react-router'
 import '~/__tests__/mocks/admin'
 import { createClient } from '~/lib/supabase/client'
 
+// Create shared mock functions that we can track
+const mockFetcherSubmit = vi.fn()
+const mockCreateUserFetcherSubmit = vi.fn()
+
 const renderAdminUsers = (currentUser: User | null = mockAdminUser, loaderData: { users: any[], error: string | null, hasServiceRole: boolean } = { users: mockUsers, error: null, hasServiceRole: true }) => {
+  // Reset fetcher count and clear mock calls before each render
+  fetcherCallCount = 0
+  mockFetcherSubmit.mockClear()
+  mockCreateUserFetcherSubmit.mockClear()
+
   // Mock useAuth hook
   vi.mocked(useAuth).mockReturnValue({
     user: currentUser ? {
@@ -315,8 +331,15 @@ describe('Admin Users Route', () => {
 
       await user.click(regularUserEditorCheckbox!)
 
-      // Should trigger role update
-      expect(mockAdminUserOperations.updateUserRoles).toHaveBeenCalledWith('user-1', ['user', 'editor'])
+      // Should trigger fetcher submit with correct parameters (unit test approach)
+      expect(mockFetcherSubmit).toHaveBeenCalledWith(
+        {
+          action: "updateRoles",
+          userId: "user-1",
+          roles: JSON.stringify(['user', 'editor'])
+        },
+        { method: "post" }
+      )
     })
 
     it('should disable role checkboxes when service role not available', () => {
