@@ -9,7 +9,7 @@ import { Checkbox } from "~/components/ui/checkbox";
 import { Label } from "~/components/ui/label";
 import { RadioGroup, RadioGroupItem } from "~/components/ui/radio-group";
 import { formatTitle } from "~/config/site";
-import type { Route } from "./+types/admin.setup";
+import type { Route } from "./+types/setup";
 
 export async function action({ request }: Route.ActionArgs) {
   try {

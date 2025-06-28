@@ -4,7 +4,7 @@ import { Badge } from "~/components/ui/badge";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "~/components/ui/tabs";
 import { siteConfig } from "~/config/site";
-import type { Route } from "./+types/_index";
+import type { Route } from "./+types/index";
 
 const templateInfo = {
   lastUpdated: new Date("2025-6-25"),
