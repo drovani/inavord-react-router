@@ -93,10 +93,56 @@ app/
 ├── hooks/              # Custom React hooks
 ├── layouts/            # Route layouts (Protected, Admin, etc.)
 ├── lib/                # Utilities and configurations
-├── routes/             # File-based routing
+├── routes/             # File-based routing (see Route Organization below)
 ├── types/              # TypeScript type definitions
 └── __tests__/          # Test files and utilities
 ```
+
+### Route Organization
+
+The project uses a **resource/views pattern** for scalable route organization:
+
+```
+app/routes/
+├── resources/              # Non-UI routes (APIs, webhooks, background jobs)
+│   └── api/
+│       └── admin/
+│           ├── users.tsx         # Admin user management API
+│           └── users.test.tsx    # API route tests
+└── views/                  # UI routes organized by feature
+    ├── auth/               # Authentication pages
+    │   ├── login.tsx              # /login
+    │   ├── sign-up.tsx            # /sign-up
+    │   ├── confirm.tsx            # /auth/confirm
+    │   ├── error.tsx              # /auth/error
+    │   ├── forgot-password.tsx    # /forgot-password
+    │   └── update-password.tsx    # /update-password
+    ├── admin/              # Admin interface (requires admin role)
+    │   ├── index.tsx              # /admin/* (dashboard)
+    │   ├── users.tsx              # /admin/users
+    │   ├── setup.tsx              # /admin/setup
+    │   └── test-coverage.tsx      # /admin/test-coverage
+    ├── account/            # User account pages
+    │   ├── index.tsx              # /account (main account page)
+    │   └── profile.tsx            # /account (nested index route)
+    └── public/             # Public pages
+        ├── index.tsx              # / (home page)
+        ├── logout.tsx             # /logout
+        └── protected.tsx          # /protected
+```
+
+#### Route Organization Benefits
+- **🎯 Feature Grouping**: Related routes are co-located (all auth routes in `auth/`)
+- **🔌 Resource Separation**: API routes separated from UI routes for clarity
+- **📈 Scalability**: Supports growth from 17 to 100+ routes without chaos
+- **🧭 Predictable Locations**: Developers know exactly where to find route files
+- **⚡ Performance**: Easier code splitting and lazy loading implementation
+
+#### Route Configuration
+All routes are centrally configured in `app/routes.ts` with URL preservation:
+- **URLs Unchanged**: All existing URLs maintained during reorganization
+- **Layout Nesting**: Admin routes use `ProtectedAdminLayout`, user routes use `ProtectedUserLayout`
+- **Type Safety**: React Router v7 auto-generates route types for each file
 
 ### Authentication Flow
 1. **Public Routes** - Landing, login, signup, password reset
