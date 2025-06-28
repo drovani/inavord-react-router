@@ -5,7 +5,7 @@ import { Input } from "~/components/ui/input";
 import { Label } from "~/components/ui/label";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "~/components/ui/card";
 import { formatTitle } from "~/config/site";
-import type { Route } from "./+types/account._index";
+import type { Route } from "./+types/profile";
 
 export const loader = async (_: Route.LoaderArgs) => {
   return {};
